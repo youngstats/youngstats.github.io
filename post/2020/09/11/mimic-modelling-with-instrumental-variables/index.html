@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>MIMIC modelling with instrumental variables: | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+        <span class="date">2020-09-11</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/seminars/"><span data-hover="Online Seminars">Online Seminars</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/statistics">statistics</a>
+  
+     &hercon; <a href="/categories/insturmental-variables">insturmental variables</a>
+  
+  </div>
+
+  <h1><span class="title">MIMIC modelling with instrumental variables:</span></h1>
+
+  
+  <h3 class="author">Andrej Srakar et al.
+</h3>
+  
+
+  
+  <p>Tags: <a href="/tags/regression">regression&#34;</a>
+  </p>
+  
+  
+
+</div>
+
+
+
+<main>
+<p><strong>MIMIC modelling with instrumental variables: A 2SLS-MIMIC approach</strong></p>
+<p>By Andrej Srakar, Marilena Vecco, Miroslav Verbič, Montserrat Gonzalez
+Garibay and Jože Sambt</p>
+<p><em>Multiple Indicators Multiple Causes (MIMIC) models are type of
+structural equation models to estimate causality in a DAG framework. In
+a common MIMIC model, multiple indicators reflect the underlying latent
+variables/factors, and the multiple causes (observed predictors) affect
+latent variables/factors. Basic assumptions of MIMIC are clearly
+violated in case of a variable being both an indicator and a cause. To
+resolve the situation, we utilize a version of Bollen's 2SLS estimator
+combined with Jöreskog method of the analysis of covariance structures.
+Our 2SLS empirical estimation is based on static MIMIC specification but
+we point also to error-correction 2SLS MIMIC specification. We present
+basic properties of the estimator and apply findings to empirical case
+of precarious status of older workers which solves an important issue of
+the definition of precarious work as a multidimensional concept, not
+modelled adequately so far.</em></p>
+<p>Multiple Indicators Multiple Causes (MIMIC) models are type of
+structural equation models, a theory-based approach to confirm the
+influence of a set of exogenous causal variables on the latent variable,
+and also the effect of the latent variable on observed indicator
+variables (see e.g. Zellner, 1970; Goldberger, 1972; Jöreskog and
+Goldberger, 1975; Weck, 1983; Frey and Weck, 1983; Frey and
+Weck-Hannemann, 1984; Aigner et al., 1988; for some more recent
+applications see e.g. Lester, 2008; Proitsi et al., 2009; Rose and
+Spiegel, 2010). MIMIC models are commonly used in economics for
+modelling the underground economy (for discussion on this topic see e.g.
+Thomas, 1992; Schneider, 1994; 1997; 2003; 2005; Lippert and Walker,
+1997; Johnson et al., 1998a, 1998b; Tanzi, 1999; Giles, 1999; Mummert
+and Schneider, 2001; Giles and Tedds, 2002; Giles et al., 2002;
+Dell&rsquo;Anno and Schneider, 2003; Buehn and Schneider, 2008; Barbosa et
+al., 2013; Nchor and Adamec, 2015; Breusch, 2016).</p>
+<p>In a common MIMIC model, multiple indicators reflect the underlying
+latent variables/factors, and the multiple causes (observed predictors)
+affect latent variables/factors. Basic assumptions of MIMIC are clearly
+violated in case of a variable being both an indicator and a cause, i.e.
+in the presence of reverse causality. Furthermore, the model is then
+unidentified. To resolve the situation, which can arise frequently (for
+example, in modelling shadow economy, GDP can be both a predictor and
+consequence), we utilize a version of Bollen's (1996) 2SLS estimator
+for structural equation models combined with Jöreskog (1970)'s method
+of the analysis of covariance structures to derive a new, 2SLS estimator
+for MIMIC models. As MIMIC estimation lacks closed form solutions for
+parameters we study and use Madansky-Hägglund-Jöreskog and Bollen's IV
+and 2SLS approaches to estimate the covariance matrices of latent
+variables. Second, we use this estimated covariance matrix of the latent
+variables and apply Jöreskog's (1970) maximum likelihood procedure to
+estimate coefficient estimates for the latent variable model.</p>
+<p>The formal mathematical representation of the MIMIC model reads as
+follows (see e.g. Hodge and Traiman, 1968; Jöreskog and Goldberger,
+1975):</p>
+<p>$$y^{*} = \alpha^{'}x + \epsilon\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)$$</p>
+<p>$$y = \beta y^{*} + u\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2)$$</p>
+<p>where $y = (y_{1},y_{2},\ldots,\ y_{p})&lsquo;$ are indicators of the latent
+variable $y^{*}$ and $x = (x_{1},x_{2},\ldots,\ x_{q})&lsquo;$ are causes of
+$y^{*}$.</p>
+<p>The model is based on the following assumptions (see e.g. Jöreskog and
+Goldberger, 1975; Trebicka, 2014):</p>
+<p>$E\left( \epsilon u^{'} \right) = 0'$,
+$E\left( \epsilon^{2} \right) = \sigma^{2}$,
+$E\left( uu^{'} \right) = \Theta^{2}\text{\ \ \ \ \ \ \ \ \ \ \ \ }(3)$</p>
+<p>Clearly, if $x$ and $y$ are in endogeneous relationship, for example if
+both have an influence to each other (so-called reverse causality)
+assumptions in (3) are violated. In this case it is also impossible to
+identify the relationships in (1) and (2). Applications of MIMIC models,
+typically, also make distributional assumptions, for example that the
+joint distribution of the variables is Gaussian, the relation is linear,
+and each measured variable and each latent common cause has specific
+sources of variance that are independent of the sources of variance
+specific to other variables (Trebicka, 2014).</p>
+<p>In his seminal article, Bollen (1996) constructs a new 2SLS estimator
+for structural equation models, based on limited information maximum
+likelihood, as follows. His initial latent variable model reads as:</p>
+<p>$$\eta = \alpha + B\eta + \Gamma\xi + \zeta\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)$$</p>
+<p>where $\eta$ is an $m \times 1$ vector of latent endogenous random
+variables, $B$ is a $m \times m$ matrix of coefficients that give the
+impact of the $\eta$'s on each other, $\xi$ is an $n \times 1$ vector
+of latent exogenous variables, $\Gamma$ is the $m \times n$ coefficient
+matrix giving $\xi$'s impact on $\eta$, $\alpha$ is an $m \times 1$
+vector of intercept terms, and $\zeta$ is an $m \times 1$ vector of
+random disturbances with the $\mathbb{E}\left( \zeta \right) = 0$ and
+$\text{Cov}\left( \xi,\zeta^{'} \right) = 0$.</p>
+<p>Writing $y_{1} = \eta + \varepsilon_{1}$ and $x_{1} = \xi + \delta_{1}$
+Bollen considers a single equation from $y_{1}$ as:</p>
+<p>$$y_{i} = \alpha_{i} + B_{i}y_{1} + \Gamma_{i}x_{1} + u_{i}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (5)$$</p>
+<p>where $y_{i}$ is the $i$-th $y$ from $y_{1}$, $\alpha_{i}$ is the
+corresponding intercept, $B_{i}$ is the $i$-th row from $By_{1}$,
+$\Gamma_{i}$ is the $i$-th row from $\Gamma$, and $u_{i}$ is the $i$-th
+element from $u$.</p>
+<p>As ordinary least squares is inappropriate for this estimation, we can
+use two-stage least squares (2SLS) estimator as an alternative and
+consistent estimator of the parameters.</p>
+<p>The 2SLS estimator require instrumental variables for $Z_{i}$. They must
+be: a) correlated with $Z_{i}$, b) uncorrelated with $u_{i}$, and c)
+sufficient in number so that there at least as many IV's as the number
+of explanatory variables on the right-hand side of the equation.
+Generally, in Bollen's 2SLS estimation, the pool of potential IVs comes
+from those $y$'s and $x$'s not included in $Z_{i}$ (excluding, of
+course, $y_{i}$). The exceptions are any variables in $Z_{i}$ that are
+uncorrelated with $u_{i}$, since such variables can serve as IVs.
+Exogenous (predetermined) $x$'s would be an example of IVs that might
+appear on the right-hand side above.</p>
+<p>The above Following Buehn and Schneider (2008), we can write the
+variance-covariance matrix of the 2SLS-MIMIC as:</p>
+<p>$$\Sigma^{<em>} = \begin{bmatrix} \Phi^{</em>} &amp; \Phi^{<em>}\alpha^{</em>}\beta^{'} \<br>
+\beta{\alpha^{<em>}}^{'}\Phi^{</em>} &amp; \left( 1 + {\rho^{*}}^{2} \right)\beta\beta^{'} + \Theta^{2} \<br>
+\end{bmatrix}\text{\ \ }\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (6)$$</p>
+<p>$$\Phi^{*} = X^{'}P_{X}\text{X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (7)$$</p>
+<p>$$\rho^{<em>} = {\alpha^{</em>}}^{'}X^{'}P_{X}X\alpha^{*}\text{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (8)$$</p>
+<p>$${\widehat{\alpha}}^{*} = \left( \frac{1}{{\widehat{\kappa}}^{2}} \right){(X^{'}P_{X}X)}^{- 1}X^{'}P_{X}Y{\widehat{\Omega}}^{- 1}\widehat{\beta}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (9)$$</p>
+<p>$$P_{X} = X{(X^{'}X)}^{- 1}X^{'}$$</p>
+<p>This covariance structure may be specified in terms of Jöreskog's model
+of covariance structures by setting:</p>
+<p>$$B = (\begin{matrix}
+I_{k \times k} &amp; 0_{k \times 1} \<br>
+0_{m \times k} &amp; \beta_{m \times 1} \<br>
+\end{matrix}), \Lambda = (\begin{matrix}
+I_{k \times k} \<br>
+{{\alpha^{*}}^{'}}_{1 \times k} \<br>
+\end{matrix})$$,</p>
+<p>$\Psi = (\begin{matrix}
+0_{k \times k} &amp; 0_{k \times 1} \<br>
+0_{1 \times k} &amp; I_{1 \times 1} \<br>
+\end{matrix})$, $\Theta = \begin{pmatrix}
+0_{k \times k} &amp; 0_{k \times m} \<br>
+0_{m \times k} &amp; \Theta_{m \times m} \<br>
+\end{pmatrix}\ \ \ (1)$</p>
+<p>and taking $\Phi^{*}$ free.</p>
+<p>The final parameter estimation is performed following Jöreskog and
+Goldberger (1975)'s suggestion of using maximum likelihood estimation,
+firstly transforming the above problem into Jöreskog (1970)'s
+covariance structure modelling framework. As the data entering
+2SLS-MIMIC estimation are independent and identically distributed, we
+can apply reasoning of Lee and Shi (1998) and argue that the derived
+estimator is consistent, asymptotically normal and efficient. This shows
+the consistency of our procedure and main properties of the derived
+estimation process which guarantee the desired behavior of the
+estimates.</p>
+<p>Similar procedure can be used to transform the dynamic/error-correction
+problem into Jöreskog's algorithm and show that the estimator derived
+there is also consistent and asymptotically normal.</p>
+<p>Below are results of a simple simulation based on 10000 simulated data
+sets and corresponding 1000 resamples. We simulate three criteria of the
+MIMIC models: root mean square error of approximation (RMSEA),
+standardized root mean square residual (SRMR) and comparative fit index
+(CFI). We simulate three scenarios: 1) with short time series (t=20) and
+with only one I(1) variable; 2) with short time series (t=20) and
+several (three) I(1) variables; 3) with longer time series (t=100) and
+several (three) I(1) variables.</p>
+<p>Table: Simulation study, scenario 1</p>
+<p><img src="media/image1.jpeg" alt="">{width=&quot;2.9102241907261592in&rdquo;
+height=&quot;2.5358595800524935in&rdquo;}</p>
+<p>Source: Own calculations.</p>
+<p>In an application we study case of precarious work of the elderly using
+the theoretical model on below picture.</p>
+<p><em><em>Figure 1</em>:</em>** *MIMIC model for precarious work*</p>
+<p><img src="media/image2.jpg" alt="Slika, ki vsebuje besede besedilo, preslikava Opis je samodejnoustvarjen">{width=&quot;4.222222222222222in&rdquo;
+height=&quot;1.9655172790901136in&rdquo;}</p>
+<p>The results enable us to calculate the levels of precarious work of the
+elderly by European countries, included in the SHARE survey (Wave 6)
+which is one first such attempts in the empirical literature so far.</p>
+<p><em><em>Figure 2</em>:</em>** *Precarious work index by country*</p>
+<p>[[CHART]]{.chart}</p>
+<p>Source: SHARE, Wave 6 (own modifications).</p>
+<p>The article presented is to our knowledge the second one (first one
+being Tekwe et al., 2014 &ndash; their article addressed endogeneity in MIMIC
+in a very limited context related specifically to measurement error
+problems) which explicitly models reverse causality in MIMIC models
+which can arise very frequently. We present a novel estimation
+procedure, based on Bollen's 2SLS estimator and transformation into
+Jöreskog's general covariance structure analysis. We are able to derive
+three new estimation procedures and show their consistency and
+asymptotic normality (for 2SLS-MIMIC).</p>
+<p>We have to mention several limitations of the study. Firstly, there
+exist significant critiques of the method of MIMIC for estimating shadow
+economy and other concepts. As has been shown by e.g. Breusch (2016),
+MIMIC is not always a proper modelling technique to estimate the latent
+concepts under question. Also, the IV context could be developed in more
+depth, related to overidentification issues and including estimators
+such as LIML, FIML, 3SLS and different types of GMM approaches.
+Furthermore, we address only maximum likelihood MIMIC estimation and do
+not relate to other two approaches at hand: econometric and factor
+analytic one (mentioned already in the original article of Jöreskog and
+Goldberger, 1975). For future work it would be important to address also
+those points more properly.</p>
+<p><strong>The article is based on:</strong></p>
+<p>Andrej Srakar, Marilena Vecco, Miroslav Verbič, Montserrat Gonzalez
+Garibay, Jože Sambt: MIMIC modelling with instrumental variables: A
+2SLS-MIMIC approach,
+<a href="https://arxiv.org/abs/2008.02148">[https://arxiv.org/abs/2008.02148]{.underline}</a></p>
+<p><strong>About the authors:</strong></p>
+<p>Andrej Srakar, Institute for Economic Research (IER) and School of
+Economics and Business, University of Ljubljana, Slovenia,
+<a href="mailto:andrej.srakar@ef.uni-lj.si">[andrej.srakar@ef.uni-lj.si]{.underline}</a></p>
+<p>Marilena Vecco, Burgundy School of Business &ndash; Université Bourgogne
+Franche-Comté, France,
+<a href="mailto:marilena.vecco@bsb-education.com">[marilena.vecco@bsb-education.com]{.underline}</a></p>
+<p>Miroslav Verbič, School of Economics and Business, University of
+Ljubljana and Institute for Economic Research (IER), Ljubljana,
+Slovenia,
+<a href="mailto:miroslav.verbic@ef.uni-lj.si">[miroslav.verbic@ef.uni-lj.si]{.underline}</a></p>
+<p>Montserrat Gonzalez Garibay, Institute for Economic Research (IER),
+<a href="mailto:gonzalezm@ier.si">[gonzalezm@ier.si]{.underline}</a></p>
+<p>Jože Sambt, School of Economics and Business, University of Ljubljana,
+Slovenia,
+<a href="mailto:joze.sambt@ef.uni-lj.si">[joze.sambt@ef.uni-lj.si]{.underline}</a></p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"><a href="/post/2020/09/11/2020program-evaluation/">Program Evaluation and Causal Inference for Histogram Data &rarr;</a></span>
+</nav>
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

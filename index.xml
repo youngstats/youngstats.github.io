@@ -1,108 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo XMag on YoungStatS</title>
+    <title>YoungStatS</title>
     <link>/</link>
-    <description>Recent content in Hugo XMag on YoungStatS</description>
+    <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/post/2017/02/14/a-plain-markdown-post/</link>
-      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      <title>Program Evaluation and Causal Inference for Histogram Data</title>
+      <link>/post/2020/09/11/2020program-evaluation/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/02/14/a-plain-markdown-post/</guid>
-      <description>This sample post is mainly for blogdown users. If you do not use blogdown, you can skip the first section. To know more about the Hugo XMag theme, please read the About page.
-1. Markdown or R Markdown This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.</description>
+      <guid>/post/2020/09/11/2020program-evaluation/</guid>
+      <description>Program Evaluation and Causal Inference for Histogram Data
+By Andrej Srakar, Valentina Prevolnik-Rupel and Tjaša Bartolj
+Analysis of compositions, intervals, histograms, distributions and functions has become more and more common in contemporary statistics and econometrics. Despite several types of regressions existing for symbolic data, causal inference has not been studied so far adequately. We develop a statistical theory for using instrumental variables with symbolic distributional data, related to the prevailing usage of regressions in such situations, the so-called &#34;</description>
     </item>
     
     <item>
-      <title>Jeff Leek can do zero-fold cross-validation</title>
-      <link>/post/2015/07/28/jeff-leek-can-do-zero-fold-cross-validation/</link>
-      <pubDate>Tue, 28 Jul 2015 00:00:00 +0000</pubDate>
+      <title>We&#39;re online</title>
+      <link>/post/2020/09/10/hello-world/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/07/28/jeff-leek-can-do-zero-fold-cross-validation/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
+      <guid>/post/2020/09/10/hello-world/</guid>
+      <description>Welcome to our blog! This website is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
     </item>
     
     <item>
-      <title>Correlation implies whatever Jeff Leek tells it to imply</title>
-      <link>/post/2015/07/27/correlation-implies-whatever-jeff-leek-tells-it-to-imply/</link>
-      <pubDate>Mon, 27 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015/07/27/correlation-implies-whatever-jeff-leek-tells-it-to-imply/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
-    </item>
-    
-    <item>
-      <title>Jeff Leek counted to infinity. Twice.</title>
-      <link>/post/2015/07/26/jeff-leek-counted-to-infinity.-twice./</link>
-      <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015/07/26/jeff-leek-counted-to-infinity.-twice./</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
-    </item>
-    
-    <item>
-      <title>Git commits to Jeff Leek</title>
-      <link>/post/2015/07/25/git-commits-to-jeff-leek/</link>
-      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015/07/25/git-commits-to-jeff-leek/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Jeff Leek always obtains unbiased estimators</title>
-      <link>/post/2015/07/24/jeff-leek-always-obtains-unbiased-estimators/</link>
-      <pubDate>Fri, 24 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015/07/24/jeff-leek-always-obtains-unbiased-estimators/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
-    </item>
-    
-    <item>
-      <title>Jeff Leek is the Uniformly Most Powerful Jeff</title>
-      <link>/post/2015/07/23/jeff-leek-is-the-uniformly-most-powerful-jeff/</link>
-      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015/07/23/jeff-leek-is-the-uniformly-most-powerful-jeff/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Quisque mattis volutpat lorem vitae feugiat.</description>
-    </item>
-    
-    <item>
-      <title>About Hugo XMag</title>
+      <title>About US</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>XMag is the second Hugo theme I have designed. It is based on my first Hugo theme XMin, and similarly, features minimalism but with a magazine style on the homepage inspired by The Signpost on Wikipedia. You can find its source code on Github: https://github.com/yihui/hugo-xmag (licensed under MIT).
-Features This theme includes a few cool features:
-  Responsive article summary blocks on homepage
-  Thumbnails in summary blocks</description>
+      <description>About
+The YoungStatS Blog is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
+    </item>
+    
+    <item>
+      <title>Online Seminars</title>
+      <link>/seminars/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/seminars/</guid>
+      <description>YoungStatS Online Seminar
+We are delighted to announce the creation of the YoungStatS Online Seminar Series (YSOS)! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis. The Online Seminar Series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics
+Seminars will be held on Zoom on Tuesday at 8:30 am PT (10:30 am CT / 11:30 am ET / 5:30 pm CET).</description>
     </item>
     
   </channel>
