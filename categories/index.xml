@@ -47,5 +47,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>webinars</title>
+      <link>/categories/webinars/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
