@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>post on YoungStatS</title>
-    <link>/categories/post/</link>
-    <description>Recent content in post on YoungStatS</description>
+    <title>epidemiology on YoungStatS</title>
+    <link>/categories/epidemiology/</link>
+    <description>Recent content in epidemiology on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</guid>
       <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
 In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
-    </item>
-    
-    <item>
-      <title>Program Evaluation and Causal Inference for Histogram Data</title>
-      <link>/post/2020/09/11/2020program-evaluation/</link>
-      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/09/11/2020program-evaluation/</guid>
-      <description>Program Evaluation and Causal Inference for Histogram Data
-By Andrej Srakar, Valentina Prevolnik-Rupel and Tjaša Bartolj
-Analysis of compositions, intervals, histograms, distributions and functions has become more and more common in contemporary statistics and econometrics. Despite several types of regressions existing for symbolic data, causal inference has not been studied so far adequately. We develop a statistical theory for using instrumental variables with symbolic distributional data, related to the prevailing usage of regressions in such situations, the so-called &#34;</description>
     </item>
     
   </channel>

@@ -6,10 +6,20 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
+      <link>/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</guid>
+      <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
+In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
+    </item>
     
     <item>
       <title>Program Evaluation and Causal Inference for Histogram Data</title>
