@@ -6,10 +6,46 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>clinical trials</title>
+      <link>/categories/clinical-trials/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/clinical-trials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>information theory</title>
+      <link>/categories/information-theory/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/information-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>/categories/post/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>/categories/statistics/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/statistics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>epidemiology</title>
@@ -21,29 +57,11 @@
     </item>
     
     <item>
-      <title>post</title>
-      <link>/categories/post/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>spatial statistics</title>
       <link>/categories/spatial-statistics/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/spatial-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>/categories/statistics/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/statistics/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/statistics">statistics</a>
+  
+     &hercon; <a href="/categories/post">post</a>
+  
+     &hercon; <a href="/categories/clinical-trials">clinical trials</a>
+  
+     &hercon; <a href="/categories/information-theory">information theory</a>
+  
+  </div>
+
+  <h1><span class="title">A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</span></h1>
+
+  
+  <h3 class="author">Pavel Mozgunov and Thomas Jaki
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+<h2 id="1introduction-selecting-best-treatment"><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>Introduction: Selecting Best Treatment</h2>
+<p>The question of selecting the &ldquo;best&rdquo; amongst different choices is a
+common problem in our lives. In clinical trials, our main field
+research, the question usually translates to &ldquo;Out of a number of
+alternative treatments, which one treats the patients best?&rdquo;.</p>
+<p>A traditional approach to answer this question is to randomise equal
+numbers of patients to new treatments and the current method of
+treatment used in practice, called standard of care (SoC). Subsequently
+you compare the groups when the outcome for all patients is known. This
+is known as <strong>Equal Allocation</strong>, depicted in Figure 1 (A), and results
+in a high accuracy, meaning that if there is truly a difference between
+treatments, there is a high chance to find it.</p>
+<p><img src="/post/2020/10/14/mozgunov/fig1final.png" alt="">
+<em>Figure 1: Illustration of (A) Fixed Equal Allocation with all patients being
+allocated at the trial start, (B) Adaptive Trial with patients enrolled
+in stages with the Blue Treatment being selected at the 2nd
+interim.</em></p>
+<p>However, since there typically is only one best treatment, many patients
+in such trials would be assigned to sub-optimal treatments.</p>
+<p>Can we do better than that and offer more benefit to the patients
+participating in trials?</p>
+<p>An alternative approach is to look at data as they accumulate and adapt
+whether which treatments should continue further in the trial. For
+example, if a treatment is found to be worse than the current SoC it
+would be stopped. Such studies are known as <strong>Adaptive Trials</strong>,
+depicted in Figure 1 (B). However, even if ineffective treatments are
+dropped earlier, the patient will usually have the same chance of
+receiving any of the remaining treatments. Essentially, this is due to
+the assumption that new information about each treatment is equally
+valuable to us. This, however, might not be the case in many situations
+as we are typically more interested in better performing treatments.</p>
+<h2 id="new-criterion-to-select-treatments">New Criterion to Select Treatments</h2>
+<p>The amount of uncertainty about a treatment is usually measured by an
+information measure, among which the Fisher Information and Shannon&rsquo;s
+entropy are the most famous in Statistics. These measures do not depend
+on the value of the outcomes themselves, or simply, on the context of
+these outcomes.</p>
+<p>The &ldquo;context&rdquo; of the trial can be included into the information measures
+directly using a weight function that gives more value to the points of
+specific interest and, essentially, reflects that <strong>information about
+treatments which are more effective is more valuable.</strong></p>
+<p>In our recent work, we have proposed to use the difference of the
+standard and weighted (Shannon) information measures (also known as the
+information gain) as a criterion to drive treatment selection in
+<strong>Response-Adaptive Trials</strong>, depicted in Figure 2.</p>
+<p><img src="/post/2020/10/14/mozgunov/fig2final.png" alt="">
+<em>Figure 2: Illustration of Response-Adaptive Design with more patients receiving
+a better Blue Treatment after the 1st interim, and the Blue Treatment
+being selected at the 2nd interim.</em></p>
+<p>The new criterion</p>
+<ul>
+<li>
+<p>leads to collecting more information about more effective treatments
+and hence results in <strong>more ethical allocation</strong> of patients
+(compared to the Equal Allocation);</p>
+</li>
+<li>
+<p>accounts for the uncertainty around treatments and <strong>allows for a
+reliable comparison</strong> between the selected treatment and standard of
+care.</p>
+</li>
+</ul>
+<h2 id="example-of-potential-benefit" class="unnumbered">Example of Potential Benefit</h2>
+<p>To demonstrate the benefit from our proposal, consider a hypothetical
+clinical trial. Assume that there are 3 new treatments, A, B, and C to
+be compared against the SoC in a trial of 423 patients enrolled one
+after the other. Assume that 30% of patients respond given treatments A
+and B and SoC, and 50% of patients respond given treatment C. We would
+like</p>
+<ol>
+<li>
+<p>to have sufficient information to claim that treatment C is indeed
+the best;</p>
+</li>
+<li>
+<p>to assign as many patients to treatment C as possible.</p>
+</li>
+</ol>
+<p>These two goals are competing against each other as patients need to be
+assigned to other treatments to make sure C is best, but the new
+approach allows to balance these goals. Under a specific choice, our
+proposed criterion for the treatment $j$ is
+$$\Delta_j = \frac{\left(\hat{p}_j-1 \right)^2}{2 \hat{p}_j (1-\hat{p}_j)} \times n_j^{0.3}$$
+which characterises how far the fraction of recovered patients given
+treatment $j$, $\hat{p}_j,$ is from the best possible probability of
+recovery, $p=1$, (numerator), taking into account the uncertainty around
+this estimate (denominator), and the number of patients, $n_j$, assigned
+to this treatment (multiplicator). The criterion is updated after the
+outcome for previous patient is known.</p>
+<p>The first goal will be measured via the chance to reliably claim that
+treatment C is better than SoC while the second goal is measured by the
+average number of patients that have responded.</p>
+<p>We compare two approaches on how such trial can be conducted</p>
+<ul>
+<li>
+<p>Randomising patients equally to A, B, C and SoC with probability 1/4
+each;</p>
+</li>
+<li>
+<p>Randomising patients proportionally to the new criterion $\Delta_j$;</p>
+</li>
+</ul>
+<p><img src="/post/2020/10/14/mozgunov/figure-new.png" alt="Chance to find that the the best treatment C is indeed better than theSoC, and the average number of patients responded under each of theapproaches."></p>
+<p>From Figure 3 we can see that the Equal Randomisation approach results
+in just over 80% chance of reliably claiming that the treatment C is
+indeed better than SoC while our proposed approach results in nearly 90%
+due to more patients being assigned to the best treatment - so a more
+reliable conclusion can be made.</p>
+<p>Furthermore, under the Equal Allocation, the average number of patients
+who have responded in the trial is smaller. An additional 18 patients
+would have responded if the new randomised approach is used.</p>
+<p>Overall, the new approach can be more ethical as it results in more
+patients benefiting from participating in the trial while not
+compromising the chances of finding the difference between the
+treatments.</p>
+<p>While clinical trials have been the main motivation for this research,
+the design can be applied to a wide range of problems of similar nature,
+for example, online advertising, portfolio design, queuing and
+communication networks, etc.</p>
+<p><strong>This post is based on:</strong></p>
+<p>Mozgunov, P. and Jaki, T. (2020), An information theoretic approach for selecting arms in clinical trials. J. R. Stat. Soc. B. <a href="doi:10.1111/rssb.12391">doi:10.1111/rssb.12391</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>PM would like to thank Andrew Kightley and Lucy Middleton for
+their comments on the first version of this blog. This report is
+independent research supported by the National Institute for Health
+Research (NIHR Advanced Fellowship, Dr Pavel Mozgunov, NIHR300576;
+and Prof Jaki&rsquo;s Senior Research Fellowship, NIHR-SRF-2015-08-001).
+The views expressed in this publication are those of the authors and
+not necessarily those of the NHS, the National Institute for Health
+Research or the Department of Health and Social Care (DHCS). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
