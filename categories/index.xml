@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on YoungStatS</title>
-    <link>/categories/</link>
+    <link>https://youngstats.github.io/categories/</link>
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>clinical trials</title>
-      <link>/categories/clinical-trials/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/clinical-trials/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>information theory</title>
-      <link>/categories/information-theory/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      <title>network</title>
+      <link>https://youngstats.github.io/categories/network/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/information-theory/</guid>
+      <guid>https://youngstats.github.io/categories/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>post</title>
-      <link>/categories/post/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      <link>https://youngstats.github.io/categories/post/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/post/</guid>
+      <guid>https://youngstats.github.io/categories/post/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistics</title>
-      <link>/categories/statistics/</link>
+      <link>https://youngstats.github.io/categories/statistics/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clinical trials</title>
+      <link>https://youngstats.github.io/categories/clinical-trials/</link>
       <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/statistics/</guid>
+      <guid>https://youngstats.github.io/categories/clinical-trials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>information theory</title>
+      <link>https://youngstats.github.io/categories/information-theory/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/information-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>epidemiology</title>
-      <link>/categories/epidemiology/</link>
+      <link>https://youngstats.github.io/categories/epidemiology/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/epidemiology/</guid>
+      <guid>https://youngstats.github.io/categories/epidemiology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spatial statistics</title>
-      <link>/categories/spatial-statistics/</link>
+      <link>https://youngstats.github.io/categories/spatial-statistics/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/spatial-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>casual inference</title>
-      <link>/categories/casual-inference/</link>
-      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/casual-inference/</guid>
+      <guid>https://youngstats.github.io/categories/spatial-statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>information</title>
-      <link>/categories/information/</link>
+      <link>https://youngstats.github.io/categories/information/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/information/</guid>
+      <guid>https://youngstats.github.io/categories/information/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webinars</title>
-      <link>/categories/webinars/</link>
+      <link>https://youngstats.github.io/categories/webinars/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/webinars/</guid>
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     
