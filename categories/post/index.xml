@@ -17,8 +17,8 @@
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/10/05/par_diggle/</guid>
-      <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
-In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
+      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.
+Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
     </item>
     
     <item>
@@ -29,6 +29,15 @@ In 1972 I started working towards a PhD in the then-new field of spatial statist
       <guid>/post/2020/10/04/mozgunov/</guid>
       <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
 A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
+    </item>
+    
+    <item>
+      <title>Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data</title>
+      <link>/post/2020/10/01/modeling-covid-19/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/10/01/modeling-covid-19/</guid>
+      <description>As the COVID-19 pandemic spread across the world at the beginning of 2020, statistically modeling its development became of big interest. The main focus of this work was to analyze the spread of the disease and its main characteristics for Slovenia using publicly available COVID-19 data. Our work takes a Bayesian semiparametric approach using which we estimate some of the main measures of interest for the pandemic (e.g. the reproduction number $R_{t}$) and give accurate forecasts of important indicators for the following days.</description>
     </item>
     
     <item>

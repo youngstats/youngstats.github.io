@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/statistics">statistics</a>
+  
+     &hercon; <a href="/categories/post">post</a>
+  
+     &hercon; <a href="/categories/covid-19">covid-19</a>
+  
+  </div>
+
+  <h1><span class="title">Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data</span></h1>
+
+  
+  <h3 class="author">Damjan Manevski,  Nina Ružić Gorenjec,  Nataša Kejžar,  Rok Blagus and Maja Pohar Perme
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+<p><em>As the COVID-19 pandemic spread across the world at the beginning of
+2020, statistically modeling its development became of big interest. The
+main focus of this work was to analyze the spread of the disease and its
+main characteristics for Slovenia using publicly available COVID-19
+data. Our work takes a Bayesian semiparametric approach using which we
+estimate some of the main measures of interest for the pandemic (e.g.
+the reproduction number <code>$R_{t}$</code>) and give accurate forecasts of
+important indicators for the following days. The provided methodology
+gives a flexible approach for modeling the COVID-19 pandemic which can
+be further adapted given the epidemiological and data specifics for a
+certain country.</em></p>
+<p>The new coronavirus SARS-CoV-2 has quickly spread all around the world
+greatly impacting all aspects of our lives. One of the key reasons for
+its rapid spread is the high reproduction number of infection,
+<code>$R_{t}$</code>. The <code>$R_{t}$</code> value represents the average number of people
+that an individual infects during their infection period, whereby <code>$t$</code>
+represents time. <code>$R_{t}$</code> is susceptible to change, for example, due to
+non-pharmaceutical governmental interventions (e.g. school closure or
+complete lockdown). When <code>$R_{t} &lt; 1$</code>, the incidence of new cases
+reduces, but when <code>$R_{t} &gt; 1$</code>, it increases until the epidemic reaches
+its peak; after that, the incidence of new cases starts to reduce due to
+(at least temporal) <a href="https://scholar.google.com/scholar_lookup?title=Modern%20Epidemiology&amp;publication_year=2015&amp;author=K.%20Rothman&amp;author=S.%20Greenland&amp;author=T.%20Lash">herd
+immunity</a>.
+The estimates of the basic (i.e. initial) reproduction number, <code>$R_{0}$</code>,
+for SARS-CoV-2 vary substantially, depending on the method of
+estimation, and stand at about 3. Such a high basic reproduction number
+leads to a steep exponential increase in the number of cases which, in
+turn, causes a rapid increase in the number of people in need of
+hospitalization and intensive care unit (ICU). Due to the limited
+capacities of the healthcare system, this can lead to a situation where
+it is impossible to provide suitable care to all patients in need. Thus,
+it is of crucial importance for policymakers to estimate $R_{t}$ by
+which the spread of the epidemic could be monitored. But for better
+understanding of the epidemiological characteristics, we are also
+interested in estimating further measures, e.g. the infection fatality
+rate (i.e. the proportion of deaths among infected individuals), the
+proportion of asymptomatic cases and forecasting the number of
+hospitalized patients and patients in the ICUs.</p>
+<p><strong>Figure</strong> <strong>1 Number of patients treated in hospitals and ICUs on a
+given date, cumulative number of deaths and cumulative number of deaths
+occurring in hospitals in Slovenia, March 4&ndash;June 3, 2020.</strong></p>
+<p><img src="/post/2020/10/01/modeling-covid-19/image1.jpeg" alt=""></p>
+<p>In the current COVID-19 pandemic many governments have adopted
+non-pharmaceutical interventions (NPIs) to control the spread of the
+epidemic in their countries. Many models are available for forecasting
+the COVID-19 pandemic with adopted NPIs, e.g. SIR-like
+(Susceptible&ndash;Infected&ndash;Recovered-like) compartmental models or
+network-based models, which mimic the behavior of all individuals in the
+population. Models based on Bayesian inference were also introduced as
+an alternative to these two approaches. Here, simple stochastic models
+which describe the key features of epidemic spread are formulated and
+then actual data are used to estimate the parameters of the model, thus
+allowing the analysis to be driven by data and using less assumptions
+and/or fixed parameters. Furthermore, the final estimates are equipped
+with statistically sound intervals of uncertainty.</p>
+<p>At the beginning of the epidemic, <a href="https://www.nature.com/articles/s41586-020-2405-7">Flaxman et
+al.</a> studied the
+influence of NPIs relying on Bayesian inference, using data for 11
+European countries. Although this work gave very promising results it
+did have some flaws that would be problematic for the case of Slovenia.
+The Flaxman model is solely driven by the amount of deaths, which for a
+country of size like Slovenia does not provide a lot of information.
+Thus it was of main interest to include additional available data
+sources for Slovenia to make outputs as accurate as possible. In our
+work we have additionally included the following data sources: confirmed
+number of cases, number of patients in hospitals and in intensive care,
+and number of patients admitted to and released from hospitals and ICUs.
+Some of this information is presented on Figure 1 with data up to and
+including June 3, 2020 (all results presented in this report are up
+until this date).</p>
+<p><strong>Figure</strong> <strong>2 Estimated 50% and 90% credible intervals for the
+reproduction number</strong> <code>$R_{t}$</code> <strong>for Slovenia March 4&ndash;June 3, 2020, with
+marked days of NPIs:</strong> G1 (March 10, 2020; public events banned), G2
+(March 20, 2020; implementation of complete lock-down), G3 (March 30,
+2020; prohibition of movement outside of the municipality of residence),
+G4 (April 30, 2020; some restrictions start to relax)</p>
+<p><img src="/post/2020/10/01/modeling-covid-19/image2.png" alt=""></p>
+<p>In our work we have proposed an elaborated semiparametric modeling
+framework based on a Bayesian approach, that greatly extends and
+modifies the Flaxman model. Apart from allowing for multiple data
+sources in the model, we also relax the assumption that the reproduction
+number <code>$R_{t}$</code> is piece-wise constant; rather, we model it as
+time-varying. The extended model also allows us to report other
+measures, such as the proportion of unidentified cases, infection
+fatality rate, the proportion of cumulatively infected people and the
+number of patients in different disease progression states in time. In
+this report, we do not provide exact definitions and technical details
+for the proposed model, but full details are available in the articles
+cited below.</p>
+<p>We first report on the estimated reproduction number <code>$R_{t}$</code> for
+Slovenia, which is shown on Figure 2. The reproduction number has
+increased from 3.17 in the beginning (90% CI [2.74&ndash;3.59]) to 3.92
+(90% CI [1.56&ndash;9.68]) until the adoption of measures to control the
+epidemic, after which the effective <code>$R_{t}$</code> started to decrease reaching
+its lowest value of 0.17 (90% CI [0.05&ndash;0.51]) at the end of the study
+period. Based on these results it can be concluded that the adopted NPIs
+in Slovenia were effective in slowing down the spread of the epidemic
+which eventually resulted in the end of the first wave of the pandemic.</p>
+<p>Based on the estimates of the number of infected individuals and
+estimated number of deaths, we estimate that throughout the study period
+the infection fatality rate (IFR) was 1.56% (90% CI [0.94&ndash;2.21]%)
+which at first seems large since <a href="https://www.nature.com/articles/d41586-020-01738-2">other
+studies</a> tend to
+report it around 0.5%&ndash;1%. This can be explained by noting that during
+the first wave of Slovene epidemic, the virus transmitted largely among
+older people inside retirement homes who are at much higher risk of
+dying due to COVID-19. Up to May 4, around 80% of all deaths occurred
+among people from <a href="https://www.dnevnik.si/1042928747">retirement homes</a>
+and all deaths outside the hospitals were in retirement homes. Excluding
+the estimated number of deaths occurring outside the hospitals yields a
+much smaller IFR of 0.80% (90% CI [0.48&ndash;1.26]%) thus more closely
+agreeing with other studies. It is of importance therefore to prevent
+the spread of the virus among the elderly.</p>
+<p>Based on the proposed model we have also estimated the proportion of
+cumulatively infected people (i.e. the so-called attack rate) of 0.350%
+(90% credible interval (CI): [0.245&ndash;0.573]%) of the Slovene
+population suggesting that Slovenia had one of the smallest attack rates
+in Europe. It is also estimated that throughout the study period the
+proportion of unidentified cases, which can account for asymptomatic
+cases, was equal to 88% (90% CI [83-93]%). Unidentified cases can to
+some extent be attributed to asymptomatic or mild symptomatic cases but
+could also reflect the testing strategy of a country. Asymptomatic cases
+can <a href="https://doi.org/10.1001/jama.2020.2565">transmit the virus</a> causing
+difficulties in the <a href="https://doi.org/10.1038/s41591-020-0965-6">control of the
+epidemic</a>. Other studies have
+estimated that 40% to 45% of those infected with SARS-CoV-2 <a href="https://doi.org/10.7326/M20-3012">remain
+asymptomatic</a> with large differences
+between the studies (from
+<a href="https://doi.org/10.2807/1560-7917.ES.2020.25.10.2000180">17.9%</a> to
+<a href="https://doi.org/10.1101/2020.04.12.20059618">87.9%</a>). A large estimate
+for Slovenia might be a consequence of the fact that people with mild
+symptoms during the first wave were instructed to self-isolate and were
+in large majority not tested for SARS-CoV-2.</p>
+<p>We can thus conclude that the proposed methodology can give us many
+measures that we are interested in when analyzing the development of the
+COVID-19 epidemic. The proposed framework is flexible and can be further
+extended to more data sources (if available) or other countries/regions
+(thus allowing for comparison between them). Additionally, with the
+predictions given for the number of patients in hospitals and intensive
+care units, policymakers could make data-driven decisions to potentially
+avoid overloading the capacities of the healthcare system.</p>
+<p>Although in this report we have focused on an earlier study period (up
+to June 3, 2020), estimates (and forecasts) for Slovenia have been
+provided for later times and they are still daily updated and shown on
+the following <a href="https://oblak8.mf.uni-lj.si/covid19/">link</a>. As a strong
+second wave of the COVID-19 pandemic is expected throughout Europe in
+autumn 2020, we believe that the proposed methodology can be used for
+monitoring the pandemic. New epidemiological findings for COVID-19 are
+still arriving and some of them have yet to be included in the model.
+Thus, further improvements are still possible and we would like to
+examine them in the near future.</p>
+<h1 id="this-article-is-based-on">This article is based on</h1>
+<p>Manevski, D., Ružić Gorenjec N., Kejžar N., Blagus, R. (2020). Modeling
+COVID-19 pandemic using Bayesian analysis with application to Slovene
+data. <em>Mathematical Biosciences,</em> 329, article 108466</p>
+<p>Manevski, D., Pohar Perme M., Blagus R. (2020). Estimation of the
+reproductive number and the outbreak size of SARS-CoV-2 in Slovenia.
+<em>Slovenian Medical Journal,</em> 89, pp. 1-12</p>
+<h1 id="about-the-authors">About the authors</h1>
+<p>Damjan Manevski, Faculty of Medicine, University of Ljubljana, Slovenia,
+damjan.manevski@mf.uni-lj.si</p>
+<p>assist. dr. Nina Ružić Gorenjec, Faculty of Medicine, University of
+Ljubljana, Slovenia, nina.ruzic@mf.uni-lj.si</p>
+<p>doc. dr. Nataša Kejžar, Faculty of Medicine, University of Ljubljana,
+Slovenia, natasa.kejzar@mf.uni-lj.si</p>
+<p>doc. dr. Rok Blagus, Faculty of Medicine, University of Ljubljana,
+Slovenia, rok.blagus@mf.uni-lj.si</p>
+<p>prof. dr. Maja Pohar Perme, Faculty of Medicine, University of
+Ljubljana, Slovenia, maja.pohar@mf.uni-lj.si</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
