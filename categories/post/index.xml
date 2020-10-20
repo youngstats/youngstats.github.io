@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>post on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/post/</link>
+    <link>/categories/post/</link>
     <description>Recent content in post on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://youngstats.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
-      <link>https://youngstats.github.io/post/2020/10/19/cugmas/</link>
-      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
+      <link>/post/2020/10/05/par_diggle/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/10/19/cugmas/</guid>
-      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
+      <guid>/post/2020/10/05/par_diggle/</guid>
+      <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
+In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
     </item>
     
     <item>
       <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
-      <link>https://youngstats.github.io/post/2020/10/14/mozgunov/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      <link>/post/2020/10/04/mozgunov/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/10/14/mozgunov/</guid>
+      <guid>/post/2020/10/04/mozgunov/</guid>
       <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
 A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
     </item>
     
     <item>
-      <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
-      <link>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
+      <link>/post/2020/10/01/cugmas/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</guid>
-      <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
-In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
+      <guid>/post/2020/10/01/cugmas/</guid>
+      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
     </item>
     
   </channel>

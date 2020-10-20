@@ -3,106 +3,100 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://youngstats.github.io/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/network/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/post/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/post/2020/10/19/cugmas/</loc>
-    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/post/2020/10/14/mozgunov/</loc>
-    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/clinical-trials/</loc>
-    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/categories/information-theory/</loc>
-    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</loc>
+    <loc>/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/categories/epidemiology/</loc>
+    <loc>/post/2020/10/05/par_diggle/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
+    <loc>/categories/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/tags/info/</loc>
+    <loc>/categories/epidemiology/</loc>
+    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/post/</loc>
+    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/spatial-statistics/</loc>
+    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/statistics/</loc>
+    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/10/04/mozgunov/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/clinical-trials/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/information-theory/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/network/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/10/01/cugmas/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/09/10/webinars/</loc>
     <lastmod>2020-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/categories/information/</loc>
+    <loc>/categories/webinars/</loc>
     <lastmod>2020-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/tags/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+    <loc>/categories/information/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/post/2020/09/10/hello-world/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+    <loc>/post/2020/09/01/welcome/</loc>
+    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/post/2020/09/10/webinars/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
-    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+    <loc>/seminars/</loc>
   </url>
   
   <url>
-    <loc>https://youngstats.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://youngstats.github.io/seminars/</loc>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

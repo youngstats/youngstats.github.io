@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>epidemiology on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/epidemiology/</link>
+    <link>/categories/epidemiology/</link>
     <description>Recent content in epidemiology on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://youngstats.github.io/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
-      <link>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</link>
+      <link>/post/2020/10/05/par_diggle/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</guid>
+      <guid>/post/2020/10/05/par_diggle/</guid>
       <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
 In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
     </item>

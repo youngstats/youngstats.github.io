@@ -2,62 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on YoungStatS</title>
-    <link>https://youngstats.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
-      <link>https://youngstats.github.io/post/2020/10/19/cugmas/</link>
-      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/19/cugmas/</guid>
-      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
-    </item>
-    
-    <item>
-      <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
-      <link>https://youngstats.github.io/post/2020/10/14/mozgunov/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/14/mozgunov/</guid>
-      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
-A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
-    </item>
     
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
-      <link>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</link>
+      <link>/post/2020/10/05/par_diggle/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/10/05/a-tale-of-two-parasites...one-statisticians-career-journey/</guid>
+      <guid>/post/2020/10/05/par_diggle/</guid>
       <description>Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.
 In 1972 I started working towards a PhD in the then-new field of spatial statistics, and fully expected to write a thesis on stochastic process models. Instead, I spent most of the next 12 years teaching statistics at the University of Newcastle upon Tyne, UK, but my development as a researcher was driven by two periods of sabbatical leave.</description>
     </item>
     
     <item>
-      <title>We&#39;re online</title>
-      <link>https://youngstats.github.io/post/2020/09/10/hello-world/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
+      <link>/post/2020/10/04/mozgunov/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/09/10/hello-world/</guid>
-      <description>Welcome to our blog! This website is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
+      <guid>/post/2020/10/04/mozgunov/</guid>
+      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
+A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
+    </item>
+    
+    <item>
+      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
+      <link>/post/2020/10/01/cugmas/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/10/01/cugmas/</guid>
+      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
     </item>
     
     <item>
       <title>Webinars</title>
-      <link>https://youngstats.github.io/post/2020/09/10/webinars/</link>
+      <link>/post/2020/09/10/webinars/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/09/10/webinars/</guid>
+      <guid>/post/2020/09/10/webinars/</guid>
       <description>YoungStatS Online Seminar
-We are delighted to announce the creation of the YoungStatS Online Seminar Series (YSOS)! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis. The Online Seminar Series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics
-Seminars will be held on Zoom on Tuesday at 8:30 am PT (10:30 am CT / 11:30 am ET / 5:30 pm CET).</description>
+We are delighted to announce the creation of the YoungStatS Webinar Series (YSW)! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS Webinar Series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to our blog!</title>
+      <link>/post/2020/09/01/welcome/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/09/01/welcome/</guid>
+      <description>Welcome to our blog! This website is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
     </item>
     
   </channel>
