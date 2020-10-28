@@ -149,7 +149,7 @@ reliable comparison</strong> between the selected treatment and standard of
 care.</p>
 </li>
 </ul>
-<h2 id="example-of-potential-benefit" class="unnumbered">Example of Potential Benefit</h2>
+<h2 id="example-of-potential-benefit">Example of Potential Benefit</h2>
 <p>To demonstrate the benefit from our proposal, consider a hypothetical
 clinical trial. Assume that there are 3 new treatments, A, B, and C to
 be compared against the SoC in a trial of 423 patients enrolled one
@@ -168,12 +168,12 @@ the best;</p>
 <p>These two goals are competing against each other as patients need to be
 assigned to other treatments to make sure C is best, but the new
 approach allows to balance these goals. Under a specific choice, our
-proposed criterion for the treatment $j$ is
-$$\Delta_j = \frac{\left(\hat{p}_j-1 \right)^2}{2 \hat{p}_j (1-\hat{p}_j)} \times n_j^{0.3}$$
+proposed criterion for the treatment <code>$j$</code> is
+<code>$$\Delta_j = \frac{\left(\hat{p}_j-1 \right)^2}{2 \hat{p}_j (1-\hat{p}_j)} \times n_j^{0.3}$$</code>
 which characterises how far the fraction of recovered patients given
-treatment $j$, $\hat{p}_j,$ is from the best possible probability of
-recovery, $p=1$, (numerator), taking into account the uncertainty around
-this estimate (denominator), and the number of patients, $n_j$, assigned
+treatment <code>$j$</code>, <code>$\hat{p}_j$</code>, is from the best possible probability of
+recovery, <code>$p=1$</code>, (numerator), taking into account the uncertainty around
+this estimate (denominator), and the number of patients, <code>$n_j$</code>, assigned
 to this treatment (multiplicator). The criterion is updated after the
 outcome for previous patient is known.</p>
 <p>The first goal will be measured via the chance to reliably claim that
@@ -186,7 +186,7 @@ average number of patients that have responded.</p>
 each;</p>
 </li>
 <li>
-<p>Randomising patients proportionally to the new criterion $\Delta_j$;</p>
+<p>Randomising patients proportionally to the new criterion <code>$\Delta_j$</code>;</p>
 </li>
 </ul>
 <p><img src="/post/2020/10/04/mozgunov/figure-new.png" alt="Chance to find that the the best treatment C is indeed better than theSoC, and the average number of patients responded under each of theapproaches."></p>
