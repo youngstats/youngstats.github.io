@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Making an Online Risk Calculator | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/r-package">R package</a>
+  
+     &hercon; <a href="/categories/risk-calculator">risk calculator</a>
+  
+     &hercon; <a href="/categories/random-forest">random forest</a>
+  
+  </div>
+
+  <h1><span class="title">Making an Online Risk Calculator</span></h1>
+
+  
+  <h3 class="author">Michael W. Kattan and Thomas A. Gerds
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>We first started making risk calculators with the website, <a href="nomograms.org">http://nomograms.org</a>.
+There are several here, and they are patient friendly.
+Later, we launched <a href="http://rcalc.ccf.org">rcalc.ccf.org</a>, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:</p>
+<div class="figure">
+<img src="/post/2020-11-11-online-risk-calc_files/figure-html/Figure1.png" alt="" />
+<p class="caption">Figure 1: Example of what risk calculator shows to the user. Note that there are two models, one for Dutasteride and one for No Dutasteride with different sets of predictor variables. For some outcomes there is an interval on the Dutasteride but no interval on the No Dutasteride predicted risk. This happens when a variable which is only included in the model Dutasteride model has a missing value.</p>
+</div>
+<p>If the user were to provide some of the values of the predictor variables that are currently missing, his 4-year risk of high-grade prostate cancer (which is currently at 17% on Dutasteride) might be as low as 7% or as high as 49%. Clearly, obtaining missing values to resolve this uncertainty should be pursued. The missing values will have less of an impact on his risk for a urinary tract infection.</p>
+<p>The need for a risk calculator begins with the subject matter expert. He or she needs to explain the decision-making context and the tradeoffs involved. Important questions to discuss are:</p>
+<ul>
+<li>Who will use the calculator and for what purpose?</li>
+<li>If a medical decision is based on the predicted risks: What are the benefits and harms?</li>
+<li>What types of outcome are predicted? (Uncensored, censored, censored with competing risk?)</li>
+<li>What are the important predictors of these outcomes? (Missing values?)</li>
+</ul>
+<p>Questions like those are best answered in collaboration with the subject matter expert. We have learned that making a risk calculator without involving a subject matter expert leads to a risk calculator that on one uses.</p>
+<p>The next steps are:</p>
+<ol style="list-style-type: decimal">
+<li>to evaluate and prepare the data sources</li>
+<li>to select candidate variables</li>
+<li>to establish a modeling strat (see Figure 2)</li>
+<li>to report the final model in form of a shiny app</li>
+</ol>
+<div class="figure">
+<img src="/post/2020-11-11-online-risk-calc_files/figure-html/Figure2.png" alt="" />
+<p class="caption">Figure 2: Flowchart: prediction modeling strategy</p>
+</div>
+<p>Our R-package riskRegression provides implementations of modeling algorithms for censored data with competing risks and the cross-validation performance as described here online. Here is sample code:</p>
+<pre class="r"><code># sample R-code
+library(riskRegression)
+library(survival)
+library(randomForestSRC)
+# simulate competing risk data
+set.seed(9)
+train.data &lt;- sampleData(n=472)
+test.data &lt;- sampleData(n=811)
+# combined cause-specific Cox regression
+fit1 &lt;- CSC(Hist(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9, data=train.data, cause=1)
+# random forest
+set.seed(1972)
+fit2 &lt;- rfsrc(Surv(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9,data=train.data)
+# prediction performance in independent test data 
+# could also do cross-validation of training data via argument split.method 
+x &lt;- Score(list(&quot;Conventional&quot;=fit1,&quot;Experimental&quot;=fit2),
+           data=test.data,
+           formula=Hist(time,event)~1,
+           cause=1,
+           times=c(1,5),
+           summary=c(&quot;risks&quot;,&quot;IPA&quot;),
+           plots=c(&quot;cali&quot;,&quot;roc&quot;))
+plotROC(x,times=5)</code></pre>
+<p><img src="/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-1.png" width="672" /></p>
+<pre class="r"><code>plotCalibration(x,times=5)</code></pre>
+<p><img src="/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-2.png" width="672" /></p>
+<p>The details of making an online risk calculator, how we deal with the many issues that arise, and many R-code examples, are described in our new book, available <a href="https://www.routledge.com/9781138384477">here</a></p>
+<p><img src="/post/2020-11-11-online-risk-calc_files/figure-html/Book.png" /></p>
+<p>This post is based on:</p>
+<p>Kattan, M. W., &amp; Gerds, T. A. (2020). A framework for the evaluation of statistical prediction models. Chest, 158(1), S29-S38. <a href="http://www.sciencedirect.com/science/article/pii/S0012369220304517">link</a></p>
+<div id="about-the-authors" class="section level3">
+<h3>About the authors</h3>
+<p><a href="https://publichealth.ku.dk/about-the-department/biostat/?pure=en/persons/323237">Thomas A. Gerds</a> is professor at the biostatistics unit at the University of Copenhagen. He is affiliated with the Danish Heart Foundation. He is author of several R-packages on CRAN and has taught statistics courses to non-statisticians for many years.</p>
+<p><a href="https://my.clevelandclinic.org/staff/5525-michael-kattan">Michael Kattan</a> is Chair of the Department of Quantitative Health Sciences at Cleveland Clinic. He is a Fellow of the American Statistical Association and has received two awards from the Society for Medical Decision Making: the Eugene L. Saenger Award for Distinguished Service, and the John M. Eisenberg Award for Practical Application of Medical Decision-Making Research.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</body>
+</html>
+
