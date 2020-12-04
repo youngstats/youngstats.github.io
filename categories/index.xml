@@ -6,10 +6,64 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Functional-Data-Analysis</title>
+      <link>/categories/functional-data-analysis/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/functional-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistical Process Monitoring</title>
+      <link>/categories/statistical-process-monitoring/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/statistical-process-monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>economic statistics</title>
+      <link>/categories/economic-statistics/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/economic-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>official statistics</title>
+      <link>/categories/official-statistics/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/official-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biostatistics</title>
+      <link>/categories/biostatistics/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/biostatistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>predictive models</title>
+      <link>/categories/predictive-models/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/predictive-models/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R package</title>
@@ -17,15 +71,6 @@
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/r-package/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random forest</title>
-      <link>/categories/random-forest/</link>
-      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/random-forest/</guid>
       <description></description>
     </item>
     

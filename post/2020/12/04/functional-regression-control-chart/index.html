@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
+ | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/functional-data-analysis">Functional-Data-Analysis</a>
+  
+     &hercon; <a href="/categories/statistical-process-monitoring">Statistical Process Monitoring</a>
+  
+  </div>
+
+  <h1><span class="title">Functional Regression Control Chart: a New Framework for Profile Monitoring
+</span></h1>
+
+  
+  <h3 class="author">Fabio Centofanti,  Antonio Lepore,  Alessandra Menafoglio,  Biagio Palumbo,  and Simone Vantini
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+<h1 id="introduction">Introduction</h1>
+<p>New statistical process control (SPC) methods have to be developed in
+order to handle more and more complex data, which are available because
+of the advent of new data acquisition technologies. In particular, in
+many practical situations the quality characteristic of a process can be
+modelled as a function defined on a compact domain, data of such kind
+are the foundation of a rapidly expanding area of statistics referred to
+as <em>functional data analysis</em> (FDA). SPC methods which allow monitoring
+and controlling such processes are known as <em>profile monitoring</em>
+techniques. As in the classical SPC (i.e., where data are scalars)
+profile monitoring control charts have the task of continuously
+monitoring the quality characteristic and of triggering a signal when
+assignable sources of variations (i.e., <em>special causes</em>) act on it.
+When this happens, the process is said to be out-of-control (OC). On the
+contrary, the process is said to be in-control (IC) when only normal
+sources of variation (i.e., <em>common causes</em>) apply.</p>
+<p>Often, measures of other functional covariates related to the quality
+characteristic are available. To this end, we propose a new control
+chart that continuously monitors the quality characteristic using
+information coming from the other functional covariates. The idea is to
+adjust the quality characteristic value in order to improve the accuracy
+and the effectiveness of the chart in identifying assignable sources of
+variations acting on the process. This chart is referred to as
+<em>functional regression control chart</em> (FRCC) due to the similarity to
+the <em>regression control chart</em>, which arises in the multivariate (non
+functional) context. The proposed methodology is implemented in the <code>R</code>
+package <code>funcharts</code> available at
+<a href="https://github.com/unina-sfere/funcharts">https://github.com/unina-sfere/funcharts</a>.</p>
+<h1 id="sec_2">The Functional Regression Control Chart Framework</h1>
+<p>The FRCC can be regarded as a general framework for profile monitoring
+that can be divided into three main steps. Firstly, (i) define a
+functional regression model to be fitted $$\label{eq_generalmodel}
+\tilde{Y}=g\left(\mathbf{\tilde{X}}\right)+\varepsilon,$$ where
+<code>$\tilde{Y}$</code> is the functional response variable, which represents the
+functional quality characteristic, and <code>$\varepsilon$</code> is a functional
+error term, both defined on the compact domain <code>$\mathcal{T}$</code>, <code>$g$</code> is a
+generic function of a vector <code>$\mathbf{\tilde{X}}$</code> of random functional
+covariates <code>$\tilde{X}_1,\dots,\tilde{X}_p$</code>, defined on the compact
+domain <code>$\mathcal{S}$</code>. Secondly, (ii) define the estimation method of the
+chosen model, and, thirdly (iii) define the monitoring strategy of the
+functional residual defined as $$\label{eq_generalresiduals}
+\tilde{e}=\tilde{Y}-\widehat{\tilde{Y}} ,$$ where <code>$\widehat{\tilde{Y}}$</code>
+is the fitted value of <code>$\tilde{Y}$</code>.</p>
+<p>In particular, to obtain a specific implementation of the FRCC, we
+assume that the covariates <code>$\mathbf{X}$</code> linearly influence the response
+<code>$Y$</code> through the <em>multivariate functional linear regression</em> model, that
+is $$\label{eq_lm}
+Y\left(t\right)=\int_{\mathcal{S}}\left(\mathbf{\beta}\left(s,t\right)\right)^{T}\mathbf{X}\left(s\right)ds+\varepsilon\left(t\right)\quad t \in \mathcal{T},$$
+where <code>$Y$</code> and <code>$\mathbf{X}$</code> are the standardized versions of <code>$\tilde{Y}$</code> and
+<code>$\tilde{\mathbf{X}}$</code>, and
+<code>$\mathbf{\beta}=\left(\beta_1,\dots,\beta_p\right)^{T}$</code> is the coefficient
+vector. An estimator <code>$\hat{\mathbf{\beta}}$</code> of the coefficient vector
+<code>$\mathbf{\beta}$</code> is obtained using <code>$n$</code> i.i.d. observations of the response
+and predictor variables, and considering the *multivariate functional principal component* or
+Karhunen&ndash;Loève decomposition of <code>$Y$</code> and
+<code>$\mathbf{X}$</code>. To monitor the residual <code>$\tilde e$</code>, we consider the Hotelling&rsquo;s <code>$T^{2}$</code>
+and the squared prediction error (<code>$SPE$</code>) control charts based on the
+scores of the functional principal component decomposition. The control
+limits are calculated using percentiles of the empirical distributions
+of the two statistics, estimated considering observations acquired under
+in-control conditions and an overall Type I error. This phase, along
+with the estimation of <code>$\mathbf{\beta}$</code>, will be
+referred to as Phase I. For a new observation, the residual and, thus,
+the <code>$T^{2}$</code> and <code>$SPE$</code> statistics are calculated and an alarm signal is
+issued if at least one statistic violets the control limits (Phase II).</p>
+<h1 id="sec_3">Real-case Study: Fuel Consumption Monitoring in the Shipping Industry</h1>
+<p>To demonstrate the potential and the applicability of the proposed
+control chart in practical situations, a real-case study in the shipping
+industry is presented. It addresses the issue of monitoring ship fuel
+consumption and, thus, <code>$\text{CO}_{\text{2}}$</code> emissions, which, in view of the dramatic
+climate change, is of great interest in the maritime field in the very
+last years. In particular, real data are collected from a Ro-Pax ship
+owned by the Italian shipping company Grimaldi Group linking two ports
+in the Mediterranean sea from December 2014 to October 2017.
+The following figure shows the
+315 profiles observed for the covariates and response.</p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/fig1.png" alt=""></p>
+<p>In particular, the <em>cumulative fuel consumption</em> (<code>$CFC$</code>) per each voyage
+is considered as the response variable, whereas, the <em>sailing time</em>
+(<code>$T$</code>), measured in hours (<code>$h$</code>), the <em>speed over ground</em> (<code>$SOG$</code>),
+measured in knots (<code>$kn$</code>), and the <em>longitudinal</em> and <em>transverse wind
+components</em> (<code>$W_{lo}$</code> and <code>$W_{tr}$</code>), measured in knots (<code>$kn$</code>), are
+assumed as the predictors.</p>
+<p>During February 2016 energy efficiency operations were performed that
+produced a shift in the response mean. In light of this, observations
+before energy efficiency operations are used in Phase I, whereas the
+remaining observations are used to perform Phase II. To evaluate the
+FRCC performance, two competitor profile monitoring schemes are
+considered. They consist of monitoring scores coming from a principal
+decomposition of the response by means of Hotelling&rsquo;s <code>$T^{2}$</code> and the
+<code>$SPE$</code> control charts (hereafter denoted as RESP control chart), and of
+monitoring the area under the response curve (hereafter denoted as INBA
+control chart). The performance of the three charts is evaluated by
+means of the <em>average run length</em> (<code>$\text{ARL}$</code>).</p>
+<p>In the following figure, each observation is plotted onto the FRCC control
+chart and the two competitor ones.</p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/fig2.png" alt=""></p>
+<p>By comparing the three charts, the responsiveness of the FRCC is
+evidently higher than that of the the INBA and the RESP control charts
+which signal a much lower number of OCs. In particular, for the FRCC the
+change in the response mean is almost exclusively captured by the
+<code>$T^{2}$</code> control chart, which means that dissimilarities between the
+Phase I and Phase II samples occur mostly in the space spanned by the
+retained principal components. Moreover, by looking at the following table,
+the estimated <code>$\text{ARL}$</code> (<code>$\widehat{\text{ARL}}$</code>) achieved by FRCC is at least a
+fourth of those achieved by the RESP and INBA control charts. This
+further confirms that the FRCC outperforms the competitor control
+charts.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FRCC</th>
+<th>RESP</th>
+<th>INBA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$\widehat{\text{ARL}}$</code></td>
+<td>2.07</td>
+<td>9.46</td>
+<td>11.28</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This article is based on</strong><br>
+Centofanti, Fabio, Antonio Lepore, Alessandra Menafoglio, Biagio
+Palumbo, and Simone Vantini. &quot;Functional Regression Control Chart.&quot;
+Technometrics (2020): 1-14, DOI:
+<a href="https://doi.org/10.1080/00401706.2020.1753581">https://doi.org/10.1080/00401706.2020.1753581</a>.</p>
+<h1 id="authors-biography" class="unnumbered">Authors&rsquo; biography</h1>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/Foto_fabio.jpg" alt="">
+<strong>Fabio Centofanti</strong> is a
+PhD student at the Department of Industrial Engineering of the
+University of Naples Federico II, Italy, <a href="mailto:fabio.centofanti@unina.it">fabio.centofanti@unina.it</a>. His research interests include
+functional data analysis and statistical process monitoring.</p>
+<p><!-- raw HTML omitted --></p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/Foto_lepore.png" alt="">
+<strong>Antonio Lepore</strong> is an
+Assistant Professor at the Department of Industrial Engineering of the
+University of Naples Federico II, Italy, <a href="mailto:antonio.lepore@unina.it">antonio.lepore@unina.it</a>. His main research interests
+include the industrial application of statistical techniques to the
+monitoring of complex measurement profiles from multi-sensor acquisition
+systems, with particular attention to renewable energy and harmful
+emissions.</p>
+<p><!-- raw HTML omitted --></p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/Foto_menafoglio.jpg" alt="">
+<strong>Alessandra Menafoglio</strong> is an Assistant Professor at MOX, Department of
+Mathematics, Politecnico di Milano, <a href="mailto:alessandra.menafoglio@polimi.it">alessandra.menafoglio@polimi.it</a>. Her research interests focus on the
+development of innovative statistical models and methods for the
+analysis and statistical process control of complex observations (e.g.,
+curves, images, functional signals), possibly characterized by spatial
+dependence.</p>
+<p><!-- raw HTML omitted --></p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/Foto_palumbo.png" alt="">
+<strong>Biagio Palumbo</strong> is an
+Associate Professor in &ldquo;Statistics for experimental and technological
+research&rdquo; at the Department of Industrial Engineering of the University
+of Naples Federico II, Italy, <a href="mailto:biagio.palumbo@unina.it">biagio.palumbo@unina.it</a>. His major research interests include
+reliability, design and analysis of experiments, statistical methods for
+process monitoring and optimization and data science for technology.</p>
+<p><!-- raw HTML omitted --></p>
+<p><img src="/post/2020-12-04-functional-regression-control-chart_files/Foto_vantini.png" alt="">
+<strong>Simone Vantini</strong> is
+Associate Professor of Statistics at the Politecnico di Milano, Italy, <a href="mailto:simone.vantini@polimi.it">simone.vantini@polimi.it</a>.
+He has been publishing widely in Functional and Object-Oriented Data
+Analysis. His current research interests include: permutation testing,
+nonparametric forecasting, process control, non-Euclidean data, and in
+general statistical methods and applications motivated by business or
+industrial problems.</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

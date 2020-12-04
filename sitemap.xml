@@ -4,11 +4,51 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/12/04/functional-regression-control-chart/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/functional-data-analysis/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/statistical-process-monitoring/</loc>
+    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/economic-statistics/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/official-statistics/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/12/03/abel/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/biostatistics/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,17 +58,12 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/categories/predictive-models/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/r-package/</loc>
-    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/random-forest/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url>
   

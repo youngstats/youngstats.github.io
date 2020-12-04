@@ -6,10 +6,30 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
+</title>
+      <link>/post/2020/12/04/functional-regression-control-chart/</link>
+      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/12/04/functional-regression-control-chart/</guid>
+      <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
+    </item>
+    
+    <item>
+      <title>Online cash register data in the measurement of retail trade turnover</title>
+      <link>/post/2020/12/03/abel/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/12/03/abel/</guid>
+      <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.
+Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
+    </item>
     
     <item>
       <title>Making an Online Risk Calculator</title>
