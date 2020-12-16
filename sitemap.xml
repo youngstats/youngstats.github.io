@@ -4,12 +4,42 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/12/15/icph/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/causality/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hidden-markov-models/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/latent-variables/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/post/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +49,6 @@
   
   <url>
     <loc>/categories/functional-data-analysis/</loc>
-    <lastmod>2020-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -104,11 +129,6 @@
   
   <url>
     <loc>/categories/epidemiology/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/post/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   

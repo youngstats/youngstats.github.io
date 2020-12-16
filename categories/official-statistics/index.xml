@@ -6,11 +6,7 @@
     <description>Recent content in official statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/official-statistics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/official-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Online cash register data in the measurement of retail trade turnover</title>
       <link>/post/2020/12/03/abel/</link>

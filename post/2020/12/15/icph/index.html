@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Causal discovery in the presence of discrete latent variables | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/causality">causality</a>
+  
+     &hercon; <a href="/categories/latent-variables">latent variables</a>
+  
+     &hercon; <a href="/categories/hidden-markov-models">hidden Markov models</a>
+  
+     &hercon; <a href="/categories/post">post</a>
+  
+  </div>
+
+  <h1><span class="title">Causal discovery in the presence of discrete latent variables</span></h1>
+
+  
+  <h3 class="author">Rune Christiansen and Jonas Peters
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+<p><em>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.</em></p>
+<p>Given a target variable <code>$Y$</code>, and a vector <code>$X = (X^1, \dots, X^d)$</code>  of <code>$d$</code> covariates, we are trying to infer the set <code>$S^* \subseteq \{1, \dots, d\}$</code> of observable causal parents of <code>$Y$</code>. There are many good reasons for being interested in causal predictors. One of them is the following well-known stability property: a regression model which regresses <code>$Y$</code> on all of its causal parents remains valid under arbitrary interventions on any variable other than <code>$Y$</code> itself. In cases where data are heterogeneous (e.g., in a time series setting), causal regression models can thus sometimes be used to obtain stable predictions across all different patterns of heterogeneity (e.g., across time). This stability property has been well-studied and is known under different names, e.g., invariance, autonomy or modularity <a href="#1">[2]</a>, <a href="#1">[3]</a>, <a href="#1">[4]</a>.</p>
+<p>In a setting without hidden variables, the invariance property has been exploited to recover (parts of) <code>$S^*$</code>: given data from a heterogeneous time series, one runs through all possible subsets <code>$S \subseteq \{1, \dots, d\}$</code> and checks whether the conditional of <code>$Y_t$</code> given <code>$X_t^S := (X_t^j)_{j \in S}$</code> remains invariant across time. If more than one set satisfies invariance, one outputs the intersection of all invariant sets; this algorithm is known as the ICP (&lsquo;Invariant Causal Prediction&rsquo;) algorithm <a href="#1">[1]</a>. Here, we extend ICP to allow for unobserved direct causes of <code>$Y$</code>.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="invariance-and-hidden-variables">Invariance and hidden variables</h3>
+<p>Let <code>$(\mathbf{X}, \mathbf{Y}, \mathbf{H}) = (X_t,Y_t,H_t)_{t=1}^n \in \mathbb{R}^{n \times (d+1+1)}$</code> come from a structural causal model (SCM). Assume there exists a set <code>$S^* \subseteq \{1, \dots, d\}$</code>, a function <code>$f$</code>, and i.i.d. variables <code>$(\varepsilon_t)_{t=1}^n \perp (\mathbf{X}, \mathbf{H})$</code>, such that for all <code>$t$</code>, the assignment for <code>$Y_t$</code> is given as</p>
+<p>$$
+Y_t := f(X_t^{S^*}, H_t, \varepsilon_t).
+$$</p>
+<p>All remaining structural assignments are allowed to vary across time. Our goal is to infer the unknown set <code>$S^*$</code> based on a sample from <code>$(\mathbf{X}, \mathbf{Y})$</code>. Due to the hidden variables <code>$H_t$</code> (whose distribution may vary over time), the conditional <code>$P_{Y_t \vert X_t^{S^*}}$</code> is not ensured to be time-invarariant. However, the set <code>$S^*$</code> satisifes a different form of invariance: using the law of total probability, it follows that for all <code>$x,t$</code>,</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>$$
+P_{Y_t \vert (X_t^{S^*} = x)} = \int \underbrace{P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}}_{\text{invariant in } t} P_{H_t \vert (X_t^{S^*} = x)} (dh).
+$$</p>
+<p>That is, <code>$P_{Y_t \vert (X_t^{S^*} = x)}$</code> is equal to a mixture of several distributions <code>$P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}$</code>, each of which is invariant in <code>$t$</code>, but with an associated mixture distribution <code>$P_{H_t \vert (X_t^{S^*} = x)}$</code> which may change across time. We refer to this property as <code>$h$</code>-invariance (for &lsquo;hidden-invariance&rsquo;). Ideally, we would like to directly exploit this property for causal discovery, by running through all subsets <code>$S \subseteq \{1, \dots, d\}$</code> and testing whether they satisfy <code>$h$</code>-invariance. To obtain statistical tests with any reasonable amount of power, we further impose the following simplifying assumptions. We assume that</p>
+<ul>
+<li>the hidden variables <code>$H_t$</code> take only few different values <code>$\{1, \dots, \ell\}$</code>, and</li>
+<li>for every <code>$h$</code>, <code>$f(\cdot, h, \cdot)$</code> is linear, and</li>
+<li>the noise variables <code>$\varepsilon_1, \dots, \varepsilon_n$</code> are Gaussian.</li>
+</ul>
+<p>Under these assumptions, the above integral reduces to a discrete sum of time-invariant linear Gaussian regressions. In other words, for <code>$S = S^*$</code>, the following null hypothesis holds true.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><code>\[H_{0,S}: \left\{ \begin{array}{l} \text{there exists } \theta = (\beta_j, \sigma_j^2)_{j=1}^\ell \text{ such that for all } t, P_{Y_t \vert X_t^S} \text{ is a mixture} \\ \text{of } \ell \text{ linear Gaussian regressions with regression parameters } \theta. \end{array} \right.\]</code></p>
+<p>Such mixtures of regressions are also known as &ldquo;switching regression&rdquo; models <a href="#1">[5]</a>, <a href="#1">[6]</a>. The above hypothesis specifies an invariance only in the mixing components of the model, while the mixing proportions are allowed to vary over time (this allows for the hidden variables to be heterogeneous). Given a family of statistical tests for <code>$(H_{0,S})_{S \subseteq \{1, \dots, d\}}$</code>, we can construct a causal discovery algorithm analogously to ordinary ICP.</p>
+<h3 id="algorithm-icph">Algorithm: ICPH</h3>
+<p>Our causal discovery algorithm ICPH (&lsquo;Invariant Causal Prediction in the presence of Hidden variables&rsquo;) operates in the following way.</p>
+<ul>
+<li>Use the sequential ordering of data to construct (disjoint) environments <code>$e_1 \cup \cdots \cup e_k = \{1, \dots, n \}$</code>.</li>
+<li>For each <code>$S \subseteq \{1, \dots, d \}$</code>, test <code>$H_{0,S}$</code> using the environments.</li>
+<li>Output the intersection <code>$\hat S := \bigcap_{S: H_{0,S} \text{ not rej.}} S$</code>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The main work is contained in the construction of valid tests of the hypotheses <code>$H_{0,S}$</code>. Given a candidate set <code>$S \subseteq \{1, \dots, d\}$</code>, we first fit a switching regression model to each environment <code>$e_1, \dots, e_k$</code> separately. For each environment, we then compute a joint confidence region for the vector <code>$\theta$</code> of regression parameters, and check whether all these regions have a non-empty intersection. We prove that this test obtains asymptotically valid level under mild assumptions. As a corollary, we directly obtain the asymptotic false discovery control of ICPH:</p>
+<p>$$\text{for any test level } \alpha \in (0,1), \text{ we have } \lim \inf_{n \to \infty} P(\hat S_n \subseteq S^*) \geq 1-\alpha.$$</p>
+<h3 id="example">Example</h3>
+<p>We now illustrate our method in the simple case where <code>$d=3$</code> and <code>$\ell=2$</code>. Here, the target variable <code>$Y_t$</code> is directly affected by <code>$X_t^2$</code> and by the binary latent variable <code>$H_t$</code>. The structural assignment for <code>$Y_t$</code> remains the same for all <code>$t$</code>, whereas some of the remaining assignments change continuously throughout time.</p>
+<p><img src="/post/2020-12-15-icph/h_invariance.jpeg" alt=""></p>
+<p>The left figure illustrates the causal structure among <code>$(X_t, Y_t, H_t)$</code> for each time point <code>$t$</code>. The node <code>$E$</code> denotes the &ldquo;environment variable&rdquo; and indicates which of the structural assignments change over time. The assignment for <code>$Y_t$</code> is the same for all observations, and the set <code>$S^* = \{2\}$</code> is therefore <code>$h$</code>-invariant. This can be seen in the plot on the right, which shows rolling-window estimates of the regression coefficients for the regression of <code>$Y_t$</code> onto each of the three predictors. Within both regimes <code>$H_t = 1$</code> and <code>$H_t = 2$</code> (corresponding to different background colors in the plot), the regression coefficient for <code>$X_t^2$</code> (green) is time-homogeneous. When regressing <code>$Y_t$</code> onto <code>$X_t^1$</code> or <code>$X_t^3$</code>, the regression coefficients change in a more complicated fashion.</p>
+<p>To infer <code>$S^*$</code>, our causal discovery algorithm now runs through all subsets <code>$S \subseteq \{1,2,3\}$</code>, and checks whether <code>$H_{0,S}$</code> holds true. In this example, the  results (assuming no test errors) are:</p>
+<p><img src="/post/2020-12-15-icph/icph_all.jpeg#center" alt=""></p>
+<p>so we correctly output <code>$\hat S = \{2\} \cap \{2,3\} = \{2\}$</code>. In general, we are not guaranteed to recover the full set <code>$S^*$</code>, but only a subset hereof.</p>
+<h3 id="empirical-results">Empirical results</h3>
+<p>We test our algorithm on simulated data. Below, we show results of a simulation study where <code>$X^1$</code> and <code>$X^2$</code> are the true causal parents of <code>$Y$</code>, and <code>$X^3$</code> is descendant of <code>$Y$</code>. For increasing sample size, we report, for each individual variable, the empirical frequency of inclusion in <code>$\hat S$</code>.</p>
+<p><img src="/post/2020-12-15-icph/emp_results.jpeg#center" alt=""></p>
+<p>Circles correspond to our method, while rectangles and triangles are two alternative methods that are included as baseline. Colored curves correspond to various model violations. As the sample size increases, ICPH tends to identify both causal parents <code>$X^1$</code> and <code>$X^2$</code>, while the false discovery rate (the rate of inclusion of <code>$X^3$</code>) is controlled at level <code>$\alpha = 0.05$</code>. Our algorithm is robust against most considered model violations. If we allow the hidden variable to be continuous (purple curve), our method mostly returns the uninformative output <code>$\hat S = \emptyset$</code>.</p>
+<h3 id="reconstruction-of-the-hidden-variables">Reconstruction of the hidden variables</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>By assumption, the causal effect <code>$X_t^{S^*} \to Y_t$</code> depends on the value of the hidden variable <code>$H_t$</code>. For example, <code>$X_t^{S^*}$</code> may have a strong positive impact on <code>$Y_t$</code> for <code>$H_t = 1$</code>, while <code>$X_t^{S^*}$</code> and <code>$Y_t$</code> are rendered entirely independent for <code>$H_t=1$</code>. In some applications, these differences in causal dependence are of particular interest in themselves, because they signify fundamentally different &lsquo;states&rsquo; or &lsquo;regimes&rsquo; of the underlying system. In such cases, we may thus want to reconstruct the hidden variables. If the true set of causal parents is known (e.g., because there is only one invariant set), we can estimate <code>$\hat H_t = \operatorname{argmax}_{j \in \{1, \dots, \ell\}}  \hat P(H_t = j \, \vert \, X_t^{S^*}, Y_t)$</code> directly from the fitted switching regression model <code>$\hat P$</code> for <code>$Y_t \, \vert \, X_t^{S^*}$</code>. In the main paper, we apply this reconstruction approach to a real-world data set related to photosynthetic activity of terrestrial ecosystems, where the hidden variable corresponds to the vegetation type.</p>
+<h3 id="this-article-is-based-on">This article is based on</h3>
+<p>R. Christiansen and J. Peters. <a href="https://jmlr.org/papers/v21/19-407.html">Switching regression models and causal inference in the presence of discrete latent variables</a>. <em>Journal of Machine Learning Research</em>, 21(41):1−46, 2020.</p>
+<h3 id="about-the-authors">About the authors</h3>
+<p><a href="https://www.math.ku.dk/english/staff/?pure=en/persons/525143">Rune Christiansen</a> is a postdoc at the Department of Mathematical Sciences, University of Copenhagen. He obtained his PhD degree from the same institution.</p>
+<p><a href="http://web.math.ku.dk/~peters/">Jonas Peters</a> is a professor at the Department of Mathematical Sciences, University of Copenhagen. Previously, he has been at the MPI for Intelligent Systems in Tuebingen and the Seminar for Statistics, ETH Zurich.</p>
+<h3 id="references">References</h3>
+<p><!-- raw HTML omitted -->[1]<!-- raw HTML omitted -->  J. Peters, P. Bühlmann, and N. Meinshausen. Causal inference by using invariant prediction: identification and confidence intervals. <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em>, 78(5):947–1012, 2016.</p>
+<p><!-- raw HTML omitted -->[2]<!-- raw HTML omitted --> T. Haavelmo. The probability approach in econometrics. <em>Econometrica</em>, 12:S1–S115 (supplement), 1944.</p>
+<p><!-- raw HTML omitted -->[3]<!-- raw HTML omitted --> J. Aldrich. Autonomy. <em>Oxford Economic Papers</em>, 41:15–34, 1989.</p>
+<p><!-- raw HTML omitted -->[4]<!-- raw HTML omitted --> J. Pearl. <em>Causality: Models, Reasoning, and Inference</em>. Cambridge University Press, New York, USA, 2nd edition, 2009.</p>
+<p><!-- raw HTML omitted -->[5]<!-- raw HTML omitted --> R. De Veaux. Mixtures of linear regressions. <em>Computational Statistics &amp; Data Analysis</em>, 8 (3):227–245, 02 1989.</p>
+<p><!-- raw HTML omitted -->[6]<!-- raw HTML omitted --> S. Goldfeld and R. Quandt. The estimation of structural shifts by switching regressions. <em>Annals of Economic and Social Measurement</em>, Volume 2, number 4, pages 475–485. NBER, 1973.</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
