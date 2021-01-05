@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>The Mulitple Latent Block Model for mixed data | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/co-clustering">co-clustering</a>
+  
+     &hercon; <a href="/categories/latent-block-model">latent block model</a>
+  
+  </div>
+
+  <h1><span class="title">The Mulitple Latent Block Model for mixed data</span></h1>
+
+  
+  <h3 class="author">Margot Selosse,  Julien Jacques,  Christophe Biernacki
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<style>
+body {
+text-align: justify}
+</style>
+<div id="abstract" class="section level1">
+<h1>Abstract</h1>
+<p>Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account. For this purpose, we present how to use the Multiple Latent Block Model <span class="citation">(Robert 2017)</span> on mixed data.</p>
+</div>
+<div id="multiple-latent-block-model-for-mixed-data" class="section level1">
+<h1>Multiple Latent Block Model for mixed data</h1>
+<p>The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) <span class="citation">(Nadif and Govaert 2008)</span>, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in <span class="math inline">\(D\)</span> matrices <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span> such that <span class="math inline">\(D\)</span> is the number of kinds of data. For the sake of simplicity, we consider here that <span class="math inline">\(\boldsymbol{x}\)</span> has two different kinds of features (i.e <span class="math inline">\(D=2\)</span>). The MLBM performs a co-clustering such that the row-clusters partition is the same for all <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>, and that there is a column-clusters partition for every <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>.</p>
+<center>
+<p><img src="/post/2021-01-05-mlbm/images/example-mlbm-notations.svg" class="class" style="width:70.0%" /></p>
+<p>Example of a mixed-data matrix with two different kinds of features co-clustered with the MLBM.</p>
+</center>
+<div id="notations" class="section level2">
+<h2>Notations</h2>
+<p>We consider that the data matrix <span class="math inline">\(\boldsymbol{x}\)</span> has two different kinds of features, we note:</p>
+<ul>
+<li>the data matrix <span class="math inline">\(\boldsymbol{x}=(\boldsymbol{x}^{(1)},\boldsymbol{x}^{(2)})\)</span>, and we will refer to <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span> in the general case (with <span class="math inline">\(d \in \{1,2\}\)</span>),</li>
+<li><span class="math inline">\(N\)</span> rows, <span class="math inline">\(J_1\)</span> columns for <span class="math inline">\(\boldsymbol{x}^{(1)}\)</span> and <span class="math inline">\(J_2\)</span> columns for <span class="math inline">\(\boldsymbol{x}^{(2)}\)</span>,</li>
+<li><span class="math inline">\(G\)</span> row-clusters, <span class="math inline">\(H_1\)</span> column-clusters for <span class="math inline">\(\boldsymbol{x}^{(1)}\)</span> and <span class="math inline">\(H_2\)</span> column-clusters for <span class="math inline">\(\boldsymbol{x}^{(2)}\)</span>,</li>
+<li>the latent variables of the model <span class="math inline">\(\boldsymbol{v},\boldsymbol{w}=(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)})\)</span>:
+<ul>
+<li><span class="math inline">\(\boldsymbol{v}\)</span> is the row partition matrix of size <span class="math inline">\((N \times G)\)</span> that indicates the cluster assignments, i.e <span class="math inline">\(\boldsymbol{v}_i = (v_{i1},\ldots,v_{iG})\)</span> with <span class="math inline">\(v_{ig}=1\)</span> when observation <span class="math inline">\(i\)</span> belongs to row cluster <span class="math inline">\(g\)</span> and <span class="math inline">\(v_{ig}=0\)</span> otherwise.</li>
+<li><span class="math inline">\(\boldsymbol{w}^{(d)}\)</span> is the column partition matrix of size <span class="math inline">\((J_d \times H_d)\)</span> that indicates the cluster assignments, i.e <span class="math inline">\(\boldsymbol{w}^{(d)}_j = (w_{j1},\ldots,w_{jH_d})\)</span> with <span class="math inline">\(w_{jh}^{(d)}=1\)</span> when feature <span class="math inline">\(j\)</span> belongs to column cluster <span class="math inline">\(h\)</span> and <span class="math inline">\(w_{jh}^{(d)}=0\)</span> otherwise,</li>
+</ul></li>
+<li>a block refers to the crossing of a row-cluster and of a column-cluster.</li>
+</ul>
+<p>Finally, for better readability, we sometimes highlight:</p>
+<ul>
+<li>the latent variable and parameters that relate to row-clusters in blue (e.g <span class="math inline">\(\boldsymbol{v}= \color{blue}{\boldsymbol{v}}\)</span>),</li>
+<li>the latent variable and parameters that relate to column-clusters in green (e.g <span class="math inline">\(\boldsymbol{w}= \color{ForestGreen}{\boldsymbol{w}}\)</span>),</li>
+<li>the parameters that relate to blocks in red (e.g <span class="math inline">\(\boldsymbol{\alpha}_{gh}= \color{red}{\boldsymbol{\alpha}_{gh}}\)</span>).</li>
+</ul>
+</div>
+<div id="assumptions" class="section level2">
+<h2>Assumptions</h2>
+<p>The MLBM relies on several assumptions. The first one states that the <span class="math inline">\(2\)</span> data matrices are conditionally independent of the row and column partitions:</p>
+<p><span class="math display">\[
+ p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w})
+ = p(\boldsymbol{x}^{(1)}|\boldsymbol{v},\boldsymbol{w}^{(1)}) \times p(\boldsymbol{x}^{(2)}|\boldsymbol{v},\boldsymbol{w}^{(2)})
+\]</span>.</p>
+<p>In addition, the univariate random variables <span class="math inline">\(x_{ij}^{(d)}\)</span> are assumed to be conditionally independent on partitions <span class="math inline">\(\boldsymbol{v}\)</span> and <span class="math inline">\(\boldsymbol{w}^{(d)}\)</span>. Thus, the conditional probability function of <span class="math inline">\(\boldsymbol{x}\)</span> given <span class="math inline">\(\boldsymbol{v}\)</span> and <span class="math inline">\((\boldsymbol{w}^{(d)})_d\)</span> is expressed as:</p>
+<p><span class="math display">\[
+p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w};\boldsymbol{\alpha})
+=
+\underset{i,j,g,h}{\prod}
+p(x_{ij}^{(1)}; \alpha_{gh}^{(1)})^{v_{ig}w_{jh}^{(1)}}
+p(x_{ij}^{(2)}; \alpha_{gh}^{(2)})^{v_{ig}w_{jh}^{(2)}},
+\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{\alpha}=(\boldsymbol{\alpha}^{(d)})_d\)</span> with <span class="math inline">\(\boldsymbol{\alpha}^d=(\alpha_{gh}^{(d)})_{g,h}\)</span> is the distribution parameters of block <span class="math inline">\((g,h)\)</span> of matrix <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>. It depends on the distribution one uses to model the data. For instance, in the case of the Gaussian distribution, <span class="math inline">\(\alpha_{gh}^{(d)} = (\boldsymbol{\mu}^{(d)}_{gh}, \boldsymbol{\Sigma}^{(d)}_{gh})\)</span>. Let us note too that the chosen distributions can be different for each kind of data.</p>
+<p>Second, the latent variables <span class="math inline">\(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)}\)</span> are assumed to be independent, so: <span class="math inline">\(p(\boldsymbol{v},\boldsymbol{w};\boldsymbol{\gamma},\boldsymbol{\rho}) = p(\boldsymbol{v};\boldsymbol{\gamma})p(\boldsymbol{w}^{(1)};\boldsymbol{\rho}^{(1)})p(\boldsymbol{w}^{(2)};\boldsymbol{\rho}^{(2)})\)</span>, where:</p>
+<p><span class="math display">\[
+p(\boldsymbol{v};\boldsymbol{\pi}) = \underset{i,g}{\prod}\pi_g^{v_{ig}}
+\]</span> and</p>
+<p><span class="math display">\[
+p(\boldsymbol{w}^{(d)};\boldsymbol{\rho}^{(d)}) = \underset{j,h}{\prod}{\rho_h^{(d)}}^{w_{jh}^{(d)}}
+\]</span>.</p>
+<p>So, if <span class="math inline">\(V\)</span> and <span class="math inline">\((W^{(d)})_d\)</span> are the sets of all possible partitions <span class="math inline">\(\boldsymbol{v}\)</span> and <span class="math inline">\((\boldsymbol{w}^{(d)})_d\)</span>, the probability density function <span class="math inline">\(p(\boldsymbol{x}; \boldsymbol{\theta})\)</span> is written:
+<span class="math display">\[
+p(\boldsymbol{x};\boldsymbol{\theta})=
+\underset{(\color{blue}{\boldsymbol{v}},\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\in V\times W^{(1)} \times W^{(2)}}{\sum}
+\underset{i,g}{\prod}\color{blue}{\pi_g^{v_{ig}}}
+\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(1)}_h}^{w_{jh}^{(d)}}}
+\underset{i,j,g,h}{\prod}p(x_{ij}^{(1)}; \color{red}{\alpha_{gh}^{(1)}})^{\color{red}{v_{ig}w_{jh}^{(1)}}}
+\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(2)}_h}^{w_{jh}^{(2)}}}
+\underset{i,j,g,h}{\prod}p(x_{ij}^{(2)}; \color{red}{\alpha_{gh}^{(2)}})^{\color{red}{v_{ig}w_{jh}^{(2)}}}.
+\]</span></p>
+</div>
+<div id="generative-process" class="section level2">
+<h2>Generative process</h2>
+<p>The generative process of a cell <span class="math inline">\(x^{(d)}_{ij}\)</span> of the matrix is as follows:
+<span class="math display">\[
+\begin{align*}
+        &amp;\color{blue}{\boldsymbol{v}_i} \sim \mathcal{M}(1,\color{blue}{\boldsymbol{\pi}}), \\
+        &amp;\color{ForestGreen}{\boldsymbol{w}^{(d)}_j} \sim \mathcal{M}(1,\color{ForestGreen}{\boldsymbol{\rho^{(d)}}}),  \\
+        &amp;x_{ij}^{(d)} | \color{red}{v_{ig}=1, w_{jh}^{(d)}=1} \sim  f(x_{ij}^{(d)};\color{red}{\boldsymbol{\alpha}^{(d)}_{gh}}).
+\end{align*}
+\]</span></p>
+</div>
+<div id="inference-of-the-model" class="section level2">
+<h2>Inference of the model</h2>
+<p>Once we defined the generative process of a data set, the goal is to estimate the parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> of this generative process according to the data, and also to deduce the latent variables from them. In this case, we need to compute <span class="math inline">\(\boldsymbol{\theta}=(\color{blue}{\boldsymbol{\pi}}, \color{ForestGreen}{\boldsymbol{\rho}^{(1)}}, \color{ForestGreen}{\boldsymbol{\rho}^{(2)}}, \color{red}{\boldsymbol{\alpha}^{(1)}_{gh}}, \color{red}{\boldsymbol{\alpha}^{(2)}_{gh}})\)</span>, and to deduce the row partitions <span class="math inline">\(\color{blue}{\boldsymbol{v}}\)</span> and column partitions <span class="math inline">\((\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\)</span>. In the Maximum Likelihood Estimation framework, the Expectation-Maximisation (EM) algorithm is often used in such contexts with parameters and latent variables to be estimated. Unfortunately, the Expectation step is not tractable because it requires the calculation of many terms, which is not feasible in a reasonable amount of time. The Multiple Latent Block Model and more generally the methods based on the Latent Block Model use variants of the EM-algorithm such as the Stochastic-EM-Gibbs algorithm.</p>
+</div>
+</div>
+<div id="use-case-analysing-a-health-quality-survey-in-oncology" class="section level1">
+<h1>Use-case: analysing a health quality survey in oncology</h1>
+<p>The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions”. In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell <span class="math inline">\((i, j)\)</span> is the response of patient <span class="math inline">\(i\)</span> to question <span class="math inline">\(j\)</span>. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?”, if the patient answers “Not at all”, the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.</p>
+<center>
+<p><img src="/post/2021-01-05-mlbm/images/ads-original.png" class="class" style="width:50.0%" /></p>
+<p>Questionnaire’s graphical representation: patients are projected onto rows and questions are projected onto columns.</p>
+</center>
+<p>As explained previously, the MLBM separates the features that are considered as different, and simultaneously performs a clustering on the rows and a clustering on the columns of each isolated matrix. The figure below shows the result for our use-case. We note <span class="math inline">\(5\)</span> row-clusters, i.e. <span class="math inline">\(5\)</span> patients profiles. Furthermore, the column-clusters helps summarising these profiles: by grouping the questions that have the same behaviour with respect to the row-clusters it is easier to distinguish the differences between these profiles.</p>
+<center>
+<p><img src="/post/2021-01-05-mlbm/images/ads-coclust.png" class="class" style="width:70.0%" /></p>
+<p>Questionnaire co-clustered with the MLBM.</p>
+</center>
+</div>
+<div id="remarks" class="section level1">
+<h1>Remarks</h1>
+<p>This blog post is based on <span class="citation">(Selosse, Jacques, and Biernacki 2020)</span> and <span class="citation">(Selosse et al. 2019)</span>. Furthermore, The R package <code>mixedClust</code> implements the Multiple Latent Block Model and will be available on the CRAN soon.</p>
+<p>About the authors:</p>
+<ul>
+<li><img src="/post/2021-01-05-mlbm/images/pic-ms.jpeg" class="class" style="vertical-align: text-bottom;width: 10%" /> <strong>Margot Selosse</strong> received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.</li>
+<li><img src="/post/2021-01-05-mlbm/images/pic-jj.jpg" class="class" style="vertical-align: text-bottom;width: 10%" /> <strong>Julien Jacques</strong> received his Ph.D. degree in applied mathematics from University of Grenoble, France. In 2006 he joined University of Lille where he held the position of Associate Professor. In 2014, he joined University of Lyon as Full Professor in Statistics. His current research in statistical learning concerns the design of clustering algorithm for functional data, ordinal data and mixed-type data. He is a member of the French Society of Statistics.</li>
+<li><strong>Christophe Biernacki</strong> is a Scientific Deputy at Inria Lille and Scientific Head of the Inria MODAL research team, and received his Ph.D. degree from Université de Compiègne in 1997. His research interests are focused on model-based and model-free clustering of heterogeneous data.</li>
+</ul>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-nadif08">
+<p>Nadif, Mohamed, and Gérard Govaert. 2008. “Algorithms for Model-Based Block Gaussian Clustering.” <em>International Conference on Data Mining</em>.</p>
+</div>
+<div id="ref-robert17">
+<p>Robert, Valérie. 2017. “Classification Croisée Pour L’analyse de Bases de Données de Grandes Dimensions de Pharmacovigilance.” Université Paris-Sud.</p>
+</div>
+<div id="ref-selosse20">
+<p>Selosse, Margot, Julien Jacques, and Christophe Biernacki. 2020. “Model-Based Co-Clustering for Mixed Type Data.” <em>Computational Statistics &amp; Data Analysis</em> 144: 106866.</p>
+</div>
+<div id="ref-selosse19">
+<p>Selosse, Margot, Julien Jacques, Christophe Biernacki, and Cousson-Gélie Florence. 2019. “Analysing a Quality-of-Life Survey by Using a Coclustering Model for Ordinal Data and Some Dynamic Implications.” <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 68 (5): 1327–49.</p>
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

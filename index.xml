@@ -6,7 +6,16 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Mulitple Latent Block Model for mixed data</title>
+      <link>/post/2021/01/05/mlbm/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021/01/05/mlbm/</guid>
+      <description>body { text-align: justify}  Abstract Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account.</description>
+    </item>
+    
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
       <link>/post/2020/12/15/icph/</link>
@@ -100,7 +109,7 @@ A traditional approach to answer this question is to randomise equal numbers of 
       
       <guid>/post/2020/09/10/webinars/</guid>
       <description>One World YoungStatS webinar
-We are delighted to announce the creation of the One World YoungStatS Webinar Series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS Webinar Series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
+We are delighted to announce the creation of the One World YoungStatS Webinar series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS webinar series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
     </item>
     
     <item>
