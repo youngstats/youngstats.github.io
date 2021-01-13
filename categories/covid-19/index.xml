@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>covid-19 on YoungStatS</title>
-    <link>/categories/covid-19/</link>
+    <link>https://youngstats.github.io/categories/covid-19/</link>
     <description>Recent content in covid-19 on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/covid-19/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/covid-19/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data</title>
-      <link>/post/2020/10/01/modeling-covid-19/</link>
+      <link>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/10/01/modeling-covid-19/</guid>
+      <guid>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</guid>
       <description>As the COVID-19 pandemic spread across the world at the beginning of 2020, statistically modeling its development became of big interest. The main focus of this work was to analyze the spread of the disease and its main characteristics for Slovenia using publicly available COVID-19 data. Our work takes a Bayesian semiparametric approach using which we estimate some of the main measures of interest for the pandemic (e.g. the reproduction number $R_{t}$) and give accurate forecasts of important indicators for the following days.</description>
     </item>
     
