@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Machine learning for causal inference that works | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/machine-learning">machine-learning</a>
+  
+     &hercon; <a href="/categories/casual-inference">casual inference</a>
+  
+  </div>
+
+  <h1><span class="title">Machine learning for causal inference that works</span></h1>
+
+  
+  <h3 class="author">Richard Hahn
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>I’ve kindly been invited to share a few words about a recent <a href="https://projecteuclid.org/euclid.ba/1580461461">paper</a> my colleagues and I published in <em>Bayesian Analysis</em>: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called <a href="https://github.com/jaredsmurray/bcf">bcf</a>.</p>
+<p>The goal of this post is to work through a simple toy example to illustrate the strengths of BCF. Through this example I hope to explain what I mean when I say that BCF is “machine learning for causal inference that works”.</p>
+<div id="problem-setting" class="section level3">
+<h3>Problem setting</h3>
+<p>Suppose we want to estimate a possibly heterogeneous treatment effect of a binary treatment variable. This means, for example, that we want to know if a new drug reduces the duration of a headache and we think maybe the drug works better for some people and worse for other people. In addition to the question “how well (if at all) does the drug work?” we also want to know if the people for whom it works better can be characterized in terms of observable attributes, perhaps age, gender, or ethnicity. People either get the drug or not (we do not consider differing doses). Unfortunately, who gets the drug is not randomized, which complicates things. For example, if people who take the drug happen to be the ones with longer duration headaches (on average), that could skew our impression of how effective the drug is.</p>
+<p>Although we do not have a randomized sample, let’s assume we are lucky enough to have the next best thing, which is that we observe all the attributes of each patient that affect how likely they are to have taken the drug. It is well known that access to these factors allows us to correctly estimate the treatment effect by turning the causal inference problem into a regression problem (aka supervised learning). Specifically, in that case the treatment effect can be expressed as</p>
+<p><span class="math display">\[
+\tau(x_i) = \mbox{E}(Y \mid Z = 1, X = x_i) - \mbox{E}(Y \mid Z = 0, X = x_i)
+\]</span></p>
+<p>where <span class="math inline">\(Y\)</span> is the response or outcome variable (the duration of headache), <span class="math inline">\(Z\)</span> is the treatment assignment (did the patient take the drug or not), and <span class="math inline">\(x_i\)</span> is a vector of attributes of patient <span class="math inline">\(i\)</span>. This difference is called the conditional average treatment effect, or CATE; “conditional” refers to the fixed <span class="math inline">\(x_i\)</span> vector, “average” refers to the expectation over <span class="math inline">\(Y\)</span>, and “treatment effect” refers to the difference between to treated (<span class="math inline">\(Z = 1\)</span>) and untreated (<span class="math inline">\(Z = 0\)</span>), or control, groups. If this quantity differs for distinct <span class="math inline">\(x_i\)</span>, we say that there are “heterogeneous” effects.</p>
+<p>The good news is that we have many methods that efficiently estimate conditional expectations in the difference above. The bad news, which wasn’t widely appreciated even just a few years ago, is that those methods don’t work as well as they should in terms of estimating the CATEs. Let’s take a look at why that is.</p>
+</div>
+<div id="simple-machine-learning-cate-estimators-are-high-variance" class="section level3">
+<h3>Simple machine learning CATE estimators are high-variance</h3>
+<p>A natural thing to do when faced with estimating two conditional expectations is simply to estimate them separately, training two separate machine learning models using the control group data and the treated group data individually. With enough data, this approach works just fine, but if the conditional expectation functions underlying the data are complicated relative to the available sample size, this approach can be highly unstable. This instability arises because fitting the two functions completely separately provides no control, or <em>regularization</em>, over the implied fluctuations in the CATE (the difference between the two conditional mean functions).</p>
+<p>It is well-known that for good nonparametric function estimation, effective regularization is necessary to prevent overfitting; this is the main insight from decades of supervised machine learning. But in causal inference, the goal is not estimating the conditional expectations themselves, but rather their difference. Without penalizing complexity of <span class="math inline">\(\tau(x)\)</span> itself, one runs the risk of overfitting the treatment effects! And that’s exactly what happens in our example below.</p>
+<p>This excessive variability has a fairly simple fix, which is to regularize the difference the same way you would penalize the complexity of an unknown function:
+<span class="math display">\[
+\mbox{min}_{f_0, f_1}\;\;\;\; \frac{1}{n_0} \sum_{i: z_i = 0}||y_i - f_0(x_i)||^2_2 + \frac{1}{n_1} \sum_{i: z_i = 1} ||y_i - f_1(x_i)||^2_2 + \lambda_0||f_0|| + \lambda_1||f_1|| + \lambda_{\tau}||f_1 - f_0||
+\]</span></p>
+<p>where <span class="math inline">\(\lambda_0\)</span>, <span class="math inline">\(\lambda_1\)</span>, and <span class="math inline">\(\lambda_{\tau}\)</span> are regularization tuning parameters and <span class="math inline">\(||\cdot||\)</span> denotes a measure of the complexity of a function.</p>
+</div>
+<div id="a-new-problem-regularization-induced-confounding-ric" class="section level3">
+<h3>A new problem: regularization induced confounding (RIC)</h3>
+<p>Incorporating the <span class="math inline">\(||f_1 - f_0||\)</span> penalty solves one problem but introduces a new, subtler, one. Adding a constant to <span class="math inline">\(f_1\)</span> does not increase the complexity of <span class="math inline">\(f_1\)</span> or <span class="math inline">\(f_1 - f_0\)</span>, but doing so may allow the complexity of <span class="math inline">\(f_0\)</span> to be <em>decreased</em> without worsening the fit to the data (the first two terms of the objective function above). In practical terms, this means that the new regularization term we just introduced might have the unintended effect of inflating our treatment effect estimates!</p>
+<p>When specifically might this happen? It can happen when the true <span class="math inline">\(f_0\)</span> is quite complex and the probability of being treated is a monotone function of <span class="math inline">\(f_0\)</span>:</p>
+<p><span class="math display">\[
+\mbox{Pr}(Z = 1 \mid x) = \pi(x) = \pi(f_0(x))
+\]</span></p>
+<p>and <span class="math inline">\(\frac{\partial \pi}{\partial f_0}\)</span> never changes sign. Under this assumption, the treated observations in our data would tend to have higher outcome values, which our model could chalk up to a treatment effect without needing to learn the complicated pattern of <span class="math inline">\(f_0\)</span> because it is implicitly encoded in the treatment assignment variable, <span class="math inline">\(z\)</span>.</p>
+<p>Is this situation plausible? Well, in our headache drug example, it would mean that people are more likely to take a drug if they are likely to have a very long lasting headache if they <em>didn’t</em> take it. If people (or their doctors) expect the drug to help, this assumption makes total sense! We call these sorts of situations <em>targeted selection</em>.</p>
+<p>Solving the RIC issue turns out to be pretty easy, too: simply add an estimate of <span class="math inline">\(\pi(x)\)</span> as a control variable. This allows the model to learn the true <span class="math inline">\(f_0\)</span> with a <em>simple</em> representation based on the extra feature, in the event that targeted selection is occurring.</p>
+</div>
+<div id="example" class="section level3">
+<h3>Example</h3>
+<p>Now let’s work through a simple example illustrating these ideas. We will consider a nonlinear but elementary conditional expectation function and simulate our treatment assignment variable according to targeted selection.
+<span class="math display">\[
+\begin{split}
+\tau(x) &amp;= -1 + x\\
+f_0(x) &amp;= 2 \{\sin(v x) + 1\}\\
+f_1(x) &amp;= f_0(x) + \tau(x) = -1 + x + 2 \{\sin(v x) + 1\}\\
+\pi(x) &amp;= f_0(x)/5\\
+y_i &amp;= f_0(x_i) + \tau(x_i) + \sigma\epsilon_i
+\end{split}
+\]</span>
+where <span class="math inline">\(\epsilon_i\)</span> are independent and identically distributed standard normal random variables. Our sample consists of <span class="math inline">\(n\)</span> evenly spaced observations <span class="math inline">\(x\)</span> on the unit interval. This data generating process (DGP) guarantees that the probability of treatment ranges between 0.1 to 0.9. The parameter <span class="math inline">\(v\)</span> governs the “complexity” of <span class="math inline">\(f_0\)</span> and <span class="math inline">\(f_1\)</span>, while the parameter <span class="math inline">\(\sigma\)</span> governs the statistical difficulty of the learning problem.</p>
+<pre class="r"><code># set sample size and set control variable values
+n = 1000
+x = seq(0,1,length.out = n)
+
+# set the problem difficulty
+v = 30
+kappa = 2
+
+# define functions
+mu = function(x){2*(sin(v*x)+1)}
+tau = function(x){-1 + x}
+pi = function(x){mu(x)/5 + 0.1}
+
+# draw treatment assignment
+z = rbinom(n,1,pi(x))
+
+# draw outcome
+f_xz = mu(x) + tau(x)*z
+sigma = kappa*sd(f_xz)
+y = f_xz + sigma*rnorm(n)
+
+# calculate the true average treatment effect (ATE)
+print(mean(tau(x)))</code></pre>
+<pre><code>## [1] -0.5</code></pre>
+<pre class="r"><code># calculate the naive estimate of the ATE
+print(mean(y[z==1]) - mean(y[z==0]))</code></pre>
+<pre><code>## [1] 0.9889149</code></pre>
+<p>Observe that the naive estimate is way off from the truth due to strong confounding.</p>
+<p>Next, let’s use the separate regressions approach to estimating the treatment effect. To do this we will use the R package <a href="https://github.com/jingyuhe/xbart">XBART</a>, based on another <a href="https://arxiv.org/abs/2002.03375">paper</a> of mine. It can be downloaded and installed from here (but must be compiled from source).</p>
+<pre class="r"><code>fit.f1 = XBART(y[z==1],x[z==1],x,
+               num_sweeps = sweeps, burnin = b, num_trees = 20,
+               tau = var(y[z==1])/20)
+
+yhat1 = rowMeans(fit.f1$yhats_test[,(b+1):sweeps])
+
+fit.f0 = XBART(y[z==0],x[z==0],x,
+               num_sweeps = sweeps, burnin = b, num_trees = 20, 
+               tau = var(y[z==0])/20)
+
+yhat0 = rowMeans(fit.f0$yhats_test[,(b+1):sweeps])
+
+tau.est1 &lt;- yhat1 - yhat0</code></pre>
+<p>Next, let’s explicitly regularize the treatment effect. We will do this using the R package XBCF, which can be downloaded <a href="https://github.com/socket778/XBCF">here</a>.</p>
+<pre class="r"><code>xbcf_fit = XBCF(scale(y), x, x, z, 
+                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
+                 num_cutpoints = 20, max_depth = 250,
+                 num_trees_pr = 20,  tau_pr = tau1, 
+                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)</code></pre>
+<pre><code>## Warning in if (class(y) != &quot;matrix&quot;) {: the condition has length &gt; 1 and only
+## the first element will be used</code></pre>
+<pre class="r"><code>tau.est2 = getTaus(xbcf_fit)</code></pre>
+<p>Finally, let’s do it the right way and also incorporate the estimated propensity scores. First, we estimate them. Here, we again use XBART, but your favorite classification algorithm would be okay, too.</p>
+<pre class="r"><code>fitz = XBART.multinomial(y = z, num_class = 2, X = x, Xtest = x, 
+                         num_trees = 20, num_sweeps = sweeps, max_depth=250, 
+                         Nmin=6, num_cutpoints=50, tau_a = 2, tau_b = 1, 
+                         burnin = b, verbose = FALSE, parallel = TRUE, 
+                         sample_weights_flag = TRUE, weight = 5,update_tau = TRUE) 
+
+pihat = apply(fitz$yhats_test[(b+1):sweeps,,], c(2, 3), mean)[,2]</code></pre>
+<p>With those estimates in hand, we then run XBCF again, this time including the propensity score as an extra feature.</p>
+<pre class="r"><code>xbcf_fit.ps = XBCF(scale(y), cbind(pihat,x), x, z, 
+                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
+                 num_cutpoints = 20, max_depth = 250,
+                 num_trees_pr = 20,  tau_pr = tau1, 
+                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)</code></pre>
+<pre><code>## Warning in if (class(X) != &quot;matrix&quot;) {: the condition has length &gt; 1 and only
+## the first element will be used</code></pre>
+<pre><code>## Warning in if (class(y) != &quot;matrix&quot;) {: the condition has length &gt; 1 and only
+## the first element will be used</code></pre>
+<pre class="r"><code>tau.est3 = getTaus(xbcf_fit.ps)</code></pre>
+<p>And now we can plot the results against the truth and compute the root mean squared estimation error of the CATEs.</p>
+<pre class="r"><code>plot(x,tau(x),type=&#39;l&#39;,ylim=c(-1.5,1.5),col=&#39;red&#39;,lty=2,lwd=2,bty=&#39;n&#39;,ylab=expression(tau))
+lines(x,tau.est1,col=&#39;lightgray&#39;,lwd=3)
+lines(x,tau.est2,col=&#39;blue&#39;,lwd=3)
+lines(x,tau.est3,col=&#39;green&#39;,lwd=3)</code></pre>
+<p><img src="/post/2021-01-26-machine-learning-for-causal-inference-that-works_files/figure-html/unnamed-chunk-9-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>rmse1 = sqrt(mean((tau(x)-tau.est1)^2))
+rmse2 = sqrt(mean((tau(x)-tau.est2)^2))
+rmse3 = sqrt(mean((tau(x)-tau.est3)^2))
+
+print(round(c(rmse1,rmse2,rmse3),2))</code></pre>
+<pre><code>## [1] 1.15 0.45 0.18</code></pre>
+<p>The pattern here is bad (gray), better (blue), best (green) from left to right. The true heterogeneous treatment effect function is depicted by the dashed red line. The third approach (the approach we advocate for in the BCF paper) is not <em>always</em> better, but it is most of the time, sometimes by a very large margin. Try it out yourself, varying the sample size (<span class="math inline">\(n\)</span>) and the two difficulty parameters (<span class="math inline">\(v\)</span> and <span class="math inline">\(\sigma\)</span>).</p>
+</div>
+<div id="conclusions" class="section level3">
+<h3>Conclusions</h3>
+<p>There are now many researchers working at the intersection of machine learning and causal inference. What distinguishes our work is a focus on building tools that work in practice, which requires understanding the role of regularization in causal inference and engineering methods that impose effective regularization schemes that have been calibrated to the kind of data we expect to encounter in common applications.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</body>
+</html>
+
