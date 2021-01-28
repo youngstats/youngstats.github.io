@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/partial-least-squares">partial least squares</a>
+  
+     &hercon; <a href="/categories/high-dimensional-data">high dimensional data</a>
+  
+  </div>
+
+  <h1><span class="title">PLS for Big Data: A unified parallel algorithm for regularised group PLS</span></h1>
+
+  
+  <h3 class="author">Pierre Lafaye de Micheaux,  Benoit Liquet,  Matt Sutton
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<p><em>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data</em></p>
+<p>Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets. These latent variables are constructed according to specific covariance or correlation requirements. As such the latent variables can be used as a data reduction tool that sheds light on the relationship between the datasets. For two blocks of data there are four established PLS methods that can be used to construct these latent variables:</p>
+<ol style="list-style-type: decimal">
+<li>PLS-SVD</li>
+<li>PLS-W2A</li>
+<li>Canonical correlation analysis (CCA)</li>
+<li>PLS-R</li>
+</ol>
+<p>These methods provide a range of useful methods for data exploration and prediction for datasets with high dimensional structure. However, as shown in the sparse PCA literature (Johnstone 2004) in high dimensional settings (<span class="math inline">\(n&lt;&lt;p\)</span>) the standard latent variable estimates may be biased and sparsity inducing methods are a natural choice. After reviewing the two-block PLS methods and placing them in a common framework we provide details for the application of sparse PLS methods that use regularisation via either the lasso or sparse group lasso penalisation.</p>
+<div id="finding-the-latent-variables" class="section level3">
+<h3>Finding the Latent variables</h3>
+<p>Let <span class="math inline">\(X: n\times p\)</span> and <span class="math inline">\(Y: n\times q\)</span> be the datasets comprised of n observations on p and q variables respectively, the latent variables <span class="math inline">\(\xi = X u\)</span> and <span class="math inline">\(\omega = Y v\)</span> bare a striking similarity to the principal components from principal component analysis (PCA) where <span class="math inline">\(u\)</span> is a p-vector and <span class="math inline">\(v\)</span> is a q-vector. The PLS-SVD, PLS-W2A and PLS-R methods optimise the sample covariance between the latent variables
+<span class="math display">\[
+\text{max}_{\xi,\omega} \widehat{Cov}(\xi, \omega) \rightarrow \text{max}_{u,v} \widehat{Cov}(Xu, Yv) = \text{max}_{u,v} u^TX^TYv
+\]</span>
+subject to <span class="math inline">\(\|u\|=\|v\| = 1\)</span> and orthogonality constraints for the different methods. Whereas CCA optimises
+<span class="math display">\[
+\text{max}_{\xi,\omega} \widehat{Corr}(\xi, \omega) \rightarrow\text{max}_{u,v} \widehat{Corr}(Xu, Yv) = \text{max}_{u,v} u^T(X^TX)^{-1/2}X^TY(Y^TY)^{-1/2}v
+\]</span>
+subject to orthogonality constraints similar to the PLS-SVD. These orthogonality constraints are enforced by removing the effect of the constructed latent variables using projection matrices. Once the effect has been removed the optimisation is repeated on the projected data. This process is the same for all PLS methods and can be simply adjusted to allow for sparsity in the weights (<span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>) using sparse regularising penalties (e.g. lasso, group lasso, sparse group lasso).</p>
+</div>
+<div id="computational-speedups" class="section level3">
+<h3>Computational speedups</h3>
+<p>Due to the algorithmic similarity of the different methods some additional computational approaches can be used to speed up the required computation for the PLS approach. In our paper, we consider reducing memory requirements and speeding up computation by making use of the “bigmemory” R package to allocate shared memory and make use of memory-mapped files. Rather than loading the full matrices when computing the matrix cross-product (<span class="math inline">\(X^TY\)</span>, <span class="math inline">\(X^TX\)</span> or <span class="math inline">\(Y^TY\)</span>) we instead read chucks of the matrices, compute the cross-product on these chucks in parallel, and add these cross-products together, ie.
+<span class="math display">\[
+X^TY = \sum_{c=1}^CX_c^TY_c
+\]</span>
+where <span class="math inline">\(X_c\)</span> and <span class="math inline">\(Y_c\)</span> are matrix chucks formed as the subsets of the rows of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Additional computational approaches are used for when either p or q are large or when n is very large and data is streaming in while q is small.</p>
+</div>
+<div id="example-on-emnist" class="section level3">
+<h3>Example on EMNIST</h3>
+<p>We show an example using PLS regression for a discrimination task, namely the extended MNIST dataset. This data set consists of n = 280,000 handwritten digit images. It contains an equal number of samples for each digit class (0 to 9) where the dimension of the predictors is <span class="math inline">\(p=784\)</span> with <span class="math inline">\(q=10\)</span> classes. The images are already split into a training set of 240,000 cases and a test set of 40,000 cases. Since we have a large sample size <span class="math inline">\(n &gt; p, q\)</span> we opt not to consider regularisation for this example. The PLS-DA method is able to recover an accuracy of 86% in around 3 minutes using 20 latent variables and 2 cores.</p>
+<p><img src="/post/2021-01-28-pls-for-big-data/EMNISTw.png" /></p>
+<p>We investigated the relationship between the number of chunks and the number of cores used in the algorithm. The plot below shows the elapsed computation time for fitting a single component of the PLS discriminant analysis algorithm using 2, 4 or 6 cores (on a laptop equipped with 8 cores). On the vertical axis, <span class="math inline">\(ngx\)</span> indicates that <span class="math inline">\(x\)</span> chunks were used in our algorithm.</p>
+</div>
+<div id="references-and-related-work" class="section level3">
+<h3>References and related work</h3>
+<ol style="list-style-type: decimal">
+<li><p>Johnstone, I. M. and Lu, A. Y. (2004) Sparse principal component analysis. Technical Report. Department of Statistics, Stanford University, Stanford.</p></li>
+<li><p>Sutton, M., Thiébaut, R., &amp; Liquet, B. (2018). Sparse partial least squares with group and subgroup structure. Statistics in Medicine, 37(23), 3338–3356.</p></li>
+<li><p>Lafaye de Micheaux, P., Liquet, B., &amp; Sutton, M. (2019). PLS for Big Data: A unified parallel algorithm for regularised group PLS. Statistics Surveys, 13, 119–149.</p></li>
+<li><p>Liquet, B., Lafaye de Micheaux, P., Hejblum, B. P., &amp; Thiébaut, R. (2016). Group and sparse group partial least square approaches applied in genomics context. Bioinformatics , 32(1), 35–42.</p></li>
+</ol>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

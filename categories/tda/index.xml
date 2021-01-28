@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TDA on YoungStatS</title>
-    <link>/categories/tda/</link>
+    <link>https://youngstats.github.io/categories/tda/</link>
     <description>Recent content in TDA on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/tda/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/tda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ensemble Forecasting of the Zika Space-Time Spread with Topological Data Analysis</title>
-      <link>/post/2020/10/22/soliman/</link>
+      <link>https://youngstats.github.io/post/2020/10/22/soliman/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/10/22/soliman/</guid>
+      <guid>https://youngstats.github.io/post/2020/10/22/soliman/</guid>
       <description>As per the records of the World Health Organization, the first formally reported incidence of Zika virus occurred in Brazil in May 2015. The disease then rapidly spread to other countries in Americas and East Asia, affecting more than 1,000,000 people. Zika virus is primarily transmitted through bites of infected mosquitoes of the species Aedes (Aedes aegypti and Aedes albopictus). The abundance of mosquitoes and, as a result, the prevalence of Zika virus infections are common in areas which have high precipitation, high temperature, and high population density.</description>
     </item>
     

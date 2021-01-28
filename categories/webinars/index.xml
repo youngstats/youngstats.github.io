@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>webinars on YoungStatS</title>
-    <link>/categories/webinars/</link>
+    <link>https://youngstats.github.io/categories/webinars/</link>
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>One World YoungStatS</title>
-      <link>/post/2020/09/10/webinars/</link>
+      <link>https://youngstats.github.io/post/2020/09/10/webinars/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/09/10/webinars/</guid>
+      <guid>https://youngstats.github.io/post/2020/09/10/webinars/</guid>
       <description>One World YoungStatS webinar
 We are delighted to announce the creation of the One World YoungStatS Webinar series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS webinar series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
     </item>

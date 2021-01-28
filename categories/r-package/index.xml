@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R package on YoungStatS</title>
-    <link>/categories/r-package/</link>
+    <link>https://youngstats.github.io/categories/r-package/</link>
     <description>Recent content in R package on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/r-package/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/r-package/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Making an Online Risk Calculator</title>
-      <link>/post/2020/11/11/online-risk-calc/</link>
+      <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/11/11/online-risk-calc/</guid>
+      <guid>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</guid>
       <description>We first started making risk calculators with the website, http://nomograms.org. There are several here, and they are patient friendly. Later, we launched rcalc.ccf.org, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:</description>
     </item>
     
