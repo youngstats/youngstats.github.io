@@ -6,7 +6,25 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>classification</title>
+      <link>https://youngstats.github.io/categories/classification/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KNN</title>
+      <link>https://youngstats.github.io/categories/knn/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/knn/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>high dimensional data</title>
       <link>https://youngstats.github.io/categories/high-dimensional-data/</link>

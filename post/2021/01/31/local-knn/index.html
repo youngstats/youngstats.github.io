@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Locally adapative k-nearest neighbour classification | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/classification">classification</a>
+  
+     &hercon; <a href="/categories/knn">KNN</a>
+  
+  </div>
+
+  <h1><span class="title">Locally adapative k-nearest neighbour classification</span></h1>
+
+  
+  <h3 class="author">Thomas B. Berrett
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="abstract" class="section level2">
+<h2>Abstract</h2>
+<p>Binary classification is one of the cornerstones of modern data science, but, until recently, our understanding of classical methods such as the <em>k</em>-nn algorithm was limited to settings where feature vectors were compactly supported. Based on a new analysis of this classifier, we propose a variant with significantly lower risk for heavy-tailed distributions.</p>
+</div>
+<div id="the-k-nearest-neighbour-classifier" class="section level2">
+<h2>The <span class="math inline">\(k\)</span>-nearest neighbour classifier</h2>
+<p>The basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier. For some fixed value of <span class="math inline">\(k\)</span>, we classify a test point <span class="math inline">\(X\)</span> to the class that is most prevalent among the <span class="math inline">\(k\)</span> points in our test data which lie closest to <span class="math inline">\(X\)</span>.</p>
+<center>
+<p><img src="/post/2021-01-29-local-knn/BasicIllustration.png" class="class" label="fig:Basic" style="width:60.0%" /></p>
+Figure 1. Basic example of classification approach.
+</center>
+<p>In the simple example in Figure 1 where the black point is to be classified, with <span class="math inline">\(k=1\)</span> we assign to the green class, with <span class="math inline">\(k=2\)</span> we assign to the red class (ties being broken in favour of the red class), and with <span class="math inline">\(k=3\)</span> we assign to the green class.</p>
+<p>The choice of <span class="math inline">\(k\)</span> will clearly have a huge impact on the performance of the classifier. It is often chosen using cross-validation so that, over many splits of the data set into test set and training set, we choose the value of <span class="math inline">\(k\)</span> that gives the most accurate predictions over all points.</p>
+<p>Our main finding is that it is often possible to achieve better performance when the value of <span class="math inline">\(k\)</span> is allowed to depend on the location of the test point. Indeed, for some constant <span class="math inline">\(B\)</span> (which may be chosen by cross-validation), when <span class="math inline">\(n\)</span> is the sample size, <span class="math inline">\(\bar{f}\)</span> is the marginal density of the data points, and <span class="math inline">\(x\)</span> is the test point, we find that a choice of <span class="math inline">\(k\)</span> roughly equal to
+<span class="math display">\[\begin{equation}
+\tag{1}
+  B \{ n\bar{f}(x) \}^{4/(d+4)}
+\end{equation}\]</span>
+results in minimax rate-optimal performance over suitable classes of data-generating mechanisms. In contrast, for heavy-tailed data we see that the standard, fixed-<span class="math inline">\(k\)</span> classifier is suboptimal. Although <span class="math inline">\(\bar{f}\)</span> is usually unknown, it can typically be estimated well enough from data. In fact, in many modern applications we have access to large amount of unlabelled <span class="math inline">\(X\)</span> data that can be used for this purpose.</p>
+</div>
+<div id="theoretical-results" class="section level2">
+<h2>Theoretical results</h2>
+<p>Given full knowledge using knowledge of the underlying data-generating mechanism, the optimal decision rule is the Bayes classifier, which assigns points to the class with largest posterior probability. As even this optimal classifier makes mistakes, we typically evaluate the performance of a data-driven classification rule by comparing it to the Bayes classifier. Given a classification rule <span class="math inline">\(C:\mathbb{R}^d \rightarrow \{0,1\}\)</span>, define its excess risk to be
+<span class="math display">\[
+  \mathcal{E}_P(C)= \mathbb{P}_P\{C(X) \neq Y\} - \mathbb{P}_P\{C^\mathrm{B}(X) \neq Y\},
+\]</span>
+where <span class="math inline">\(C^\mathrm{B}\)</span> is the Bayes classifier, <span class="math inline">\(X\)</span> is the test point and <span class="math inline">\(Y\)</span> is its true class label such that <span class="math inline">\((X,Y)\)</span> has distribution <span class="math inline">\(P\)</span>. This quantity is non-negative and equal to zero if and only if <span class="math inline">\(C\)</span> is optimal. Classifiers that make similar predictions to the Bayes classifier perform well.</p>
+<p>Our results hold over classes <span class="math inline">\(\mathcal{P}_{d,\rho}\)</span> of distributions of <span class="math inline">\((X,Y)\)</span> on <span class="math inline">\(\mathbb{R}^d \times \{0,1\}\)</span> satisfying certain regularity conditions, including that they have twice-differentiable densities and a bounded <span class="math inline">\(\rho\)</span>th moment. Ignoring sub-polynomial factors, we find that the standard fixed-<span class="math inline">\(k\)</span> nearest neighbour classifier, trained on a data set of size <span class="math inline">\(n\)</span>, satisfies
+<span class="math display">\[
+  \sup_{P \in \mathcal{P}_{d,\rho}} \mathcal{E}_P(C_n^{k\text{nn}}) = O\biggl( \frac{1}{k} + \Bigl( \frac{k}{n} \Bigr)^{\min(4/d,\,\rho/(\rho+d))} \biggr).
+\]</span>
+When <span class="math inline">\(k\)</span> is chosen to minimise this right-hand side, we obtain a rate of convergence of <span class="math inline">\(n^{-\min(\frac{\rho}{2\rho+d},\frac{4}{4+d})}\)</span>.</p>
+<p>On the other hand, we find that when <span class="math inline">\(k\)</span> is chosen according to <span class="math inline">\((1)\)</span> above, we have
+<span class="math display">\[
+  \sup_{P \in \mathcal{P}_{d,\rho}} \mathcal{E}_P(C_n^{k_\mathrm{O}\text{nn}}) =O( n^{-\min(\rho/(\rho+d),4/(4+d))}).
+\]</span>
+For small values of <span class="math inline">\(\rho\)</span>, i.e. for heavy-tailed distributions, there is a gap between these rates.</p>
+</div>
+<div id="simulation" class="section level2">
+<h2>Simulation</h2>
+<p>To illustrate the potential benefits of the local procedure, consider the following simulation. Following Cannings, Berrett and Samworth (2020), we take <span class="math inline">\(n_1=n_0=100\)</span>,
+<span class="math display">\[
+  P_1 = t_5 \times t_5 \quad \text{ and } P_0 = N(1,1) \times t_5,
+\]</span>
+where <span class="math inline">\(t_5\)</span> is the <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(5\)</span> degrees of freedom. This represents a setting in which there is a gap between the rates of convergence given above. Our results show that the optimal rate here is approximately <span class="math inline">\(n^{-2/3}\)</span>, which is achieved by the local classifier, while with an optimal choice of <span class="math inline">\(k\)</span> the standard classifier is only guaranteed to achieve a rate of <span class="math inline">\(n^{-5/12}\)</span>.</p>
+<p>The data is displayed in the left-most plot of Figure 2, together with vertical lines indicating the action of Bayes classifier, which selects class 0 when the data points lie between the two lines and selects class 1 otherwise. First, we run the standard <span class="math inline">\(k\)</span>-nearest neighbour classifier on the data, with the value of <span class="math inline">\(k\)</span> chosen by leave-one-out cross-validation from <span class="math inline">\(\{1,\ldots,20\}\)</span>. The middle plot of Figure  shows those points of the data set for which the standard classifier classifies differently to the Bayes classifier. Finally, we run our local classifier, where we assume that <span class="math inline">\(\bar{f}\)</span> is known, and where the value of <span class="math inline">\(B\)</span> is chosen by leave-one-out cross-validation on a grid of size <span class="math inline">\(20\)</span>.</p>
+<center>
+<img src="/post/2021-01-29-local-knn/Simulation.png" class="class" label="fig:Simulation" />
+Figure 2. Simulated data and different classifiers.
+</center>
+<p>Perhaps the most striking aspect of the results is that the local classifier agrees with the Bayes classifier much more often than the standard classifier, with only <span class="math inline">\(9\)</span> disagreements compared to the <span class="math inline">\(43\)</span> disagreements of the standard classifier. Looking a little closer, we can see that the remaining mistakes that the local classifier makes are concentrated around the Bayes decision boundaries. Standard theoretical analysis of classification problems reveals that such points typically represent the hardest point to classify. We finally see that many, though by no means all, of the points at which the standard classifier makes a mistake appear in low-density regions, for example towards the bottom of the plots.</p>
+</div>
+<div id="about-the-authors" class="section level2">
+<h2>About the authors</h2>
+<p>This post was written by Thomas B. Berrett, and was based on</p>
+<p>Cannings, T. I., Berrett, T. B. and Samworth, R. J. (2020) Local nearest neighbour classification with applications to semi-supervised learning. <em>Annals of Statistics</em>, <strong>48</strong>, 1789–1814. <a href="https://projecteuclid.org/euclid.aos/1594972839">.pdf</a>.</p>
+<ul>
+<li><img src="/post/2021-01-29-local-knn/CanningsTI.jpg" class="class" style="width:10.0%" /> <a href="https://www.maths.ed.ac.uk/~tcannings/About_Me.html">Timothy I. Cannings</a> is a lecturer in statistics and data science at the School of Mathematics, University of Edinburgh. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2015. He then worked with Prof Yingying Fan as a Postdoc at the University of Southern California.</li>
+<li><img src="/post/2021-01-29-local-knn/BerrettTB.jpg" class="class" style="width:10.0%" /> <a href="https://thomasberrett.github.io">Thomas B. Berrett</a> is an Assistant Professor in the Department of Statistics at the University of Warwick. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2018, and later worked as a Postdoc with Prof Cristina Butucea at CREST, ENSAE, Institut Polytechnique de Paris.</li>
+<li><img src="/post/2021-01-29-local-knn/SamworthRJ.jpg" class="class" style="width:10.0%" /> <a href="http://www.statslab.cam.ac.uk/~rjs57/">Richard J. Samworth</a> is Professor of Statistical Science and Director of the Statistical Laboratory at the University of Cambridge. He is also a Teaching Fellow at St John’s College.</li>
+</ul>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
