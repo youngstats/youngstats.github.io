@@ -2,287 +2,291 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>webinars</title>
+      <link>/categories/webinars/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>classification</title>
-      <link>https://youngstats.github.io/categories/classification/</link>
+      <link>/categories/classification/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/classification/</guid>
+      <guid>/categories/classification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>KNN</title>
-      <link>https://youngstats.github.io/categories/knn/</link>
+      <link>/categories/knn/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/knn/</guid>
+      <guid>/categories/knn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>high dimensional data</title>
-      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
+      <link>/categories/high-dimensional-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
+      <guid>/categories/high-dimensional-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>partial least squares</title>
-      <link>https://youngstats.github.io/categories/partial-least-squares/</link>
+      <link>/categories/partial-least-squares/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/partial-least-squares/</guid>
+      <guid>/categories/partial-least-squares/</guid>
       <description></description>
     </item>
     
     <item>
       <title>casual inference</title>
-      <link>https://youngstats.github.io/categories/casual-inference/</link>
+      <link>/categories/casual-inference/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/casual-inference/</guid>
+      <guid>/categories/casual-inference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>machine learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <link>/categories/machine-learning/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <guid>/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>co-clustering</title>
-      <link>https://youngstats.github.io/categories/co-clustering/</link>
+      <link>/categories/co-clustering/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/co-clustering/</guid>
+      <guid>/categories/co-clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>latent block model</title>
-      <link>https://youngstats.github.io/categories/latent-block-model/</link>
+      <link>/categories/latent-block-model/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/latent-block-model/</guid>
+      <guid>/categories/latent-block-model/</guid>
       <description></description>
     </item>
     
     <item>
       <title>causality</title>
-      <link>https://youngstats.github.io/categories/causality/</link>
+      <link>/categories/causality/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/causality/</guid>
+      <guid>/categories/causality/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hidden Markov models</title>
-      <link>https://youngstats.github.io/categories/hidden-markov-models/</link>
+      <link>/categories/hidden-markov-models/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/hidden-markov-models/</guid>
+      <guid>/categories/hidden-markov-models/</guid>
       <description></description>
     </item>
     
     <item>
       <title>latent variables</title>
-      <link>https://youngstats.github.io/categories/latent-variables/</link>
+      <link>/categories/latent-variables/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/latent-variables/</guid>
+      <guid>/categories/latent-variables/</guid>
       <description></description>
     </item>
     
     <item>
       <title>post</title>
-      <link>https://youngstats.github.io/categories/post/</link>
+      <link>/categories/post/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/post/</guid>
+      <guid>/categories/post/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functional-Data-Analysis</title>
-      <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
+      <link>/categories/functional-data-analysis/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/functional-data-analysis/</guid>
+      <guid>/categories/functional-data-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Statistical Process Monitoring</title>
-      <link>https://youngstats.github.io/categories/statistical-process-monitoring/</link>
+      <link>/categories/statistical-process-monitoring/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/statistical-process-monitoring/</guid>
+      <guid>/categories/statistical-process-monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>economic statistics</title>
-      <link>https://youngstats.github.io/categories/economic-statistics/</link>
+      <link>/categories/economic-statistics/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/economic-statistics/</guid>
+      <guid>/categories/economic-statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>official statistics</title>
-      <link>https://youngstats.github.io/categories/official-statistics/</link>
+      <link>/categories/official-statistics/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/official-statistics/</guid>
+      <guid>/categories/official-statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>biostatistics</title>
-      <link>https://youngstats.github.io/categories/biostatistics/</link>
+      <link>/categories/biostatistics/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/biostatistics/</guid>
+      <guid>/categories/biostatistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>predictive models</title>
-      <link>https://youngstats.github.io/categories/predictive-models/</link>
+      <link>/categories/predictive-models/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/predictive-models/</guid>
+      <guid>/categories/predictive-models/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R package</title>
-      <link>https://youngstats.github.io/categories/r-package/</link>
+      <link>/categories/r-package/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/r-package/</guid>
+      <guid>/categories/r-package/</guid>
       <description></description>
     </item>
     
     <item>
       <title>risk calculator</title>
-      <link>https://youngstats.github.io/categories/risk-calculator/</link>
+      <link>/categories/risk-calculator/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/risk-calculator/</guid>
+      <guid>/categories/risk-calculator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistics</title>
-      <link>https://youngstats.github.io/categories/statistics/</link>
+      <link>/categories/statistics/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/statistics/</guid>
+      <guid>/categories/statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TDA</title>
-      <link>https://youngstats.github.io/categories/tda/</link>
+      <link>/categories/tda/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/tda/</guid>
+      <guid>/categories/tda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zika virus</title>
-      <link>https://youngstats.github.io/categories/zika-virus/</link>
+      <link>/categories/zika-virus/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/zika-virus/</guid>
+      <guid>/categories/zika-virus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>epidemiology</title>
-      <link>https://youngstats.github.io/categories/epidemiology/</link>
+      <link>/categories/epidemiology/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/epidemiology/</guid>
+      <guid>/categories/epidemiology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spatial statistics</title>
-      <link>https://youngstats.github.io/categories/spatial-statistics/</link>
+      <link>/categories/spatial-statistics/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/spatial-statistics/</guid>
+      <guid>/categories/spatial-statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clinical trials</title>
-      <link>https://youngstats.github.io/categories/clinical-trials/</link>
+      <link>/categories/clinical-trials/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/clinical-trials/</guid>
+      <guid>/categories/clinical-trials/</guid>
       <description></description>
     </item>
     
     <item>
       <title>information theory</title>
-      <link>https://youngstats.github.io/categories/information-theory/</link>
+      <link>/categories/information-theory/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/information-theory/</guid>
+      <guid>/categories/information-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>covid-19</title>
-      <link>https://youngstats.github.io/categories/covid-19/</link>
+      <link>/categories/covid-19/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/covid-19/</guid>
+      <guid>/categories/covid-19/</guid>
       <description></description>
     </item>
     
     <item>
       <title>network</title>
-      <link>https://youngstats.github.io/categories/network/</link>
+      <link>/categories/network/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <guid>/categories/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>information</title>
-      <link>https://youngstats.github.io/categories/information/</link>
+      <link>/categories/information/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/information/</guid>
+      <guid>/categories/information/</guid>
       <description></description>
     </item>
     

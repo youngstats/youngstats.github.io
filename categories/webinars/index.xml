@@ -2,17 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>webinars on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/webinars/</link>
+    <link>/categories/webinars/</link>
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recent Advances in COVID-19 modelling</title>
+      <link>/post/2021/02/04/covid-webinar/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021/02/04/covid-webinar/</guid>
+      <description>YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar. With four young scholars, we will discuss Recent Advances in the Modelling of COVID-19, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.
+When: Wednesday, February 10th, 16:00 (Central European Time). The Zoom connection to the event will be provided soon.
+Speakers:
+ Cécile Tran Kiem (Institute Pasteur, Paris, France) Pierfrancesco Alaimo Di Loro and Marco Mingione (StatGroup-19, Italy) Kevin Kunzmann (University of Cambridge, United Kingdom)  Discussant:</description>
+    </item>
+    
     <item>
       <title>One World YoungStatS</title>
-      <link>https://youngstats.github.io/post/2020/09/10/webinars/</link>
+      <link>/post/2020/09/10/webinars/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/09/10/webinars/</guid>
+      <guid>/post/2020/09/10/webinars/</guid>
       <description>One World YoungStatS webinar
 We are delighted to announce the creation of the One World YoungStatS Webinar series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS webinar series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
     </item>
