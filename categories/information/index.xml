@@ -2,17 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>information on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/information/</link>
+    <link>/categories/information/</link>
     <description>Recent content in information on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/information/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/information/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Welcome to our blog!</title>
-      <link>https://youngstats.github.io/post/2020/09/01/welcome/</link>
+      <link>/post/2020/09/01/welcome/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/09/01/welcome/</guid>
+      <guid>/post/2020/09/01/welcome/</guid>
       <description>Welcome to our blog! This website is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
     </item>
     

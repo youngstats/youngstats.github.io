@@ -2,195 +2,1048 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YoungStatS</title>
-    <link>https://youngstats.github.io/</link>
+    <link>/</link>
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
-      <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
+      <link>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
-      <description>Correlations and negative bias We assume that you are quite familiar with the following problem. Consider a data set where the information is expressed in percentages or proportions. An example are household expenditures, given as average amounts (in Euros) the households are spending on food, housing, transportation, etc. Since the expenditures would not be comparable among countries with very different economic level, it makes sense to express the data as proportions (or percentages) of the single categories on the total expenditures.</description>
+      <guid>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
+      <description>
+
+
+&lt;div id=&#34;correlations-and-negative-bias&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Correlations and negative bias&lt;/h2&gt;
+&lt;p&gt;We assume that you are quite familiar with the following problem.
+Consider a data set where the information is expressed in percentages or proportions.
+An example are household expenditures, given as average amounts (in Euros) the households
+are spending on food, housing, transportation, etc.
+Since the expenditures would not be comparable among countries with very different economic
+level, it makes sense to express the data as proportions (or percentages) of the single
+categories on the total expenditures.
+Now one can be interested in relationships between the different variables (expenditure
+categories), and the common tools for this task would be to use the
+Pearson or Spearman correlation coefficient to determine the strength of the associations.
+However, is this appropriate to compute correlations from
+percentages (or proportions, or any other constrained data), or more generally, from data
+carrying relative information? Denote the underlying variables, expressed in proportions
+or percentages, by &lt;span class=&#34;math inline&#34;&gt;\(x_1,\ldots,x_D\)&lt;/span&gt;.
+When computing correlations, we
+must count with a negative bias of the covariance, which leads to relations like
+&lt;span class=&#34;math display&#34;&gt;\[\mathrm{cov}(x_1,x_2)+\mathrm{cov}(x_1,x_3)+\ldots+\mathrm{cov}(x_1,x_D)=-\mathrm{var}(x_1).\]&lt;/span&gt;
+Consequently, the correlation coefficients cannot vary freely between &lt;span class=&#34;math inline&#34;&gt;\(-1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;;
+they are forced towards negative values and thus do not produce reliable and interpretable results.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initial-choice-variation-matrix&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Initial choice: variation matrix&lt;/h2&gt;
+&lt;p&gt;The way to obtain reasonable correlations with percentage data is to consider ratios,
+or even mathematically easier, log-ratios as the source information. Log-ratios do not
+change when the data are rescaled, thus the sum of components (100 for percentages) is
+even irrelevant.
+In our household expenditure data set we could thus even work with the raw data, expressed
+in Euros, and the results of the analysis would be the same as for the
+normalized data.
+The scale invariant data are called &lt;em&gt;compositional&lt;/em&gt; in this context.
+A natural way to assess strength of relationship between components of percentage
+(compositional) data is thus to think in terms of their &lt;em&gt;proportionality&lt;/em&gt;. This leads
+to the so called &lt;em&gt;variation matrix&lt;/em&gt;, which is defined as
+&lt;span class=&#34;math display&#34;&gt;\[\mathbf{T}=\left(\mathrm{var}\left(\ln\frac{x_i}{x_j}\right)\right)_{i,j=1}^D.\]&lt;/span&gt;
+If the components are proportional, the respective element of the variation matrix is
+zero, and vice versa. Thus, bigger values of the variation matrix refer to deviations
+from proportionality. Here, &lt;em&gt;var&lt;/em&gt; is denotes the variance, and practically one can
+use classical or robust variance estimation, where the latter is preferable in presence
+of outliers.
+The variation matrix is thus definitely a reasonable choice to express relationship
+between the variables, however, it cannot be interpreted in terms of correlations,
+as possible negative relationships between the components are not captured.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;correlations-with-weighted-symmetric-pivot-coordinates&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Correlations with (weighted) symmetric pivot coordinates&lt;/h2&gt;
+&lt;p&gt;We can see that relating the original components has its clear limitations. A possible
+alternative could be to consider &lt;em&gt;relative information&lt;/em&gt; carried by the original components
+of a given composition, information contained in log-ratios to other components. The first
+choice is to aggregate these logratios which leads, say for components &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;,
+to the following variables (we refer to &lt;em&gt;symmetric pivot coordinates&lt;/em&gt;):
+&lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray}
+z_1^s&amp;amp;=&amp;amp;C\left(\frac{\sqrt{D-2}}{\sqrt{D-2}+\sqrt{D}}\ln\frac{x_1}{x_2}+\ln\frac{x_1}{x_3}+\ldots+\ln\frac{x_1}{x_D}\right),\\
+z_2^s&amp;amp;=&amp;amp;C\left(\frac{\sqrt{D-2}}{\sqrt{D-2}+\sqrt{D}}\ln\frac{x_2}{x_1}+\ln\frac{x_2}{x_3}+\ldots+\ln\frac{x_2}{x_D}\right),
+\end{eqnarray}\]&lt;/span&gt;
+with a normalizing positive constant &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;. The first logratios in both variables are downscaled in order to remove a possible negative bias (from a geometrical perspective, we are talking about &lt;em&gt;orthonormality&lt;/em&gt; of the resulting variables/coordinates); interestingly, &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{D-2}/(\sqrt{D-2}+\sqrt{D})\rightarrow 1/2\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(D\rightarrow\infty\)&lt;/span&gt;. Even more, the effect of pairwise logratios which are aggregated into &lt;span class=&#34;math inline&#34;&gt;\(z_1^s\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(z_2^s\)&lt;/span&gt; can be &lt;em&gt;weighted&lt;/em&gt;, e.g., according to their proportionality to &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;, respectively, by using the inverse values of the respective elements of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{T}\)&lt;/span&gt;. This guarantees that components not related to &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt; have a limited impact to
+the construction of both symmetric pivot coordinates.&lt;/p&gt;
+&lt;p&gt;Now, standard (classical or robust) correlation coefficients between &lt;span class=&#34;math inline&#34;&gt;\(z_1^s\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(z_2^s\)&lt;/span&gt; can be computed to estimate the relationship between &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt; in the composition.
+Its interpretation follows directly the construction of symmetric pivot coordinates. This means that the original components are replaced by their &lt;em&gt;dominance&lt;/em&gt; over
+“averaged” contributions of the other components (ev. appropriately weighted) – a quite natural interpretation for data carrying relative information. Moreover, the correlation can be considered in both the positive and negative sense without any danger of the negative bias. We should be only aware that each correlation coefficient is coming from a set of coordinates which are constructed specifically for the given couple of components, so the resulting “correlation matrix” should not be simply treated in the multivariate sense.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;relative-structure-of-household-expenditures&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Relative structure of household expenditures&lt;/h2&gt;
+&lt;p&gt;Let us come back to the initial example where the interest was in the relative structure of household expenditures, reported for several countries of the European Union.
+Such a data set is contained as &lt;code&gt;expendituresEU&lt;/code&gt; in the library &lt;code&gt;robCompositions&lt;/code&gt;. With a
+proportional representation of the expenditures the wealth status of countries is
+suppressed and the focus is on the &lt;em&gt;relative&lt;/em&gt; correlation structure. In order to suppress the influence of outlying observations, the Spearman correlation coefficients between
+the components are computed and the result is plotted in the heatmap below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Raw_data_correlation.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;There are some strongly related groups of components visible, like &lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;, which could be considered as those belonging to “basic” expenditures, and there is also another related group of components which could be connected rather to wealth of households (&lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Furnishing&lt;/em&gt;, &lt;em&gt;Transport&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). On the other hand, there are also some strongly negatively correlated couples of components, like &lt;em&gt;Food&lt;/em&gt; with &lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Other&lt;/em&gt; and &lt;em&gt;Furnishings&lt;/em&gt;, respectively, or &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;. The question is which of these negative correlation coefficients is a consequence of the negative bias, and which indeed reflects strong negative relationship between the &lt;em&gt;relative&lt;/em&gt; household expenditures.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Variation_matrix.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As the next step we want to see whether these relationships can be observed also in the (robust) variation matrix, working with log-ratios instead of the original components. Indeed, the proportionality holds definitely for the first group of components (&lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;), however, proportionality of supplementary expenditures is now structured differently (see, e.g., a strong relationship between the components &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). In any case, any “negative proportionality” cannot be derived from the variation matrix.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Sym_coordinates.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, we turn to symmetric pivot coordinates; they can be computed, similarly as the variation matrix, using the &lt;code&gt;robCompositions&lt;/code&gt; package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(robCompositions)
+data(expendituresEU)
+D &amp;lt;- ncol(expendituresEU)
+Rs &amp;lt;- matrix(NA,nrow=D,ncol=D)
+rownames(Rs) &amp;lt;- colnames(expendituresEU)
+colnames(Rs) &amp;lt;- colnames(expendituresEU)
+for(i in 1:D){
+  for(j in 1:D){
+    Z &amp;lt;- pivotCoord(expendituresEU[,c(i,j, (1:D)[-c(i,j)])],method=&amp;quot;symm&amp;quot;)
+  Rs[i,j] &amp;lt;- cor(Z[,1:2],method=&amp;quot;spearman&amp;quot;)[1,2]
+  }
+}
+round(Rs,2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 Food Alcohol Clothing Housing Furnishings Health Transport
+## Food            1.00    0.58     0.31   -0.06       -0.55   0.44     -0.50
+## Alcohol         0.58    1.00    -0.02   -0.09       -0.22   0.19     -0.35
+## Clothing        0.31   -0.02     1.00   -0.16        0.24  -0.07      0.08
+## Housing        -0.06   -0.09    -0.16    1.00        0.24   0.15      0.29
+## Furnishings    -0.55   -0.22     0.24    0.24        1.00  -0.54      0.68
+## Health          0.44    0.19    -0.07    0.15       -0.54   1.00     -0.29
+## Transport      -0.50   -0.35     0.08    0.29        0.68  -0.29      1.00
+## Communications  0.72    0.66     0.03   -0.08       -0.51   0.32     -0.47
+## Recreation     -0.44   -0.03    -0.17    0.36        0.73  -0.51      0.78
+## Education       0.16    0.09     0.16   -0.32       -0.24   0.13     -0.44
+## Restaurants    -0.44   -0.42     0.18    0.13        0.39  -0.08      0.28
+## Other          -0.64   -0.28    -0.16    0.32        0.68  -0.27      0.67
+##                Communications Recreation Education Restaurants Other
+## Food                     0.72      -0.44      0.16       -0.44 -0.64
+## Alcohol                  0.66      -0.03      0.09       -0.42 -0.28
+## Clothing                 0.03      -0.17      0.16        0.18 -0.16
+## Housing                 -0.08       0.36     -0.32        0.13  0.32
+## Furnishings             -0.51       0.73     -0.24        0.39  0.68
+## Health                   0.32      -0.51      0.13       -0.08 -0.27
+## Transport               -0.47       0.78     -0.44        0.28  0.67
+## Communications           1.00      -0.24      0.15       -0.61 -0.35
+## Recreation              -0.24       1.00     -0.44        0.11  0.75
+## Education                0.15      -0.44      1.00        0.33 -0.42
+## Restaurants             -0.61       0.11      0.33        1.00  0.21
+## Other                   -0.35       0.75     -0.42        0.21  1.00&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now the correlations are not computed from the original components and we have to refer to their dominance over averaged contributions of the other components instead, but the negative bias of correlations is eliminated now. Indeed, when looking at the heatmap, the main clusters of strongly positively correlated components remain unchanged. However, more substantial changes can be observed for negative correlations. From those mentioned previously only that one between &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt; (in the symmetric pivot coordinates sense) remained. Nevertheless, we should be aware that for the computation of correlations we simply aggregated all log-ratios of the couple with the remaining components, and there are clearly those which could strongly influence the resulting symmetric pivot coordinates, although they are not related to any of components of interest. This is definitely the case of &lt;em&gt;Education&lt;/em&gt;, which is not proportional to the vast majority of components (see heatmap of the variation matrix), and whose influence should thus be rather suppressed.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Weighted_symm_coordinates.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This can be done by using weighted symmetric pivot coordinates, the grouping of positively correlated components is now suprisingly even more similar to the case of the initial proportional data. Of course, by considering a different interpretation of the “components” in both cases! However, now we are free again from any possible negative bias of correlations. The “tuned” symmetric pivot coordinates reveal three negative relationships, those between &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;, &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;, and also &lt;em&gt;Restaurants&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;. All of them have a quite intuitive interpretation and support the &lt;strong&gt;take-home message&lt;/strong&gt; that (weighted) symmetric pivot coordinates are a reasonable alternative to correlations of proportional or percentage data.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This article is based on&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Filzmoser, P. Hron, K. and Templ, M. (2018) &lt;em&gt;Applied Compositional Data Analysis. With Worked Examples in R&lt;/em&gt;. Springer Series in Statistics. Springer, Cham, Switzerland, 2018,
+ISBN: 978-3-319-96422-5.&lt;/p&gt;
+&lt;p&gt;Kynčlová, P., Hron, K., Filzmoser, P. (2017) &lt;em&gt;Correlation between compositional parts based on symmetric balances&lt;/em&gt;. Mathematical Geosciences, 49 (6), 777-796.&lt;/p&gt;
+&lt;p&gt;Hron, K., Engle, M., Filzmoser, P., Fišerová, E. (2021) &lt;em&gt;Weighted symmetric pivot coordinates for compositional data with geochemical applications&lt;/em&gt;. Mathematical Geosciences,
+&lt;a href=&#34;https://doi.org/10.1007/s11004-020-09862-5&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1007/s11004-020-09862-5&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors’ biography&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Hron2017-small3.png&#34; alt=&#34;drawing&#34; width=&#34;75&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Karel Hron&lt;/strong&gt; is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:karel.hron@upol.cz&#34; class=&#34;email&#34;&gt;karel.hron@upol.cz&lt;/a&gt;. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book &lt;em&gt;Applied Compositional Data Analysis&lt;/em&gt;, published in Springer Series in Statistics.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/pf2018small.jpg&#34; alt=&#34;drawing&#34; width=&#34;100&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Peter Filzmoser&lt;/strong&gt; is a Professor of Statistics at the Vienna University of Technology
+(TU Wien), Austria, &lt;a href=&#34;mailto:Peter.Filzmoser@tuwien.ac.at&#34; class=&#34;email&#34;&gt;Peter.Filzmoser@tuwien.ac.at&lt;/a&gt;. He has authored more than 200 research
+articles and several R packages and has co-authored books on compositional data analysis
+(Springer, 2018), on multivariate methods in chemometrics (CRC Press, 2009) and on analyzing
+environmental data (Wiley, 2008).&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Recent Advances in COVID-19 modelling</title>
-      <link>https://youngstats.github.io/post/2021/02/04/covid-webinar/</link>
+      <link>/post/2021/02/04/covid-webinar/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/02/04/covid-webinar/</guid>
-      <description>YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar. With four young scholars, we will discuss Recent Advances in the Modelling of COVID-19, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.
-When: Wednesday, February 10th, 16:00 (Central European Time). You can register for the event here.
-Speakers:
- Cécile Tran Kiem (Institute Pasteur, Paris, France) Pierfrancesco Alaimo Di Loro and Marco Mingione (StatGroup-19, Italy) Kevin Kunzmann (University of Cambridge, United Kingdom)  Discussant:</description>
+      <guid>/post/2021/02/04/covid-webinar/</guid>
+      <description>&lt;p&gt;YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar.
+With four young scholars, we will discuss &lt;strong&gt;Recent Advances in the Modelling of COVID-19&lt;/strong&gt;, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.&lt;/p&gt;
+&lt;p&gt;When: &lt;strong&gt;Wednesday, February 10th, 16:00 (Central European Time)&lt;/strong&gt;. You can register for the event &lt;a href=&#34;https://www.eventbrite.com/e/recent-advances-in-covid-19-modelling-tickets-140256156941?aff=ebdssbeac&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cécile Tran Kiem (Institute Pasteur, Paris, France)&lt;/li&gt;
+&lt;li&gt;Pierfrancesco Alaimo Di Loro and Marco Mingione (StatGroup-19, Italy)&lt;/li&gt;
+&lt;li&gt;Kevin Kunzmann (University of Cambridge, United Kingdom)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. Jean-Stéphane Dhersin (Université Sorbonne Paris Nord, France)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Moderators:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Christian Capezza (University of Naples Federico II, Italy)&lt;/li&gt;
+&lt;li&gt;Geneviève Robin (CNRS, Université d&amp;rsquo;Évry Val d&amp;rsquo;Essonne, France)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Introduction:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Andrej Srakar (University of Ljubljana, Slovenia, coordinator of YoungStatS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One World YoungStatS webinar is addressed towards presenting recent interesting work of leading young researchers in statistics, probability and econometrics. The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability, and will take place on monthly level. For more information, please visit our &lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Locally adapative k-nearest neighbour classification</title>
-      <link>https://youngstats.github.io/post/2021/01/31/local-knn/</link>
+      <link>/post/2021/01/31/local-knn/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/01/31/local-knn/</guid>
-      <description>Abstract Binary classification is one of the cornerstones of modern data science, but, until recently, our understanding of classical methods such as the k-nn algorithm was limited to settings where feature vectors were compactly supported. Based on a new analysis of this classifier, we propose a variant with significantly lower risk for heavy-tailed distributions.
- The \(k\)-nearest neighbour classifier The basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier.</description>
+      <guid>/post/2021/01/31/local-knn/</guid>
+      <description>
+
+
+&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Binary classification is one of the cornerstones of modern data science, but, until recently, our understanding of classical methods such as the &lt;em&gt;k&lt;/em&gt;-nn algorithm was limited to settings where feature vectors were compactly supported. Based on a new analysis of this classifier, we propose a variant with significantly lower risk for heavy-tailed distributions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-k-nearest-neighbour-classifier&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-nearest neighbour classifier&lt;/h2&gt;
+&lt;p&gt;The basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier. For some fixed value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;, we classify a test point &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; to the class that is most prevalent among the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; points in our test data which lie closest to &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/BasicIllustration.png&#34; class=&#34;class&#34; label=&#34;fig:Basic&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
+Figure 1. Basic example of classification approach.
+&lt;/center&gt;
+&lt;p&gt;In the simple example in Figure 1 where the black point is to be classified, with &lt;span class=&#34;math inline&#34;&gt;\(k=1\)&lt;/span&gt; we assign to the green class, with &lt;span class=&#34;math inline&#34;&gt;\(k=2\)&lt;/span&gt; we assign to the red class (ties being broken in favour of the red class), and with &lt;span class=&#34;math inline&#34;&gt;\(k=3\)&lt;/span&gt; we assign to the green class.&lt;/p&gt;
+&lt;p&gt;The choice of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; will clearly have a huge impact on the performance of the classifier. It is often chosen using cross-validation so that, over many splits of the data set into test set and training set, we choose the value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; that gives the most accurate predictions over all points.&lt;/p&gt;
+&lt;p&gt;Our main finding is that it is often possible to achieve better performance when the value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is allowed to depend on the location of the test point. Indeed, for some constant &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; (which may be chosen by cross-validation), when &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; is the sample size, &lt;span class=&#34;math inline&#34;&gt;\(\bar{f}\)&lt;/span&gt; is the marginal density of the data points, and &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; is the test point, we find that a choice of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; roughly equal to
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\tag{1}
+  B \{ n\bar{f}(x) \}^{4/(d+4)}
+\end{equation}\]&lt;/span&gt;
+results in minimax rate-optimal performance over suitable classes of data-generating mechanisms. In contrast, for heavy-tailed data we see that the standard, fixed-&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; classifier is suboptimal. Although &lt;span class=&#34;math inline&#34;&gt;\(\bar{f}\)&lt;/span&gt; is usually unknown, it can typically be estimated well enough from data. In fact, in many modern applications we have access to large amount of unlabelled &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; data that can be used for this purpose.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;theoretical-results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Theoretical results&lt;/h2&gt;
+&lt;p&gt;Given full knowledge using knowledge of the underlying data-generating mechanism, the optimal decision rule is the Bayes classifier, which assigns points to the class with largest posterior probability. As even this optimal classifier makes mistakes, we typically evaluate the performance of a data-driven classification rule by comparing it to the Bayes classifier. Given a classification rule &lt;span class=&#34;math inline&#34;&gt;\(C:\mathbb{R}^d \rightarrow \{0,1\}\)&lt;/span&gt;, define its excess risk to be
+&lt;span class=&#34;math display&#34;&gt;\[
+  \mathcal{E}_P(C)= \mathbb{P}_P\{C(X) \neq Y\} - \mathbb{P}_P\{C^\mathrm{B}(X) \neq Y\},
+\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(C^\mathrm{B}\)&lt;/span&gt; is the Bayes classifier, &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; is the test point and &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; is its true class label such that &lt;span class=&#34;math inline&#34;&gt;\((X,Y)\)&lt;/span&gt; has distribution &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;. This quantity is non-negative and equal to zero if and only if &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; is optimal. Classifiers that make similar predictions to the Bayes classifier perform well.&lt;/p&gt;
+&lt;p&gt;Our results hold over classes &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{P}_{d,\rho}\)&lt;/span&gt; of distributions of &lt;span class=&#34;math inline&#34;&gt;\((X,Y)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^d \times \{0,1\}\)&lt;/span&gt; satisfying certain regularity conditions, including that they have twice-differentiable densities and a bounded &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;th moment. Ignoring sub-polynomial factors, we find that the standard fixed-&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; nearest neighbour classifier, trained on a data set of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, satisfies
+&lt;span class=&#34;math display&#34;&gt;\[
+  \sup_{P \in \mathcal{P}_{d,\rho}} \mathcal{E}_P(C_n^{k\text{nn}}) = O\biggl( \frac{1}{k} + \Bigl( \frac{k}{n} \Bigr)^{\min(4/d,\,\rho/(\rho+d))} \biggr).
+\]&lt;/span&gt;
+When &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is chosen to minimise this right-hand side, we obtain a rate of convergence of &lt;span class=&#34;math inline&#34;&gt;\(n^{-\min(\frac{\rho}{2\rho+d},\frac{4}{4+d})}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;On the other hand, we find that when &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is chosen according to &lt;span class=&#34;math inline&#34;&gt;\((1)\)&lt;/span&gt; above, we have
+&lt;span class=&#34;math display&#34;&gt;\[
+  \sup_{P \in \mathcal{P}_{d,\rho}} \mathcal{E}_P(C_n^{k_\mathrm{O}\text{nn}}) =O( n^{-\min(\rho/(\rho+d),4/(4+d))}).
+\]&lt;/span&gt;
+For small values of &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;, i.e. for heavy-tailed distributions, there is a gap between these rates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;To illustrate the potential benefits of the local procedure, consider the following simulation. Following Cannings, Berrett and Samworth (2020), we take &lt;span class=&#34;math inline&#34;&gt;\(n_1=n_0=100\)&lt;/span&gt;,
+&lt;span class=&#34;math display&#34;&gt;\[
+  P_1 = t_5 \times t_5 \quad \text{ and } P_0 = N(1,1) \times t_5,
+\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(t_5\)&lt;/span&gt; is the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-distribution with &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; degrees of freedom. This represents a setting in which there is a gap between the rates of convergence given above. Our results show that the optimal rate here is approximately &lt;span class=&#34;math inline&#34;&gt;\(n^{-2/3}\)&lt;/span&gt;, which is achieved by the local classifier, while with an optimal choice of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; the standard classifier is only guaranteed to achieve a rate of &lt;span class=&#34;math inline&#34;&gt;\(n^{-5/12}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The data is displayed in the left-most plot of Figure 2, together with vertical lines indicating the action of Bayes classifier, which selects class 0 when the data points lie between the two lines and selects class 1 otherwise. First, we run the standard &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-nearest neighbour classifier on the data, with the value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; chosen by leave-one-out cross-validation from &lt;span class=&#34;math inline&#34;&gt;\(\{1,\ldots,20\}\)&lt;/span&gt;. The middle plot of Figure  shows those points of the data set for which the standard classifier classifies differently to the Bayes classifier. Finally, we run our local classifier, where we assume that &lt;span class=&#34;math inline&#34;&gt;\(\bar{f}\)&lt;/span&gt; is known, and where the value of &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; is chosen by leave-one-out cross-validation on a grid of size &lt;span class=&#34;math inline&#34;&gt;\(20\)&lt;/span&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/post/2021-01-29-local-knn/Simulation.png&#34; class=&#34;class&#34; label=&#34;fig:Simulation&#34; /&gt;
+Figure 2. Simulated data and different classifiers.
+&lt;/center&gt;
+&lt;p&gt;Perhaps the most striking aspect of the results is that the local classifier agrees with the Bayes classifier much more often than the standard classifier, with only &lt;span class=&#34;math inline&#34;&gt;\(9\)&lt;/span&gt; disagreements compared to the &lt;span class=&#34;math inline&#34;&gt;\(43\)&lt;/span&gt; disagreements of the standard classifier. Looking a little closer, we can see that the remaining mistakes that the local classifier makes are concentrated around the Bayes decision boundaries. Standard theoretical analysis of classification problems reveals that such points typically represent the hardest point to classify. We finally see that many, though by no means all, of the points at which the standard classifier makes a mistake appear in low-density regions, for example towards the bottom of the plots.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the authors&lt;/h2&gt;
+&lt;p&gt;This post was written by Thomas B. Berrett, and was based on&lt;/p&gt;
+&lt;p&gt;Cannings, T. I., Berrett, T. B. and Samworth, R. J. (2020) Local nearest neighbour classification with applications to semi-supervised learning. &lt;em&gt;Annals of Statistics&lt;/em&gt;, &lt;strong&gt;48&lt;/strong&gt;, 1789–1814. &lt;a href=&#34;https://projecteuclid.org/euclid.aos/1594972839&#34;&gt;.pdf&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/CanningsTI.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://www.maths.ed.ac.uk/~tcannings/About_Me.html&#34;&gt;Timothy I. Cannings&lt;/a&gt; is a lecturer in statistics and data science at the School of Mathematics, University of Edinburgh. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2015. He then worked with Prof Yingying Fan as a Postdoc at the University of Southern California.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/BerrettTB.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://thomasberrett.github.io&#34;&gt;Thomas B. Berrett&lt;/a&gt; is an Assistant Professor in the Department of Statistics at the University of Warwick. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2018, and later worked as a Postdoc with Prof Cristina Butucea at CREST, ENSAE, Institut Polytechnique de Paris.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/SamworthRJ.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;http://www.statslab.cam.ac.uk/~rjs57/&#34;&gt;Richard J. Samworth&lt;/a&gt; is Professor of Statistical Science and Director of the Statistical Laboratory at the University of Cambridge. He is also a Teaching Fellow at St John’s College.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
-      <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
+      <link>/post/2021/01/28/pls-for-big-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
-      <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data
-Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
+      <guid>/post/2021/01/28/pls-for-big-data/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets. These latent variables are constructed according to specific covariance or correlation requirements. As such the latent variables can be used as a data reduction tool that sheds light on the relationship between the datasets. For two blocks of data there are four established PLS methods that can be used to construct these latent variables:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;PLS-SVD&lt;/li&gt;
+&lt;li&gt;PLS-W2A&lt;/li&gt;
+&lt;li&gt;Canonical correlation analysis (CCA)&lt;/li&gt;
+&lt;li&gt;PLS-R&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These methods provide a range of useful methods for data exploration and prediction for datasets with high dimensional structure. However, as shown in the sparse PCA literature (Johnstone 2004) in high dimensional settings (&lt;span class=&#34;math inline&#34;&gt;\(n&amp;lt;&amp;lt;p\)&lt;/span&gt;) the standard latent variable estimates may be biased and sparsity inducing methods are a natural choice. After reviewing the two-block PLS methods and placing them in a common framework we provide details for the application of sparse PLS methods that use regularisation via either the lasso or sparse group lasso penalisation.&lt;/p&gt;
+&lt;div id=&#34;finding-the-latent-variables&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Finding the Latent variables&lt;/h3&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(X: n\times p\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y: n\times q\)&lt;/span&gt; be the datasets comprised of n observations on p and q variables respectively, the latent variables &lt;span class=&#34;math inline&#34;&gt;\(\xi = X u\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\omega = Y v\)&lt;/span&gt; bare a striking similarity to the principal components from principal component analysis (PCA) where &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; is a p-vector and &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; is a q-vector. The PLS-SVD, PLS-W2A and PLS-R methods optimise the sample covariance between the latent variables
+&lt;span class=&#34;math display&#34;&gt;\[
+\text{max}_{\xi,\omega} \widehat{Cov}(\xi, \omega) \rightarrow \text{max}_{u,v} \widehat{Cov}(Xu, Yv) = \text{max}_{u,v} u^TX^TYv
+\]&lt;/span&gt;
+subject to &lt;span class=&#34;math inline&#34;&gt;\(\|u\|=\|v\| = 1\)&lt;/span&gt; and orthogonality constraints for the different methods. Whereas CCA optimises
+&lt;span class=&#34;math display&#34;&gt;\[
+\text{max}_{\xi,\omega} \widehat{Corr}(\xi, \omega) \rightarrow\text{max}_{u,v} \widehat{Corr}(Xu, Yv) = \text{max}_{u,v} u^T(X^TX)^{-1/2}X^TY(Y^TY)^{-1/2}v
+\]&lt;/span&gt;
+subject to orthogonality constraints similar to the PLS-SVD. These orthogonality constraints are enforced by removing the effect of the constructed latent variables using projection matrices. Once the effect has been removed the optimisation is repeated on the projected data. This process is the same for all PLS methods and can be simply adjusted to allow for sparsity in the weights (&lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt;) using sparse regularising penalties (e.g. lasso, group lasso, sparse group lasso).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;computational-speedups&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Computational speedups&lt;/h3&gt;
+&lt;p&gt;Due to the algorithmic similarity of the different methods some additional computational approaches can be used to speed up the required computation for the PLS approach. In our paper, we consider reducing memory requirements and speeding up computation by making use of the “bigmemory” R package to allocate shared memory and make use of memory-mapped files. Rather than loading the full matrices when computing the matrix cross-product (&lt;span class=&#34;math inline&#34;&gt;\(X^TY\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(X^TX\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(Y^TY\)&lt;/span&gt;) we instead read chucks of the matrices, compute the cross-product on these chucks in parallel, and add these cross-products together, ie.
+&lt;span class=&#34;math display&#34;&gt;\[
+X^TY = \sum_{c=1}^CX_c^TY_c
+\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(X_c\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y_c\)&lt;/span&gt; are matrix chucks formed as the subsets of the rows of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Additional computational approaches are used for when either p or q are large or when n is very large and data is streaming in while q is small.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-on-emnist&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example on EMNIST&lt;/h3&gt;
+&lt;p&gt;We show an example using PLS regression for a discrimination task, namely the extended MNIST dataset. This data set consists of n = 280,000 handwritten digit images. It contains an equal number of samples for each digit class (0 to 9) where the dimension of the predictors is &lt;span class=&#34;math inline&#34;&gt;\(p=784\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(q=10\)&lt;/span&gt; classes. The images are already split into a training set of 240,000 cases and a test set of 40,000 cases. Since we have a large sample size &lt;span class=&#34;math inline&#34;&gt;\(n &amp;gt; p, q\)&lt;/span&gt; we opt not to consider regularisation for this example. The PLS-DA method is able to recover an accuracy of 86% in around 3 minutes using 20 latent variables and 2 cores.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-28-pls-for-big-data/EMNISTw.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We investigated the relationship between the number of chunks and the number of cores used in the algorithm. The plot below shows the elapsed computation time for fitting a single component of the PLS discriminant analysis algorithm using 2, 4 or 6 cores (on a laptop equipped with 8 cores). On the vertical axis, &lt;span class=&#34;math inline&#34;&gt;\(ngx\)&lt;/span&gt; indicates that &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; chunks were used in our algorithm.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references-and-related-work&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References and related work&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Johnstone, I. M. and Lu, A. Y. (2004) Sparse principal component analysis. Technical Report. Department of Statistics, Stanford University, Stanford.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sutton, M., Thiébaut, R., &amp;amp; Liquet, B. (2018). Sparse partial least squares with group and subgroup structure. Statistics in Medicine, 37(23), 3338–3356.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Lafaye de Micheaux, P., Liquet, B., &amp;amp; Sutton, M. (2019). PLS for Big Data: A unified parallel algorithm for regularised group PLS. Statistics Surveys, 13, 119–149.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Liquet, B., Lafaye de Micheaux, P., Hejblum, B. P., &amp;amp; Thiébaut, R. (2016). Group and sparse group partial least square approaches applied in genomics context. Bioinformatics , 32(1), 35–42.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Machine learning for causal inference that works</title>
-      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <link>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
-The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
+      <guid>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve kindly been invited to share a few words about a recent &lt;a href=&#34;https://projecteuclid.org/euclid.ba/1580461461&#34;&gt;paper&lt;/a&gt; my colleagues and I published in &lt;em&gt;Bayesian Analysis&lt;/em&gt;: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called &lt;a href=&#34;https://github.com/jaredsmurray/bcf&#34;&gt;bcf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The goal of this post is to work through a simple toy example to illustrate the strengths of BCF. Through this example I hope to explain what I mean when I say that BCF is “machine learning for causal inference that works”.&lt;/p&gt;
+&lt;div id=&#34;problem-setting&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Problem setting&lt;/h3&gt;
+&lt;p&gt;Suppose we want to estimate a possibly heterogeneous treatment effect of a binary treatment variable. This means, for example, that we want to know if a new drug reduces the duration of a headache and we think maybe the drug works better for some people and worse for other people. In addition to the question “how well (if at all) does the drug work?” we also want to know if the people for whom it works better can be characterized in terms of observable attributes, perhaps age, gender, or ethnicity. People either get the drug or not (we do not consider differing doses). Unfortunately, who gets the drug is not randomized, which complicates things. For example, if people who take the drug happen to be the ones with longer duration headaches (on average), that could skew our impression of how effective the drug is.&lt;/p&gt;
+&lt;p&gt;Although we do not have a randomized sample, let’s assume we are lucky enough to have the next best thing, which is that we observe all the attributes of each patient that affect how likely they are to have taken the drug. It is well known that access to these factors allows us to correctly estimate the treatment effect by turning the causal inference problem into a regression problem (aka supervised learning). Specifically, in that case the treatment effect can be expressed as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\tau(x_i) = \mbox{E}(Y \mid Z = 1, X = x_i) - \mbox{E}(Y \mid Z = 0, X = x_i)
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; is the response or outcome variable (the duration of headache), &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt; is the treatment assignment (did the patient take the drug or not), and &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; is a vector of attributes of patient &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;. This difference is called the conditional average treatment effect, or CATE; “conditional” refers to the fixed &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; vector, “average” refers to the expectation over &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;, and “treatment effect” refers to the difference between to treated (&lt;span class=&#34;math inline&#34;&gt;\(Z = 1\)&lt;/span&gt;) and untreated (&lt;span class=&#34;math inline&#34;&gt;\(Z = 0\)&lt;/span&gt;), or control, groups. If this quantity differs for distinct &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;, we say that there are “heterogeneous” effects.&lt;/p&gt;
+&lt;p&gt;The good news is that we have many methods that efficiently estimate conditional expectations in the difference above. The bad news, which wasn’t widely appreciated even just a few years ago, is that those methods don’t work as well as they should in terms of estimating the CATEs. Let’s take a look at why that is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-machine-learning-cate-estimators-are-high-variance&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Simple machine learning CATE estimators are high-variance&lt;/h3&gt;
+&lt;p&gt;A natural thing to do when faced with estimating two conditional expectations is simply to estimate them separately, training two separate machine learning models using the control group data and the treated group data individually. With enough data, this approach works just fine, but if the conditional expectation functions underlying the data are complicated relative to the available sample size, this approach can be highly unstable. This instability arises because fitting the two functions completely separately provides no control, or &lt;em&gt;regularization&lt;/em&gt;, over the implied fluctuations in the CATE (the difference between the two conditional mean functions).&lt;/p&gt;
+&lt;p&gt;It is well-known that for good nonparametric function estimation, effective regularization is necessary to prevent overfitting; this is the main insight from decades of supervised machine learning. But in causal inference, the goal is not estimating the conditional expectations themselves, but rather their difference. Without penalizing complexity of &lt;span class=&#34;math inline&#34;&gt;\(\tau(x)\)&lt;/span&gt; itself, one runs the risk of overfitting the treatment effects! And that’s exactly what happens in our example below.&lt;/p&gt;
+&lt;p&gt;This excessive variability has a fairly simple fix, which is to regularize the difference the same way you would penalize the complexity of an unknown function:
+&lt;span class=&#34;math display&#34;&gt;\[
+\mbox{min}_{f_0, f_1}\;\;\;\; \frac{1}{n_0} \sum_{i: z_i = 0}||y_i - f_0(x_i)||^2_2 + \frac{1}{n_1} \sum_{i: z_i = 1} ||y_i - f_1(x_i)||^2_2 + \lambda_0||f_0|| + \lambda_1||f_1|| + \lambda_{\tau}||f_1 - f_0||
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\lambda_0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\lambda_{\tau}\)&lt;/span&gt; are regularization tuning parameters and &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt; denotes a measure of the complexity of a function.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-new-problem-regularization-induced-confounding-ric&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;A new problem: regularization induced confounding (RIC)&lt;/h3&gt;
+&lt;p&gt;Incorporating the &lt;span class=&#34;math inline&#34;&gt;\(||f_1 - f_0||\)&lt;/span&gt; penalty solves one problem but introduces a new, subtler, one. Adding a constant to &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt; does not increase the complexity of &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(f_1 - f_0\)&lt;/span&gt;, but doing so may allow the complexity of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; to be &lt;em&gt;decreased&lt;/em&gt; without worsening the fit to the data (the first two terms of the objective function above). In practical terms, this means that the new regularization term we just introduced might have the unintended effect of inflating our treatment effect estimates!&lt;/p&gt;
+&lt;p&gt;When specifically might this happen? It can happen when the true &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; is quite complex and the probability of being treated is a monotone function of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\mbox{Pr}(Z = 1 \mid x) = \pi(x) = \pi(f_0(x))
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;and &lt;span class=&#34;math inline&#34;&gt;\(\frac{\partial \pi}{\partial f_0}\)&lt;/span&gt; never changes sign. Under this assumption, the treated observations in our data would tend to have higher outcome values, which our model could chalk up to a treatment effect without needing to learn the complicated pattern of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; because it is implicitly encoded in the treatment assignment variable, &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Is this situation plausible? Well, in our headache drug example, it would mean that people are more likely to take a drug if they are likely to have a very long lasting headache if they &lt;em&gt;didn’t&lt;/em&gt; take it. If people (or their doctors) expect the drug to help, this assumption makes total sense! We call these sorts of situations &lt;em&gt;targeted selection&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Solving the RIC issue turns out to be pretty easy, too: simply add an estimate of &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt; as a control variable. This allows the model to learn the true &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; with a &lt;em&gt;simple&lt;/em&gt; representation based on the extra feature, in the event that targeted selection is occurring.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;p&gt;Now let’s work through a simple example illustrating these ideas. We will consider a nonlinear but elementary conditional expectation function and simulate our treatment assignment variable according to targeted selection.
+&lt;span class=&#34;math display&#34;&gt;\[
+\begin{split}
+\tau(x) &amp;amp;= -1 + x\\
+f_0(x) &amp;amp;= 2 \{\sin(v x) + 1\}\\
+f_1(x) &amp;amp;= f_0(x) + \tau(x) = -1 + x + 2 \{\sin(v x) + 1\}\\
+\pi(x) &amp;amp;= f_0(x)/5\\
+y_i &amp;amp;= f_0(x_i) + \tau(x_i) + \sigma\epsilon_i
+\end{split}
+\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i\)&lt;/span&gt; are independent and identically distributed standard normal random variables. Our sample consists of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; evenly spaced observations &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; on the unit interval. This data generating process (DGP) guarantees that the probability of treatment ranges between 0.1 to 0.9. The parameter &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; governs the “complexity” of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt;, while the parameter &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; governs the statistical difficulty of the learning problem.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# set sample size and set control variable values
+n = 1000
+x = seq(0,1,length.out = n)
+
+# set the problem difficulty
+v = 30
+kappa = 2
+
+# define functions
+mu = function(x){2*(sin(v*x)+1)}
+tau = function(x){-1 + x}
+pi = function(x){mu(x)/5 + 0.1}
+
+# draw treatment assignment
+z = rbinom(n,1,pi(x))
+
+# draw outcome
+f_xz = mu(x) + tau(x)*z
+sigma = kappa*sd(f_xz)
+y = f_xz + sigma*rnorm(n)
+
+# calculate the true average treatment effect (ATE)
+print(mean(tau(x)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] -0.5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# calculate the naive estimate of the ATE
+print(mean(y[z==1]) - mean(y[z==0]))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.9889149&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Observe that the naive estimate is way off from the truth due to strong confounding.&lt;/p&gt;
+&lt;p&gt;Next, let’s use the separate regressions approach to estimating the treatment effect. To do this we will use the R package &lt;a href=&#34;https://github.com/jingyuhe/xbart&#34;&gt;XBART&lt;/a&gt;, based on another &lt;a href=&#34;https://arxiv.org/abs/2002.03375&#34;&gt;paper&lt;/a&gt; of mine. It can be downloaded and installed from here (but must be compiled from source).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit.f1 = XBART(y[z==1],x[z==1],x,
+               num_sweeps = sweeps, burnin = b, num_trees = 20,
+               tau = var(y[z==1])/20)
+
+yhat1 = rowMeans(fit.f1$yhats_test[,(b+1):sweeps])
+
+fit.f0 = XBART(y[z==0],x[z==0],x,
+               num_sweeps = sweeps, burnin = b, num_trees = 20, 
+               tau = var(y[z==0])/20)
+
+yhat0 = rowMeans(fit.f0$yhats_test[,(b+1):sweeps])
+
+tau.est1 &amp;lt;- yhat1 - yhat0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, let’s explicitly regularize the treatment effect. We will do this using the R package XBCF, which can be downloaded &lt;a href=&#34;https://github.com/socket778/XBCF&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xbcf_fit = XBCF(scale(y), x, x, z, 
+                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
+                 num_cutpoints = 20, max_depth = 250,
+                 num_trees_pr = 20,  tau_pr = tau1, 
+                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in if (class(y) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
+## the first element will be used&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tau.est2 = getTaus(xbcf_fit)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, let’s do it the right way and also incorporate the estimated propensity scores. First, we estimate them. Here, we again use XBART, but your favorite classification algorithm would be okay, too.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fitz = XBART.multinomial(y = z, num_class = 2, X = x, Xtest = x, 
+                         num_trees = 20, num_sweeps = sweeps, max_depth=250, 
+                         Nmin=6, num_cutpoints=50, tau_a = 2, tau_b = 1, 
+                         burnin = b, verbose = FALSE, parallel = TRUE, 
+                         sample_weights_flag = TRUE, weight = 5,update_tau = TRUE) 
+
+pihat = apply(fitz$yhats_test[(b+1):sweeps,,], c(2, 3), mean)[,2]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With those estimates in hand, we then run XBCF again, this time including the propensity score as an extra feature.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xbcf_fit.ps = XBCF(scale(y), cbind(pihat,x), x, z, 
+                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
+                 num_cutpoints = 20, max_depth = 250,
+                 num_trees_pr = 20,  tau_pr = tau1, 
+                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in if (class(X) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
+## the first element will be used&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in if (class(y) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
+## the first element will be used&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tau.est3 = getTaus(xbcf_fit.ps)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And now we can plot the results against the truth and compute the root mean squared estimation error of the CATEs.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(x,tau(x),type=&amp;#39;l&amp;#39;,ylim=c(-1.5,1.5),col=&amp;#39;red&amp;#39;,lty=2,lwd=2,bty=&amp;#39;n&amp;#39;,ylab=expression(tau))
+lines(x,tau.est1,col=&amp;#39;lightgray&amp;#39;,lwd=3)
+lines(x,tau.est2,col=&amp;#39;blue&amp;#39;,lwd=3)
+lines(x,tau.est3,col=&amp;#39;green&amp;#39;,lwd=3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-26-machine-learning-for-causal-inference-that-works_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rmse1 = sqrt(mean((tau(x)-tau.est1)^2))
+rmse2 = sqrt(mean((tau(x)-tau.est2)^2))
+rmse3 = sqrt(mean((tau(x)-tau.est3)^2))
+
+print(round(c(rmse1,rmse2,rmse3),2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1.15 0.45 0.18&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The pattern here is bad (gray), better (blue), best (green) from left to right. The true heterogeneous treatment effect function is depicted by the dashed red line. The third approach (the approach we advocate for in the BCF paper) is not &lt;em&gt;always&lt;/em&gt; better, but it is most of the time, sometimes by a very large margin. Try it out yourself, varying the sample size (&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;) and the two difficulty parameters (&lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Conclusions&lt;/h3&gt;
+&lt;p&gt;There are now many researchers working at the intersection of machine learning and causal inference. What distinguishes our work is a focus on building tools that work in practice, which requires understanding the role of regularization in causal inference and engineering methods that impose effective regularization schemes that have been calibrated to the kind of data we expect to encounter in common applications.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>The Mulitple Latent Block Model for mixed data</title>
-      <link>https://youngstats.github.io/post/2021/01/05/mlbm/</link>
+      <link>/post/2021/01/05/mlbm/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
-      <description>body { text-align: justify}  Abstract Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account.</description>
+      <guid>/post/2021/01/05/mlbm/</guid>
+      <description>
+
+
+&lt;style&gt;
+body {
+text-align: justify}
+&lt;/style&gt;
+&lt;div id=&#34;abstract&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account. For this purpose, we present how to use the Multiple Latent Block Model &lt;span class=&#34;citation&#34;&gt;(Robert 2017)&lt;/span&gt; on mixed data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;multiple-latent-block-model-for-mixed-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Multiple Latent Block Model for mixed data&lt;/h1&gt;
+&lt;p&gt;The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) &lt;span class=&#34;citation&#34;&gt;(Nadif and Govaert 2008)&lt;/span&gt;, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; matrices &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt; such that &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is the number of kinds of data. For the sake of simplicity, we consider here that &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; has two different kinds of features (i.e &lt;span class=&#34;math inline&#34;&gt;\(D=2\)&lt;/span&gt;). The MLBM performs a co-clustering such that the row-clusters partition is the same for all &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;, and that there is a column-clusters partition for every &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/example-mlbm-notations.svg&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Example of a mixed-data matrix with two different kinds of features co-clustered with the MLBM.&lt;/p&gt;
+&lt;/center&gt;
+&lt;div id=&#34;notations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Notations&lt;/h2&gt;
+&lt;p&gt;We consider that the data matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; has two different kinds of features, we note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the data matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}=(\boldsymbol{x}^{(1)},\boldsymbol{x}^{(2)})\)&lt;/span&gt;, and we will refer to &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt; in the general case (with &lt;span class=&#34;math inline&#34;&gt;\(d \in \{1,2\}\)&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; rows, &lt;span class=&#34;math inline&#34;&gt;\(J_1\)&lt;/span&gt; columns for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(1)}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(J_2\)&lt;/span&gt; columns for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(2)}\)&lt;/span&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; row-clusters, &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt; column-clusters for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(1)}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(H_2\)&lt;/span&gt; column-clusters for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(2)}\)&lt;/span&gt;,&lt;/li&gt;
+&lt;li&gt;the latent variables of the model &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v},\boldsymbol{w}=(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)})\)&lt;/span&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; is the row partition matrix of size &lt;span class=&#34;math inline&#34;&gt;\((N \times G)\)&lt;/span&gt; that indicates the cluster assignments, i.e &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}_i = (v_{i1},\ldots,v_{iG})\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(v_{ig}=1\)&lt;/span&gt; when observation &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; belongs to row cluster &lt;span class=&#34;math inline&#34;&gt;\(g\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(v_{ig}=0\)&lt;/span&gt; otherwise.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}\)&lt;/span&gt; is the column partition matrix of size &lt;span class=&#34;math inline&#34;&gt;\((J_d \times H_d)\)&lt;/span&gt; that indicates the cluster assignments, i.e &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}_j = (w_{j1},\ldots,w_{jH_d})\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(w_{jh}^{(d)}=1\)&lt;/span&gt; when feature &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; belongs to column cluster &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(w_{jh}^{(d)}=0\)&lt;/span&gt; otherwise,&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;a block refers to the crossing of a row-cluster and of a column-cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, for better readability, we sometimes highlight:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the latent variable and parameters that relate to row-clusters in blue (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}= \color{blue}{\boldsymbol{v}}\)&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;the latent variable and parameters that relate to column-clusters in green (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}= \color{ForestGreen}{\boldsymbol{w}}\)&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;the parameters that relate to blocks in red (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}_{gh}= \color{red}{\boldsymbol{\alpha}_{gh}}\)&lt;/span&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;assumptions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Assumptions&lt;/h2&gt;
+&lt;p&gt;The MLBM relies on several assumptions. The first one states that the &lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt; data matrices are conditionally independent of the row and column partitions:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+ p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w})
+ = p(\boldsymbol{x}^{(1)}|\boldsymbol{v},\boldsymbol{w}^{(1)}) \times p(\boldsymbol{x}^{(2)}|\boldsymbol{v},\boldsymbol{w}^{(2)})
+\]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, the univariate random variables &lt;span class=&#34;math inline&#34;&gt;\(x_{ij}^{(d)}\)&lt;/span&gt; are assumed to be conditionally independent on partitions &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}\)&lt;/span&gt;. Thus, the conditional probability function of &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{w}^{(d)})_d\)&lt;/span&gt; is expressed as:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w};\boldsymbol{\alpha})
+=
+\underset{i,j,g,h}{\prod}
+p(x_{ij}^{(1)}; \alpha_{gh}^{(1)})^{v_{ig}w_{jh}^{(1)}}
+p(x_{ij}^{(2)}; \alpha_{gh}^{(2)})^{v_{ig}w_{jh}^{(2)}},
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}=(\boldsymbol{\alpha}^{(d)})_d\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}^d=(\alpha_{gh}^{(d)})_{g,h}\)&lt;/span&gt; is the distribution parameters of block &lt;span class=&#34;math inline&#34;&gt;\((g,h)\)&lt;/span&gt; of matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;. It depends on the distribution one uses to model the data. For instance, in the case of the Gaussian distribution, &lt;span class=&#34;math inline&#34;&gt;\(\alpha_{gh}^{(d)} = (\boldsymbol{\mu}^{(d)}_{gh}, \boldsymbol{\Sigma}^{(d)}_{gh})\)&lt;/span&gt;. Let us note too that the chosen distributions can be different for each kind of data.&lt;/p&gt;
+&lt;p&gt;Second, the latent variables &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)}\)&lt;/span&gt; are assumed to be independent, so: &lt;span class=&#34;math inline&#34;&gt;\(p(\boldsymbol{v},\boldsymbol{w};\boldsymbol{\gamma},\boldsymbol{\rho}) = p(\boldsymbol{v};\boldsymbol{\gamma})p(\boldsymbol{w}^{(1)};\boldsymbol{\rho}^{(1)})p(\boldsymbol{w}^{(2)};\boldsymbol{\rho}^{(2)})\)&lt;/span&gt;, where:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+p(\boldsymbol{v};\boldsymbol{\pi}) = \underset{i,g}{\prod}\pi_g^{v_{ig}}
+\]&lt;/span&gt; and&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+p(\boldsymbol{w}^{(d)};\boldsymbol{\rho}^{(d)}) = \underset{j,h}{\prod}{\rho_h^{(d)}}^{w_{jh}^{(d)}}
+\]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;So, if &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((W^{(d)})_d\)&lt;/span&gt; are the sets of all possible partitions &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{w}^{(d)})_d\)&lt;/span&gt;, the probability density function &lt;span class=&#34;math inline&#34;&gt;\(p(\boldsymbol{x}; \boldsymbol{\theta})\)&lt;/span&gt; is written:
+&lt;span class=&#34;math display&#34;&gt;\[
+p(\boldsymbol{x};\boldsymbol{\theta})=
+\underset{(\color{blue}{\boldsymbol{v}},\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\in V\times W^{(1)} \times W^{(2)}}{\sum}
+\underset{i,g}{\prod}\color{blue}{\pi_g^{v_{ig}}}
+\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(1)}_h}^{w_{jh}^{(d)}}}
+\underset{i,j,g,h}{\prod}p(x_{ij}^{(1)}; \color{red}{\alpha_{gh}^{(1)}})^{\color{red}{v_{ig}w_{jh}^{(1)}}}
+\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(2)}_h}^{w_{jh}^{(2)}}}
+\underset{i,j,g,h}{\prod}p(x_{ij}^{(2)}; \color{red}{\alpha_{gh}^{(2)}})^{\color{red}{v_{ig}w_{jh}^{(2)}}}.
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;generative-process&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Generative process&lt;/h2&gt;
+&lt;p&gt;The generative process of a cell &lt;span class=&#34;math inline&#34;&gt;\(x^{(d)}_{ij}\)&lt;/span&gt; of the matrix is as follows:
+&lt;span class=&#34;math display&#34;&gt;\[
+\begin{align*}
+        &amp;amp;\color{blue}{\boldsymbol{v}_i} \sim \mathcal{M}(1,\color{blue}{\boldsymbol{\pi}}), \\
+        &amp;amp;\color{ForestGreen}{\boldsymbol{w}^{(d)}_j} \sim \mathcal{M}(1,\color{ForestGreen}{\boldsymbol{\rho^{(d)}}}),  \\
+        &amp;amp;x_{ij}^{(d)} | \color{red}{v_{ig}=1, w_{jh}^{(d)}=1} \sim  f(x_{ij}^{(d)};\color{red}{\boldsymbol{\alpha}^{(d)}_{gh}}).
+\end{align*}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;inference-of-the-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inference of the model&lt;/h2&gt;
+&lt;p&gt;Once we defined the generative process of a data set, the goal is to estimate the parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}\)&lt;/span&gt; of this generative process according to the data, and also to deduce the latent variables from them. In this case, we need to compute &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}=(\color{blue}{\boldsymbol{\pi}}, \color{ForestGreen}{\boldsymbol{\rho}^{(1)}}, \color{ForestGreen}{\boldsymbol{\rho}^{(2)}}, \color{red}{\boldsymbol{\alpha}^{(1)}_{gh}}, \color{red}{\boldsymbol{\alpha}^{(2)}_{gh}})\)&lt;/span&gt;, and to deduce the row partitions &lt;span class=&#34;math inline&#34;&gt;\(\color{blue}{\boldsymbol{v}}\)&lt;/span&gt; and column partitions &lt;span class=&#34;math inline&#34;&gt;\((\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\)&lt;/span&gt;. In the Maximum Likelihood Estimation framework, the Expectation-Maximisation (EM) algorithm is often used in such contexts with parameters and latent variables to be estimated. Unfortunately, the Expectation step is not tractable because it requires the calculation of many terms, which is not feasible in a reasonable amount of time. The Multiple Latent Block Model and more generally the methods based on the Latent Block Model use variants of the EM-algorithm such as the Stochastic-EM-Gibbs algorithm.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;use-case-analysing-a-health-quality-survey-in-oncology&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Use-case: analysing a health quality survey in oncology&lt;/h1&gt;
+&lt;p&gt;The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions”. In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell &lt;span class=&#34;math inline&#34;&gt;\((i, j)\)&lt;/span&gt; is the response of patient &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to question &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?”, if the patient answers “Not at all”, the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/ads-original.png&#34; class=&#34;class&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Questionnaire’s graphical representation: patients are projected onto rows and questions are projected onto columns.&lt;/p&gt;
+&lt;/center&gt;
+&lt;p&gt;As explained previously, the MLBM separates the features that are considered as different, and simultaneously performs a clustering on the rows and a clustering on the columns of each isolated matrix. The figure below shows the result for our use-case. We note &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; row-clusters, i.e. &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; patients profiles. Furthermore, the column-clusters helps summarising these profiles: by grouping the questions that have the same behaviour with respect to the row-clusters it is easier to distinguish the differences between these profiles.&lt;/p&gt;
+&lt;center&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/ads-coclust.png&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Questionnaire co-clustered with the MLBM.&lt;/p&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;remarks&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Remarks&lt;/h1&gt;
+&lt;p&gt;This blog post is based on &lt;span class=&#34;citation&#34;&gt;(Selosse, Jacques, and Biernacki 2020)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;(Selosse et al. 2019)&lt;/span&gt;. Furthermore, The R package &lt;code&gt;mixedClust&lt;/code&gt; implements the Multiple Latent Block Model and will be available on the CRAN soon.&lt;/p&gt;
+&lt;p&gt;About the authors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/pic-ms.jpeg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Margot Selosse&lt;/strong&gt; received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/pic-jj.jpg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Julien Jacques&lt;/strong&gt; received his Ph.D. degree in applied mathematics from University of Grenoble, France. In 2006 he joined University of Lille where he held the position of Associate Professor. In 2014, he joined University of Lyon as Full Professor in Statistics. His current research in statistical learning concerns the design of clustering algorithm for functional data, ordinal data and mixed-type data. He is a member of the French Society of Statistics.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Christophe Biernacki&lt;/strong&gt; is a Scientific Deputy at Inria Lille and Scientific Head of the Inria MODAL research team, and received his Ph.D. degree from Université de Compiègne in 1997. His research interests are focused on model-based and model-free clustering of heterogeneous data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-nadif08&#34;&gt;
+&lt;p&gt;Nadif, Mohamed, and Gérard Govaert. 2008. “Algorithms for Model-Based Block Gaussian Clustering.” &lt;em&gt;International Conference on Data Mining&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-robert17&#34;&gt;
+&lt;p&gt;Robert, Valérie. 2017. “Classification Croisée Pour L’analyse de Bases de Données de Grandes Dimensions de Pharmacovigilance.” Université Paris-Sud.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-selosse20&#34;&gt;
+&lt;p&gt;Selosse, Margot, Julien Jacques, and Christophe Biernacki. 2020. “Model-Based Co-Clustering for Mixed Type Data.” &lt;em&gt;Computational Statistics &amp;amp; Data Analysis&lt;/em&gt; 144: 106866.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-selosse19&#34;&gt;
+&lt;p&gt;Selosse, Margot, Julien Jacques, Christophe Biernacki, and Cousson-Gélie Florence. 2019. “Analysing a Quality-of-Life Survey by Using a Coclustering Model for Ordinal Data and Some Dynamic Implications.” &lt;em&gt;Journal of the Royal Statistical Society: Series C (Applied Statistics)&lt;/em&gt; 68 (5): 1327–49.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
+      <link>/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
-      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
-Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
+      <guid>/post/2020/12/15/icph/</guid>
+      <description>&lt;p&gt;&lt;em&gt;We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Given a target variable &lt;code&gt;$Y$&lt;/code&gt;, and a vector &lt;code&gt;$X = (X^1, \dots, X^d)$&lt;/code&gt;  of &lt;code&gt;$d$&lt;/code&gt; covariates, we are trying to infer the set &lt;code&gt;$S^* \subseteq \{1, \dots, d\}$&lt;/code&gt; of observable causal parents of &lt;code&gt;$Y$&lt;/code&gt;. There are many good reasons for being interested in causal predictors. One of them is the following well-known stability property: a regression model which regresses &lt;code&gt;$Y$&lt;/code&gt; on all of its causal parents remains valid under arbitrary interventions on any variable other than &lt;code&gt;$Y$&lt;/code&gt; itself. In cases where data are heterogeneous (e.g., in a time series setting), causal regression models can thus sometimes be used to obtain stable predictions across all different patterns of heterogeneity (e.g., across time). This stability property has been well-studied and is known under different names, e.g., invariance, autonomy or modularity &lt;a href=&#34;#1&#34;&gt;[2]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[3]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In a setting without hidden variables, the invariance property has been exploited to recover (parts of) &lt;code&gt;$S^*$&lt;/code&gt;: given data from a heterogeneous time series, one runs through all possible subsets &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt; and checks whether the conditional of &lt;code&gt;$Y_t$&lt;/code&gt; given &lt;code&gt;$X_t^S := (X_t^j)_{j \in S}$&lt;/code&gt; remains invariant across time. If more than one set satisfies invariance, one outputs the intersection of all invariant sets; this algorithm is known as the ICP (&amp;lsquo;Invariant Causal Prediction&amp;rsquo;) algorithm &lt;a href=&#34;#1&#34;&gt;[1]&lt;/a&gt;. Here, we extend ICP to allow for unobserved direct causes of &lt;code&gt;$Y$&lt;/code&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;invariance-and-hidden-variables&#34;&gt;Invariance and hidden variables&lt;/h3&gt;
+&lt;p&gt;Let &lt;code&gt;$(\mathbf{X}, \mathbf{Y}, \mathbf{H}) = (X_t,Y_t,H_t)_{t=1}^n \in \mathbb{R}^{n \times (d+1+1)}$&lt;/code&gt; come from a structural causal model (SCM). Assume there exists a set &lt;code&gt;$S^* \subseteq \{1, \dots, d\}$&lt;/code&gt;, a function &lt;code&gt;$f$&lt;/code&gt;, and i.i.d. variables &lt;code&gt;$(\varepsilon_t)_{t=1}^n \perp (\mathbf{X}, \mathbf{H})$&lt;/code&gt;, such that for all &lt;code&gt;$t$&lt;/code&gt;, the assignment for &lt;code&gt;$Y_t$&lt;/code&gt; is given as&lt;/p&gt;
+&lt;p&gt;$$
+Y_t := f(X_t^{S^*}, H_t, \varepsilon_t).
+$$&lt;/p&gt;
+&lt;p&gt;All remaining structural assignments are allowed to vary across time. Our goal is to infer the unknown set &lt;code&gt;$S^*$&lt;/code&gt; based on a sample from &lt;code&gt;$(\mathbf{X}, \mathbf{Y})$&lt;/code&gt;. Due to the hidden variables &lt;code&gt;$H_t$&lt;/code&gt; (whose distribution may vary over time), the conditional &lt;code&gt;$P_{Y_t \vert X_t^{S^*}}$&lt;/code&gt; is not ensured to be time-invarariant. However, the set &lt;code&gt;$S^*$&lt;/code&gt; satisifes a different form of invariance: using the law of total probability, it follows that for all &lt;code&gt;$x,t$&lt;/code&gt;,&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$$
+P_{Y_t \vert (X_t^{S^*} = x)} = \int \underbrace{P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}}_{\text{invariant in } t} P_{H_t \vert (X_t^{S^*} = x)} (dh).
+$$&lt;/p&gt;
+&lt;p&gt;That is, &lt;code&gt;$P_{Y_t \vert (X_t^{S^*} = x)}$&lt;/code&gt; is equal to a mixture of several distributions &lt;code&gt;$P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}$&lt;/code&gt;, each of which is invariant in &lt;code&gt;$t$&lt;/code&gt;, but with an associated mixture distribution &lt;code&gt;$P_{H_t \vert (X_t^{S^*} = x)}$&lt;/code&gt; which may change across time. We refer to this property as &lt;code&gt;$h$&lt;/code&gt;-invariance (for &amp;lsquo;hidden-invariance&amp;rsquo;). Ideally, we would like to directly exploit this property for causal discovery, by running through all subsets &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt; and testing whether they satisfy &lt;code&gt;$h$&lt;/code&gt;-invariance. To obtain statistical tests with any reasonable amount of power, we further impose the following simplifying assumptions. We assume that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the hidden variables &lt;code&gt;$H_t$&lt;/code&gt; take only few different values &lt;code&gt;$\{1, \dots, \ell\}$&lt;/code&gt;, and&lt;/li&gt;
+&lt;li&gt;for every &lt;code&gt;$h$&lt;/code&gt;, &lt;code&gt;$f(\cdot, h, \cdot)$&lt;/code&gt; is linear, and&lt;/li&gt;
+&lt;li&gt;the noise variables &lt;code&gt;$\varepsilon_1, \dots, \varepsilon_n$&lt;/code&gt; are Gaussian.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Under these assumptions, the above integral reduces to a discrete sum of time-invariant linear Gaussian regressions. In other words, for &lt;code&gt;$S = S^*$&lt;/code&gt;, the following null hypothesis holds true.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;code&gt;\[H_{0,S}: \left\{ \begin{array}{l} \text{there exists } \theta = (\beta_j, \sigma_j^2)_{j=1}^\ell \text{ such that for all } t, P_{Y_t \vert X_t^S} \text{ is a mixture} \\ \text{of } \ell \text{ linear Gaussian regressions with regression parameters } \theta. \end{array} \right.\]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Such mixtures of regressions are also known as &amp;ldquo;switching regression&amp;rdquo; models &lt;a href=&#34;#1&#34;&gt;[5]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[6]&lt;/a&gt;. The above hypothesis specifies an invariance only in the mixing components of the model, while the mixing proportions are allowed to vary over time (this allows for the hidden variables to be heterogeneous). Given a family of statistical tests for &lt;code&gt;$(H_{0,S})_{S \subseteq \{1, \dots, d\}}$&lt;/code&gt;, we can construct a causal discovery algorithm analogously to ordinary ICP.&lt;/p&gt;
+&lt;h3 id=&#34;algorithm-icph&#34;&gt;Algorithm: ICPH&lt;/h3&gt;
+&lt;p&gt;Our causal discovery algorithm ICPH (&amp;lsquo;Invariant Causal Prediction in the presence of Hidden variables&amp;rsquo;) operates in the following way.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the sequential ordering of data to construct (disjoint) environments &lt;code&gt;$e_1 \cup \cdots \cup e_k = \{1, \dots, n \}$&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For each &lt;code&gt;$S \subseteq \{1, \dots, d \}$&lt;/code&gt;, test &lt;code&gt;$H_{0,S}$&lt;/code&gt; using the environments.&lt;/li&gt;
+&lt;li&gt;Output the intersection &lt;code&gt;$\hat S := \bigcap_{S: H_{0,S} \text{ not rej.}} S$&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;The main work is contained in the construction of valid tests of the hypotheses &lt;code&gt;$H_{0,S}$&lt;/code&gt;. Given a candidate set &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt;, we first fit a switching regression model to each environment &lt;code&gt;$e_1, \dots, e_k$&lt;/code&gt; separately. For each environment, we then compute a joint confidence region for the vector &lt;code&gt;$\theta$&lt;/code&gt; of regression parameters, and check whether all these regions have a non-empty intersection. We prove that this test obtains asymptotically valid level under mild assumptions. As a corollary, we directly obtain the asymptotic false discovery control of ICPH:&lt;/p&gt;
+&lt;p&gt;$$\text{for any test level } \alpha \in (0,1), \text{ we have } \lim \inf_{n \to \infty} P(\hat S_n \subseteq S^*) \geq 1-\alpha.$$&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;p&gt;We now illustrate our method in the simple case where &lt;code&gt;$d=3$&lt;/code&gt; and &lt;code&gt;$\ell=2$&lt;/code&gt;. Here, the target variable &lt;code&gt;$Y_t$&lt;/code&gt; is directly affected by &lt;code&gt;$X_t^2$&lt;/code&gt; and by the binary latent variable &lt;code&gt;$H_t$&lt;/code&gt;. The structural assignment for &lt;code&gt;$Y_t$&lt;/code&gt; remains the same for all &lt;code&gt;$t$&lt;/code&gt;, whereas some of the remaining assignments change continuously throughout time.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/h_invariance.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The left figure illustrates the causal structure among &lt;code&gt;$(X_t, Y_t, H_t)$&lt;/code&gt; for each time point &lt;code&gt;$t$&lt;/code&gt;. The node &lt;code&gt;$E$&lt;/code&gt; denotes the &amp;ldquo;environment variable&amp;rdquo; and indicates which of the structural assignments change over time. The assignment for &lt;code&gt;$Y_t$&lt;/code&gt; is the same for all observations, and the set &lt;code&gt;$S^* = \{2\}$&lt;/code&gt; is therefore &lt;code&gt;$h$&lt;/code&gt;-invariant. This can be seen in the plot on the right, which shows rolling-window estimates of the regression coefficients for the regression of &lt;code&gt;$Y_t$&lt;/code&gt; onto each of the three predictors. Within both regimes &lt;code&gt;$H_t = 1$&lt;/code&gt; and &lt;code&gt;$H_t = 2$&lt;/code&gt; (corresponding to different background colors in the plot), the regression coefficient for &lt;code&gt;$X_t^2$&lt;/code&gt; (green) is time-homogeneous. When regressing &lt;code&gt;$Y_t$&lt;/code&gt; onto &lt;code&gt;$X_t^1$&lt;/code&gt; or &lt;code&gt;$X_t^3$&lt;/code&gt;, the regression coefficients change in a more complicated fashion.&lt;/p&gt;
+&lt;p&gt;To infer &lt;code&gt;$S^*$&lt;/code&gt;, our causal discovery algorithm now runs through all subsets &lt;code&gt;$S \subseteq \{1,2,3\}$&lt;/code&gt;, and checks whether &lt;code&gt;$H_{0,S}$&lt;/code&gt; holds true. In this example, the  results (assuming no test errors) are:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/icph_all.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;so we correctly output &lt;code&gt;$\hat S = \{2\} \cap \{2,3\} = \{2\}$&lt;/code&gt;. In general, we are not guaranteed to recover the full set &lt;code&gt;$S^*$&lt;/code&gt;, but only a subset hereof.&lt;/p&gt;
+&lt;h3 id=&#34;empirical-results&#34;&gt;Empirical results&lt;/h3&gt;
+&lt;p&gt;We test our algorithm on simulated data. Below, we show results of a simulation study where &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt; are the true causal parents of &lt;code&gt;$Y$&lt;/code&gt;, and &lt;code&gt;$X^3$&lt;/code&gt; is descendant of &lt;code&gt;$Y$&lt;/code&gt;. For increasing sample size, we report, for each individual variable, the empirical frequency of inclusion in &lt;code&gt;$\hat S$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/emp_results.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Circles correspond to our method, while rectangles and triangles are two alternative methods that are included as baseline. Colored curves correspond to various model violations. As the sample size increases, ICPH tends to identify both causal parents &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt;, while the false discovery rate (the rate of inclusion of &lt;code&gt;$X^3$&lt;/code&gt;) is controlled at level &lt;code&gt;$\alpha = 0.05$&lt;/code&gt;. Our algorithm is robust against most considered model violations. If we allow the hidden variable to be continuous (purple curve), our method mostly returns the uninformative output &lt;code&gt;$\hat S = \emptyset$&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;reconstruction-of-the-hidden-variables&#34;&gt;Reconstruction of the hidden variables&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;By assumption, the causal effect &lt;code&gt;$X_t^{S^*} \to Y_t$&lt;/code&gt; depends on the value of the hidden variable &lt;code&gt;$H_t$&lt;/code&gt;. For example, &lt;code&gt;$X_t^{S^*}$&lt;/code&gt; may have a strong positive impact on &lt;code&gt;$Y_t$&lt;/code&gt; for &lt;code&gt;$H_t = 1$&lt;/code&gt;, while &lt;code&gt;$X_t^{S^*}$&lt;/code&gt; and &lt;code&gt;$Y_t$&lt;/code&gt; are rendered entirely independent for &lt;code&gt;$H_t=1$&lt;/code&gt;. In some applications, these differences in causal dependence are of particular interest in themselves, because they signify fundamentally different &amp;lsquo;states&amp;rsquo; or &amp;lsquo;regimes&amp;rsquo; of the underlying system. In such cases, we may thus want to reconstruct the hidden variables. If the true set of causal parents is known (e.g., because there is only one invariant set), we can estimate &lt;code&gt;$\hat H_t = \operatorname{argmax}_{j \in \{1, \dots, \ell\}}  \hat P(H_t = j \, \vert \, X_t^{S^*}, Y_t)$&lt;/code&gt; directly from the fitted switching regression model &lt;code&gt;$\hat P$&lt;/code&gt; for &lt;code&gt;$Y_t \, \vert \, X_t^{S^*}$&lt;/code&gt;. In the main paper, we apply this reconstruction approach to a real-world data set related to photosynthetic activity of terrestrial ecosystems, where the hidden variable corresponds to the vegetation type.&lt;/p&gt;
+&lt;h3 id=&#34;this-post-is-written-by-r-christiansen-and-is-based-on&#34;&gt;This post is written by R. Christiansen and is based on&lt;/h3&gt;
+&lt;p&gt;R. Christiansen and J. Peters. &lt;a href=&#34;https://jmlr.org/papers/v21/19-407.html&#34;&gt;Switching regression models and causal inference in the presence of discrete latent variables&lt;/a&gt;. &lt;em&gt;Journal of Machine Learning Research&lt;/em&gt;, 21(41):1−46, 2020.&lt;/p&gt;
+&lt;h3 id=&#34;about-the-authors&#34;&gt;About the authors&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.math.ku.dk/english/staff/?pure=en/persons/525143&#34;&gt;Rune Christiansen&lt;/a&gt; is a postdoc at the Department of Mathematical Sciences, University of Copenhagen. He obtained his PhD degree from the same institution.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://web.math.ku.dk/~peters/&#34;&gt;Jonas Peters&lt;/a&gt; is a professor at the Department of Mathematical Sciences, University of Copenhagen. Previously, he has been at the MPI for Intelligent Systems in Tuebingen and the Seminar for Statistics, ETH Zurich.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[1]&lt;!-- raw HTML omitted --&gt;  J. Peters, P. Bühlmann, and N. Meinshausen. Causal inference by using invariant prediction: identification and confidence intervals. &lt;em&gt;Journal of the Royal Statistical Society: Series B (Statistical Methodology)&lt;/em&gt;, 78(5):947–1012, 2016.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[2]&lt;!-- raw HTML omitted --&gt; T. Haavelmo. The probability approach in econometrics. &lt;em&gt;Econometrica&lt;/em&gt;, 12:S1–S115 (supplement), 1944.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[3]&lt;!-- raw HTML omitted --&gt; J. Aldrich. Autonomy. &lt;em&gt;Oxford Economic Papers&lt;/em&gt;, 41:15–34, 1989.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[4]&lt;!-- raw HTML omitted --&gt; J. Pearl. &lt;em&gt;Causality: Models, Reasoning, and Inference&lt;/em&gt;. Cambridge University Press, New York, USA, 2nd edition, 2009.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[5]&lt;!-- raw HTML omitted --&gt; R. De Veaux. Mixtures of linear regressions. &lt;em&gt;Computational Statistics &amp;amp; Data Analysis&lt;/em&gt;, 8 (3):227–245, 02 1989.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[6]&lt;!-- raw HTML omitted --&gt; S. Goldfeld and R. Quandt. The estimation of structural shifts by switching regressions. &lt;em&gt;Annals of Economic and Social Measurement&lt;/em&gt;, Volume 2, number 4, pages 475–485. NBER, 1973.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
 </title>
-      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
+      <link>/post/2020/12/04/functional-regression-control-chart/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
-      <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
+      <guid>/post/2020/12/04/functional-regression-control-chart/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;New statistical process control (SPC) methods have to be developed in
+order to handle more and more complex data, which are available because
+of the advent of new data acquisition technologies. In particular, in
+many practical situations the quality characteristic of a process can be
+modelled as a function defined on a compact domain, data of such kind
+are the foundation of a rapidly expanding area of statistics referred to
+as &lt;em&gt;functional data analysis&lt;/em&gt; (FDA). SPC methods which allow monitoring
+and controlling such processes are known as &lt;em&gt;profile monitoring&lt;/em&gt;
+techniques. As in the classical SPC (i.e., where data are scalars)
+profile monitoring control charts have the task of continuously
+monitoring the quality characteristic and of triggering a signal when
+assignable sources of variations (i.e., &lt;em&gt;special causes&lt;/em&gt;) act on it.
+When this happens, the process is said to be out-of-control (OC). On the
+contrary, the process is said to be in-control (IC) when only normal
+sources of variation (i.e., &lt;em&gt;common causes&lt;/em&gt;) apply.&lt;/p&gt;
+&lt;p&gt;Often, measures of other functional covariates related to the quality
+characteristic are available. To this end, we propose a new control
+chart that continuously monitors the quality characteristic using
+information coming from the other functional covariates. The idea is to
+adjust the quality characteristic value in order to improve the accuracy
+and the effectiveness of the chart in identifying assignable sources of
+variations acting on the process. This chart is referred to as
+&lt;em&gt;functional regression control chart&lt;/em&gt; (FRCC) due to the similarity to
+the &lt;em&gt;regression control chart&lt;/em&gt;, which arises in the multivariate (non
+functional) context. The proposed methodology is implemented in the &lt;code&gt;R&lt;/code&gt;
+package &lt;code&gt;funcharts&lt;/code&gt; available at
+&lt;a href=&#34;https://github.com/unina-sfere/funcharts&#34;&gt;https://github.com/unina-sfere/funcharts&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;sec_2&#34;&gt;The Functional Regression Control Chart Framework&lt;/h1&gt;
+&lt;p&gt;The FRCC can be regarded as a general framework for profile monitoring
+that can be divided into three main steps. Firstly, (i) define a
+functional regression model to be fitted $$\label{eq_generalmodel}
+\tilde{Y}=g\left(\mathbf{\tilde{X}}\right)+\varepsilon,$$ where
+&lt;code&gt;$\tilde{Y}$&lt;/code&gt; is the functional response variable, which represents the
+functional quality characteristic, and &lt;code&gt;$\varepsilon$&lt;/code&gt; is a functional
+error term, both defined on the compact domain &lt;code&gt;$\mathcal{T}$&lt;/code&gt;, &lt;code&gt;$g$&lt;/code&gt; is a
+generic function of a vector &lt;code&gt;$\mathbf{\tilde{X}}$&lt;/code&gt; of random functional
+covariates &lt;code&gt;$\tilde{X}_1,\dots,\tilde{X}_p$&lt;/code&gt;, defined on the compact
+domain &lt;code&gt;$\mathcal{S}$&lt;/code&gt;. Secondly, (ii) define the estimation method of the
+chosen model, and, thirdly (iii) define the monitoring strategy of the
+functional residual defined as $$\label{eq_generalresiduals}
+\tilde{e}=\tilde{Y}-\widehat{\tilde{Y}} ,$$ where &lt;code&gt;$\widehat{\tilde{Y}}$&lt;/code&gt;
+is the fitted value of &lt;code&gt;$\tilde{Y}$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In particular, to obtain a specific implementation of the FRCC, we
+assume that the covariates &lt;code&gt;$\mathbf{X}$&lt;/code&gt; linearly influence the response
+&lt;code&gt;$Y$&lt;/code&gt; through the &lt;em&gt;multivariate functional linear regression&lt;/em&gt; model, that
+is $$\label{eq_lm}
+Y\left(t\right)=\int_{\mathcal{S}}\left(\mathbf{\beta}\left(s,t\right)\right)^{T}\mathbf{X}\left(s\right)ds+\varepsilon\left(t\right)\quad t \in \mathcal{T},$$
+where &lt;code&gt;$Y$&lt;/code&gt; and &lt;code&gt;$\mathbf{X}$&lt;/code&gt; are the standardized versions of &lt;code&gt;$\tilde{Y}$&lt;/code&gt; and
+&lt;code&gt;$\tilde{\mathbf{X}}$&lt;/code&gt;, and
+&lt;code&gt;$\mathbf{\beta}=\left(\beta_1,\dots,\beta_p\right)^{T}$&lt;/code&gt; is the coefficient
+vector. An estimator &lt;code&gt;$\hat{\mathbf{\beta}}$&lt;/code&gt; of the coefficient vector
+&lt;code&gt;$\mathbf{\beta}$&lt;/code&gt; is obtained using &lt;code&gt;$n$&lt;/code&gt; i.i.d. observations of the response
+and predictor variables, and considering the *multivariate functional principal component* or
+Karhunen&amp;ndash;Loève decomposition of &lt;code&gt;$Y$&lt;/code&gt; and
+&lt;code&gt;$\mathbf{X}$&lt;/code&gt;. To monitor the residual &lt;code&gt;$\tilde e$&lt;/code&gt;, we consider the Hotelling&amp;rsquo;s &lt;code&gt;$T^{2}$&lt;/code&gt;
+and the squared prediction error (&lt;code&gt;$SPE$&lt;/code&gt;) control charts based on the
+scores of the functional principal component decomposition. The control
+limits are calculated using percentiles of the empirical distributions
+of the two statistics, estimated considering observations acquired under
+in-control conditions and an overall Type I error. This phase, along
+with the estimation of &lt;code&gt;$\mathbf{\beta}$&lt;/code&gt;, will be
+referred to as Phase I. For a new observation, the residual and, thus,
+the &lt;code&gt;$T^{2}$&lt;/code&gt; and &lt;code&gt;$SPE$&lt;/code&gt; statistics are calculated and an alarm signal is
+issued if at least one statistic violets the control limits (Phase II).&lt;/p&gt;
+&lt;h1 id=&#34;sec_3&#34;&gt;Real-case Study: Fuel Consumption Monitoring in the Shipping Industry&lt;/h1&gt;
+&lt;p&gt;To demonstrate the potential and the applicability of the proposed
+control chart in practical situations, a real-case study in the shipping
+industry is presented. It addresses the issue of monitoring ship fuel
+consumption and, thus, &lt;code&gt;$\text{CO}_{\text{2}}$&lt;/code&gt; emissions, which, in view of the dramatic
+climate change, is of great interest in the maritime field in the very
+last years. In particular, real data are collected from a Ro-Pax ship
+owned by the Italian shipping company Grimaldi Group linking two ports
+in the Mediterranean sea from December 2014 to October 2017.
+The following figure shows the
+315 profiles observed for the covariates and response.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/fig1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In particular, the &lt;em&gt;cumulative fuel consumption&lt;/em&gt; (&lt;code&gt;$CFC$&lt;/code&gt;) per each voyage
+is considered as the response variable, whereas, the &lt;em&gt;sailing time&lt;/em&gt;
+(&lt;code&gt;$T$&lt;/code&gt;), measured in hours (&lt;code&gt;$h$&lt;/code&gt;), the &lt;em&gt;speed over ground&lt;/em&gt; (&lt;code&gt;$SOG$&lt;/code&gt;),
+measured in knots (&lt;code&gt;$kn$&lt;/code&gt;), and the &lt;em&gt;longitudinal&lt;/em&gt; and &lt;em&gt;transverse wind
+components&lt;/em&gt; (&lt;code&gt;$W_{lo}$&lt;/code&gt; and &lt;code&gt;$W_{tr}$&lt;/code&gt;), measured in knots (&lt;code&gt;$kn$&lt;/code&gt;), are
+assumed as the predictors.&lt;/p&gt;
+&lt;p&gt;During February 2016 energy efficiency operations were performed that
+produced a shift in the response mean. In light of this, observations
+before energy efficiency operations are used in Phase I, whereas the
+remaining observations are used to perform Phase II. To evaluate the
+FRCC performance, two competitor profile monitoring schemes are
+considered. They consist of monitoring scores coming from a principal
+decomposition of the response by means of Hotelling&amp;rsquo;s &lt;code&gt;$T^{2}$&lt;/code&gt; and the
+&lt;code&gt;$SPE$&lt;/code&gt; control charts (hereafter denoted as RESP control chart), and of
+monitoring the area under the response curve (hereafter denoted as INBA
+control chart). The performance of the three charts is evaluated by
+means of the &lt;em&gt;average run length&lt;/em&gt; (&lt;code&gt;$\text{ARL}$&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;In the following figure, each observation is plotted onto the FRCC control
+chart and the two competitor ones.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;By comparing the three charts, the responsiveness of the FRCC is
+evidently higher than that of the the INBA and the RESP control charts
+which signal a much lower number of OCs. In particular, for the FRCC the
+change in the response mean is almost exclusively captured by the
+&lt;code&gt;$T^{2}$&lt;/code&gt; control chart, which means that dissimilarities between the
+Phase I and Phase II samples occur mostly in the space spanned by the
+retained principal components. Moreover, by looking at the following table,
+the estimated &lt;code&gt;$\text{ARL}$&lt;/code&gt; (&lt;code&gt;$\widehat{\text{ARL}}$&lt;/code&gt;) achieved by FRCC is at least a
+fourth of those achieved by the RESP and INBA control charts. This
+further confirms that the FRCC outperforms the competitor control
+charts.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;FRCC&lt;/th&gt;
+&lt;th&gt;RESP&lt;/th&gt;
+&lt;th&gt;INBA&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;$\widehat{\text{ARL}}$&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2.07&lt;/td&gt;
+&lt;td&gt;9.46&lt;/td&gt;
+&lt;td&gt;11.28&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;This article is based on&lt;/strong&gt;&lt;br&gt;
+Centofanti, Fabio, Antonio Lepore, Alessandra Menafoglio, Biagio
+Palumbo, and Simone Vantini. &amp;quot;Functional Regression Control Chart.&amp;quot;
+Technometrics (2020): 1-14, DOI:
+&lt;a href=&#34;https://doi.org/10.1080/00401706.2020.1753581&#34;&gt;https://doi.org/10.1080/00401706.2020.1753581&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;authors-biography&#34; class=&#34;unnumbered&#34;&gt;Authors&amp;rsquo; biography&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_fabio.jpg&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Fabio Centofanti&lt;/strong&gt; is a
+PhD student at the Department of Industrial Engineering of the
+University of Naples Federico II, Italy, &lt;a href=&#34;mailto:fabio.centofanti@unina.it&#34;&gt;fabio.centofanti@unina.it&lt;/a&gt;. His research interests include
+functional data analysis and statistical process monitoring.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_lepore.png&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Antonio Lepore&lt;/strong&gt; is an
+Assistant Professor at the Department of Industrial Engineering of the
+University of Naples Federico II, Italy, &lt;a href=&#34;mailto:antonio.lepore@unina.it&#34;&gt;antonio.lepore@unina.it&lt;/a&gt;. His main research interests
+include the industrial application of statistical techniques to the
+monitoring of complex measurement profiles from multi-sensor acquisition
+systems, with particular attention to renewable energy and harmful
+emissions.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_menafoglio.jpg&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Alessandra Menafoglio&lt;/strong&gt; is an Assistant Professor at MOX, Department of
+Mathematics, Politecnico di Milano, &lt;a href=&#34;mailto:alessandra.menafoglio@polimi.it&#34;&gt;alessandra.menafoglio@polimi.it&lt;/a&gt;. Her research interests focus on the
+development of innovative statistical models and methods for the
+analysis and statistical process control of complex observations (e.g.,
+curves, images, functional signals), possibly characterized by spatial
+dependence.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_palumbo.png&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Biagio Palumbo&lt;/strong&gt; is an
+Associate Professor in &amp;ldquo;Statistics for experimental and technological
+research&amp;rdquo; at the Department of Industrial Engineering of the University
+of Naples Federico II, Italy, &lt;a href=&#34;mailto:biagio.palumbo@unina.it&#34;&gt;biagio.palumbo@unina.it&lt;/a&gt;. His major research interests include
+reliability, design and analysis of experiments, statistical methods for
+process monitoring and optimization and data science for technology.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_vantini.png&#34; alt=&#34;&#34;&gt;
+&lt;strong&gt;Simone Vantini&lt;/strong&gt; is
+Associate Professor of Statistics at the Politecnico di Milano, Italy, &lt;a href=&#34;mailto:simone.vantini@polimi.it&#34;&gt;simone.vantini@polimi.it&lt;/a&gt;.
+He has been publishing widely in Functional and Object-Oriented Data
+Analysis. His current research interests include: permutation testing,
+nonparametric forecasting, process control, non-Euclidean data, and in
+general statistical methods and applications motivated by business or
+industrial problems.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Online cash register data in the measurement of retail trade turnover</title>
-      <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
+      <link>/post/2020/12/03/abel/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
-      <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.
-Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
+      <guid>/post/2020/12/03/abel/</guid>
+      <description>&lt;p&gt;&lt;em&gt;The Hungarian Central Statistical Office uses online cash register data
+for the measurement of retail trade and food services. The data source
+allows the statistical office to considerably cut administrative burden
+of data providers without quality loss in retail trade statistics.
+Online cash register data is widely used in tracking the latest
+developments in retail trade during the coronavirus pandemic as well.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in
+Hungary in 2013. The goal of the measure was to give the Tax Authority a
+real-time distant insight into the turnover of a retail traders and food
+service providers. By the introduction of the online cash registers a
+substantial whitening was expected in the sense of lessening the extent
+of non-accounted sales. According to a study&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; published a few years
+ago examining the effect of the introduction of online cash registers,
+68% of the online cash register users were involved in retail trade and
+food services and they represented 83% of the total turnover observed by
+online cash registers in 2015. The authors concluded that online cash
+registers resulted in bigger rise in turnover in comparison to
+enterprises not using such a tool. The median increase was 15 percent in
+the case of retail trade turnover and 20 in food services, respectively.
+The whitening of the turnover, however, started even before the
+deployment of the online cash registers, especially in food services
+sector and among smaller enterprises.&lt;/p&gt;
+&lt;p&gt;The Hungarian Central Statistical Office (hereinafter: HCSO) uses online
+cash register data for the calculation of retail trade and food
+services. The methodology is widely-used for the measurement of turnover
+and the production of indices by measuring retail trade and food
+services turnover based on online cash register data. Simplified
+questionnaire for data collection is still used in the case of fully
+observed data providers. In the simplified questionnaire HCSO asks for
+unbroken turnover data of statistical units. This questionnaire serves
+as correction for eventually missing online cash register data and
+measurement of online trade. A full questionnaire is sent to designated
+companies whose activities are not covered by the online cash register
+system or do not use a cash register. The full questionnaire also
+provides the correction of low-level data quality. This twofold
+approach, in fact, makes online cash register data a supplementary data
+source, opens the floor for the cut of data providers&amp;rsquo; administrative
+burdens and ensures a firm ground for calculable production of retail
+trade statistics (i.e. to mitigate risk of loss of administrative data).
+Due to the introduction of the new method almost an 80% cut could be
+achieved in the number of the data providers, observed units and
+questionnaire cells.&lt;/p&gt;
+&lt;p&gt;The newly applied method proved to be reliable. Examining the testing
+period, the monthly retail trade turnover data on current prices and
+prepared on the basis of the online cash register data was 0.9-4.4%
+lower than those measured using the traditional method (i.e.
+questionnaire). This implied that the old method might trustworthily be
+replaced by the new method, no information setback and quality loss was
+expected.&lt;/p&gt;
+&lt;p&gt;Retail trade turnover according to the &lt;strong&gt;questionnaire based method&lt;/strong&gt;
+and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
+&lt;p&gt;Time series show that the difference slightly varied by product groups
+but neither considerable shift was observed, nor divergence in long term
+trends. As shown on the graph below, turnover indices totally overlap in
+the case of food and fuel retail trade, while in the case of non-food
+products the difference is also negligible.&lt;/p&gt;
+&lt;p&gt;Retail trade turnover calculated by the questionnaire based method and the method based on online cash register data&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
+&lt;p&gt;Similarly to the turnover data the new method has neither resulted in
+deviation of volume indices. The below graph shows that no considerable
+difference was measured between the questionnaire based method and
+online cash register data.&lt;/p&gt;
+&lt;p&gt;Volume indices of retail trade based on the &lt;strong&gt;questionnaire based
+method&lt;/strong&gt; and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data, seasonally and
+calendar adjusted&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Source:&lt;/em&gt; HCSO&lt;/p&gt;
+&lt;p&gt;Based on the above outcomes HCSO considered the new method applicable
+for the measurement of retail trade turnover. The transition, on the
+other hand, has taken more years during which period parallel use of the
+two methods was applied.&lt;/p&gt;
+&lt;p&gt;It is also worth to be mentioned that HCSO utilises online cash register
+data for the monitoring of retail trade trends during the coronavirus
+pandemic. For these purposes daily data are used and the latest
+developments of turnover changes in retail trade might be tracked
+thereby. The main advantage of the usage of online cash register data
+compared to VAT data is obviously that cash register data are available
+on a daily basis and might indicate changes in the composition of trade
+faster. The next graph shows the periodical change of several products
+expressed in the value of retail trade turnover, based on online cash
+register data.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Lovics Gábor &amp;ndash; Szőke Katalin &amp;ndash; Tóth G. Csaba &amp;ndash; Ván Bálint:
+Megugrott a kis cégek bejelentett forgalma az online
+pénztárgépektől. Online:
+&lt;a href=&#34;https://www.mnb.hu/letoltes/megugrott-a-kis-cegek-bejelentett-forgalma-az-online-penztargepektol.pdf&#34;&gt;https://www.mnb.hu/letoltes/megugrott-a-kis-cegek-bejelentett-forgalma-az-online-penztargepektol.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
     </item>
     
     <item>
       <title>Making an Online Risk Calculator</title>
-      <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>
+      <link>/post/2020/11/11/online-risk-calc/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</guid>
-      <description>We first started making risk calculators with the website, http://nomograms.org. There are several here, and they are patient friendly. Later, we launched rcalc.ccf.org, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:</description>
-    </item>
-    
-    <item>
-      <title>Ensemble Forecasting of the Zika Space-Time Spread with Topological Data Analysis</title>
-      <link>https://youngstats.github.io/post/2020/10/22/soliman/</link>
-      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/22/soliman/</guid>
-      <description>As per the records of the World Health Organization, the first formally reported incidence of Zika virus occurred in Brazil in May 2015. The disease then rapidly spread to other countries in Americas and East Asia, affecting more than 1,000,000 people. Zika virus is primarily transmitted through bites of infected mosquitoes of the species Aedes (Aedes aegypti and Aedes albopictus). The abundance of mosquitoes and, as a result, the prevalence of Zika virus infections are common in areas which have high precipitation, high temperature, and high population density.</description>
-    </item>
-    
-    <item>
-      <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
-      <link>https://youngstats.github.io/post/2020/10/05/par_diggle/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/05/par_diggle/</guid>
-      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.
-Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
-    </item>
-    
-    <item>
-      <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
-      <link>https://youngstats.github.io/post/2020/10/04/mozgunov/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/04/mozgunov/</guid>
-      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
-A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
-    </item>
-    
-    <item>
-      <title>Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data</title>
-      <link>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</guid>
-      <description>As the COVID-19 pandemic spread across the world at the beginning of 2020, statistically modeling its development became of big interest. The main focus of this work was to analyze the spread of the disease and its main characteristics for Slovenia using publicly available COVID-19 data. Our work takes a Bayesian semiparametric approach using which we estimate some of the main measures of interest for the pandemic (e.g. the reproduction number $R_{t}$) and give accurate forecasts of important indicators for the following days.</description>
-    </item>
-    
-    <item>
-      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
-      <link>https://youngstats.github.io/post/2020/10/01/cugmas/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/01/cugmas/</guid>
-      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
-    </item>
-    
-    <item>
-      <title>One World YoungStatS</title>
-      <link>https://youngstats.github.io/post/2020/09/10/webinars/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/09/10/webinars/</guid>
-      <description>One World YoungStatS webinar
-We are delighted to announce the creation of the One World YoungStatS Webinar series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis and ever since. The YoungStatS webinar series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics.</description>
-    </item>
-    
-    <item>
-      <title>Welcome to our blog!</title>
-      <link>https://youngstats.github.io/post/2020/09/01/welcome/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/09/01/welcome/</guid>
-      <description>Welcome to our blog! This website is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
-    </item>
-    
-    <item>
-      <title>About US</title>
-      <link>https://youngstats.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/about/</guid>
-      <description>About
-The YoungStatS Blog is set up to promote research in statistics in its broadest sense, encompassing all of its areas and applications, among other mathematical statistics and probability, official statistics, biostatistics and medical statistics, social statistics, economic statistics and econometrics, environmental statistics, statistics in natural sciences, data science and survey methods. The intended audiences are in particular young researchers and scholars in statistics, but also research community in statistics in general, practitioners in the field, advisory councils, institutions, academia, the private sector as well as journalists.</description>
-    </item>
-    
-    <item>
-      <title>Online Seminars</title>
-      <link>https://youngstats.github.io/seminars/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/seminars/</guid>
-      <description>One World YoungStatS webinar
-We are delighted to announce the creation of the One World YoungStatS webinar Series! Our goal in creating this seminar series is to provide a platform for our community to continue interacting and growing in spite of the current health crisis. The Online Seminar Series will accompany the YoungStatS blog and provide insight into best and most recent work done in all areas of statistics
-Seminars will be held on Zoom on Wednesday at 4:00 pm CET (10:00 am ET / 9:00 am CT / 7:00 am PT).</description>
+      <guid>/post/2020/11/11/online-risk-calc/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;We first started making risk calculators with the website, &lt;a href=&#34;nomograms.org&#34;&gt;http://nomograms.org&lt;/a&gt;.
+There are several here, and they are patient friendly.
+Later, we launched &lt;a href=&#34;http://rcalc.ccf.org&#34;&gt;rcalc.ccf.org&lt;/a&gt;, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Figure1.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figure 1: Example of what risk calculator shows to the user. Note that there are two models, one for Dutasteride and one for No Dutasteride with different sets of predictor variables. For some outcomes there is an interval on the Dutasteride but no interval on the No Dutasteride predicted risk. This happens when a variable which is only included in the model Dutasteride model has a missing value.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;If the user were to provide some of the values of the predictor variables that are currently missing, his 4-year risk of high-grade prostate cancer (which is currently at 17% on Dutasteride) might be as low as 7% or as high as 49%. Clearly, obtaining missing values to resolve this uncertainty should be pursued. The missing values will have less of an impact on his risk for a urinary tract infection.&lt;/p&gt;
+&lt;p&gt;The need for a risk calculator begins with the subject matter expert. He or she needs to explain the decision-making context and the tradeoffs involved. Important questions to discuss are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Who will use the calculator and for what purpose?&lt;/li&gt;
+&lt;li&gt;If a medical decision is based on the predicted risks: What are the benefits and harms?&lt;/li&gt;
+&lt;li&gt;What types of outcome are predicted? (Uncensored, censored, censored with competing risk?)&lt;/li&gt;
+&lt;li&gt;What are the important predictors of these outcomes? (Missing values?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Questions like those are best answered in collaboration with the subject matter expert. We have learned that making a risk calculator without involving a subject matter expert leads to a risk calculator that on one uses.&lt;/p&gt;
+&lt;p&gt;The next steps are:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;to evaluate and prepare the data sources&lt;/li&gt;
+&lt;li&gt;to select candidate variables&lt;/li&gt;
+&lt;li&gt;to establish a modeling strat (see Figure 2)&lt;/li&gt;
+&lt;li&gt;to report the final model in form of a shiny app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Figure2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figure 2: Flowchart: prediction modeling strategy&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Our R-package riskRegression provides implementations of modeling algorithms for censored data with competing risks and the cross-validation performance as described here online. Here is sample code:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# sample R-code
+library(riskRegression)
+library(survival)
+library(randomForestSRC)
+# simulate competing risk data
+set.seed(9)
+train.data &amp;lt;- sampleData(n=472)
+test.data &amp;lt;- sampleData(n=811)
+# combined cause-specific Cox regression
+fit1 &amp;lt;- CSC(Hist(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9, data=train.data, cause=1)
+# random forest
+set.seed(1972)
+fit2 &amp;lt;- rfsrc(Surv(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9,data=train.data)
+# prediction performance in independent test data 
+# could also do cross-validation of training data via argument split.method 
+x &amp;lt;- Score(list(&amp;quot;Conventional&amp;quot;=fit1,&amp;quot;Experimental&amp;quot;=fit2),
+           data=test.data,
+           formula=Hist(time,event)~1,
+           cause=1,
+           times=c(1,5),
+           summary=c(&amp;quot;risks&amp;quot;,&amp;quot;IPA&amp;quot;),
+           plots=c(&amp;quot;cali&amp;quot;,&amp;quot;roc&amp;quot;))
+plotROC(x,times=5)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plotCalibration(x,times=5)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The details of making an online risk calculator, how we deal with the many issues that arise, and many R-code examples, are described in our new book, available &lt;a href=&#34;https://www.routledge.com/9781138384477&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Book.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This post is based on:&lt;/p&gt;
+&lt;p&gt;Kattan, M. W., &amp;amp; Gerds, T. A. (2020). A framework for the evaluation of statistical prediction models. Chest, 158(1), S29-S38. &lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S0012369220304517&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;About the authors&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://publichealth.ku.dk/about-the-department/biostat/?pure=en/persons/323237&#34;&gt;Thomas A. Gerds&lt;/a&gt; is professor at the biostatistics unit at the University of Copenhagen. He is affiliated with the Danish Heart Foundation. He is author of several R-packages on CRAN and has taught statistics courses to non-statisticians for many years.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://my.clevelandclinic.org/staff/5525-michael-kattan&#34;&gt;Michael Kattan&lt;/a&gt; is Chair of the Department of Quantitative Health Sciences at Cleveland Clinic. He is a Fellow of the American Statistical Association and has received two awards from the Society for Medical Decision Making: the Eugene L. Saenger Award for Distinguished Service, and the John M. Eisenberg Award for Practical Application of Medical Decision-Making Research.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>
