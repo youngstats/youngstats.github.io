@@ -2,81 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on YoungStatS</title>
-    <link>/post/</link>
+    <link>https://youngstats.github.io/post/</link>
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
-      <link>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
+      <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
+      <guid>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
       <description>Correlations and negative bias We assume that you are quite familiar with the following problem. Consider a data set where the information is expressed in percentages or proportions. An example are household expenditures, given as average amounts (in Euros) the households are spending on food, housing, transportation, etc. Since the expenditures would not be comparable among countries with very different economic level, it makes sense to express the data as proportions (or percentages) of the single categories on the total expenditures.</description>
     </item>
     
     <item>
       <title>Recent Advances in COVID-19 modelling</title>
-      <link>/post/2021/02/04/covid-webinar/</link>
+      <link>https://youngstats.github.io/post/2021/02/04/covid-webinar/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/02/04/covid-webinar/</guid>
+      <guid>https://youngstats.github.io/post/2021/02/04/covid-webinar/</guid>
       <description>YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar. With four young scholars, we will discuss Recent Advances in the Modelling of COVID-19, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.
-When: Wednesday, February 10th, 16:00 (Central European Time). You can register for the event here.
+When: Wednesday, February 10th, 16:00 (Central European Time).
 Speakers:
  Cécile Tran Kiem (Institute Pasteur, Paris, France) Pierfrancesco Alaimo Di Loro and Marco Mingione (StatGroup-19, Italy) Kevin Kunzmann (University of Cambridge, United Kingdom)  Discussant:</description>
     </item>
     
     <item>
       <title>Locally adapative k-nearest neighbour classification</title>
-      <link>/post/2021/01/31/local-knn/</link>
+      <link>https://youngstats.github.io/post/2021/01/31/local-knn/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/31/local-knn/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/31/local-knn/</guid>
       <description>Abstract Binary classification is one of the cornerstones of modern data science, but, until recently, our understanding of classical methods such as the k-nn algorithm was limited to settings where feature vectors were compactly supported. Based on a new analysis of this classifier, we propose a variant with significantly lower risk for heavy-tailed distributions.
  The \(k\)-nearest neighbour classifier The basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier.</description>
     </item>
     
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
-      <link>/post/2021/01/28/pls-for-big-data/</link>
+      <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/28/pls-for-big-data/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
       <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data
 Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
     </item>
     
     <item>
       <title>Machine learning for causal inference that works</title>
-      <link>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
       <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
 The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
     <item>
       <title>The Mulitple Latent Block Model for mixed data</title>
-      <link>/post/2021/01/05/mlbm/</link>
+      <link>https://youngstats.github.io/post/2021/01/05/mlbm/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/05/mlbm/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
       <description>body { text-align: justify}  Abstract Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account.</description>
     </item>
     
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>/post/2020/12/15/icph/</link>
+      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/15/icph/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
       <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
 Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
     </item>
@@ -84,29 +80,29 @@ Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covaria
     <item>
       <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
 </title>
-      <link>/post/2020/12/04/functional-regression-control-chart/</link>
+      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/04/functional-regression-control-chart/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
       <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
     </item>
     
     <item>
       <title>Online cash register data in the measurement of retail trade turnover</title>
-      <link>/post/2020/12/03/abel/</link>
+      <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/03/abel/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
       <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.
 Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
     </item>
     
     <item>
       <title>Making an Online Risk Calculator</title>
-      <link>/post/2020/11/11/online-risk-calc/</link>
+      <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/11/11/online-risk-calc/</guid>
+      <guid>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</guid>
       <description>We first started making risk calculators with the website, http://nomograms.org. There are several here, and they are patient friendly. Later, we launched rcalc.ccf.org, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:</description>
     </item>
     

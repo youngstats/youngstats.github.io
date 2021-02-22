@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Functional-Data-Analysis on YoungStatS</title>
-    <link>/categories/functional-data-analysis/</link>
+    <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
     <description>Recent content in Functional-Data-Analysis on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
 </title>
-      <link>/post/2020/12/04/functional-regression-control-chart/</link>
+      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/04/functional-regression-control-chart/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
       <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
     </item>
     

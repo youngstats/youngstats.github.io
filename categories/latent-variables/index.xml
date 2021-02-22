@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>latent variables on YoungStatS</title>
-    <link>/categories/latent-variables/</link>
+    <link>https://youngstats.github.io/categories/latent-variables/</link>
     <description>Recent content in latent variables on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/latent-variables/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/latent-variables/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>/post/2020/12/15/icph/</link>
+      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/15/icph/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
       <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
 Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
     </item>

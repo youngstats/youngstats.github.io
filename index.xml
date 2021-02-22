@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YoungStatS</title>
-    <link>/</link>
+    <link>https://youngstats.github.io/</link>
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
-      <link>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
+      <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
+      <guid>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
       <description>
 
 
@@ -85,11 +85,11 @@ Such a data set is contained as &lt;code&gt;expendituresEU&lt;/code&gt; in the l
 proportional representation of the expenditures the wealth status of countries is
 suppressed and the focus is on the &lt;em&gt;relative&lt;/em&gt; correlation structure. In order to suppress the influence of outlying observations, the Spearman correlation coefficients between
 the components are computed and the result is plotted in the heatmap below.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Raw_data_correlation.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Raw_data_correlation.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;There are some strongly related groups of components visible, like &lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;, which could be considered as those belonging to “basic” expenditures, and there is also another related group of components which could be connected rather to wealth of households (&lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Furnishing&lt;/em&gt;, &lt;em&gt;Transport&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). On the other hand, there are also some strongly negatively correlated couples of components, like &lt;em&gt;Food&lt;/em&gt; with &lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Other&lt;/em&gt; and &lt;em&gt;Furnishings&lt;/em&gt;, respectively, or &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;. The question is which of these negative correlation coefficients is a consequence of the negative bias, and which indeed reflects strong negative relationship between the &lt;em&gt;relative&lt;/em&gt; household expenditures.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Variation_matrix.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Variation_matrix.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;As the next step we want to see whether these relationships can be observed also in the (robust) variation matrix, working with log-ratios instead of the original components. Indeed, the proportionality holds definitely for the first group of components (&lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;), however, proportionality of supplementary expenditures is now structured differently (see, e.g., a strong relationship between the components &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). In any case, any “negative proportionality” cannot be derived from the variation matrix.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Sym_coordinates.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Sym_coordinates.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Therefore, we turn to symmetric pivot coordinates; they can be computed, similarly as the variation matrix, using the &lt;code&gt;robCompositions&lt;/code&gt; package:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(robCompositions)
 data(expendituresEU)
@@ -131,7 +131,7 @@ round(Rs,2)&lt;/code&gt;&lt;/pre&gt;
 ## Restaurants             -0.61       0.11      0.33        1.00  0.21
 ## Other                   -0.35       0.75     -0.42        0.21  1.00&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now the correlations are not computed from the original components and we have to refer to their dominance over averaged contributions of the other components instead, but the negative bias of correlations is eliminated now. Indeed, when looking at the heatmap, the main clusters of strongly positively correlated components remain unchanged. However, more substantial changes can be observed for negative correlations. From those mentioned previously only that one between &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt; (in the symmetric pivot coordinates sense) remained. Nevertheless, we should be aware that for the computation of correlations we simply aggregated all log-ratios of the couple with the remaining components, and there are clearly those which could strongly influence the resulting symmetric pivot coordinates, although they are not related to any of components of interest. This is definitely the case of &lt;em&gt;Education&lt;/em&gt;, which is not proportional to the vast majority of components (see heatmap of the variation matrix), and whose influence should thus be rather suppressed.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Weighted_symm_coordinates.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Weighted_symm_coordinates.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This can be done by using weighted symmetric pivot coordinates, the grouping of positively correlated components is now suprisingly even more similar to the case of the initial proportional data. Of course, by considering a different interpretation of the “components” in both cases! However, now we are free again from any possible negative bias of correlations. The “tuned” symmetric pivot coordinates reveal three negative relationships, those between &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;, &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;, and also &lt;em&gt;Restaurants&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;. All of them have a quite intuitive interpretation and support the &lt;strong&gt;take-home message&lt;/strong&gt; that (weighted) symmetric pivot coordinates are a reasonable alternative to correlations of proportional or percentage data.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;/p&gt;
@@ -144,9 +144,9 @@ ISBN: 978-3-319-96422-5.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Authors’ biography&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/Hron2017-small3.png&#34; alt=&#34;drawing&#34; width=&#34;75&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Hron2017-small3.png&#34; alt=&#34;drawing&#34; width=&#34;75&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Karel Hron&lt;/strong&gt; is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:karel.hron@upol.cz&#34; class=&#34;email&#34;&gt;karel.hron@upol.cz&lt;/a&gt;. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book &lt;em&gt;Applied Compositional Data Analysis&lt;/em&gt;, published in Springer Series in Statistics.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-02-04-correlation/pf2018small.jpg&#34; alt=&#34;drawing&#34; width=&#34;100&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/pf2018small.jpg&#34; alt=&#34;drawing&#34; width=&#34;100&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Peter Filzmoser&lt;/strong&gt; is a Professor of Statistics at the Vienna University of Technology
 (TU Wien), Austria, &lt;a href=&#34;mailto:Peter.Filzmoser@tuwien.ac.at&#34; class=&#34;email&#34;&gt;Peter.Filzmoser@tuwien.ac.at&lt;/a&gt;. He has authored more than 200 research
 articles and several R packages and has co-authored books on compositional data analysis
@@ -158,13 +158,15 @@ environmental data (Wiley, 2008).&lt;/p&gt;
     
     <item>
       <title>Recent Advances in COVID-19 modelling</title>
-      <link>/post/2021/02/04/covid-webinar/</link>
+      <link>https://youngstats.github.io/post/2021/02/04/covid-webinar/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/02/04/covid-webinar/</guid>
+      <guid>https://youngstats.github.io/post/2021/02/04/covid-webinar/</guid>
       <description>&lt;p&gt;YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar.
 With four young scholars, we will discuss &lt;strong&gt;Recent Advances in the Modelling of COVID-19&lt;/strong&gt;, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.&lt;/p&gt;
-&lt;p&gt;When: &lt;strong&gt;Wednesday, February 10th, 16:00 (Central European Time)&lt;/strong&gt;. You can register for the event &lt;a href=&#34;https://www.eventbrite.com/e/recent-advances-in-covid-19-modelling-tickets-140256156941?aff=ebdssbeac&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When: &lt;strong&gt;Wednesday, February 10th, 16:00 (Central European Time)&lt;/strong&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Cécile Tran Kiem (Institute Pasteur, Paris, France)&lt;/li&gt;
@@ -185,15 +187,16 @@ With four young scholars, we will discuss &lt;strong&gt;Recent Advances in the M
 &lt;li&gt;Andrej Srakar (University of Ljubljana, Slovenia, coordinator of YoungStatS)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;One World YoungStatS webinar is addressed towards presenting recent interesting work of leading young researchers in statistics, probability and econometrics. The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability, and will take place on monthly level. For more information, please visit our &lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you missed our first One World YoungStatS seminar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=CdjrQs2pESo&amp;amp;t=1664s&#34;&gt;watch the recording on our Youtube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Locally adapative k-nearest neighbour classification</title>
-      <link>/post/2021/01/31/local-knn/</link>
+      <link>https://youngstats.github.io/post/2021/01/31/local-knn/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/31/local-knn/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/31/local-knn/</guid>
       <description>
 
 
@@ -205,7 +208,7 @@ With four young scholars, we will discuss &lt;strong&gt;Recent Advances in the M
 &lt;h2&gt;The &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-nearest neighbour classifier&lt;/h2&gt;
 &lt;p&gt;The basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier. For some fixed value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;, we classify a test point &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; to the class that is most prevalent among the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; points in our test data which lie closest to &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;.&lt;/p&gt;
 &lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/BasicIllustration.png&#34; class=&#34;class&#34; label=&#34;fig:Basic&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/BasicIllustration.png&#34; class=&#34;class&#34; label=&#34;fig:Basic&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
 Figure 1. Basic example of classification approach.
 &lt;/center&gt;
 &lt;p&gt;In the simple example in Figure 1 where the black point is to be classified, with &lt;span class=&#34;math inline&#34;&gt;\(k=1\)&lt;/span&gt; we assign to the green class, with &lt;span class=&#34;math inline&#34;&gt;\(k=2\)&lt;/span&gt; we assign to the red class (ties being broken in favour of the red class), and with &lt;span class=&#34;math inline&#34;&gt;\(k=3\)&lt;/span&gt; we assign to the green class.&lt;/p&gt;
@@ -244,7 +247,7 @@ For small values of &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt
 where &lt;span class=&#34;math inline&#34;&gt;\(t_5\)&lt;/span&gt; is the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-distribution with &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; degrees of freedom. This represents a setting in which there is a gap between the rates of convergence given above. Our results show that the optimal rate here is approximately &lt;span class=&#34;math inline&#34;&gt;\(n^{-2/3}\)&lt;/span&gt;, which is achieved by the local classifier, while with an optimal choice of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; the standard classifier is only guaranteed to achieve a rate of &lt;span class=&#34;math inline&#34;&gt;\(n^{-5/12}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The data is displayed in the left-most plot of Figure 2, together with vertical lines indicating the action of Bayes classifier, which selects class 0 when the data points lie between the two lines and selects class 1 otherwise. First, we run the standard &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-nearest neighbour classifier on the data, with the value of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; chosen by leave-one-out cross-validation from &lt;span class=&#34;math inline&#34;&gt;\(\{1,\ldots,20\}\)&lt;/span&gt;. The middle plot of Figure  shows those points of the data set for which the standard classifier classifies differently to the Bayes classifier. Finally, we run our local classifier, where we assume that &lt;span class=&#34;math inline&#34;&gt;\(\bar{f}\)&lt;/span&gt; is known, and where the value of &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; is chosen by leave-one-out cross-validation on a grid of size &lt;span class=&#34;math inline&#34;&gt;\(20\)&lt;/span&gt;.&lt;/p&gt;
 &lt;center&gt;
-&lt;img src=&#34;/post/2021-01-29-local-knn/Simulation.png&#34; class=&#34;class&#34; label=&#34;fig:Simulation&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/Simulation.png&#34; class=&#34;class&#34; label=&#34;fig:Simulation&#34; /&gt;
 Figure 2. Simulated data and different classifiers.
 &lt;/center&gt;
 &lt;p&gt;Perhaps the most striking aspect of the results is that the local classifier agrees with the Bayes classifier much more often than the standard classifier, with only &lt;span class=&#34;math inline&#34;&gt;\(9\)&lt;/span&gt; disagreements compared to the &lt;span class=&#34;math inline&#34;&gt;\(43\)&lt;/span&gt; disagreements of the standard classifier. Looking a little closer, we can see that the remaining mistakes that the local classifier makes are concentrated around the Bayes decision boundaries. Standard theoretical analysis of classification problems reveals that such points typically represent the hardest point to classify. We finally see that many, though by no means all, of the points at which the standard classifier makes a mistake appear in low-density regions, for example towards the bottom of the plots.&lt;/p&gt;
@@ -254,9 +257,9 @@ Figure 2. Simulated data and different classifiers.
 &lt;p&gt;This post was written by Thomas B. Berrett, and was based on&lt;/p&gt;
 &lt;p&gt;Cannings, T. I., Berrett, T. B. and Samworth, R. J. (2020) Local nearest neighbour classification with applications to semi-supervised learning. &lt;em&gt;Annals of Statistics&lt;/em&gt;, &lt;strong&gt;48&lt;/strong&gt;, 1789–1814. &lt;a href=&#34;https://projecteuclid.org/euclid.aos/1594972839&#34;&gt;.pdf&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/CanningsTI.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://www.maths.ed.ac.uk/~tcannings/About_Me.html&#34;&gt;Timothy I. Cannings&lt;/a&gt; is a lecturer in statistics and data science at the School of Mathematics, University of Edinburgh. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2015. He then worked with Prof Yingying Fan as a Postdoc at the University of Southern California.&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/BerrettTB.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://thomasberrett.github.io&#34;&gt;Thomas B. Berrett&lt;/a&gt; is an Assistant Professor in the Department of Statistics at the University of Warwick. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2018, and later worked as a Postdoc with Prof Cristina Butucea at CREST, ENSAE, Institut Polytechnique de Paris.&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;/post/2021-01-29-local-knn/SamworthRJ.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;http://www.statslab.cam.ac.uk/~rjs57/&#34;&gt;Richard J. Samworth&lt;/a&gt; is Professor of Statistical Science and Director of the Statistical Laboratory at the University of Cambridge. He is also a Teaching Fellow at St John’s College.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/CanningsTI.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://www.maths.ed.ac.uk/~tcannings/About_Me.html&#34;&gt;Timothy I. Cannings&lt;/a&gt; is a lecturer in statistics and data science at the School of Mathematics, University of Edinburgh. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2015. He then worked with Prof Yingying Fan as a Postdoc at the University of Southern California.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/BerrettTB.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://thomasberrett.github.io&#34;&gt;Thomas B. Berrett&lt;/a&gt; is an Assistant Professor in the Department of Statistics at the University of Warwick. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2018, and later worked as a Postdoc with Prof Cristina Butucea at CREST, ENSAE, Institut Polytechnique de Paris.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/SamworthRJ.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;http://www.statslab.cam.ac.uk/~rjs57/&#34;&gt;Richard J. Samworth&lt;/a&gt; is Professor of Statistical Science and Director of the Statistical Laboratory at the University of Cambridge. He is also a Teaching Fellow at St John’s College.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
@@ -264,10 +267,10 @@ Figure 2. Simulated data and different classifiers.
     
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
-      <link>/post/2021/01/28/pls-for-big-data/</link>
+      <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/28/pls-for-big-data/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
       <description>
 
 
@@ -303,7 +306,7 @@ where &lt;span class=&#34;math inline&#34;&gt;\(X_c\)&lt;/span&gt; and &lt;span 
 &lt;div id=&#34;example-on-emnist&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Example on EMNIST&lt;/h3&gt;
 &lt;p&gt;We show an example using PLS regression for a discrimination task, namely the extended MNIST dataset. This data set consists of n = 280,000 handwritten digit images. It contains an equal number of samples for each digit class (0 to 9) where the dimension of the predictors is &lt;span class=&#34;math inline&#34;&gt;\(p=784\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(q=10\)&lt;/span&gt; classes. The images are already split into a training set of 240,000 cases and a test set of 40,000 cases. Since we have a large sample size &lt;span class=&#34;math inline&#34;&gt;\(n &amp;gt; p, q\)&lt;/span&gt; we opt not to consider regularisation for this example. The PLS-DA method is able to recover an accuracy of 86% in around 3 minutes using 20 latent variables and 2 cores.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-28-pls-for-big-data/EMNISTw.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-28-pls-for-big-data/EMNISTw.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We investigated the relationship between the number of chunks and the number of cores used in the algorithm. The plot below shows the elapsed computation time for fitting a single component of the PLS discriminant analysis algorithm using 2, 4 or 6 cores (on a laptop equipped with 8 cores). On the vertical axis, &lt;span class=&#34;math inline&#34;&gt;\(ngx\)&lt;/span&gt; indicates that &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; chunks were used in our algorithm.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;references-and-related-work&#34; class=&#34;section level3&#34;&gt;
@@ -320,14 +323,14 @@ where &lt;span class=&#34;math inline&#34;&gt;\(X_c\)&lt;/span&gt; and &lt;span 
     
     <item>
       <title>Machine learning for causal inference that works</title>
-      <link>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;I’ve kindly been invited to share a few words about a recent &lt;a href=&#34;https://projecteuclid.org/euclid.ba/1580461461&#34;&gt;paper&lt;/a&gt; my colleagues and I published in &lt;em&gt;Bayesian Analysis&lt;/em&gt;: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called &lt;a href=&#34;https://github.com/jaredsmurray/bcf&#34;&gt;bcf&lt;/a&gt;.&lt;/p&gt;
@@ -451,7 +454,7 @@ pihat = apply(fitz$yhats_test[(b+1):sweeps,,], c(2, 3), mean)[,2]&lt;/code&gt;&l
 lines(x,tau.est1,col=&amp;#39;lightgray&amp;#39;,lwd=3)
 lines(x,tau.est2,col=&amp;#39;blue&amp;#39;,lwd=3)
 lines(x,tau.est3,col=&amp;#39;green&amp;#39;,lwd=3)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-26-machine-learning-for-causal-inference-that-works_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-26-machine-learning-for-causal-inference-that-works_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rmse1 = sqrt(mean((tau(x)-tau.est1)^2))
 rmse2 = sqrt(mean((tau(x)-tau.est2)^2))
 rmse3 = sqrt(mean((tau(x)-tau.est3)^2))
@@ -469,10 +472,10 @@ print(round(c(rmse1,rmse2,rmse3),2))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The Mulitple Latent Block Model for mixed data</title>
-      <link>/post/2021/01/05/mlbm/</link>
+      <link>https://youngstats.github.io/post/2021/01/05/mlbm/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/post/2021/01/05/mlbm/</guid>
+      <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
       <description>
 
 
@@ -488,7 +491,7 @@ text-align: justify}
 &lt;h1&gt;Multiple Latent Block Model for mixed data&lt;/h1&gt;
 &lt;p&gt;The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) &lt;span class=&#34;citation&#34;&gt;(Nadif and Govaert 2008)&lt;/span&gt;, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; matrices &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt; such that &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is the number of kinds of data. For the sake of simplicity, we consider here that &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; has two different kinds of features (i.e &lt;span class=&#34;math inline&#34;&gt;\(D=2\)&lt;/span&gt;). The MLBM performs a co-clustering such that the row-clusters partition is the same for all &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;, and that there is a column-clusters partition for every &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/example-mlbm-notations.svg&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/example-mlbm-notations.svg&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Example of a mixed-data matrix with two different kinds of features co-clustered with the MLBM.&lt;/p&gt;
 &lt;/center&gt;
 &lt;div id=&#34;notations&#34; class=&#34;section level2&#34;&gt;
@@ -566,12 +569,12 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 &lt;h1&gt;Use-case: analysing a health quality survey in oncology&lt;/h1&gt;
 &lt;p&gt;The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions”. In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell &lt;span class=&#34;math inline&#34;&gt;\((i, j)\)&lt;/span&gt; is the response of patient &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to question &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?”, if the patient answers “Not at all”, the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.&lt;/p&gt;
 &lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/ads-original.png&#34; class=&#34;class&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/ads-original.png&#34; class=&#34;class&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Questionnaire’s graphical representation: patients are projected onto rows and questions are projected onto columns.&lt;/p&gt;
 &lt;/center&gt;
 &lt;p&gt;As explained previously, the MLBM separates the features that are considered as different, and simultaneously performs a clustering on the rows and a clustering on the columns of each isolated matrix. The figure below shows the result for our use-case. We note &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; row-clusters, i.e. &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; patients profiles. Furthermore, the column-clusters helps summarising these profiles: by grouping the questions that have the same behaviour with respect to the row-clusters it is easier to distinguish the differences between these profiles.&lt;/p&gt;
 &lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/ads-coclust.png&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/ads-coclust.png&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Questionnaire co-clustered with the MLBM.&lt;/p&gt;
 &lt;/center&gt;
 &lt;/div&gt;
@@ -580,8 +583,8 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 &lt;p&gt;This blog post is based on &lt;span class=&#34;citation&#34;&gt;(Selosse, Jacques, and Biernacki 2020)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;(Selosse et al. 2019)&lt;/span&gt;. Furthermore, The R package &lt;code&gt;mixedClust&lt;/code&gt; implements the Multiple Latent Block Model and will be available on the CRAN soon.&lt;/p&gt;
 &lt;p&gt;About the authors:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/pic-ms.jpeg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Margot Selosse&lt;/strong&gt; received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;/post/2021-01-05-mlbm/images/pic-jj.jpg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Julien Jacques&lt;/strong&gt; received his Ph.D. degree in applied mathematics from University of Grenoble, France. In 2006 he joined University of Lille where he held the position of Associate Professor. In 2014, he joined University of Lyon as Full Professor in Statistics. His current research in statistical learning concerns the design of clustering algorithm for functional data, ordinal data and mixed-type data. He is a member of the French Society of Statistics.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/pic-ms.jpeg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Margot Selosse&lt;/strong&gt; received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/pic-jj.jpg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Julien Jacques&lt;/strong&gt; received his Ph.D. degree in applied mathematics from University of Grenoble, France. In 2006 he joined University of Lille where he held the position of Associate Professor. In 2014, he joined University of Lyon as Full Professor in Statistics. His current research in statistical learning concerns the design of clustering algorithm for functional data, ordinal data and mixed-type data. He is a member of the French Society of Statistics.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Christophe Biernacki&lt;/strong&gt; is a Scientific Deputy at Inria Lille and Scientific Head of the Inria MODAL research team, and received his Ph.D. degree from Université de Compiègne in 1997. His research interests are focused on model-based and model-free clustering of heterogeneous data.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -607,10 +610,10 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
     
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>/post/2020/12/15/icph/</link>
+      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/15/icph/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
       <description>&lt;p&gt;&lt;em&gt;We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Given a target variable &lt;code&gt;$Y$&lt;/code&gt;, and a vector &lt;code&gt;$X = (X^1, \dots, X^d)$&lt;/code&gt;  of &lt;code&gt;$d$&lt;/code&gt; covariates, we are trying to infer the set &lt;code&gt;$S^* \subseteq \{1, \dots, d\}$&lt;/code&gt; of observable causal parents of &lt;code&gt;$Y$&lt;/code&gt;. There are many good reasons for being interested in causal predictors. One of them is the following well-known stability property: a regression model which regresses &lt;code&gt;$Y$&lt;/code&gt; on all of its causal parents remains valid under arbitrary interventions on any variable other than &lt;code&gt;$Y$&lt;/code&gt; itself. In cases where data are heterogeneous (e.g., in a time series setting), causal regression models can thus sometimes be used to obtain stable predictions across all different patterns of heterogeneity (e.g., across time). This stability property has been well-studied and is known under different names, e.g., invariance, autonomy or modularity &lt;a href=&#34;#1&#34;&gt;[2]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[3]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In a setting without hidden variables, the invariance property has been exploited to recover (parts of) &lt;code&gt;$S^*$&lt;/code&gt;: given data from a heterogeneous time series, one runs through all possible subsets &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt; and checks whether the conditional of &lt;code&gt;$Y_t$&lt;/code&gt; given &lt;code&gt;$X_t^S := (X_t^j)_{j \in S}$&lt;/code&gt; remains invariant across time. If more than one set satisfies invariance, one outputs the intersection of all invariant sets; this algorithm is known as the ICP (&amp;lsquo;Invariant Causal Prediction&amp;rsquo;) algorithm &lt;a href=&#34;#1&#34;&gt;[1]&lt;/a&gt;. Here, we extend ICP to allow for unobserved direct causes of &lt;code&gt;$Y$&lt;/code&gt;.&lt;/p&gt;
@@ -653,14 +656,14 @@ $$&lt;/p&gt;
 &lt;p&gt;$$\text{for any test level } \alpha \in (0,1), \text{ we have } \lim \inf_{n \to \infty} P(\hat S_n \subseteq S^*) \geq 1-\alpha.$$&lt;/p&gt;
 &lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
 &lt;p&gt;We now illustrate our method in the simple case where &lt;code&gt;$d=3$&lt;/code&gt; and &lt;code&gt;$\ell=2$&lt;/code&gt;. Here, the target variable &lt;code&gt;$Y_t$&lt;/code&gt; is directly affected by &lt;code&gt;$X_t^2$&lt;/code&gt; and by the binary latent variable &lt;code&gt;$H_t$&lt;/code&gt;. The structural assignment for &lt;code&gt;$Y_t$&lt;/code&gt; remains the same for all &lt;code&gt;$t$&lt;/code&gt;, whereas some of the remaining assignments change continuously throughout time.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/h_invariance.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/h_invariance.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The left figure illustrates the causal structure among &lt;code&gt;$(X_t, Y_t, H_t)$&lt;/code&gt; for each time point &lt;code&gt;$t$&lt;/code&gt;. The node &lt;code&gt;$E$&lt;/code&gt; denotes the &amp;ldquo;environment variable&amp;rdquo; and indicates which of the structural assignments change over time. The assignment for &lt;code&gt;$Y_t$&lt;/code&gt; is the same for all observations, and the set &lt;code&gt;$S^* = \{2\}$&lt;/code&gt; is therefore &lt;code&gt;$h$&lt;/code&gt;-invariant. This can be seen in the plot on the right, which shows rolling-window estimates of the regression coefficients for the regression of &lt;code&gt;$Y_t$&lt;/code&gt; onto each of the three predictors. Within both regimes &lt;code&gt;$H_t = 1$&lt;/code&gt; and &lt;code&gt;$H_t = 2$&lt;/code&gt; (corresponding to different background colors in the plot), the regression coefficient for &lt;code&gt;$X_t^2$&lt;/code&gt; (green) is time-homogeneous. When regressing &lt;code&gt;$Y_t$&lt;/code&gt; onto &lt;code&gt;$X_t^1$&lt;/code&gt; or &lt;code&gt;$X_t^3$&lt;/code&gt;, the regression coefficients change in a more complicated fashion.&lt;/p&gt;
 &lt;p&gt;To infer &lt;code&gt;$S^*$&lt;/code&gt;, our causal discovery algorithm now runs through all subsets &lt;code&gt;$S \subseteq \{1,2,3\}$&lt;/code&gt;, and checks whether &lt;code&gt;$H_{0,S}$&lt;/code&gt; holds true. In this example, the  results (assuming no test errors) are:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/icph_all.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/icph_all.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;so we correctly output &lt;code&gt;$\hat S = \{2\} \cap \{2,3\} = \{2\}$&lt;/code&gt;. In general, we are not guaranteed to recover the full set &lt;code&gt;$S^*$&lt;/code&gt;, but only a subset hereof.&lt;/p&gt;
 &lt;h3 id=&#34;empirical-results&#34;&gt;Empirical results&lt;/h3&gt;
 &lt;p&gt;We test our algorithm on simulated data. Below, we show results of a simulation study where &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt; are the true causal parents of &lt;code&gt;$Y$&lt;/code&gt;, and &lt;code&gt;$X^3$&lt;/code&gt; is descendant of &lt;code&gt;$Y$&lt;/code&gt;. For increasing sample size, we report, for each individual variable, the empirical frequency of inclusion in &lt;code&gt;$\hat S$&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-15-icph/emp_results.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/emp_results.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Circles correspond to our method, while rectangles and triangles are two alternative methods that are included as baseline. Colored curves correspond to various model violations. As the sample size increases, ICPH tends to identify both causal parents &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt;, while the false discovery rate (the rate of inclusion of &lt;code&gt;$X^3$&lt;/code&gt;) is controlled at level &lt;code&gt;$\alpha = 0.05$&lt;/code&gt;. Our algorithm is robust against most considered model violations. If we allow the hidden variable to be continuous (purple curve), our method mostly returns the uninformative output &lt;code&gt;$\hat S = \emptyset$&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;reconstruction-of-the-hidden-variables&#34;&gt;Reconstruction of the hidden variables&lt;/h3&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -684,10 +687,10 @@ $$&lt;/p&gt;
     <item>
       <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
 </title>
-      <link>/post/2020/12/04/functional-regression-control-chart/</link>
+      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/04/functional-regression-control-chart/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;New statistical process control (SPC) methods have to be developed in
 order to handle more and more complex data, which are available because
@@ -764,7 +767,7 @@ owned by the Italian shipping company Grimaldi Group linking two ports
 in the Mediterranean sea from December 2014 to October 2017.
 The following figure shows the
 315 profiles observed for the covariates and response.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/fig1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/fig1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In particular, the &lt;em&gt;cumulative fuel consumption&lt;/em&gt; (&lt;code&gt;$CFC$&lt;/code&gt;) per each voyage
 is considered as the response variable, whereas, the &lt;em&gt;sailing time&lt;/em&gt;
 (&lt;code&gt;$T$&lt;/code&gt;), measured in hours (&lt;code&gt;$h$&lt;/code&gt;), the &lt;em&gt;speed over ground&lt;/em&gt; (&lt;code&gt;$SOG$&lt;/code&gt;),
@@ -784,7 +787,7 @@ control chart). The performance of the three charts is evaluated by
 means of the &lt;em&gt;average run length&lt;/em&gt; (&lt;code&gt;$\text{ARL}$&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;In the following figure, each observation is plotted onto the FRCC control
 chart and the two competitor ones.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;By comparing the three charts, the responsiveness of the FRCC is
 evidently higher than that of the the INBA and the RESP control charts
 which signal a much lower number of OCs. In particular, for the FRCC the
@@ -819,14 +822,14 @@ Centofanti, Fabio, Antonio Lepore, Alessandra Menafoglio, Biagio
 Palumbo, and Simone Vantini. &amp;quot;Functional Regression Control Chart.&amp;quot;
 Technometrics (2020): 1-14, DOI:
 &lt;a href=&#34;https://doi.org/10.1080/00401706.2020.1753581&#34;&gt;https://doi.org/10.1080/00401706.2020.1753581&lt;/a&gt;.&lt;/p&gt;
-&lt;h1 id=&#34;authors-biography&#34; class=&#34;unnumbered&#34;&gt;Authors&amp;rsquo; biography&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_fabio.jpg&#34; alt=&#34;&#34;&gt;
+&lt;h1 id=&#34;authors-biography&#34; class=&#34;unnumbered&#34;&gt;Authors&#39; biography&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_fabio.jpg&#34; alt=&#34;&#34;&gt;
 &lt;strong&gt;Fabio Centofanti&lt;/strong&gt; is a
 PhD student at the Department of Industrial Engineering of the
 University of Naples Federico II, Italy, &lt;a href=&#34;mailto:fabio.centofanti@unina.it&#34;&gt;fabio.centofanti@unina.it&lt;/a&gt;. His research interests include
 functional data analysis and statistical process monitoring.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_lepore.png&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_lepore.png&#34; alt=&#34;&#34;&gt;
 &lt;strong&gt;Antonio Lepore&lt;/strong&gt; is an
 Assistant Professor at the Department of Industrial Engineering of the
 University of Naples Federico II, Italy, &lt;a href=&#34;mailto:antonio.lepore@unina.it&#34;&gt;antonio.lepore@unina.it&lt;/a&gt;. His main research interests
@@ -835,7 +838,7 @@ monitoring of complex measurement profiles from multi-sensor acquisition
 systems, with particular attention to renewable energy and harmful
 emissions.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_menafoglio.jpg&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_menafoglio.jpg&#34; alt=&#34;&#34;&gt;
 &lt;strong&gt;Alessandra Menafoglio&lt;/strong&gt; is an Assistant Professor at MOX, Department of
 Mathematics, Politecnico di Milano, &lt;a href=&#34;mailto:alessandra.menafoglio@polimi.it&#34;&gt;alessandra.menafoglio@polimi.it&lt;/a&gt;. Her research interests focus on the
 development of innovative statistical models and methods for the
@@ -843,7 +846,7 @@ analysis and statistical process control of complex observations (e.g.,
 curves, images, functional signals), possibly characterized by spatial
 dependence.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_palumbo.png&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_palumbo.png&#34; alt=&#34;&#34;&gt;
 &lt;strong&gt;Biagio Palumbo&lt;/strong&gt; is an
 Associate Professor in &amp;ldquo;Statistics for experimental and technological
 research&amp;rdquo; at the Department of Industrial Engineering of the University
@@ -851,7 +854,7 @@ of Naples Federico II, Italy, &lt;a href=&#34;mailto:biagio.palumbo@unina.it&#34
 reliability, design and analysis of experiments, statistical methods for
 process monitoring and optimization and data science for technology.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-12-04-functional-regression-control-chart_files/Foto_vantini.png&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_vantini.png&#34; alt=&#34;&#34;&gt;
 &lt;strong&gt;Simone Vantini&lt;/strong&gt; is
 Associate Professor of Statistics at the Politecnico di Milano, Italy, &lt;a href=&#34;mailto:simone.vantini@polimi.it&#34;&gt;simone.vantini@polimi.it&lt;/a&gt;.
 He has been publishing widely in Functional and Object-Oriented Data
@@ -864,10 +867,10 @@ industrial problems.&lt;/p&gt;
     
     <item>
       <title>Online cash register data in the measurement of retail trade turnover</title>
-      <link>/post/2020/12/03/abel/</link>
+      <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/12/03/abel/</guid>
+      <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
       <description>&lt;p&gt;&lt;em&gt;The Hungarian Central Statistical Office uses online cash register data
 for the measurement of retail trade and food services. The data source
 allows the statistical office to considerably cut administrative burden
@@ -904,7 +907,7 @@ companies whose activities are not covered by the online cash register
 system or do not use a cash register. The full questionnaire also
 provides the correction of low-level data quality. This twofold
 approach, in fact, makes online cash register data a supplementary data
-source, opens the floor for the cut of data providers&amp;rsquo; administrative
+source, opens the floor for the cut of data providers&#39; administrative
 burdens and ensures a firm ground for calculable production of retail
 trade statistics (i.e. to mitigate risk of loss of administrative data).
 Due to the introduction of the new method almost an 80% cut could be
@@ -919,7 +922,7 @@ replaced by the new method, no information setback and quality loss was
 expected.&lt;/p&gt;
 &lt;p&gt;Retail trade turnover according to the &lt;strong&gt;questionnaire based method&lt;/strong&gt;
 and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
 &lt;p&gt;Time series show that the difference slightly varied by product groups
 but neither considerable shift was observed, nor divergence in long term
@@ -927,7 +930,7 @@ trends. As shown on the graph below, turnover indices totally overlap in
 the case of food and fuel retail trade, while in the case of non-food
 products the difference is also negligible.&lt;/p&gt;
 &lt;p&gt;Retail trade turnover calculated by the questionnaire based method and the method based on online cash register data&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
 &lt;p&gt;Similarly to the turnover data the new method has neither resulted in
 deviation of volume indices. The below graph shows that no considerable
@@ -936,7 +939,7 @@ online cash register data.&lt;/p&gt;
 &lt;p&gt;Volume indices of retail trade based on the &lt;strong&gt;questionnaire based
 method&lt;/strong&gt; and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data, seasonally and
 calendar adjusted&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Source:&lt;/em&gt; HCSO&lt;/p&gt;
 &lt;p&gt;Based on the above outcomes HCSO considered the new method applicable
 for the measurement of retail trade turnover. The transition, on the
@@ -952,7 +955,7 @@ on a daily basis and might indicate changes in the composition of trade
 faster. The next graph shows the periodical change of several products
 expressed in the value of retail trade turnover, based on online cash
 register data.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020/12/03/abel/Figure4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
@@ -970,21 +973,21 @@ pénztárgépektől. Online:
     
     <item>
       <title>Making an Online Risk Calculator</title>
-      <link>/post/2020/11/11/online-risk-calc/</link>
+      <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2020/11/11/online-risk-calc/</guid>
+      <guid>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</guid>
       <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;We first started making risk calculators with the website, &lt;a href=&#34;nomograms.org&#34;&gt;http://nomograms.org&lt;/a&gt;.
 There are several here, and they are patient friendly.
 Later, we launched &lt;a href=&#34;http://rcalc.ccf.org&#34;&gt;rcalc.ccf.org&lt;/a&gt;, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Figure1.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Figure1.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Figure 1: Example of what risk calculator shows to the user. Note that there are two models, one for Dutasteride and one for No Dutasteride with different sets of predictor variables. For some outcomes there is an interval on the Dutasteride but no interval on the No Dutasteride predicted risk. This happens when a variable which is only included in the model Dutasteride model has a missing value.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If the user were to provide some of the values of the predictor variables that are currently missing, his 4-year risk of high-grade prostate cancer (which is currently at 17% on Dutasteride) might be as low as 7% or as high as 49%. Clearly, obtaining missing values to resolve this uncertainty should be pursued. The missing values will have less of an impact on his risk for a urinary tract infection.&lt;/p&gt;
@@ -1004,7 +1007,7 @@ Later, we launched &lt;a href=&#34;http://rcalc.ccf.org&#34;&gt;rcalc.ccf.org&lt
 &lt;li&gt;to report the final model in form of a shiny app&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Figure2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Figure2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Figure 2: Flowchart: prediction modeling strategy&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Our R-package riskRegression provides implementations of modeling algorithms for censored data with competing risks and the cross-validation performance as described here online. Here is sample code:&lt;/p&gt;
@@ -1031,11 +1034,11 @@ x &amp;lt;- Score(list(&amp;quot;Conventional&amp;quot;=fit1,&amp;quot;Experimen
            summary=c(&amp;quot;risks&amp;quot;,&amp;quot;IPA&amp;quot;),
            plots=c(&amp;quot;cali&amp;quot;,&amp;quot;roc&amp;quot;))
 plotROC(x,times=5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plotCalibration(x,times=5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The details of making an online risk calculator, how we deal with the many issues that arise, and many R-code examples, are described in our new book, available &lt;a href=&#34;https://www.routledge.com/9781138384477&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2020-11-11-online-risk-calc_files/figure-html/Book.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Book.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This post is based on:&lt;/p&gt;
 &lt;p&gt;Kattan, M. W., &amp;amp; Gerds, T. A. (2020). A framework for the evaluation of statistical prediction models. Chest, 158(1), S29-S38. &lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S0012369220304517&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level3&#34;&gt;

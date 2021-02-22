@@ -2,102 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on YoungStatS</title>
-    <link>/categories/</link>
+    <link>https://youngstats.github.io/categories/</link>
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>compositional data</title>
-      <link>/categories/compositional-data/</link>
+      <link>https://youngstats.github.io/categories/compositional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/compositional-data/</guid>
+      <guid>https://youngstats.github.io/categories/compositional-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>correlation</title>
-      <link>/categories/correlation/</link>
+      <link>https://youngstats.github.io/categories/correlation/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/correlation/</guid>
+      <guid>https://youngstats.github.io/categories/correlation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webinars</title>
-      <link>/categories/webinars/</link>
+      <link>https://youngstats.github.io/categories/webinars/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/webinars/</guid>
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>classification</title>
-      <link>/categories/classification/</link>
+      <link>https://youngstats.github.io/categories/classification/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/classification/</guid>
+      <guid>https://youngstats.github.io/categories/classification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>KNN</title>
-      <link>/categories/knn/</link>
+      <link>https://youngstats.github.io/categories/knn/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/knn/</guid>
+      <guid>https://youngstats.github.io/categories/knn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>high dimensional data</title>
-      <link>/categories/high-dimensional-data/</link>
+      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/high-dimensional-data/</guid>
+      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>partial least squares</title>
-      <link>/categories/partial-least-squares/</link>
+      <link>https://youngstats.github.io/categories/partial-least-squares/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/partial-least-squares/</guid>
+      <guid>https://youngstats.github.io/categories/partial-least-squares/</guid>
       <description></description>
     </item>
     
     <item>
       <title>casual inference</title>
-      <link>/categories/casual-inference/</link>
+      <link>https://youngstats.github.io/categories/casual-inference/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/casual-inference/</guid>
+      <guid>https://youngstats.github.io/categories/casual-inference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>machine learning</title>
-      <link>/categories/machine-learning/</link>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/machine-learning/</guid>
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>co-clustering</title>
-      <link>/categories/co-clustering/</link>
+      <link>https://youngstats.github.io/categories/co-clustering/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/co-clustering/</guid>
+      <guid>https://youngstats.github.io/categories/co-clustering/</guid>
       <description></description>
     </item>
     
