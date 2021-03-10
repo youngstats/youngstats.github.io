@@ -79,6 +79,222 @@ and the resulting bootstrap estimates of the functional regression parameter the
     </item>
     
     <item>
+      <title>Higher Order Targeted Maximum Likelihood Estimation</title>
+      <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.&lt;/p&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Background&lt;/h1&gt;
+&lt;div id=&#34;targeted-maximum-likelihood-estimation-tmle&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Targeted Maximum Likelihood Estimation (TMLE)&lt;/h2&gt;
+&lt;p&gt;It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution. TMLE &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-van2006targeted&#34; role=&#34;doc-biblioref&#34;&gt;van der Laan and Rubin 2006&lt;/a&gt;; &lt;a href=&#34;#ref-van2011targeted&#34; role=&#34;doc-biblioref&#34;&gt;van der Laan and Rose 2011&lt;/a&gt;, &lt;a href=&#34;#ref-van2018targeted&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; provides a framework to construct such estimators and incorporates machine learning into efficient estimation and inference. Here we briefly review the regular first order TMLE.&lt;/p&gt;
+&lt;p&gt;Suppose that the true distribution &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt; lies in a statistical model &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{M}\)&lt;/span&gt;. Start with an initial distribution estimator &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt;. Given pathwise differentiability of the target &lt;span class=&#34;math inline&#34;&gt;\(\Psi(P)\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; with a canonical gradient &lt;span class=&#34;math inline&#34;&gt;\(D^{(1)}_P\)&lt;/span&gt;, consider a least favorable path &lt;span class=&#34;math inline&#34;&gt;\(\{ \tilde P^{(1)}(P, \epsilon) \}\)&lt;/span&gt; through &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt;, where scores at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt; span the efficient influence curve (EIC) &lt;span class=&#34;math inline&#34;&gt;\(D_{P}^{(1)}\)&lt;/span&gt;. Define the TMLE update by maximizing the likelihood along the path, that is, &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(1)} = \mathrm{argmin}_\epsilon P_n L(\tilde P^{(1)}(P_n^0, \epsilon) )\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(L(P) = - \log p\)&lt;/span&gt;. The resulted TMLE update is &lt;span class=&#34;math inline&#34;&gt;\(P_n^* = \tilde P_n^{(1)} (P_n^0) = \tilde P_n^{(1)} (P_n^0, \epsilon_n^{(1)})\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Define &lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P, P_0) = \Psi(P) - \Psi(P_0) + P_0 D_P^{(1)}\)&lt;/span&gt; as the exact remainder. Then the TMLE satisfies &lt;span class=&#34;math inline&#34;&gt;\(P_n D_{P_n^*}^{(1)}\approx 0\)&lt;/span&gt; and the following exact expansion
+&lt;span class=&#34;math display&#34;&gt;\[
+\Psi(P_n^*) - \Psi(P_0) = R^{(1)}(P_n^*, P_0) - P_0 D_{P_n^*}^{(1)} = (P_n - P_0) D_{P_0}^{(1)} + (P_n - P_0) (D_{P_n^*}^{(1)} - D_{P_0}^{(1)}) - P_n D^{(1)}_{P_n^*} + R^{(1)}(P_n^*, P_0).
+\]&lt;/span&gt;
+Asymptotic efficiency for &lt;span class=&#34;math inline&#34;&gt;\(P_n^*\)&lt;/span&gt; requires:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\{D_{P}^{(1)}: P\in\mathcal{M}\}\)&lt;/span&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt;-Donsker class (often satisfied, or skipped with sample splitting),&lt;/li&gt;
+&lt;li&gt;Solving the equation &lt;span class=&#34;math inline&#34;&gt;\(P_n D^{(1)}_{P_n^*}=0\)&lt;/span&gt; exactly or to an &lt;span class=&#34;math inline&#34;&gt;\(o_P(n^{-1/2})\)&lt;/span&gt; term,&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P_n^*, P_0)\)&lt;/span&gt; being exactly zero or up to an &lt;span class=&#34;math inline&#34;&gt;\(o_P(n^{-1/2})\)&lt;/span&gt; term.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P, P_0)\)&lt;/span&gt; is often a second order difference in &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p_0\)&lt;/span&gt;. For example, when it consists of cross products, doubly or multiply robustness may exist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;highly-adaptive-lasso-hal&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Highly Adaptive Lasso (HAL)&lt;/h2&gt;
+&lt;p&gt;HAL &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-van2015generally&#34; role=&#34;doc-biblioref&#34;&gt;van der Laan 2015&lt;/a&gt;, &lt;a href=&#34;#ref-van2017generally&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;; &lt;a href=&#34;#ref-benkeser2016highly&#34; role=&#34;doc-biblioref&#34;&gt;Benkeser and van ver Laan 2016&lt;/a&gt;)&lt;/span&gt; is a nonparametric maximum likelihood estimator that converges in Kullback-Leibler dissimilarity at a minimal rate of &lt;span class=&#34;math inline&#34;&gt;\(n^{-2/3}(\log~n)^d\)&lt;/span&gt;, even when the parameter space only assumes cadlag and finite variation norms.
+This generally bounds the exact remainder, and immediately makes the TMLE that uses HAL as an initial asymptotically efficient. However, in finite samples, the second order remainder can still dominate the sampling distribution.&lt;/p&gt;
+&lt;p&gt;Another important property of HAL is itself being a nonparametric MLE, so it can solve a large class of score equations to best approximates the desired score via increasing the &lt;span class=&#34;math inline&#34;&gt;\(L_1\)&lt;/span&gt;-norm of the HAL-MLE (called undersmoothing) &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-vanderLaan&amp;amp;Benkeser&amp;amp;Cai19&#34; role=&#34;doc-biblioref&#34;&gt;van der Laan, Benkeser, and Cai 2019a&lt;/a&gt;, &lt;a href=&#34;#ref-van2019efficient&#34; role=&#34;doc-biblioref&#34;&gt;2019b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;higher-order-fluctuations-with-hal-mle&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Higher Order Fluctuations with HAL-MLE&lt;/h1&gt;
+&lt;p&gt;Replace &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt; in the first order TMLE by a TMLE &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(2)}_n(P_n^0)\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P_0) = \Psi(\tilde P^{(1)}_n(P_0)) = \Psi(\tilde P^{(1)}(P_0, \epsilon_n^{(1)}(P_0)))\)&lt;/span&gt;, which is a data-adaptive fluctuation of the original target parameter &lt;span class=&#34;math inline&#34;&gt;\(\Psi(P_0)\)&lt;/span&gt;. Then the final update of a second order TMLE, &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(1)}_n \tilde P^{(2)}_n(P_n^0)\)&lt;/span&gt;, is just a first order TMLE that uses as the initial estimator a &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(2)}(P_n^0)\)&lt;/span&gt; that is fully tailored for &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P_0)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{r 2nd, echo=FALSE, fig.align = &#39;center&#39;, out.width = &#34;85%&#34;, fig.cap = &#34;Left panel: regular TMLE. Right panel: second order TMLE. The horizontal axes represent the original target. The vertical axis represents the data-adaptive fluctuation. The second order TMLE searches for a better initial estimator for a regular TMLE. &#34;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/figure_2nd_order.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Similarly if we iterate this process, and let &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(k+1)}_n(P_n^0)\)&lt;/span&gt; be a regular TMLE tailored for a higher order fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(k)}(P_0) = \Psi^{(k-1)}_n(\tilde P^{(k)}_n(P_0))=\Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P_n^0))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(k=1, \ldots\)&lt;/span&gt;, then the final update of a &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE is &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k+1)}_n(P_n^0)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The second order TMLE relies on pathwise differentiability of &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}\)&lt;/span&gt;. However, &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P) = \Psi(\tilde P^{(1)}_n(P)) = \Psi(\tilde P^{(1)}(P, \epsilon_n^{(1)}(P)))\)&lt;/span&gt;is smooth in &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; up till the dependence of &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(1)}(P) = \mathrm{argmax}_\epsilon P_n \log \tilde p_n^{(1)}(p, \epsilon)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, because &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt; is not absolutely continuous w.r.t. &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; for most &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; that can occur as an initial or a higher order TMLE-update. This calls for the use of smooth distribution estimators such as HAL-MLE &lt;span class=&#34;math inline&#34;&gt;\(\tilde{P}_n\)&lt;/span&gt; in replacement of the empirical &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt;, since &lt;span class=&#34;math inline&#34;&gt;\(d\tilde P_n/dP\)&lt;/span&gt; will exist for all &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; that can occur as an initial or higher order updates, which ensures pathwise differentiability of &lt;span class=&#34;math inline&#34;&gt;\(\Psi^{(1)}_n(P_0)\)&lt;/span&gt; and the existence of its canonical gradient &lt;span class=&#34;math inline&#34;&gt;\(D^{(2)}_{n, P}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In general, suppose that &lt;span class=&#34;math inline&#34;&gt;\(\{\tilde P^{(k)}_n(P, \epsilon)\}\)&lt;/span&gt; is a least favorable path through &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt;, whose scores at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt; span &lt;span class=&#34;math inline&#34;&gt;\(D^{(k)}_{n, P}\)&lt;/span&gt;. And the update step is also replaced by optimizing the &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;-regularized loss, that is, &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(k)} = \mathrm{argmin}_\epsilon \tilde P_n L(\tilde P^{(k)}(P_n^0, \epsilon) )\)&lt;/span&gt;, which solves &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n D^{(k)}_{n, P}=0\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(P = \tilde P^{(k)}_n(P_n^0)= \tilde P^{(k)}_n(P_n^0, \epsilon_n^{(k)})\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE by its design searches for a better initial estimator given the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th order TMLE. Specifically, the &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE moves in the same direction as the steepest descent algorithm for minimizing the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th exact total remainder that is the discrepancy between &lt;span class=&#34;math inline&#34;&gt;\(\Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P)) - \Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P_0))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{P}_n D^{(k)}_{n, P_0}\)&lt;/span&gt;. Moreover, compared to an oracle steepest descent algorithm, TMLE stops the moment the log-likelihood is not improving anymore, which corresponds exactly to when the TMLE cannot know in what direction a steepest descent algorithm would go. This avoids potential overfitting and ensures a local minimum in close neighborhood of the desired (but unknown) minimum &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exact-expansions-of-higher-order-tmle&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Exact Expansions of Higher Order TMLE&lt;/h1&gt;
+&lt;p&gt;Denote the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th exact remainder as the exact remainder of &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(k)}_n(P)\)&lt;/span&gt; for the fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi^{(k-1)}(P_0) = \Psi(\tilde P_n^{(1)}\cdots\tilde P_n^{(k-1)}(P_0))\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+R^{(k)}_n(\tilde P^{(k)}_n(P), P_0)
+= &amp;amp; \Psi^{(k-1)}(\tilde P^{(k)}_n(P)) - \Psi^{(k-1)}(P_0) + P_0 D^{(k)}_{n, \tilde P^{(k)}_n(P)} \\
+= &amp;amp; \Psi(\tilde P^{(1)}\cdots\tilde P^{(k)}_n(P)) - \Psi(\tilde P^{(1)}\cdots\tilde P^{(k-1)}(P_0)) + P_0 D^{(k)}_{n, \tilde P^{(k)}_n(P)}. 
+\end{align*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Then we have the exact expansion for the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th order TMLE,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+\Psi(\tilde P^{(1)}_n\cdots\tilde P^{(k)}_n(P)) - \Psi(P_0)
+= &amp;amp; \sum_{j=1}^{k-1} (P_n-P_0)D^{(j)}_{n, \tilde P^{(j)}_n(P_0)} + R^{(j)}_n(\tilde P_n^{(j)}(P_0), P_0) \\
+&amp;amp; + (P_n-P_0)D^{(k)}_{n, \tilde P^{(k)}_n}(P_n^0) + R^{(k)}_n(\tilde P_n^{(k)}(P_n^0), P_0) \\
+&amp;amp; - \sum_{j=1}^{k-1} P_n D^{(j)}_{n, \tilde P^{(j)}_n(P_0)} - P_n D^{(k)}_{n, \tilde P^{(k)}_n(P_n^0)}, 
+\end{align*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;which still holds if we replace &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;. This can be further derived as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+\Psi(\tilde P^{(1)}\cdots\tilde P^{(k)}_n(P)) - \Psi(P_0)
+=&amp;amp;\sum_{j=1}^{k}\left\{ (\tilde{P}_n-P_0)D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}+R_n^{(j)}(\tilde{P}_n^{(j)}(P_0),P_0)\right\} \\
+%&amp;amp;&amp;amp;+(P_n-P_0)D^{(k)}_{n,P_n^{(k)}(P_0)}\\
+&amp;amp; +R_n^{(k)}(\tilde{P}_n^{(k)}(P_n^0),\tilde{P}_n)-R_n^{(k)}(\tilde{P}_n^{(k)}(P_0),\tilde{P}_n)\\
+&amp;amp;-\sum_{j=1}^{k}\tilde{P}_n D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}.\end{align*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The followings can be shown:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\((\tilde{P}_n-P_0)D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}, j=1, \dots, k,\)&lt;/span&gt; are generalized &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;-th order difference in &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;, which resemble the performance of higher order &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;-statistics;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n^{(j)}(\tilde{P}_n^{(j)}(P_0),P_0) = O_P(n^{-1})\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n) D_{n, P_0}^{(j)} = O_P(n^{-1/2})\)&lt;/span&gt;, which can be achieved by undersmothing HAL;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n^{(k)}(\tilde{P}_n^{(k)}(P),\tilde P_n)\)&lt;/span&gt; is a generalized &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order difference in &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;, and hence &lt;span class=&#34;math inline&#34;&gt;\(R_n^{(k)}(\tilde{P}_n^{(k)}(P_n^0),\tilde P_n) - R_n^{(k)}(\tilde{P}_n^{(k)}(P_0),\tilde P_n)=o_P(n^{-1/2})\)&lt;/span&gt; so long as &lt;span class=&#34;math inline&#34;&gt;\(\lVert \tilde p_n - p_0 \rVert = o_P(n^{1/2(k+1)})\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\lVert p_n^0 - p_0 \rVert = o_P(n^{1/2(k+1)})\)&lt;/span&gt;;&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;The last term can be exactly &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; by defining &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(j)}(P)\)&lt;/span&gt; as a solution of the corresponding efficient score equation &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n D^{(j)}_{n, \tilde P^{(j)}_n(P, \epsilon)}=0\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;higher-order-inference&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Higher Order Inference&lt;/h1&gt;
+&lt;p&gt;For the sake of statistical inference, we will need that &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n)D^{(1)}_{\tilde P_n^{(1)}(P_0)} = o_P(n^{-1/2})\)&lt;/span&gt;, and probably even &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n)D^{(j)}_{\tilde P_n^{(j)}(P_0)} = o_P(n^{-1/2})\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(j = 2, \dots, k\)&lt;/span&gt;. It can be shown that this essentially comes down to controlling &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n) D^{(1)}_{P_0}\)&lt;/span&gt;, which again can be achieved by undersmoothing HAL.&lt;/p&gt;
+&lt;p&gt;Let
+&lt;span class=&#34;math display&#34;&gt;\[
+\bar D_n^k = \sum_{j=1}^k D^{(j)}_{n, \tilde P^{(j)}_n\cdots\tilde P^{(k)}_n(P_n^0)}
+\]&lt;/span&gt;
+which is an estimate of the influence curve &lt;span class=&#34;math inline&#34;&gt;\(\bar D_{n, P_0}^k = \sum_{j=1}^k D^{(j)}_{n, \tilde P^{(j)}_n(P_0)}\)&lt;/span&gt;. Note that for &lt;span class=&#34;math inline&#34;&gt;\(j&amp;gt;1\)&lt;/span&gt; the terms are higher order differences, so that &lt;span class=&#34;math inline&#34;&gt;\(\bar D_n^k\)&lt;/span&gt; will converge to the efficient influence curve &lt;span class=&#34;math inline&#34;&gt;\(D^{(1)}_{P_0}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Let
+&lt;span class=&#34;math display&#34;&gt;\[
+\sigma_n^2 = \frac{1}{n}\sum_{i=1}^n \bar D_n^k(O_i)^2
+\]&lt;/span&gt;
+be the sample variance of this estimated influence curve. A corresponding 0.95 confidence interval is given by
+&lt;span class=&#34;math display&#34;&gt;\[
+\Psi(P^{(1)}_n\cdots\tilde P^{(k)}_n(P_n^0)) \pm 1.96 \sigma_n/n^{1/2}.
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Simulation&lt;/h1&gt;
+&lt;p&gt;The first example demonstrates the impact of second order TMLE steps during a process of estimating the average density. The exact total remainder &lt;span class=&#34;math inline&#34;&gt;\(\bar R^{(1)}(\tilde P_n^{(1)}(P), P_0)\)&lt;/span&gt; of first order TMLE is controlled due to the second order updates &lt;span class=&#34;math inline&#34;&gt;\(P = P_n^0 \mapsto \tilde P_n^{(2)}(P_n^0)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{r remainder, echo=FALSE, fig.align = &#39;center&#39;, out.width = &#34;65%&#34;}&lt;/code&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/middle_remainder_ZW-20210114.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Below it plots the simulated bias and bias/SD ratio at &lt;span class=&#34;math inline&#34;&gt;\(n=500\)&lt;/span&gt; when we increase the bias in the initial estimator &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt; by adding a bias mass to each of the support points of the empirical pmf. Second order TMLE provides improved accuracy in both estimation and inference over first order TMLE following likelihood guidance.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{r combine, echo=FALSE, fig.align = &#39;center&#39;, out.width = &#34;85%&#34;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/combine_500-20210115.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Lastly, we show an example of estimating average treatment effects (ATEs) while the initial estimator for propensity scores is &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/4}\)&lt;/span&gt;-consistent while that for outcome models is not. The first order TMLE should have &lt;span class=&#34;math inline&#34;&gt;\(n^{1/2}\)&lt;/span&gt;-scaled bias that increases with &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; while the second order TMLE has a &lt;span class=&#34;math inline&#34;&gt;\(n^{1/2}\)&lt;/span&gt;-bias that should be constant in &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. The table below shows that the second order TMLE has a negligible bias and thereby still provides valid inference.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;n&lt;/th&gt;
+&lt;th&gt;bias 1-st&lt;/th&gt;
+&lt;th&gt;bias 2-nd&lt;/th&gt;
+&lt;th&gt;se 1-st&lt;/th&gt;
+&lt;th&gt;se 2-nd&lt;/th&gt;
+&lt;th&gt;mse 1-st&lt;/th&gt;
+&lt;th&gt;mse 2-nd&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;400&lt;/td&gt;
+&lt;td&gt;-0.720&lt;/td&gt;
+&lt;td&gt;0.078&lt;/td&gt;
+&lt;td&gt;0.815&lt;/td&gt;
+&lt;td&gt;1.175&lt;/td&gt;
+&lt;td&gt;1.087&lt;/td&gt;
+&lt;td&gt;1.178&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;750&lt;/td&gt;
+&lt;td&gt;-0.996&lt;/td&gt;
+&lt;td&gt;0.029&lt;/td&gt;
+&lt;td&gt;0.800&lt;/td&gt;
+&lt;td&gt;1.102&lt;/td&gt;
+&lt;td&gt;1.278&lt;/td&gt;
+&lt;td&gt;1.102&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;-1.258&lt;/td&gt;
+&lt;td&gt;-0.062&lt;/td&gt;
+&lt;td&gt;0.786&lt;/td&gt;
+&lt;td&gt;1.066&lt;/td&gt;
+&lt;td&gt;1.483&lt;/td&gt;
+&lt;td&gt;1.068&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;1200&lt;/td&gt;
+&lt;td&gt;-1.345&lt;/td&gt;
+&lt;td&gt;0.022&lt;/td&gt;
+&lt;td&gt;0.809&lt;/td&gt;
+&lt;td&gt;1.028&lt;/td&gt;
+&lt;td&gt;1.570&lt;/td&gt;
+&lt;td&gt;1.028&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;1600&lt;/td&gt;
+&lt;td&gt;-1.549&lt;/td&gt;
+&lt;td&gt;-0.019&lt;/td&gt;
+&lt;td&gt;0.818&lt;/td&gt;
+&lt;td&gt;1.055&lt;/td&gt;
+&lt;td&gt;1.752&lt;/td&gt;
+&lt;td&gt;1.055&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;2500&lt;/td&gt;
+&lt;td&gt;-2.066&lt;/td&gt;
+&lt;td&gt;-0.094&lt;/td&gt;
+&lt;td&gt;0.819&lt;/td&gt;
+&lt;td&gt;0.999&lt;/td&gt;
+&lt;td&gt;2.222&lt;/td&gt;
+&lt;td&gt;1.003&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;discussions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Discussions&lt;/h1&gt;
+&lt;p&gt;Although HAL-MLE-based fluctuations are fundamental to higher order TMLE, the update steps in practice can be based on empirical losses. Note that the &lt;span class=&#34;math inline&#34;&gt;\(j-1\)&lt;/span&gt;-th fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi(\tilde P_n^{(1)}\cdots\tilde P_n^{(j-1)}(P_0))\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(j = 0, \dots, k-1\)&lt;/span&gt;, is nothing but a pathwise differentiable parameter with a known canonical gradient, &lt;span class=&#34;math inline&#34;&gt;\(D^{(j)}_{n, P}\)&lt;/span&gt;. For jointly targeting this sequence of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; parameters, one can solve the empirical &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt;-regularized efficient score equations (where the scores still involve HAL-MLEs). As we showed in the technical report, this preserves the exact expansion and even leads to an improved undersmoothing term, and therefore is the recommended implementation. At &lt;span class=&#34;math inline&#34;&gt;\(k=1\)&lt;/span&gt;, this exactly coincides with the regular first order TMLE.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{r targets, echo=FALSE, fig.align = &#39;center&#39;, out.width = &#34;85%&#34;, fig.cap = &#34;Jointly consider the sequence of data-adaptive fluctuations. &#34;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/figure_targets.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;An important next step is the (automated) computation of the first and higher order canonical gradients with least squares regression or symmetric matrix inversion &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-van2021higher&#34; role=&#34;doc-biblioref&#34;&gt;van der Laan, Wang, and van der Laan 2021&lt;/a&gt;)&lt;/span&gt;, thereby opening up the computation of higher order TMLEs with standard machinery, avoiding delicate analytics needed to determine closed forms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-benkeser2016highly&#34; class=&#34;csl-entry&#34;&gt;
+Benkeser, David, and Mark J van ver Laan. 2016. &lt;span&gt;“The Highly Adaptive Lasso Estimator.”&lt;/span&gt; In &lt;em&gt;2016 IEEE International Conference on Data Science and Advanced Analytics (DSAA)&lt;/em&gt;, 689–96. IEEE.
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2015generally&#34; class=&#34;csl-entry&#34;&gt;
+van der Laan, Mark J. 2015. &lt;span&gt;“A Generally Efficient Targeted Minimum Loss Based Estimator.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2017generally&#34; class=&#34;csl-entry&#34;&gt;
+———. 2017. &lt;span&gt;“A Generally Efficient Targeted Minimum Loss Based Estimator Based on the Highly Adaptive Lasso.”&lt;/span&gt; &lt;em&gt;The International Journal of Biostatistics&lt;/em&gt; 13 (2).
+&lt;/div&gt;
+&lt;div id=&#34;ref-vanderLaan&amp;amp;Benkeser&amp;amp;Cai19&#34; class=&#34;csl-entry&#34;&gt;
+van der Laan, Mark J, David Benkeser, and Weixin Cai. 2019a. &lt;span&gt;“Causal Inference Based on Undersmoothing the Highly Adaptive Lasso.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2019efficient&#34; class=&#34;csl-entry&#34;&gt;
+———. 2019b. &lt;span&gt;“Efficient Estimation of Pathwise Differentiable Target Parameters with the Undersmoothed Highly Adaptive Lasso.”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:1908.05607&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2011targeted&#34; class=&#34;csl-entry&#34;&gt;
+van der Laan, Mark J, and Sherri Rose. 2011. &lt;em&gt;Targeted Learning: Causal Inference for Observational and Experimental Data&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2018targeted&#34; class=&#34;csl-entry&#34;&gt;
+———. 2018. &lt;em&gt;Targeted Learning in Data Science&lt;/em&gt;. Springer.
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2006targeted&#34; class=&#34;csl-entry&#34;&gt;
+van der Laan, Mark J, and Daniel Rubin. 2006. &lt;span&gt;“Targeted Maximum Likelihood Learning.”&lt;/span&gt; &lt;em&gt;The International Journal of Biostatistics&lt;/em&gt; 2 (1).
+&lt;/div&gt;
+&lt;div id=&#34;ref-van2021higher&#34; class=&#34;csl-entry&#34;&gt;
+van der Laan, Mark J, Zeyi Wang, and Lars van der Laan. 2021. &lt;span&gt;“Higher Order Targeted Maximum Likelihood Estimation.”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:2101.06290&lt;/em&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
       <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
@@ -933,112 +1149,6 @@ Analysis. His current research interests include: permutation testing,
 nonparametric forecasting, process control, non-Euclidean data, and in
 general statistical methods and applications motivated by business or
 industrial problems.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Online cash register data in the measurement of retail trade turnover</title>
-      <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
-      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
-      <description>&lt;p&gt;&lt;em&gt;The Hungarian Central Statistical Office uses online cash register data
-for the measurement of retail trade and food services. The data source
-allows the statistical office to considerably cut administrative burden
-of data providers without quality loss in retail trade statistics.
-Online cash register data is widely used in tracking the latest
-developments in retail trade during the coronavirus pandemic as well.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in
-Hungary in 2013. The goal of the measure was to give the Tax Authority a
-real-time distant insight into the turnover of a retail traders and food
-service providers. By the introduction of the online cash registers a
-substantial whitening was expected in the sense of lessening the extent
-of non-accounted sales. According to a study&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; published a few years
-ago examining the effect of the introduction of online cash registers,
-68% of the online cash register users were involved in retail trade and
-food services and they represented 83% of the total turnover observed by
-online cash registers in 2015. The authors concluded that online cash
-registers resulted in bigger rise in turnover in comparison to
-enterprises not using such a tool. The median increase was 15 percent in
-the case of retail trade turnover and 20 in food services, respectively.
-The whitening of the turnover, however, started even before the
-deployment of the online cash registers, especially in food services
-sector and among smaller enterprises.&lt;/p&gt;
-&lt;p&gt;The Hungarian Central Statistical Office (hereinafter: HCSO) uses online
-cash register data for the calculation of retail trade and food
-services. The methodology is widely-used for the measurement of turnover
-and the production of indices by measuring retail trade and food
-services turnover based on online cash register data. Simplified
-questionnaire for data collection is still used in the case of fully
-observed data providers. In the simplified questionnaire HCSO asks for
-unbroken turnover data of statistical units. This questionnaire serves
-as correction for eventually missing online cash register data and
-measurement of online trade. A full questionnaire is sent to designated
-companies whose activities are not covered by the online cash register
-system or do not use a cash register. The full questionnaire also
-provides the correction of low-level data quality. This twofold
-approach, in fact, makes online cash register data a supplementary data
-source, opens the floor for the cut of data providers&#39; administrative
-burdens and ensures a firm ground for calculable production of retail
-trade statistics (i.e. to mitigate risk of loss of administrative data).
-Due to the introduction of the new method almost an 80% cut could be
-achieved in the number of the data providers, observed units and
-questionnaire cells.&lt;/p&gt;
-&lt;p&gt;The newly applied method proved to be reliable. Examining the testing
-period, the monthly retail trade turnover data on current prices and
-prepared on the basis of the online cash register data was 0.9-4.4%
-lower than those measured using the traditional method (i.e.
-questionnaire). This implied that the old method might trustworthily be
-replaced by the new method, no information setback and quality loss was
-expected.&lt;/p&gt;
-&lt;p&gt;Retail trade turnover according to the &lt;strong&gt;questionnaire based method&lt;/strong&gt;
-and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
-&lt;p&gt;Time series show that the difference slightly varied by product groups
-but neither considerable shift was observed, nor divergence in long term
-trends. As shown on the graph below, turnover indices totally overlap in
-the case of food and fuel retail trade, while in the case of non-food
-products the difference is also negligible.&lt;/p&gt;
-&lt;p&gt;Retail trade turnover calculated by the questionnaire based method and the method based on online cash register data&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
-&lt;p&gt;Similarly to the turnover data the new method has neither resulted in
-deviation of volume indices. The below graph shows that no considerable
-difference was measured between the questionnaire based method and
-online cash register data.&lt;/p&gt;
-&lt;p&gt;Volume indices of retail trade based on the &lt;strong&gt;questionnaire based
-method&lt;/strong&gt; and the &lt;strong&gt;method based on online cash register&lt;/strong&gt; data, seasonally and
-calendar adjusted&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Source:&lt;/em&gt; HCSO&lt;/p&gt;
-&lt;p&gt;Based on the above outcomes HCSO considered the new method applicable
-for the measurement of retail trade turnover. The transition, on the
-other hand, has taken more years during which period parallel use of the
-two methods was applied.&lt;/p&gt;
-&lt;p&gt;It is also worth to be mentioned that HCSO utilises online cash register
-data for the monitoring of retail trade trends during the coronavirus
-pandemic. For these purposes daily data are used and the latest
-developments of turnover changes in retail trade might be tracked
-thereby. The main advantage of the usage of online cash register data
-compared to VAT data is obviously that cash register data are available
-on a daily basis and might indicate changes in the composition of trade
-faster. The next graph shows the periodical change of several products
-expressed in the value of retail trade turnover, based on online cash
-register data.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020/12/03/abel/Figure4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Source&lt;/em&gt;: HCSO&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Lovics Gábor &amp;ndash; Szőke Katalin &amp;ndash; Tóth G. Csaba &amp;ndash; Ván Bálint:
-Megugrott a kis cégek bejelentett forgalma az online
-pénztárgépektől. Online:
-&lt;a href=&#34;https://www.mnb.hu/letoltes/megugrott-a-kis-cegek-bejelentett-forgalma-az-online-penztargepektol.pdf&#34;&gt;https://www.mnb.hu/letoltes/megugrott-a-kis-cegek-bejelentett-forgalma-az-online-penztargepektol.pdf&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
 </description>
     </item>
     

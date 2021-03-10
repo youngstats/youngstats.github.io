@@ -17,6 +17,17 @@
     </item>
     
     <item>
+      <title>Higher Order Targeted Maximum Likelihood Estimation</title>
+      <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
+      <description>Summary
+We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
+BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
+    </item>
+    
+    <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
       <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
@@ -94,16 +105,6 @@ Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covaria
       
       <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
       <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
-    </item>
-    
-    <item>
-      <title>Online cash register data in the measurement of retail trade turnover</title>
-      <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
-      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
-      <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.
-Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
     </item>
     
   </channel>
