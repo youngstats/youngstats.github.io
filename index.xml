@@ -6,7 +6,78 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compositional scalar-on-function regression as a tool (not only) for geological data</title>
+      <link>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.e., distribution of the size of soil grains). These distributions - although sampled in their discrete form as histogram data - show both relative and functional character and therefore can be described through probability density functions. A valid question to ask is how to modify the common multiple and/or functional regression model for the introduced case of relative (compositional) data.&lt;/p&gt;
+&lt;div id=&#34;functional-regression-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Functional regression model&lt;/h2&gt;
+&lt;p&gt;First, take a look at the standard functional data analysis (FDA) approach which was developed for functions from &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt; space. A functional linear regression model with functional predictor is built as
+&lt;span class=&#34;math display&#34;&gt;\[
+y_{i} = \beta_{0} + \int_{I} \beta_{1}(t)f_{i}(t)dt + \epsilon_{i},\quad i=1,\dots,N,\quad t \in I
+\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; is the scalar intercept and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; represents the functional regression parameter. This model can be seen as an extension of the multiple regression - therefore, the estimators &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta_{0}}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta_{1}}\)&lt;/span&gt; minimize the following sum of squared errors (SSE)
+&lt;span class=&#34;math display&#34;&gt;\[
+\text{SSE} (\beta_{0},\beta_{1}) = \sum_{i=1}^{N}\left(y_{i}-\beta_{0}-\int_{I}\beta_{1}(t)f_{i}(t)dt\right)^2.
+\]&lt;/span&gt;
+Unfortunately, it is not common for functional data to be available in its continuous form - we are usually left with dicrete observations. To represent the sparsely measured data as functions, a proper basis expansion for both the predictors and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; is necessary. This way, a reduction to a multivariate problem can be achieved. Furthermore, it is useful to apply the results of functional principal component analysis (FPCA) to project the data into a lower-dimensional space.&lt;/p&gt;
+&lt;p&gt;But how can we use these ideas and adapt them for the situation where the covariate consists of density functions? As each PSD forms a probability density function on the considered support, specific properties of densities (scale invariance, relative scale, unit integral) prevent from using standard FDA methods directly to PSDs. Instead, we acknowledge the possibility to represent density functions in the Bayes space &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{B^2}\)&lt;/span&gt; with square-integrable log-densities as they can be then adequately represented in the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt; space due to the isomorphism between &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{B^2}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt;. Frequently, the &lt;em&gt;centered log-ratio&lt;/em&gt; (clr) transformation
+&lt;span class=&#34;math display&#34;&gt;\[
+\text{clr}(f)(t):=f_{c}(t)= \text{ln} f(t) - \frac{1}{\eta}\int_{I}\text{ln}f(t) dt
+\]&lt;/span&gt;
+is used to the original densities with &lt;span class=&#34;math inline&#34;&gt;\(\eta\)&lt;/span&gt; representing the length of their common (bounded) support &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;. It can be shown that the clr transformation of densities enforces the resulting functions to integrate on &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt; to 0. To represent the original data in continuous form while fulfilling the zero integral constraint, the so-called &lt;em&gt;compositional splines&lt;/em&gt; were developed (more on this in Machalová et al. (2020)) and used throughout the regression modeling.&lt;/p&gt;
+&lt;p&gt;In our geological example, 96 soil samples from loesses are examined and the task is to analyze how the geochemistry of the samples is influenced by their PSDs. The cubic polynomials were chosen for the spline basis of the PSDs together with 16 knots represented in the graphs by the grey dashed lines. The resulting clr densities are now ready to serve as predictor in our regression model. For the response, the clr-transformed geochemical compositions of the observed soil samples are taken into consideration. In this case, each composition is characterized by a real vector consisting of concentrations of 9 elements (Al, Si, K, Ca, Fe, As, Rb, Sr, Zr).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig1.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;compositional-regression&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Compositional regression&lt;/h2&gt;
+&lt;p&gt;As mentioned above, the FPCA is a useful technique here to filter out noise which could distort the regression estimates - the FPCA allows us to represent the predictor using only a few functional principal components while explaining a substantial percentage of the variability of the original data. In this case, 3 principal components were used as they explained over 90% of the variability. The regression modeling is then performed on these functional principal components. The resulting functional parameters &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; are shown in the plot below (in their clr form, of course).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig2.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quality-of-the-model-interpretation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Quality of the model, interpretation&lt;/h2&gt;
+&lt;p&gt;To assess the goodness-of-fit of the regression model, standard coefficient of determination can be computed with values close to one indicating a good fit of the model. Another possibility is to use a nonparametrical method of bootstrap confidence bands. The idea of bootstrap bands is based on resampling the residuals - for each part of the composition, the residuals can be estimated as
+&lt;span class=&#34;math display&#34;&gt;\[
+\hat{\epsilon}_{i}=y_i-\hat{y}_i.
+\]&lt;/span&gt;
+By resampling we are able to compute an arbitrary number of bootstrap samples
+&lt;span class=&#34;math display&#34;&gt;\[
+y_{i}^{boot}=\beta_{0}+\int_{I}\beta_{1}(t)\cdot f_{i}(t)dt + \epsilon_{i}^{boot},\quad i=1,\dots,N,
+\]&lt;/span&gt;
+and the resulting bootstrap estimates of the functional regression parameter then form a band “around” &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;. Here, 100 bootstrap functions were plotted together with the estimate of &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;. The bootstrap bands appear to be very useful for interpretation of the functional parameters &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; as shown for Al and Ca bellow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;While sticking with the clr form of &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; (further as clr(&lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;)) and their zero integral constraint, the functions have to cross the &lt;em&gt;x&lt;/em&gt;-axis meaning that we are able to split the original support &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt; on subdomains where clr(&lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;) is positive or negative, respectively. The same can be said about the clr transformation of the particle size distributions. For interpretation, we look at the positive and negative subdomains individually. For subdomain where the clr transformed PSDs are positive (&lt;span class=&#34;math inline&#34;&gt;\(I^{+}\)&lt;/span&gt;), three situations may occur:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;the estimated parameter clr(&lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;) is positive - in that case, we can expect an increasing relative presence of the given element within the geochemical composition (by considering intepretation of the clr representation of this element).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;clr(&lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;) is negative, resulting in decreasing relative presence.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;clr(&lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\approx 0\)&lt;/span&gt;, meaning that the relative presence of the given element within the geochemical composition is not influenced by the respective particle sizes of the PSDs. The bootstrap confidence bands can be used to define these subdomains.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Clearly, the opposite would apply for the subdomain with negative clr transformed PSDs (&lt;span class=&#34;math inline&#34;&gt;\(I^{-}\)&lt;/span&gt;). In case of Al it means that its relative presence in the composition is strongly (positively) influenced by the finest fractions and there is also a stronger negative effect of the fraction around 10 &lt;span class=&#34;math inline&#34;&gt;\(\mu m\)&lt;/span&gt;. For Ca completely opposite effects can be observed.&lt;/p&gt;
+&lt;p&gt;To sum up, the specific properties of compositional data (as multivariate data) and probability density functions (as functional data) need a proper adaptation of standard statistical methods. Here, the linear regression was addressed by presenting a compositional scalar-on-function regression model with functional predictor and real response. Hopefully the presented example demonstrated that the compositional approach with the clr transformation not only provides an adequate platform for working with probability densities, but also leads to an easier and more straight-forward interpretation of the resulting parameters.&lt;/p&gt;
+&lt;div id=&#34;based-on&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Based on:&lt;/h3&gt;
+&lt;p&gt;Talská, R., Hron, K., Matys Grygar, T.: &lt;em&gt;Compositional scalar-on-function regression with application to sediment particle size distributions.&lt;/em&gt; Mathematical Geosciences, accepted for publication.&lt;/p&gt;
+&lt;p&gt;Machalová, J., Talská, R., Hron, K., Gába, A.: &lt;em&gt;Compositional splines for representation of density functions.&lt;/em&gt; Computational Statistics (2020). &lt;a href=&#34;https://doi.org/10.1007/s00180-020-01042-7&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1007/s00180-020-01042-7&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-authors&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;About authors&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/ivana_pavlu_photo.png&#34; width=&#34;75&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ivana Pavlů&lt;/strong&gt; is a PhD student at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:ivana.pavlu@upol.cz&#34; class=&#34;email&#34;&gt;ivana.pavlu@upol.cz&lt;/a&gt;. In her research she primarily focuses on functional data analysis of probability density functions using the Bayes spaces methodology.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/Hron2017-small3.png&#34; width=&#34;75&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Karel Hron&lt;/strong&gt; is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:karel.hron@upol.cz&#34; class=&#34;email&#34;&gt;karel.hron@upol.cz&lt;/a&gt;. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book Applied Compositional Data Analysis, published in Springer Series in Statistics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
       <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
@@ -968,84 +1039,6 @@ pénztárgépektől. Online:
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Making an Online Risk Calculator</title>
-      <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>
-      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;We first started making risk calculators with the website, &lt;a href=&#34;nomograms.org&#34;&gt;http://nomograms.org&lt;/a&gt;.
-There are several here, and they are patient friendly.
-Later, we launched &lt;a href=&#34;http://rcalc.ccf.org&#34;&gt;rcalc.ccf.org&lt;/a&gt;, which has many more risk calculators, although the intended audience is the clinician. It is considerably more expensive and time-consuming to make these patient friendly. There were many obstacles to overcome in making these websites. Here is an example (Figure 1), from prostate cancer research where our calculator assists with an optional treatment by showing the 4-year risks of several outcomes for both options:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Figure1.png&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Figure 1: Example of what risk calculator shows to the user. Note that there are two models, one for Dutasteride and one for No Dutasteride with different sets of predictor variables. For some outcomes there is an interval on the Dutasteride but no interval on the No Dutasteride predicted risk. This happens when a variable which is only included in the model Dutasteride model has a missing value.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;If the user were to provide some of the values of the predictor variables that are currently missing, his 4-year risk of high-grade prostate cancer (which is currently at 17% on Dutasteride) might be as low as 7% or as high as 49%. Clearly, obtaining missing values to resolve this uncertainty should be pursued. The missing values will have less of an impact on his risk for a urinary tract infection.&lt;/p&gt;
-&lt;p&gt;The need for a risk calculator begins with the subject matter expert. He or she needs to explain the decision-making context and the tradeoffs involved. Important questions to discuss are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Who will use the calculator and for what purpose?&lt;/li&gt;
-&lt;li&gt;If a medical decision is based on the predicted risks: What are the benefits and harms?&lt;/li&gt;
-&lt;li&gt;What types of outcome are predicted? (Uncensored, censored, censored with competing risk?)&lt;/li&gt;
-&lt;li&gt;What are the important predictors of these outcomes? (Missing values?)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Questions like those are best answered in collaboration with the subject matter expert. We have learned that making a risk calculator without involving a subject matter expert leads to a risk calculator that on one uses.&lt;/p&gt;
-&lt;p&gt;The next steps are:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;to evaluate and prepare the data sources&lt;/li&gt;
-&lt;li&gt;to select candidate variables&lt;/li&gt;
-&lt;li&gt;to establish a modeling strat (see Figure 2)&lt;/li&gt;
-&lt;li&gt;to report the final model in form of a shiny app&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Figure2.png&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Figure 2: Flowchart: prediction modeling strategy&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Our R-package riskRegression provides implementations of modeling algorithms for censored data with competing risks and the cross-validation performance as described here online. Here is sample code:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# sample R-code
-library(riskRegression)
-library(survival)
-library(randomForestSRC)
-# simulate competing risk data
-set.seed(9)
-train.data &amp;lt;- sampleData(n=472)
-test.data &amp;lt;- sampleData(n=811)
-# combined cause-specific Cox regression
-fit1 &amp;lt;- CSC(Hist(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9, data=train.data, cause=1)
-# random forest
-set.seed(1972)
-fit2 &amp;lt;- rfsrc(Surv(time,event)~X1+X2+X3+X4+X5+X6+X7+X8+X9,data=train.data)
-# prediction performance in independent test data 
-# could also do cross-validation of training data via argument split.method 
-x &amp;lt;- Score(list(&amp;quot;Conventional&amp;quot;=fit1,&amp;quot;Experimental&amp;quot;=fit2),
-           data=test.data,
-           formula=Hist(time,event)~1,
-           cause=1,
-           times=c(1,5),
-           summary=c(&amp;quot;risks&amp;quot;,&amp;quot;IPA&amp;quot;),
-           plots=c(&amp;quot;cali&amp;quot;,&amp;quot;roc&amp;quot;))
-plotROC(x,times=5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plotCalibration(x,times=5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/riskRegression-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The details of making an online risk calculator, how we deal with the many issues that arise, and many R-code examples, are described in our new book, available &lt;a href=&#34;https://www.routledge.com/9781138384477&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-11-11-online-risk-calc_files/figure-html/Book.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This post is based on:&lt;/p&gt;
-&lt;p&gt;Kattan, M. W., &amp;amp; Gerds, T. A. (2020). A framework for the evaluation of statistical prediction models. Chest, 158(1), S29-S38. &lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S0012369220304517&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
-&lt;div id=&#34;about-the-authors&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;About the authors&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://publichealth.ku.dk/about-the-department/biostat/?pure=en/persons/323237&#34;&gt;Thomas A. Gerds&lt;/a&gt; is professor at the biostatistics unit at the University of Copenhagen. He is affiliated with the Danish Heart Foundation. He is author of several R-packages on CRAN and has taught statistics courses to non-statisticians for many years.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://my.clevelandclinic.org/staff/5525-michael-kattan&#34;&gt;Michael Kattan&lt;/a&gt; is Chair of the Department of Quantitative Health Sciences at Cleveland Clinic. He is a Fellow of the American Statistical Association and has received two awards from the Society for Medical Decision Making: the Eugene L. Saenger Award for Distinguished Service, and the John M. Eisenberg Award for Practical Application of Medical Decision-Making Research.&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     

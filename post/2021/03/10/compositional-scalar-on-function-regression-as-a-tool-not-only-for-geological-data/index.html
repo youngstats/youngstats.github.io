@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Compositional scalar-on-function regression as a tool (not only) for geological data | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+  </div>
+
+  <h1><span class="title">Compositional scalar-on-function regression as a tool (not only) for geological data</span></h1>
+
+  
+  <h3 class="author">Ivana Pavlů,  Karel Hron
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.e., distribution of the size of soil grains). These distributions - although sampled in their discrete form as histogram data - show both relative and functional character and therefore can be described through probability density functions. A valid question to ask is how to modify the common multiple and/or functional regression model for the introduced case of relative (compositional) data.</p>
+<div id="functional-regression-model" class="section level2">
+<h2>Functional regression model</h2>
+<p>First, take a look at the standard functional data analysis (FDA) approach which was developed for functions from <span class="math inline">\(L^2\)</span> space. A functional linear regression model with functional predictor is built as
+<span class="math display">\[
+y_{i} = \beta_{0} + \int_{I} \beta_{1}(t)f_{i}(t)dt + \epsilon_{i},\quad i=1,\dots,N,\quad t \in I
+\]</span>
+where <span class="math inline">\(\beta_{0}\)</span> is the scalar intercept and <span class="math inline">\(\beta_{1}\)</span> represents the functional regression parameter. This model can be seen as an extension of the multiple regression - therefore, the estimators <span class="math inline">\(\hat{\beta_{0}}\)</span> and <span class="math inline">\(\hat{\beta_{1}}\)</span> minimize the following sum of squared errors (SSE)
+<span class="math display">\[
+\text{SSE} (\beta_{0},\beta_{1}) = \sum_{i=1}^{N}\left(y_{i}-\beta_{0}-\int_{I}\beta_{1}(t)f_{i}(t)dt\right)^2.
+\]</span>
+Unfortunately, it is not common for functional data to be available in its continuous form - we are usually left with dicrete observations. To represent the sparsely measured data as functions, a proper basis expansion for both the predictors and <span class="math inline">\(\beta_{1}\)</span> is necessary. This way, a reduction to a multivariate problem can be achieved. Furthermore, it is useful to apply the results of functional principal component analysis (FPCA) to project the data into a lower-dimensional space.</p>
+<p>But how can we use these ideas and adapt them for the situation where the covariate consists of density functions? As each PSD forms a probability density function on the considered support, specific properties of densities (scale invariance, relative scale, unit integral) prevent from using standard FDA methods directly to PSDs. Instead, we acknowledge the possibility to represent density functions in the Bayes space <span class="math inline">\(\mathcal{B^2}\)</span> with square-integrable log-densities as they can be then adequately represented in the <span class="math inline">\(L^2\)</span> space due to the isomorphism between <span class="math inline">\(\mathcal{B^2}\)</span> and <span class="math inline">\(L^2\)</span>. Frequently, the <em>centered log-ratio</em> (clr) transformation
+<span class="math display">\[
+\text{clr}(f)(t):=f_{c}(t)= \text{ln} f(t) - \frac{1}{\eta}\int_{I}\text{ln}f(t) dt
+\]</span>
+is used to the original densities with <span class="math inline">\(\eta\)</span> representing the length of their common (bounded) support <span class="math inline">\(I\)</span>. It can be shown that the clr transformation of densities enforces the resulting functions to integrate on <span class="math inline">\(I\)</span> to 0. To represent the original data in continuous form while fulfilling the zero integral constraint, the so-called <em>compositional splines</em> were developed (more on this in Machalová et al. (2020)) and used throughout the regression modeling.</p>
+<p>In our geological example, 96 soil samples from loesses are examined and the task is to analyze how the geochemistry of the samples is influenced by their PSDs. The cubic polynomials were chosen for the spline basis of the PSDs together with 16 knots represented in the graphs by the grey dashed lines. The resulting clr densities are now ready to serve as predictor in our regression model. For the response, the clr-transformed geochemical compositions of the observed soil samples are taken into consideration. In this case, each composition is characterized by a real vector consisting of concentrations of 9 elements (Al, Si, K, Ca, Fe, As, Rb, Sr, Zr).</p>
+<p><img src="/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig1.png" /></p>
+</div>
+<div id="compositional-regression" class="section level2">
+<h2>Compositional regression</h2>
+<p>As mentioned above, the FPCA is a useful technique here to filter out noise which could distort the regression estimates - the FPCA allows us to represent the predictor using only a few functional principal components while explaining a substantial percentage of the variability of the original data. In this case, 3 principal components were used as they explained over 90% of the variability. The regression modeling is then performed on these functional principal components. The resulting functional parameters <span class="math inline">\(\beta_{1}\)</span> are shown in the plot below (in their clr form, of course).</p>
+<p><img src="/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig2.png" /></p>
+</div>
+<div id="quality-of-the-model-interpretation" class="section level2">
+<h2>Quality of the model, interpretation</h2>
+<p>To assess the goodness-of-fit of the regression model, standard coefficient of determination can be computed with values close to one indicating a good fit of the model. Another possibility is to use a nonparametrical method of bootstrap confidence bands. The idea of bootstrap bands is based on resampling the residuals - for each part of the composition, the residuals can be estimated as
+<span class="math display">\[
+\hat{\epsilon}_{i}=y_i-\hat{y}_i.
+\]</span>
+By resampling we are able to compute an arbitrary number of bootstrap samples
+<span class="math display">\[
+y_{i}^{boot}=\beta_{0}+\int_{I}\beta_{1}(t)\cdot f_{i}(t)dt + \epsilon_{i}^{boot},\quad i=1,\dots,N,
+\]</span>
+and the resulting bootstrap estimates of the functional regression parameter then form a band “around” <span class="math inline">\(\beta_{1}\)</span>. Here, 100 bootstrap functions were plotted together with the estimate of <span class="math inline">\(\beta_{1}\)</span>. The bootstrap bands appear to be very useful for interpretation of the functional parameters <span class="math inline">\(\beta_{1}\)</span> as shown for Al and Ca bellow.</p>
+<p><img src="/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/fig3.png" /></p>
+<p>While sticking with the clr form of <span class="math inline">\(\beta_{1}\)</span> (further as clr(<span class="math inline">\(\beta_{1}\)</span>)) and their zero integral constraint, the functions have to cross the <em>x</em>-axis meaning that we are able to split the original support <span class="math inline">\(I\)</span> on subdomains where clr(<span class="math inline">\(\beta_{1}\)</span>) is positive or negative, respectively. The same can be said about the clr transformation of the particle size distributions. For interpretation, we look at the positive and negative subdomains individually. For subdomain where the clr transformed PSDs are positive (<span class="math inline">\(I^{+}\)</span>), three situations may occur:</p>
+<ul>
+<li><p>the estimated parameter clr(<span class="math inline">\(\beta_{1}\)</span>) is positive - in that case, we can expect an increasing relative presence of the given element within the geochemical composition (by considering intepretation of the clr representation of this element).</p></li>
+<li><p>clr(<span class="math inline">\(\beta_{1}\)</span>) is negative, resulting in decreasing relative presence.</p></li>
+<li><p>clr(<span class="math inline">\(\beta_{1}\)</span>) <span class="math inline">\(\approx 0\)</span>, meaning that the relative presence of the given element within the geochemical composition is not influenced by the respective particle sizes of the PSDs. The bootstrap confidence bands can be used to define these subdomains.</p></li>
+</ul>
+<p>Clearly, the opposite would apply for the subdomain with negative clr transformed PSDs (<span class="math inline">\(I^{-}\)</span>). In case of Al it means that its relative presence in the composition is strongly (positively) influenced by the finest fractions and there is also a stronger negative effect of the fraction around 10 <span class="math inline">\(\mu m\)</span>. For Ca completely opposite effects can be observed.</p>
+<p>To sum up, the specific properties of compositional data (as multivariate data) and probability density functions (as functional data) need a proper adaptation of standard statistical methods. Here, the linear regression was addressed by presenting a compositional scalar-on-function regression model with functional predictor and real response. Hopefully the presented example demonstrated that the compositional approach with the clr transformation not only provides an adequate platform for working with probability densities, but also leads to an easier and more straight-forward interpretation of the resulting parameters.</p>
+<div id="based-on" class="section level3">
+<h3>Based on:</h3>
+<p>Talská, R., Hron, K., Matys Grygar, T.: <em>Compositional scalar-on-function regression with application to sediment particle size distributions.</em> Mathematical Geosciences, accepted for publication.</p>
+<p>Machalová, J., Talská, R., Hron, K., Gába, A.: <em>Compositional splines for representation of density functions.</em> Computational Statistics (2020). <a href="https://doi.org/10.1007/s00180-020-01042-7" class="uri">https://doi.org/10.1007/s00180-020-01042-7</a></p>
+</div>
+<div id="about-authors" class="section level3">
+<h3>About authors</h3>
+<p><img src="/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/ivana_pavlu_photo.png" width="75" /></p>
+<p><strong>Ivana Pavlů</strong> is a PhD student at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, <a href="mailto:ivana.pavlu@upol.cz" class="email">ivana.pavlu@upol.cz</a>. In her research she primarily focuses on functional data analysis of probability density functions using the Bayes spaces methodology.</p>
+<p><img src="/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/Hron2017-small3.png" width="75" /></p>
+<p><strong>Karel Hron</strong> is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, <a href="mailto:karel.hron@upol.cz" class="email">karel.hron@upol.cz</a>. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book Applied Compositional Data Analysis, published in Springer Series in Statistics.</p>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
