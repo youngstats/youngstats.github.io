@@ -6,7 +6,11 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>compositional data</title>
       <link>https://youngstats.github.io/categories/compositional-data/</link>
@@ -17,11 +21,29 @@
     </item>
     
     <item>
-      <title>machine learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <title>high dimensional data</title>
+      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maximum-likelihood</title>
+      <link>https://youngstats.github.io/categories/maximum-likelihood/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/maximum-likelihood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://youngstats.github.io/categories/statistics/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/statistics/</guid>
       <description></description>
     </item>
     
@@ -62,15 +84,6 @@
     </item>
     
     <item>
-      <title>high dimensional data</title>
-      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>partial least squares</title>
       <link>https://youngstats.github.io/categories/partial-least-squares/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
@@ -85,15 +98,6 @@
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/casual-inference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>co-clustering</title>
-      <link>https://youngstats.github.io/categories/co-clustering/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/co-clustering/</guid>
       <description></description>
     </item>
     
