@@ -154,14 +154,16 @@ gets smaller. In the right column, we report the evolution of the
 population risk and we compare it to the risk predicted by the limit PDE
 (corresponding to &lt;span class=&#34;math inline&#34;&gt;\(\delta=0\)&lt;/span&gt;). The PDE curve appears to capture well the
 evolution of SGD towards optimality.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;
-## Authors&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/javanmard.jpg&#34; width=&#34;75&#34; /&gt;
-Adel Javanmard&lt;/p&gt;
+Adel Javanmard, Data Science and Operations Department, Marshall School of Business, University of Southern California&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/mondelli.jpg&#34; width=&#34;75&#34; /&gt;
-Marco Mondelli&lt;/p&gt;
+Marco Mondelli, Institute of Science and Technology (IST) Austria&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/montanari.jpg&#34; width=&#34;75&#34; /&gt;
-Andrea Montanari&lt;/p&gt;
+Andrea Montanari, Department of Electrical Engineering and Department of Statistics, Stanford University&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;References&lt;/h2&gt;
