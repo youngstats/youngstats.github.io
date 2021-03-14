@@ -11,11 +11,17 @@
     <loc>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
+    <loc>https://youngstats.github.io/categories/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <loc>https://youngstats.github.io/categories/generalized-linear-models/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/compositional-data/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
@@ -63,9 +69,6 @@
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/casual-inference/</loc>
-    <lastmod>2021-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</loc>
