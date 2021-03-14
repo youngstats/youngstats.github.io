@@ -85,6 +85,8 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<div id="abstract" class="section level2">
+<h2>Abstract</h2>
 <p>We consider the problem of learning a function defined on a compact domain, using linear combinations
 of a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methods
 from two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimization
@@ -93,6 +95,7 @@ global convergence properties of these approaches. In this work, we show that, a
 diverges and the bump width tends to zero, the gradient flow has a limit which is a viscous porous medium
 equation. By virtue of a property named “displacement convexity,” we show an exponential dimension-free
 convergence rate for gradient descent.</p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.82.png" /></p>
 <p>This post is based on the paper <span class="citation">(<a href="#ref-javanmard2020analysis" role="doc-biblioref">Javanmard et al. 2020</a>)</span>.</p>
 <p><strong>Fitting a function with a linear combination of components.</strong> In
 supervised learning, we are given data points
@@ -219,7 +222,15 @@ gets smaller. In the right column, we report the evolution of the
 population risk and we compare it to the risk predicted by the limit PDE
 (corresponding to <span class="math inline">\(\delta=0\)</span>). The PDE curve appears to capture well the
 evolution of SGD towards optimality.</p>
-<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png" /></p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png" />
+## Authors</p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/javanmard.jpg" width="75" />
+Adel Javanmard</p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/mondelli.jpg" width="75" />
+Marco Mondelli</p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/montanari.jpg" width="75" />
+Andrea Montanari</p>
+</div>
 <div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">

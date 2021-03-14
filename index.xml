@@ -48,6 +48,8 @@ Martin T. Wells is the Charles A. Alexander Professor of Statistical Science and
 &lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
+&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;We consider the problem of learning a function defined on a compact domain, using linear combinations
 of a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methods
 from two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimization
@@ -56,6 +58,7 @@ global convergence properties of these approaches. In this work, we show that, a
 diverges and the bump width tends to zero, the gradient flow has a limit which is a viscous porous medium
 equation. By virtue of a property named “displacement convexity,” we show an exponential dimension-free
 convergence rate for gradient descent.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.82.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This post is based on the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-javanmard2020analysis&#34; role=&#34;doc-biblioref&#34;&gt;Javanmard et al. 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fitting a function with a linear combination of components.&lt;/strong&gt; In
 supervised learning, we are given data points
@@ -182,7 +185,15 @@ gets smaller. In the right column, we report the evolution of the
 population risk and we compare it to the risk predicted by the limit PDE
 (corresponding to &lt;span class=&#34;math inline&#34;&gt;\(\delta=0\)&lt;/span&gt;). The PDE curve appears to capture well the
 evolution of SGD towards optimality.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;
+## Authors&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/javanmard.jpg&#34; width=&#34;75&#34; /&gt;
+Adel Javanmard&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/mondelli.jpg&#34; width=&#34;75&#34; /&gt;
+Marco Mondelli&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/montanari.jpg&#34; width=&#34;75&#34; /&gt;
+Andrea Montanari&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;References&lt;/h2&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;

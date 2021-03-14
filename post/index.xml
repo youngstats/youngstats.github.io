@@ -22,7 +22,7 @@
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
-      <description>We consider the problem of learning a function defined on a compact domain, using linear combinationsof a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methodsfrom two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimizationproblem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known aboutglobal convergence properties of these approaches.</description>
+      <description>AbstractWe consider the problem of learning a function defined on a compact domain, using linear combinationsof a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methodsfrom two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimizationproblem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known aboutglobal convergence properties of these approaches.</description>
     </item>
     
     <item>
