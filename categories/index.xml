@@ -8,20 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>generalized-linear-models</title>
-      <link>https://youngstats.github.io/categories/generalized-linear-models/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/generalized-linear-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>machine learning</title>
       <link>https://youngstats.github.io/categories/machine-learning/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>generalized-linear-models</title>
+      <link>https://youngstats.github.io/categories/generalized-linear-models/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/generalized-linear-models/</guid>
       <description></description>
     </item>
     
