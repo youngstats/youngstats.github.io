@@ -6,10 +6,24 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Scalable Empirical Bayes Approach to Variable Selection in Generalized Linear Models</title>
+      <link>https://youngstats.github.io/post/2021/03/14/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/14/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</guid>
+      <description>In the toolbox of most scientists over the past century, there have been few methods as powerful and as versatile as linear regression. The introduction of the generalized linear model (GLM) framework in the 1970’s extended the inferential and predictive capabilities to binary or count data. While the effect of this ‘Swiss Army knife’ of scientific research cannot be overstated, rapid (and amazing) technological advances in other areas have pushed it beyond its theoretical capacity.</description>
+    </item>
     
-	<atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
+      <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
+      <description>We consider the problem of learning a function defined on a compact domain, using linear combinationsof a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methodsfrom two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimizationproblem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known aboutglobal convergence properties of these approaches.</description>
+    </item>
     
     <item>
       <title>Compositional scalar-on-function regression as a tool (not only) for geological data</title>
@@ -89,26 +103,6 @@ The goal of this post is to work through a simple toy example to illustrate the 
       
       <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
       <description>body { text-align: justify}  Abstract Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account.</description>
-    </item>
-    
-    <item>
-      <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
-      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
-      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
-Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
-    </item>
-    
-    <item>
-      <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
-</title>
-      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
-      <description>Introduction New statistical process control (SPC) methods have to be developed in order to handle more and more complex data, which are available because of the advent of new data acquisition technologies. In particular, in many practical situations the quality characteristic of a process can be modelled as a function defined on a compact domain, data of such kind are the foundation of a rapidly expanding area of statistics referred to as functional data analysis (FDA).</description>
     </item>
     
   </channel>

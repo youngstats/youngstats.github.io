@@ -6,7 +6,209 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Scalable Empirical Bayes Approach to Variable Selection in Generalized Linear Models</title>
+      <link>https://youngstats.github.io/post/2021/03/14/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/14/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In the toolbox of most scientists over the past century, there have been few methods as powerful and as versatile as linear regression. The introduction of the generalized linear model (GLM) framework in the 1970’s extended the inferential and predictive capabilities to binary or count data. While the effect of this ‘Swiss Army knife’ of scientific research cannot be overstated, rapid (and amazing) technological advances in other areas have pushed it beyond its theoretical capacity.&lt;/p&gt;
+&lt;p&gt;Linear regression is obtained by applying Gauss’ ordinary least squares (OLS) method, which relies on having a sample size which is sufficiently larger than the number of predictors. However, in this age of ‘high throughput’ data, such as RNA sequencing, the number of predictors (say, the expression level of thousands of genes) greatly exceeds the number of observations. This is often called the ‘large P, small n’ problem. In such cases, the OLS procedure does not work, and the natural next step is to perform variable selection and choose a small number of predictors which are associated with the response variable.&lt;/p&gt;
+&lt;p&gt;The question is, how to choose the right predictors? A good selection method should detect most (ideally, all) the true predictors, but not at the expense of getting too many false ones (in the ideal case, it would yield none.) This has been one of the greatest challenges in statistics in the past 25 years. The most widely used approach is based on adding a ‘penalty term’ to the optimization problem, so as to practically put a constraint on the number of predictors which can have a non-zero effect on the outcome. Among the methods which rely on this approach, the most well-known is the lasso. The approach we take in our paper is different. We assume that the effect predictors have on the outcome can be either positive, negative, or have no effect at all (which we call null predictors). Mathematically, we model it as a three-component mixture in which the effects of the non-null predictors are assumed to follow normal distributions. This approach is related to the Bayesian ‘spike-and-slab’ approach. The difference is that in the spike-and-slab model, the non-null predictors are assumed to follow a single normal distribution with mean 0. The difference between the two approaches is illustrated in Figure 1.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models_files/fig1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Figure 1 A graphical representation of the spike and slab model vs. our mixture model&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Real data, however, is noisy, which means that the measured effects of the null predictors is not a spike at zero. Rather, it is a Gaussian distribution which has a fair amount of overlap with the distributions of the true predictors. This is what makes the variable selection task so hard, regardless of which approach is used.&lt;/p&gt;
+&lt;p&gt;The three-component mixture of normal distributions which we use in our model allows us, with a simple adaptation, to perform variable selection in the GLM framework. For example, we apply it to binary-type response in order to identify which gut bacteria is associated with obesity status. It can also be used to perform variable selection in survival analysis by modeling the number of new events at time t as a Poisson process. We identify five genes which are associated with survival probability of breast cancer patients.&lt;/p&gt;
+&lt;p&gt;Our method (which is implemented in an R package called SEMMS) includes three important features. First, it allows the user to ‘lock in’ predictors, which means that it is possible to choose certain substantively important variables to always be included in the model, and not be subject to the selection procedure. Second, for the initialization of the algorithm we can use the variables selected by other methods (e.g., lasso, MCP) and because the algorithm will never result in a decrease in the log-likelihood from one iteration to the next, our final model will always be at least as good as the one obtained by the other variable selection method which was used in the initialization step. Third, the model accounts for correlations between pairs of predictors. This greatly alleviates the problem of identifying true predictors in the presence of multicollinearity. Methods based on penalization often struggle in the presence of multicollinearity. This is demonstrated in the following example, where the objective is to identify which of 4,088 genes is associated with the production rate of riboflavin. Out of 8,353,828 possible pairs of genes, 70,349 have correlation coefficient greater than 0.8 (in absolute value). This high degree of multicollinearity, combined with the relatively small sample size (N=71) makes this dataset especially challenging for variable selection methods. The model selected by SEMMS results in much smaller residuals than ones obtained from other variable selection approaches. It also provides much better prediction for low values of riboflavin.&lt;/p&gt;
+&lt;p&gt;We conclude with a few words of caution. No matter which method is used, beware of declaring the selected model as the “best” because (i) the number of putative variables is so large that there is no way to evaluate all possible models, and (ii) some selected predictors can be part of a network of highly correlated variables. The riboflavin data provides an excellent example, which is illustrated in network diagram in Figure 2.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models_files/fig2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Figure 2 Riboflavin data – a graphical representation of the model found by SEMMS&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;SEMMS detects six strong predictors for riboflavin production rate (shown as red diamonds), but it also detects that four of them are highly correlated with other genes (orange dots). One gene (YURQ_at) is co-expressed with a large group of genes, each of which could be considered as a relevant predictor for the response. A network diagram like this helps to illustrate not only that there may be no single “best” model, but also that there may be complicated interactions between the predictors, and thus, the relationship between the predictors and the response may not be linear.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models_files/HaimBar-280x400.jpg&#34; width=&#34;75&#34; /&gt;
+Haim Bar is an Associate Professor in Statistics at the University of Connecticut. His professional interests include statistical modeling, shrinkage estimation, high throughput applications in genomics, Bayesian statistics, variable selection, and machine learning.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models_files/Jim%20Booth_crop.jpg&#34; width=&#34;75&#34; /&gt;
+James Booth is a Professor in the Department of Statistics and Data Science at Cornell University. He completed his PhD at the University of Kentucky in 1987 working with advisers Joseph Gani and Richard Kryscio, after which he was hired as an Assistant Professor at the University of Florida. He was hired at Cornell in 2004.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models_files/marty-wells_crop.jpg&#34; width=&#34;75&#34; /&gt;
+Martin T. Wells is the Charles A. Alexander Professor of Statistical Science and Chair of the Department of Statistics and Science at Cornell University. He also has joint appointments in the Cornell Law and Weill Medical Schools.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
+      <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;We consider the problem of learning a function defined on a compact domain, using linear combinations
+of a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methods
+from two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimization
+problem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known about
+global convergence properties of these approaches. In this work, we show that, as the number of neurons
+diverges and the bump width tends to zero, the gradient flow has a limit which is a viscous porous medium
+equation. By virtue of a property named “displacement convexity,” we show an exponential dimension-free
+convergence rate for gradient descent.&lt;/p&gt;
+&lt;p&gt;This post is based on the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-javanmard2020analysis&#34; role=&#34;doc-biblioref&#34;&gt;Javanmard et al. 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fitting a function with a linear combination of components.&lt;/strong&gt; In
+supervised learning, we are given data points
+&lt;span class=&#34;math inline&#34;&gt;\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\le n}\)&lt;/span&gt;, which are often assumed to be
+independent and identically distributed. Here
+&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}_j\in {\mathbb R}^d\)&lt;/span&gt; is a feature vector, and
+&lt;span class=&#34;math inline&#34;&gt;\(y_j\in{\mathbb R}\)&lt;/span&gt; is a label or response variable. We would like to
+fit a model &lt;span class=&#34;math inline&#34;&gt;\(\widehat{f}:{\mathbb R}^d\to{\mathbb R}\)&lt;/span&gt; to predict the
+labels at new points &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}\in{\mathbb R}^d\)&lt;/span&gt;. One of the most
+fruitful ideas in this context is to use functions that are linear
+combinations of simple components:
+&lt;span class=&#34;math display&#34;&gt;\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}}) = \frac{1}{N}\sum_{i=1}^N \sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\, ,\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\sigma:{\mathbb R}^d\times{\mathbb R}^D\to{\mathbb R}\)&lt;/span&gt; is a
+component function (a ‘neuron’ or ‘unit’ in the neural network
+parlance), and
+&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}=({\boldsymbol{w}}_1,\dots,{\boldsymbol{w}}_N)\in{\mathbb R}^{D\times N}\)&lt;/span&gt;
+are the parameters to be learnt from data. Specific instantiations of
+this idea include, e.g., two-layer neural networks with radial
+activations, sparse deconvolution, kernel ridge regression, random
+feature methods, and boosting.&lt;/p&gt;
+&lt;p&gt;A common approach towards fitting parametric models is by risk
+minimization:
+&lt;span class=&#34;math display&#34;&gt;\[R_N({\boldsymbol{w}}) = {\mathbb E}\Big\{\Big[y-\frac{1}{N}\sum_{i=1}^N\sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\Big]^2\Big\}\, .\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Despite the impressive practical success of these methods, the risk
+function &lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; is highly non-convex and little is
+known about the global convergence of algorithms that try to minimize
+it. The main objective of this work is to introduce a nonparametric
+underlying regression model for which a global convergence result can be
+proved for stochastic gradient descent (SGD), in the limit of a large
+number of neurons.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Setting and main result.&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(\Omega\subset{\mathbb R}^d\)&lt;/span&gt; be a
+compact convex set with smooth boundary, and let
+&lt;span class=&#34;math inline&#34;&gt;\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\ge 1}\)&lt;/span&gt; be i.i.d. with
+&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}_j\sim {\sf Unif}(\Omega)\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\({\mathbb E}(y_j|{\boldsymbol{x}}_j)=f({\boldsymbol{x}}_j)\)&lt;/span&gt;, where the
+function &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is smooth. We try to fit these data using a combination of
+bumps, namely
+&lt;span class=&#34;math display&#34;&gt;\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}})= \frac{1}{N}\sum_{i=1}^NK^\delta({\boldsymbol{x}}-{\boldsymbol{w}}_i)\, ,\]&lt;/span&gt;
+where
+&lt;span class=&#34;math inline&#34;&gt;\(K^\delta({\boldsymbol{x}}) = \delta^{-d}K({\boldsymbol{x}}/\delta)\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(K:{\mathbb R}^d\to{\mathbb R}_{\ge 0}\)&lt;/span&gt; is a first order kernel with
+compact support. The weights &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}_i\in{\mathbb R}^d\)&lt;/span&gt;
+represent the centers of the bumps. Our model is general enough to
+include a broad class of radial-basis function (RBF) networks which are
+known to be universal function approximators. To the best of our
+knowledge, there is no result on the global convergence of stochastic
+gradient descent for learning RBF networks, and we establish the first
+result of this type.&lt;/p&gt;
+&lt;p&gt;We prove that, for sufficiently large &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; and small &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;, gradient
+descent algorithms converge to weights &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}\)&lt;/span&gt; with nearly
+optimum prediction error, provided &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is strongly concave. Let us
+emphasize that the resulting population risk &lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; is
+non-convex regardless of the concavity properties of &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;. Our proof
+unveils a novel mechanism by which global convergence takes place.
+Convergence results for non-convex empirical risk minimization are
+generally proved by carefully ruling out local minima in the cost
+function. Instead we prove that, as &lt;span class=&#34;math inline&#34;&gt;\(N\to\infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\delta\to 0\)&lt;/span&gt;, the
+gradient descent dynamics converges to a gradient flow in Wasserstein
+space, and that the corresponding cost function is ‘displacement
+convex.’ Breakthrough results in optimal transport theory guarantee
+dimension-free convergence rates for this limiting dynamics
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-carrillo2003kinetic&#34; role=&#34;doc-biblioref&#34;&gt;Carrillo, McCann, and Villani 2003&lt;/a&gt;)&lt;/span&gt;. In particular, we expect the cost function
+&lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; to have many local minima, which are however
+completely neglected by gradient descent.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof idea.&lt;/strong&gt; Let us start by providing some high-level insights about
+our approach. Think about each model parameter as a particle moving
+under the effect of other particles according to the SGD updates. Now,
+instead of studying the microscopic dynamics of this system of
+particles, we analyze the macroscopic dynamics of the medium when the
+number of particles (i.e., the size of the hidden layer of the neural
+network) goes to infinity. These dynamics are formulated through a
+partial differential equation (more specifically, a viscous porous
+medium equation) that describes the evolution of the mass density over
+space and time. The nice feature of this approach is that, while the SGD
+trajectory is a random object, it shows that in the large particle size
+limit, it concentrates around the deterministic solution of this partial
+differential equation (PDE).&lt;/p&gt;
+&lt;p&gt;For a rigorous analysis and implementation of this idea, we use
+propagation-of-chaos techniques. Specifically, we show that, in the
+large &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; limit, the evolution of the weights
+&lt;span class=&#34;math inline&#34;&gt;\(\{{\boldsymbol{w}}_i\}_{i=1}^N\)&lt;/span&gt; under gradient descent can be replaced
+by the evolution of a probability distribution &lt;span class=&#34;math inline&#34;&gt;\(\rho^{\delta}_t\)&lt;/span&gt; which
+satisfies the viscous porous medium PDE (with Neumann boundary
+conditions). This PDE can also be described as the Wasserstein &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt;
+gradient flow for the following effective risk
+&lt;span class=&#34;math display&#34;&gt;\[R^{\delta}(\rho) = \frac{1}{|\Omega|} \, \int_{\Omega} \big[f({\boldsymbol{x}}) - K^\delta\ast \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, ,\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(|\Omega|\)&lt;/span&gt; is the volume of the set &lt;span class=&#34;math inline&#34;&gt;\(\Omega\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ast\)&lt;/span&gt; is the
+usual convolution. The use of &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flows to analyze two-layer
+neural networks was recently developed in several papers
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-mei2018mean&#34; role=&#34;doc-biblioref&#34;&gt;Mei, Montanari, and Nguyen 2018&lt;/a&gt;; &lt;a href=&#34;#ref-rotskoff2018neural&#34; role=&#34;doc-biblioref&#34;&gt;Rotskoff and Vanden-Eijnden 2019&lt;/a&gt;; &lt;a href=&#34;#ref-chizat2018global&#34; role=&#34;doc-biblioref&#34;&gt;Chizat and Bach 2018&lt;/a&gt;; &lt;a href=&#34;#ref-sirignano2018mean&#34; role=&#34;doc-biblioref&#34;&gt;Sirignano and Spiliopoulos 2020&lt;/a&gt;)&lt;/span&gt;.
+However, we cannot rely on earlier results because of the specific
+boundary conditions in our problem.&lt;/p&gt;
+&lt;p&gt;Note that even though the cost &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; is quadratic and
+convex in &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;, its &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flow can have multiple fixed
+points, and hence global convergence cannot be guaranteed. Indeed, the
+mathematical property that controls global convergence of &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient
+flows is not ordinary convexity but &lt;em&gt;displacement convexity&lt;/em&gt;. Roughly
+speaking, displacement convexity is convexity along geodesics of the
+&lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; metric. Note that the risk function &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; is &lt;em&gt;not&lt;/em&gt;
+even displacement convex. However, for small &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;, we can formally
+approximate &lt;span class=&#34;math inline&#34;&gt;\(K^\delta\ast \rho\approx \rho\)&lt;/span&gt;, and hence hope to replace
+the risk function &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; with the simpler one
+&lt;span class=&#34;math display&#34;&gt;\[R(\rho) = \frac{1}{|\Omega|}\int_{\Omega} \big[f({\boldsymbol{x}}) - \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, .\]&lt;/span&gt;
+Most of our technical work is devoted to making rigorous this
+&lt;span class=&#34;math inline&#34;&gt;\(\delta\to 0\)&lt;/span&gt; approximation.&lt;/p&gt;
+&lt;p&gt;Remarkably, the risk function &lt;span class=&#34;math inline&#34;&gt;\(R(\rho)\)&lt;/span&gt; is strongly displacement convex
+(provided &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is strongly concave). A long line of work in PDE and
+optimal transport theory establishes dimension-free convergence rates
+for its &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flow &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-carrillo2003kinetic&#34; role=&#34;doc-biblioref&#34;&gt;Carrillo, McCann, and Villani 2003&lt;/a&gt;)&lt;/span&gt;. By putting
+everything together, we are able to show that SGD converges
+exponentially fast to a near-global optimum with a rate that is
+controlled by the convexity parameter of &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A numerical illustration.&lt;/strong&gt; We demonstrate in a simple numerical
+example that the convergence rate predicted by our asymptotic theory is
+in excellent agreement with simulations. In the left column of the
+figure below, we plot the true function &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; together with the neural
+network estimate obtained by running stochastic gradient descent (SGD)
+with &lt;span class=&#34;math inline&#34;&gt;\(N=200\)&lt;/span&gt; neurons at several points in time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;. Different plots
+correspond to different values of &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; with
+&lt;span class=&#34;math inline&#34;&gt;\(\delta\in\{1/5, 1/10, 1/20\}\)&lt;/span&gt;. We observe that the network estimates
+converge to a limit curve which is an approximation of the true function
+&lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;. As expected, the quality of the approximation improves as &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;
+gets smaller. In the right column, we report the evolution of the
+population risk and we compare it to the risk predicted by the limit PDE
+(corresponding to &lt;span class=&#34;math inline&#34;&gt;\(\delta=0\)&lt;/span&gt;). The PDE curve appears to capture well the
+evolution of SGD towards optimality.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-carrillo2003kinetic&#34; class=&#34;csl-entry&#34;&gt;
+Carrillo, José A., Robert J. McCann, and Cédric Villani. 2003. &lt;span&gt;“Kinetic Equilibration Rates for Granular Media and Related Equations: Entropy Dissipation and Mass Transportation Estimates.”&lt;/span&gt; &lt;em&gt;Revista Matematica Iberoamericana&lt;/em&gt; 19 (3): 971–1018.
+&lt;/div&gt;
+&lt;div id=&#34;ref-chizat2018global&#34; class=&#34;csl-entry&#34;&gt;
+Chizat, Lenaic, and Francis Bach. 2018. &lt;span&gt;“On the Global Convergence of Gradient Descent for over-Parameterized Models Using Optimal Transport.”&lt;/span&gt; In &lt;em&gt;Advances in Neural Information Processing Systems&lt;/em&gt;, 3040–50.
+&lt;/div&gt;
+&lt;div id=&#34;ref-javanmard2020analysis&#34; class=&#34;csl-entry&#34;&gt;
+Javanmard, Adel, Marco Mondelli, Andrea Montanari, and others. 2020. &lt;span&gt;“Analysis of a Two-Layer Neural Network via Displacement Convexity.”&lt;/span&gt; &lt;em&gt;Annals of Statistics&lt;/em&gt; 48 (6): 3619–42.
+&lt;/div&gt;
+&lt;div id=&#34;ref-mei2018mean&#34; class=&#34;csl-entry&#34;&gt;
+Mei, Song, Andrea Montanari, and Phan-Minh Nguyen. 2018. &lt;span&gt;“A Mean Field View of the Landscape of Two-Layer Neural Networks.”&lt;/span&gt; &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.1073/pnas.1806579115&#34;&gt;https://doi.org/10.1073/pnas.1806579115&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-rotskoff2018neural&#34; class=&#34;csl-entry&#34;&gt;
+Rotskoff, Grant M., and Eric Vanden-Eijnden. 2019. &lt;span&gt;“Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach.”&lt;/span&gt; &lt;em&gt;Communications on Pure and Applied Mathematics&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-sirignano2018mean&#34; class=&#34;csl-entry&#34;&gt;
+Sirignano, Justin, and Konstantinos Spiliopoulos. 2020. &lt;span&gt;“Mean Field Analysis of Neural Networks: A Law of Large Numbers.”&lt;/span&gt; &lt;em&gt;SIAM Journal on Applied Mathematics&lt;/em&gt; 80 (2): 725–52.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Compositional scalar-on-function regression as a tool (not only) for geological data</title>
       <link>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</link>
@@ -890,263 +1092,6 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Causal discovery in the presence of discrete latent variables</title>
-      <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
-      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
-      <description>&lt;p&gt;&lt;em&gt;We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Given a target variable &lt;code&gt;$Y$&lt;/code&gt;, and a vector &lt;code&gt;$X = (X^1, \dots, X^d)$&lt;/code&gt;  of &lt;code&gt;$d$&lt;/code&gt; covariates, we are trying to infer the set &lt;code&gt;$S^* \subseteq \{1, \dots, d\}$&lt;/code&gt; of observable causal parents of &lt;code&gt;$Y$&lt;/code&gt;. There are many good reasons for being interested in causal predictors. One of them is the following well-known stability property: a regression model which regresses &lt;code&gt;$Y$&lt;/code&gt; on all of its causal parents remains valid under arbitrary interventions on any variable other than &lt;code&gt;$Y$&lt;/code&gt; itself. In cases where data are heterogeneous (e.g., in a time series setting), causal regression models can thus sometimes be used to obtain stable predictions across all different patterns of heterogeneity (e.g., across time). This stability property has been well-studied and is known under different names, e.g., invariance, autonomy or modularity &lt;a href=&#34;#1&#34;&gt;[2]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[3]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In a setting without hidden variables, the invariance property has been exploited to recover (parts of) &lt;code&gt;$S^*$&lt;/code&gt;: given data from a heterogeneous time series, one runs through all possible subsets &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt; and checks whether the conditional of &lt;code&gt;$Y_t$&lt;/code&gt; given &lt;code&gt;$X_t^S := (X_t^j)_{j \in S}$&lt;/code&gt; remains invariant across time. If more than one set satisfies invariance, one outputs the intersection of all invariant sets; this algorithm is known as the ICP (&amp;lsquo;Invariant Causal Prediction&amp;rsquo;) algorithm &lt;a href=&#34;#1&#34;&gt;[1]&lt;/a&gt;. Here, we extend ICP to allow for unobserved direct causes of &lt;code&gt;$Y$&lt;/code&gt;.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;h3 id=&#34;invariance-and-hidden-variables&#34;&gt;Invariance and hidden variables&lt;/h3&gt;
-&lt;p&gt;Let &lt;code&gt;$(\mathbf{X}, \mathbf{Y}, \mathbf{H}) = (X_t,Y_t,H_t)_{t=1}^n \in \mathbb{R}^{n \times (d+1+1)}$&lt;/code&gt; come from a structural causal model (SCM). Assume there exists a set &lt;code&gt;$S^* \subseteq \{1, \dots, d\}$&lt;/code&gt;, a function &lt;code&gt;$f$&lt;/code&gt;, and i.i.d. variables &lt;code&gt;$(\varepsilon_t)_{t=1}^n \perp (\mathbf{X}, \mathbf{H})$&lt;/code&gt;, such that for all &lt;code&gt;$t$&lt;/code&gt;, the assignment for &lt;code&gt;$Y_t$&lt;/code&gt; is given as&lt;/p&gt;
-&lt;p&gt;$$
-Y_t := f(X_t^{S^*}, H_t, \varepsilon_t).
-$$&lt;/p&gt;
-&lt;p&gt;All remaining structural assignments are allowed to vary across time. Our goal is to infer the unknown set &lt;code&gt;$S^*$&lt;/code&gt; based on a sample from &lt;code&gt;$(\mathbf{X}, \mathbf{Y})$&lt;/code&gt;. Due to the hidden variables &lt;code&gt;$H_t$&lt;/code&gt; (whose distribution may vary over time), the conditional &lt;code&gt;$P_{Y_t \vert X_t^{S^*}}$&lt;/code&gt; is not ensured to be time-invarariant. However, the set &lt;code&gt;$S^*$&lt;/code&gt; satisifes a different form of invariance: using the law of total probability, it follows that for all &lt;code&gt;$x,t$&lt;/code&gt;,&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;$$
-P_{Y_t \vert (X_t^{S^*} = x)} = \int \underbrace{P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}}_{\text{invariant in } t} P_{H_t \vert (X_t^{S^*} = x)} (dh).
-$$&lt;/p&gt;
-&lt;p&gt;That is, &lt;code&gt;$P_{Y_t \vert (X_t^{S^*} = x)}$&lt;/code&gt; is equal to a mixture of several distributions &lt;code&gt;$P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}$&lt;/code&gt;, each of which is invariant in &lt;code&gt;$t$&lt;/code&gt;, but with an associated mixture distribution &lt;code&gt;$P_{H_t \vert (X_t^{S^*} = x)}$&lt;/code&gt; which may change across time. We refer to this property as &lt;code&gt;$h$&lt;/code&gt;-invariance (for &amp;lsquo;hidden-invariance&amp;rsquo;). Ideally, we would like to directly exploit this property for causal discovery, by running through all subsets &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt; and testing whether they satisfy &lt;code&gt;$h$&lt;/code&gt;-invariance. To obtain statistical tests with any reasonable amount of power, we further impose the following simplifying assumptions. We assume that&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the hidden variables &lt;code&gt;$H_t$&lt;/code&gt; take only few different values &lt;code&gt;$\{1, \dots, \ell\}$&lt;/code&gt;, and&lt;/li&gt;
-&lt;li&gt;for every &lt;code&gt;$h$&lt;/code&gt;, &lt;code&gt;$f(\cdot, h, \cdot)$&lt;/code&gt; is linear, and&lt;/li&gt;
-&lt;li&gt;the noise variables &lt;code&gt;$\varepsilon_1, \dots, \varepsilon_n$&lt;/code&gt; are Gaussian.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Under these assumptions, the above integral reduces to a discrete sum of time-invariant linear Gaussian regressions. In other words, for &lt;code&gt;$S = S^*$&lt;/code&gt;, the following null hypothesis holds true.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;code&gt;\[H_{0,S}: \left\{ \begin{array}{l} \text{there exists } \theta = (\beta_j, \sigma_j^2)_{j=1}^\ell \text{ such that for all } t, P_{Y_t \vert X_t^S} \text{ is a mixture} \\ \text{of } \ell \text{ linear Gaussian regressions with regression parameters } \theta. \end{array} \right.\]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Such mixtures of regressions are also known as &amp;ldquo;switching regression&amp;rdquo; models &lt;a href=&#34;#1&#34;&gt;[5]&lt;/a&gt;, &lt;a href=&#34;#1&#34;&gt;[6]&lt;/a&gt;. The above hypothesis specifies an invariance only in the mixing components of the model, while the mixing proportions are allowed to vary over time (this allows for the hidden variables to be heterogeneous). Given a family of statistical tests for &lt;code&gt;$(H_{0,S})_{S \subseteq \{1, \dots, d\}}$&lt;/code&gt;, we can construct a causal discovery algorithm analogously to ordinary ICP.&lt;/p&gt;
-&lt;h3 id=&#34;algorithm-icph&#34;&gt;Algorithm: ICPH&lt;/h3&gt;
-&lt;p&gt;Our causal discovery algorithm ICPH (&amp;lsquo;Invariant Causal Prediction in the presence of Hidden variables&amp;rsquo;) operates in the following way.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use the sequential ordering of data to construct (disjoint) environments &lt;code&gt;$e_1 \cup \cdots \cup e_k = \{1, \dots, n \}$&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;For each &lt;code&gt;$S \subseteq \{1, \dots, d \}$&lt;/code&gt;, test &lt;code&gt;$H_{0,S}$&lt;/code&gt; using the environments.&lt;/li&gt;
-&lt;li&gt;Output the intersection &lt;code&gt;$\hat S := \bigcap_{S: H_{0,S} \text{ not rej.}} S$&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;The main work is contained in the construction of valid tests of the hypotheses &lt;code&gt;$H_{0,S}$&lt;/code&gt;. Given a candidate set &lt;code&gt;$S \subseteq \{1, \dots, d\}$&lt;/code&gt;, we first fit a switching regression model to each environment &lt;code&gt;$e_1, \dots, e_k$&lt;/code&gt; separately. For each environment, we then compute a joint confidence region for the vector &lt;code&gt;$\theta$&lt;/code&gt; of regression parameters, and check whether all these regions have a non-empty intersection. We prove that this test obtains asymptotically valid level under mild assumptions. As a corollary, we directly obtain the asymptotic false discovery control of ICPH:&lt;/p&gt;
-&lt;p&gt;$$\text{for any test level } \alpha \in (0,1), \text{ we have } \lim \inf_{n \to \infty} P(\hat S_n \subseteq S^*) \geq 1-\alpha.$$&lt;/p&gt;
-&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
-&lt;p&gt;We now illustrate our method in the simple case where &lt;code&gt;$d=3$&lt;/code&gt; and &lt;code&gt;$\ell=2$&lt;/code&gt;. Here, the target variable &lt;code&gt;$Y_t$&lt;/code&gt; is directly affected by &lt;code&gt;$X_t^2$&lt;/code&gt; and by the binary latent variable &lt;code&gt;$H_t$&lt;/code&gt;. The structural assignment for &lt;code&gt;$Y_t$&lt;/code&gt; remains the same for all &lt;code&gt;$t$&lt;/code&gt;, whereas some of the remaining assignments change continuously throughout time.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/h_invariance.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The left figure illustrates the causal structure among &lt;code&gt;$(X_t, Y_t, H_t)$&lt;/code&gt; for each time point &lt;code&gt;$t$&lt;/code&gt;. The node &lt;code&gt;$E$&lt;/code&gt; denotes the &amp;ldquo;environment variable&amp;rdquo; and indicates which of the structural assignments change over time. The assignment for &lt;code&gt;$Y_t$&lt;/code&gt; is the same for all observations, and the set &lt;code&gt;$S^* = \{2\}$&lt;/code&gt; is therefore &lt;code&gt;$h$&lt;/code&gt;-invariant. This can be seen in the plot on the right, which shows rolling-window estimates of the regression coefficients for the regression of &lt;code&gt;$Y_t$&lt;/code&gt; onto each of the three predictors. Within both regimes &lt;code&gt;$H_t = 1$&lt;/code&gt; and &lt;code&gt;$H_t = 2$&lt;/code&gt; (corresponding to different background colors in the plot), the regression coefficient for &lt;code&gt;$X_t^2$&lt;/code&gt; (green) is time-homogeneous. When regressing &lt;code&gt;$Y_t$&lt;/code&gt; onto &lt;code&gt;$X_t^1$&lt;/code&gt; or &lt;code&gt;$X_t^3$&lt;/code&gt;, the regression coefficients change in a more complicated fashion.&lt;/p&gt;
-&lt;p&gt;To infer &lt;code&gt;$S^*$&lt;/code&gt;, our causal discovery algorithm now runs through all subsets &lt;code&gt;$S \subseteq \{1,2,3\}$&lt;/code&gt;, and checks whether &lt;code&gt;$H_{0,S}$&lt;/code&gt; holds true. In this example, the  results (assuming no test errors) are:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/icph_all.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;so we correctly output &lt;code&gt;$\hat S = \{2\} \cap \{2,3\} = \{2\}$&lt;/code&gt;. In general, we are not guaranteed to recover the full set &lt;code&gt;$S^*$&lt;/code&gt;, but only a subset hereof.&lt;/p&gt;
-&lt;h3 id=&#34;empirical-results&#34;&gt;Empirical results&lt;/h3&gt;
-&lt;p&gt;We test our algorithm on simulated data. Below, we show results of a simulation study where &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt; are the true causal parents of &lt;code&gt;$Y$&lt;/code&gt;, and &lt;code&gt;$X^3$&lt;/code&gt; is descendant of &lt;code&gt;$Y$&lt;/code&gt;. For increasing sample size, we report, for each individual variable, the empirical frequency of inclusion in &lt;code&gt;$\hat S$&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-15-icph/emp_results.jpeg#center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Circles correspond to our method, while rectangles and triangles are two alternative methods that are included as baseline. Colored curves correspond to various model violations. As the sample size increases, ICPH tends to identify both causal parents &lt;code&gt;$X^1$&lt;/code&gt; and &lt;code&gt;$X^2$&lt;/code&gt;, while the false discovery rate (the rate of inclusion of &lt;code&gt;$X^3$&lt;/code&gt;) is controlled at level &lt;code&gt;$\alpha = 0.05$&lt;/code&gt;. Our algorithm is robust against most considered model violations. If we allow the hidden variable to be continuous (purple curve), our method mostly returns the uninformative output &lt;code&gt;$\hat S = \emptyset$&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;reconstruction-of-the-hidden-variables&#34;&gt;Reconstruction of the hidden variables&lt;/h3&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;By assumption, the causal effect &lt;code&gt;$X_t^{S^*} \to Y_t$&lt;/code&gt; depends on the value of the hidden variable &lt;code&gt;$H_t$&lt;/code&gt;. For example, &lt;code&gt;$X_t^{S^*}$&lt;/code&gt; may have a strong positive impact on &lt;code&gt;$Y_t$&lt;/code&gt; for &lt;code&gt;$H_t = 1$&lt;/code&gt;, while &lt;code&gt;$X_t^{S^*}$&lt;/code&gt; and &lt;code&gt;$Y_t$&lt;/code&gt; are rendered entirely independent for &lt;code&gt;$H_t=1$&lt;/code&gt;. In some applications, these differences in causal dependence are of particular interest in themselves, because they signify fundamentally different &amp;lsquo;states&amp;rsquo; or &amp;lsquo;regimes&amp;rsquo; of the underlying system. In such cases, we may thus want to reconstruct the hidden variables. If the true set of causal parents is known (e.g., because there is only one invariant set), we can estimate &lt;code&gt;$\hat H_t = \operatorname{argmax}_{j \in \{1, \dots, \ell\}}  \hat P(H_t = j \, \vert \, X_t^{S^*}, Y_t)$&lt;/code&gt; directly from the fitted switching regression model &lt;code&gt;$\hat P$&lt;/code&gt; for &lt;code&gt;$Y_t \, \vert \, X_t^{S^*}$&lt;/code&gt;. In the main paper, we apply this reconstruction approach to a real-world data set related to photosynthetic activity of terrestrial ecosystems, where the hidden variable corresponds to the vegetation type.&lt;/p&gt;
-&lt;h3 id=&#34;this-post-is-written-by-r-christiansen-and-is-based-on&#34;&gt;This post is written by R. Christiansen and is based on&lt;/h3&gt;
-&lt;p&gt;R. Christiansen and J. Peters. &lt;a href=&#34;https://jmlr.org/papers/v21/19-407.html&#34;&gt;Switching regression models and causal inference in the presence of discrete latent variables&lt;/a&gt;. &lt;em&gt;Journal of Machine Learning Research&lt;/em&gt;, 21(41):1−46, 2020.&lt;/p&gt;
-&lt;h3 id=&#34;about-the-authors&#34;&gt;About the authors&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.math.ku.dk/english/staff/?pure=en/persons/525143&#34;&gt;Rune Christiansen&lt;/a&gt; is a postdoc at the Department of Mathematical Sciences, University of Copenhagen. He obtained his PhD degree from the same institution.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://web.math.ku.dk/~peters/&#34;&gt;Jonas Peters&lt;/a&gt; is a professor at the Department of Mathematical Sciences, University of Copenhagen. Previously, he has been at the MPI for Intelligent Systems in Tuebingen and the Seminar for Statistics, ETH Zurich.&lt;/p&gt;
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[1]&lt;!-- raw HTML omitted --&gt;  J. Peters, P. Bühlmann, and N. Meinshausen. Causal inference by using invariant prediction: identification and confidence intervals. &lt;em&gt;Journal of the Royal Statistical Society: Series B (Statistical Methodology)&lt;/em&gt;, 78(5):947–1012, 2016.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[2]&lt;!-- raw HTML omitted --&gt; T. Haavelmo. The probability approach in econometrics. &lt;em&gt;Econometrica&lt;/em&gt;, 12:S1–S115 (supplement), 1944.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[3]&lt;!-- raw HTML omitted --&gt; J. Aldrich. Autonomy. &lt;em&gt;Oxford Economic Papers&lt;/em&gt;, 41:15–34, 1989.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[4]&lt;!-- raw HTML omitted --&gt; J. Pearl. &lt;em&gt;Causality: Models, Reasoning, and Inference&lt;/em&gt;. Cambridge University Press, New York, USA, 2nd edition, 2009.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[5]&lt;!-- raw HTML omitted --&gt; R. De Veaux. Mixtures of linear regressions. &lt;em&gt;Computational Statistics &amp;amp; Data Analysis&lt;/em&gt;, 8 (3):227–245, 02 1989.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;[6]&lt;!-- raw HTML omitted --&gt; S. Goldfeld and R. Quandt. The estimation of structural shifts by switching regressions. &lt;em&gt;Annals of Economic and Social Measurement&lt;/em&gt;, Volume 2, number 4, pages 475–485. NBER, 1973.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Functional Regression Control Chart: a New Framework for Profile Monitoring
-</title>
-      <link>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</link>
-      <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</guid>
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;New statistical process control (SPC) methods have to be developed in
-order to handle more and more complex data, which are available because
-of the advent of new data acquisition technologies. In particular, in
-many practical situations the quality characteristic of a process can be
-modelled as a function defined on a compact domain, data of such kind
-are the foundation of a rapidly expanding area of statistics referred to
-as &lt;em&gt;functional data analysis&lt;/em&gt; (FDA). SPC methods which allow monitoring
-and controlling such processes are known as &lt;em&gt;profile monitoring&lt;/em&gt;
-techniques. As in the classical SPC (i.e., where data are scalars)
-profile monitoring control charts have the task of continuously
-monitoring the quality characteristic and of triggering a signal when
-assignable sources of variations (i.e., &lt;em&gt;special causes&lt;/em&gt;) act on it.
-When this happens, the process is said to be out-of-control (OC). On the
-contrary, the process is said to be in-control (IC) when only normal
-sources of variation (i.e., &lt;em&gt;common causes&lt;/em&gt;) apply.&lt;/p&gt;
-&lt;p&gt;Often, measures of other functional covariates related to the quality
-characteristic are available. To this end, we propose a new control
-chart that continuously monitors the quality characteristic using
-information coming from the other functional covariates. The idea is to
-adjust the quality characteristic value in order to improve the accuracy
-and the effectiveness of the chart in identifying assignable sources of
-variations acting on the process. This chart is referred to as
-&lt;em&gt;functional regression control chart&lt;/em&gt; (FRCC) due to the similarity to
-the &lt;em&gt;regression control chart&lt;/em&gt;, which arises in the multivariate (non
-functional) context. The proposed methodology is implemented in the &lt;code&gt;R&lt;/code&gt;
-package &lt;code&gt;funcharts&lt;/code&gt; available at
-&lt;a href=&#34;https://github.com/unina-sfere/funcharts&#34;&gt;https://github.com/unina-sfere/funcharts&lt;/a&gt;.&lt;/p&gt;
-&lt;h1 id=&#34;sec_2&#34;&gt;The Functional Regression Control Chart Framework&lt;/h1&gt;
-&lt;p&gt;The FRCC can be regarded as a general framework for profile monitoring
-that can be divided into three main steps. Firstly, (i) define a
-functional regression model to be fitted $$\label{eq_generalmodel}
-\tilde{Y}=g\left(\mathbf{\tilde{X}}\right)+\varepsilon,$$ where
-&lt;code&gt;$\tilde{Y}$&lt;/code&gt; is the functional response variable, which represents the
-functional quality characteristic, and &lt;code&gt;$\varepsilon$&lt;/code&gt; is a functional
-error term, both defined on the compact domain &lt;code&gt;$\mathcal{T}$&lt;/code&gt;, &lt;code&gt;$g$&lt;/code&gt; is a
-generic function of a vector &lt;code&gt;$\mathbf{\tilde{X}}$&lt;/code&gt; of random functional
-covariates &lt;code&gt;$\tilde{X}_1,\dots,\tilde{X}_p$&lt;/code&gt;, defined on the compact
-domain &lt;code&gt;$\mathcal{S}$&lt;/code&gt;. Secondly, (ii) define the estimation method of the
-chosen model, and, thirdly (iii) define the monitoring strategy of the
-functional residual defined as $$\label{eq_generalresiduals}
-\tilde{e}=\tilde{Y}-\widehat{\tilde{Y}} ,$$ where &lt;code&gt;$\widehat{\tilde{Y}}$&lt;/code&gt;
-is the fitted value of &lt;code&gt;$\tilde{Y}$&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In particular, to obtain a specific implementation of the FRCC, we
-assume that the covariates &lt;code&gt;$\mathbf{X}$&lt;/code&gt; linearly influence the response
-&lt;code&gt;$Y$&lt;/code&gt; through the &lt;em&gt;multivariate functional linear regression&lt;/em&gt; model, that
-is $$\label{eq_lm}
-Y\left(t\right)=\int_{\mathcal{S}}\left(\mathbf{\beta}\left(s,t\right)\right)^{T}\mathbf{X}\left(s\right)ds+\varepsilon\left(t\right)\quad t \in \mathcal{T},$$
-where &lt;code&gt;$Y$&lt;/code&gt; and &lt;code&gt;$\mathbf{X}$&lt;/code&gt; are the standardized versions of &lt;code&gt;$\tilde{Y}$&lt;/code&gt; and
-&lt;code&gt;$\tilde{\mathbf{X}}$&lt;/code&gt;, and
-&lt;code&gt;$\mathbf{\beta}=\left(\beta_1,\dots,\beta_p\right)^{T}$&lt;/code&gt; is the coefficient
-vector. An estimator &lt;code&gt;$\hat{\mathbf{\beta}}$&lt;/code&gt; of the coefficient vector
-&lt;code&gt;$\mathbf{\beta}$&lt;/code&gt; is obtained using &lt;code&gt;$n$&lt;/code&gt; i.i.d. observations of the response
-and predictor variables, and considering the *multivariate functional principal component* or
-Karhunen&amp;ndash;Loève decomposition of &lt;code&gt;$Y$&lt;/code&gt; and
-&lt;code&gt;$\mathbf{X}$&lt;/code&gt;. To monitor the residual &lt;code&gt;$\tilde e$&lt;/code&gt;, we consider the Hotelling&amp;rsquo;s &lt;code&gt;$T^{2}$&lt;/code&gt;
-and the squared prediction error (&lt;code&gt;$SPE$&lt;/code&gt;) control charts based on the
-scores of the functional principal component decomposition. The control
-limits are calculated using percentiles of the empirical distributions
-of the two statistics, estimated considering observations acquired under
-in-control conditions and an overall Type I error. This phase, along
-with the estimation of &lt;code&gt;$\mathbf{\beta}$&lt;/code&gt;, will be
-referred to as Phase I. For a new observation, the residual and, thus,
-the &lt;code&gt;$T^{2}$&lt;/code&gt; and &lt;code&gt;$SPE$&lt;/code&gt; statistics are calculated and an alarm signal is
-issued if at least one statistic violets the control limits (Phase II).&lt;/p&gt;
-&lt;h1 id=&#34;sec_3&#34;&gt;Real-case Study: Fuel Consumption Monitoring in the Shipping Industry&lt;/h1&gt;
-&lt;p&gt;To demonstrate the potential and the applicability of the proposed
-control chart in practical situations, a real-case study in the shipping
-industry is presented. It addresses the issue of monitoring ship fuel
-consumption and, thus, &lt;code&gt;$\text{CO}_{\text{2}}$&lt;/code&gt; emissions, which, in view of the dramatic
-climate change, is of great interest in the maritime field in the very
-last years. In particular, real data are collected from a Ro-Pax ship
-owned by the Italian shipping company Grimaldi Group linking two ports
-in the Mediterranean sea from December 2014 to October 2017.
-The following figure shows the
-315 profiles observed for the covariates and response.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/fig1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In particular, the &lt;em&gt;cumulative fuel consumption&lt;/em&gt; (&lt;code&gt;$CFC$&lt;/code&gt;) per each voyage
-is considered as the response variable, whereas, the &lt;em&gt;sailing time&lt;/em&gt;
-(&lt;code&gt;$T$&lt;/code&gt;), measured in hours (&lt;code&gt;$h$&lt;/code&gt;), the &lt;em&gt;speed over ground&lt;/em&gt; (&lt;code&gt;$SOG$&lt;/code&gt;),
-measured in knots (&lt;code&gt;$kn$&lt;/code&gt;), and the &lt;em&gt;longitudinal&lt;/em&gt; and &lt;em&gt;transverse wind
-components&lt;/em&gt; (&lt;code&gt;$W_{lo}$&lt;/code&gt; and &lt;code&gt;$W_{tr}$&lt;/code&gt;), measured in knots (&lt;code&gt;$kn$&lt;/code&gt;), are
-assumed as the predictors.&lt;/p&gt;
-&lt;p&gt;During February 2016 energy efficiency operations were performed that
-produced a shift in the response mean. In light of this, observations
-before energy efficiency operations are used in Phase I, whereas the
-remaining observations are used to perform Phase II. To evaluate the
-FRCC performance, two competitor profile monitoring schemes are
-considered. They consist of monitoring scores coming from a principal
-decomposition of the response by means of Hotelling&amp;rsquo;s &lt;code&gt;$T^{2}$&lt;/code&gt; and the
-&lt;code&gt;$SPE$&lt;/code&gt; control charts (hereafter denoted as RESP control chart), and of
-monitoring the area under the response curve (hereafter denoted as INBA
-control chart). The performance of the three charts is evaluated by
-means of the &lt;em&gt;average run length&lt;/em&gt; (&lt;code&gt;$\text{ARL}$&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;In the following figure, each observation is plotted onto the FRCC control
-chart and the two competitor ones.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;By comparing the three charts, the responsiveness of the FRCC is
-evidently higher than that of the the INBA and the RESP control charts
-which signal a much lower number of OCs. In particular, for the FRCC the
-change in the response mean is almost exclusively captured by the
-&lt;code&gt;$T^{2}$&lt;/code&gt; control chart, which means that dissimilarities between the
-Phase I and Phase II samples occur mostly in the space spanned by the
-retained principal components. Moreover, by looking at the following table,
-the estimated &lt;code&gt;$\text{ARL}$&lt;/code&gt; (&lt;code&gt;$\widehat{\text{ARL}}$&lt;/code&gt;) achieved by FRCC is at least a
-fourth of those achieved by the RESP and INBA control charts. This
-further confirms that the FRCC outperforms the competitor control
-charts.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;FRCC&lt;/th&gt;
-&lt;th&gt;RESP&lt;/th&gt;
-&lt;th&gt;INBA&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;$\widehat{\text{ARL}}$&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;2.07&lt;/td&gt;
-&lt;td&gt;9.46&lt;/td&gt;
-&lt;td&gt;11.28&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;This article is based on&lt;/strong&gt;&lt;br&gt;
-Centofanti, Fabio, Antonio Lepore, Alessandra Menafoglio, Biagio
-Palumbo, and Simone Vantini. &amp;quot;Functional Regression Control Chart.&amp;quot;
-Technometrics (2020): 1-14, DOI:
-&lt;a href=&#34;https://doi.org/10.1080/00401706.2020.1753581&#34;&gt;https://doi.org/10.1080/00401706.2020.1753581&lt;/a&gt;.&lt;/p&gt;
-&lt;h1 id=&#34;authors-biography&#34; class=&#34;unnumbered&#34;&gt;Authors&amp;rsquo; biography&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_fabio.jpg&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Fabio Centofanti&lt;/strong&gt; is a
-PhD student at the Department of Industrial Engineering of the
-University of Naples Federico II, Italy, &lt;a href=&#34;mailto:fabio.centofanti@unina.it&#34;&gt;fabio.centofanti@unina.it&lt;/a&gt;. His research interests include
-functional data analysis and statistical process monitoring.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_lepore.png&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Antonio Lepore&lt;/strong&gt; is an
-Assistant Professor at the Department of Industrial Engineering of the
-University of Naples Federico II, Italy, &lt;a href=&#34;mailto:antonio.lepore@unina.it&#34;&gt;antonio.lepore@unina.it&lt;/a&gt;. His main research interests
-include the industrial application of statistical techniques to the
-monitoring of complex measurement profiles from multi-sensor acquisition
-systems, with particular attention to renewable energy and harmful
-emissions.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_menafoglio.jpg&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Alessandra Menafoglio&lt;/strong&gt; is an Assistant Professor at MOX, Department of
-Mathematics, Politecnico di Milano, &lt;a href=&#34;mailto:alessandra.menafoglio@polimi.it&#34;&gt;alessandra.menafoglio@polimi.it&lt;/a&gt;. Her research interests focus on the
-development of innovative statistical models and methods for the
-analysis and statistical process control of complex observations (e.g.,
-curves, images, functional signals), possibly characterized by spatial
-dependence.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_palumbo.png&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Biagio Palumbo&lt;/strong&gt; is an
-Associate Professor in &amp;ldquo;Statistics for experimental and technological
-research&amp;rdquo; at the Department of Industrial Engineering of the University
-of Naples Federico II, Italy, &lt;a href=&#34;mailto:biagio.palumbo@unina.it&#34;&gt;biagio.palumbo@unina.it&lt;/a&gt;. His major research interests include
-reliability, design and analysis of experiments, statistical methods for
-process monitoring and optimization and data science for technology.&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2020-12-04-functional-regression-control-chart_files/Foto_vantini.png&#34; alt=&#34;&#34;&gt;
-&lt;strong&gt;Simone Vantini&lt;/strong&gt; is
-Associate Professor of Statistics at the Politecnico di Milano, Italy, &lt;a href=&#34;mailto:simone.vantini@polimi.it&#34;&gt;simone.vantini@polimi.it&lt;/a&gt;.
-He has been publishing widely in Functional and Object-Oriented Data
-Analysis. His current research interests include: permutation testing,
-nonparametric forecasting, process control, non-Euclidean data, and in
-general statistical methods and applications motivated by business or
-industrial problems.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Analysis of a Two-Layer Neural Network via Displacement Convexity | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+  </div>
+
+  <h1><span class="title">Analysis of a Two-Layer Neural Network via Displacement Convexity</span></h1>
+
+  
+  <h3 class="author">Adel Javanmard,  Marco Mondelliy and Andrea Montanar
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>We consider the problem of learning a function defined on a compact domain, using linear combinations
+of a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methods
+from two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimization
+problem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known about
+global convergence properties of these approaches. In this work, we show that, as the number of neurons
+diverges and the bump width tends to zero, the gradient flow has a limit which is a viscous porous medium
+equation. By virtue of a property named “displacement convexity,” we show an exponential dimension-free
+convergence rate for gradient descent.</p>
+<p>This post is based on the paper <span class="citation">(<a href="#ref-javanmard2020analysis" role="doc-biblioref">Javanmard et al. 2020</a>)</span>.</p>
+<p><strong>Fitting a function with a linear combination of components.</strong> In
+supervised learning, we are given data points
+<span class="math inline">\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\le n}\)</span>, which are often assumed to be
+independent and identically distributed. Here
+<span class="math inline">\({\boldsymbol{x}}_j\in {\mathbb R}^d\)</span> is a feature vector, and
+<span class="math inline">\(y_j\in{\mathbb R}\)</span> is a label or response variable. We would like to
+fit a model <span class="math inline">\(\widehat{f}:{\mathbb R}^d\to{\mathbb R}\)</span> to predict the
+labels at new points <span class="math inline">\({\boldsymbol{x}}\in{\mathbb R}^d\)</span>. One of the most
+fruitful ideas in this context is to use functions that are linear
+combinations of simple components:
+<span class="math display">\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}}) = \frac{1}{N}\sum_{i=1}^N \sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\, ,\]</span>
+where <span class="math inline">\(\sigma:{\mathbb R}^d\times{\mathbb R}^D\to{\mathbb R}\)</span> is a
+component function (a ‘neuron’ or ‘unit’ in the neural network
+parlance), and
+<span class="math inline">\({\boldsymbol{w}}=({\boldsymbol{w}}_1,\dots,{\boldsymbol{w}}_N)\in{\mathbb R}^{D\times N}\)</span>
+are the parameters to be learnt from data. Specific instantiations of
+this idea include, e.g., two-layer neural networks with radial
+activations, sparse deconvolution, kernel ridge regression, random
+feature methods, and boosting.</p>
+<p>A common approach towards fitting parametric models is by risk
+minimization:
+<span class="math display">\[R_N({\boldsymbol{w}}) = {\mathbb E}\Big\{\Big[y-\frac{1}{N}\sum_{i=1}^N\sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\Big]^2\Big\}\, .\]</span></p>
+<p>Despite the impressive practical success of these methods, the risk
+function <span class="math inline">\(R_N({\boldsymbol{w}})\)</span> is highly non-convex and little is
+known about the global convergence of algorithms that try to minimize
+it. The main objective of this work is to introduce a nonparametric
+underlying regression model for which a global convergence result can be
+proved for stochastic gradient descent (SGD), in the limit of a large
+number of neurons.</p>
+<p><strong>Setting and main result.</strong> Let <span class="math inline">\(\Omega\subset{\mathbb R}^d\)</span> be a
+compact convex set with smooth boundary, and let
+<span class="math inline">\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\ge 1}\)</span> be i.i.d. with
+<span class="math inline">\({\boldsymbol{x}}_j\sim {\sf Unif}(\Omega)\)</span> and
+<span class="math inline">\({\mathbb E}(y_j|{\boldsymbol{x}}_j)=f({\boldsymbol{x}}_j)\)</span>, where the
+function <span class="math inline">\(f\)</span> is smooth. We try to fit these data using a combination of
+bumps, namely
+<span class="math display">\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}})= \frac{1}{N}\sum_{i=1}^NK^\delta({\boldsymbol{x}}-{\boldsymbol{w}}_i)\, ,\]</span>
+where
+<span class="math inline">\(K^\delta({\boldsymbol{x}}) = \delta^{-d}K({\boldsymbol{x}}/\delta)\)</span> and
+<span class="math inline">\(K:{\mathbb R}^d\to{\mathbb R}_{\ge 0}\)</span> is a first order kernel with
+compact support. The weights <span class="math inline">\({\boldsymbol{w}}_i\in{\mathbb R}^d\)</span>
+represent the centers of the bumps. Our model is general enough to
+include a broad class of radial-basis function (RBF) networks which are
+known to be universal function approximators. To the best of our
+knowledge, there is no result on the global convergence of stochastic
+gradient descent for learning RBF networks, and we establish the first
+result of this type.</p>
+<p>We prove that, for sufficiently large <span class="math inline">\(N\)</span> and small <span class="math inline">\(\delta\)</span>, gradient
+descent algorithms converge to weights <span class="math inline">\({\boldsymbol{w}}\)</span> with nearly
+optimum prediction error, provided <span class="math inline">\(f\)</span> is strongly concave. Let us
+emphasize that the resulting population risk <span class="math inline">\(R_N({\boldsymbol{w}})\)</span> is
+non-convex regardless of the concavity properties of <span class="math inline">\(f\)</span>. Our proof
+unveils a novel mechanism by which global convergence takes place.
+Convergence results for non-convex empirical risk minimization are
+generally proved by carefully ruling out local minima in the cost
+function. Instead we prove that, as <span class="math inline">\(N\to\infty\)</span> and <span class="math inline">\(\delta\to 0\)</span>, the
+gradient descent dynamics converges to a gradient flow in Wasserstein
+space, and that the corresponding cost function is ‘displacement
+convex.’ Breakthrough results in optimal transport theory guarantee
+dimension-free convergence rates for this limiting dynamics
+<span class="citation">(<a href="#ref-carrillo2003kinetic" role="doc-biblioref">Carrillo, McCann, and Villani 2003</a>)</span>. In particular, we expect the cost function
+<span class="math inline">\(R_N({\boldsymbol{w}})\)</span> to have many local minima, which are however
+completely neglected by gradient descent.</p>
+<p><strong>Proof idea.</strong> Let us start by providing some high-level insights about
+our approach. Think about each model parameter as a particle moving
+under the effect of other particles according to the SGD updates. Now,
+instead of studying the microscopic dynamics of this system of
+particles, we analyze the macroscopic dynamics of the medium when the
+number of particles (i.e., the size of the hidden layer of the neural
+network) goes to infinity. These dynamics are formulated through a
+partial differential equation (more specifically, a viscous porous
+medium equation) that describes the evolution of the mass density over
+space and time. The nice feature of this approach is that, while the SGD
+trajectory is a random object, it shows that in the large particle size
+limit, it concentrates around the deterministic solution of this partial
+differential equation (PDE).</p>
+<p>For a rigorous analysis and implementation of this idea, we use
+propagation-of-chaos techniques. Specifically, we show that, in the
+large <span class="math inline">\(N\)</span> limit, the evolution of the weights
+<span class="math inline">\(\{{\boldsymbol{w}}_i\}_{i=1}^N\)</span> under gradient descent can be replaced
+by the evolution of a probability distribution <span class="math inline">\(\rho^{\delta}_t\)</span> which
+satisfies the viscous porous medium PDE (with Neumann boundary
+conditions). This PDE can also be described as the Wasserstein <span class="math inline">\(W_2\)</span>
+gradient flow for the following effective risk
+<span class="math display">\[R^{\delta}(\rho) = \frac{1}{|\Omega|} \, \int_{\Omega} \big[f({\boldsymbol{x}}) - K^\delta\ast \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, ,\]</span>
+where <span class="math inline">\(|\Omega|\)</span> is the volume of the set <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(\ast\)</span> is the
+usual convolution. The use of <span class="math inline">\(W_2\)</span> gradient flows to analyze two-layer
+neural networks was recently developed in several papers
+<span class="citation">(<a href="#ref-mei2018mean" role="doc-biblioref">Mei, Montanari, and Nguyen 2018</a>; <a href="#ref-rotskoff2018neural" role="doc-biblioref">Rotskoff and Vanden-Eijnden 2019</a>; <a href="#ref-chizat2018global" role="doc-biblioref">Chizat and Bach 2018</a>; <a href="#ref-sirignano2018mean" role="doc-biblioref">Sirignano and Spiliopoulos 2020</a>)</span>.
+However, we cannot rely on earlier results because of the specific
+boundary conditions in our problem.</p>
+<p>Note that even though the cost <span class="math inline">\(R^{\delta}(\rho)\)</span> is quadratic and
+convex in <span class="math inline">\(\rho\)</span>, its <span class="math inline">\(W_2\)</span> gradient flow can have multiple fixed
+points, and hence global convergence cannot be guaranteed. Indeed, the
+mathematical property that controls global convergence of <span class="math inline">\(W_2\)</span> gradient
+flows is not ordinary convexity but <em>displacement convexity</em>. Roughly
+speaking, displacement convexity is convexity along geodesics of the
+<span class="math inline">\(W_2\)</span> metric. Note that the risk function <span class="math inline">\(R^{\delta}(\rho)\)</span> is <em>not</em>
+even displacement convex. However, for small <span class="math inline">\(\delta\)</span>, we can formally
+approximate <span class="math inline">\(K^\delta\ast \rho\approx \rho\)</span>, and hence hope to replace
+the risk function <span class="math inline">\(R^{\delta}(\rho)\)</span> with the simpler one
+<span class="math display">\[R(\rho) = \frac{1}{|\Omega|}\int_{\Omega} \big[f({\boldsymbol{x}}) - \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, .\]</span>
+Most of our technical work is devoted to making rigorous this
+<span class="math inline">\(\delta\to 0\)</span> approximation.</p>
+<p>Remarkably, the risk function <span class="math inline">\(R(\rho)\)</span> is strongly displacement convex
+(provided <span class="math inline">\(f\)</span> is strongly concave). A long line of work in PDE and
+optimal transport theory establishes dimension-free convergence rates
+for its <span class="math inline">\(W_2\)</span> gradient flow <span class="citation">(<a href="#ref-carrillo2003kinetic" role="doc-biblioref">Carrillo, McCann, and Villani 2003</a>)</span>. By putting
+everything together, we are able to show that SGD converges
+exponentially fast to a near-global optimum with a rate that is
+controlled by the convexity parameter of <span class="math inline">\(f\)</span>.</p>
+<p><strong>A numerical illustration.</strong> We demonstrate in a simple numerical
+example that the convergence rate predicted by our asymptotic theory is
+in excellent agreement with simulations. In the left column of the
+figure below, we plot the true function <span class="math inline">\(f\)</span> together with the neural
+network estimate obtained by running stochastic gradient descent (SGD)
+with <span class="math inline">\(N=200\)</span> neurons at several points in time <span class="math inline">\(t\)</span>. Different plots
+correspond to different values of <span class="math inline">\(\delta\)</span> with
+<span class="math inline">\(\delta\in\{1/5, 1/10, 1/20\}\)</span>. We observe that the network estimates
+converge to a limit curve which is an approximation of the true function
+<span class="math inline">\(f\)</span>. As expected, the quality of the approximation improves as <span class="math inline">\(\delta\)</span>
+gets smaller. In the right column, we report the evolution of the
+population risk and we compare it to the risk predicted by the limit PDE
+(corresponding to <span class="math inline">\(\delta=0\)</span>). The PDE curve appears to capture well the
+evolution of SGD towards optimality.</p>
+<p><img src="/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png" /></p>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-carrillo2003kinetic" class="csl-entry">
+Carrillo, José A., Robert J. McCann, and Cédric Villani. 2003. <span>“Kinetic Equilibration Rates for Granular Media and Related Equations: Entropy Dissipation and Mass Transportation Estimates.”</span> <em>Revista Matematica Iberoamericana</em> 19 (3): 971–1018.
+</div>
+<div id="ref-chizat2018global" class="csl-entry">
+Chizat, Lenaic, and Francis Bach. 2018. <span>“On the Global Convergence of Gradient Descent for over-Parameterized Models Using Optimal Transport.”</span> In <em>Advances in Neural Information Processing Systems</em>, 3040–50.
+</div>
+<div id="ref-javanmard2020analysis" class="csl-entry">
+Javanmard, Adel, Marco Mondelli, Andrea Montanari, and others. 2020. <span>“Analysis of a Two-Layer Neural Network via Displacement Convexity.”</span> <em>Annals of Statistics</em> 48 (6): 3619–42.
+</div>
+<div id="ref-mei2018mean" class="csl-entry">
+Mei, Song, Andrea Montanari, and Phan-Minh Nguyen. 2018. <span>“A Mean Field View of the Landscape of Two-Layer Neural Networks.”</span> <em>Proceedings of the National Academy of Sciences</em>. <a href="https://doi.org/10.1073/pnas.1806579115">https://doi.org/10.1073/pnas.1806579115</a>.
+</div>
+<div id="ref-rotskoff2018neural" class="csl-entry">
+Rotskoff, Grant M., and Eric Vanden-Eijnden. 2019. <span>“Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach.”</span> <em>Communications on Pure and Applied Mathematics</em>.
+</div>
+<div id="ref-sirignano2018mean" class="csl-entry">
+Sirignano, Justin, and Konstantinos Spiliopoulos. 2020. <span>“Mean Field Analysis of Neural Networks: A Law of Large Numbers.”</span> <em>SIAM Journal on Applied Mathematics</em> 80 (2): 725–52.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
