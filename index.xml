@@ -6,7 +6,35 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Developments in Bayesian Nonparametrics</title>
+      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
+      <description>&lt;p&gt;The second &lt;em&gt;&amp;ldquo;One World webinar&amp;rdquo;&lt;/em&gt; organized by YoungStatS will take place on April 21st.
+The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Wednesday, April 21st, 16:30 CEST&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Online&lt;/em&gt;, via Zoom. The registration form is available &lt;a href=&#34;https://forms.gle/vfinGjQJMeqhq6HQ7&#34;&gt;here&lt;/a&gt;. Further details and the Zoom link will be sent to the registered addresses only.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://csml.stats.ox.ac.uk/people/panero/&#34;&gt;Francesca Panero&lt;/a&gt; (University of Oxford, UK): &lt;em&gt;&amp;ldquo;Sparse Spatial Random Graphs&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://martacatalano.github.io/&#34;&gt;Marta Catalano&lt;/a&gt; (University of Torino, Italy). &lt;em&gt;&amp;ldquo;Measuring dependence in the Wasserstein distance for Bayesian nonparametric models&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://salleuska.github.io/&#34;&gt;Sally Paganin&lt;/a&gt; (Harvard School of Public Health, USA) &lt;em&gt;&amp;ldquo;Informative model-based clustering via Centered Partition Processes&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/unimib.it/camerlenghi-federico/&#34;&gt;Federico Camerlenghi&lt;/a&gt; (University of Milano Bicocca, Italy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For more information, please visit our &lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
       <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
@@ -966,144 +994,6 @@ print(round(c(rmse1,rmse2,rmse3),2))&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;conclusions&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Conclusions&lt;/h3&gt;
 &lt;p&gt;There are now many researchers working at the intersection of machine learning and causal inference. What distinguishes our work is a focus on building tools that work in practice, which requires understanding the role of regularization in causal inference and engineering methods that impose effective regularization schemes that have been calibrated to the kind of data we expect to encounter in common applications.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Mulitple Latent Block Model for mixed data</title>
-      <link>https://youngstats.github.io/post/2021/01/05/mlbm/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
-      <description>
-
-
-&lt;style&gt;
-body {
-text-align: justify}
-&lt;/style&gt;
-&lt;div id=&#34;abstract&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account. For this purpose, we present how to use the Multiple Latent Block Model &lt;span class=&#34;citation&#34;&gt;(Robert 2017)&lt;/span&gt; on mixed data.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;multiple-latent-block-model-for-mixed-data&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Multiple Latent Block Model for mixed data&lt;/h1&gt;
-&lt;p&gt;The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) &lt;span class=&#34;citation&#34;&gt;(Nadif and Govaert 2008)&lt;/span&gt;, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; matrices &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt; such that &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is the number of kinds of data. For the sake of simplicity, we consider here that &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; has two different kinds of features (i.e &lt;span class=&#34;math inline&#34;&gt;\(D=2\)&lt;/span&gt;). The MLBM performs a co-clustering such that the row-clusters partition is the same for all &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;, and that there is a column-clusters partition for every &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/example-mlbm-notations.svg&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Example of a mixed-data matrix with two different kinds of features co-clustered with the MLBM.&lt;/p&gt;
-&lt;/center&gt;
-&lt;div id=&#34;notations&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Notations&lt;/h2&gt;
-&lt;p&gt;We consider that the data matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; has two different kinds of features, we note:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the data matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}=(\boldsymbol{x}^{(1)},\boldsymbol{x}^{(2)})\)&lt;/span&gt;, and we will refer to &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt; in the general case (with &lt;span class=&#34;math inline&#34;&gt;\(d \in \{1,2\}\)&lt;/span&gt;),&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; rows, &lt;span class=&#34;math inline&#34;&gt;\(J_1\)&lt;/span&gt; columns for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(1)}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(J_2\)&lt;/span&gt; columns for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(2)}\)&lt;/span&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; row-clusters, &lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt; column-clusters for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(1)}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(H_2\)&lt;/span&gt; column-clusters for &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(2)}\)&lt;/span&gt;,&lt;/li&gt;
-&lt;li&gt;the latent variables of the model &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v},\boldsymbol{w}=(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)})\)&lt;/span&gt;:
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; is the row partition matrix of size &lt;span class=&#34;math inline&#34;&gt;\((N \times G)\)&lt;/span&gt; that indicates the cluster assignments, i.e &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}_i = (v_{i1},\ldots,v_{iG})\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(v_{ig}=1\)&lt;/span&gt; when observation &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; belongs to row cluster &lt;span class=&#34;math inline&#34;&gt;\(g\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(v_{ig}=0\)&lt;/span&gt; otherwise.&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}\)&lt;/span&gt; is the column partition matrix of size &lt;span class=&#34;math inline&#34;&gt;\((J_d \times H_d)\)&lt;/span&gt; that indicates the cluster assignments, i.e &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}_j = (w_{j1},\ldots,w_{jH_d})\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(w_{jh}^{(d)}=1\)&lt;/span&gt; when feature &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; belongs to column cluster &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(w_{jh}^{(d)}=0\)&lt;/span&gt; otherwise,&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;a block refers to the crossing of a row-cluster and of a column-cluster.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finally, for better readability, we sometimes highlight:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the latent variable and parameters that relate to row-clusters in blue (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}= \color{blue}{\boldsymbol{v}}\)&lt;/span&gt;),&lt;/li&gt;
-&lt;li&gt;the latent variable and parameters that relate to column-clusters in green (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}= \color{ForestGreen}{\boldsymbol{w}}\)&lt;/span&gt;),&lt;/li&gt;
-&lt;li&gt;the parameters that relate to blocks in red (e.g &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}_{gh}= \color{red}{\boldsymbol{\alpha}_{gh}}\)&lt;/span&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;assumptions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Assumptions&lt;/h2&gt;
-&lt;p&gt;The MLBM relies on several assumptions. The first one states that the &lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt; data matrices are conditionally independent of the row and column partitions:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
- p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w})
- = p(\boldsymbol{x}^{(1)}|\boldsymbol{v},\boldsymbol{w}^{(1)}) \times p(\boldsymbol{x}^{(2)}|\boldsymbol{v},\boldsymbol{w}^{(2)})
-\]&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In addition, the univariate random variables &lt;span class=&#34;math inline&#34;&gt;\(x_{ij}^{(d)}\)&lt;/span&gt; are assumed to be conditionally independent on partitions &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{w}^{(d)}\)&lt;/span&gt;. Thus, the conditional probability function of &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{w}^{(d)})_d\)&lt;/span&gt; is expressed as:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-p(\boldsymbol{x}|\boldsymbol{v},\boldsymbol{w};\boldsymbol{\alpha})
-=
-\underset{i,j,g,h}{\prod}
-p(x_{ij}^{(1)}; \alpha_{gh}^{(1)})^{v_{ig}w_{jh}^{(1)}}
-p(x_{ij}^{(2)}; \alpha_{gh}^{(2)})^{v_{ig}w_{jh}^{(2)}},
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}=(\boldsymbol{\alpha}^{(d)})_d\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\alpha}^d=(\alpha_{gh}^{(d)})_{g,h}\)&lt;/span&gt; is the distribution parameters of block &lt;span class=&#34;math inline&#34;&gt;\((g,h)\)&lt;/span&gt; of matrix &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{x}^{(d)}\)&lt;/span&gt;. It depends on the distribution one uses to model the data. For instance, in the case of the Gaussian distribution, &lt;span class=&#34;math inline&#34;&gt;\(\alpha_{gh}^{(d)} = (\boldsymbol{\mu}^{(d)}_{gh}, \boldsymbol{\Sigma}^{(d)}_{gh})\)&lt;/span&gt;. Let us note too that the chosen distributions can be different for each kind of data.&lt;/p&gt;
-&lt;p&gt;Second, the latent variables &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v},\boldsymbol{w}^{(1)},\boldsymbol{w}^{(2)}\)&lt;/span&gt; are assumed to be independent, so: &lt;span class=&#34;math inline&#34;&gt;\(p(\boldsymbol{v},\boldsymbol{w};\boldsymbol{\gamma},\boldsymbol{\rho}) = p(\boldsymbol{v};\boldsymbol{\gamma})p(\boldsymbol{w}^{(1)};\boldsymbol{\rho}^{(1)})p(\boldsymbol{w}^{(2)};\boldsymbol{\rho}^{(2)})\)&lt;/span&gt;, where:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-p(\boldsymbol{v};\boldsymbol{\pi}) = \underset{i,g}{\prod}\pi_g^{v_{ig}}
-\]&lt;/span&gt; and&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-p(\boldsymbol{w}^{(d)};\boldsymbol{\rho}^{(d)}) = \underset{j,h}{\prod}{\rho_h^{(d)}}^{w_{jh}^{(d)}}
-\]&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;So, if &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((W^{(d)})_d\)&lt;/span&gt; are the sets of all possible partitions &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{v}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{w}^{(d)})_d\)&lt;/span&gt;, the probability density function &lt;span class=&#34;math inline&#34;&gt;\(p(\boldsymbol{x}; \boldsymbol{\theta})\)&lt;/span&gt; is written:
-&lt;span class=&#34;math display&#34;&gt;\[
-p(\boldsymbol{x};\boldsymbol{\theta})=
-\underset{(\color{blue}{\boldsymbol{v}},\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\in V\times W^{(1)} \times W^{(2)}}{\sum}
-\underset{i,g}{\prod}\color{blue}{\pi_g^{v_{ig}}}
-\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(1)}_h}^{w_{jh}^{(d)}}}
-\underset{i,j,g,h}{\prod}p(x_{ij}^{(1)}; \color{red}{\alpha_{gh}^{(1)}})^{\color{red}{v_{ig}w_{jh}^{(1)}}}
-\underset{j,h}{\prod}\color{ForestGreen}{{\rho^{(2)}_h}^{w_{jh}^{(2)}}}
-\underset{i,j,g,h}{\prod}p(x_{ij}^{(2)}; \color{red}{\alpha_{gh}^{(2)}})^{\color{red}{v_{ig}w_{jh}^{(2)}}}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;generative-process&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Generative process&lt;/h2&gt;
-&lt;p&gt;The generative process of a cell &lt;span class=&#34;math inline&#34;&gt;\(x^{(d)}_{ij}\)&lt;/span&gt; of the matrix is as follows:
-&lt;span class=&#34;math display&#34;&gt;\[
-\begin{align*}
-        &amp;amp;\color{blue}{\boldsymbol{v}_i} \sim \mathcal{M}(1,\color{blue}{\boldsymbol{\pi}}), \\
-        &amp;amp;\color{ForestGreen}{\boldsymbol{w}^{(d)}_j} \sim \mathcal{M}(1,\color{ForestGreen}{\boldsymbol{\rho^{(d)}}}),  \\
-        &amp;amp;x_{ij}^{(d)} | \color{red}{v_{ig}=1, w_{jh}^{(d)}=1} \sim  f(x_{ij}^{(d)};\color{red}{\boldsymbol{\alpha}^{(d)}_{gh}}).
-\end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;inference-of-the-model&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Inference of the model&lt;/h2&gt;
-&lt;p&gt;Once we defined the generative process of a data set, the goal is to estimate the parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}\)&lt;/span&gt; of this generative process according to the data, and also to deduce the latent variables from them. In this case, we need to compute &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}=(\color{blue}{\boldsymbol{\pi}}, \color{ForestGreen}{\boldsymbol{\rho}^{(1)}}, \color{ForestGreen}{\boldsymbol{\rho}^{(2)}}, \color{red}{\boldsymbol{\alpha}^{(1)}_{gh}}, \color{red}{\boldsymbol{\alpha}^{(2)}_{gh}})\)&lt;/span&gt;, and to deduce the row partitions &lt;span class=&#34;math inline&#34;&gt;\(\color{blue}{\boldsymbol{v}}\)&lt;/span&gt; and column partitions &lt;span class=&#34;math inline&#34;&gt;\((\color{ForestGreen}{\boldsymbol{w}^{(1)}},\color{ForestGreen}{\boldsymbol{w}^{(2)}})\)&lt;/span&gt;. In the Maximum Likelihood Estimation framework, the Expectation-Maximisation (EM) algorithm is often used in such contexts with parameters and latent variables to be estimated. Unfortunately, the Expectation step is not tractable because it requires the calculation of many terms, which is not feasible in a reasonable amount of time. The Multiple Latent Block Model and more generally the methods based on the Latent Block Model use variants of the EM-algorithm such as the Stochastic-EM-Gibbs algorithm.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;use-case-analysing-a-health-quality-survey-in-oncology&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Use-case: analysing a health quality survey in oncology&lt;/h1&gt;
-&lt;p&gt;The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions”. In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell &lt;span class=&#34;math inline&#34;&gt;\((i, j)\)&lt;/span&gt; is the response of patient &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to question &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?”, if the patient answers “Not at all”, the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.&lt;/p&gt;
-&lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/ads-original.png&#34; class=&#34;class&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Questionnaire’s graphical representation: patients are projected onto rows and questions are projected onto columns.&lt;/p&gt;
-&lt;/center&gt;
-&lt;p&gt;As explained previously, the MLBM separates the features that are considered as different, and simultaneously performs a clustering on the rows and a clustering on the columns of each isolated matrix. The figure below shows the result for our use-case. We note &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; row-clusters, i.e. &lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt; patients profiles. Furthermore, the column-clusters helps summarising these profiles: by grouping the questions that have the same behaviour with respect to the row-clusters it is easier to distinguish the differences between these profiles.&lt;/p&gt;
-&lt;center&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/ads-coclust.png&#34; class=&#34;class&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Questionnaire co-clustered with the MLBM.&lt;/p&gt;
-&lt;/center&gt;
-&lt;/div&gt;
-&lt;div id=&#34;remarks&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Remarks&lt;/h1&gt;
-&lt;p&gt;This blog post is based on &lt;span class=&#34;citation&#34;&gt;(Selosse, Jacques, and Biernacki 2020)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;(Selosse et al. 2019)&lt;/span&gt;. Furthermore, The R package &lt;code&gt;mixedClust&lt;/code&gt; implements the Multiple Latent Block Model and will be available on the CRAN soon.&lt;/p&gt;
-&lt;p&gt;About the authors:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/pic-ms.jpeg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Margot Selosse&lt;/strong&gt; received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-05-mlbm/images/pic-jj.jpg&#34; class=&#34;class&#34; style=&#34;vertical-align: text-bottom;width: 10%&#34; /&gt; &lt;strong&gt;Julien Jacques&lt;/strong&gt; received his Ph.D. degree in applied mathematics from University of Grenoble, France. In 2006 he joined University of Lille where he held the position of Associate Professor. In 2014, he joined University of Lyon as Full Professor in Statistics. His current research in statistical learning concerns the design of clustering algorithm for functional data, ordinal data and mixed-type data. He is a member of the French Society of Statistics.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Christophe Biernacki&lt;/strong&gt; is a Scientific Deputy at Inria Lille and Scientific Head of the Inria MODAL research team, and received his Ph.D. degree from Université de Compiègne in 1997. His research interests are focused on model-based and model-free clustering of heterogeneous data.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;References&lt;/h1&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-nadif08&#34;&gt;
-&lt;p&gt;Nadif, Mohamed, and Gérard Govaert. 2008. “Algorithms for Model-Based Block Gaussian Clustering.” &lt;em&gt;International Conference on Data Mining&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-robert17&#34;&gt;
-&lt;p&gt;Robert, Valérie. 2017. “Classification Croisée Pour L’analyse de Bases de Données de Grandes Dimensions de Pharmacovigilance.” Université Paris-Sud.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-selosse20&#34;&gt;
-&lt;p&gt;Selosse, Margot, Julien Jacques, and Christophe Biernacki. 2020. “Model-Based Co-Clustering for Mixed Type Data.” &lt;em&gt;Computational Statistics &amp;amp; Data Analysis&lt;/em&gt; 144: 106866.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-selosse19&#34;&gt;
-&lt;p&gt;Selosse, Margot, Julien Jacques, Christophe Biernacki, and Cousson-Gélie Florence. 2019. “Analysing a Quality-of-Life Survey by Using a Coclustering Model for Ordinal Data and Some Dynamic Implications.” &lt;em&gt;Journal of the Royal Statistical Society: Series C (Applied Statistics)&lt;/em&gt; 68 (5): 1327–49.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

@@ -6,7 +6,22 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Developments in Bayesian Nonparametrics</title>
+      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
+      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
+When &amp;amp; Where:
+ Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
+    </item>
+    
     <item>
       <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
       <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
@@ -94,15 +109,6 @@ Given two blocks of data, the PLS approach seeks latent variables which are cons
       <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
       <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
 The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
-    </item>
-    
-    <item>
-      <title>The Mulitple Latent Block Model for mixed data</title>
-      <link>https://youngstats.github.io/post/2021/01/05/mlbm/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/05/mlbm/</guid>
-      <description>body { text-align: justify}  Abstract Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account.</description>
     </item>
     
   </channel>
