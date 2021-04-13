@@ -6,7 +6,61 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
+      <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Let us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;; The decision policy: for every realized sample define the decision &lt;span class=&#34;math inline&#34;&gt;\(D\in \{0,1\}\)&lt;/span&gt;, where the null hypothesis is rejected if &lt;span class=&#34;math inline&#34;&gt;\(D=1\)&lt;/span&gt; and retained otherwise. For simplicity, let &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; be the realized test statistic on which the decision &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is based, and let &lt;span class=&#34;math inline&#34;&gt;\(g(z\mid h=1)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(g(z\mid h=0)\)&lt;/span&gt; be, respectively, the non-null and the null density of &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;. The optimization problem is therefore:
+&lt;span class=&#34;math display&#34;&gt;\[\max_{D:\mathbb R \rightarrow \{0,1\}} \int D(z)g(z\mid h=1)dz\\ s.t.\int D(z)g(z\mid h=0)dz\leq \alpha.  \]&lt;/span&gt; This infinite dimensional integer problem happens to have a simple solution provided by the Neyman-Pearson (NP) Lemma.&lt;/p&gt;
+&lt;p&gt;In this era of big data, conducting a study with a single hypothesis is rare. In many disciplines, hundreds or thousands of null hypotheses are tested in each study. In order to avoid an inflation of false positive findings, it is critical to use multiple testing procedures that guarantee that a meaningful error measure is controlled at a predefined level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. The most popular measures are the family wise error rate (FWER), i.e.,
+the probability of at least one type I error, and the false discovery rate (FDR), i.e., the expected false discovery proportion.&lt;/p&gt;
+&lt;p&gt;Arguably, it is just as critical that the multiple testing procedure will have high statistical power, thus facilitating scientific discoveries. As with the single hypothesis testing problem, we take an optimization approach to the problem with &lt;span class=&#34;math inline&#34;&gt;\(K&amp;gt;1\)&lt;/span&gt; null hypotheses: we seek to find the &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; decision functions, &lt;span class=&#34;math inline&#34;&gt;\(\vec D: {\mathbb R}^K\rightarrow \{0,1 \}^K\)&lt;/span&gt;,
+that maximize some notion of power while guaranteeing that the error measure is at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. In this post, we shall consider the problem of finding the optimal decision functions when testing multiple hypotheses in a couple of settings of interest.&lt;/p&gt;
+&lt;p&gt;This post is based on our three recent papers on this topic: Rosset et al. (2018), where a general theoretical framework is presented; Heller and Rosset (2021), where the two-group model is discussed; and Heller, Krieger and Rosset (2021), where optimal clinical trial design is discussed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-optimal-policy-for-the-two-group-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;An optimal policy for the two-group model&lt;/h2&gt;
+&lt;p&gt;The two-group model, which is widely used in large scale inference problems, assumes a Bayesian setting, where the observed test statistics are generated independently from the mixture model &lt;span class=&#34;math display&#34;&gt;\[(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1),\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt; follows the &lt;span class=&#34;math inline&#34;&gt;\(Bernoulli(\pi)\)&lt;/span&gt; distribution, and indicates as before whether the null is true &lt;span class=&#34;math inline&#34;&gt;\((h=0)\)&lt;/span&gt; or false &lt;span class=&#34;math inline&#34;&gt;\((h=1)\)&lt;/span&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\(\vec z\)&lt;/span&gt; be a vector of length &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; generated according to the two group model, and consider the following optimization problem:
+&lt;span class=&#34;math display&#34;&gt;\[\max_{\vec D:{\mathbb R}^K \rightarrow \{0,1\}^K} \mathbb E(\vec h^t \vec D) \\ s.t. \ FDR(\vec D) \leq \alpha.\]&lt;/span&gt; One of our main results is that the solution is to threshold the test statistic &lt;span class=&#34;math display&#34;&gt;\[\mathbb P(h=0\mid z) = \frac{(1-\pi)g(z\mid h=0)}{(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1)}, \]&lt;/span&gt; and that the threshold depends on the entire vector of test statistics &lt;span class=&#34;math inline&#34;&gt;\(\vec z\)&lt;/span&gt;. Thus for a realized vector of test statistics &lt;span class=&#34;math inline&#34;&gt;\(\vec z = (z_1, \ldots, z_K)\)&lt;/span&gt;, the decision vector &lt;span class=&#34;math inline&#34;&gt;\(\vec D\)&lt;/span&gt; can be described in the following form: &lt;span class=&#34;math display&#34;&gt;\[\vec D(\vec z) = (\mathbb I[\mathbb P(h=0\mid z_1)\leq t(\vec z)], \ldots, \mathbb I[\mathbb P(h=0\mid z_k)\leq t(\vec z)]),\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\mathbb I[\cdot]\)&lt;/span&gt; is the indicator function. This leads to practical algorithms which improve theoretically and empirically on previous solutions for the two-group model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-optimal-policy-for-the-design-of-clinical-trials&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;An optimal policy for the design of clinical trials&lt;/h2&gt;
+&lt;p&gt;Assume that &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt; hypothesis testing problems are examined in a clinical trial (e.g., treatment effectiveness in two distinct subgroups). The federal agencies that approve drugs typically require strong FWER control at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.05\)&lt;/span&gt;. At the design stage, it is necessary to decide on the number of subjects that will be allocated. For &lt;span class=&#34;math inline&#34;&gt;\(K=1\)&lt;/span&gt;, this is typically done by computing the minimal number of subjects for achieving minimal power with a type I error probability of &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. For &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt;, with a relevant notion of required power &lt;span class=&#34;math inline&#34;&gt;\(\Pi(\vec D)\)&lt;/span&gt;, a smaller number of subjects will need to be allocated, if the multiple testing procedure is the optimal policy, rather than an off-the-shelf policy. However, finding the optimal policy may be difficult since
+the policy has to guarantee that for every data generation with at least one null parameter value, the probability of rejecting the null hypothesis corresponding to the null parameter value should be at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; (i.e., there may be an infinite number of constraints for strong FWER control at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;For simplicity, assume we have two independent test statistics that are normally distributed with variance one and expectation zero if the null hypothesis is true but negative if the null hypothesis is false. Then, the optimization problem can be formalized as follows:&lt;br /&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\max_{\vec D:{\mathbb R}^2 \rightarrow \{0,1\}^2} \Pi(\vec D) \\ s.t. \  \mathbb P_{(0, \theta)}(D_1=0) \leq \alpha \ \forall \ \theta &amp;lt;0; \ \mathbb P_{( \theta, 0 )}(D_2=0) \leq \alpha \ \forall \ \theta &amp;lt;0; \ \mathbb P_{(0, 0)}(\max(D_1,D_2)=0) \leq \alpha.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We also add the common-sense restriction that &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-values above &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; are not rejected (for details, see Heller, Krieger, and Rosset 2021).&lt;br /&gt;
+The resulting optimal rejection policy is attractive for relevant objectives &lt;span class=&#34;math inline&#34;&gt;\(\Pi(\vec D)\)&lt;/span&gt; that can be useful for clinical trials.
+Below we provide one example optimal policy: the policy maximizing the average power when both test statistics have expectation -2 (left panel). For comparison, we provide the off-the-shelf popular Hochberg procedure (which coincides with the Hommel procedure for &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt;). Both policies satisfy the strong FWER control guarantee at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.05\)&lt;/span&gt;, but the average power of the optimal policy is 3% higher (63% versus 60%) if the test statistics are normally distributed with expectation -2. The color coding is as follows: in red, reject only the second hypothesis; in black, reject only the first hypothesis; in green, reject both hypotheses.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;this-post-is-based-on&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;This post is based on&lt;/h2&gt;
+&lt;p&gt;Heller, R. Krieger, A. and Rosset, S. (2021) &lt;em&gt;Optimal multiple testing and design in clinical trials&lt;/em&gt;. arXiv:2104.01346&lt;/p&gt;
+&lt;p&gt;Heller, R. and Rosset, S. (2020) &lt;em&gt;Optimal control of false discovery criteria in the two-group model&lt;/em&gt;. Journal of the Royal Statistical Society, Series B,
+&lt;a href=&#34;https://doi.org/10.1111/rssb.12403&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1111/rssb.12403&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rosset, S. Heller, R. Painsky, A. and Aharoni, E. (2018) &lt;em&gt;Optimal and Maximin Procedures for Multiple Testing Problems&lt;/em&gt;. arXiv: 1804.10256&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the authors&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headRuth.jpg&#34; height=&#34;75&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ruth Heller&lt;/strong&gt; is an Associate Professor of Statistics at Tel-Aviv University, Israel, &lt;a href=&#34;mailto:ruheller@gmail.com&#34; class=&#34;email&#34;&gt;ruheller@gmail.com&lt;/a&gt;. Her research interests are in multiple comparisons, nonparametrics, and observational studies.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headSaharon.png&#34; height=&#34;75&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Saharon Rosset&lt;/strong&gt; is a Professor of Statistics at Tel-Aviv University, Israel, &lt;a href=&#34;mailto:saharon@tauex.tau.ac.il&#34; class=&#34;email&#34;&gt;saharon@tauex.tau.ac.il&lt;/a&gt;. His research interests are in Statistical Learning theory and methods
+and in Statistical Genetics.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Developments in Bayesian Nonparametrics</title>
       <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
@@ -845,155 +899,6 @@ where &lt;span class=&#34;math inline&#34;&gt;\(X_c\)&lt;/span&gt; and &lt;span 
 &lt;li&gt;&lt;p&gt;Lafaye de Micheaux, P., Liquet, B., &amp;amp; Sutton, M. (2019). PLS for Big Data: A unified parallel algorithm for regularised group PLS. Statistics Surveys, 13, 119–149.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Liquet, B., Lafaye de Micheaux, P., Hejblum, B. P., &amp;amp; Thiébaut, R. (2016). Group and sparse group partial least square approaches applied in genomics context. Bioinformatics , 32(1), 35–42.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Machine learning for causal inference that works</title>
-      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-&lt;link href=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;I’ve kindly been invited to share a few words about a recent &lt;a href=&#34;https://projecteuclid.org/euclid.ba/1580461461&#34;&gt;paper&lt;/a&gt; my colleagues and I published in &lt;em&gt;Bayesian Analysis&lt;/em&gt;: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called &lt;a href=&#34;https://github.com/jaredsmurray/bcf&#34;&gt;bcf&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The goal of this post is to work through a simple toy example to illustrate the strengths of BCF. Through this example I hope to explain what I mean when I say that BCF is “machine learning for causal inference that works”.&lt;/p&gt;
-&lt;div id=&#34;problem-setting&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Problem setting&lt;/h3&gt;
-&lt;p&gt;Suppose we want to estimate a possibly heterogeneous treatment effect of a binary treatment variable. This means, for example, that we want to know if a new drug reduces the duration of a headache and we think maybe the drug works better for some people and worse for other people. In addition to the question “how well (if at all) does the drug work?” we also want to know if the people for whom it works better can be characterized in terms of observable attributes, perhaps age, gender, or ethnicity. People either get the drug or not (we do not consider differing doses). Unfortunately, who gets the drug is not randomized, which complicates things. For example, if people who take the drug happen to be the ones with longer duration headaches (on average), that could skew our impression of how effective the drug is.&lt;/p&gt;
-&lt;p&gt;Although we do not have a randomized sample, let’s assume we are lucky enough to have the next best thing, which is that we observe all the attributes of each patient that affect how likely they are to have taken the drug. It is well known that access to these factors allows us to correctly estimate the treatment effect by turning the causal inference problem into a regression problem (aka supervised learning). Specifically, in that case the treatment effect can be expressed as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\tau(x_i) = \mbox{E}(Y \mid Z = 1, X = x_i) - \mbox{E}(Y \mid Z = 0, X = x_i)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; is the response or outcome variable (the duration of headache), &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt; is the treatment assignment (did the patient take the drug or not), and &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; is a vector of attributes of patient &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;. This difference is called the conditional average treatment effect, or CATE; “conditional” refers to the fixed &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; vector, “average” refers to the expectation over &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;, and “treatment effect” refers to the difference between to treated (&lt;span class=&#34;math inline&#34;&gt;\(Z = 1\)&lt;/span&gt;) and untreated (&lt;span class=&#34;math inline&#34;&gt;\(Z = 0\)&lt;/span&gt;), or control, groups. If this quantity differs for distinct &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;, we say that there are “heterogeneous” effects.&lt;/p&gt;
-&lt;p&gt;The good news is that we have many methods that efficiently estimate conditional expectations in the difference above. The bad news, which wasn’t widely appreciated even just a few years ago, is that those methods don’t work as well as they should in terms of estimating the CATEs. Let’s take a look at why that is.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;simple-machine-learning-cate-estimators-are-high-variance&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Simple machine learning CATE estimators are high-variance&lt;/h3&gt;
-&lt;p&gt;A natural thing to do when faced with estimating two conditional expectations is simply to estimate them separately, training two separate machine learning models using the control group data and the treated group data individually. With enough data, this approach works just fine, but if the conditional expectation functions underlying the data are complicated relative to the available sample size, this approach can be highly unstable. This instability arises because fitting the two functions completely separately provides no control, or &lt;em&gt;regularization&lt;/em&gt;, over the implied fluctuations in the CATE (the difference between the two conditional mean functions).&lt;/p&gt;
-&lt;p&gt;It is well-known that for good nonparametric function estimation, effective regularization is necessary to prevent overfitting; this is the main insight from decades of supervised machine learning. But in causal inference, the goal is not estimating the conditional expectations themselves, but rather their difference. Without penalizing complexity of &lt;span class=&#34;math inline&#34;&gt;\(\tau(x)\)&lt;/span&gt; itself, one runs the risk of overfitting the treatment effects! And that’s exactly what happens in our example below.&lt;/p&gt;
-&lt;p&gt;This excessive variability has a fairly simple fix, which is to regularize the difference the same way you would penalize the complexity of an unknown function:
-&lt;span class=&#34;math display&#34;&gt;\[
-\mbox{min}_{f_0, f_1}\;\;\;\; \frac{1}{n_0} \sum_{i: z_i = 0}||y_i - f_0(x_i)||^2_2 + \frac{1}{n_1} \sum_{i: z_i = 1} ||y_i - f_1(x_i)||^2_2 + \lambda_0||f_0|| + \lambda_1||f_1|| + \lambda_{\tau}||f_1 - f_0||
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\lambda_0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\lambda_{\tau}\)&lt;/span&gt; are regularization tuning parameters and &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt; denotes a measure of the complexity of a function.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;a-new-problem-regularization-induced-confounding-ric&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;A new problem: regularization induced confounding (RIC)&lt;/h3&gt;
-&lt;p&gt;Incorporating the &lt;span class=&#34;math inline&#34;&gt;\(||f_1 - f_0||\)&lt;/span&gt; penalty solves one problem but introduces a new, subtler, one. Adding a constant to &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt; does not increase the complexity of &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(f_1 - f_0\)&lt;/span&gt;, but doing so may allow the complexity of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; to be &lt;em&gt;decreased&lt;/em&gt; without worsening the fit to the data (the first two terms of the objective function above). In practical terms, this means that the new regularization term we just introduced might have the unintended effect of inflating our treatment effect estimates!&lt;/p&gt;
-&lt;p&gt;When specifically might this happen? It can happen when the true &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; is quite complex and the probability of being treated is a monotone function of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mbox{Pr}(Z = 1 \mid x) = \pi(x) = \pi(f_0(x))
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;and &lt;span class=&#34;math inline&#34;&gt;\(\frac{\partial \pi}{\partial f_0}\)&lt;/span&gt; never changes sign. Under this assumption, the treated observations in our data would tend to have higher outcome values, which our model could chalk up to a treatment effect without needing to learn the complicated pattern of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; because it is implicitly encoded in the treatment assignment variable, &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Is this situation plausible? Well, in our headache drug example, it would mean that people are more likely to take a drug if they are likely to have a very long lasting headache if they &lt;em&gt;didn’t&lt;/em&gt; take it. If people (or their doctors) expect the drug to help, this assumption makes total sense! We call these sorts of situations &lt;em&gt;targeted selection&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Solving the RIC issue turns out to be pretty easy, too: simply add an estimate of &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt; as a control variable. This allows the model to learn the true &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; with a &lt;em&gt;simple&lt;/em&gt; representation based on the extra feature, in the event that targeted selection is occurring.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Example&lt;/h3&gt;
-&lt;p&gt;Now let’s work through a simple example illustrating these ideas. We will consider a nonlinear but elementary conditional expectation function and simulate our treatment assignment variable according to targeted selection.
-&lt;span class=&#34;math display&#34;&gt;\[
-\begin{split}
-\tau(x) &amp;amp;= -1 + x\\
-f_0(x) &amp;amp;= 2 \{\sin(v x) + 1\}\\
-f_1(x) &amp;amp;= f_0(x) + \tau(x) = -1 + x + 2 \{\sin(v x) + 1\}\\
-\pi(x) &amp;amp;= f_0(x)/5\\
-y_i &amp;amp;= f_0(x_i) + \tau(x_i) + \sigma\epsilon_i
-\end{split}
-\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i\)&lt;/span&gt; are independent and identically distributed standard normal random variables. Our sample consists of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; evenly spaced observations &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; on the unit interval. This data generating process (DGP) guarantees that the probability of treatment ranges between 0.1 to 0.9. The parameter &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; governs the “complexity” of &lt;span class=&#34;math inline&#34;&gt;\(f_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(f_1\)&lt;/span&gt;, while the parameter &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; governs the statistical difficulty of the learning problem.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# set sample size and set control variable values
-n = 1000
-x = seq(0,1,length.out = n)
-
-# set the problem difficulty
-v = 30
-kappa = 2
-
-# define functions
-mu = function(x){2*(sin(v*x)+1)}
-tau = function(x){-1 + x}
-pi = function(x){mu(x)/5 + 0.1}
-
-# draw treatment assignment
-z = rbinom(n,1,pi(x))
-
-# draw outcome
-f_xz = mu(x) + tau(x)*z
-sigma = kappa*sd(f_xz)
-y = f_xz + sigma*rnorm(n)
-
-# calculate the true average treatment effect (ATE)
-print(mean(tau(x)))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] -0.5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# calculate the naive estimate of the ATE
-print(mean(y[z==1]) - mean(y[z==0]))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 0.9889149&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Observe that the naive estimate is way off from the truth due to strong confounding.&lt;/p&gt;
-&lt;p&gt;Next, let’s use the separate regressions approach to estimating the treatment effect. To do this we will use the R package &lt;a href=&#34;https://github.com/jingyuhe/xbart&#34;&gt;XBART&lt;/a&gt;, based on another &lt;a href=&#34;https://arxiv.org/abs/2002.03375&#34;&gt;paper&lt;/a&gt; of mine. It can be downloaded and installed from here (but must be compiled from source).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit.f1 = XBART(y[z==1],x[z==1],x,
-               num_sweeps = sweeps, burnin = b, num_trees = 20,
-               tau = var(y[z==1])/20)
-
-yhat1 = rowMeans(fit.f1$yhats_test[,(b+1):sweeps])
-
-fit.f0 = XBART(y[z==0],x[z==0],x,
-               num_sweeps = sweeps, burnin = b, num_trees = 20, 
-               tau = var(y[z==0])/20)
-
-yhat0 = rowMeans(fit.f0$yhats_test[,(b+1):sweeps])
-
-tau.est1 &amp;lt;- yhat1 - yhat0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, let’s explicitly regularize the treatment effect. We will do this using the R package XBCF, which can be downloaded &lt;a href=&#34;https://github.com/socket778/XBCF&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xbcf_fit = XBCF(scale(y), x, x, z, 
-                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
-                 num_cutpoints = 20, max_depth = 250,
-                 num_trees_pr = 20,  tau_pr = tau1, 
-                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in if (class(y) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
-## the first element will be used&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tau.est2 = getTaus(xbcf_fit)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, let’s do it the right way and also incorporate the estimated propensity scores. First, we estimate them. Here, we again use XBART, but your favorite classification algorithm would be okay, too.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fitz = XBART.multinomial(y = z, num_class = 2, X = x, Xtest = x, 
-                         num_trees = 20, num_sweeps = sweeps, max_depth=250, 
-                         Nmin=6, num_cutpoints=50, tau_a = 2, tau_b = 1, 
-                         burnin = b, verbose = FALSE, parallel = TRUE, 
-                         sample_weights_flag = TRUE, weight = 5,update_tau = TRUE) 
-
-pihat = apply(fitz$yhats_test[(b+1):sweeps,,], c(2, 3), mean)[,2]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With those estimates in hand, we then run XBCF again, this time including the propensity score as an extra feature.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xbcf_fit.ps = XBCF(scale(y), cbind(pihat,x), x, z, 
-                 num_sweeps = sweeps, burnin = b, Nmin = 1, verbose = FALSE,
-                 num_cutpoints = 20, max_depth = 250,
-                 num_trees_pr = 20,  tau_pr = tau1, 
-                 num_trees_trt = 20, alpha_trt = 0.7, beta_trt = 2, tau_trt = tau2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in if (class(X) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
-## the first element will be used&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in if (class(y) != &amp;quot;matrix&amp;quot;) {: the condition has length &amp;gt; 1 and only
-## the first element will be used&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tau.est3 = getTaus(xbcf_fit.ps)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And now we can plot the results against the truth and compute the root mean squared estimation error of the CATEs.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(x,tau(x),type=&amp;#39;l&amp;#39;,ylim=c(-1.5,1.5),col=&amp;#39;red&amp;#39;,lty=2,lwd=2,bty=&amp;#39;n&amp;#39;,ylab=expression(tau))
-lines(x,tau.est1,col=&amp;#39;lightgray&amp;#39;,lwd=3)
-lines(x,tau.est2,col=&amp;#39;blue&amp;#39;,lwd=3)
-lines(x,tau.est3,col=&amp;#39;green&amp;#39;,lwd=3)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-26-machine-learning-for-causal-inference-that-works_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rmse1 = sqrt(mean((tau(x)-tau.est1)^2))
-rmse2 = sqrt(mean((tau(x)-tau.est2)^2))
-rmse3 = sqrt(mean((tau(x)-tau.est3)^2))
-
-print(round(c(rmse1,rmse2,rmse3),2))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 1.15 0.45 0.18&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The pattern here is bad (gray), better (blue), best (green) from left to right. The true heterogeneous treatment effect function is depicted by the dashed red line. The third approach (the approach we advocate for in the BCF paper) is not &lt;em&gt;always&lt;/em&gt; better, but it is most of the time, sometimes by a very large margin. Try it out yourself, varying the sample size (&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;) and the two difficulty parameters (&lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusions&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Conclusions&lt;/h3&gt;
-&lt;p&gt;There are now many researchers working at the intersection of machine learning and causal inference. What distinguishes our work is a focus on building tools that work in practice, which requires understanding the role of regularization in causal inference and engineering methods that impose effective regularization schemes that have been calibrated to the kind of data we expect to encounter in common applications.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

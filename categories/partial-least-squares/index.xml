@@ -6,11 +6,7 @@
     <description>Recent content in partial least squares on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/categories/partial-least-squares/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/partial-least-squares/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
       <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>

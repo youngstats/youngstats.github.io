@@ -6,10 +6,15 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
+      <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
+      <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\); The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
+    </item>
     
     <item>
       <title>Developments in Bayesian Nonparametrics</title>
@@ -99,16 +104,6 @@ Speakers:
       <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
       <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data
 Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
-    </item>
-    
-    <item>
-      <title>Machine learning for causal inference that works</title>
-      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
-The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
   </channel>

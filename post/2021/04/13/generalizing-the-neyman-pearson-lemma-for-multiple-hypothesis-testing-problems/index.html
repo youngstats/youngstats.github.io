@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/hypothesis-testing">hypothesis-testing</a>
+  
+  </div>
+
+  <h1><span class="title">Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</span></h1>
+
+  
+  <h3 class="author">Ruth Heller and Saharon Rosset
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Let us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined <span class="math inline">\(\alpha\)</span>; The decision policy: for every realized sample define the decision <span class="math inline">\(D\in \{0,1\}\)</span>, where the null hypothesis is rejected if <span class="math inline">\(D=1\)</span> and retained otherwise. For simplicity, let <span class="math inline">\(z\)</span> be the realized test statistic on which the decision <span class="math inline">\(D\)</span> is based, and let <span class="math inline">\(g(z\mid h=1)\)</span> and <span class="math inline">\(g(z\mid h=0)\)</span> be, respectively, the non-null and the null density of <span class="math inline">\(z\)</span>. The optimization problem is therefore:
+<span class="math display">\[\max_{D:\mathbb R \rightarrow \{0,1\}} \int D(z)g(z\mid h=1)dz\\ s.t.\int D(z)g(z\mid h=0)dz\leq \alpha.  \]</span> This infinite dimensional integer problem happens to have a simple solution provided by the Neyman-Pearson (NP) Lemma.</p>
+<p>In this era of big data, conducting a study with a single hypothesis is rare. In many disciplines, hundreds or thousands of null hypotheses are tested in each study. In order to avoid an inflation of false positive findings, it is critical to use multiple testing procedures that guarantee that a meaningful error measure is controlled at a predefined level <span class="math inline">\(\alpha\)</span>. The most popular measures are the family wise error rate (FWER), i.e.,
+the probability of at least one type I error, and the false discovery rate (FDR), i.e., the expected false discovery proportion.</p>
+<p>Arguably, it is just as critical that the multiple testing procedure will have high statistical power, thus facilitating scientific discoveries. As with the single hypothesis testing problem, we take an optimization approach to the problem with <span class="math inline">\(K&gt;1\)</span> null hypotheses: we seek to find the <span class="math inline">\(K\)</span> decision functions, <span class="math inline">\(\vec D: {\mathbb R}^K\rightarrow \{0,1 \}^K\)</span>,
+that maximize some notion of power while guaranteeing that the error measure is at most <span class="math inline">\(\alpha\)</span>. In this post, we shall consider the problem of finding the optimal decision functions when testing multiple hypotheses in a couple of settings of interest.</p>
+<p>This post is based on our three recent papers on this topic: Rosset et al. (2018), where a general theoretical framework is presented; Heller and Rosset (2021), where the two-group model is discussed; and Heller, Krieger and Rosset (2021), where optimal clinical trial design is discussed.</p>
+</div>
+<div id="an-optimal-policy-for-the-two-group-model" class="section level2">
+<h2>An optimal policy for the two-group model</h2>
+<p>The two-group model, which is widely used in large scale inference problems, assumes a Bayesian setting, where the observed test statistics are generated independently from the mixture model <span class="math display">\[(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1),\]</span> where <span class="math inline">\(h\)</span> follows the <span class="math inline">\(Bernoulli(\pi)\)</span> distribution, and indicates as before whether the null is true <span class="math inline">\((h=0)\)</span> or false <span class="math inline">\((h=1)\)</span>. Let <span class="math inline">\(\vec z\)</span> be a vector of length <span class="math inline">\(K\)</span> generated according to the two group model, and consider the following optimization problem:
+<span class="math display">\[\max_{\vec D:{\mathbb R}^K \rightarrow \{0,1\}^K} \mathbb E(\vec h^t \vec D) \\ s.t. \ FDR(\vec D) \leq \alpha.\]</span> One of our main results is that the solution is to threshold the test statistic <span class="math display">\[\mathbb P(h=0\mid z) = \frac{(1-\pi)g(z\mid h=0)}{(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1)}, \]</span> and that the threshold depends on the entire vector of test statistics <span class="math inline">\(\vec z\)</span>. Thus for a realized vector of test statistics <span class="math inline">\(\vec z = (z_1, \ldots, z_K)\)</span>, the decision vector <span class="math inline">\(\vec D\)</span> can be described in the following form: <span class="math display">\[\vec D(\vec z) = (\mathbb I[\mathbb P(h=0\mid z_1)\leq t(\vec z)], \ldots, \mathbb I[\mathbb P(h=0\mid z_k)\leq t(\vec z)]),\]</span> where <span class="math inline">\(\mathbb I[\cdot]\)</span> is the indicator function. This leads to practical algorithms which improve theoretically and empirically on previous solutions for the two-group model.</p>
+</div>
+<div id="an-optimal-policy-for-the-design-of-clinical-trials" class="section level2">
+<h2>An optimal policy for the design of clinical trials</h2>
+<p>Assume that <span class="math inline">\(K=2\)</span> hypothesis testing problems are examined in a clinical trial (e.g., treatment effectiveness in two distinct subgroups). The federal agencies that approve drugs typically require strong FWER control at level <span class="math inline">\(\alpha = 0.05\)</span>. At the design stage, it is necessary to decide on the number of subjects that will be allocated. For <span class="math inline">\(K=1\)</span>, this is typically done by computing the minimal number of subjects for achieving minimal power with a type I error probability of <span class="math inline">\(\alpha\)</span>. For <span class="math inline">\(K=2\)</span>, with a relevant notion of required power <span class="math inline">\(\Pi(\vec D)\)</span>, a smaller number of subjects will need to be allocated, if the multiple testing procedure is the optimal policy, rather than an off-the-shelf policy. However, finding the optimal policy may be difficult since
+the policy has to guarantee that for every data generation with at least one null parameter value, the probability of rejecting the null hypothesis corresponding to the null parameter value should be at most <span class="math inline">\(\alpha\)</span> (i.e., there may be an infinite number of constraints for strong FWER control at level <span class="math inline">\(\alpha\)</span>).</p>
+<p>For simplicity, assume we have two independent test statistics that are normally distributed with variance one and expectation zero if the null hypothesis is true but negative if the null hypothesis is false. Then, the optimization problem can be formalized as follows:<br />
+<span class="math display">\[\max_{\vec D:{\mathbb R}^2 \rightarrow \{0,1\}^2} \Pi(\vec D) \\ s.t. \  \mathbb P_{(0, \theta)}(D_1=0) \leq \alpha \ \forall \ \theta &lt;0; \ \mathbb P_{( \theta, 0 )}(D_2=0) \leq \alpha \ \forall \ \theta &lt;0; \ \mathbb P_{(0, 0)}(\max(D_1,D_2)=0) \leq \alpha.\]</span></p>
+<p>We also add the common-sense restriction that <span class="math inline">\(p\)</span>-values above <span class="math inline">\(\alpha\)</span> are not rejected (for details, see Heller, Krieger, and Rosset 2021).<br />
+The resulting optimal rejection policy is attractive for relevant objectives <span class="math inline">\(\Pi(\vec D)\)</span> that can be useful for clinical trials.
+Below we provide one example optimal policy: the policy maximizing the average power when both test statistics have expectation -2 (left panel). For comparison, we provide the off-the-shelf popular Hochberg procedure (which coincides with the Hommel procedure for <span class="math inline">\(K=2\)</span>). Both policies satisfy the strong FWER control guarantee at level <span class="math inline">\(\alpha = 0.05\)</span>, but the average power of the optimal policy is 3% higher (63% versus 60%) if the test statistics are normally distributed with expectation -2. The color coding is as follows: in red, reject only the second hypothesis; in black, reject only the first hypothesis; in green, reject both hypotheses.</p>
+<p><img src="/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="this-post-is-based-on" class="section level2">
+<h2>This post is based on</h2>
+<p>Heller, R. Krieger, A. and Rosset, S. (2021) <em>Optimal multiple testing and design in clinical trials</em>. arXiv:2104.01346</p>
+<p>Heller, R. and Rosset, S. (2020) <em>Optimal control of false discovery criteria in the two-group model</em>. Journal of the Royal Statistical Society, Series B,
+<a href="https://doi.org/10.1111/rssb.12403" class="uri">https://doi.org/10.1111/rssb.12403</a></p>
+<p>Rosset, S. Heller, R. Painsky, A. and Aharoni, E. (2018) <em>Optimal and Maximin Procedures for Multiple Testing Problems</em>. arXiv: 1804.10256</p>
+</div>
+<div id="about-the-authors" class="section level2">
+<h2>About the authors</h2>
+<p><img src="/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headRuth.jpg" height="75" /></p>
+<p><strong>Ruth Heller</strong> is an Associate Professor of Statistics at Tel-Aviv University, Israel, <a href="mailto:ruheller@gmail.com" class="email">ruheller@gmail.com</a>. Her research interests are in multiple comparisons, nonparametrics, and observational studies.</p>
+<p><img src="/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headSaharon.png" height="75" /></p>
+<p><strong>Saharon Rosset</strong> is a Professor of Statistics at Tel-Aviv University, Israel, <a href="mailto:saharon@tauex.tau.ac.il" class="email">saharon@tauex.tau.ac.il</a>. His research interests are in Statistical Learning theory and methods
+and in Statistical Genetics.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
