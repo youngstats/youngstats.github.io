@@ -6,7 +6,145 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A small step to understand Generative Adversarial Networks</title>
+      <link>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+## Introduction
+
+In the last decade, there have been spectacular advances on the practical side of machine learning.
+One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation [@GoPoMiXuWaOzCoBe14]. State of the art models are capable of producing [portraits of fake persons](https://www.youtube.com/watch?v=XOxxPcy5Gr4) that look perfectly authentic to you and me (see e.g. [@SaGoZaChRaCg16] and [@Karras2018]). Other domains such as inpainting, text to image and speech are also concerned by outstanding results (see [@Go16] and [@JaLiBo20]).
+
+Since their introduction by [@GoPoMiXuWaOzCoBe14], GANs have unleashed passions in the community of machine learning, leading to a large volume of variants and possible applications, often referred to as [the GAN Zoo](https://github.com/hindupuravinash/the-gan-zoo).
+However, despite increasingly spectacular applications, little was known few years ago about the statistical properties of GANs.
+
+This post sketches the paper entitled \`\`Some Theoretical Properties of GANs&#39;&#39; (G. Biau, B. Cadre, M. Sangnier and U. Tanielian, The Annals of Statistics, 2020), which aims at building a statistical analysis of GANs in order to better understand their mathematical mechanism.
+In particular, it proves a non-asymptotic bound on the excess of Jensen-Shannon error and the asymptotic normality of the parametric estimator.
+
+## Mathematical framework
+
+### Overview of the method
+
+The objective of GANs is to randomly generate artificial contents similar to some data.
+Put another way, they are aimed at sampling according to an unknown distribution $P^\star$, based solely on i.i.d. observations $X_1, \dots, X_n$ drawn according to $P^\star$.
+Obviously, a naive approach would be to:
+
+1.  Estimate the distribution $P^\star$ by some $\hat P$.
+2.  Sample according to $\hat P$.
+
+However, both tasks are difficult in themselves.
+In particular, density estimation is made arduous by the complexity and high dimensionality of the data involved in the domain, relegating both standard parametric and nonparametric approaches unworkable.
+Thus, GANs offer a completely different way to achieve our goal, often compared to the struggle between a police team, trying to distinguish true banknotes (the observed data $X_1, \dots, X_n$) from false ones (the generated data), and a counterfeiters team (the generator), slaving to produce banknotes as credible as possible and to mislead the police.
+
+To be a bit more specific, there are two brilliant ideas at the core of GANs:
+
+1.  Sample data in a very straightforward manner thanks to the transform method: let $\mathscr G=\left \{G_{\theta}: \mathbb R^\ell \to \mathbb R^d, \theta \in \Theta \right\}$, where $\ell$ is the dimension of what is called the latent space and $\Theta \subset \mathbb R^p$, be a class of measurable functions, called generators (in practice $\mathscr G$ is often a class of neural networks with $p$ parameters). Now, let us sample $Z \sim \mathcal N(0, I_\ell)$ and compute $U = G_\theta(Z)$. Then, $U$ is an observation drawn according to the distribution $P_\theta = G_\theta \# N(0, I_\ell)$ (the push-forward measure of the latent distribution $N(0, I_\ell)$ according to $G_\theta$). In other words, the statistical model for the estimation of $P^\star$ has the form $\mathscr P = \left\{ P_\theta = G_\theta \# N(0, I_\ell), \theta \in \Theta \right\}$ and it is definitely straightforward to sample according to $P_\theta$.
+2.  Assessing the proximity between $P_\theta$ and $P^\star$ by comparing two samples $X_1, \dots, X_n \overset{i.i.d.}{\sim} P^\star$ and $U_1, \dots, U_n \overset{i.i.d.}{\sim} P_\theta$. What does comparing mean? Assume the group of $X_1, \dots, X_n$ is very difficult to \`\`separate&#39;&#39; from the group of $U_1, \dots, U_n$, or put another way, it is very difficult to distinguish the class of $X_1, \dots, X_n$ from the class of $U_1, \dots, U_n$. Would you be convinced that the two distributions $P_\theta$ and $P^\star$ are very close (at least for large $n$)? That is exactly the point.
+
+### Comparing distributions
+
+At this point, Task 2 is still a bit blurry and deserves further details about how to quantify the difficulty (or the ease) of separating the two classes $X_1, \dots, X_n$ and $U_1, \dots, U_n$.
+This problem is actually closely related to supervised learning, and in particular to classification: assume that a classifier, let us say $h : \mathbb R^d \to \{0, 1\}$, manages to perfectly discriminate the two classes: $\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = 1$, then we can say that the two distributions $P_\theta$ and $P^\star$ are different.
+Conversely, if the classifier is fooled, that is $\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = \frac 12$, we may accept that the two distributions are identical.
+
+This classification setting is formalized as following: let $(X, Y)$ be a pair of random variables taking values in $\mathbb R^d \times \{0, 1\}$ such that: $$
+    X|Y=1 \sim P^\star
+    \quad \text{and} \quad
+    X|Y=0 \sim P_\theta,
+    %\tag{M}
+$$ and let $\mathscr D = \left \{D_{\alpha} : \mathbb R^d \to [0, 1], \alpha \in \Lambda \right\}$, $\Lambda \subset \mathbb R^q$, be a parametric model of discriminators such that $D_\alpha(x)$ is aimed at estimating $\mathbb P(Y=1 | X=x)$ (put another way, the distribution of $Y|X=x$ is estimated by $\mathcal B(D_\alpha(x))$).
+For a given discriminator $D_\alpha$, the corresponding classifier is $h : x \in \mathbb R^d \mapsto \mathbb 1_{D_\alpha(x) &gt; \frac 12}$.
+
+The sample $\{ (X_1, 1), \dots, (X_n, 1), (U_1, 0), \dots, (U_n, 0) \}$, previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood: $$
+  \hat \alpha \in \operatorname*{arg\,max}_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+  \quad \text{where} \quad
+  \hat L(\theta, \alpha) = \frac 1n \sum_{i=1}^n \log(D_\alpha(X_i)) + \frac 1n \sum_{i=1}^n \log(1-D_\alpha(U_i)).
+$$ In addition, the maximal log-likelihood $\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)$ reflects exactly the ease of discrimination of the two classes $X_1, \dots, X_n$ and $U_1, \dots, U_n$, that is the proximity between $P_\theta$ and $P^\star$.
+Task 2 is thus performed by introducing a class of discriminators (which are often neural networks) and maximizing a log-likelihood.
+The latter quantity also helps in adjusting $\theta$ such that the distribution $P_{\theta}$ of the generated data $G_\theta(Z)$ becomes closer and closer to $P^\star$.
+
+In statistical terms, $P^\star$ can be estimated by $P_{\hat \theta}$, where: $$
+  \hat \theta \in \operatorname*{arg\,min}_{\theta \in \Theta} \sup_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+$$ where, as described previously, the generated data is $U_i = G_\theta (Z_i)$ with $Z_1, \dots, Z_n \overset{i.i.d.}{\sim} \mathcal N(0, I_\ell)$.
+
+The story of GANs is not that gleaming since, in practice, we never have access to $P_{\hat \theta}$, which may be a very complicated object, but only to the generator $G_{\hat \theta}$.
+Anyway, our aim is to sample according to $P^\star$, which can be achieved (up to the estimation error) thanks to $G_{\hat \theta}(Z)$, where $Z \sim \mathcal N(0, I_\ell)$.
+
+Actually, in this work, $P_\theta$ is just as a mathematical object helping to understand GANs.
+To go into details, the forthcoming results are based on the assumption that all distributions in play are absolutely continuous with respect to a known measure $\mu$ (typically the Hausdorff measure on some submanifold of $\mathbb R^d$) and probability density functions are noted with lowercase letters (in particular $P^\star = p^\star d\mu$ and $P_\theta = p_\theta d\mu$).
+
+## Results
+
+### Concerning the comparison of distributions
+
+In order to give a mathematical foundation to our intuition in Task 2, it may be useful to analyze the big sample case, where $$\hat L(\theta, \alpha) \approx \mathbb E [\hat L(\theta, \alpha)] = \mathbb E [\log(D_\alpha(X_1))] + \mathbb E [\log(1-D_\alpha\circ G_\theta(Z_1))].$$
+
+If the class of discriminators $\mathscr D = \left\{ D_\alpha, \alpha \in \Lambda \right\}$ is rich enough to contain the \`\`optimal&#39;&#39; discriminator $D_\theta^\star = \frac{p^\star}{p_\theta + p^\star}$ for all $\theta \in \Theta$, then $$\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] = 2 D_{JS}(P^\star, P_\theta) - \log 4,$$ where $D_{JS}$ is the Jensen-Shannon divergence [@EnSc03].
+
+Two things can be learned from this first result (still assuming that $\mathscr D$ contains \`\`optimal&#39;&#39; discriminators):
+
+1.  Up to the approximation capacity of $\mathscr D$, $\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)$ does reflect the proximity between $P_\theta$ and $P^\star$ (thanks to an approximated divergence).
+2.  $\hat \theta$ cannot be better than $\theta^\star \in \operatorname*{arg\,min}_{\theta \in \Theta} \sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] = \operatorname*{arg\,min}_{\theta \in \Theta} D_{JS}(P^\star, P_\theta)$, which leads to the approximation $P_{\theta^\star}$ of $P^\star$ obtained by minimizing the Jensen-Shannon divergence.
+
+### Non-asymptotic bound on Jensen-Shannon error
+
+Thus, GANs drive the world downhill in two directions:
+
+1.  A limited approximation capacity for the class of discriminators $\mathscr D$ (which may not contain the \`\`optimal&#39;&#39; discriminator $D_\theta^\star = \frac{p^\star}{p_\theta + p^\star}$ for all $\theta \in \Theta$): $\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] &lt; 2 D_{JS}(P^\star, P_\theta) - \log 4$.
+2.  A finite sample approximation: the criterion maximized is $\hat L(\theta, \alpha)$ instead of $\mathbb E [\hat L(\theta, \alpha)]$.
+
+These limitations introduce two kinds of error in the estimation procedure: an approximation error (or bias), induced by the richness of $\mathscr D$, and an estimation error (or variance) occurring from the finiteness of the sample.
+
+This can be formalized in the following manner: assume some regularity conditions of the first order on the models $\mathscr P$, $\mathscr G$ and $\mathscr D$ and assume that optimal discriminators $D_\theta^\star$ can be approximated by $\mathscr D$ up to an error $\epsilon&gt;0$ in $L^2$-norm.
+Then: $$
+  \mathbb E [D_{JS}(P^\star, P_{\hat \theta})] - D_{JS}(P^\star, P_{\theta^\star}) = O \left( \epsilon^2 + \frac{1}{\sqrt n} \right).
+$$
+
+This result explains quantitatively that the discriminators in GANs have to be tuned carefully: on the one hand, poor discriminators induce an uncontrolled gap between $\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]$ and $D_{JS}(P^\star, P_\theta)$; on the other hand, very flexible discriminators may lead to overfitting the finite sample.
+
+The first assertion is illustrated in the next figure.
+The numerical experiment has been set up with classes of fully connected neural networks for the generators and the discriminators (respectively $\mathscr G$ and $\mathscr D$) and $n$ sufficiently large.
+The depth of the generators is either 2 (blue bars) or 3 (green bars) and the depth of the discriminator ranges from 2 to 5 (from left to right).
+As expected, it appears clearly that the more flexible the discriminators are (from left to right), the smaller $D_{JS}(P^\star, P_{\hat \theta})$ is.
+Obviously, this is also inversely correlated with the richness of the class of generators $\mathscr G$ (at least in a first regime).
+
+![](divergences.png)
+
+### Asymptotic normality
+
+As a second important result, it can be shown that the estimator $\hat \theta$ is asymptotically normal with convergence rate $\sqrt n$.
+More formally, let us assume $\bar \theta \in \operatorname*{arg\,min}_{\theta\in\Theta} \sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]$ exists and is unique.
+Let also assume some regularity conditions of the second order on the models $\mathscr P$, $\mathscr G$ and $\mathscr D$, well definiteness and smoothness of $\theta \mapsto \operatorname*{arg\,max}_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]$ around $\bar \theta$.
+Then, there exists a covariance matrice $\Sigma$ such that: $$
+  \sqrt n \left( \hat \theta - \bar \theta \right) \xrightarrow{dist} \mathcal N(0, \Sigma).
+$$
+
+## Conclusion
+
+GANs have been statistically analyzed from the estimation point of view.
+Even though some simplifications were made (known dominating measure $\mu$, uniqueness of some quantities) compared to the empirical setting based on deep neural networks, the theoretical results show the importance of tuning correctly the architecture of the discriminators, and exhibit an asymptotic behavior similar to that of a standard M-estimator.
+
+It remains to study the impact of the architecture of neural nets on the performance of GANs, as well as their behavior in an overparametrized regime.
+But that&#39;s a different story.
+
+**This post is based on**
+
+G. Biau, B. Cadre, M. Sangnier and U.
+Tanielian.
+2020.
+\`\`Some Theoretical Properties of GANs.&#39;&#39; The Annals of Statistics 48(3): 1539-1566.
+
+# References
+</description>
+    </item>
+    
     <item>
       <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
       <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
@@ -62,7 +200,7 @@ and in Statistical Genetics.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Developments in Bayesian Nonparametrics</title>
+      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
       <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
@@ -76,13 +214,13 @@ The focus of this webinar will be on illustrating modern advances in Bayesian No
 &lt;/ul&gt;
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://csml.stats.ox.ac.uk/people/panero/&#34;&gt;Francesca Panero&lt;/a&gt; (University of Oxford, UK): &lt;em&gt;&amp;ldquo;Sparse Spatial Random Graphs&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://martacatalano.github.io/&#34;&gt;Marta Catalano&lt;/a&gt; (University of Torino, Italy). &lt;em&gt;&amp;ldquo;Measuring dependence in the Wasserstein distance for Bayesian nonparametric models&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://salleuska.github.io/&#34;&gt;Sally Paganin&lt;/a&gt; (Harvard School of Public Health, USA) &lt;em&gt;&amp;ldquo;Informative model-based clustering via Centered Partition Processes&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://francescapanero.github.io/&#34;&gt;Francesca Panero&lt;/a&gt; (University of Oxford, UK): &lt;em&gt;&amp;ldquo;Sparse Spatial Random Graphs&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://martacatalano.github.io/&#34;&gt;Marta Catalano&lt;/a&gt; (University of Torino, Italy). &lt;em&gt;&amp;ldquo;Measuring dependence in the Wasserstein distance for Bayesian nonparametric models&amp;rdquo;&lt;/em&gt; [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Catalano.pdf&#34;&gt;talk slides&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://salleuska.github.io/&#34;&gt;Sally Paganin&lt;/a&gt; (Harvard School of Public Health, USA) &lt;em&gt;&amp;ldquo;Informative model-based clustering via Centered Partition Processes&amp;rdquo;&lt;/em&gt;  [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Paganin.pdf&#34;&gt;talk slides&lt;/a&gt;]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Discussant:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sites.google.com/unimib.it/camerlenghi-federico/&#34;&gt;Federico Camerlenghi&lt;/a&gt; (University of Milano Bicocca, Italy)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/unimib.it/camerlenghi-federico/&#34;&gt;Federico Camerlenghi&lt;/a&gt; (University of Milano Bicocca, Italy) [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Discussion_Camerlenghi.pdf&#34;&gt;discussion slides&lt;/a&gt;]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;For more information, please visit our &lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;&lt;/p&gt;
@@ -843,62 +981,6 @@ Figure 2. Simulated data and different classifiers.
 &lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/BerrettTB.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;https://thomasberrett.github.io&#34;&gt;Thomas B. Berrett&lt;/a&gt; is an Assistant Professor in the Department of Statistics at the University of Warwick. He completed his PhD with Prof Richard Samworth in the Statistical Laboratory at the University of Cambridge in 2018, and later worked as a Postdoc with Prof Cristina Butucea at CREST, ENSAE, Institut Polytechnique de Paris.&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-29-local-knn/SamworthRJ.jpg&#34; class=&#34;class&#34; style=&#34;width:10.0%&#34; /&gt; &lt;a href=&#34;http://www.statslab.cam.ac.uk/~rjs57/&#34;&gt;Richard J. Samworth&lt;/a&gt; is Professor of Statistical Science and Director of the Statistical Laboratory at the University of Cambridge. He is also a Teaching Fellow at St John’s College.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
-      <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;em&gt;We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets. These latent variables are constructed according to specific covariance or correlation requirements. As such the latent variables can be used as a data reduction tool that sheds light on the relationship between the datasets. For two blocks of data there are four established PLS methods that can be used to construct these latent variables:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;PLS-SVD&lt;/li&gt;
-&lt;li&gt;PLS-W2A&lt;/li&gt;
-&lt;li&gt;Canonical correlation analysis (CCA)&lt;/li&gt;
-&lt;li&gt;PLS-R&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;These methods provide a range of useful methods for data exploration and prediction for datasets with high dimensional structure. However, as shown in the sparse PCA literature (Johnstone 2004) in high dimensional settings (&lt;span class=&#34;math inline&#34;&gt;\(n&amp;lt;&amp;lt;p\)&lt;/span&gt;) the standard latent variable estimates may be biased and sparsity inducing methods are a natural choice. After reviewing the two-block PLS methods and placing them in a common framework we provide details for the application of sparse PLS methods that use regularisation via either the lasso or sparse group lasso penalisation.&lt;/p&gt;
-&lt;div id=&#34;finding-the-latent-variables&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Finding the Latent variables&lt;/h3&gt;
-&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(X: n\times p\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y: n\times q\)&lt;/span&gt; be the datasets comprised of n observations on p and q variables respectively, the latent variables &lt;span class=&#34;math inline&#34;&gt;\(\xi = X u\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\omega = Y v\)&lt;/span&gt; bare a striking similarity to the principal components from principal component analysis (PCA) where &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; is a p-vector and &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; is a q-vector. The PLS-SVD, PLS-W2A and PLS-R methods optimise the sample covariance between the latent variables
-&lt;span class=&#34;math display&#34;&gt;\[
-\text{max}_{\xi,\omega} \widehat{Cov}(\xi, \omega) \rightarrow \text{max}_{u,v} \widehat{Cov}(Xu, Yv) = \text{max}_{u,v} u^TX^TYv
-\]&lt;/span&gt;
-subject to &lt;span class=&#34;math inline&#34;&gt;\(\|u\|=\|v\| = 1\)&lt;/span&gt; and orthogonality constraints for the different methods. Whereas CCA optimises
-&lt;span class=&#34;math display&#34;&gt;\[
-\text{max}_{\xi,\omega} \widehat{Corr}(\xi, \omega) \rightarrow\text{max}_{u,v} \widehat{Corr}(Xu, Yv) = \text{max}_{u,v} u^T(X^TX)^{-1/2}X^TY(Y^TY)^{-1/2}v
-\]&lt;/span&gt;
-subject to orthogonality constraints similar to the PLS-SVD. These orthogonality constraints are enforced by removing the effect of the constructed latent variables using projection matrices. Once the effect has been removed the optimisation is repeated on the projected data. This process is the same for all PLS methods and can be simply adjusted to allow for sparsity in the weights (&lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt;) using sparse regularising penalties (e.g. lasso, group lasso, sparse group lasso).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;computational-speedups&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Computational speedups&lt;/h3&gt;
-&lt;p&gt;Due to the algorithmic similarity of the different methods some additional computational approaches can be used to speed up the required computation for the PLS approach. In our paper, we consider reducing memory requirements and speeding up computation by making use of the “bigmemory” R package to allocate shared memory and make use of memory-mapped files. Rather than loading the full matrices when computing the matrix cross-product (&lt;span class=&#34;math inline&#34;&gt;\(X^TY\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(X^TX\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(Y^TY\)&lt;/span&gt;) we instead read chucks of the matrices, compute the cross-product on these chucks in parallel, and add these cross-products together, ie.
-&lt;span class=&#34;math display&#34;&gt;\[
-X^TY = \sum_{c=1}^CX_c^TY_c
-\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(X_c\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y_c\)&lt;/span&gt; are matrix chucks formed as the subsets of the rows of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Additional computational approaches are used for when either p or q are large or when n is very large and data is streaming in while q is small.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;example-on-emnist&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Example on EMNIST&lt;/h3&gt;
-&lt;p&gt;We show an example using PLS regression for a discrimination task, namely the extended MNIST dataset. This data set consists of n = 280,000 handwritten digit images. It contains an equal number of samples for each digit class (0 to 9) where the dimension of the predictors is &lt;span class=&#34;math inline&#34;&gt;\(p=784\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(q=10\)&lt;/span&gt; classes. The images are already split into a training set of 240,000 cases and a test set of 40,000 cases. Since we have a large sample size &lt;span class=&#34;math inline&#34;&gt;\(n &amp;gt; p, q\)&lt;/span&gt; we opt not to consider regularisation for this example. The PLS-DA method is able to recover an accuracy of 86% in around 3 minutes using 20 latent variables and 2 cores.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-01-28-pls-for-big-data/EMNISTw.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We investigated the relationship between the number of chunks and the number of cores used in the algorithm. The plot below shows the elapsed computation time for fitting a single component of the PLS discriminant analysis algorithm using 2, 4 or 6 cores (on a laptop equipped with 8 cores). On the vertical axis, &lt;span class=&#34;math inline&#34;&gt;\(ngx\)&lt;/span&gt; indicates that &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; chunks were used in our algorithm.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references-and-related-work&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;References and related work&lt;/h3&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Johnstone, I. M. and Lu, A. Y. (2004) Sparse principal component analysis. Technical Report. Department of Statistics, Stanford University, Stanford.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Sutton, M., Thiébaut, R., &amp;amp; Liquet, B. (2018). Sparse partial least squares with group and subgroup structure. Statistics in Medicine, 37(23), 3338–3356.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Lafaye de Micheaux, P., Liquet, B., &amp;amp; Sutton, M. (2019). PLS for Big Data: A unified parallel algorithm for regularised group PLS. Statistics Surveys, 13, 119–149.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Liquet, B., Lafaye de Micheaux, P., Hejblum, B. P., &amp;amp; Thiébaut, R. (2016). Group and sparse group partial least square approaches applied in genomics context. Bioinformatics , 32(1), 35–42.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;/div&gt;
 </description>
     </item>

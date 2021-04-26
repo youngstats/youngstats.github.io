@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>discriminator family on YoungStatS</title>
+    <link>https://youngstats.github.io/tags/discriminator-family/</link>
+    <description>Recent content in discriminator family on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/tags/discriminator-family/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A small step to understand Generative Adversarial Networks</title>
+      <link>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,13 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>Developments in Bayesian Nonparametrics</title>
+      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
       <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
