@@ -66,27 +66,27 @@ assume that a classifier, let us say &lt;span class=&#34;math inline&#34;&gt;\(h
 Conversely, if the classifier is fooled, that is &lt;span class=&#34;math inline&#34;&gt;\(\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = \frac 12\)&lt;/span&gt;, we may accept that the two distributions are identical.&lt;/p&gt;
 &lt;p&gt;This classification setting is formalized as following:
 let &lt;span class=&#34;math inline&#34;&gt;\((X, Y)\)&lt;/span&gt; be a pair of random variables taking values in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb R^d \times \{0, 1\}\)&lt;/span&gt; such that:
-[
-X|Y=1 P^
- 
-X|Y=0 P_,
-%
-]
+&lt;span class=&#34;math display&#34;&gt;\[
+    X|Y=1 \sim P^\star
+    \quad \text{and} \quad
+    X|Y=0 \sim P_\theta,
+    %\tag{M}
+\]&lt;/span&gt;
 and let &lt;span class=&#34;math inline&#34;&gt;\(\mathscr D = \left \{D_{\alpha} : \mathbb R^d \to [0, 1], \alpha \in \Lambda \right\}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\Lambda \subset \mathbb R^q\)&lt;/span&gt;, be a parametric model of discriminators such that &lt;span class=&#34;math inline&#34;&gt;\(D_\alpha(x)\)&lt;/span&gt; is aimed at estimating &lt;span class=&#34;math inline&#34;&gt;\(\mathbb P(Y=1 | X=x)\)&lt;/span&gt; (put another way, the distribution of &lt;span class=&#34;math inline&#34;&gt;\(Y|X=x\)&lt;/span&gt; is estimated by &lt;span class=&#34;math inline&#34;&gt;\(\mathcal B(D_\alpha(x))\)&lt;/span&gt;).
 For a given discriminator &lt;span class=&#34;math inline&#34;&gt;\(D_\alpha\)&lt;/span&gt;, the corresponding classifier is &lt;span class=&#34;math inline&#34;&gt;\(h : x \in \mathbb R^d \mapsto \mathbb 1_{D_\alpha(x) &amp;gt; \frac 12}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The sample ({ (X_1, 1), , (X_n, 1), (U_1, 0), , (U_n, 0) }), previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood:
-[
-&lt;em&gt;{} L(, ),
- 
-L(, ) = 1n &lt;/em&gt;{i=1}^n (D_(X_i)) + 1n &lt;em&gt;{i=1}^n (1-D&lt;/em&gt;(U_i)).
-]
+&lt;span class=&#34;math display&#34;&gt;\[
+  \hat \alpha \in \operatorname*{arg\,max}_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+  \quad \text{where} \quad
+  \hat L(\theta, \alpha) = \frac 1n \sum_{i=1}^n \log(D_\alpha(X_i)) + \frac 1n \sum_{i=1}^n \log(1-D_\alpha(U_i)).
+\]&lt;/span&gt;
 In addition, the maximal log-likelihood &lt;span class=&#34;math inline&#34;&gt;\(\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)\)&lt;/span&gt; reflects exactly the ease of discrimination of the two classes &lt;span class=&#34;math inline&#34;&gt;\(X_1, \dots, X_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(U_1, \dots, U_n\)&lt;/span&gt;, that is the proximity between &lt;span class=&#34;math inline&#34;&gt;\(P_\theta\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(P^\star\)&lt;/span&gt;.
 Task 2 is thus performed by introducing a class of discriminators (which are often neural networks) and maximizing a log-likelihood.
 The latter quantity also helps in adjusting &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; such that the distribution &lt;span class=&#34;math inline&#34;&gt;\(P_{\theta}\)&lt;/span&gt; of the generated data &lt;span class=&#34;math inline&#34;&gt;\(G_\theta(Z)\)&lt;/span&gt; becomes closer and closer to &lt;span class=&#34;math inline&#34;&gt;\(P^\star\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;In statistical terms, &lt;span class=&#34;math inline&#34;&gt;\(P^\star\)&lt;/span&gt; can be estimated by &lt;span class=&#34;math inline&#34;&gt;\(P_{\hat \theta}\)&lt;/span&gt;, where:
-[
-&lt;em&gt;{} &lt;/em&gt;{} L(, ),
-]
+&lt;span class=&#34;math display&#34;&gt;\[
+  \hat \theta \in \operatorname*{arg\,min}_{\theta \in \Theta} \sup_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+\]&lt;/span&gt;
 where, as described previously, the generated data is &lt;span class=&#34;math inline&#34;&gt;\(U_i = G_\theta (Z_i)\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(Z_1, \dots, Z_n \overset{i.i.d.}{\sim} \mathcal N(0, I_\ell)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The story of GANs is not that gleaming since, in practice, we never have access to &lt;span class=&#34;math inline&#34;&gt;\(P_{\hat \theta}\)&lt;/span&gt;, which may be a very complicated object, but only to the generator &lt;span class=&#34;math inline&#34;&gt;\(G_{\hat \theta}\)&lt;/span&gt;.
 Anyway, our aim is to sample according to &lt;span class=&#34;math inline&#34;&gt;\(P^\star\)&lt;/span&gt;, which can be achieved (up to the estimation error) thanks to &lt;span class=&#34;math inline&#34;&gt;\(G_{\hat \theta}(Z)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(Z \sim \mathcal N(0, I_\ell)\)&lt;/span&gt;.&lt;/p&gt;
@@ -124,9 +124,9 @@ and an estimation error (or variance) occurring from the finiteness of the sampl
 assume some regularity conditions of the first order on the models &lt;span class=&#34;math inline&#34;&gt;\(\mathscr P\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathscr G\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\mathscr D\)&lt;/span&gt;
 and assume that optimal discriminators &lt;span class=&#34;math inline&#34;&gt;\(D_\theta^\star\)&lt;/span&gt; can be approximated by &lt;span class=&#34;math inline&#34;&gt;\(\mathscr D\)&lt;/span&gt; up to an error &lt;span class=&#34;math inline&#34;&gt;\(\epsilon&amp;gt;0\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt;-norm.
 Then:
-[
-E [D_{JS}(P^, P_{})] - D_{JS}(P^, P_{^}) = O ( ^2 +  ).
-]&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[
+  \mathbb E [D_{JS}(P^\star, P_{\hat \theta})] - D_{JS}(P^\star, P_{\theta^\star}) = O \left( \epsilon^2 + \frac{1}{\sqrt n} \right).
+\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;This result explains quantitatively that the discriminators in GANs have to be tuned carefully:
 on the one hand, poor discriminators induce an uncontrolled gap between &lt;span class=&#34;math inline&#34;&gt;\(\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D_{JS}(P^\star, P_\theta)\)&lt;/span&gt;;
 on the other hand, very flexible discriminators may lead to overfitting the finite sample.&lt;/p&gt;
@@ -144,9 +144,9 @@ More formally, let us assume &lt;span class=&#34;math inline&#34;&gt;\(\bar \the
 Let also assume some regularity conditions of the second order on the models &lt;span class=&#34;math inline&#34;&gt;\(\mathscr P\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathscr G\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\mathscr D\)&lt;/span&gt;,
 well definiteness and smoothness of &lt;span class=&#34;math inline&#34;&gt;\(\theta \mapsto \operatorname*{arg\,max}_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)&lt;/span&gt; around &lt;span class=&#34;math inline&#34;&gt;\(\bar \theta\)&lt;/span&gt;.
 Then, there exists a covariance matrice &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt; such that:
-[
-n ( - )  N(0, ).
-]&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[
+  \sqrt n \left( \hat \theta - \bar \theta \right) \xrightarrow{dist} \mathcal N(0, \Sigma).
+\]&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;

@@ -134,27 +134,27 @@ assume that a classifier, let us say <span class="math inline">\(h : \mathbb R^d
 Conversely, if the classifier is fooled, that is <span class="math inline">\(\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = \frac 12\)</span>, we may accept that the two distributions are identical.</p>
 <p>This classification setting is formalized as following:
 let <span class="math inline">\((X, Y)\)</span> be a pair of random variables taking values in <span class="math inline">\(\mathbb R^d \times \{0, 1\}\)</span> such that:
-[
-X|Y=1 P^
- 
-X|Y=0 P_,
-%
-]
+<span class="math display">\[
+    X|Y=1 \sim P^\star
+    \quad \text{and} \quad
+    X|Y=0 \sim P_\theta,
+    %\tag{M}
+\]</span>
 and let <span class="math inline">\(\mathscr D = \left \{D_{\alpha} : \mathbb R^d \to [0, 1], \alpha \in \Lambda \right\}\)</span>, <span class="math inline">\(\Lambda \subset \mathbb R^q\)</span>, be a parametric model of discriminators such that <span class="math inline">\(D_\alpha(x)\)</span> is aimed at estimating <span class="math inline">\(\mathbb P(Y=1 | X=x)\)</span> (put another way, the distribution of <span class="math inline">\(Y|X=x\)</span> is estimated by <span class="math inline">\(\mathcal B(D_\alpha(x))\)</span>).
 For a given discriminator <span class="math inline">\(D_\alpha\)</span>, the corresponding classifier is <span class="math inline">\(h : x \in \mathbb R^d \mapsto \mathbb 1_{D_\alpha(x) &gt; \frac 12}\)</span>.</p>
 <p>The sample ({ (X_1, 1), , (X_n, 1), (U_1, 0), , (U_n, 0) }), previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood:
-[
-<em>{} L(, ),
- 
-L(, ) = 1n </em>{i=1}^n (D_(X_i)) + 1n <em>{i=1}^n (1-D</em>(U_i)).
-]
+<span class="math display">\[
+  \hat \alpha \in \operatorname*{arg\,max}_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+  \quad \text{where} \quad
+  \hat L(\theta, \alpha) = \frac 1n \sum_{i=1}^n \log(D_\alpha(X_i)) + \frac 1n \sum_{i=1}^n \log(1-D_\alpha(U_i)).
+\]</span>
 In addition, the maximal log-likelihood <span class="math inline">\(\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)\)</span> reflects exactly the ease of discrimination of the two classes <span class="math inline">\(X_1, \dots, X_n\)</span> and <span class="math inline">\(U_1, \dots, U_n\)</span>, that is the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span>.
 Task 2 is thus performed by introducing a class of discriminators (which are often neural networks) and maximizing a log-likelihood.
 The latter quantity also helps in adjusting <span class="math inline">\(\theta\)</span> such that the distribution <span class="math inline">\(P_{\theta}\)</span> of the generated data <span class="math inline">\(G_\theta(Z)\)</span> becomes closer and closer to <span class="math inline">\(P^\star\)</span>.</p>
 <p>In statistical terms, <span class="math inline">\(P^\star\)</span> can be estimated by <span class="math inline">\(P_{\hat \theta}\)</span>, where:
-[
-<em>{} </em>{} L(, ),
-]
+<span class="math display">\[
+  \hat \theta \in \operatorname*{arg\,min}_{\theta \in \Theta} \sup_{\alpha \in \Lambda} \hat L(\theta, \alpha),
+\]</span>
 where, as described previously, the generated data is <span class="math inline">\(U_i = G_\theta (Z_i)\)</span> with <span class="math inline">\(Z_1, \dots, Z_n \overset{i.i.d.}{\sim} \mathcal N(0, I_\ell)\)</span>.</p>
 <p>The story of GANs is not that gleaming since, in practice, we never have access to <span class="math inline">\(P_{\hat \theta}\)</span>, which may be a very complicated object, but only to the generator <span class="math inline">\(G_{\hat \theta}\)</span>.
 Anyway, our aim is to sample according to <span class="math inline">\(P^\star\)</span>, which can be achieved (up to the estimation error) thanks to <span class="math inline">\(G_{\hat \theta}(Z)\)</span>, where <span class="math inline">\(Z \sim \mathcal N(0, I_\ell)\)</span>.</p>
@@ -192,9 +192,9 @@ and an estimation error (or variance) occurring from the finiteness of the sampl
 assume some regularity conditions of the first order on the models <span class="math inline">\(\mathscr P\)</span>, <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>
 and assume that optimal discriminators <span class="math inline">\(D_\theta^\star\)</span> can be approximated by <span class="math inline">\(\mathscr D\)</span> up to an error <span class="math inline">\(\epsilon&gt;0\)</span> in <span class="math inline">\(L^2\)</span>-norm.
 Then:
-[
-E [D_{JS}(P^, P_{})] - D_{JS}(P^, P_{^}) = O ( ^2 +  ).
-]</p>
+<span class="math display">\[
+  \mathbb E [D_{JS}(P^\star, P_{\hat \theta})] - D_{JS}(P^\star, P_{\theta^\star}) = O \left( \epsilon^2 + \frac{1}{\sqrt n} \right).
+\]</span></p>
 <p>This result explains quantitatively that the discriminators in GANs have to be tuned carefully:
 on the one hand, poor discriminators induce an uncontrolled gap between <span class="math inline">\(\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> and <span class="math inline">\(D_{JS}(P^\star, P_\theta)\)</span>;
 on the other hand, very flexible discriminators may lead to overfitting the finite sample.</p>
@@ -212,9 +212,9 @@ More formally, let us assume <span class="math inline">\(\bar \theta \in \operat
 Let also assume some regularity conditions of the second order on the models <span class="math inline">\(\mathscr P\)</span>, <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>,
 well definiteness and smoothness of <span class="math inline">\(\theta \mapsto \operatorname*{arg\,max}_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> around <span class="math inline">\(\bar \theta\)</span>.
 Then, there exists a covariance matrice <span class="math inline">\(\Sigma\)</span> such that:
-[
-n ( - )  N(0, ).
-]</p>
+<span class="math display">\[
+  \sqrt n \left( \hat \theta - \bar \theta \right) \xrightarrow{dist} \mathcal N(0, \Sigma).
+\]</span></p>
 </div>
 </div>
 <div id="conclusion" class="section level2">
