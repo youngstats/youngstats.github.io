@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>A small step to understand Generative Adversarial Networks | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/machine-learning">machine-learning</a>
+  
+  </div>
+
+  <h1><span class="title">A small step to understand Generative Adversarial Networks</span></h1>
+
+  
+  <h3 class="author">Gérard Biau,  Benoît Cadre,  Maxime Sangnier and Ugo Tanielian
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In the last decade, there have been spectacular advances on the practical side of machine learning.
+One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14" role="doc-biblioref">Goodfellow et al. 2014</a>)</span>.
+State of the art models are capable of producing <a href="https://www.youtube.com/watch?v=XOxxPcy5Gr4">portraits of fake persons</a> that look perfectly authentic to you and me (see e.g. <span class="citation">(<a href="#ref-SaGoZaChRaCg16" role="doc-biblioref">Salimans et al. 2016</a>)</span> and <span class="citation">(<a href="#ref-Karras2018" role="doc-biblioref">Karras et al. 2018</a>)</span>).
+Other domains such as inpainting, text to image and speech are also concerned by outstanding results (see <span class="citation">(<a href="#ref-Go16" role="doc-biblioref">Goodfellow 2016</a>)</span> and <span class="citation">(<a href="#ref-JaLiBo20" role="doc-biblioref">Jabbar, Li, and Bourahla 2020</a>)</span>).</p>
+<p>Since their introduction by <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14" role="doc-biblioref">Goodfellow et al. 2014</a>)</span>, GANs have unleashed passions in the community of machine learning, leading to a large volume of variants and possible applications, often referred to as <a href="https://github.com/hindupuravinash/the-gan-zoo">the GAN Zoo</a>.
+However, despite increasingly spectacular applications, little was known few years ago about the statistical properties of GANs.</p>
+<p>This post sketches the paper entitled ``Some Theoretical Properties of GANs’’ (G. Biau, B. Cadre, M. Sangnier and U. Tanielian, The Annals of Statistics, 2020),
+which aims at building a statistical analysis of GANs in order to better understand their mathematical mechanism.
+In particular, it proves a non-asymptotic bound on the excess of Jensen-Shannon error and the asymptotic normality of the parametric estimator.</p>
+</div>
+<div id="mathematical-framework" class="section level2">
+<h2>Mathematical framework</h2>
+<div id="overview-of-the-method" class="section level3">
+<h3>Overview of the method</h3>
+<p>The objective of GANs is to randomly generate artificial contents similar to some data.
+Put another way, they are aimed at sampling according to an unknown distribution <span class="math inline">\(P^\star\)</span>, based solely on i.i.d. observations <span class="math inline">\(X_1, \dots, X_n\)</span> drawn according to <span class="math inline">\(P^\star\)</span>.
+Obviously, a naive approach would be to:</p>
+<ol style="list-style-type: decimal">
+<li>Estimate the distribution <span class="math inline">\(P^\star\)</span> by some <span class="math inline">\(\hat P\)</span>.</li>
+<li>Sample according to <span class="math inline">\(\hat P\)</span>.</li>
+</ol>
+<p>However, both tasks are difficult in themselves.
+In particular, density estimation is made arduous by the complexity and high dimensionality of the data involved in the domain, relegating both standard parametric and nonparametric approaches unworkable.
+Thus, GANs offer a completely different way to achieve our goal, often compared to the struggle between a police team, trying to distinguish true banknotes (the observed data <span class="math inline">\(X_1, \dots, X_n\)</span>) from false ones (the generated data), and a counterfeiters team (the generator), slaving to produce banknotes as credible as possible and to mislead the police.</p>
+<p>To be a bit more specific, there are two brilliant ideas at the core of GANs:</p>
+<ol style="list-style-type: decimal">
+<li>Sample data in a very straightforward manner thanks to the transform method:
+let <span class="math inline">\(\mathscr G=\left \{G_{\theta}: \mathbb R^\ell \to \mathbb R^d, \theta \in \Theta \right\}\)</span>, where <span class="math inline">\(\ell\)</span> is the dimension of what is called the latent space and <span class="math inline">\(\Theta \subset \mathbb R^p\)</span>, be a class of measurable functions, called generators (in practice <span class="math inline">\(\mathscr G\)</span> is often a class of neural networks with <span class="math inline">\(p\)</span> parameters).
+Now, let us sample <span class="math inline">\(Z \sim \mathcal N(0, I_\ell)\)</span> and compute <span class="math inline">\(U = G_\theta(Z)\)</span>.
+Then, <span class="math inline">\(U\)</span> is an observation drawn according to the distribution <span class="math inline">\(P_\theta = G_\theta \# N(0, I_\ell)\)</span> (the push-forward measure of the latent distribution (N(0, I_)) according to (G_)).
+In other words, the statistical model for the estimation of <span class="math inline">\(P^\star\)</span> has the form <span class="math inline">\(\mathscr P = \left\{ P_\theta = G_\theta \# N(0, I_\ell), \theta \in \Theta \right\}\)</span> and it is definitely straightforward to sample according to <span class="math inline">\(P_\theta\)</span>.</li>
+<li>Assessing the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> by comparing two samples <span class="math inline">\(X_1, \dots, X_n \overset{i.i.d.}{\sim} P^\star\)</span> and <span class="math inline">\(U_1, \dots, U_n \overset{i.i.d.}{\sim} P_\theta\)</span>.
+What does comparing mean?
+Assume the group of <span class="math inline">\(X_1, \dots, X_n\)</span> is very difficult to ``separate’’ from the group of <span class="math inline">\(U_1, \dots, U_n\)</span>, or put another way,
+it is very difficult to distinguish the class of <span class="math inline">\(X_1, \dots, X_n\)</span> from the class of <span class="math inline">\(U_1, \dots, U_n\)</span>.
+Would you be convinced that the two distributions <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> are very close (at least for large <span class="math inline">\(n\)</span>)?
+That is exactly the point.</li>
+</ol>
+</div>
+<div id="comparing-distributions" class="section level3">
+<h3>Comparing distributions</h3>
+<p>At this point, Task 2 is still a bit blurry and deserves further details about how to quantify the difficulty (or the ease) of separating the two classes <span class="math inline">\(X_1, \dots, X_n\)</span> and <span class="math inline">\(U_1, \dots, U_n\)</span>.
+This problem is actually closely related to supervised learning, and in particular to classification:
+assume that a classifier, let us say <span class="math inline">\(h : \mathbb R^d \to \{0, 1\}\)</span>, manages to perfectly discriminate the two classes: <span class="math inline">\(\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = 1\)</span>, then we can say that the two distributions <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> are different.
+Conversely, if the classifier is fooled, that is <span class="math inline">\(\mathbb P(h(X_1)=1) = \mathbb P(h(U_1)=0) = \frac 12\)</span>, we may accept that the two distributions are identical.</p>
+<p>This classification setting is formalized as following:
+let <span class="math inline">\((X, Y)\)</span> be a pair of random variables taking values in <span class="math inline">\(\mathbb R^d \times \{0, 1\}\)</span> such that:
+[
+X|Y=1 P^
+ 
+X|Y=0 P_,
+%
+]
+and let <span class="math inline">\(\mathscr D = \left \{D_{\alpha} : \mathbb R^d \to [0, 1], \alpha \in \Lambda \right\}\)</span>, <span class="math inline">\(\Lambda \subset \mathbb R^q\)</span>, be a parametric model of discriminators such that <span class="math inline">\(D_\alpha(x)\)</span> is aimed at estimating <span class="math inline">\(\mathbb P(Y=1 | X=x)\)</span> (put another way, the distribution of <span class="math inline">\(Y|X=x\)</span> is estimated by <span class="math inline">\(\mathcal B(D_\alpha(x))\)</span>).
+For a given discriminator <span class="math inline">\(D_\alpha\)</span>, the corresponding classifier is <span class="math inline">\(h : x \in \mathbb R^d \mapsto \mathbb 1_{D_\alpha(x) &gt; \frac 12}\)</span>.</p>
+<p>The sample ({ (X_1, 1), , (X_n, 1), (U_1, 0), , (U_n, 0) }), previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood:
+[
+<em>{} L(, ),
+ 
+L(, ) = 1n </em>{i=1}^n (D_(X_i)) + 1n <em>{i=1}^n (1-D</em>(U_i)).
+]
+In addition, the maximal log-likelihood <span class="math inline">\(\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)\)</span> reflects exactly the ease of discrimination of the two classes <span class="math inline">\(X_1, \dots, X_n\)</span> and <span class="math inline">\(U_1, \dots, U_n\)</span>, that is the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span>.
+Task 2 is thus performed by introducing a class of discriminators (which are often neural networks) and maximizing a log-likelihood.
+The latter quantity also helps in adjusting <span class="math inline">\(\theta\)</span> such that the distribution <span class="math inline">\(P_{\theta}\)</span> of the generated data <span class="math inline">\(G_\theta(Z)\)</span> becomes closer and closer to <span class="math inline">\(P^\star\)</span>.</p>
+<p>In statistical terms, <span class="math inline">\(P^\star\)</span> can be estimated by <span class="math inline">\(P_{\hat \theta}\)</span>, where:
+[
+<em>{} </em>{} L(, ),
+]
+where, as described previously, the generated data is <span class="math inline">\(U_i = G_\theta (Z_i)\)</span> with <span class="math inline">\(Z_1, \dots, Z_n \overset{i.i.d.}{\sim} \mathcal N(0, I_\ell)\)</span>.</p>
+<p>The story of GANs is not that gleaming since, in practice, we never have access to <span class="math inline">\(P_{\hat \theta}\)</span>, which may be a very complicated object, but only to the generator <span class="math inline">\(G_{\hat \theta}\)</span>.
+Anyway, our aim is to sample according to <span class="math inline">\(P^\star\)</span>, which can be achieved (up to the estimation error) thanks to <span class="math inline">\(G_{\hat \theta}(Z)\)</span>, where <span class="math inline">\(Z \sim \mathcal N(0, I_\ell)\)</span>.</p>
+<p>Actually, in this work, <span class="math inline">\(P_\theta\)</span> is just as a mathematical object helping to understand GANs.
+To go into details, the forthcoming results are based on the assumption that all distributions in play are absolutely continuous with respect to a known measure <span class="math inline">\(\mu\)</span> (typically the Hausdorff measure on some submanifold of <span class="math inline">\(\mathbb R^d\)</span>) and probability density functions are noted with lowercase letters (in particular <span class="math inline">\(P^\star = p^\star d\mu\)</span> and <span class="math inline">\(P_\theta = p_\theta d\mu\)</span>).</p>
+</div>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<div id="concerning-the-comparison-of-distributions" class="section level3">
+<h3>Concerning the comparison of distributions</h3>
+<p>In order to give a mathematical foundation to our intuition in Task 2, it may be useful to analyze the big sample case, where
+<span class="math display">\[\hat L(\theta, \alpha) \approx \mathbb E [\hat L(\theta, \alpha)] = \mathbb E [\log(D_\alpha(X_1))] + \mathbb E [\log(1-D_\alpha\circ G_\theta(Z_1))].\]</span></p>
+<p>If the class of discriminators <span class="math inline">\(\mathscr D = \left\{ D_\alpha, \alpha \in \Lambda \right\}\)</span> is rich enough to contain the ``optimal’’ discriminator <span class="math inline">\(D_\theta^\star = \frac{p^\star}{p_\theta + p^\star}\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span>,
+then
+<span class="math display">\[\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] = 2 D_{JS}(P^\star, P_\theta) - \log 4,\]</span>
+where <span class="math inline">\(D_{JS}\)</span> is the Jensen-Shannon divergence <span class="citation">(<a href="#ref-EnSc03" role="doc-biblioref">Endres and Schindelin 2003</a>)</span>.</p>
+<p>Two things can be learned from this first result (still assuming that <span class="math inline">\(\mathscr D\)</span> contains ``optimal’’ discriminators):</p>
+<ol style="list-style-type: decimal">
+<li>Up to the approximation capacity of <span class="math inline">\(\mathscr D\)</span>, <span class="math inline">\(\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)\)</span> does reflect the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> (thanks to an approximated divergence).</li>
+<li><span class="math inline">\(\hat \theta\)</span> cannot be better than <span class="math inline">\(\theta^\star \in \operatorname*{arg\,min}_{\theta \in \Theta} \sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] = \operatorname*{arg\,min}_{\theta \in \Theta} D_{JS}(P^\star, P_\theta)\)</span>, which leads to the approximation <span class="math inline">\(P_{\theta^\star}\)</span> of <span class="math inline">\(P^\star\)</span> obtained by minimizing the Jensen-Shannon divergence.</li>
+</ol>
+</div>
+<div id="non-asymptotic-bound-on-jensen-shannon-error" class="section level3">
+<h3>Non-asymptotic bound on Jensen-Shannon error</h3>
+<p>Thus, GANs drive the world downhill in two directions:</p>
+<ol style="list-style-type: decimal">
+<li>A limited approximation capacity for the class of discriminators <span class="math inline">\(\mathscr D\)</span> (which may not contain the ``optimal’’ discriminator <span class="math inline">\(D_\theta^\star = \frac{p^\star}{p_\theta + p^\star}\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span>): <span class="math inline">\(\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] &lt; 2 D_{JS}(P^\star, P_\theta) - \log 4\)</span>.</li>
+<li>A finite sample approximation: the criterion maximized is <span class="math inline">\(\hat L(\theta, \alpha)\)</span> instead of <span class="math inline">\(\mathbb E [\hat L(\theta, \alpha)]\)</span>.</li>
+</ol>
+<p>These limitations introduce two kinds of error in the estimation procedure:
+an approximation error (or bias), induced by the richness of <span class="math inline">\(\mathscr D\)</span>,
+and an estimation error (or variance) occurring from the finiteness of the sample.</p>
+<p>This can be formalized in the following manner:
+assume some regularity conditions of the first order on the models <span class="math inline">\(\mathscr P\)</span>, <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>
+and assume that optimal discriminators <span class="math inline">\(D_\theta^\star\)</span> can be approximated by <span class="math inline">\(\mathscr D\)</span> up to an error <span class="math inline">\(\epsilon&gt;0\)</span> in <span class="math inline">\(L^2\)</span>-norm.
+Then:
+[
+E [D_{JS}(P^, P_{})] - D_{JS}(P^, P_{^}) = O ( ^2 +  ).
+]</p>
+<p>This result explains quantitatively that the discriminators in GANs have to be tuned carefully:
+on the one hand, poor discriminators induce an uncontrolled gap between <span class="math inline">\(\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> and <span class="math inline">\(D_{JS}(P^\star, P_\theta)\)</span>;
+on the other hand, very flexible discriminators may lead to overfitting the finite sample.</p>
+<p>The first assertion is illustrated in the next figure.
+The numerical experiment has been set up with classes of fully connected neural networks for the generators and the discriminators (respectively <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>) and <span class="math inline">\(n\)</span> sufficiently large.
+The depth of the generators is either 2 (blue bars) or 3 (green bars) and the depth of the discriminator ranges from 2 to 5 (from left to right).
+As expected, it appears clearly that the more flexible the discriminators are (from left to right), the smaller <span class="math inline">\(D_{JS}(P^\star, P_{\hat \theta})\)</span> is.
+Obviously, this is also inversely correlated with the richness of the class of generators <span class="math inline">\(\mathscr G\)</span> (at least in a first regime).</p>
+<p><img src="/post/2021-04-27-a-small-step-to-understand-GDA_files/divergences.png" /></p>
+</div>
+<div id="asymptotic-normality" class="section level3">
+<h3>Asymptotic normality</h3>
+<p>As a second important result, it can be shown that the estimator <span class="math inline">\(\hat \theta\)</span> is asymptotically normal with convergence rate <span class="math inline">\(\sqrt n\)</span>.
+More formally, let us assume <span class="math inline">\(\bar \theta \in \operatorname*{arg\,min}_{\theta\in\Theta} \sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> exists and is unique.
+Let also assume some regularity conditions of the second order on the models <span class="math inline">\(\mathscr P\)</span>, <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>,
+well definiteness and smoothness of <span class="math inline">\(\theta \mapsto \operatorname*{arg\,max}_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> around <span class="math inline">\(\bar \theta\)</span>.
+Then, there exists a covariance matrice <span class="math inline">\(\Sigma\)</span> such that:
+[
+n ( - )  N(0, ).
+]</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>GANs have been statistically analyzed from the estimation point of view.
+Even though some simplifications were made (known dominating measure <span class="math inline">\(\mu\)</span>, uniqueness of some quantities) compared to the empirical setting based on deep neural networks,
+the theoretical results show the importance of tuning correctly the architecture of the discriminators,
+and exhibit an asymptotic behavior similar to that of a standard M-estimator.</p>
+<p>It remains to study the impact of the architecture of neural nets on the performance of GANs, as well as their behavior in an overparametrized regime.
+But that’s a different story.</p>
+<p><strong>This post is based on</strong></p>
+<p>G. Biau, B. Cadre, M. Sangnier and U. Tanielian. 2020. ``Some Theoretical Properties of GANs.’’ The Annals of Statistics 48(3): 1539-1566.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-EnSc03" class="csl-entry">
+Endres, D. M., and J. E. Schindelin. 2003. <span>“A New Metric for Probability Distributions.”</span> <em>IEEE Transactions on Information Theory</em> 49: 1858–60.
+</div>
+<div id="ref-Go16" class="csl-entry">
+Goodfellow, I. 2016. <em>NIPS 2016 Tutorial: Generative Adversarial Networks</em>. arXiv:1701.00160.
+</div>
+<div id="ref-GoPoMiXuWaOzCoBe14" class="csl-entry">
+Goodfellow, I., J. Pouget-Abadie, M. Mirza, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, and J. Bengio. 2014. <span>“Generative Adversarial Nets.”</span> In <em>Advances in Neural Information Processing Systems 27</em>, edited by Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, 2672–80. Red Hook: Curran Associates, Inc.
+</div>
+<div id="ref-JaLiBo20" class="csl-entry">
+Jabbar, A., X. Li, and O. Bourahla. 2020. <em>A Survey on Generative Adversarial Networks: Variants, Applications, and Training</em>. arXiv:2006.05132.
+</div>
+<div id="ref-Karras2018" class="csl-entry">
+Karras, T., T. Aila, S. Laine, and J. Lehtinen. 2018. <span>“Progressive Growing of GANs for Improved Quality, Stability, and Variation.”</span> In <em>International Conference on Learning Representations</em>.
+</div>
+<div id="ref-SaGoZaChRaCg16" class="csl-entry">
+Salimans, T., I. Goodfellow, W. Zaremba, V. Cheung, A. Radford, and X. Chen. 2016. <span>“Improved Techniques for Training <span>GAN</span>s.”</span> In <em>Advances in Neural Information Processing Systems 29</em>, edited by D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, 2234–42. Red Hook: Curran Associates, Inc.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

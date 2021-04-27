@@ -6,18 +6,14 @@
     <description>Recent content in machine learning on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A small step to understand Generative Adversarial Networks</title>
-      <link>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      <link>https://youngstats.github.io/post/2021/04/27/a-small-step-to-understand-gda/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/04/26/a-small-step-to-understand-generative-adversarial-networks/</guid>
-      <description>## IntroductionIn the last decade, there have been spectacular advances on the practical side of machine learning.One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation [@GoPoMiXuWaOzCoBe14]. State of the art models are capable of producing [portraits of fake persons](https://www.youtube.com/watch?v=XOxxPcy5Gr4) that look perfectly authentic to you and me (see e.g. [@SaGoZaChRaCg16] and [@Karras2018]). Other domains such as inpainting, text to image and speech are also concerned by outstanding results (see [@Go16] and [@JaLiBo20]).</description>
+      <guid>https://youngstats.github.io/post/2021/04/27/a-small-step-to-understand-gda/</guid>
+      <description>IntroductionIn the last decade, there have been spectacular advances on the practical side of machine learning.One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation (Goodfellow et al. 2014).State of the art models are capable of producing portraits of fake persons that look perfectly authentic to you and me (see e.g. (Salimans et al. 2016) and (Karras et al.</description>
     </item>
     
     <item>

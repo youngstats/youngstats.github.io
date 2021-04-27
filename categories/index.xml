@@ -6,15 +6,11 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>machine learning</title>
       <link>https://youngstats.github.io/categories/machine-learning/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/machine-learning/</guid>
       <description></description>
