@@ -6,11 +6,7 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent Advances in Functional Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
@@ -24,10 +20,10 @@ When &amp;amp; Where:
     
     <item>
       <title>Composite-Based Structural Equation Modeling: Developments and Perspectives</title>
-      <link>https://youngstats.github.io/post/2021/04/28/bnp-webinar/</link>
+      <link>https://youngstats.github.io/post/2021/04/28/csem-webinar/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/04/28/bnp-webinar/</guid>
+      <guid>https://youngstats.github.io/post/2021/04/28/csem-webinar/</guid>
       <description>The third &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on May 19th, 2021. The focus of this webinar will be on composite-based structural equation modeling, particularly on partial least squares path modeling (Wold, 1982; Lohmöller, 1989) and approaches to assess composite models. The webinar will present some of the most interesting and recent theoretical developments and applications from younger scholars active in this area of research.
 When &amp;amp; Where:</description>
     </item>
