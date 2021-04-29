@@ -6,7 +6,11 @@
     <description>Recent content in hidden Markov models on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/hidden-markov-models/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://youngstats.github.io/categories/hidden-markov-models/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
       <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
