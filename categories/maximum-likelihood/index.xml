@@ -6,7 +6,11 @@
     <description>Recent content in maximum-likelihood on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/maximum-likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://youngstats.github.io/categories/maximum-likelihood/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Higher Order Targeted Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
