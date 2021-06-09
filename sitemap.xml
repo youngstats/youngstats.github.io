@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/04/29/fda-webinar/</loc>
     <lastmod>2021-04-29T00:00:00+00:00</lastmod>

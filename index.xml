@@ -6,7 +6,194 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optional stopping with Bayes factors: possibilities and limitations</title>
+      <link>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In recent years, a surprising number of scientific results have failed
+to hold up to continued scrutiny. Part of this ‘replicability crisis’
+may be caused by practices that ignore the assumptions of traditional
+(frequentist) statistical methods &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-john-2012-measur-preval&#34; role=&#34;doc-biblioref&#34;&gt;John, Loewenstein, and Prelec 2012&lt;/a&gt;)&lt;/span&gt;. One of
+these assumptions is that the experimental protocol should be completely
+determined upfront. In practice, researchers often adjust the protocol
+due to unforeseen circumstances or collect data until a point has been
+proven. This practice, which is referred to as &lt;em&gt;optional stopping&lt;/em&gt;, can
+cause true hypotheses to be wrongly rejected much more often than these
+statistical methods promise.&lt;br /&gt;
+Bayes factor hypothesis testing has long been advocated as an
+alternative to traditional testing that can resolve several of its
+problems; in particular, it was claimed early on that Bayesian methods
+continue to be valid under optional stopping
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-lindley-1957-statis-parad&#34; role=&#34;doc-biblioref&#34;&gt;Lindley 1957&lt;/a&gt;; &lt;a href=&#34;#ref-RaiffaS61&#34; role=&#34;doc-biblioref&#34;&gt;Raiffa and Schlaifer 1961&lt;/a&gt;; &lt;a href=&#34;#ref-edwards-1963-bayes-statis&#34; role=&#34;doc-biblioref&#34;&gt;Edwards, Lindman, and Savage 1963&lt;/a&gt;)&lt;/span&gt;. In
+light of the replicability crisis, such claims have received much
+renewed interest
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-wagenmakers-2007-pract-solut&#34; role=&#34;doc-biblioref&#34;&gt;Wagenmakers 2007&lt;/a&gt;; &lt;a href=&#34;#ref-rouder-2014-option&#34; role=&#34;doc-biblioref&#34;&gt;Jeffrey N. Rouder 2014&lt;/a&gt;; &lt;a href=&#34;#ref-schonbrodt-2017-sequen-hypot&#34; role=&#34;doc-biblioref&#34;&gt;Schönbrodt et al. 2017&lt;/a&gt;; &lt;a href=&#34;#ref-yu-2013-when-decis&#34; role=&#34;doc-biblioref&#34;&gt;Yu et al. 2014&lt;/a&gt;; &lt;a href=&#34;#ref-sanborn-2013-frequen-implic&#34; role=&#34;doc-biblioref&#34;&gt;Sanborn and Hills 2014&lt;/a&gt;)&lt;/span&gt;.
+But what do they mean mathematically? It turns out that different
+authors mean quite different things by ‘Bayesian methods handle optional
+stopping’; moreover, such claims are often shown to hold only in an
+informal sense, or in restricted contexts. In the paper
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; we give a systematic overview and
+formalization of such claims, and explain their relevance for practice:
+can we effectively rely on Bayes factor testing to do a good job under
+optional stopping or not? As we shall see, the answer is subtle.
+Secondly, we extend the reach of such claims to more general settings,
+for which they have never been formally verified and for which
+verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
+we explain claims about optional stopping for an audience of
+methodologists and applied statisticians with the help of computer
+simulations.&lt;br /&gt;
+&lt;/p&gt;
+&lt;div id=&#34;bayesian-inference&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;Bayesian inference&lt;/h1&gt;
+&lt;p&gt;Bayesianism is about a certain interpretation of the concept
+probability: as &lt;em&gt;degrees of belief&lt;/em&gt;. A Bayesian first expresses this
+belief as a probability function. We call this the prior distribution,
+and we denote it by &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\theta)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; is the
+parameter (or several parameters) of the model. After the specification
+of the prior, we obtain the data &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; and the likelihood
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(D | \theta)\)&lt;/span&gt;. Now we can compute the &lt;em&gt;posterior
+distribution&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\theta | D)\)&lt;/span&gt; with the help of &lt;em&gt;Bayes’
+theorem&lt;/em&gt;: &lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+\mathbb{P}(\theta | D) = \frac{\mathbb{P}(D | \theta) \mathbb{P}(\theta)}{\mathbb{P}(D)}.\end{aligned}\]&lt;/span&gt;
+Suppose we want to test a null hypothesis &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; against an
+alternative hypothesis &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;. We can do this in a Bayesian way
+with &lt;em&gt;Bayes factors&lt;/em&gt;: we start with the &lt;em&gt;prior odds&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\mathcal{H}_1) / \mathbb{P}(\mathcal{H}_0)\)&lt;/span&gt;, our belief
+before seeing the data. Often we believe that both hypotheses are
+equally probable, then our prior odds are 1-to-1. Next we gather our
+data &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;, and update our odds with the new knowledge, using Bayes’
+theorem: &lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+\text{posterior odds}(\mathcal{H}_1 \text{ vs. } \mathcal{H}_0) = \frac{\mathbb{P}(\mathcal{H}_1 | D)}{\mathbb{P}(\mathcal{H}_0 | D)} = \frac{\mathbb{P}(\mathcal{H}_1)}{\mathbb{P}(\mathcal{H}_0)} \frac{\mathbb{P}(D | \mathcal{H}_1)}{\mathbb{P}(D | \mathcal{H}_0)}.\end{aligned}\]&lt;/span&gt;
+The posterior odds is our updated belief about which hypothesis is more
+likely.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;three-notions-of-optional-stopping&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;Three notions of optional stopping&lt;/h1&gt;
+&lt;p&gt;Validity under optional stopping is a desirable property of hypothesis
+testing: we gather some data, look at the results, and decide whether we
+stop of gather some additional data. Informally, we call ‘peeking at the
+results to decide whether to collect more data’ &lt;em&gt;optional stopping&lt;/em&gt;, but
+if we want to make more precise what it means if we say that a test can
+handle optional stopping, it turns out that different approaches
+(frequentist, subjective Bayesian and objective Bayesian) lead to
+different interpretations and definitions. It tuns out that we can
+discern three main mathematical concepts of handling optional stopping,
+which we identify and formally define in the paper
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;.&lt;br /&gt;
+The first concept we call &lt;em&gt;subjective Bayesian optional stopping&lt;/em&gt; or
+&lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt;-independence. If one considers a purely subjective Bayesian
+setting, appropriate if one truly believes one’s prior, then Bayesian
+updating from prior to posterior is not affected by the employed
+stopping rule: one ends up with the same posterior if one had decided
+the sample size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; in advance, or if it had been determined, for
+example, because one was satisfied with the result at this &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. In this
+sense a subjective Bayesian procedure does not depend on the stopping
+rule.&lt;br /&gt;
+The second sense of optional stopping we call &lt;em&gt;calibration&lt;/em&gt;. As
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-rouder-2014-option&#34; role=&#34;doc-biblioref&#34;&gt;Jeffrey N. Rouder 2014&lt;/a&gt;)&lt;/span&gt; writes: ‘If a replicate experiment yielded a
+posterior odds of 3.5-to-1 in favor of the null, then we expect that the
+null was 3.5 times as probable as the alternative to have produced the
+data.’ In more mathematical language, this can be expressed as
+&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+\text{post-odds} (\mathcal{H}_1 \text{ vs. } \mathcal{H}_0 | ``\text{post-odds} (\mathcal{H}_1 \text{ vs. } \mathcal{H}_0 | D ) = a&amp;quot;) = a.\end{aligned}\]&lt;/span&gt;
+We say this equation expresses &lt;em&gt;calibration of the posterior odds&lt;/em&gt;. It
+turns out that this calibration fails to hold if one does not adhere to
+a purely subjective Bayesian view, in particular, it does not hold for
+the &lt;em&gt;default&lt;/em&gt; priors the Bayesian psychology community is advocating
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-wagenmakers-2007-pract-solut&#34; role=&#34;doc-biblioref&#34;&gt;Wagenmakers 2007&lt;/a&gt;; &lt;a href=&#34;#ref-rouder-2012-default-bayes&#34; role=&#34;doc-biblioref&#34;&gt;J. N. Rouder et al. 2012&lt;/a&gt;)&lt;/span&gt;. To get a
+first idea of one of the issues: default priors sometimes depend on the
+data. Then it is unclear what &lt;em&gt;optional stopping&lt;/em&gt; really means, because
+if, using prior &lt;span class=&#34;math inline&#34;&gt;\(P_1(\theta)\)&lt;/span&gt; based on a sample of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, one had
+stopped at sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;lt; n\)&lt;/span&gt;, one should have really used prior
+&lt;span class=&#34;math inline&#34;&gt;\(P&amp;#39;_1(\theta)\)&lt;/span&gt; based on sample of size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;\)&lt;/span&gt;...but then one would have
+stopped at yet another sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;#39;\)&lt;/span&gt;, and so on. See our paper
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;The third sense is a frequentist interpretation of handling optional
+stopping, which is about controlling the Type I error of an experiment.
+A Type I error occurs when we reject the null hypothesis when it is
+true, also called &lt;em&gt;false positive&lt;/em&gt;. The frequentist interpretation of
+handling optional stopping is that the Type I error guarantee holds if
+we do not determine the sampling plan — and thus the stopping rule —
+in advance, but we may stop when we see significant results. In the case
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; is &lt;em&gt;simple&lt;/em&gt; (containing just one hypothesis), there is a
+well-known intriguing connection between Bayes factors and Type I error
+probabilities: if we reject &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; iff the posterior odds in
+favor of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; are smaller than some fixed level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;,
+then we are guaranteed a Type I error of at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. And
+interestingly, this holds not just for fixed sample sizes but even under
+optional stopping. However, for &lt;em&gt;composite&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; this does
+not continue to hold. Except for the special case where &lt;em&gt;all&lt;/em&gt; free
+parameters in &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; are nuisance parameters observing a group
+structure and equipped with the corresponding right-Haar prior, and are
+shared with &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;, as we prove in &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;.
+But for general priors and composite &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt;, this is typically
+not the case.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/screenshot.138.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Figure 1: Posterior odds in an experiment of testing whether the mean of a normal distribution is 0
+(&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt;), versus non-zero (&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;), from 20; 000 replicate experiments. (a) The empirical sampling distribution
+of the posterior odds as a histogram under &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; (blue) and &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt; (pink). (b) Calibration plot: the observed
+posterior odds as a function of the nominal posterior odds.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;One can give three distinct mathematical meanings to the notion of
+&lt;em&gt;optional stopping&lt;/em&gt;. Whether or not we can say that ‘the Bayes factor
+method can handle optional stopping’ in practice is a subtle matter,
+depending on the specifics of the given situation: what models are used,
+what priors, and what is the goal of the analysis.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-edwards-1963-bayes-statis&#34; class=&#34;csl-entry&#34;&gt;
+Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. &lt;span&gt;“Bayesian Statistical Inference for Psychological Research.”&lt;/span&gt; &lt;em&gt;Psychological Review&lt;/em&gt; 70 (3): 193–242. &lt;a href=&#34;https://doi.org/10.1037/h0044139&#34;&gt;https://doi.org/10.1037/h0044139&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-heide2020optional&#34; class=&#34;csl-entry&#34;&gt;
+ Heide, Rianne, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hendriksen2020optional&#34; class=&#34;csl-entry&#34;&gt;
+Hendriksen, Allard, Rianne Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-john-2012-measur-preval&#34; class=&#34;csl-entry&#34;&gt;
+John, Leslie K, George Loewenstein, and Drazen Prelec. 2012. &lt;span&gt;“Measuring the Prevalence of Questionable Research Practices with Incentives for Truth Telling.”&lt;/span&gt; &lt;em&gt;Psychological Science&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lindley-1957-statis-parad&#34; class=&#34;csl-entry&#34;&gt;
+Lindley, D. V. 1957. &lt;span&gt;“A Statistical Paradox.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; 44 (1/2): 187–92. &lt;a href=&#34;https://doi.org/10.2307/2333251&#34;&gt;https://doi.org/10.2307/2333251&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-RaiffaS61&#34; class=&#34;csl-entry&#34;&gt;
+Raiffa, H., and R. Schlaifer. 1961. &lt;em&gt;Applied Statistical Decision Theory&lt;/em&gt;. Cambridge, MA: Harvard University Press.
+&lt;/div&gt;
+&lt;div id=&#34;ref-rouder-2012-default-bayes&#34; class=&#34;csl-entry&#34;&gt;
+Rouder, J N, R D Morey, P L Speckman, and J M Province. 2012. &lt;span&gt;“Default &lt;span&gt;B&lt;/span&gt;ayes Factors for &lt;span&gt;ANOVA&lt;/span&gt; Designs.”&lt;/span&gt; &lt;em&gt;Journal of Mathematical Psychology&lt;/em&gt; 56 (5): 356–74.
+&lt;/div&gt;
+&lt;div id=&#34;ref-rouder-2014-option&#34; class=&#34;csl-entry&#34;&gt;
+Rouder, Jeffrey N. 2014. &lt;span&gt;“Optional Stopping: No Problem for &lt;span&gt;B&lt;/span&gt;ayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 301–8. &lt;a href=&#34;https://doi.org/10.3758/s13423-014-0595-4&#34;&gt;https://doi.org/10.3758/s13423-014-0595-4&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-sanborn-2013-frequen-implic&#34; class=&#34;csl-entry&#34;&gt;
+Sanborn, Adam N., and Thomas T. Hills. 2014. &lt;span&gt;“The Frequentist Implications of Optional Stopping on &lt;span&gt;B&lt;/span&gt;ayesian Hypothesis Tests.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 283–300. &lt;a href=&#34;https://doi.org/10.3758/s13423-013-0518-9&#34;&gt;https://doi.org/10.3758/s13423-013-0518-9&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-schonbrodt-2017-sequen-hypot&#34; class=&#34;csl-entry&#34;&gt;
+Schönbrodt, Felix D., Eric-Jan Wagenmakers, Michael Zehetleitner, and Marco Perugini. 2017. &lt;span&gt;“Sequential Hypothesis Testing with &lt;span&gt;B&lt;/span&gt;ayes Factors: Efficiently Testing Mean Differences.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 22 (2): 322–39. &lt;a href=&#34;https://doi.org/10.1037/met0000061&#34;&gt;https://doi.org/10.1037/met0000061&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-wagenmakers-2007-pract-solut&#34; class=&#34;csl-entry&#34;&gt;
+Wagenmakers, Eric-Jan. 2007. &lt;span&gt;“A Practical Solution to the Pervasive Problems of p Values.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 14 (5): 779–804. &lt;a href=&#34;https://doi.org/10.3758/bf03194105&#34;&gt;https://doi.org/10.3758/bf03194105&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-yu-2013-when-decis&#34; class=&#34;csl-entry&#34;&gt;
+Yu, Erica C., Amber M. Sprenger, Rick P. Thomas, and Michael R. Dougherty. 2014. &lt;span&gt;“When Decision Heuristics and Science Collide.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 268–82. &lt;a href=&#34;https://doi.org/10.3758/s13423-013-0495-z&#34;&gt;https://doi.org/10.3758/s13423-013-0495-z&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Recent Advances in Functional Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
@@ -852,155 +1039,6 @@ be the sample variance of this estimated influence curve. A corresponding 0.95 c
 &lt;p&gt;van der Laan, Mark J, Zeyi Wang, and Lars van der Laan. 2021. “Higher Order Targeted Maximum Likelihood Estimation.” &lt;em&gt;arXiv Preprint arXiv:2101.06290&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
-      <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
-      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
-      <description>
-
-
-&lt;div id=&#34;correlations-and-negative-bias&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Correlations and negative bias&lt;/h2&gt;
-&lt;p&gt;We assume that you are quite familiar with the following problem.
-Consider a data set where the information is expressed in percentages or proportions.
-An example are household expenditures, given as average amounts (in Euros) the households
-are spending on food, housing, transportation, etc.
-Since the expenditures would not be comparable among countries with very different economic
-level, it makes sense to express the data as proportions (or percentages) of the single
-categories on the total expenditures.
-Now one can be interested in relationships between the different variables (expenditure
-categories), and the common tools for this task would be to use the
-Pearson or Spearman correlation coefficient to determine the strength of the associations.
-However, is this appropriate to compute correlations from
-percentages (or proportions, or any other constrained data), or more generally, from data
-carrying relative information? Denote the underlying variables, expressed in proportions
-or percentages, by &lt;span class=&#34;math inline&#34;&gt;\(x_1,\ldots,x_D\)&lt;/span&gt;.
-When computing correlations, we
-must count with a negative bias of the covariance, which leads to relations like
-&lt;span class=&#34;math display&#34;&gt;\[\mathrm{cov}(x_1,x_2)+\mathrm{cov}(x_1,x_3)+\ldots+\mathrm{cov}(x_1,x_D)=-\mathrm{var}(x_1).\]&lt;/span&gt;
-Consequently, the correlation coefficients cannot vary freely between &lt;span class=&#34;math inline&#34;&gt;\(-1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;;
-they are forced towards negative values and thus do not produce reliable and interpretable results.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;initial-choice-variation-matrix&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Initial choice: variation matrix&lt;/h2&gt;
-&lt;p&gt;The way to obtain reasonable correlations with percentage data is to consider ratios,
-or even mathematically easier, log-ratios as the source information. Log-ratios do not
-change when the data are rescaled, thus the sum of components (100 for percentages) is
-even irrelevant.
-In our household expenditure data set we could thus even work with the raw data, expressed
-in Euros, and the results of the analysis would be the same as for the
-normalized data.
-The scale invariant data are called &lt;em&gt;compositional&lt;/em&gt; in this context.
-A natural way to assess strength of relationship between components of percentage
-(compositional) data is thus to think in terms of their &lt;em&gt;proportionality&lt;/em&gt;. This leads
-to the so called &lt;em&gt;variation matrix&lt;/em&gt;, which is defined as
-&lt;span class=&#34;math display&#34;&gt;\[\mathbf{T}=\left(\mathrm{var}\left(\ln\frac{x_i}{x_j}\right)\right)_{i,j=1}^D.\]&lt;/span&gt;
-If the components are proportional, the respective element of the variation matrix is
-zero, and vice versa. Thus, bigger values of the variation matrix refer to deviations
-from proportionality. Here, &lt;em&gt;var&lt;/em&gt; is denotes the variance, and practically one can
-use classical or robust variance estimation, where the latter is preferable in presence
-of outliers.
-The variation matrix is thus definitely a reasonable choice to express relationship
-between the variables, however, it cannot be interpreted in terms of correlations,
-as possible negative relationships between the components are not captured.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;correlations-with-weighted-symmetric-pivot-coordinates&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Correlations with (weighted) symmetric pivot coordinates&lt;/h2&gt;
-&lt;p&gt;We can see that relating the original components has its clear limitations. A possible
-alternative could be to consider &lt;em&gt;relative information&lt;/em&gt; carried by the original components
-of a given composition, information contained in log-ratios to other components. The first
-choice is to aggregate these logratios which leads, say for components &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;,
-to the following variables (we refer to &lt;em&gt;symmetric pivot coordinates&lt;/em&gt;):
-&lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray}
-z_1^s&amp;amp;=&amp;amp;C\left(\frac{\sqrt{D-2}}{\sqrt{D-2}+\sqrt{D}}\ln\frac{x_1}{x_2}+\ln\frac{x_1}{x_3}+\ldots+\ln\frac{x_1}{x_D}\right),\\
-z_2^s&amp;amp;=&amp;amp;C\left(\frac{\sqrt{D-2}}{\sqrt{D-2}+\sqrt{D}}\ln\frac{x_2}{x_1}+\ln\frac{x_2}{x_3}+\ldots+\ln\frac{x_2}{x_D}\right),
-\end{eqnarray}\]&lt;/span&gt;
-with a normalizing positive constant &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;. The first logratios in both variables are downscaled in order to remove a possible negative bias (from a geometrical perspective, we are talking about &lt;em&gt;orthonormality&lt;/em&gt; of the resulting variables/coordinates); interestingly, &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{D-2}/(\sqrt{D-2}+\sqrt{D})\rightarrow 1/2\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(D\rightarrow\infty\)&lt;/span&gt;. Even more, the effect of pairwise logratios which are aggregated into &lt;span class=&#34;math inline&#34;&gt;\(z_1^s\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(z_2^s\)&lt;/span&gt; can be &lt;em&gt;weighted&lt;/em&gt;, e.g., according to their proportionality to &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;, respectively, by using the inverse values of the respective elements of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{T}\)&lt;/span&gt;. This guarantees that components not related to &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt; have a limited impact to
-the construction of both symmetric pivot coordinates.&lt;/p&gt;
-&lt;p&gt;Now, standard (classical or robust) correlation coefficients between &lt;span class=&#34;math inline&#34;&gt;\(z_1^s\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(z_2^s\)&lt;/span&gt; can be computed to estimate the relationship between &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt; in the composition.
-Its interpretation follows directly the construction of symmetric pivot coordinates. This means that the original components are replaced by their &lt;em&gt;dominance&lt;/em&gt; over
-“averaged” contributions of the other components (ev. appropriately weighted) – a quite natural interpretation for data carrying relative information. Moreover, the correlation can be considered in both the positive and negative sense without any danger of the negative bias. We should be only aware that each correlation coefficient is coming from a set of coordinates which are constructed specifically for the given couple of components, so the resulting “correlation matrix” should not be simply treated in the multivariate sense.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;relative-structure-of-household-expenditures&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Relative structure of household expenditures&lt;/h2&gt;
-&lt;p&gt;Let us come back to the initial example where the interest was in the relative structure of household expenditures, reported for several countries of the European Union.
-Such a data set is contained as &lt;code&gt;expendituresEU&lt;/code&gt; in the library &lt;code&gt;robCompositions&lt;/code&gt;. With a
-proportional representation of the expenditures the wealth status of countries is
-suppressed and the focus is on the &lt;em&gt;relative&lt;/em&gt; correlation structure. In order to suppress the influence of outlying observations, the Spearman correlation coefficients between
-the components are computed and the result is plotted in the heatmap below.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Raw_data_correlation.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There are some strongly related groups of components visible, like &lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;, which could be considered as those belonging to “basic” expenditures, and there is also another related group of components which could be connected rather to wealth of households (&lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Furnishing&lt;/em&gt;, &lt;em&gt;Transport&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). On the other hand, there are also some strongly negatively correlated couples of components, like &lt;em&gt;Food&lt;/em&gt; with &lt;em&gt;Recreation&lt;/em&gt;, &lt;em&gt;Other&lt;/em&gt; and &lt;em&gt;Furnishings&lt;/em&gt;, respectively, or &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;. The question is which of these negative correlation coefficients is a consequence of the negative bias, and which indeed reflects strong negative relationship between the &lt;em&gt;relative&lt;/em&gt; household expenditures.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Variation_matrix.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;As the next step we want to see whether these relationships can be observed also in the (robust) variation matrix, working with log-ratios instead of the original components. Indeed, the proportionality holds definitely for the first group of components (&lt;em&gt;Foodstuff&lt;/em&gt;, &lt;em&gt;Alcohol&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;), however, proportionality of supplementary expenditures is now structured differently (see, e.g., a strong relationship between the components &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;). In any case, any “negative proportionality” cannot be derived from the variation matrix.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Sym_coordinates.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Therefore, we turn to symmetric pivot coordinates; they can be computed, similarly as the variation matrix, using the &lt;code&gt;robCompositions&lt;/code&gt; package:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(robCompositions)
-data(expendituresEU)
-D &amp;lt;- ncol(expendituresEU)
-Rs &amp;lt;- matrix(NA,nrow=D,ncol=D)
-rownames(Rs) &amp;lt;- colnames(expendituresEU)
-colnames(Rs) &amp;lt;- colnames(expendituresEU)
-for(i in 1:D){
-  for(j in 1:D){
-    Z &amp;lt;- pivotCoord(expendituresEU[,c(i,j, (1:D)[-c(i,j)])],method=&amp;quot;symm&amp;quot;)
-  Rs[i,j] &amp;lt;- cor(Z[,1:2],method=&amp;quot;spearman&amp;quot;)[1,2]
-  }
-}
-round(Rs,2)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                 Food Alcohol Clothing Housing Furnishings Health Transport
-## Food            1.00    0.58     0.31   -0.06       -0.55   0.44     -0.50
-## Alcohol         0.58    1.00    -0.02   -0.09       -0.22   0.19     -0.35
-## Clothing        0.31   -0.02     1.00   -0.16        0.24  -0.07      0.08
-## Housing        -0.06   -0.09    -0.16    1.00        0.24   0.15      0.29
-## Furnishings    -0.55   -0.22     0.24    0.24        1.00  -0.54      0.68
-## Health          0.44    0.19    -0.07    0.15       -0.54   1.00     -0.29
-## Transport      -0.50   -0.35     0.08    0.29        0.68  -0.29      1.00
-## Communications  0.72    0.66     0.03   -0.08       -0.51   0.32     -0.47
-## Recreation     -0.44   -0.03    -0.17    0.36        0.73  -0.51      0.78
-## Education       0.16    0.09     0.16   -0.32       -0.24   0.13     -0.44
-## Restaurants    -0.44   -0.42     0.18    0.13        0.39  -0.08      0.28
-## Other          -0.64   -0.28    -0.16    0.32        0.68  -0.27      0.67
-##                Communications Recreation Education Restaurants Other
-## Food                     0.72      -0.44      0.16       -0.44 -0.64
-## Alcohol                  0.66      -0.03      0.09       -0.42 -0.28
-## Clothing                 0.03      -0.17      0.16        0.18 -0.16
-## Housing                 -0.08       0.36     -0.32        0.13  0.32
-## Furnishings             -0.51       0.73     -0.24        0.39  0.68
-## Health                   0.32      -0.51      0.13       -0.08 -0.27
-## Transport               -0.47       0.78     -0.44        0.28  0.67
-## Communications           1.00      -0.24      0.15       -0.61 -0.35
-## Recreation              -0.24       1.00     -0.44        0.11  0.75
-## Education                0.15      -0.44      1.00        0.33 -0.42
-## Restaurants             -0.61       0.11      0.33        1.00  0.21
-## Other                   -0.35       0.75     -0.42        0.21  1.00&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now the correlations are not computed from the original components and we have to refer to their dominance over averaged contributions of the other components instead, but the negative bias of correlations is eliminated now. Indeed, when looking at the heatmap, the main clusters of strongly positively correlated components remain unchanged. However, more substantial changes can be observed for negative correlations. From those mentioned previously only that one between &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt; (in the symmetric pivot coordinates sense) remained. Nevertheless, we should be aware that for the computation of correlations we simply aggregated all log-ratios of the couple with the remaining components, and there are clearly those which could strongly influence the resulting symmetric pivot coordinates, although they are not related to any of components of interest. This is definitely the case of &lt;em&gt;Education&lt;/em&gt;, which is not proportional to the vast majority of components (see heatmap of the variation matrix), and whose influence should thus be rather suppressed.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Weighted_symm_coordinates.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This can be done by using weighted symmetric pivot coordinates, the grouping of positively correlated components is now suprisingly even more similar to the case of the initial proportional data. Of course, by considering a different interpretation of the “components” in both cases! However, now we are free again from any possible negative bias of correlations. The “tuned” symmetric pivot coordinates reveal three negative relationships, those between &lt;em&gt;Recreation&lt;/em&gt; and &lt;em&gt;Health&lt;/em&gt;, &lt;em&gt;Food&lt;/em&gt; and &lt;em&gt;Other&lt;/em&gt;, and also &lt;em&gt;Restaurants&lt;/em&gt; and &lt;em&gt;Communications&lt;/em&gt;. All of them have a quite intuitive interpretation and support the &lt;strong&gt;take-home message&lt;/strong&gt; that (weighted) symmetric pivot coordinates are a reasonable alternative to correlations of proportional or percentage data.&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;This article is based on&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Filzmoser, P. Hron, K. and Templ, M. (2018) &lt;em&gt;Applied Compositional Data Analysis. With Worked Examples in R&lt;/em&gt;. Springer Series in Statistics. Springer, Cham, Switzerland, 2018,
-ISBN: 978-3-319-96422-5.&lt;/p&gt;
-&lt;p&gt;Kynčlová, P., Hron, K., Filzmoser, P. (2017) &lt;em&gt;Correlation between compositional parts based on symmetric balances&lt;/em&gt;. Mathematical Geosciences, 49 (6), 777-796.&lt;/p&gt;
-&lt;p&gt;Hron, K., Engle, M., Filzmoser, P., Fišerová, E. (2021) &lt;em&gt;Weighted symmetric pivot coordinates for compositional data with geochemical applications&lt;/em&gt;. Mathematical Geosciences,
-&lt;a href=&#34;https://doi.org/10.1007/s11004-020-09862-5&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1007/s11004-020-09862-5&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Authors’ biography&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/Hron2017-small3.png&#34; alt=&#34;drawing&#34; width=&#34;75&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Karel Hron&lt;/strong&gt; is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:karel.hron@upol.cz&#34; class=&#34;email&#34;&gt;karel.hron@upol.cz&lt;/a&gt;. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book &lt;em&gt;Applied Compositional Data Analysis&lt;/em&gt;, published in Springer Series in Statistics.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-02-04-correlation/pf2018small.jpg&#34; alt=&#34;drawing&#34; width=&#34;100&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Peter Filzmoser&lt;/strong&gt; is a Professor of Statistics at the Vienna University of Technology
-(TU Wien), Austria, &lt;a href=&#34;mailto:Peter.Filzmoser@tuwien.ac.at&#34; class=&#34;email&#34;&gt;Peter.Filzmoser@tuwien.ac.at&lt;/a&gt;. He has authored more than 200 research
-articles and several R packages and has co-authored books on compositional data analysis
-(Springer, 2018), on multivariate methods in chemometrics (CRC Press, 2009) and on analyzing
-environmental data (Wiley, 2008).&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
