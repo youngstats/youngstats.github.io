@@ -6,14 +6,24 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optional stopping with Bayes factors: possibilities and limitations</title>
-      <link>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
+      <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
+      <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
+    </item>
+    
+    <item>
+      <title>Spatiotemporal modeling and real-time prediction of origin-destination traffic demand</title>
+      <link>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</link>
       <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
-      <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
+      <guid>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</guid>
+      <description>Introduction
+In the past decades, intelligent transportation system (ITS) has broughtadvanced technology that enables a data-rich environment andunprecedented opportunities for traffic prediction, which is consideredas one of the most prevalent issues facing ITS (Li et al., 2015). Wediscuss the online prediction of the origin-destination (OD) demandcount in traffic networks, which represents the number of trips betweencertain combinations of an origin and a destination.</description>
     </item>
     
     <item>
@@ -91,17 +101,6 @@ When &amp;amp; Where:
       
       <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
       <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.</description>
-    </item>
-    
-    <item>
-      <title>Higher Order Targeted Maximum Likelihood Estimation</title>
-      <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
-      <description>Summary
-We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
-Background Targeted Maximum Likelihood Estimation (TMLE) It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
     </item>
     
   </channel>

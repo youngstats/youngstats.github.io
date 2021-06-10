@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spatiotemporal-data on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/spatiotemporal-data/</link>
+    <description>Recent content in spatiotemporal-data on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatiotemporal-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spatiotemporal modeling and real-time prediction of origin-destination traffic demand</title>
+      <link>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</guid>
+      <description>Introduction
+In the past decades, intelligent transportation system (ITS) has broughtadvanced technology that enables a data-rich environment andunprecedented opportunities for traffic prediction, which is consideredas one of the most prevalent issues facing ITS (Li et al., 2015). Wediscuss the online prediction of the origin-destination (OD) demandcount in traffic networks, which represents the number of trips betweencertain combinations of an origin and a destination.</description>
+    </item>
+    
+  </channel>
+</rss>

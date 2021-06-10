@@ -6,13 +6,13 @@
     <description>Recent content in bayesian-statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optional stopping with Bayes factors: possibilities and limitations</title>
-      <link>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
-      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
+      <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
       <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
     </item>
     

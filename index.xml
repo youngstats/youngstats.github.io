@@ -6,13 +6,13 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optional stopping with Bayes factors: possibilities and limitations</title>
-      <link>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
-      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/06/09/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
+      <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
       <description>
 &lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -150,6 +150,15 @@ method can handle optional stopping’ in practice is a subtle matter,
 depending on the specifics of the given situation: what models are used,
 what priors, and what is the goal of the analysis.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;authors&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Authors&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Allard.jpg&#34; height=&#34;70&#34; /&gt;
+Allard Hendriksen, CWI Amsterdam&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Rianne.jpg&#34; height=&#34;70&#34; /&gt;
+dr. Rianne de Heide, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Peter.jpg&#34; height=&#34;70&#34; /&gt;
+prof. Peter Grünwald, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
 &lt;h1&gt;References&lt;/h1&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
@@ -191,6 +200,190 @@ Yu, Erica C., Amber M. Sprenger, Rick P. Thomas, and Michael R. Dougherty. 2014.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Spatiotemporal modeling and real-time prediction of origin-destination traffic demand</title>
+      <link>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the past decades, intelligent transportation system (ITS) has brought
+advanced technology that enables a data-rich environment and
+unprecedented opportunities for traffic prediction, which is considered
+as one of the most prevalent issues facing ITS (Li et al., 2015). We
+discuss the online prediction of the origin-destination (OD) demand
+count in traffic networks, which represents the number of trips between
+certain combinations of an origin and a destination. The study of OD
+demand prediction based on count data has a growing impact on many
+traffic control and management policies (Ashok, 1996, Ashok and
+Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For
+example, dynamic OD demand prediction is critical in planning for the
+charging services of the electrical vehicles (EV; Zhang et al., 2017). A
+well-designed charging facility network is necessary to extend the
+vehicle range and popularize the use of EVs. In particular, the dynamic
+demand between nodes of the traffic network plays a key role in
+determining the availability of the charging facilities, planning the
+multi-period charging schedules, and meeting the customer needs at the
+maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The
+objective of this study is to appropriately model the stochastic OD
+traffic demand counts considering the spatiotemporal correlations
+between different routes and epochs, while incorporating physical
+knowledge of the traffic network in the estimation. The estimation
+results are expected to enhance the prediction accuracy and robustness
+of the online traffic demand prediction for future epochs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Model and method&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We investigate a multivariate Poisson log-normal model with a
+block-diagonal covariance matrix and incorporate domain knowledge of the
+traffic network features to account for spatial correlations. Let
+&lt;span class=&#34;math inline&#34;&gt;\(N_{\text{ijt}}\)&lt;/span&gt; denote the observed traffic demand (i.e., the count of
+vehicles) for route &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; on day &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;, at epoch &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;. Based on the natural
+characteristics of the demand counts, it is reasonable to model each
+observation &lt;span class=&#34;math inline&#34;&gt;\(N_{\text{ijt}}\)&lt;/span&gt; with a Poisson log-linear model (Perrakis
+et al., 2014, Xian et al. 2018) such that&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[N_{\text{ijt}}\sim\text{Poisson}\left( \lambda_{\text{ijt}} \right),u_{\text{ijt}} = \log\lambda_{\text{ijt}}.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here &lt;span class=&#34;math inline&#34;&gt;\(\lambda_{\text{ijt}}\)&lt;/span&gt; is the intensity of the Poisson process, and
+&lt;span class=&#34;math inline&#34;&gt;\(u_{\text{ijt}}\)&lt;/span&gt; is the log transformation of the intensity. To
+characterize the spatiotemporal correlations across different routes and
+time points, we model &lt;span class=&#34;math inline&#34;&gt;\(u_{\text{ijt}}\)&lt;/span&gt; as a mixed-effect Gaussian
+process based on &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; basis functions &lt;span class=&#34;math inline&#34;&gt;\(B_{k}(t)\)&lt;/span&gt; that&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math display&#34;&gt;\[u_{\text{ijt}} = \mu_{\text{jt}} + \sum_{k = 1}^{K}{\gamma_{\text{jk}}B_{k}(t)} + Z_{\text{ijt}}.\]&lt;/span&gt; (1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Here
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\mu =}\left\lbrack \mu_{11},\mu_{12},\ \cdots,\ \mu_{\text{JT}} \right\rbrack\mathbf{&amp;#39;}\)&lt;/span&gt;
+is the fixed effect coefficient that models the common characteristics
+of the whole traffic network, and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\gamma}_{k}\mathbf{=}\left\lbrack \gamma_{1k},\ \gamma_{2k},\ \cdots,\ \gamma_{\text{Jk}} \right\rbrack\)&lt;/span&gt;
+is the random effect coefficient with prior distribution
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\gamma}_{k}\sim N(0,\ \mathbf{R}_{\theta_{y}})\)&lt;/span&gt; that
+characterizes the uniqueness of different routes. Here
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_{\theta_{y}}\)&lt;/span&gt; is the correlation matrix which takes into
+consideration of the traffic network information, where
+&lt;span class=&#34;math inline&#34;&gt;\(\left\lbrack \mathbf{R}_{\theta_{y}} \right\rbrack_{j_{1},j_{2}} = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\}\)&lt;/span&gt;.
+In this expression, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{y}_{j}\)&lt;/span&gt; denotes the unique features of
+route &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, such as information about the origin and destination, the
+maximum speed limit on a route, and the travel distance. The term
+&lt;span class=&#34;math inline&#34;&gt;\(Z_{\text{ijt}}\)&lt;/span&gt; in model (1) is the random error that follows a
+Gaussian distribution which has the covariance structure&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math display&#34;&gt;\[\text{cov}\left( Z_{ij_{1}t_{1}},Z_{ij_{2}t_{2}} \right) = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\} \cdot \tau^{2}\exp\left\{ - \theta_{t}\left| t_{1} - t_{2} \right| \right\}.\]&lt;/span&gt; (2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Which depends on both the features of routes &lt;span class=&#34;math inline&#34;&gt;\(j_{1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(j_{2}\)&lt;/span&gt;, and
+the time points &lt;span class=&#34;math inline&#34;&gt;\(t_{1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(t_{2}\)&lt;/span&gt;, which we refer to as the spatial
+and temporal covariance structures, respectively.&lt;/p&gt;
+&lt;p&gt;Denote the log-transformed intensity of the OD traffic demand on day &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;
+as
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u}_{i} = \left( u_{i11},u_{i12},\ldots,u_{\text{iJT}} \right)^{&amp;#39;}\)&lt;/span&gt;.
+We can further derive that conditioning on parameters
+&lt;span class=&#34;math inline&#34;&gt;\(\left( \mathbf{\mu},\ \theta_{y},\theta_{t},\mathbf{\sigma,\ }\tau^{2} \right)\)&lt;/span&gt;,
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u}_{i}\)&lt;/span&gt; follows normal distribution
+&lt;span class=&#34;math inline&#34;&gt;\(N\left( \mathbf{\mu},\ \mathbf{\Sigma} \right)\)&lt;/span&gt;, where&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\mathbf{\mu} = \left( \mu_{11},\mu_{12},\ \cdots,\ \mu_{\text{JT}} \right)^{&amp;#39;},\]&lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;span class=&#34;math display&#34;&gt;\[\mathbf{\Sigma} = \mathbf{R}_{\theta_{y}}\bigotimes\left\lbrack \mathbf{R}_{B} + \tau^{2}\mathbf{R}_{\theta_{t}} \right\rbrack.\]&lt;/span&gt; (3)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Here, the symbol &lt;span class=&#34;math inline&#34;&gt;\(\bigotimes\)&lt;/span&gt; denotes the Kronecker product,
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_{B}\)&lt;/span&gt; is a fixed &lt;span class=&#34;math inline&#34;&gt;\(T \times T\)&lt;/span&gt; matrix with the &lt;span class=&#34;math inline&#34;&gt;\((t_{1},t_{2})\)&lt;/span&gt;
+element equal to &lt;span class=&#34;math inline&#34;&gt;\(\sum_{k = 1}^{K}{B_{k}(t_{1})B_{k}(t_{2})}\)&lt;/span&gt;, and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_{\theta_{t}}\)&lt;/span&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(T \times T\)&lt;/span&gt; matrix with the
+&lt;span class=&#34;math inline&#34;&gt;\((t_{1},t_{2})\)&lt;/span&gt; element equal to
+&lt;span class=&#34;math inline&#34;&gt;\(\exp\left\{ - \theta_{t}|t_{1} - t_{2}| \right\}\)&lt;/span&gt;. Therefore, the large
+covariance matrix is parametrized based on only the parameters
+&lt;span class=&#34;math inline&#34;&gt;\(\theta_{y},\theta_{t},\mathbf{\sigma}\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\tau^{2}\)&lt;/span&gt;. This
+parsimonious model has several advantages, such as high interpretability
+tailored to the traffic demand count data, increased stability of the
+estimation results, and reduced computational burden for parameter
+estimation. We treat &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u}\)&lt;/span&gt; as a latent variable and further
+employ the EM algorithm to obtain the maximum likelihood estimation
+(MLE) for the parameters.&lt;/p&gt;
+&lt;p&gt;In this way, we can fully explore the complicated spatiotemporal
+correlation structure of the traffic network demand and automatically
+cluster the routes with high correlations, without introducing a large
+number of parameters that impact the estimation accuracy. Besides
+transportation systems, the proposed method can be easily extended to
+other network applications with count data through few modifications,
+such as communication systems, supply chain management, smart grid, or
+even three-dimensional networks (Wang et al., 2018).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Case study&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We apply the proposed method to a real New York yellow taxi dataset
+which is collected from June 1&lt;sup&gt;st&lt;/sup&gt; to July 31&lt;sup&gt;st&lt;/sup&gt; in 2017 (NYC taxi,
+2017). The dataset records all yellow taxi trips during the
+aforementioned time period including the pick-up and drop-off dates and
+times, pick-up and drop-off locations, trip distances, and payment
+information about the trips. We focus on the trips between the four
+busiest zones in Manhattan and investigate the structure of the travel
+demand counts on these zones as OD pairs. The details of the four taxi
+zones are shown in Figure 1.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f1.jpg&#34; /&gt;&lt;/p&gt;
+&lt;table style=&#34;width:97%;&#34;&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;14%&#34; /&gt;
+&lt;col width=&#34;24%&#34; /&gt;
+&lt;col width=&#34;58%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Index&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Borough&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Zones&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Manhattan&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Lincoln Square East&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Manhattan&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Times Square/Theatre District&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Manhattan&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Upper East Side North&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Manhattan&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Upper East Side South&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Figure 1. Illustration of the taxi zones in the case study&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2 further shows the specific taxi demand prediction results of
+two routes &lt;span class=&#34;math inline&#34;&gt;\((4,\ 3)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((4,\ 4)\)&lt;/span&gt; for four test days. The solid black
+line in this figure represents the true dynamic traffic demand counts,
+where it can be observed that the true taxi demand indeed exhibits high
+spatial and temporal variation and strong correlations for observations
+between the routes and across different epochs. The solid red line in is
+the predicted demand using the proposed method, and the dashed error
+bars show the 90% confidence interval of the prediction based on the
+variance derivation in equation (7), which significantly outperforms the
+existing method shown in black dotted line.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f2.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Figure 2. Taxi demand prediction results for routes &lt;span class=&#34;math inline&#34;&gt;\((4,\ 3)\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\((4,\ 4)\)&lt;/span&gt;.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -824,220 +1017,6 @@ and the resulting bootstrap estimates of the functional regression parameter the
 &lt;p&gt;&lt;strong&gt;Ivana Pavlů&lt;/strong&gt; is a PhD student at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:ivana.pavlu@upol.cz&#34; class=&#34;email&#34;&gt;ivana.pavlu@upol.cz&lt;/a&gt;. In her research she primarily focuses on functional data analysis of probability density functions using the Bayes spaces methodology.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data_files/Hron2017-small3.png&#34; width=&#34;75&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Karel Hron&lt;/strong&gt; is a Professor at Department of Mathematical Analysis and Applications of Mathematics, Palacký University in Olomouc, Czech Republic, &lt;a href=&#34;mailto:karel.hron@upol.cz&#34; class=&#34;email&#34;&gt;karel.hron@upol.cz&lt;/a&gt;. His research chiefly focuses on the statistical analysis of compositional data and its applications in a wide range of fields (geology, analytical chemistry, metabolomics, time-use epidemiology and others). He co-authored the book Applied Compositional Data Analysis, published in Springer Series in Statistics.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Higher Order Targeted Maximum Likelihood Estimation</title>
-      <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.&lt;/p&gt;
-&lt;div id=&#34;background&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Background&lt;/h1&gt;
-&lt;div id=&#34;targeted-maximum-likelihood-estimation-tmle&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Targeted Maximum Likelihood Estimation (TMLE)&lt;/h2&gt;
-&lt;p&gt;It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution. TMLE &lt;span class=&#34;citation&#34;&gt;(van der Laan and Rubin &lt;a href=&#34;#ref-van2006targeted&#34; role=&#34;doc-biblioref&#34;&gt;2006&lt;/a&gt;; van der Laan and Rose &lt;a href=&#34;#ref-van2011targeted&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;, &lt;a href=&#34;#ref-van2018targeted&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; provides a framework to construct such estimators and incorporates machine learning into efficient estimation and inference. Here we briefly review the regular first order TMLE.&lt;/p&gt;
-&lt;p&gt;Suppose that the true distribution &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt; lies in a statistical model &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{M}\)&lt;/span&gt;. Start with an initial distribution estimator &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt;. Given pathwise differentiability of the target &lt;span class=&#34;math inline&#34;&gt;\(\Psi(P)\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; with a canonical gradient &lt;span class=&#34;math inline&#34;&gt;\(D^{(1)}_P\)&lt;/span&gt;, consider a least favorable path &lt;span class=&#34;math inline&#34;&gt;\(\{ \tilde P^{(1)}(P, \epsilon) \}\)&lt;/span&gt; through &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt;, where scores at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt; span the efficient influence curve (EIC) &lt;span class=&#34;math inline&#34;&gt;\(D_{P}^{(1)}\)&lt;/span&gt;. Define the TMLE update by maximizing the likelihood along the path, that is, &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(1)} = \mathrm{argmin}_\epsilon P_n L(\tilde P^{(1)}(P_n^0, \epsilon) )\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(L(P) = - \log p\)&lt;/span&gt;. The resulted TMLE update is &lt;span class=&#34;math inline&#34;&gt;\(P_n^* = \tilde P_n^{(1)} (P_n^0) = \tilde P_n^{(1)} (P_n^0, \epsilon_n^{(1)})\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Define &lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P, P_0) = \Psi(P) - \Psi(P_0) + P_0 D_P^{(1)}\)&lt;/span&gt; as the exact remainder. Then the TMLE satisfies &lt;span class=&#34;math inline&#34;&gt;\(P_n D_{P_n^*}^{(1)}\approx 0\)&lt;/span&gt; and the following exact expansion
-&lt;span class=&#34;math display&#34;&gt;\[
-\Psi(P_n^*) - \Psi(P_0) = R^{(1)}(P_n^*, P_0) - P_0 D_{P_n^*}^{(1)} = (P_n - P_0) D_{P_0}^{(1)} + (P_n - P_0) (D_{P_n^*}^{(1)} - D_{P_0}^{(1)}) - P_n D^{(1)}_{P_n^*} + R^{(1)}(P_n^*, P_0).
-\]&lt;/span&gt;
-Asymptotic efficiency for &lt;span class=&#34;math inline&#34;&gt;\(P_n^*\)&lt;/span&gt; requires:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\{D_{P}^{(1)}: P\in\mathcal{M}\}\)&lt;/span&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt;-Donsker class (often satisfied, or skipped with sample splitting),&lt;/li&gt;
-&lt;li&gt;Solving the equation &lt;span class=&#34;math inline&#34;&gt;\(P_n D^{(1)}_{P_n^*}=0\)&lt;/span&gt; exactly or to an &lt;span class=&#34;math inline&#34;&gt;\(o_P(n^{-1/2})\)&lt;/span&gt; term,&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P_n^*, P_0)\)&lt;/span&gt; being exactly zero or up to an &lt;span class=&#34;math inline&#34;&gt;\(o_P(n^{-1/2})\)&lt;/span&gt; term.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(R^{(1)}(P, P_0)\)&lt;/span&gt; is often a second order difference in &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p_0\)&lt;/span&gt;. For example, when it consists of cross products, doubly or multiply robustness may exist.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;highly-adaptive-lasso-hal&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Highly Adaptive Lasso (HAL)&lt;/h2&gt;
-&lt;p&gt;HAL &lt;span class=&#34;citation&#34;&gt;(van der Laan &lt;a href=&#34;#ref-van2015generally&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-van2017generally&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;; Benkeser and van ver Laan &lt;a href=&#34;#ref-benkeser2016highly&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt; is a nonparametric maximum likelihood estimator that converges in Kullback-Leibler dissimilarity at a minimal rate of &lt;span class=&#34;math inline&#34;&gt;\(n^{-2/3}(\log~n)^d\)&lt;/span&gt;, even when the parameter space only assumes cadlag and finite variation norms.
-This generally bounds the exact remainder, and immediately makes the TMLE that uses HAL as an initial asymptotically efficient. However, in finite samples, the second order remainder can still dominate the sampling distribution.&lt;/p&gt;
-&lt;p&gt;Another important property of HAL is itself being a nonparametric MLE, so it can solve a large class of score equations to best approximates the desired score via increasing the &lt;span class=&#34;math inline&#34;&gt;\(L_1\)&lt;/span&gt;-norm of the HAL-MLE (called undersmoothing) &lt;span class=&#34;citation&#34;&gt;(M. J. van der Laan, Benkeser, and Cai &lt;a href=&#34;#ref-vanderLaan&amp;amp;Benkeser&amp;amp;Cai19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;&lt;a href=&#34;#ref-vanderLaan&amp;amp;Benkeser&amp;amp;Cai19&#34; role=&#34;doc-biblioref&#34;&gt;a&lt;/a&gt;, &lt;a href=&#34;#ref-van2019efficient&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;&lt;a href=&#34;#ref-van2019efficient&#34; role=&#34;doc-biblioref&#34;&gt;b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;higher-order-fluctuations-with-hal-mle&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Higher Order Fluctuations with HAL-MLE&lt;/h1&gt;
-&lt;p&gt;Replace &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt; in the first order TMLE by a TMLE &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(2)}_n(P_n^0)\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P_0) = \Psi(\tilde P^{(1)}_n(P_0)) = \Psi(\tilde P^{(1)}(P_0, \epsilon_n^{(1)}(P_0)))\)&lt;/span&gt;, which is a data-adaptive fluctuation of the original target parameter &lt;span class=&#34;math inline&#34;&gt;\(\Psi(P_0)\)&lt;/span&gt;. Then the final update of a second order TMLE, &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(1)}_n \tilde P^{(2)}_n(P_n^0)\)&lt;/span&gt;, is just a first order TMLE that uses as the initial estimator a &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(2)}(P_n^0)\)&lt;/span&gt; that is fully tailored for &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P_0)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/figure_2nd_order.jpg&#34; /&gt;
-&lt;em&gt;Figure 1: Left panel: regular TMLE. Right panel: second order TMLE. The horizontal axes represent the original target. The vertical axis represents the data-adaptive fluctuation. The second order TMLE searches for a better initial estimator for a regular TMLE.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Similarly if we iterate this process, and let &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(k+1)}_n(P_n^0)\)&lt;/span&gt; be a regular TMLE tailored for a higher order fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(k)}(P_0) = \Psi^{(k-1)}_n(\tilde P^{(k)}_n(P_0))=\Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P_n^0))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(k=1, \ldots\)&lt;/span&gt;, then the final update of a &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE is &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k+1)}_n(P_n^0)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The second order TMLE relies on pathwise differentiability of &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}\)&lt;/span&gt;. However, &lt;span class=&#34;math inline&#34;&gt;\(\Psi_n^{(1)}(P) = \Psi(\tilde P^{(1)}_n(P)) = \Psi(\tilde P^{(1)}(P, \epsilon_n^{(1)}(P)))\)&lt;/span&gt;is smooth in &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; up till the dependence of &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(1)}(P) = \mathrm{argmax}_\epsilon P_n \log \tilde p_n^{(1)}(p, \epsilon)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, because &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt; is not absolutely continuous w.r.t. &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; for most &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; that can occur as an initial or a higher order TMLE-update. This calls for the use of smooth distribution estimators such as HAL-MLE &lt;span class=&#34;math inline&#34;&gt;\(\tilde{P}_n\)&lt;/span&gt; in replacement of the empirical &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt;, since &lt;span class=&#34;math inline&#34;&gt;\(d\tilde P_n/dP\)&lt;/span&gt; will exist for all &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; that can occur as an initial or higher order updates, which ensures pathwise differentiability of &lt;span class=&#34;math inline&#34;&gt;\(\Psi^{(1)}_n(P_0)\)&lt;/span&gt; and the existence of its canonical gradient &lt;span class=&#34;math inline&#34;&gt;\(D^{(2)}_{n, P}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In general, suppose that &lt;span class=&#34;math inline&#34;&gt;\(\{\tilde P^{(k)}_n(P, \epsilon)\}\)&lt;/span&gt; is a least favorable path through &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt;, whose scores at &lt;span class=&#34;math inline&#34;&gt;\(\epsilon=0\)&lt;/span&gt; span &lt;span class=&#34;math inline&#34;&gt;\(D^{(k)}_{n, P}\)&lt;/span&gt;. And the update step is also replaced by optimizing the &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;-regularized loss, that is, &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(k)} = \mathrm{argmin}_\epsilon \tilde P_n L(\tilde P^{(k)}(P_n^0, \epsilon) )\)&lt;/span&gt;, which solves &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n D^{(k)}_{n, P}=0\)&lt;/span&gt; at &lt;span class=&#34;math inline&#34;&gt;\(P = \tilde P^{(k)}_n(P_n^0)= \tilde P^{(k)}_n(P_n^0, \epsilon_n^{(k)})\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;A &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE by its design searches for a better initial estimator given the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th order TMLE. Specifically, the &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order TMLE moves in the same direction as the steepest descent algorithm for minimizing the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th exact total remainder that is the discrepancy between &lt;span class=&#34;math inline&#34;&gt;\(\Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P)) - \Psi(\tilde P^{(1)}_n \tilde P^{(2)}_n\cdots \tilde P^{(k)}_n(P_0))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{P}_n D^{(k)}_{n, P_0}\)&lt;/span&gt;. Moreover, compared to an oracle steepest descent algorithm, TMLE stops the moment the log-likelihood is not improving anymore, which corresponds exactly to when the TMLE cannot know in what direction a steepest descent algorithm would go. This avoids potential overfitting and ensures a local minimum in close neighborhood of the desired (but unknown) minimum &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;exact-expansions-of-higher-order-tmle&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Exact Expansions of Higher Order TMLE&lt;/h1&gt;
-&lt;p&gt;Denote the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th exact remainder as the exact remainder of &lt;span class=&#34;math inline&#34;&gt;\(\tilde P^{(k)}_n(P)\)&lt;/span&gt; for the fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi^{(k-1)}(P_0) = \Psi(\tilde P_n^{(1)}\cdots\tilde P_n^{(k-1)}(P_0))\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-R^{(k)}_n(\tilde P^{(k)}_n(P), P_0)
-= &amp;amp; \Psi^{(k-1)}(\tilde P^{(k)}_n(P)) - \Psi^{(k-1)}(P_0) + P_0 D^{(k)}_{n, \tilde P^{(k)}_n(P)} \\
-= &amp;amp; \Psi(\tilde P^{(1)}\cdots\tilde P^{(k)}_n(P)) - \Psi(\tilde P^{(1)}\cdots\tilde P^{(k-1)}(P_0)) + P_0 D^{(k)}_{n, \tilde P^{(k)}_n(P)}. 
-\end{align*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Then we have the exact expansion for the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th order TMLE,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-\Psi(\tilde P^{(1)}_n\cdots\tilde P^{(k)}_n(P)) - \Psi(P_0)
-= &amp;amp; \sum_{j=1}^{k-1} (P_n-P_0)D^{(j)}_{n, \tilde P^{(j)}_n(P_0)} + R^{(j)}_n(\tilde P_n^{(j)}(P_0), P_0) \\
-&amp;amp; + (P_n-P_0)D^{(k)}_{n, \tilde P^{(k)}_n}(P_n^0) + R^{(k)}_n(\tilde P_n^{(k)}(P_n^0), P_0) \\
-&amp;amp; - \sum_{j=1}^{k-1} P_n D^{(j)}_{n, \tilde P^{(j)}_n(P_0)} - P_n D^{(k)}_{n, \tilde P^{(k)}_n(P_n^0)}, 
-\end{align*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;which still holds if we replace &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;. This can be further derived as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-\Psi(\tilde P^{(1)}\cdots\tilde P^{(k)}_n(P)) - \Psi(P_0)
-=&amp;amp;\sum_{j=1}^{k}\left\{ (\tilde{P}_n-P_0)D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}+R_n^{(j)}(\tilde{P}_n^{(j)}(P_0),P_0)\right\} \\
-%&amp;amp;&amp;amp;+(P_n-P_0)D^{(k)}_{n,P_n^{(k)}(P_0)}\\
-&amp;amp; +R_n^{(k)}(\tilde{P}_n^{(k)}(P_n^0),\tilde{P}_n)-R_n^{(k)}(\tilde{P}_n^{(k)}(P_0),\tilde{P}_n)\\
-&amp;amp;-\sum_{j=1}^{k}\tilde{P}_n D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}.\end{align*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The followings can be shown:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\((\tilde{P}_n-P_0)D^{(j)}_{n,\tilde{P}_n^{(j)}(P_0)}, j=1, \dots, k,\)&lt;/span&gt; are generalized &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;-th order difference in &lt;span class=&#34;math inline&#34;&gt;\(P_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;, which resemble the performance of higher order &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;-statistics;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n^{(j)}(\tilde{P}_n^{(j)}(P_0),P_0) = O_P(n^{-1})\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n) D_{n, P_0}^{(j)} = O_P(n^{-1/2})\)&lt;/span&gt;, which can be achieved by undersmothing HAL;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(R_n^{(k)}(\tilde{P}_n^{(k)}(P),\tilde P_n)\)&lt;/span&gt; is a generalized &lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;-th order difference in &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n\)&lt;/span&gt;, and hence &lt;span class=&#34;math inline&#34;&gt;\(R_n^{(k)}(\tilde{P}_n^{(k)}(P_n^0),\tilde P_n) - R_n^{(k)}(\tilde{P}_n^{(k)}(P_0),\tilde P_n)=o_P(n^{-1/2})\)&lt;/span&gt; so long as &lt;span class=&#34;math inline&#34;&gt;\(\lVert \tilde p_n - p_0 \rVert = o_P(n^{1/2(k+1)})\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\lVert p_n^0 - p_0 \rVert = o_P(n^{1/2(k+1)})\)&lt;/span&gt;;&lt;br /&gt;
-&lt;/li&gt;
-&lt;li&gt;The last term can be exactly &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; by defining &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_n^{(j)}(P)\)&lt;/span&gt; as a solution of the corresponding efficient score equation &lt;span class=&#34;math inline&#34;&gt;\(\tilde P_n D^{(j)}_{n, \tilde P^{(j)}_n(P, \epsilon)}=0\)&lt;/span&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div id=&#34;higher-order-inference&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Higher Order Inference&lt;/h1&gt;
-&lt;p&gt;For the sake of statistical inference, we will need that &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n)D^{(1)}_{\tilde P_n^{(1)}(P_0)} = o_P(n^{-1/2})\)&lt;/span&gt;, and probably even &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n)D^{(j)}_{\tilde P_n^{(j)}(P_0)} = o_P(n^{-1/2})\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(j = 2, \dots, k\)&lt;/span&gt;. It can be shown that this essentially comes down to controlling &lt;span class=&#34;math inline&#34;&gt;\((\tilde P_n - P_n) D^{(1)}_{P_0}\)&lt;/span&gt;, which again can be achieved by undersmoothing HAL.&lt;/p&gt;
-&lt;p&gt;Let
-&lt;span class=&#34;math display&#34;&gt;\[
-\bar D_n^k = \sum_{j=1}^k D^{(j)}_{n, \tilde P^{(j)}_n\cdots\tilde P^{(k)}_n(P_n^0)}
-\]&lt;/span&gt;
-which is an estimate of the influence curve &lt;span class=&#34;math inline&#34;&gt;\(\bar D_{n, P_0}^k = \sum_{j=1}^k D^{(j)}_{n, \tilde P^{(j)}_n(P_0)}\)&lt;/span&gt;. Note that for &lt;span class=&#34;math inline&#34;&gt;\(j&amp;gt;1\)&lt;/span&gt; the terms are higher order differences, so that &lt;span class=&#34;math inline&#34;&gt;\(\bar D_n^k\)&lt;/span&gt; will converge to the efficient influence curve &lt;span class=&#34;math inline&#34;&gt;\(D^{(1)}_{P_0}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Let
-&lt;span class=&#34;math display&#34;&gt;\[
-\sigma_n^2 = \frac{1}{n}\sum_{i=1}^n \bar D_n^k(O_i)^2
-\]&lt;/span&gt;
-be the sample variance of this estimated influence curve. A corresponding 0.95 confidence interval is given by
-&lt;span class=&#34;math display&#34;&gt;\[
-\Psi(P^{(1)}_n\cdots\tilde P^{(k)}_n(P_n^0)) \pm 1.96 \sigma_n/n^{1/2}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;simulation&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Simulation&lt;/h1&gt;
-&lt;p&gt;The first example demonstrates the impact of second order TMLE steps during a process of estimating the average density. The exact total remainder &lt;span class=&#34;math inline&#34;&gt;\(\bar R^{(1)}(\tilde P_n^{(1)}(P), P_0)\)&lt;/span&gt; of first order TMLE is controlled due to the second order updates &lt;span class=&#34;math inline&#34;&gt;\(P = P_n^0 \mapsto \tilde P_n^{(2)}(P_n^0)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/middle_remainder_ZW-20210114.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Below it plots the simulated bias and bias/SD ratio at &lt;span class=&#34;math inline&#34;&gt;\(n=500\)&lt;/span&gt; when we increase the bias in the initial estimator &lt;span class=&#34;math inline&#34;&gt;\(P_n^0\)&lt;/span&gt; by adding a bias mass to each of the support points of the empirical pmf. Second order TMLE provides improved accuracy in both estimation and inference over first order TMLE following likelihood guidance.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/combine_500-20210115.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Lastly, we show an example of estimating average treatment effects (ATEs) while the initial estimator for propensity scores is &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/4}\)&lt;/span&gt;-consistent while that for outcome models is not. The first order TMLE should have &lt;span class=&#34;math inline&#34;&gt;\(n^{1/2}\)&lt;/span&gt;-scaled bias that increases with &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; while the second order TMLE has a &lt;span class=&#34;math inline&#34;&gt;\(n^{1/2}\)&lt;/span&gt;-bias that should be constant in &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. The table below shows that the second order TMLE has a negligible bias and thereby still provides valid inference.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;n&lt;/th&gt;
-&lt;th&gt;bias 1-st&lt;/th&gt;
-&lt;th&gt;bias 2-nd&lt;/th&gt;
-&lt;th&gt;se 1-st&lt;/th&gt;
-&lt;th&gt;se 2-nd&lt;/th&gt;
-&lt;th&gt;mse 1-st&lt;/th&gt;
-&lt;th&gt;mse 2-nd&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;400&lt;/td&gt;
-&lt;td&gt;-0.720&lt;/td&gt;
-&lt;td&gt;0.078&lt;/td&gt;
-&lt;td&gt;0.815&lt;/td&gt;
-&lt;td&gt;1.175&lt;/td&gt;
-&lt;td&gt;1.087&lt;/td&gt;
-&lt;td&gt;1.178&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;750&lt;/td&gt;
-&lt;td&gt;-0.996&lt;/td&gt;
-&lt;td&gt;0.029&lt;/td&gt;
-&lt;td&gt;0.800&lt;/td&gt;
-&lt;td&gt;1.102&lt;/td&gt;
-&lt;td&gt;1.278&lt;/td&gt;
-&lt;td&gt;1.102&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;1000&lt;/td&gt;
-&lt;td&gt;-1.258&lt;/td&gt;
-&lt;td&gt;-0.062&lt;/td&gt;
-&lt;td&gt;0.786&lt;/td&gt;
-&lt;td&gt;1.066&lt;/td&gt;
-&lt;td&gt;1.483&lt;/td&gt;
-&lt;td&gt;1.068&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;1200&lt;/td&gt;
-&lt;td&gt;-1.345&lt;/td&gt;
-&lt;td&gt;0.022&lt;/td&gt;
-&lt;td&gt;0.809&lt;/td&gt;
-&lt;td&gt;1.028&lt;/td&gt;
-&lt;td&gt;1.570&lt;/td&gt;
-&lt;td&gt;1.028&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;1600&lt;/td&gt;
-&lt;td&gt;-1.549&lt;/td&gt;
-&lt;td&gt;-0.019&lt;/td&gt;
-&lt;td&gt;0.818&lt;/td&gt;
-&lt;td&gt;1.055&lt;/td&gt;
-&lt;td&gt;1.752&lt;/td&gt;
-&lt;td&gt;1.055&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;2500&lt;/td&gt;
-&lt;td&gt;-2.066&lt;/td&gt;
-&lt;td&gt;-0.094&lt;/td&gt;
-&lt;td&gt;0.819&lt;/td&gt;
-&lt;td&gt;0.999&lt;/td&gt;
-&lt;td&gt;2.222&lt;/td&gt;
-&lt;td&gt;1.003&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div id=&#34;discussions&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Discussions&lt;/h1&gt;
-&lt;p&gt;Although HAL-MLE-based fluctuations are fundamental to higher order TMLE, the update steps in practice can be based on empirical losses. Note that the &lt;span class=&#34;math inline&#34;&gt;\(j-1\)&lt;/span&gt;-th fluctuation &lt;span class=&#34;math inline&#34;&gt;\(\Psi(\tilde P_n^{(1)}\cdots\tilde P_n^{(j-1)}(P_0))\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(j = 0, \dots, k-1\)&lt;/span&gt;, is nothing but a pathwise differentiable parameter with a known canonical gradient, &lt;span class=&#34;math inline&#34;&gt;\(D^{(j)}_{n, P}\)&lt;/span&gt;. For jointly targeting this sequence of &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; parameters, one can solve the empirical &lt;span class=&#34;math inline&#34;&gt;\(P_n\)&lt;/span&gt;-regularized efficient score equations (where the scores still involve HAL-MLEs). As we showed in the technical report, this preserves the exact expansion and even leads to an improved undersmoothing term, and therefore is the recommended implementation. At &lt;span class=&#34;math inline&#34;&gt;\(k=1\)&lt;/span&gt;, this exactly coincides with the regular first order TMLE.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-10-higher-order-targeted-maximum-likelihood-estimation_files/figure_targets.jpg&#34; /&gt;
-&lt;em&gt;Figure 2: Jointly consider the sequence of data-adaptive fluctuations.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;An important next step is the (automated) computation of the first and higher order canonical gradients with least squares regression or symmetric matrix inversion &lt;span class=&#34;citation&#34;&gt;(van der Laan, Wang, and van der Laan &lt;a href=&#34;#ref-van2021higher&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, thereby opening up the computation of higher order TMLEs with standard machinery, avoiding delicate analytics needed to determine closed forms.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;References&lt;/h1&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-benkeser2016highly&#34;&gt;
-&lt;p&gt;Benkeser, David, and Mark J van ver Laan. 2016. “The Highly Adaptive Lasso Estimator.” In &lt;em&gt;2016 Ieee International Conference on Data Science and Advanced Analytics (Dsaa)&lt;/em&gt;, 689–96. IEEE.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2015generally&#34;&gt;
-&lt;p&gt;van der Laan, Mark J. 2015. “A Generally Efficient Targeted Minimum Loss Based Estimator.”&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2017generally&#34;&gt;
-&lt;p&gt;———. 2017. “A Generally Efficient Targeted Minimum Loss Based Estimator Based on the Highly Adaptive Lasso.” &lt;em&gt;The International Journal of Biostatistics&lt;/em&gt; 13 (2).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-vanderLaan&amp;amp;Benkeser&amp;amp;Cai19&#34;&gt;
-&lt;p&gt;van der Laan, Mark J, David Benkeser, and Weixin Cai. 2019a. “Causal Inference Based on Undersmoothing the Highly Adaptive Lasso.”&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2019efficient&#34;&gt;
-&lt;p&gt;———. 2019b. “Efficient Estimation of Pathwise Differentiable Target Parameters with the Undersmoothed Highly Adaptive Lasso.” &lt;em&gt;arXiv Preprint arXiv:1908.05607&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2011targeted&#34;&gt;
-&lt;p&gt;van der Laan, Mark J, and Sherri Rose. 2011. &lt;em&gt;Targeted Learning: Causal Inference for Observational and Experimental Data&lt;/em&gt;. Springer Science &amp;amp; Business Media.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2018targeted&#34;&gt;
-&lt;p&gt;———. 2018. &lt;em&gt;Targeted Learning in Data Science&lt;/em&gt;. Springer.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2006targeted&#34;&gt;
-&lt;p&gt;van der Laan, Mark J, and Daniel Rubin. 2006. “Targeted Maximum Likelihood Learning.” &lt;em&gt;The International Journal of Biostatistics&lt;/em&gt; 2 (1).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-van2021higher&#34;&gt;
-&lt;p&gt;van der Laan, Mark J, Zeyi Wang, and Lars van der Laan. 2021. “Higher Order Targeted Maximum Likelihood Estimation.” &lt;em&gt;arXiv Preprint arXiv:2101.06290&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>

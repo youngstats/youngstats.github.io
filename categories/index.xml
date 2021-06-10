@@ -6,13 +6,22 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bayesian-statistics</title>
       <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spatiotemporal-data</title>
+      <link>https://youngstats.github.io/categories/spatiotemporal-data/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/spatiotemporal-data/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>correlation</title>
-      <link>https://youngstats.github.io/categories/correlation/</link>
-      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/correlation/</guid>
       <description></description>
     </item>
     

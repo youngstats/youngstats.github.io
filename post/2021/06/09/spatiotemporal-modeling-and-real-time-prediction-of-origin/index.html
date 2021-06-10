@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Spatiotemporal modeling and real-time prediction of origin-destination traffic demand | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/spatiotemporal-data">spatiotemporal-data</a>
+  
+  </div>
+
+  <h1><span class="title">Spatiotemporal modeling and real-time prediction of origin-destination traffic demand</span></h1>
+
+  
+  <h3 class="author">Xiaochen Xian,  Honghan Ye,  Xin Wang and Kaibo Liu
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><strong>Introduction</strong></p>
+<p>In the past decades, intelligent transportation system (ITS) has brought
+advanced technology that enables a data-rich environment and
+unprecedented opportunities for traffic prediction, which is considered
+as one of the most prevalent issues facing ITS (Li et al., 2015). We
+discuss the online prediction of the origin-destination (OD) demand
+count in traffic networks, which represents the number of trips between
+certain combinations of an origin and a destination. The study of OD
+demand prediction based on count data has a growing impact on many
+traffic control and management policies (Ashok, 1996, Ashok and
+Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For
+example, dynamic OD demand prediction is critical in planning for the
+charging services of the electrical vehicles (EV; Zhang et al., 2017). A
+well-designed charging facility network is necessary to extend the
+vehicle range and popularize the use of EVs. In particular, the dynamic
+demand between nodes of the traffic network plays a key role in
+determining the availability of the charging facilities, planning the
+multi-period charging schedules, and meeting the customer needs at the
+maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The
+objective of this study is to appropriately model the stochastic OD
+traffic demand counts considering the spatiotemporal correlations
+between different routes and epochs, while incorporating physical
+knowledge of the traffic network in the estimation. The estimation
+results are expected to enhance the prediction accuracy and robustness
+of the online traffic demand prediction for future epochs.</p>
+<p><strong>Model and method</strong></p>
+<p>We investigate a multivariate Poisson log-normal model with a
+block-diagonal covariance matrix and incorporate domain knowledge of the
+traffic network features to account for spatial correlations. Let
+<span class="math inline">\(N_{\text{ijt}}\)</span> denote the observed traffic demand (i.e., the count of
+vehicles) for route <span class="math inline">\(j\)</span> on day <span class="math inline">\(i\)</span>, at epoch <span class="math inline">\(t\)</span>. Based on the natural
+characteristics of the demand counts, it is reasonable to model each
+observation <span class="math inline">\(N_{\text{ijt}}\)</span> with a Poisson log-linear model (Perrakis
+et al., 2014, Xian et al. 2018) such that</p>
+<p><span class="math display">\[N_{\text{ijt}}\sim\text{Poisson}\left( \lambda_{\text{ijt}} \right),u_{\text{ijt}} = \log\lambda_{\text{ijt}}.\]</span></p>
+<p>Here <span class="math inline">\(\lambda_{\text{ijt}}\)</span> is the intensity of the Poisson process, and
+<span class="math inline">\(u_{\text{ijt}}\)</span> is the log transformation of the intensity. To
+characterize the spatiotemporal correlations across different routes and
+time points, we model <span class="math inline">\(u_{\text{ijt}}\)</span> as a mixed-effect Gaussian
+process based on <span class="math inline">\(K\)</span> basis functions <span class="math inline">\(B_{k}(t)\)</span> that</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math display">\[u_{\text{ijt}} = \mu_{\text{jt}} + \sum_{k = 1}^{K}{\gamma_{\text{jk}}B_{k}(t)} + Z_{\text{ijt}}.\]</span> (1)</td>
+</tr>
+</tbody>
+</table>
+<p>Here
+<span class="math inline">\(\mathbf{\mu =}\left\lbrack \mu_{11},\mu_{12},\ \cdots,\ \mu_{\text{JT}} \right\rbrack\mathbf{&#39;}\)</span>
+is the fixed effect coefficient that models the common characteristics
+of the whole traffic network, and
+<span class="math inline">\(\mathbf{\gamma}_{k}\mathbf{=}\left\lbrack \gamma_{1k},\ \gamma_{2k},\ \cdots,\ \gamma_{\text{Jk}} \right\rbrack\)</span>
+is the random effect coefficient with prior distribution
+<span class="math inline">\(\mathbf{\gamma}_{k}\sim N(0,\ \mathbf{R}_{\theta_{y}})\)</span> that
+characterizes the uniqueness of different routes. Here
+<span class="math inline">\(\mathbf{R}_{\theta_{y}}\)</span> is the correlation matrix which takes into
+consideration of the traffic network information, where
+<span class="math inline">\(\left\lbrack \mathbf{R}_{\theta_{y}} \right\rbrack_{j_{1},j_{2}} = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\}\)</span>.
+In this expression, <span class="math inline">\(\mathbf{y}_{j}\)</span> denotes the unique features of
+route <span class="math inline">\(j\)</span>, such as information about the origin and destination, the
+maximum speed limit on a route, and the travel distance. The term
+<span class="math inline">\(Z_{\text{ijt}}\)</span> in model (1) is the random error that follows a
+Gaussian distribution which has the covariance structure</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math display">\[\text{cov}\left( Z_{ij_{1}t_{1}},Z_{ij_{2}t_{2}} \right) = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\} \cdot \tau^{2}\exp\left\{ - \theta_{t}\left| t_{1} - t_{2} \right| \right\}.\]</span> (2)</td>
+</tr>
+</tbody>
+</table>
+<p>Which depends on both the features of routes <span class="math inline">\(j_{1}\)</span> and <span class="math inline">\(j_{2}\)</span>, and
+the time points <span class="math inline">\(t_{1}\)</span> and <span class="math inline">\(t_{2}\)</span>, which we refer to as the spatial
+and temporal covariance structures, respectively.</p>
+<p>Denote the log-transformed intensity of the OD traffic demand on day <span class="math inline">\(i\)</span>
+as
+<span class="math inline">\(\mathbf{u}_{i} = \left( u_{i11},u_{i12},\ldots,u_{\text{iJT}} \right)^{&#39;}\)</span>.
+We can further derive that conditioning on parameters
+<span class="math inline">\(\left( \mathbf{\mu},\ \theta_{y},\theta_{t},\mathbf{\sigma,\ }\tau^{2} \right)\)</span>,
+<span class="math inline">\(\mathbf{u}_{i}\)</span> follows normal distribution
+<span class="math inline">\(N\left( \mathbf{\mu},\ \mathbf{\Sigma} \right)\)</span>, where</p>
+<p><span class="math display">\[\mathbf{\mu} = \left( \mu_{11},\mu_{12},\ \cdots,\ \mu_{\text{JT}} \right)^{&#39;},\]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math display">\[\mathbf{\Sigma} = \mathbf{R}_{\theta_{y}}\bigotimes\left\lbrack \mathbf{R}_{B} + \tau^{2}\mathbf{R}_{\theta_{t}} \right\rbrack.\]</span> (3)</td>
+</tr>
+</tbody>
+</table>
+<p>Here, the symbol <span class="math inline">\(\bigotimes\)</span> denotes the Kronecker product,
+<span class="math inline">\(\mathbf{R}_{B}\)</span> is a fixed <span class="math inline">\(T \times T\)</span> matrix with the <span class="math inline">\((t_{1},t_{2})\)</span>
+element equal to <span class="math inline">\(\sum_{k = 1}^{K}{B_{k}(t_{1})B_{k}(t_{2})}\)</span>, and
+<span class="math inline">\(\mathbf{R}_{\theta_{t}}\)</span> is a <span class="math inline">\(T \times T\)</span> matrix with the
+<span class="math inline">\((t_{1},t_{2})\)</span> element equal to
+<span class="math inline">\(\exp\left\{ - \theta_{t}|t_{1} - t_{2}| \right\}\)</span>. Therefore, the large
+covariance matrix is parametrized based on only the parameters
+<span class="math inline">\(\theta_{y},\theta_{t},\mathbf{\sigma}\)</span>, and <span class="math inline">\(\tau^{2}\)</span>. This
+parsimonious model has several advantages, such as high interpretability
+tailored to the traffic demand count data, increased stability of the
+estimation results, and reduced computational burden for parameter
+estimation. We treat <span class="math inline">\(\mathbf{u}\)</span> as a latent variable and further
+employ the EM algorithm to obtain the maximum likelihood estimation
+(MLE) for the parameters.</p>
+<p>In this way, we can fully explore the complicated spatiotemporal
+correlation structure of the traffic network demand and automatically
+cluster the routes with high correlations, without introducing a large
+number of parameters that impact the estimation accuracy. Besides
+transportation systems, the proposed method can be easily extended to
+other network applications with count data through few modifications,
+such as communication systems, supply chain management, smart grid, or
+even three-dimensional networks (Wang et al., 2018).</p>
+<p><strong>Case study</strong></p>
+<p>We apply the proposed method to a real New York yellow taxi dataset
+which is collected from June 1<sup>st</sup> to July 31<sup>st</sup> in 2017 (NYC taxi,
+2017). The dataset records all yellow taxi trips during the
+aforementioned time period including the pick-up and drop-off dates and
+times, pick-up and drop-off locations, trip distances, and payment
+information about the trips. We focus on the trips between the four
+busiest zones in Manhattan and investigate the structure of the travel
+demand counts on these zones as OD pairs. The details of the four taxi
+zones are shown in Figure 1.</p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f1.jpg" /></p>
+<table style="width:97%;">
+<colgroup>
+<col width="14%" />
+<col width="24%" />
+<col width="58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Index</th>
+<th align="left">Borough</th>
+<th align="left">Zones</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Manhattan</td>
+<td align="left">Lincoln Square East</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">Manhattan</td>
+<td align="left">Times Square/Theatre District</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Manhattan</td>
+<td align="left">Upper East Side North</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Manhattan</td>
+<td align="left">Upper East Side South</td>
+</tr>
+</tbody>
+</table>
+<p><em>Figure 1. Illustration of the taxi zones in the case study</em></p>
+<p>Figure 2 further shows the specific taxi demand prediction results of
+two routes <span class="math inline">\((4,\ 3)\)</span> and <span class="math inline">\((4,\ 4)\)</span> for four test days. The solid black
+line in this figure represents the true dynamic traffic demand counts,
+where it can be observed that the true taxi demand indeed exhibits high
+spatial and temporal variation and strong correlations for observations
+between the routes and across different epochs. The solid red line in is
+the predicted demand using the proposed method, and the dashed error
+bars show the 90% confidence interval of the prediction based on the
+variance derivation in equation (7), which significantly outperforms the
+existing method shown in black dotted line.</p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f2.jpg" /></p>
+<p><em>Figure 2. Taxi demand prediction results for routes <span class="math inline">\((4,\ 3)\)</span> and
+<span class="math inline">\((4,\ 4)\)</span>.</em></p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
