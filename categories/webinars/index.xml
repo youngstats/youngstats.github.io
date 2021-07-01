@@ -6,7 +6,17 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concentration Inequality in Machine Learning</title>
+      <link>https://youngstats.github.io/post/2021/06/30/concentration-inequality-in-machine-learning/</link>
+      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/30/concentration-inequality-in-machine-learning/</guid>
+      <description>The fifth “One World webinar” organized by YoungStatS will take place on September 15th, 2021. Selected young European researchers active in the areas of probability and machine learning will present their recent contributions. The webinar is joint cooperation between the Young Researchers Committee of the Bernoulli Society and the YoungStatS project.
+When &amp;amp; Where:- Wednesday, September 15th, 17:00 CEST- Online, via Zoom. The registration form will be provided on the YoungStatS website.</description>
+    </item>
+    
     <item>
       <title>Recent Advances in Functional Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>

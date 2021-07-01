@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Depth Quantile Functions | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/high-dimensional-data">high-dimensional-data</a>
+  
+  </div>
+
+  <h1><span class="title">Depth Quantile Functions</span></h1>
+
+  
+  <h3 class="author">Gabriel Chandler and Wolfgang Polonik
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><img src="/post/2021-07-01-depth-quantile-functions_files/f1.png" />
+<em>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.</em></p>
+<p>A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the <strong>depth quantile function</strong> (DQF), <span class="math inline">\(q_{ij}(\alpha)\)</span> which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable <span class="math inline">\(\alpha\)</span> which allows plotting. By construction, described below, these functions encode geometric information about the underlying data set. Consequently, we obtain a tool that permits an interpretable visualization of point cloud geometry regardless of dimension of the data. Additionally, tools from functional data analysis can now be used to solve problems (classification, anomaly detection, etc).</p>
+<p>The primary tool used is that of Tukey’s half space depth (HSD), which provides a higher dimensional analog to the order statistics as a measure of centrality of an observation in a data set (where, for instance, the median is the most central or “deepest” point). In fact, the one dimensional version of HSD (<span class="math inline">\(D(x) = \min\{F_n(x), 1-F_n(x)\}\)</span> with <span class="math inline">\(F_n\)</span> the EDF) is all we need, as we consider projections of our data onto lines before computing centrality, see below.</p>
+<p>It is known that for HSD in any dimension, the level sets <span class="math inline">\(\{x:D(x)\geq\lambda\}\)</span> are necessarily convex, thus not conforming to the shape of the underlying density. Additionally, in high dimensions, it’s likely that most points live near the boundary of the point cloud (the convex hull), i.e. we expect almost all points to be “non-central”. To get around this second problem, we instead consider, for every pair of points (<span class="math inline">\(x_i, x_j\)</span>), the midpoint <span class="math inline">\(m_{ij} = \frac{x_i + x_j}{2}\)</span> as the base point in the construction of our feature functions <span class="math inline">\(q_{ij}(\alpha)\)</span>. Thus, we construct a <em>matrix</em> of feature functions, with each observation corresponding to <span class="math inline">\(n-1\)</span> feature functions, one for every other observation in the data set (though current work uses only the average of these functions or appropriate subsets of them). The choice of the midpoint as base point is motivated as follows. Consider a 2-class modal classification problem, where each class is represented by a component of a mixture of two normal distributions for which the corresponding cluster centers (the means) are sufficiently separated. When considering a pair of observations from different classes, their midpoint is likely to live in a region between the two point clouds with few nearby observations, in other words, a low density region with a high measure of centrality. The opposite can be expected for within class comparisons, i.e. two observations from the same class.</p>
+<p>To addresses the convexity issue alluded to above, we use “local” versions of the HSD. This is done by taking random subsets of the data space containing <span class="math inline">\(m_{ij}\)</span> and computing the HSD for this point after projection of the subset onto the line <span class="math inline">\(\ell_{ij}\)</span> that is determined by the two points <span class="math inline">\(x_i,x_j\)</span>. Specifically, the subsets are given by the data residing in randomly selected spherical cones of a fixed angle (which is a tuning parameter) with axis of symmetry <span class="math inline">\(\ell_{ij}\)</span> (see figure 2.) We define a distribution of cone tips along <span class="math inline">\(\ell_{ij}\)</span>, which induces a distribution of “local” depths (HSD), and define the DQF as the corresponding quantile function of this distribution. Using directions determined by pairs of points (i.e. the lines <span class="math inline">\(\ell_{ij}\)</span>) addresses a challenge with high dimensional data: which direction should one look to capture interesting feature of the data? It also results in this method being automatically adaptive to sparseness (data living in a lower dimensional subspace of our data space).</p>
+<p><img src="/post/2021-07-01-depth-quantile-functions_files/f2.png" />
+<em>Figure 2: A local depth for midpoint in red. Depth value will be 2 for this cone tip.</em></p>
+<p>As a result of this construction, we end up with a multi-scale method, a function defined on [0,1], that is non-degenerate at both boundaries (in contrast to most multi-scale methods). One can show that the derivative of <span class="math inline">\(q_{ij}(\alpha)\)</span> as <span class="math inline">\(\alpha\to 0\)</span> yields information about the density at <span class="math inline">\(m_{ij}\)</span>, while <span class="math inline">\(q_{ij}(1)\)</span> is related to its centrality in the entire point cloud. The manner in which <span class="math inline">\(q_{ij}\)</span> grows with increasing <span class="math inline">\(\alpha\)</span>, while less interpretable, yields valuable information about the observations it corresponds to.</p>
+<p>As an example of how this information might be used, we again consider the 2-class classification problem. Each observation is described by two functions, the average function <span class="math inline">\(\frac{1}{|C_1|}\sum_{j\in C_1}q_{ij}(\alpha)\)</span> for comparisons with class 1 (<span class="math inline">\(C_1\)</span>), and similarly the average function for comparisons with class 2. In line with the heuristic laid out above, it can be seen in figure 1 that for an observation from class 1, comparisons with class two tends to yield functions that have low density (so are slow to grow for small quantile levels) and large value for <span class="math inline">\(\alpha=1\)</span> corresponding to high centrality. In-class comparisons have the opposite properties. A simple heuristic for solving this classification problem might be to use the first few loadings from an fPCA and your favorite classifier for Euclidean data. Results on several data sets using an untuned SVM were competitive with existing methods with extensive tuning.</p>
+<p>Finally, the construction only depends on the data via inner products, meaning that DQFs can be constructing on any data type for which a kernel is defined, for instance persistence diagrams in topological data analysis, allowing for a visualization of non-Euclidean data in addition to high (including infinite) dimensional Euclidean data.</p>
+<p>Reference: Chandler, G. and Polonik, W. “Multiscale geometric feature extraction for high-dimensional and non-Euclidean data with applications.” Ann. Statist. 49 (2) 988 - 1010, April 2021. (<a href="https://arxiv.org/abs/1811.10178" class="uri">https://arxiv.org/abs/1811.10178</a>)</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

@@ -6,7 +6,17 @@
     <description>Recent content in high dimensional data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Depth Quantile Functions</title>
+      <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</guid>
+      <description>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.
+A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
+    </item>
+    
     <item>
       <title>Higher Order Targeted Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
