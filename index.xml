@@ -100,7 +100,7 @@ can we effectively rely on Bayes factor testing to do a good job under
 optional stopping or not? As we shall see, the answer is subtle.
 Secondly, we extend the reach of such claims to more general settings,
 for which they have never been formally verified and for which
-verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
+verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
 we explain claims about optional stopping for an audience of
 methodologists and applied statisticians with the help of computer
 simulations.&lt;br /&gt;
@@ -169,7 +169,7 @@ if, using prior &lt;span class=&#34;math inline&#34;&gt;\(P_1(\theta)\)&lt;/span
 stopped at sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;lt; n\)&lt;/span&gt;, one should have really used prior
 &lt;span class=&#34;math inline&#34;&gt;\(P&amp;#39;_1(\theta)\)&lt;/span&gt; based on sample of size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;\)&lt;/span&gt;...but then one would have
 stopped at yet another sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;#39;\)&lt;/span&gt;, and so on. See our paper
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
 &lt;/p&gt;
 &lt;p&gt;The third sense is a frequentist interpretation of handling optional
 stopping, which is about controlling the Type I error of an experiment.
@@ -221,10 +221,10 @@ prof. Peter Grünwald, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
 Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. &lt;span&gt;“Bayesian Statistical Inference for Psychological Research.”&lt;/span&gt; &lt;em&gt;Psychological Review&lt;/em&gt; 70 (3): 193–242. &lt;a href=&#34;https://doi.org/10.1037/h0044139&#34;&gt;https://doi.org/10.1037/h0044139&lt;/a&gt;.
 &lt;/div&gt;
 &lt;div id=&#34;ref-heide2020optional&#34; class=&#34;csl-entry&#34;&gt;
- Heide, Rianne, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
+Heide, Rianne de, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
 &lt;/div&gt;
 &lt;div id=&#34;ref-hendriksen2020optional&#34; class=&#34;csl-entry&#34;&gt;
-Hendriksen, Allard, Rianne Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
+Hendriksen, Allard, Rianne de Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
 &lt;/div&gt;
 &lt;div id=&#34;ref-john-2012-measur-preval&#34; class=&#34;csl-entry&#34;&gt;
 John, Leslie K, George Loewenstein, and Drazen Prelec. 2012. &lt;span&gt;“Measuring the Prevalence of Questionable Research Practices with Incentives for Truth Telling.”&lt;/span&gt; &lt;em&gt;Psychological Science&lt;/em&gt;.
@@ -269,30 +269,7 @@ Yu, Erica C., Amber M. Sprenger, Rick P. Thomas, and Michael R. Dougherty. 2014.
 
 
 &lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In the past decades, intelligent transportation system (ITS) has brought
-advanced technology that enables a data-rich environment and
-unprecedented opportunities for traffic prediction, which is considered
-as one of the most prevalent issues facing ITS (Li et al., 2015). We
-discuss the online prediction of the origin-destination (OD) demand
-count in traffic networks, which represents the number of trips between
-certain combinations of an origin and a destination. The study of OD
-demand prediction based on count data has a growing impact on many
-traffic control and management policies (Ashok, 1996, Ashok and
-Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For
-example, dynamic OD demand prediction is critical in planning for the
-charging services of the electrical vehicles (EV; Zhang et al., 2017). A
-well-designed charging facility network is necessary to extend the
-vehicle range and popularize the use of EVs. In particular, the dynamic
-demand between nodes of the traffic network plays a key role in
-determining the availability of the charging facilities, planning the
-multi-period charging schedules, and meeting the customer needs at the
-maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The
-objective of this study is to appropriately model the stochastic OD
-traffic demand counts considering the spatiotemporal correlations
-between different routes and epochs, while incorporating physical
-knowledge of the traffic network in the estimation. The estimation
-results are expected to enhance the prediction accuracy and robustness
-of the online traffic demand prediction for future epochs.&lt;/p&gt;
+&lt;p&gt;In the past decades, intelligent transportation system (ITS) has brought advanced technology that enables a data-rich environment and unprecedented opportunities for traffic prediction, which is considered as one of the most prevalent issues facing ITS (Li et al., 2015). We discuss the online prediction of the origin-destination (OD) demand count in traffic networks, which represents the number of trips between certain combinations of an origin and a destination. The study of OD demand prediction based on count data has a growing impact on many traffic control and management policies (Ashok, 1996, Ashok and Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For example, dynamic OD demand prediction is critical in planning for the charging services of the electrical vehicles (EV; Zhang et al., 2017). A well-designed charging facility network is necessary to extend the vehicle range and popularize the use of EVs. In particular, the dynamic demand between nodes of the traffic network plays a key role in determining the availability of the charging facilities, planning the multi-period charging schedules, and meeting the customer needs at the maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The objective of this study is to appropriately model the stochastic OD traffic demand counts considering the spatiotemporal correlations between different routes and epochs, while incorporating physical knowledge of the traffic network in the estimation. The estimation results are expected to enhance the prediction accuracy and robustness of the online traffic demand prediction for future epochs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model and method&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;We investigate a multivariate Poisson log-normal model with a
 block-diagonal covariance matrix and incorporate domain knowledge of the
@@ -439,6 +416,31 @@ existing method shown in black dotted line.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f2.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Figure 2. Taxi demand prediction results for routes &lt;span class=&#34;math inline&#34;&gt;\((4,\ 3)\)&lt;/span&gt; and
 &lt;span class=&#34;math inline&#34;&gt;\((4,\ 4)\)&lt;/span&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This post is based on&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Xian, X., Ye, H., Wang, X., and Liu, K. (2021). Spatiotemporal modeling and real-time prediction of origin-destination traffic demand. &lt;em&gt;Technometrics&lt;/em&gt;, 63(1), 77-89.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Li, L., Su, X., Zhang, Y., Lin, Y., and Li, Z. (2015). Trend modeling for traffic time series analysis: An integrated study. &lt;em&gt;IEEE Transactions on Intelligent Transportation Systems&lt;/em&gt;, 16(6), 3430-3439.&lt;/li&gt;
+&lt;li&gt;Ashok, K. (1996). Estimation and prediction of time-dependent origin-destination flows (Doctoral dissertation, Massachusetts Institute of Technology).&lt;/li&gt;
+&lt;li&gt;Ashok, K., and Ben-Akiva, M. E. (2002). Estimation and prediction of time-dependent origin-destination flows with a stochastic mapping to path flows and link flows. &lt;em&gt;Transportation Science&lt;/em&gt;, 36(2), 184-198.&lt;/li&gt;
+&lt;li&gt;Brandstatter, G., Kahr, M., and Leitner, M. (2017). Determining optimal locations for charging stations of electric car-sharing systems under stochastic demand. &lt;em&gt;Transportation Research Part B: Methodological&lt;/em&gt;, 104, 17-35.&lt;/li&gt;
+&lt;li&gt;Li, B. (2005). Bayesian inference for origin-destination matrices of transport networks using the EM algorithm. &lt;em&gt;Technometrics&lt;/em&gt;, 47(4), 399-408.&lt;/li&gt;
+&lt;li&gt;Hazelton, M. L. (2008). Statistical inference for time varying origin–destination matrices. &lt;em&gt;Transportation Research Part B: Methodological&lt;/em&gt;, 42(6), 542-552.
+NYC taxi, (2017). Retrieved from &lt;a href=&#34;http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml&#34; class=&#34;uri&#34;&gt;http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Perrakis, K., Karlis, D., Cools, M., Janssens, D., Vanhoof, K., and Wets, G. (2012). A Bayesian approach for modeling origin-destination matrices. &lt;em&gt;Transportation Research Part A: Policy and Practice&lt;/em&gt;, 46(1), 200-212.&lt;/li&gt;
+&lt;li&gt;Shao, H., Lam, W. H., Sumalee, A., Chen, A., and Hazelton, M. L. (2014). Estimation of mean and covariance of peak hour origin-destination demands from day-to-day traffic counts. &lt;em&gt;Transportation Research Part B: Methodological&lt;/em&gt;, 68, 52-75.&lt;/li&gt;
+&lt;li&gt;Wang, D., Liu, K., and Zhang, X. (2018), “Modeling of a three-dimensional dynamic thermal field under grid-based sensor networks in grain storage”, in press, &lt;em&gt;IISE Transactions&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Zhang, A., Kang, J. E., and Kwon, C. (2017). Incorporating demand dynamics in multi-period capacitated fast-charging location planning for electric vehicles. &lt;em&gt;Transportation Research Part B: Methodological&lt;/em&gt;, 103, 5-29.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;About the authors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/xiaochen.jpg&#34; height=&#34;75&#34; /&gt;
+Dr. Xiaochen Xian is an assistant professor from the Department of Industrial and Systems Engineering at the University of Florida.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/ye.jpg&#34; height=&#34;75&#34; /&gt;
+Honghan Ye is a Ph.D. candidate from the Department of Industrial and Systems Engineering at UW-Madison.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/wang.jpg&#34; height=&#34;75&#34; /&gt;
+Dr. Xin Wang is an assistant professor from the Department of Industrial and Systems Engineering at UW-Madison.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/liu.png&#34; height=&#34;75&#34; /&gt;
+Dr. Kaibo Liu is an associate professor from the Department of Industrial and Systems Engineering at UW-Madison.&lt;/p&gt;
 </description>
     </item>
     

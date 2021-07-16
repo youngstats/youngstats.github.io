@@ -86,30 +86,7 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
 
 <p><strong>Introduction</strong></p>
-<p>In the past decades, intelligent transportation system (ITS) has brought
-advanced technology that enables a data-rich environment and
-unprecedented opportunities for traffic prediction, which is considered
-as one of the most prevalent issues facing ITS (Li et al., 2015). We
-discuss the online prediction of the origin-destination (OD) demand
-count in traffic networks, which represents the number of trips between
-certain combinations of an origin and a destination. The study of OD
-demand prediction based on count data has a growing impact on many
-traffic control and management policies (Ashok, 1996, Ashok and
-Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For
-example, dynamic OD demand prediction is critical in planning for the
-charging services of the electrical vehicles (EV; Zhang et al., 2017). A
-well-designed charging facility network is necessary to extend the
-vehicle range and popularize the use of EVs. In particular, the dynamic
-demand between nodes of the traffic network plays a key role in
-determining the availability of the charging facilities, planning the
-multi-period charging schedules, and meeting the customer needs at the
-maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The
-objective of this study is to appropriately model the stochastic OD
-traffic demand counts considering the spatiotemporal correlations
-between different routes and epochs, while incorporating physical
-knowledge of the traffic network in the estimation. The estimation
-results are expected to enhance the prediction accuracy and robustness
-of the online traffic demand prediction for future epochs.</p>
+<p>In the past decades, intelligent transportation system (ITS) has brought advanced technology that enables a data-rich environment and unprecedented opportunities for traffic prediction, which is considered as one of the most prevalent issues facing ITS (Li et al., 2015). We discuss the online prediction of the origin-destination (OD) demand count in traffic networks, which represents the number of trips between certain combinations of an origin and a destination. The study of OD demand prediction based on count data has a growing impact on many traffic control and management policies (Ashok, 1996, Ashok and Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al., 2014). For example, dynamic OD demand prediction is critical in planning for the charging services of the electrical vehicles (EV; Zhang et al., 2017). A well-designed charging facility network is necessary to extend the vehicle range and popularize the use of EVs. In particular, the dynamic demand between nodes of the traffic network plays a key role in determining the availability of the charging facilities, planning the multi-period charging schedules, and meeting the customer needs at the maximum extent (Zhang et al., 2017, Brandstatter et al., 2017). The objective of this study is to appropriately model the stochastic OD traffic demand counts considering the spatiotemporal correlations between different routes and epochs, while incorporating physical knowledge of the traffic network in the estimation. The estimation results are expected to enhance the prediction accuracy and robustness of the online traffic demand prediction for future epochs.</p>
 <p><strong>Model and method</strong></p>
 <p>We investigate a multivariate Poisson log-normal model with a
 block-diagonal covariance matrix and incorporate domain knowledge of the
@@ -256,6 +233,31 @@ existing method shown in black dotted line.</p>
 <p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/f2.jpg" /></p>
 <p><em>Figure 2. Taxi demand prediction results for routes <span class="math inline">\((4,\ 3)\)</span> and
 <span class="math inline">\((4,\ 4)\)</span>.</em></p>
+<p><strong>This post is based on</strong></p>
+<p>Xian, X., Ye, H., Wang, X., and Liu, K. (2021). Spatiotemporal modeling and real-time prediction of origin-destination traffic demand. <em>Technometrics</em>, 63(1), 77-89.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>Li, L., Su, X., Zhang, Y., Lin, Y., and Li, Z. (2015). Trend modeling for traffic time series analysis: An integrated study. <em>IEEE Transactions on Intelligent Transportation Systems</em>, 16(6), 3430-3439.</li>
+<li>Ashok, K. (1996). Estimation and prediction of time-dependent origin-destination flows (Doctoral dissertation, Massachusetts Institute of Technology).</li>
+<li>Ashok, K., and Ben-Akiva, M. E. (2002). Estimation and prediction of time-dependent origin-destination flows with a stochastic mapping to path flows and link flows. <em>Transportation Science</em>, 36(2), 184-198.</li>
+<li>Brandstatter, G., Kahr, M., and Leitner, M. (2017). Determining optimal locations for charging stations of electric car-sharing systems under stochastic demand. <em>Transportation Research Part B: Methodological</em>, 104, 17-35.</li>
+<li>Li, B. (2005). Bayesian inference for origin-destination matrices of transport networks using the EM algorithm. <em>Technometrics</em>, 47(4), 399-408.</li>
+<li>Hazelton, M. L. (2008). Statistical inference for time varying origin–destination matrices. <em>Transportation Research Part B: Methodological</em>, 42(6), 542-552.
+NYC taxi, (2017). Retrieved from <a href="http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml" class="uri">http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml</a>.</li>
+<li>Perrakis, K., Karlis, D., Cools, M., Janssens, D., Vanhoof, K., and Wets, G. (2012). A Bayesian approach for modeling origin-destination matrices. <em>Transportation Research Part A: Policy and Practice</em>, 46(1), 200-212.</li>
+<li>Shao, H., Lam, W. H., Sumalee, A., Chen, A., and Hazelton, M. L. (2014). Estimation of mean and covariance of peak hour origin-destination demands from day-to-day traffic counts. <em>Transportation Research Part B: Methodological</em>, 68, 52-75.</li>
+<li>Wang, D., Liu, K., and Zhang, X. (2018), “Modeling of a three-dimensional dynamic thermal field under grid-based sensor networks in grain storage”, in press, <em>IISE Transactions</em>.</li>
+<li>Zhang, A., Kang, J. E., and Kwon, C. (2017). Incorporating demand dynamics in multi-period capacitated fast-charging location planning for electric vehicles. <em>Transportation Research Part B: Methodological</em>, 103, 5-29.</li>
+</ul>
+<p><strong>About the authors</strong></p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/xiaochen.jpg" height="75" />
+Dr. Xiaochen Xian is an assistant professor from the Department of Industrial and Systems Engineering at the University of Florida.</p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/ye.jpg" height="75" />
+Honghan Ye is a Ph.D. candidate from the Department of Industrial and Systems Engineering at UW-Madison.</p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/wang.jpg" height="75" />
+Dr. Xin Wang is an assistant professor from the Department of Industrial and Systems Engineering at UW-Madison.</p>
+<p><img src="/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/liu.png" height="75" />
+Dr. Kaibo Liu is an associate professor from the Department of Industrial and Systems Engineering at UW-Madison.</p>
 
 </main>
 
