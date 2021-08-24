@@ -46,16 +46,16 @@
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wednesday, September 15th, 17:00 CEST&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form will be provided on the YoungStatS website. Further details and the Zoom link will be sent to the registered addresses only.&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSe3S-SK35qjIG2bNUs1lBNQsq1uXWBYkO3VMqpvxywM9LdXpQ/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Antoine Marchina (Université de Paris)&lt;/li&gt;
-&lt;li&gt;Geoffrey Chinot (ETH Zurich)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amarchina.perso.math.cnrs.fr/index_en.html&#34;&gt;Antoine Marchina&lt;/a&gt; (Université de Paris): »Concentration inequalities for suprema of unbounded empirical processes« (Based on the &lt;a href=&#34;https://hal.archives-ouvertes.fr/hal-01545101/&#34;&gt;preprint&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/geoffreychinot&#34;&gt;Geoffrey Chinot&lt;/a&gt; (ETH Zurich): »Adaboost and robust one-bit compressed sensing« (based on the &lt;a href=&#34;https://arxiv.org/pdf/2105.02083.pdf&#34;&gt;preprint&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Discussant:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Prof. Gábor Lugosi, ICREA Research Professor at Pompeu Fabra University and Barcelona GSE Research Professor, and Blackwell Lecture speaker at the upcoming Bernoulli-IMS 2021 World Congress in Probability and Statistics&lt;/li&gt;
+&lt;li&gt;Prof. Gábor Lugosi, ICREA Research Professor at Pompeu Fabra University and Barcelona GSE Research Professor, Blackwell Lecture speaker at the Bernoulli-IMS 2021 World Congress in Probability and Statistics&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-30-concentration-inequality-in-machine-learning_files/webinar1.jpg&#34; /&gt;&lt;/p&gt;
@@ -100,7 +100,7 @@ can we effectively rely on Bayes factor testing to do a good job under
 optional stopping or not? As we shall see, the answer is subtle.
 Secondly, we extend the reach of such claims to more general settings,
 for which they have never been formally verified and for which
-verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
+verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
 we explain claims about optional stopping for an audience of
 methodologists and applied statisticians with the help of computer
 simulations.&lt;br /&gt;
@@ -169,7 +169,7 @@ if, using prior &lt;span class=&#34;math inline&#34;&gt;\(P_1(\theta)\)&lt;/span
 stopped at sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;lt; n\)&lt;/span&gt;, one should have really used prior
 &lt;span class=&#34;math inline&#34;&gt;\(P&amp;#39;_1(\theta)\)&lt;/span&gt; based on sample of size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;\)&lt;/span&gt;...but then one would have
 stopped at yet another sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;#39;\)&lt;/span&gt;, and so on. See our paper
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
+&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
 &lt;/p&gt;
 &lt;p&gt;The third sense is a frequentist interpretation of handling optional
 stopping, which is about controlling the Type I error of an experiment.
@@ -221,10 +221,10 @@ prof. Peter Grünwald, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
 Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. &lt;span&gt;“Bayesian Statistical Inference for Psychological Research.”&lt;/span&gt; &lt;em&gt;Psychological Review&lt;/em&gt; 70 (3): 193–242. &lt;a href=&#34;https://doi.org/10.1037/h0044139&#34;&gt;https://doi.org/10.1037/h0044139&lt;/a&gt;.
 &lt;/div&gt;
 &lt;div id=&#34;ref-heide2020optional&#34; class=&#34;csl-entry&#34;&gt;
-Heide, Rianne de, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
+ Heide, Rianne, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
 &lt;/div&gt;
 &lt;div id=&#34;ref-hendriksen2020optional&#34; class=&#34;csl-entry&#34;&gt;
-Hendriksen, Allard, Rianne de Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
+Hendriksen, Allard, Rianne Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
 &lt;/div&gt;
 &lt;div id=&#34;ref-john-2012-measur-preval&#34; class=&#34;csl-entry&#34;&gt;
 John, Leslie K, George Loewenstein, and Drazen Prelec. 2012. &lt;span&gt;“Measuring the Prevalence of Questionable Research Practices with Incentives for Truth Telling.”&lt;/span&gt; &lt;em&gt;Psychological Science&lt;/em&gt;.
