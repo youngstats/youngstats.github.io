@@ -18,6 +18,16 @@ The sixth “One World webinar” organized by YoungStatS will take place onOct
     </item>
     
     <item>
+      <title>Advances in Difference-in-Differences in Econometrics</title>
+      <link>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
+      <description>Advances in Difference-in-Differences in Econometrics
+The eighth “One World webinar” organized by YoungStatS will take placeon December 13th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
+    </item>
+    
+    <item>
       <title>Optimal disclosure risk assessment</title>
       <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
@@ -94,15 +104,6 @@ When &amp;amp; Where:</description>
       
       <guid>https://youngstats.github.io/post/2021/04/27/a-small-step-to-understand-gda/</guid>
       <description>IntroductionIn the last decade, there have been spectacular advances on the practical side of machine learning.One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation (Goodfellow et al. 2014).State of the art models are capable of producing portraits of fake persons that look perfectly authentic to you and me (see e.g. (Salimans et al. 2016) and (Karras et al.</description>
-    </item>
-    
-    <item>
-      <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
-      <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
-      <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\); The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
     </item>
     
   </channel>

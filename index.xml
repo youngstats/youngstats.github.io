@@ -61,6 +61,53 @@ Mathematical Statistics (IMS).&lt;/p&gt;
     </item>
     
     <item>
+      <title>Advances in Difference-in-Differences in Econometrics</title>
+      <link>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Advances in Difference-in-Differences in Econometrics&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-advances-in-difference-in-differences-in-econometrics_files/cover_did_roth_image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The eighth “One World webinar” organized by YoungStatS will take place
+on December 13th, 2021. The difference-in-differences design is a
+quasi-experimental identification strategy for estimating causal effects
+which has become the single most popular research design in the
+quantitative social sciences, and as such, it merits careful study by
+researchers everywhere. It is also a flourishing field of present
+research in econometrics. Selected younger researchers active in the
+area will present their recent contributions on this topic.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;p&gt;Wednesday, December 15th, 9:00 PT / 12:00 EST / 18:00 CEST&lt;/p&gt;
+&lt;p&gt;Online, via Zoom. The registration form is available
+&lt;a href=&#34;https://docs.google.com/forms/d/1cdQT9YwjzIEjuNo_OMVjnPgKpO_6M2U6tBq9E471Df0/edit&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://sites.google.com/site/clementdechaisemartin/&#34;&gt;Clément de
+Chaisemartin&lt;/a&gt;,
+Sciences Po, Paris, France&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://jonathandroth.github.io/&#34;&gt;Jonathan Roth&lt;/a&gt;, Brown University,
+USA&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://bcallaway11.github.io/&#34;&gt;Brantly Callaway&lt;/a&gt;, University of
+Georgia, USA&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://lihualei71.github.io/&#34;&gt;Lihua Lei&lt;/a&gt;, Stanford University, USA&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. Pedro H.C. Sant&#39;Anna, Microsoft and Vanderbilt University,
+USA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
+Europe initiative (FENStatS) supported by the Bernoulli Society for
+Mathematical Statistics and Probability and the Institute of
+Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Optimal disclosure risk assessment</title>
       <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
@@ -922,60 +969,6 @@ Karras, T., T. Aila, S. Laine, and J. Lehtinen. 2018. &lt;span&gt;“Progressive
 Salimans, T., I. Goodfellow, W. Zaremba, V. Cheung, A. Radford, and X. Chen. 2016. &lt;span&gt;“Improved Techniques for Training &lt;span&gt;GAN&lt;/span&gt;s.”&lt;/span&gt; In &lt;em&gt;Advances in Neural Information Processing Systems 29&lt;/em&gt;, edited by D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, and R. Garnett, 2234–42. Red Hook: Curran Associates, Inc.
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
-      <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Let us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;; The decision policy: for every realized sample define the decision &lt;span class=&#34;math inline&#34;&gt;\(D\in \{0,1\}\)&lt;/span&gt;, where the null hypothesis is rejected if &lt;span class=&#34;math inline&#34;&gt;\(D=1\)&lt;/span&gt; and retained otherwise. For simplicity, let &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt; be the realized test statistic on which the decision &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is based, and let &lt;span class=&#34;math inline&#34;&gt;\(g(z\mid h=1)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(g(z\mid h=0)\)&lt;/span&gt; be, respectively, the non-null and the null density of &lt;span class=&#34;math inline&#34;&gt;\(z\)&lt;/span&gt;. The optimization problem is therefore:
-&lt;span class=&#34;math display&#34;&gt;\[\max_{D:\mathbb R \rightarrow \{0,1\}} \int D(z)g(z\mid h=1)dz\\ s.t.\int D(z)g(z\mid h=0)dz\leq \alpha.  \]&lt;/span&gt; This infinite dimensional integer problem happens to have a simple solution provided by the Neyman-Pearson (NP) Lemma.&lt;/p&gt;
-&lt;p&gt;In this era of big data, conducting a study with a single hypothesis is rare. In many disciplines, hundreds or thousands of null hypotheses are tested in each study. In order to avoid an inflation of false positive findings, it is critical to use multiple testing procedures that guarantee that a meaningful error measure is controlled at a predefined level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. The most popular measures are the family wise error rate (FWER), i.e.,
-the probability of at least one type I error, and the false discovery rate (FDR), i.e., the expected false discovery proportion.&lt;/p&gt;
-&lt;p&gt;Arguably, it is just as critical that the multiple testing procedure will have high statistical power, thus facilitating scientific discoveries. As with the single hypothesis testing problem, we take an optimization approach to the problem with &lt;span class=&#34;math inline&#34;&gt;\(K&amp;gt;1\)&lt;/span&gt; null hypotheses: we seek to find the &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; decision functions, &lt;span class=&#34;math inline&#34;&gt;\(\vec D: {\mathbb R}^K\rightarrow \{0,1 \}^K\)&lt;/span&gt;,
-that maximize some notion of power while guaranteeing that the error measure is at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. In this post, we shall consider the problem of finding the optimal decision functions when testing multiple hypotheses in a couple of settings of interest.&lt;/p&gt;
-&lt;p&gt;This post is based on our three recent papers on this topic: Rosset et al. (2018), where a general theoretical framework is presented; Heller and Rosset (2021), where the two-group model is discussed; and Heller, Krieger and Rosset (2021), where optimal clinical trial design is discussed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;an-optimal-policy-for-the-two-group-model&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;An optimal policy for the two-group model&lt;/h2&gt;
-&lt;p&gt;The two-group model, which is widely used in large scale inference problems, assumes a Bayesian setting, where the observed test statistics are generated independently from the mixture model &lt;span class=&#34;math display&#34;&gt;\[(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1),\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt; follows the &lt;span class=&#34;math inline&#34;&gt;\(Bernoulli(\pi)\)&lt;/span&gt; distribution, and indicates as before whether the null is true &lt;span class=&#34;math inline&#34;&gt;\((h=0)\)&lt;/span&gt; or false &lt;span class=&#34;math inline&#34;&gt;\((h=1)\)&lt;/span&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\(\vec z\)&lt;/span&gt; be a vector of length &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; generated according to the two group model, and consider the following optimization problem:
-&lt;span class=&#34;math display&#34;&gt;\[\max_{\vec D:{\mathbb R}^K \rightarrow \{0,1\}^K} \mathbb E(\vec h^t \vec D) \\ s.t. \ FDR(\vec D) \leq \alpha.\]&lt;/span&gt; One of our main results is that the solution is to threshold the test statistic &lt;span class=&#34;math display&#34;&gt;\[\mathbb P(h=0\mid z) = \frac{(1-\pi)g(z\mid h=0)}{(1-\pi)g(z\mid h=0)+\pi g(z\mid h=1)}, \]&lt;/span&gt; and that the threshold depends on the entire vector of test statistics &lt;span class=&#34;math inline&#34;&gt;\(\vec z\)&lt;/span&gt;. Thus for a realized vector of test statistics &lt;span class=&#34;math inline&#34;&gt;\(\vec z = (z_1, \ldots, z_K)\)&lt;/span&gt;, the decision vector &lt;span class=&#34;math inline&#34;&gt;\(\vec D\)&lt;/span&gt; can be described in the following form: &lt;span class=&#34;math display&#34;&gt;\[\vec D(\vec z) = (\mathbb I[\mathbb P(h=0\mid z_1)\leq t(\vec z)], \ldots, \mathbb I[\mathbb P(h=0\mid z_k)\leq t(\vec z)]),\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\mathbb I[\cdot]\)&lt;/span&gt; is the indicator function. This leads to practical algorithms which improve theoretically and empirically on previous solutions for the two-group model.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;an-optimal-policy-for-the-design-of-clinical-trials&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;An optimal policy for the design of clinical trials&lt;/h2&gt;
-&lt;p&gt;Assume that &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt; hypothesis testing problems are examined in a clinical trial (e.g., treatment effectiveness in two distinct subgroups). The federal agencies that approve drugs typically require strong FWER control at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.05\)&lt;/span&gt;. At the design stage, it is necessary to decide on the number of subjects that will be allocated. For &lt;span class=&#34;math inline&#34;&gt;\(K=1\)&lt;/span&gt;, this is typically done by computing the minimal number of subjects for achieving minimal power with a type I error probability of &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. For &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt;, with a relevant notion of required power &lt;span class=&#34;math inline&#34;&gt;\(\Pi(\vec D)\)&lt;/span&gt;, a smaller number of subjects will need to be allocated, if the multiple testing procedure is the optimal policy, rather than an off-the-shelf policy. However, finding the optimal policy may be difficult since
-the policy has to guarantee that for every data generation with at least one null parameter value, the probability of rejecting the null hypothesis corresponding to the null parameter value should be at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; (i.e., there may be an infinite number of constraints for strong FWER control at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;For simplicity, assume we have two independent test statistics that are normally distributed with variance one and expectation zero if the null hypothesis is true but negative if the null hypothesis is false. Then, the optimization problem can be formalized as follows:&lt;br /&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\max_{\vec D:{\mathbb R}^2 \rightarrow \{0,1\}^2} \Pi(\vec D) \\ s.t. \  \mathbb P_{(0, \theta)}(D_1=0) \leq \alpha \ \forall \ \theta &amp;lt;0; \ \mathbb P_{( \theta, 0 )}(D_2=0) \leq \alpha \ \forall \ \theta &amp;lt;0; \ \mathbb P_{(0, 0)}(\max(D_1,D_2)=0) \leq \alpha.\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;We also add the common-sense restriction that &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-values above &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; are not rejected (for details, see Heller, Krieger, and Rosset 2021).&lt;br /&gt;
-The resulting optimal rejection policy is attractive for relevant objectives &lt;span class=&#34;math inline&#34;&gt;\(\Pi(\vec D)\)&lt;/span&gt; that can be useful for clinical trials.
-Below we provide one example optimal policy: the policy maximizing the average power when both test statistics have expectation -2 (left panel). For comparison, we provide the off-the-shelf popular Hochberg procedure (which coincides with the Hommel procedure for &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt;). Both policies satisfy the strong FWER control guarantee at level &lt;span class=&#34;math inline&#34;&gt;\(\alpha = 0.05\)&lt;/span&gt;, but the average power of the optimal policy is 3% higher (63% versus 60%) if the test statistics are normally distributed with expectation -2. The color coding is as follows: in red, reject only the second hypothesis; in black, reject only the first hypothesis; in green, reject both hypotheses.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;this-post-is-based-on&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;This post is based on&lt;/h2&gt;
-&lt;p&gt;Heller, R. Krieger, A. and Rosset, S. (2021) &lt;em&gt;Optimal multiple testing and design in clinical trials&lt;/em&gt;. arXiv:2104.01346&lt;/p&gt;
-&lt;p&gt;Heller, R. and Rosset, S. (2020) &lt;em&gt;Optimal control of false discovery criteria in the two-group model&lt;/em&gt;. Journal of the Royal Statistical Society, Series B,
-&lt;a href=&#34;https://doi.org/10.1111/rssb.12403&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1111/rssb.12403&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Rosset, S. Heller, R. Painsky, A. and Aharoni, E. (2018) &lt;em&gt;Optimal and Maximin Procedures for Multiple Testing Problems&lt;/em&gt;. arXiv: 1804.10256&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;About the authors&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headRuth.jpg&#34; height=&#34;75&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ruth Heller&lt;/strong&gt; is an Associate Professor of Statistics at Tel-Aviv University, Israel, &lt;a href=&#34;mailto:ruheller@gmail.com&#34; class=&#34;email&#34;&gt;ruheller@gmail.com&lt;/a&gt;. Her research interests are in multiple comparisons, nonparametrics, and observational studies.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headSaharon.png&#34; height=&#34;75&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Saharon Rosset&lt;/strong&gt; is a Professor of Statistics at Tel-Aviv University, Israel, &lt;a href=&#34;mailto:saharon@tauex.tau.ac.il&#34; class=&#34;email&#34;&gt;saharon@tauex.tau.ac.il&lt;/a&gt;. His research interests are in Statistical Learning theory and methods
-and in Statistical Genetics.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
