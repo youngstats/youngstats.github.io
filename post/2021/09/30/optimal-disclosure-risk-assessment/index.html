@@ -124,8 +124,7 @@ vanishing normalized mean squared error (NMSE) for large sample size
 <span class="math inline">\((\lambda+1)^{-1}\propto (\log n)^{-1}\)</span> is the smallest possible
 sampling fraction for consistently estimating <span class="math inline">\(\tau_{1}\)</span>, thus the
 estimators’ NMSE is near optimal. Our paper also provides a rigorous
-answer to an open question raised by <span class="citation">@Ski</span>(02) about the feasibility of
-nonparametric estimation of <span class="math inline">\(\tau_{1}\)</span> and for a sampling fraction
+answer to an open question raised by Skinner and Elliot (2002) about the feasibility of nonparametric estimation of <span class="math inline">\(\tau_{1}\)</span> and for a sampling fraction
 <span class="math inline">\((\lambda+1)^{-1}&lt;1/2\)</span>.</p>
 </div>
 <div id="nonparametric-estimation-of-tau_1" class="section level1">
@@ -142,16 +141,15 @@ following estimator of <span class="math inline">\(\tau_1\)</span>:</p>
 \hat{\tau}_{1}=\sum_{i \geq 0} (-1)^{i} (i+1)\lambda^{i}Z_{i+1}.\]</span></p>
 <p>By construction, the estimator is unbiased and it admits a natural
 interpretation as a nonparametric empirical Bayes estimator in the sense
-of <span class="citation">@Rob</span>(56). The use of estimator is legitimated under the assumption
+of Robbins(1956). The use of estimator is legitimated under the assumption
 <span class="math inline">\(\lambda&lt;1\)</span>. For <span class="math inline">\(\lambda \geq 1\)</span> it becomes useless, because of its
 high variance due to the exponential growth of the coefficients
-$ ^i $. Unfortunately, the assumption <span class="math inline">\(\lambda &lt; 1\)</span> is
+<span class="math inline">\(\lambda^i\)</span>. Unfortunately, the assumption <span class="math inline">\(\lambda &lt; 1\)</span> is
 unrealistic in the context of disclosure risk assessment, where the size
 <span class="math inline">\(\lambda n\)</span> of the unobserved population is typically much bigger than
 the size <span class="math inline">\(n\)</span> of the observed sample. Thus the estimator requires an
 adjustment via suitable smoothing techniques, along similar lines as
-<span class="citation">@Orl</span>(17) in the context of the nonparametric estimation of the number of
-unseen species. We propose a smoothed version of <span class="math inline">\(\hat{\tau}_{1}\)</span> by
+Orlitsky et al. (2016) in the context of the nonparametric estimation of the number of unseen species. We propose a smoothed version of <span class="math inline">\(\hat{\tau}_{1}\)</span> by
 truncating the series at an independent random location <span class="math inline">\(L\)</span>, and then
 averaging over the distribution of <span class="math inline">\(L\)</span>, i.e.,</p>
 <p><span class="math display">\[\begin{aligned}
@@ -167,12 +165,12 @@ terms of the normalized mean squared error (NMSE). The NMSE is the mean
 squared error (MSE) of the estimator normalized by the maximum value of
 <span class="math inline">\(\tau_{1}\)</span> (which is exactly <span class="math inline">\(n\)</span>). Thus, the performance of an estimator
 is evaluated in terms of the rate of convergence to <span class="math inline">\(0\)</span> of the NMSE as
-<span class="math inline">\(n \to +\infty\)</span>. See also <span class="citation">@Orl</span>(17) for a definition of NMSE. In our
+<span class="math inline">\(n \to +\infty\)</span>. See also Orlitsky et al. (2016) for a definition of NMSE. In our
 paper we have proved that <span class="math inline">\(\hat{\tau}_{1}^L\)</span> provably estimate
 <span class="math inline">\(\tau_{1}\)</span> all of the way up to the sampling fraction
 <span class="math inline">\((\lambda+1)^{-1}\propto (\log n)^{-1}\)</span> of the population, with
 vanishing normalized mean-square error (NMSE) as <span class="math inline">\(n\)</span> becomes large.
-Then, by relying on recent techniques developed in <span class="citation">@wu2015chebyshev</span> in
+Then, by relying on recent techniques developed in Wu and Yang (2019) in
 the context of nonparametric estimation of the support size of discrete
 distributions, we are also able to provide us with a lower bound for the
 NMSE of any estimator of the disclosure risk <span class="math inline">\(\tau_1\)</span>. The lower bound
@@ -222,6 +220,9 @@ Mathematics of Université Paris-Sud (France).</p>
 <p><img src="/post/2021-09-30-optimal-disclosure-risk-assessment_files/panero.jpeg" height="100" />
 <strong>Francesca Panero</strong> is finishing her Ph.D. in Statistics at the
 University of Oxford (UK).</p>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
 <p>Good, I.J. and Toulmin, G.H. (1956). The number of new species, and the
 increase in population coverage, when a sample is increased.
 <em>Biometrika</em> <strong>43</strong>, 45–63.</p>

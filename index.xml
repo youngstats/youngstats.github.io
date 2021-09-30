@@ -156,8 +156,7 @@ vanishing normalized mean squared error (NMSE) for large sample size
 &lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}\propto (\log n)^{-1}\)&lt;/span&gt; is the smallest possible
 sampling fraction for consistently estimating &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt;, thus the
 estimators’ NMSE is near optimal. Our paper also provides a rigorous
-answer to an open question raised by &lt;span class=&#34;citation&#34;&gt;@Ski&lt;/span&gt;(02) about the feasibility of
-nonparametric estimation of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; and for a sampling fraction
+answer to an open question raised by Skinner and Elliot (2002) about the feasibility of nonparametric estimation of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; and for a sampling fraction
 &lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}&amp;lt;1/2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;nonparametric-estimation-of-tau_1&#34; class=&#34;section level1&#34;&gt;
@@ -174,16 +173,15 @@ following estimator of &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/sp
 \hat{\tau}_{1}=\sum_{i \geq 0} (-1)^{i} (i+1)\lambda^{i}Z_{i+1}.\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;By construction, the estimator is unbiased and it admits a natural
 interpretation as a nonparametric empirical Bayes estimator in the sense
-of &lt;span class=&#34;citation&#34;&gt;@Rob&lt;/span&gt;(56). The use of estimator is legitimated under the assumption
+of Robbins(1956). The use of estimator is legitimated under the assumption
 &lt;span class=&#34;math inline&#34;&gt;\(\lambda&amp;lt;1\)&lt;/span&gt;. For &lt;span class=&#34;math inline&#34;&gt;\(\lambda \geq 1\)&lt;/span&gt; it becomes useless, because of its
 high variance due to the exponential growth of the coefficients
-$ ^i $. Unfortunately, the assumption &lt;span class=&#34;math inline&#34;&gt;\(\lambda &amp;lt; 1\)&lt;/span&gt; is
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda^i\)&lt;/span&gt;. Unfortunately, the assumption &lt;span class=&#34;math inline&#34;&gt;\(\lambda &amp;lt; 1\)&lt;/span&gt; is
 unrealistic in the context of disclosure risk assessment, where the size
 &lt;span class=&#34;math inline&#34;&gt;\(\lambda n\)&lt;/span&gt; of the unobserved population is typically much bigger than
 the size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; of the observed sample. Thus the estimator requires an
 adjustment via suitable smoothing techniques, along similar lines as
-&lt;span class=&#34;citation&#34;&gt;@Orl&lt;/span&gt;(17) in the context of the nonparametric estimation of the number of
-unseen species. We propose a smoothed version of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}\)&lt;/span&gt; by
+Orlitsky et al. (2016) in the context of the nonparametric estimation of the number of unseen species. We propose a smoothed version of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}\)&lt;/span&gt; by
 truncating the series at an independent random location &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;, and then
 averaging over the distribution of &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;, i.e.,&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
@@ -199,12 +197,12 @@ terms of the normalized mean squared error (NMSE). The NMSE is the mean
 squared error (MSE) of the estimator normalized by the maximum value of
 &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; (which is exactly &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;). Thus, the performance of an estimator
 is evaluated in terms of the rate of convergence to &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; of the NMSE as
-&lt;span class=&#34;math inline&#34;&gt;\(n \to +\infty\)&lt;/span&gt;. See also &lt;span class=&#34;citation&#34;&gt;@Orl&lt;/span&gt;(17) for a definition of NMSE. In our
+&lt;span class=&#34;math inline&#34;&gt;\(n \to +\infty\)&lt;/span&gt;. See also Orlitsky et al. (2016) for a definition of NMSE. In our
 paper we have proved that &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}^L\)&lt;/span&gt; provably estimate
 &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; all of the way up to the sampling fraction
 &lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}\propto (\log n)^{-1}\)&lt;/span&gt; of the population, with
 vanishing normalized mean-square error (NMSE) as &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; becomes large.
-Then, by relying on recent techniques developed in &lt;span class=&#34;citation&#34;&gt;@wu2015chebyshev&lt;/span&gt; in
+Then, by relying on recent techniques developed in Wu and Yang (2019) in
 the context of nonparametric estimation of the support size of discrete
 distributions, we are also able to provide us with a lower bound for the
 NMSE of any estimator of the disclosure risk &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt;. The lower bound
@@ -254,6 +252,9 @@ Mathematics of Université Paris-Sud (France).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/panero.jpeg&#34; height=&#34;100&#34; /&gt;
 &lt;strong&gt;Francesca Panero&lt;/strong&gt; is finishing her Ph.D. in Statistics at the
 University of Oxford (UK).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
 &lt;p&gt;Good, I.J. and Toulmin, G.H. (1956). The number of new species, and the
 increase in population coverage, when a sample is increased.
 &lt;em&gt;Biometrika&lt;/em&gt; &lt;strong&gt;43&lt;/strong&gt;, 45–63.&lt;/p&gt;
