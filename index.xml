@@ -219,8 +219,14 @@ matches (asymptotically) with its maximum possible value
 &lt;span class=&#34;math inline&#34;&gt;\(\lambda \propto \log (n)\)&lt;/span&gt;, under suitable choices of the smoothing
 distribution &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/unif.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The performance of our nonparametric approach is shown in Figure
-[fig:unif]. In order to do that, we generated a collection of synthetic
+&lt;p&gt;&lt;em&gt;Figure 1: The normalized mean squared error as a function of the sampling
+fraction &lt;span class=&#34;math inline&#34;&gt;\((1+\lambda)^{-1}\)&lt;/span&gt; when the cell’s probabilities are uniform
+distributed. Each curve corresponds to a different estimator of
+&lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt;: i) the nonparametric estimator with Binomial smoothing
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_1^{L_b}\)&lt;/span&gt;; ii) the nonparametric estimator with Poisson
+smoothing &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_1^{L_p}\)&lt;/span&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The performance of our nonparametric approach is shown in Figure 1.&lt;/p&gt;
+&lt;p&gt;In order to do that, we generated a collection of synthetic
 tables with &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; cells, where &lt;span class=&#34;math inline&#34;&gt;\(C=3 \cdot 10^6\)&lt;/span&gt;. The population size is
 fixed to &lt;span class=&#34;math inline&#34;&gt;\(\bar{n}=10^{6}\)&lt;/span&gt;, and we evaluated the NMSE for different
 values of the sample size &lt;span class=&#34;math inline&#34;&gt;\(n=\bar{n}(\lambda+1)^{-1}\)&lt;/span&gt;. The underlying

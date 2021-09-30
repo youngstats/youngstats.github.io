@@ -187,8 +187,14 @@ matches (asymptotically) with its maximum possible value
 <span class="math inline">\(\lambda \propto \log (n)\)</span>, under suitable choices of the smoothing
 distribution <span class="math inline">\(L\)</span>.</p>
 <p><img src="/post/2021-09-30-optimal-disclosure-risk-assessment_files/unif.jpg" /></p>
-<p>The performance of our nonparametric approach is shown in Figure
-[fig:unif]. In order to do that, we generated a collection of synthetic
+<p><em>Figure 1: The normalized mean squared error as a function of the sampling
+fraction <span class="math inline">\((1+\lambda)^{-1}\)</span> when the cell’s probabilities are uniform
+distributed. Each curve corresponds to a different estimator of
+<span class="math inline">\(\tau_1\)</span>: i) the nonparametric estimator with Binomial smoothing
+<span class="math inline">\(\hat{\tau}_1^{L_b}\)</span>; ii) the nonparametric estimator with Poisson
+smoothing <span class="math inline">\(\hat{\tau}_1^{L_p}\)</span>.</em></p>
+<p>The performance of our nonparametric approach is shown in Figure 1.</p>
+<p>In order to do that, we generated a collection of synthetic
 tables with <span class="math inline">\(C\)</span> cells, where <span class="math inline">\(C=3 \cdot 10^6\)</span>. The population size is
 fixed to <span class="math inline">\(\bar{n}=10^{6}\)</span>, and we evaluated the NMSE for different
 values of the sample size <span class="math inline">\(n=\bar{n}(\lambda+1)^{-1}\)</span>. The underlying
