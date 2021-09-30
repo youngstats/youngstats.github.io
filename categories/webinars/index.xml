@@ -6,7 +6,17 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advancements in Symbolic Data Analysis</title>
+      <link>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
+      <description>Advancements in Symbolic Data Analysis
+The sixth “One World webinar” organized by YoungStatS will take place onOctober 27th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
+    </item>
+    
     <item>
       <title>Concentration Inequalities in Machine Learning</title>
       <link>https://youngstats.github.io/post/2021/06/30/concentration-inequalities-in-machine-learning/</link>

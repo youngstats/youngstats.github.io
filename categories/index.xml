@@ -6,22 +6,31 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>high dimensional data</title>
-      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <title>nonparametric-statistics</title>
+      <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
+      <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webinars</title>
       <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>high dimensional data</title>
+      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/maximum-likelihood/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>https://youngstats.github.io/categories/statistics/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/statistics/</guid>
       <description></description>
     </item>
     

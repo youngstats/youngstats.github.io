@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nonparametric-statistics on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
+    <description>Recent content in nonparametric-statistics on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/nonparametric-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimal disclosure risk assessment</title>
+      <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
+      <description>Disclosure risk for microdataProtection against disclosure is a legal and ethical obligation foragencies releasing microdata files for public use. Consider a microdatasample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finitepopulation of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such thateach sample record \(X_i\) contains two disjoint types of information:identifying categorical information and sensitive information.Identifying information consists of a set of categorical variables whichmight be matchable to known units of the population.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,222 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advancements in Symbolic Data Analysis</title>
+      <link>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Advancements in Symbolic Data Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-advancements-in-symbolic-data-analysis_files/cover-sda.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The sixth “One World webinar” organized by YoungStatS will take place on
+October 27th, 2021. With the development of digital systems, very large
+datasets have become routine. However, standard statistical approaches
+do not have the power or flexibility to analyse these efficiently, and
+extract the required knowledge. Symbolic Data Analysis provides a
+framework allowing for the representation of data with intrinsic
+variability, where the observed “values” are not just single real values
+or categories, but finite sets, intervals or distributions over a given
+domain. Methods for the (multivariate) analysis of such symbolic data
+have been developed, following different approaches, and using distinct
+criteria, which allow taking data variability into account.&lt;/p&gt;
+&lt;p&gt;Selected young researchers active in the area will present their recent
+contributions on this developing topic.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;p&gt;Wednesday, October 27th, 16:30 CEST&lt;/p&gt;
+&lt;p&gt;Online, via Zoom. The registration form is available
+&lt;a href=&#34;https://docs.google.com/forms/d/1WfJ6NG4hWq3-6C0q6gs9axaDR8THX9uP1UPS-5iB-dU/edit&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.researchgate.net/scientific-contributions/Yuying-Sun-2145350022&#34;&gt;Yuying
+Sun&lt;/a&gt;,
+Chinese Academy of Sciences, Beijing, China&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.borisberanger.com/&#34;&gt;Boris Beranger&lt;/a&gt;, University of New
+South Wales, Australia&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://scholar.google.com/citations?user=--uDCpYAAAAJ&amp;amp;hl=en&#34;&gt;Bruno
+Pimentel&lt;/a&gt;,
+Universidade Federal de Pernambuco, Brazil&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.estg.ipvc.pt/~sdias/&#34;&gt;Sónia Dias&lt;/a&gt;, Polytechnic Institute
+of Viana do Castelo, Portugal&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. Paula Brito, University of Porto, Portugal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
+Europe initiative (FENStatS) supported by the Bernoulli Society for
+Mathematical Statistics and Probability and the Institute of
+Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Optimal disclosure risk assessment</title>
+      <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;disclosure-risk-for-microdata&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Disclosure risk for microdata&lt;/h1&gt;
+&lt;p&gt;Protection against disclosure is a legal and ethical obligation for
+agencies releasing microdata files for public use. Consider a microdata
+sample &lt;span class=&#34;math inline&#34;&gt;\({X}_n=(X_{1},\ldots,X_{n})\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; from a finite
+population of size &lt;span class=&#34;math inline&#34;&gt;\(\bar{n}=n+\lambda n\)&lt;/span&gt;, with &lt;span class=&#34;math inline&#34;&gt;\(\lambda&amp;gt;0\)&lt;/span&gt;, such that
+each sample record &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt; contains two disjoint types of information:
+identifying categorical information and sensitive information.
+Identifying information consists of a set of categorical variables which
+might be matchable to known units of the population. A risk of
+disclosure results from the possibility that an intruder might succeed
+in identifying a microdata unit through such a matching, and hence be
+able to disclose sensitive information on this unit. To quantify the
+risk of disclosure, sample records &lt;span class=&#34;math inline&#34;&gt;\({X}_n\)&lt;/span&gt; are typically
+cross-classified according to identifying variables. That is, &lt;span class=&#34;math inline&#34;&gt;\({X}_n\)&lt;/span&gt;
+is partitioned in &lt;span class=&#34;math inline&#34;&gt;\(K_{n}\leq n\)&lt;/span&gt; cells, with &lt;span class=&#34;math inline&#34;&gt;\(Y_{j,n}\)&lt;/span&gt; being the number
+of &lt;span class=&#34;math inline&#34;&gt;\(X_{i}\)&lt;/span&gt;’s belonging to cell &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, for &lt;span class=&#34;math inline&#34;&gt;\(j=1,\ldots, K_{n}\)&lt;/span&gt;, such that
+&lt;span class=&#34;math inline&#34;&gt;\(\sum_{1\leq j\leq K_{n}}Y_{j,n}=n\)&lt;/span&gt;; we refer to the number of
+occurrences &lt;span class=&#34;math inline&#34;&gt;\(Y_{j,n}\)&lt;/span&gt; as the sample frequency of cell &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. We also
+indicate by &lt;span class=&#34;math inline&#34;&gt;\(Y_{j,\bar{n}}\)&lt;/span&gt; the same quantities referring to the entire
+population of size &lt;span class=&#34;math inline&#34;&gt;\(\bar{n}\)&lt;/span&gt;. Then, a risk of disclosure arises from
+cells in which both sample frequencies and population frequencies are
+small. Of special interest are cells with frequency &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt; (singletons or
+uniques) since, assuming no errors in the matching process or data
+sources, for these cells the match is guaranteed to be correct. This has
+motivated inferences on measures of disclosure risk that are suitable
+functionals of the number of uniques, the most common being the number
+&lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; of sample uniques which are also population uniques, namely
+the following functional:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\tau_{1}=\sum_{j\geq 1}\mathbf{1}_{\{Y_{j,n}=1\}}\mathbf{1}_{\{Y_{j,\bar{n}}=1\}},\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{1}\)&lt;/span&gt; denotes the indicator function.&lt;/p&gt;
+&lt;p&gt;We first introduce a class of nonparametric estimators of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt;, we
+then show that they provably estimate &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; all of the way up to
+the sampling fraction &lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}\propto (\log n)^{-1}\)&lt;/span&gt;, with
+vanishing normalized mean squared error (NMSE) for large sample size
+&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. More importantly we prove that
+&lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}\propto (\log n)^{-1}\)&lt;/span&gt; is the smallest possible
+sampling fraction for consistently estimating &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt;, thus the
+estimators’ NMSE is near optimal. Our paper also provides a rigorous
+answer to an open question raised by &lt;span class=&#34;citation&#34;&gt;@Ski&lt;/span&gt;(02) about the feasibility of
+nonparametric estimation of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; and for a sampling fraction
+&lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}&amp;lt;1/2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;nonparametric-estimation-of-tau_1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Nonparametric estimation of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;A nonparametric estimator for &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt; may be simply deduced by
+comparing expectations. Indeed, under a suitable Poisson abundance model
+for the cells’ proportions, it easy to see that&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\label{eq:comparingE}
+\mathbb{E} [\tau_1] =  \sum_{i \geq 0}(-1)^i \lambda^i (i+1) \mathbb{E} [Z_{i+1, n}],\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(Z_{i,n}\)&lt;/span&gt; denotes the number of cells with frequency &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; out of
+the sample &lt;span class=&#34;math inline&#34;&gt;\({X}_n\)&lt;/span&gt;. Thus, according to identity , we can define the
+following estimator of &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\label{eq:estimator&amp;lt;1}
+\hat{\tau}_{1}=\sum_{i \geq 0} (-1)^{i} (i+1)\lambda^{i}Z_{i+1}.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;By construction, the estimator is unbiased and it admits a natural
+interpretation as a nonparametric empirical Bayes estimator in the sense
+of &lt;span class=&#34;citation&#34;&gt;@Rob&lt;/span&gt;(56). The use of estimator is legitimated under the assumption
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda&amp;lt;1\)&lt;/span&gt;. For &lt;span class=&#34;math inline&#34;&gt;\(\lambda \geq 1\)&lt;/span&gt; it becomes useless, because of its
+high variance due to the exponential growth of the coefficients
+$ ^i $. Unfortunately, the assumption &lt;span class=&#34;math inline&#34;&gt;\(\lambda &amp;lt; 1\)&lt;/span&gt; is
+unrealistic in the context of disclosure risk assessment, where the size
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda n\)&lt;/span&gt; of the unobserved population is typically much bigger than
+the size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; of the observed sample. Thus the estimator requires an
+adjustment via suitable smoothing techniques, along similar lines as
+&lt;span class=&#34;citation&#34;&gt;@Orl&lt;/span&gt;(17) in the context of the nonparametric estimation of the number of
+unseen species. We propose a smoothed version of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}\)&lt;/span&gt; by
+truncating the series at an independent random location &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;, and then
+averaging over the distribution of &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;, i.e.,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+\label{eq:estimator&amp;gt;1}
+\hat{\tau}_{1}^L&amp;amp;= {\mathbb{E}}_L \left[ \sum_{i =1}^L (-1)^{i} (i+1) \lambda^i Z_{i+1,n}\right],\end{aligned}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt; is supposed to be a Poisson or a Binomial random variable, but
+other choices are possible.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;main-results&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Main results&lt;/h1&gt;
+&lt;p&gt;We have evaluated the performance of the estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}^L\)&lt;/span&gt; in
+terms of the normalized mean squared error (NMSE). The NMSE is the mean
+squared error (MSE) of the estimator normalized by the maximum value of
+&lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; (which is exactly &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;). Thus, the performance of an estimator
+is evaluated in terms of the rate of convergence to &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; of the NMSE as
+&lt;span class=&#34;math inline&#34;&gt;\(n \to +\infty\)&lt;/span&gt;. See also &lt;span class=&#34;citation&#34;&gt;@Orl&lt;/span&gt;(17) for a definition of NMSE. In our
+paper we have proved that &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}^L\)&lt;/span&gt; provably estimate
+&lt;span class=&#34;math inline&#34;&gt;\(\tau_{1}\)&lt;/span&gt; all of the way up to the sampling fraction
+&lt;span class=&#34;math inline&#34;&gt;\((\lambda+1)^{-1}\propto (\log n)^{-1}\)&lt;/span&gt; of the population, with
+vanishing normalized mean-square error (NMSE) as &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; becomes large.
+Then, by relying on recent techniques developed in &lt;span class=&#34;citation&#34;&gt;@wu2015chebyshev&lt;/span&gt; in
+the context of nonparametric estimation of the support size of discrete
+distributions, we are also able to provide us with a lower bound for the
+NMSE of any estimator of the disclosure risk &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt;. The lower bound
+we find has an important implication: without imposing any parametric
+assumption on the model, one can estimate &lt;span class=&#34;math inline&#34;&gt;\(\tau_1\)&lt;/span&gt; with vanishing NMSE
+all the way up to &lt;span class=&#34;math inline&#34;&gt;\(\lambda \propto \log n\)&lt;/span&gt;. It is then impossible to
+determine an estimator having provable guarantees, in terms of vanishing
+NMSE, when &lt;span class=&#34;math inline&#34;&gt;\(\lambda = \lambda (n)\)&lt;/span&gt; goes to &lt;span class=&#34;math inline&#34;&gt;\(+\infty\)&lt;/span&gt; much faster than
+&lt;span class=&#34;math inline&#34;&gt;\(\log (n)\)&lt;/span&gt;, as a function of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. Moreover it follows that the ``limit
+of predictability&#34; of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_{1}^L\)&lt;/span&gt; in is near optimal, because it
+matches (asymptotically) with its maximum possible value
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda \propto \log (n)\)&lt;/span&gt;, under suitable choices of the smoothing
+distribution &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/unif.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The performance of our nonparametric approach is shown in Figure
+[fig:unif]. In order to do that, we generated a collection of synthetic
+tables with &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; cells, where &lt;span class=&#34;math inline&#34;&gt;\(C=3 \cdot 10^6\)&lt;/span&gt;. The population size is
+fixed to &lt;span class=&#34;math inline&#34;&gt;\(\bar{n}=10^{6}\)&lt;/span&gt;, and we evaluated the NMSE for different
+values of the sample size &lt;span class=&#34;math inline&#34;&gt;\(n=\bar{n}(\lambda+1)^{-1}\)&lt;/span&gt;. The underlying
+true cells’ probabilities are generated according to a uniform
+distribution over the total number of cells. The figure shows how the
+NMSE varies as a function of the sampling fraction &lt;span class=&#34;math inline&#34;&gt;\((1+\lambda)^{-1}\)&lt;/span&gt;,
+for the estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}_1^L\)&lt;/span&gt;, under a Poisson and a Binomial
+smoothing. All the estimates are averaged over 100 iterations. The
+sampling fractions considered in our simulation study are above the
+limiting threshold &lt;span class=&#34;math inline&#34;&gt;\((\log n)^{-1}\)&lt;/span&gt; and the better performance seems to
+be achieved under the Binomial smoothing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Authors&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/federico.jpg&#34; height=&#34;100&#34; /&gt;
+&lt;strong&gt;Federico Camerlenghi&lt;/strong&gt; is an Assistant Professor of Statistics at the
+University of Milano-Bicocca (Italy).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/favaro.jpg&#34; height=&#34;100&#34; /&gt;
+&lt;strong&gt;Stefano Favaro&lt;/strong&gt; is a Full Professor of Statistics at the University
+of Torino (Italy), and he is also a Carlo Alberto Chair at Collegio
+Carlo Alberto (Torino, Italy).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/zacharie.png&#34; height=&#34;100&#34; /&gt;
+&lt;strong&gt;Zacharie Naulet&lt;/strong&gt; is a Maître de Conférence at the Department of
+Mathematics of Université Paris-Sud (France).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-09-30-optimal-disclosure-risk-assessment_files/panero.jpeg&#34; height=&#34;100&#34; /&gt;
+&lt;strong&gt;Francesca Panero&lt;/strong&gt; is finishing her Ph.D. in Statistics at the
+University of Oxford (UK).&lt;/p&gt;
+&lt;p&gt;Good, I.J. and Toulmin, G.H. (1956). The number of new species, and the
+increase in population coverage, when a sample is increased.
+&lt;em&gt;Biometrika&lt;/em&gt; &lt;strong&gt;43&lt;/strong&gt;, 45–63.&lt;/p&gt;
+&lt;p&gt;Orlitsky, A., Suresh, A.T. and Wu, Y. (2017). Optimal prediction of the
+number of unseen species. &lt;em&gt;Proc. Natl. Acad. Sci. USA&lt;/em&gt; &lt;strong&gt;113&lt;/strong&gt;,
+13283–13288.&lt;/p&gt;
+&lt;p&gt;Robbins, H. (1956). An empirical Bayes approach to statistics. &lt;em&gt;Proc.
+3rd Berkeley Symp.&lt;/em&gt;,&lt;strong&gt;1&lt;/strong&gt;, 157–163.&lt;/p&gt;
+&lt;p&gt;Skinner, C.J. and Elliot, M.J. (2002). A measure of disclosure risk for
+microdata. &lt;em&gt;J. Roy. Statist. Soc. B&lt;/em&gt; &lt;strong&gt;64&lt;/strong&gt;, 855–867.&lt;/p&gt;
+&lt;p&gt;Skinner, C., Marsh, C., Openshaw, S. and Wymer, C. (1994). Disclosure
+control for census microdata. &lt;em&gt;J. Off. Stat.&lt;/em&gt; &lt;strong&gt;10&lt;/strong&gt;, 31–51.&lt;/p&gt;
+&lt;p&gt;Skinner, and Shlomo, N. (2008). Assessing identification risk in survey
+microdata using log-linear models. &lt;em&gt;J. Amer. Statist. Assoc.&lt;/em&gt; &lt;strong&gt;103&lt;/strong&gt;,
+989–1001.&lt;/p&gt;
+&lt;p&gt;Wu, Y. and Yang, P. (2019). Chebyshev polynomials, moment matching, and
+optimal estimation of the unseen. &lt;em&gt;Ann. Statist.&lt;/em&gt;, &lt;strong&gt;47&lt;/strong&gt;, 857–883.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Depth Quantile Functions</title>
       <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
@@ -761,218 +976,6 @@ Below we provide one example optimal policy: the policy maximizing the average p
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-04-13-generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems_files/headSaharon.png&#34; height=&#34;75&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Saharon Rosset&lt;/strong&gt; is a Professor of Statistics at Tel-Aviv University, Israel, &lt;a href=&#34;mailto:saharon@tauex.tau.ac.il&#34; class=&#34;email&#34;&gt;saharon@tauex.tau.ac.il&lt;/a&gt;. His research interests are in Statistical Learning theory and methods
 and in Statistical Genetics.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
-      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
-      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
-      <description>&lt;p&gt;The second &lt;em&gt;&amp;ldquo;One World webinar&amp;rdquo;&lt;/em&gt; organized by YoungStatS will take place on April 21st.
-The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Wednesday, April 21st, 16:30 CEST&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Online&lt;/em&gt;, via Zoom. The registration form is available &lt;a href=&#34;https://forms.gle/vfinGjQJMeqhq6HQ7&#34;&gt;here&lt;/a&gt;. Further details and the Zoom link will be sent to the registered addresses only.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://francescapanero.github.io/&#34;&gt;Francesca Panero&lt;/a&gt; (University of Oxford, UK): &lt;em&gt;&amp;ldquo;Sparse Spatial Random Graphs&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://martacatalano.github.io/&#34;&gt;Marta Catalano&lt;/a&gt; (University of Torino, Italy). &lt;em&gt;&amp;ldquo;Measuring dependence in the Wasserstein distance for Bayesian nonparametric models&amp;rdquo;&lt;/em&gt; [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Catalano.pdf&#34;&gt;talk slides&lt;/a&gt;]&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://salleuska.github.io/&#34;&gt;Sally Paganin&lt;/a&gt; (Harvard School of Public Health, USA) &lt;em&gt;&amp;ldquo;Informative model-based clustering via Centered Partition Processes&amp;rdquo;&lt;/em&gt;  [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Paganin.pdf&#34;&gt;talk slides&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sites.google.com/unimib.it/camerlenghi-federico/&#34;&gt;Federico Camerlenghi&lt;/a&gt; (University of Milano Bicocca, Italy) [&lt;a href=&#34;https://youngstats.github.io/post/2021/04/06/bnp-webinar/dBNP_Discussion_Camerlenghi.pdf&#34;&gt;discussion slides&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;For more information, please visit our &lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
-      <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Abstract&lt;/h2&gt;
-&lt;p&gt;We consider the problem of learning a function defined on a compact domain, using linear combinations
-of a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methods
-from two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimization
-problem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known about
-global convergence properties of these approaches. In this work, we show that, as the number of neurons
-diverges and the bump width tends to zero, the gradient flow has a limit which is a viscous porous medium
-equation. By virtue of a property named “displacement convexity,” we show an exponential dimension-free
-convergence rate for gradient descent.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.82.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;This post is based on the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-javanmard2020analysis&#34; role=&#34;doc-biblioref&#34;&gt;Javanmard et al. 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Fitting a function with a linear combination of components.&lt;/strong&gt; In
-supervised learning, we are given data points
-&lt;span class=&#34;math inline&#34;&gt;\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\le n}\)&lt;/span&gt;, which are often assumed to be
-independent and identically distributed. Here
-&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}_j\in {\mathbb R}^d\)&lt;/span&gt; is a feature vector, and
-&lt;span class=&#34;math inline&#34;&gt;\(y_j\in{\mathbb R}\)&lt;/span&gt; is a label or response variable. We would like to
-fit a model &lt;span class=&#34;math inline&#34;&gt;\(\widehat{f}:{\mathbb R}^d\to{\mathbb R}\)&lt;/span&gt; to predict the
-labels at new points &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}\in{\mathbb R}^d\)&lt;/span&gt;. One of the most
-fruitful ideas in this context is to use functions that are linear
-combinations of simple components:
-&lt;span class=&#34;math display&#34;&gt;\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}}) = \frac{1}{N}\sum_{i=1}^N \sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\, ,\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\sigma:{\mathbb R}^d\times{\mathbb R}^D\to{\mathbb R}\)&lt;/span&gt; is a
-component function (a ‘neuron’ or ‘unit’ in the neural network
-parlance), and
-&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}=({\boldsymbol{w}}_1,\dots,{\boldsymbol{w}}_N)\in{\mathbb R}^{D\times N}\)&lt;/span&gt;
-are the parameters to be learnt from data. Specific instantiations of
-this idea include, e.g., two-layer neural networks with radial
-activations, sparse deconvolution, kernel ridge regression, random
-feature methods, and boosting.&lt;/p&gt;
-&lt;p&gt;A common approach towards fitting parametric models is by risk
-minimization:
-&lt;span class=&#34;math display&#34;&gt;\[R_N({\boldsymbol{w}}) = {\mathbb E}\Big\{\Big[y-\frac{1}{N}\sum_{i=1}^N\sigma({\boldsymbol{x}};{\boldsymbol{w}}_i)\Big]^2\Big\}\, .\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Despite the impressive practical success of these methods, the risk
-function &lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; is highly non-convex and little is
-known about the global convergence of algorithms that try to minimize
-it. The main objective of this work is to introduce a nonparametric
-underlying regression model for which a global convergence result can be
-proved for stochastic gradient descent (SGD), in the limit of a large
-number of neurons.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Setting and main result.&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(\Omega\subset{\mathbb R}^d\)&lt;/span&gt; be a
-compact convex set with smooth boundary, and let
-&lt;span class=&#34;math inline&#34;&gt;\(\{(y_j,{\boldsymbol{x}}_j)\}_{j\ge 1}\)&lt;/span&gt; be i.i.d. with
-&lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{x}}_j\sim {\sf Unif}(\Omega)\)&lt;/span&gt; and
-&lt;span class=&#34;math inline&#34;&gt;\({\mathbb E}(y_j|{\boldsymbol{x}}_j)=f({\boldsymbol{x}}_j)\)&lt;/span&gt;, where the
-function &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is smooth. We try to fit these data using a combination of
-bumps, namely
-&lt;span class=&#34;math display&#34;&gt;\[\widehat{f}({\boldsymbol{x}};{\boldsymbol{w}})= \frac{1}{N}\sum_{i=1}^NK^\delta({\boldsymbol{x}}-{\boldsymbol{w}}_i)\, ,\]&lt;/span&gt;
-where
-&lt;span class=&#34;math inline&#34;&gt;\(K^\delta({\boldsymbol{x}}) = \delta^{-d}K({\boldsymbol{x}}/\delta)\)&lt;/span&gt; and
-&lt;span class=&#34;math inline&#34;&gt;\(K:{\mathbb R}^d\to{\mathbb R}_{\ge 0}\)&lt;/span&gt; is a first order kernel with
-compact support. The weights &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}_i\in{\mathbb R}^d\)&lt;/span&gt;
-represent the centers of the bumps. Our model is general enough to
-include a broad class of radial-basis function (RBF) networks which are
-known to be universal function approximators. To the best of our
-knowledge, there is no result on the global convergence of stochastic
-gradient descent for learning RBF networks, and we establish the first
-result of this type.&lt;/p&gt;
-&lt;p&gt;We prove that, for sufficiently large &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; and small &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;, gradient
-descent algorithms converge to weights &lt;span class=&#34;math inline&#34;&gt;\({\boldsymbol{w}}\)&lt;/span&gt; with nearly
-optimum prediction error, provided &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is strongly concave. Let us
-emphasize that the resulting population risk &lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; is
-non-convex regardless of the concavity properties of &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;. Our proof
-unveils a novel mechanism by which global convergence takes place.
-Convergence results for non-convex empirical risk minimization are
-generally proved by carefully ruling out local minima in the cost
-function. Instead we prove that, as &lt;span class=&#34;math inline&#34;&gt;\(N\to\infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\delta\to 0\)&lt;/span&gt;, the
-gradient descent dynamics converges to a gradient flow in Wasserstein
-space, and that the corresponding cost function is ‘displacement
-convex.’ Breakthrough results in optimal transport theory guarantee
-dimension-free convergence rates for this limiting dynamics
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-carrillo2003kinetic&#34; role=&#34;doc-biblioref&#34;&gt;Carrillo, McCann, and Villani 2003&lt;/a&gt;)&lt;/span&gt;. In particular, we expect the cost function
-&lt;span class=&#34;math inline&#34;&gt;\(R_N({\boldsymbol{w}})\)&lt;/span&gt; to have many local minima, which are however
-completely neglected by gradient descent.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Proof idea.&lt;/strong&gt; Let us start by providing some high-level insights about
-our approach. Think about each model parameter as a particle moving
-under the effect of other particles according to the SGD updates. Now,
-instead of studying the microscopic dynamics of this system of
-particles, we analyze the macroscopic dynamics of the medium when the
-number of particles (i.e., the size of the hidden layer of the neural
-network) goes to infinity. These dynamics are formulated through a
-partial differential equation (more specifically, a viscous porous
-medium equation) that describes the evolution of the mass density over
-space and time. The nice feature of this approach is that, while the SGD
-trajectory is a random object, it shows that in the large particle size
-limit, it concentrates around the deterministic solution of this partial
-differential equation (PDE).&lt;/p&gt;
-&lt;p&gt;For a rigorous analysis and implementation of this idea, we use
-propagation-of-chaos techniques. Specifically, we show that, in the
-large &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; limit, the evolution of the weights
-&lt;span class=&#34;math inline&#34;&gt;\(\{{\boldsymbol{w}}_i\}_{i=1}^N\)&lt;/span&gt; under gradient descent can be replaced
-by the evolution of a probability distribution &lt;span class=&#34;math inline&#34;&gt;\(\rho^{\delta}_t\)&lt;/span&gt; which
-satisfies the viscous porous medium PDE (with Neumann boundary
-conditions). This PDE can also be described as the Wasserstein &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt;
-gradient flow for the following effective risk
-&lt;span class=&#34;math display&#34;&gt;\[R^{\delta}(\rho) = \frac{1}{|\Omega|} \, \int_{\Omega} \big[f({\boldsymbol{x}}) - K^\delta\ast \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, ,\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(|\Omega|\)&lt;/span&gt; is the volume of the set &lt;span class=&#34;math inline&#34;&gt;\(\Omega\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ast\)&lt;/span&gt; is the
-usual convolution. The use of &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flows to analyze two-layer
-neural networks was recently developed in several papers
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-mei2018mean&#34; role=&#34;doc-biblioref&#34;&gt;Mei, Montanari, and Nguyen 2018&lt;/a&gt;; &lt;a href=&#34;#ref-rotskoff2018neural&#34; role=&#34;doc-biblioref&#34;&gt;Rotskoff and Vanden-Eijnden 2019&lt;/a&gt;; &lt;a href=&#34;#ref-chizat2018global&#34; role=&#34;doc-biblioref&#34;&gt;Chizat and Bach 2018&lt;/a&gt;; &lt;a href=&#34;#ref-sirignano2018mean&#34; role=&#34;doc-biblioref&#34;&gt;Sirignano and Spiliopoulos 2020&lt;/a&gt;)&lt;/span&gt;.
-However, we cannot rely on earlier results because of the specific
-boundary conditions in our problem.&lt;/p&gt;
-&lt;p&gt;Note that even though the cost &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; is quadratic and
-convex in &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;, its &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flow can have multiple fixed
-points, and hence global convergence cannot be guaranteed. Indeed, the
-mathematical property that controls global convergence of &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient
-flows is not ordinary convexity but &lt;em&gt;displacement convexity&lt;/em&gt;. Roughly
-speaking, displacement convexity is convexity along geodesics of the
-&lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; metric. Note that the risk function &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; is &lt;em&gt;not&lt;/em&gt;
-even displacement convex. However, for small &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;, we can formally
-approximate &lt;span class=&#34;math inline&#34;&gt;\(K^\delta\ast \rho\approx \rho\)&lt;/span&gt;, and hence hope to replace
-the risk function &lt;span class=&#34;math inline&#34;&gt;\(R^{\delta}(\rho)\)&lt;/span&gt; with the simpler one
-&lt;span class=&#34;math display&#34;&gt;\[R(\rho) = \frac{1}{|\Omega|}\int_{\Omega} \big[f({\boldsymbol{x}}) - \rho({\boldsymbol{x}})\big]^2{\rm d}{\boldsymbol{x}}\, .\]&lt;/span&gt;
-Most of our technical work is devoted to making rigorous this
-&lt;span class=&#34;math inline&#34;&gt;\(\delta\to 0\)&lt;/span&gt; approximation.&lt;/p&gt;
-&lt;p&gt;Remarkably, the risk function &lt;span class=&#34;math inline&#34;&gt;\(R(\rho)\)&lt;/span&gt; is strongly displacement convex
-(provided &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is strongly concave). A long line of work in PDE and
-optimal transport theory establishes dimension-free convergence rates
-for its &lt;span class=&#34;math inline&#34;&gt;\(W_2\)&lt;/span&gt; gradient flow &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-carrillo2003kinetic&#34; role=&#34;doc-biblioref&#34;&gt;Carrillo, McCann, and Villani 2003&lt;/a&gt;)&lt;/span&gt;. By putting
-everything together, we are able to show that SGD converges
-exponentially fast to a near-global optimum with a rate that is
-controlled by the convexity parameter of &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;A numerical illustration.&lt;/strong&gt; We demonstrate in a simple numerical
-example that the convergence rate predicted by our asymptotic theory is
-in excellent agreement with simulations. In the left column of the
-figure below, we plot the true function &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; together with the neural
-network estimate obtained by running stochastic gradient descent (SGD)
-with &lt;span class=&#34;math inline&#34;&gt;\(N=200\)&lt;/span&gt; neurons at several points in time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;. Different plots
-correspond to different values of &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; with
-&lt;span class=&#34;math inline&#34;&gt;\(\delta\in\{1/5, 1/10, 1/20\}\)&lt;/span&gt;. We observe that the network estimates
-converge to a limit curve which is an approximation of the true function
-&lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt;. As expected, the quality of the approximation improves as &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;
-gets smaller. In the right column, we report the evolution of the
-population risk and we compare it to the risk predicted by the limit PDE
-(corresponding to &lt;span class=&#34;math inline&#34;&gt;\(\delta=0\)&lt;/span&gt;). The PDE curve appears to capture well the
-evolution of SGD towards optimality.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/screenshot.81.png&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;authors&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Authors&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/javanmard.jpg&#34; width=&#34;75&#34; /&gt;
-Adel Javanmard, Data Science and Operations Department, Marshall School of Business, University of Southern California&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/mondelli.jpg&#34; width=&#34;75&#34; /&gt;
-Marco Mondelli, Institute of Science and Technology (IST) Austria&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-03-14-analysis-of-a-two-layer-neural-network-via-displacement-convexity_files/montanari.jpg&#34; width=&#34;75&#34; /&gt;
-Andrea Montanari, Department of Electrical Engineering and Department of Statistics, Stanford University&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-carrillo2003kinetic&#34; class=&#34;csl-entry&#34;&gt;
-Carrillo, José A., Robert J. McCann, and Cédric Villani. 2003. &lt;span&gt;“Kinetic Equilibration Rates for Granular Media and Related Equations: Entropy Dissipation and Mass Transportation Estimates.”&lt;/span&gt; &lt;em&gt;Revista Matematica Iberoamericana&lt;/em&gt; 19 (3): 971–1018.
-&lt;/div&gt;
-&lt;div id=&#34;ref-chizat2018global&#34; class=&#34;csl-entry&#34;&gt;
-Chizat, Lenaic, and Francis Bach. 2018. &lt;span&gt;“On the Global Convergence of Gradient Descent for over-Parameterized Models Using Optimal Transport.”&lt;/span&gt; In &lt;em&gt;Advances in Neural Information Processing Systems&lt;/em&gt;, 3040–50.
-&lt;/div&gt;
-&lt;div id=&#34;ref-javanmard2020analysis&#34; class=&#34;csl-entry&#34;&gt;
-Javanmard, Adel, Marco Mondelli, Andrea Montanari, and others. 2020. &lt;span&gt;“Analysis of a Two-Layer Neural Network via Displacement Convexity.”&lt;/span&gt; &lt;em&gt;Annals of Statistics&lt;/em&gt; 48 (6): 3619–42.
-&lt;/div&gt;
-&lt;div id=&#34;ref-mei2018mean&#34; class=&#34;csl-entry&#34;&gt;
-Mei, Song, Andrea Montanari, and Phan-Minh Nguyen. 2018. &lt;span&gt;“A Mean Field View of the Landscape of Two-Layer Neural Networks.”&lt;/span&gt; &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.1073/pnas.1806579115&#34;&gt;https://doi.org/10.1073/pnas.1806579115&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-rotskoff2018neural&#34; class=&#34;csl-entry&#34;&gt;
-Rotskoff, Grant M., and Eric Vanden-Eijnden. 2019. &lt;span&gt;“Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach.”&lt;/span&gt; &lt;em&gt;Communications on Pure and Applied Mathematics&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-sirignano2018mean&#34; class=&#34;csl-entry&#34;&gt;
-Sirignano, Justin, and Konstantinos Spiliopoulos. 2020. &lt;span&gt;“Mean Field Analysis of Neural Networks: A Law of Large Numbers.”&lt;/span&gt; &lt;em&gt;SIAM Journal on Applied Mathematics&lt;/em&gt; 80 (2): 725–52.
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>

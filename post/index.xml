@@ -6,7 +6,26 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advancements in Symbolic Data Analysis</title>
+      <link>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
+      <description>Advancements in Symbolic Data Analysis
+The sixth “One World webinar” organized by YoungStatS will take place onOctober 27th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
+    </item>
+    
+    <item>
+      <title>Optimal disclosure risk assessment</title>
+      <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
+      <description>Disclosure risk for microdataProtection against disclosure is a legal and ethical obligation foragencies releasing microdata files for public use. Consider a microdatasample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finitepopulation of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such thateach sample record \(X_i\) contains two disjoint types of information:identifying categorical information and sensitive information.Identifying information consists of a set of categorical variables whichmight be matchable to known units of the population.</description>
+    </item>
+    
     <item>
       <title>Depth Quantile Functions</title>
       <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
@@ -84,26 +103,6 @@ When &amp;amp; Where:</description>
       
       <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
       <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\); The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
-    </item>
-    
-    <item>
-      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
-      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
-      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
-      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
-When &amp;amp; Where:
- Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
-    </item>
-    
-    <item>
-      <title>Analysis of a Two-Layer Neural Network via Displacement Convexity</title>
-      <link>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
-      <description>AbstractWe consider the problem of learning a function defined on a compact domain, using linear combinationsof a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methodsfrom two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimizationproblem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known aboutglobal convergence properties of these approaches.</description>
     </item>
     
   </channel>
