@@ -6,22 +6,22 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>nonparametric-statistics</title>
       <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     
