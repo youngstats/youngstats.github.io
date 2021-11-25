@@ -17,7 +17,8 @@
 &lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;## Abstract&lt;/p&gt;
+&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;In frozen percolation on a graph, there is a barrier located on each
 edge. Initially, the barriers are closed and they are assigned
 i.i.d. uniformly distributed activation times. At its activation time,
@@ -30,6 +31,7 @@ also proved uniqueness in law under natural conditions and asked
 whether almost sure uniqueness holds. We answer this question
 negatively. For general sets of freezing times, the answer turns out
 to depend subtly on &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;definition-of-the-model&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;Definition of the model&lt;/h2&gt;
 &lt;p&gt;To construct frozen percolation on a directed graph, we place a
