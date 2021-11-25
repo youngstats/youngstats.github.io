@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Frozen percolation on the binary tree is nonendogenous | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/probability">probability</a>
+  
+  </div>
+
+  <h1><span class="title">Frozen percolation on the binary tree is nonendogenous</span></h1>
+
+  
+  <h3 class="author">Balázs Ráth,  Jan M. Swart,  Márton Szőke,  and Tamás Terpai
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>## Abstract</p>
+<p>In frozen percolation on a graph, there is a barrier located on each
+edge. Initially, the barriers are closed and they are assigned
+i.i.d. uniformly distributed activation times. At its activation time,
+a barrier opens, provided it is not frozen. At a fixed set <span class="math inline">\(\Xi\)</span> of
+freezing times, all barriers that percolate are frozen. In particular,
+if <span class="math inline">\(\Xi\)</span> is the whole unit interval, this means that clusters stop
+growing as soon as they reach infinite size. Aldous (2000) showed that
+such a process can be constructed on the infinite 3-regular tree. He
+also proved uniqueness in law under natural conditions and asked
+whether almost sure uniqueness holds. We answer this question
+negatively. For general sets of freezing times, the answer turns out
+to depend subtly on <span class="math inline">\(\Xi\)</span>.</p>
+<div id="definition-of-the-model" class="section level2 unnumbered">
+<h2>Definition of the model</h2>
+<p>To construct frozen percolation on a directed graph, we place a
+<em>barrier</em> on each directed edge. These barriers can be in three states:</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-66.png" style="width:60.0%" /></p>
+<p>We assign i.i.d. Unif<span class="math inline">\([0,1]\)</span> <em>activation times</em>
+<span class="math inline">\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)</span> to the barriers
+<span class="math inline">\(\mathbf{i}\in{\mathbb B}\)</span>, and we fix a closed set <span class="math inline">\(\Xi\subset[0,1]\)</span> of
+<em>freezing times</em>. The states of barriers evolve according to the
+following informal description:</p>
+<ul>
+<li><p>Initially, all barriers are closed.</p></li>
+<li><p>At its activation time, a barrier opens, provided it is not frozen.</p></li>
+<li><p>At each freezing time <span class="math inline">\(t\in\Xi\)</span>, all closed barriers that percolate
+are frozen.</p></li>
+</ul>
+<p>Here, we say that a barrier percolates if there starts an infinite open
+path just above it:</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-71.png" style="width:60.0%" /></p>
+<p>More formally, we set <span class="math display">\[\begin{array}{r@{\,}c@{\,}l}
+\displaystyle{\mathbb A}_t&amp;:=&amp;\displaystyle\big\{\mathbf{i}\in{\mathbb B}:\tau_\mathbf{i}\leq t\big\},\\[5pt]
+\displaystyle{\mathbb F}&amp;:=&amp;\displaystyle\big\{\mathbf{i}\in{\mathbb B}:\mathbf{i}\mbox{ is frozen at the final time }1\big\}.
+\end{array}\]</span> Then <span class="math inline">\({\mathbb A}_t\backslash{\mathbb F}\)</span> is the set of
+barriers that are open at time <span class="math inline">\(t\)</span>. We write
+<span class="math inline">\(\mathbf{i}\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty\)</span>
+if <span class="math inline">\(\mathbf{i}\)</span> percolates at time <span class="math inline">\(t\)</span>. Then the <em>Frozen Percolation
+Equation</em> reads:
+<span class="math display">\[{\mathbb F}=\big\{\mathbf{i}\in{\mathbb B}:\mathbf{i}\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty
+\mbox{ for some }t\in(0,\tau_\mathbf{i}]\cap\Xi\big\}\qquad({\rm FPE}).\]</span>
+It is clear from our informal description that if <span class="math inline">\(\Xi\)</span> is finite, then
+(FPE) has a solution <span class="math inline">\({\mathbb F}\)</span>, which is a.s. unique given the
+activation times <span class="math inline">\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)</span>. For
+general <span class="math inline">\(\Xi\)</span> and general directed graphs, one can ask whether solutions
+exist and whether they are unique in distribution or perhaps even almost
+surely.</p>
+<p>Frozen precolation can also be defined on undirected graphs. Just
+replace each undirected edge by two directed edges whose barriers are
+activated at the same time. The case <span class="math inline">\(\Xi=[0,1]\)</span> is of special interest,
+since in this case clusters freeze as soon as they reach infinite size,
+which leads to self-organised criticality. For this reason, in the year
+2000 David Aldous introduced frozen percolation <span class="citation">[@Ald00]</span>. He proved that
+the frozen percolation equation (FPE) has a solution on the undriected
+3-regular tree, and that under natural assumptions this solution is
+unique in law. On the other hand, Itai Benjamini and Oded Schramm
+observed that (FPE) does not have a solution on the two-dimensional
+integer lattice. A sketch of their proof can be found in Section 3 of
+<span class="citation">[@vdBT01]</span>.</p>
+<p>If from the directed binary tree <span class="math inline">\(T\)</span>, we remove a finite subtree <span class="math inline">\(U\)</span>
+containing the root, then <span class="math inline">\(T\backslash U\)</span> consists of finitely many
+disjoint subtrees <span class="math inline">\(T_1,\ldots,T_n\)</span>:</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-70.png" style="width:60.0%" /></p>
+<p>We say that a solution <span class="math inline">\({\mathbb F}\)</span> satisfies the <em>natural conditions</em>
+if its restrictions to <span class="math inline">\(T_1,\ldots,T_n\)</span> are i.i.d., equally distributed
+with the process on the whole tree <span class="math inline">\(T\)</span>, and independent of the
+activation times in <span class="math inline">\(U\)</span>. We label barriers in the obvious way and let
+<span class="math inline">\([\mathbf{i}]\)</span> denote the vertex just below <span class="math inline">\(\mathbf{i}\)</span>:</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-68.png" style="width:60.0%" /></p>
+<p>It is easy to see that the freezing time of the root
+<span class="math display">\[Y_{[\varnothing]}:=\inf\big\{t\in\Xi:[\varnothing]\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty\big\}\]</span>
+solves the <em>Recursive Distributional Equation</em>
+<span class="math display">\[Y_{[\varnothing]}\stackrel{\scriptstyle{\rm d}}{=}\gamma(\tau_\varnothing,Y_{[1]},Y_{[2]}):=\left\{\begin{array}{ll}
+Y_{[1]}\wedge Y_{[2]}\quad&amp;\mbox{if }\tau_\varnothing&lt;Y_{[1]}\wedge Y_{[2]},\\[5pt]
+\infty\quad&amp;\mbox{otherwise,}
+\end{array}\right.\quad({\rm RDE}),\]</span> where, because the solution to
+(FPE) saties the natural conditions, <span class="math inline">\(Y_{[1]},Y_{[2]}\)</span> are independent
+of each other and equally distributed with <span class="math inline">\(Y_{[\varnothing]}\)</span>, and
+<span class="math inline">\(\tau_\varnothing\)</span> is an independent Unif<span class="math inline">\([0,1]\)</span> distributed random
+variable.</p>
+<p>The following theorem is a free formulation of of Theorem 1 and Lemma 5
+from <span class="citation">[@RSS21]</span>, which using Proposition 42 of <span class="citation">[@RST21]</span> are translated
+into the present setting.</p>
+<blockquote>
+<p><strong>Theorem</strong> For each closed <span class="math inline">\(\Xi\subset[0,1]\)</span>, there exists a unique
+solution to (RDE) that yields a solution <span class="math inline">\({\mathbb F}\)</span> to (FPE). In
+particular, for each closed <span class="math inline">\(\Xi\subset[0,1]\)</span>, (FPE) has a solution
+that satisfies the natural conditions, and the joint law of
+<span class="math inline">\(\big(\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}},{\mathbb F}\big)\)</span> is
+uniquely determined.</p>
+</blockquote>
+<p>For the case <span class="math inline">\(\Xi=[0,1]\)</span>, this theorem was (basically) already proved in
+<span class="citation">[@Ald00]</span> by Aldous, who showed that in this case the freezing time of
+the root has the law
+<span class="math display">\[{\mathbb P}\big[Y_{[\varnothing]}&gt;y\big]=1\wedge\frac{1}{2y}\qquad\big(y\in[0,1]\big),\]</span>
+with
+<span class="math inline">\({\mathbb P}\big[Y_{[\varnothing]}=\infty\big]={\textstyle\frac{{1}}{{2}}}\)</span>.</p>
+<p>To study almost sure uniqueness in this and related problems, David
+Aldous and Antar Bandyopadhyay <span class="citation">[@AB05]</span> developed a general theory of
+<em>Recursive Tree Processes</em>. In the general setting, almost sure
+uniqueness is called <em>endogeny</em>. Let <span class="math inline">\({\mathbb F},{\mathbb F}&#39;\)</span> be
+solutions to (FPE) that satisfy the natural conditions and are
+conditionally independent given
+<span class="math inline">\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)</span>. Then
+<span class="math inline">\((Y_{[\varnothing]},Y&#39;_{[\varnothing]})\)</span> solves the <em>bivariate RDE</em>
+<span class="math display">\[(Y_{[\varnothing]},Y&#39;_{[\varnothing]})\stackrel{\scriptstyle{\rm d}}{=}
+\big(\gamma(\tau_\varnothing,Y_{[1]},Y_{[2]}),\gamma(\tau_\varnothing,Y&#39;_{[1]},Y&#39;_{[2]})\big),\]</span>
+where <span class="math inline">\(\gamma\)</span> is the function from (RDE). In Theorem 11 of <span class="citation">[@AB05]</span>, it
+is proved that <span class="math inline">\({\mathbb F}={\mathbb F}&#39;\)</span> a.s. if and only if each
+solution to the bivariate RDE with the right marginals is concentrated
+on the diagonal. After a failed proof of endogeny that turned out to
+contain an error <span class="citation">[@Ban04]</span>, Antar Bandyopadhyay ran numerical
+calculations that strongly suggested almost sure uniqueness does not
+hold, but for 15 years nobody was able to prove this.</p>
+<p>We discovered the problem becomes easier if we place a geometrically
+distributed number of barriers with mean one on each edge.</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-67.png" style="width:60.0%" /></p>
+<p>We call this the <em>Marked Binary Branching Tree</em> (MBBT). The MBBT
+naturally arises as the near-critical scaling limit of percolation on
+regular trees. Since it is itself a scaling limit, the MBBT has a
+natural scaling property. For fixed <span class="math inline">\(r\in[0,1]\)</span>, the <em>pruned</em> MBBT is
+obtained by removing all parts of the tree that do not percolate at time
+<span class="math inline">\(r\)</span> even in the absence of freezing. For the MBBT,
+<span class="math inline">\({\mathbb P}\big[[\varnothing]\overset{{{\mathbb A}_r}}{\longrightarrow}\infty\big]=r\)</span>
+and conditional on this event, the pruned tree is equally distributed
+with a scaled version of the original tree.</p>
+<p><img src="/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-69.png" style="width:80.0%" /></p>
+<p>The bivariate RDE gives an integral equation for
+<span class="math display">\[F(s,t):={\mathbb P}\big[Y_{[\varnothing]}\leq s,\ Y&#39;_{[\varnothing]}\leq t\big].\]</span>
+For the MBBT, scaling gives <span class="math inline">\(F(rs,rt)=rF(s,t)\)</span> <span class="math inline">\((r,s,t\in[0,1])\)</span>. The
+bivariate RDE now reduces to an integral equation for a function of one
+variable, which is easier to solve than the original bivariate RDE for
+the binary tree. However, as demonstrated in Proposition 42 of <span class="citation">[@RST21]</span>,
+frozen percolation on the binary tree and on the MBBT can be translated
+into each other. The basic idea is that several barriers on one oriented
+edge can be replaced by a single effective barrier, whose activation
+time is the maximum of the activation times of the individual barriers.
+As a result, we were able to obtain Theorem 3 of <span class="citation">[@RST21]</span>, which says:</p>
+<blockquote>
+<p><strong>Theorem</strong> For frozen percolation on the binary tree with
+<span class="math inline">\(\Xi=[0,1]\)</span>, solutions to (FPE) are not almost surely unique.</p>
+</blockquote>
+<p>In <span class="citation">[@RSS21]</span> we investigated almost sure uniqueness for frozen
+percolation on the MBBT for sets of freezing times of the form
+<span class="math inline">\(\Xi_\theta:=\{\theta^n:n\geq 0\}\)</span> with <span class="math inline">\(0&lt;\theta&lt;1\)</span>. These sets behave
+well under scaling, so we were able to use the same techniques as in
+<span class="citation">[@RST21]</span>. To translate this back from the MBBT into the setting of the
+binary tree, one has to replace <span class="math inline">\(\Xi_\theta\)</span> by its image under the map
+<span class="math inline">\(H(t):=1/(2-t)\)</span> <span class="math inline">\((t\in[0,1])\)</span>. Theorem 9 of <span class="citation">[@RSS21]</span> says:</p>
+<blockquote>
+<p><strong>Theorem</strong> For frozen percolation on the MBBT and sets of freezing
+times of the form <span class="math inline">\(\Xi_\theta\)</span>, there exists a parameter
+<span class="math inline">\(\theta^\ast=0.636\ldots\)</span> such that, if <span class="math inline">\({\mathbb F},{\mathbb F}&#39;\)</span> are
+solutions to (FPE) for <span class="math inline">\(\Xi_\theta\)</span>, that satisfy the natural
+conditions and are conditionally independent given
+<span class="math inline">\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)</span>, then
+<span class="math inline">\({\mathbb F}={\mathbb F}&#39;\)</span> a.s. if and only if
+<span class="math inline">\(\theta\leq\theta^\ast\)</span>.</p>
+</blockquote>
+<p>We have an explicit formula for the parameter <span class="math inline">\(\theta^\ast\)</span> (see Lemma 8
+in <span class="citation">[@RSS21]</span>), which is rather complicated. The result shows that in
+general, one cannot hope to settle the question of almost sure
+uniqueness by “soft” arguments. Instead, any proof will always require
+some hard calculations.</p>
+<p>A number of open problems remain, notably:</p>
+<ul>
+<li><p>We don’t know if distributional or almost sure uniqueness still hold
+if we drop the natural conditions.</p></li>
+<li><p>Almost sure (non-)uniqueness is open for <span class="math inline">\(n\)</span>-regular directed trees
+with <span class="math inline">\(n\geq 3\)</span> and for more general sets of freezing times <span class="math inline">\(\Xi\)</span>.
+The technical challenge is to replace perfect scale invariance in
+the proofs by approximate scale invariance near the critical point.</p></li>
+<li><p>Existence and/or uniqueness of solutions to (FPE) on more general
+graphs, including <span class="math inline">\({\mathbb Z}^d\)</span> with <span class="math inline">\(d\geq 3\)</span>, is wide open.</p></li>
+</ul>
+</div>
+<div id="references" class="section level2 thebibliography">
+<h2>References</h2>
+<p>D.J. Aldous and A. Bandyopadhyay. A survey of max-type recursive
+distributional equations. <em>Ann. Appl. Probab.</em> 15(2) (2005), 1047–1110.</p>
+<p>D.J. Aldous. The percolation process on a tree where infinite clusters
+are frozen. <em>Math. Proc. Cambridge Philos. Soc.</em> 128 (2000), 465–477.</p>
+<p>A. Bandyopadhyay. Bivariate uniqueness and endogeny for recursive
+distributional equations: two examples. Preprint (2004),
+arXiv:math/0407175.</p>
+<p>J. van den Berg, B. Tóth. A signal-recovery system: asymptotic
+properties, and construction of an infinite-volume process. <em>Stochastic
+Process. Appl.</em> 96(2) (2001), 177–190.</p>
+<p>B. Ráth, J.M. Swart, and M. Szőke. A phase transition between endogeny
+and nonendogeny. Preprint (2021), arXiv:2103.14408.</p>
+<p>B. Ráth, J.M. Swart, and T. Terpai. Frozen percolation on the binary
+tree is nonendogenous. <em>Ann. Probab.</em> 49(5) (2021), 2272–2316.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

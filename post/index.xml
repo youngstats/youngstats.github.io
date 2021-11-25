@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frozen percolation on the binary tree is nonendogenous</title>
+      <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
+      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
+      <description>## Abstract
+In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
+    </item>
+    
     <item>
       <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
@@ -34,7 +44,7 @@ The sixth “One World webinar” organized by YoungStatS will take place onNov
       
       <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
       <description>Advances in Difference-in-Differences in Econometrics
-The eighth “One World webinar” organized by YoungStatS will take placeon December 13th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
+The eighth “One World webinar” organized by YoungStatS will take placeon December 15th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
     </item>
     
     <item>
@@ -95,16 +105,6 @@ In the past decades, intelligent transportation system (ITS) has brought advance
       <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.
 When &amp;amp; Where:
   Wednesday, June 30th, 16:30 CEST</description>
-    </item>
-    
-    <item>
-      <title>Composite-Based Structural Equation Modeling: Developments and Perspectives</title>
-      <link>https://youngstats.github.io/post/2021/04/28/csem-webinar/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/28/csem-webinar/</guid>
-      <description>The third &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on May 19th, 2021. The focus of this webinar will be on composite-based structural equation modeling, particularly on partial least squares path modeling (Wold, 1982; Lohmöller, 1989) and approaches to assess composite models. The webinar will present some of the most interesting and recent theoretical developments and applications from younger scholars active in this area of research.
-When &amp;amp; Where:</description>
     </item>
     
   </channel>
