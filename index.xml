@@ -17,8 +17,6 @@
 &lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;In frozen percolation on a graph, there is a barrier located on each
 edge. Initially, the barriers are closed and they are assigned
 i.i.d. uniformly distributed activation times. At its activation time,
@@ -31,7 +29,6 @@ also proved uniqueness in law under natural conditions and asked
 whether almost sure uniqueness holds. We answer this question
 negatively. For general sets of freezing times, the answer turns out
 to depend subtly on &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
 &lt;div id=&#34;definition-of-the-model&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;Definition of the model&lt;/h2&gt;
 &lt;p&gt;To construct frozen percolation on a directed graph, we place a
@@ -72,13 +69,13 @@ replace each undirected edge by two directed edges whose barriers are
 activated at the same time. The case &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt; is of special interest,
 since in this case clusters freeze as soon as they reach infinite size,
 which leads to self-organised criticality. For this reason, in the year
-2000 David Aldous introduced frozen percolation &lt;span class=&#34;citation&#34;&gt;[@Ald00]&lt;/span&gt;. He proved that
+2000 David Aldous introduced frozen percolation (Aldous, 2000). He proved that
 the frozen percolation equation (FPE) has a solution on the undriected
 3-regular tree, and that under natural assumptions this solution is
 unique in law. On the other hand, Itai Benjamini and Oded Schramm
 observed that (FPE) does not have a solution on the two-dimensional
 integer lattice. A sketch of their proof can be found in Section 3 of
-&lt;span class=&#34;citation&#34;&gt;[@vdBT01]&lt;/span&gt;.&lt;/p&gt;
+(van den Berg and Tóth, 2001).&lt;/p&gt;
 &lt;p&gt;If from the directed binary tree &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;, we remove a finite subtree &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;
 containing the root, then &lt;span class=&#34;math inline&#34;&gt;\(T\backslash U\)&lt;/span&gt; consists of finitely many
 disjoint subtrees &lt;span class=&#34;math inline&#34;&gt;\(T_1,\ldots,T_n\)&lt;/span&gt;:&lt;/p&gt;
@@ -101,7 +98,7 @@ of each other and equally distributed with &lt;span class=&#34;math inline&#34;&
 &lt;span class=&#34;math inline&#34;&gt;\(\tau_\varnothing\)&lt;/span&gt; is an independent Unif&lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; distributed random
 variable.&lt;/p&gt;
 &lt;p&gt;The following theorem is a free formulation of of Theorem 1 and Lemma 5
-from &lt;span class=&#34;citation&#34;&gt;[@RSS21]&lt;/span&gt;, which using Proposition 42 of &lt;span class=&#34;citation&#34;&gt;[@RST21]&lt;/span&gt; are translated
+from (Ráth, Swart and Szőke, 2021), which using Proposition 42 of (Ráth, Swart and Terpai, 2021) are translated
 into the present setting.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For each closed &lt;span class=&#34;math inline&#34;&gt;\(\Xi\subset[0,1]\)&lt;/span&gt;, there exists a unique
@@ -112,13 +109,13 @@ that satisfies the natural conditions, and the joint law of
 uniquely determined.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;For the case &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt;, this theorem was (basically) already proved in
-&lt;span class=&#34;citation&#34;&gt;[@Ald00]&lt;/span&gt; by Aldous, who showed that in this case the freezing time of
+(Aldous, 2000) by Aldous, who showed that in this case the freezing time of
 the root has the law
 &lt;span class=&#34;math display&#34;&gt;\[{\mathbb P}\big[Y_{[\varnothing]}&amp;gt;y\big]=1\wedge\frac{1}{2y}\qquad\big(y\in[0,1]\big),\]&lt;/span&gt;
 with
 &lt;span class=&#34;math inline&#34;&gt;\({\mathbb P}\big[Y_{[\varnothing]}=\infty\big]={\textstyle\frac{{1}}{{2}}}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;To study almost sure uniqueness in this and related problems, David
-Aldous and Antar Bandyopadhyay &lt;span class=&#34;citation&#34;&gt;[@AB05]&lt;/span&gt; developed a general theory of
+Aldous and Antar Bandyopadhyay (Aldous and Bandyopadhyay, 2005) developed a general theory of
 &lt;em&gt;Recursive Tree Processes&lt;/em&gt;. In the general setting, almost sure
 uniqueness is called &lt;em&gt;endogeny&lt;/em&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F},{\mathbb F}&amp;#39;\)&lt;/span&gt; be
 solutions to (FPE) that satisfy the natural conditions and are
@@ -127,11 +124,11 @@ conditionally independent given
 &lt;span class=&#34;math inline&#34;&gt;\((Y_{[\varnothing]},Y&amp;#39;_{[\varnothing]})\)&lt;/span&gt; solves the &lt;em&gt;bivariate RDE&lt;/em&gt;
 &lt;span class=&#34;math display&#34;&gt;\[(Y_{[\varnothing]},Y&amp;#39;_{[\varnothing]})\stackrel{\scriptstyle{\rm d}}{=}
 \big(\gamma(\tau_\varnothing,Y_{[1]},Y_{[2]}),\gamma(\tau_\varnothing,Y&amp;#39;_{[1]},Y&amp;#39;_{[2]})\big),\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; is the function from (RDE). In Theorem 11 of &lt;span class=&#34;citation&#34;&gt;[@AB05]&lt;/span&gt;, it
+where &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; is the function from (RDE). In Theorem 11 of (Aldous and Bandyopadhyay, 2005), it
 is proved that &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}={\mathbb F}&amp;#39;\)&lt;/span&gt; a.s. if and only if each
 solution to the bivariate RDE with the right marginals is concentrated
 on the diagonal. After a failed proof of endogeny that turned out to
-contain an error &lt;span class=&#34;citation&#34;&gt;[@Ban04]&lt;/span&gt;, Antar Bandyopadhyay ran numerical
+contain an error (Bandyopadhyay, 2004), Antar Bandyopadhyay ran numerical
 calculations that strongly suggested almost sure uniqueness does not
 hold, but for 15 years nobody was able to prove this.&lt;/p&gt;
 &lt;p&gt;We discovered the problem becomes easier if we place a geometrically
@@ -152,23 +149,23 @@ with a scaled version of the original tree.&lt;/p&gt;
 For the MBBT, scaling gives &lt;span class=&#34;math inline&#34;&gt;\(F(rs,rt)=rF(s,t)\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((r,s,t\in[0,1])\)&lt;/span&gt;. The
 bivariate RDE now reduces to an integral equation for a function of one
 variable, which is easier to solve than the original bivariate RDE for
-the binary tree. However, as demonstrated in Proposition 42 of &lt;span class=&#34;citation&#34;&gt;[@RST21]&lt;/span&gt;,
+the binary tree. However, as demonstrated in Proposition 42 of (Ráth, Swart and Terpai, 2021),
 frozen percolation on the binary tree and on the MBBT can be translated
 into each other. The basic idea is that several barriers on one oriented
 edge can be replaced by a single effective barrier, whose activation
 time is the maximum of the activation times of the individual barriers.
-As a result, we were able to obtain Theorem 3 of &lt;span class=&#34;citation&#34;&gt;[@RST21]&lt;/span&gt;, which says:&lt;/p&gt;
+As a result, we were able to obtain Theorem 3 of (Ráth, Swart and Terpai, 2021), which says:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For frozen percolation on the binary tree with
 &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt;, solutions to (FPE) are not almost surely unique.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;[@RSS21]&lt;/span&gt; we investigated almost sure uniqueness for frozen
+&lt;p&gt;In (Ráth, Swart and Szőke, 2021) we investigated almost sure uniqueness for frozen
 percolation on the MBBT for sets of freezing times of the form
 &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta:=\{\theta^n:n\geq 0\}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;\theta&amp;lt;1\)&lt;/span&gt;. These sets behave
 well under scaling, so we were able to use the same techniques as in
-&lt;span class=&#34;citation&#34;&gt;[@RST21]&lt;/span&gt;. To translate this back from the MBBT into the setting of the
+(Ráth, Swart and Terpai, 2021). To translate this back from the MBBT into the setting of the
 binary tree, one has to replace &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta\)&lt;/span&gt; by its image under the map
-&lt;span class=&#34;math inline&#34;&gt;\(H(t):=1/(2-t)\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((t\in[0,1])\)&lt;/span&gt;. Theorem 9 of &lt;span class=&#34;citation&#34;&gt;[@RSS21]&lt;/span&gt; says:&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(H(t):=1/(2-t)\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((t\in[0,1])\)&lt;/span&gt;. Theorem 9 of (Ráth, Swart and Szőke, 2021) says:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For frozen percolation on the MBBT and sets of freezing
 times of the form &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta\)&lt;/span&gt;, there exists a parameter
@@ -180,7 +177,7 @@ conditions and are conditionally independent given
 &lt;span class=&#34;math inline&#34;&gt;\(\theta\leq\theta^\ast\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We have an explicit formula for the parameter &lt;span class=&#34;math inline&#34;&gt;\(\theta^\ast\)&lt;/span&gt; (see Lemma 8
-in &lt;span class=&#34;citation&#34;&gt;[@RSS21]&lt;/span&gt;), which is rather complicated. The result shows that in
+in (Ráth, Swart and Szőke, 2021)), which is rather complicated. The result shows that in
 general, one cannot hope to settle the question of almost sure
 uniqueness by “soft” arguments. Instead, any proof will always require
 some hard calculations.&lt;/p&gt;

@@ -13,7 +13,7 @@
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
-      <description>AbstractIn frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
+      <description>In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
     </item>
     
   </channel>
