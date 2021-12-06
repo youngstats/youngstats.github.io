@@ -6,7 +6,16 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>causal-inference</title>
+      <link>https://youngstats.github.io/categories/causal-inference/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/causal-inference/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>probability</title>
       <link>https://youngstats.github.io/categories/probability/</link>
@@ -85,15 +94,6 @@
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/generalized-linear-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>compositional data</title>
-      <link>https://youngstats.github.io/categories/compositional-data/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/compositional-data/</guid>
       <description></description>
     </item>
     
