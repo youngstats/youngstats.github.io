@@ -6,7 +6,86 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
+      <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;problem-setting&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Problem Setting&lt;/h2&gt;
+&lt;p&gt;In our forthcoming &lt;a href=&#34;https://arxiv.org/pdf/1905.12707.pdf&#34;&gt;paper&lt;/a&gt; on Annals of Applied Statistics, we propose a new method – which we call &lt;strong&gt;Bayesian Causal Forest with Instrumental Variable&lt;/strong&gt; (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.&lt;/p&gt;
+&lt;p&gt;These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome. When the intervention is not randomized, researchers can recur to an instrumental variable (IV) to assess the causal effects. A valid instrument, &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt;, is a variable that affects the receipt of the treatment, &lt;span class=&#34;math inline&#34;&gt;\(W\)&lt;/span&gt;, without directly affecting the outcome, &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Using an IV enables researchers to effectively control for potential confounding factors and estimate the local effect of the treatment on individuals who would take a treatment if assigned to it, and not take it if not assigned (the so-called &lt;em&gt;compliers&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;If the classical four IV assumptions (&lt;em&gt;monotonicity, exclusion restriction, unconfoundedness of the instrument, existence of compliers&lt;/em&gt;) hold, one can identify the causal effect of the treatment on the sub-population of compliers, the so-called Complier Average Causal Effect (CACE), that is:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+   \tau^{cace} = \frac{\mathbb{E}\left[Y_i\mid Z_i = 1\right]-\mathbb{E}\left[Y_i\mid Z_i = 0\right]}{\mathbb{E}\left[W_i\mid Z_i =
+        1\right]-\mathbb{E}\left[W_i\mid Z_i = 0\right]}={ITT\over\pi_C},
+    \end{equation}\]&lt;/span&gt;
+where the numerator represents the average effect of the instrument, also referred to as &lt;em&gt;Intention-To-Treat&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(ITT\)&lt;/span&gt;) effect, and the denominator represents the overall proportion of units that comply with the treatment assignment, also referred to as &lt;em&gt;proportion of compliers&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(\pi_C\)&lt;/span&gt;). For example, researchers can make use of an IV – such as being eligible for additional school funding – to isolate the causal effects of the primary treatment – i.e., receiving the funding – on the outcome of interest – i.e., the performance of students.&lt;/p&gt;
+&lt;p&gt;In IV settings, it may be of interest to disentangle the heterogeneity in the causal effects by estimating the causal effects within different subgroups. In our paper, we introduce and consider the following conditional version of CACE:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+   \tau^{cace}(x) = \frac{\mathbb{E}\left[Y_i\mid Z_i = 1, X_i=x\right]-\mathbb{E}\left[Y_i\mid Z_i = 0, X_i=x\right]}{\mathbb{E}\left[W_i\mid Z_i =
+        1, X_i=x\right]-\mathbb{E}\left[W_i\mid Z_i = 0, X_i=x\right]}= {ITT_Y(x)\over\pi_C(x)}.
+    \end{equation}\]&lt;/span&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\tau^{cace}(x)\)&lt;/span&gt; is critical as it enables researchers to investigate the heterogeneity in causal effects within different subgroups defined by partitions &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; of the features’ space.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;methodology&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;Various causal machine learning methods have been proposed to estimate conditional causal effects. However, few methods have been developed to discover and estimate heterogeneity in IVs scenarios. To account for this shortcoming, we propose the BCF-IV method. BCF-IV is a &lt;strong&gt;three steps algorithm&lt;/strong&gt; that can be used to interpretably discover the subgroups with the largest or smallest effects.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;step one&lt;/strong&gt;, we divide the data into two subsamples: one to build the tree for the discovery of the heterogeneous effects (&lt;em&gt;discover subsample&lt;/em&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{dis}\)&lt;/span&gt;) and another for making inference (&lt;em&gt;inference subsample&lt;/em&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{inf}\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;step two&lt;/strong&gt;, we discover the heterogeneity in the conditional CACE on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{dis}\)&lt;/span&gt; by modeling separately the conditional ITT (&lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(x)\)&lt;/span&gt;) and the conditional proportion of compliers (&lt;span class=&#34;math inline&#34;&gt;\(\pi_C(x)\)&lt;/span&gt;). To do so, we adapt the Bayesian Causal Forest (BCF) method – proposed by Hanh et al. (2020), and recently featured &lt;a href=&#34;https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/&#34;&gt;on the YoungStats blog&lt;/a&gt; – for the estimation of &lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(x)\)&lt;/span&gt;, by including the IV, &lt;span class=&#34;math inline&#34;&gt;\(Z_i\)&lt;/span&gt;, in functional form for the conditional expected value of the outcome:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+    \mathbb{E}[Y_i\mid Z_i=z, X_i=x] = \mu(\pi(x),x) + ITT_{Y}(x)  z
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt; is the propensity score for the IV:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \pi(x) =  \mathbb{E}[Z_i=1\mid X_i=x].
+\end{equation}\]&lt;/span&gt;
+Both functions &lt;span class=&#34;math inline&#34;&gt;\(\mu(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(\cdot)\)&lt;/span&gt; are Bayesian Additive Regression Trees (Chipman, 2010) and are given independent priors to model differently the contributions of the covariates and the treatment on &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. The conditional proportion of compliers can be expressed:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
+    \mathbb{E}\left[W_i\mid Z_i = 1, X_i=x\right]-\mathbb{E}\left[W_i\mid Z_i = 0, X_i=x\right]=\delta(1,x)-\delta(0,x),
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\delta(z,x)\)&lt;/span&gt; can be estimated using the Bayesian machine learning methodology for causal effects estimation proposed by Hill (2011). The conditional CACE can be computed as the ratio between conditional ITT and conditional proportion of compliers:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+   \hat{\tau}^{cace}(x) =\frac{\mu(\hat{\pi}(x), x) + \hat{ITT}_{Y}(x)  z}{\hat{\delta}(1,x)-\hat{\delta}(0,x)}.
+\end{equation}\]&lt;/span&gt;
+One can then regress &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}^{cace}(x)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; via a binary decision tree to discover, in an interpretable manner, the drivers of the heterogeneity (see, e.g., Lee et al., 2020).&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;step three&lt;/strong&gt;, once the heterogeneous subgroups are learned, one can estimate the conditional CACE, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}^{cace}(x)\)&lt;/span&gt; on the inference subsample &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{inf}\)&lt;/span&gt;. To do so, one can use the method of moments IV estimator from Angrist et al. (1996) within all the different sub-populations that were detected in the previous step. Alternative estimation strategies, such as Two-Stages-Least-Squares, can be employed as well. Finally, multiple hypotheses tests adjustments are performed to control for familywise error rate or – less stringently – for the false discovery rate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;application&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Application&lt;/h2&gt;
+&lt;p&gt;In our motivating application, implemented via the &lt;a href=&#34;https://github.com/fbargaglistoffi/BCF-IV&#34;&gt;BCF-IV package&lt;/a&gt;, we evaluate the effects of the Equal Educational Opportunity program, promoted in Flanders (Belgium) to provide additional funding for secondary schools with a significant share of disadvantaged students. We use the quasi-randomized assignment of the funding as an IV to assess the effect of additional financial resources on students’ performance in compliant schools. The Flemish Ministry of Education provided us with data on student level characteristics and school level characteristics for the universe of pupils in the first stage of education in the school year 2010/2011 (135,682 students).&lt;/p&gt;
+&lt;p&gt;While the overall effects are negative but not significant (consistently with the findings of previous literature), there are significant differences among different sub-populations of students. Indeed, for students in schools with younger and less senior principals (i.e., principals younger than 55 years old and with less than 30 years of experience) the effects of the policy are larger (see Figure 1).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-06-heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach_files/tree.png&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Figure 1. Visualization of the heterogeneous Complier Average Causal Effects (CACE) of additional funding on student performance. The tree was discovered and estimated using the proposed BCF-IV model.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;By investigating the heterogeneity in the causal effects, BCF-IV expedites targeted policies. In fact, BCF-IV can shed light on the heterogeneity of causal effects in IVs scenarios and, in turn, provides a relevant knowledge for designing targeted interventions. Furthermore, in a Monte Carlo simulation study, we manifested that the BCF-IV technique outperforms other machine learning techniques tailored for causal inference in precisely estimating the causal effects and converges to an optimal large sample performance in identifying the subgroups with heterogeneous effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;essential-bibliography&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Essential bibliography&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;This article is based on:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Angrist, J. D., Imbens, G. W., &amp;amp; Rubin, D. B. (1996). &lt;em&gt;Identification of causal effects using instrumental variables.&lt;/em&gt; Journal of the American statistical Association, 91(434), 444-455.&lt;/p&gt;
+&lt;p&gt;Bargagli-Stoffi, F. J., De-Witte, K. and Gnecco, G. (2021+) &lt;em&gt;Heterogeneous causal effects with imperfect compliance: a Bayesian machine learning approach.&lt;/em&gt; The Annals of Applied Statistics, forthcoming.&lt;/p&gt;
+&lt;p&gt;Chipman, H. A., George, E. I., &amp;amp; McCulloch, R. E. (2010). &lt;em&gt;BART: Bayesian additive regression trees.&lt;/em&gt; The Annals of Applied Statistics, 4(1), 266-298.&lt;/p&gt;
+&lt;p&gt;Lee, K., Bargagli-Stoffi, F. J., &amp;amp; Dominici, F. (2020). &lt;em&gt;Causal rule ensemble: Interpretable inference of heterogeneous treatment effects&lt;/em&gt;. arXiv preprint arXiv:2009.09036.&lt;/p&gt;
+&lt;p&gt;Hahn, P. R., Murray, J. S., &amp;amp; Carvalho, C. M. (2020). &lt;em&gt;Bayesian regression tree models for causal inference: Regularization, confounding, and heterogeneous effects&lt;/em&gt;. Bayesian Analysis, 15(3), 965-1056.&lt;/p&gt;
+&lt;p&gt;Hill, J. L. (2011). &lt;em&gt;Bayesian nonparametric modeling for causal inference.&lt;/em&gt; Journal of Computational and Graphical Statistics, 20(1), 217-240.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors’ biography&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-06-heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach_files/PhotoHandler%20(Custom).jpeg&#34; height=&#34;70&#34; /&gt;
+&lt;a href=&#34;https://www.falcobargaglistoffi.com/&#34;&gt;&lt;strong&gt;Falco J. Bargagli Stoffi&lt;/strong&gt;&lt;/a&gt; is a Postdoctoral Research Fellow at the Harvard T.H. Chan School of Public Health.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Frozen percolation on the binary tree is nonendogenous</title>
       <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
@@ -954,50 +1033,6 @@ Honghan Ye is a Ph.D. candidate from the Department of Industrial and Systems E
 Dr. Xin Wang is an assistant professor from the Department of Industrial and Systems Engineering at UW-Madison.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-10-spatiotemporal-modeling-and-real-time-prediction-of-origin_files/liu.png&#34; height=&#34;75&#34; /&gt;
 Dr. Kaibo Liu is an associate professor from the Department of Industrial and Systems Engineering at UW-Madison.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent Advances in Functional Data Analysis</title>
-      <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/29/fda-webinar/</guid>
-      <description>&lt;p&gt;The fourth &amp;ldquo;&lt;em&gt;One World webinar&lt;/em&gt;&amp;rdquo; organized by YoungStatS will take place
-on June 30th, 2021. The topic of this webinar is on Functional Data
-Analysis. Selected young European researchers active in this area of
-research will present their contributions on spherical functional
-autoregressions, additive models, and clustering methods for functional
-data, with the focus on both theoretical developments and applications.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Wednesday, June 30th, 16:30 CEST&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Online&lt;/em&gt;, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/1efH13r__c5v-GHC5MsxzTlS0Csps_f4YHr622717STY/viewform?edit_requested=true&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://people.epfl.ch/alessia.caponera/?lang=en&#34;&gt;Alessia Caponera&lt;/a&gt; (École polytechnique fédérale de Lausanne, Switzerland): &amp;ldquo;Asymptotics for spherical functional autoregressions&amp;rdquo;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.wiwi.hu-berlin.de/en/Professorships/vwl/statistik/team/volkmale&#34;&gt;Alexander Volkmann&lt;/a&gt; (Humboldt-Universität zu Berlin, Germany): &amp;ldquo;Multivariate Functional Additive Mixed Models&amp;rdquo;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.dii.unina.it/page.php?tabella=livello4&amp;amp;id_livello=272&amp;amp;flag=persona&amp;amp;livello1=1&amp;amp;livello2=53&amp;amp;livello3=25&amp;amp;lang=en&#34;&gt;Fabio Centofanti&lt;/a&gt; (University of Naples Federico II, Italy): &amp;ldquo;Sparse and Smooth Functional Data Clustering&amp;rdquo;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.math-evry.cnrs.fr/members/Jpark/welcome&#34;&gt;Juhyun Park&lt;/a&gt; (École nationale supérieure d&#39;informatique pour
-l&#39;industrie et l&#39;entreprise, France)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;For more information, please visit our
-&lt;a href=&#34;https://youngstats.github.io/post/2020/09/10/webinars/&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

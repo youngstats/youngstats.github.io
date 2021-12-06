@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
+      <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
+      <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
+These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
+    </item>
+    
     <item>
       <title>Frozen percolation on the binary tree is nonendogenous</title>
       <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
@@ -93,17 +103,6 @@ When &amp;amp; Where:
       <guid>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</guid>
       <description>Introduction
 In the past decades, intelligent transportation system (ITS) has brought advanced technology that enables a data-rich environment and unprecedented opportunities for traffic prediction, which is considered as one of the most prevalent issues facing ITS (Li et al., 2015). We discuss the online prediction of the origin-destination (OD) demand count in traffic networks, which represents the number of trips between certain combinations of an origin and a destination.</description>
-    </item>
-    
-    <item>
-      <title>Recent Advances in Functional Data Analysis</title>
-      <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/29/fda-webinar/</guid>
-      <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.
-When &amp;amp; Where:
-  Wednesday, June 30th, 16:30 CEST</description>
     </item>
     
   </channel>
