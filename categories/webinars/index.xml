@@ -6,7 +6,17 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inclusion Process and Sticky Brownian Motions</title>
+      <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</guid>
+      <description>Inclusion Process and Sticky Brownian Motions
+The ninth “One World webinar” organized by YoungStatS will take place onFebruary 9th, 2022. Inclusion process (IP) is a stochastic lattice gaswhere particles perform random walks subjected to mutual attraction. Forthe inclusion process in the condensation regime one can extract thatthe scaling limit of two particles is a pair of sticky Brownian motionswhich lead to interesting recent research.</description>
+    </item>
+    
     <item>
       <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
