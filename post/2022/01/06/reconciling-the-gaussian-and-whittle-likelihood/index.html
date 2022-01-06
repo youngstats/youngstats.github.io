@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/time-series">time-series</a>
+  
+  </div>
+
+  <h1><span class="title">Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</span></h1>
+
+  
+  <h3 class="author">Junho Yang and Suhasini Subba Rao
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Suppose <span class="math inline">\(\{X_t: t\in \mathbb{Z}\}\)</span> is a second order stationary time series where <span class="math inline">\(c(r) = \text{cov}(X_{t+r},X_t)\)</span> and <span class="math inline">\(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\)</span> are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is <span class="math inline">\(\textrm{E}(X_t)=0\)</span>.
+Our aim is to fit a parametric second-order stationary model (specified by <span class="math inline">\(\{c_{f_\theta}(r)\}\)</span> or <span class="math inline">\(f_\theta(\omega)\)</span>) to the observed time series <span class="math inline">\(\underline{X}_n = (X_1, ..., X_n)^\top\)</span>.
+There are two classical estimation methods based on the quasi-likelihood criteria. The first is a time-domain method which minimizes the (negative log) quasi Gaussian likelihood
+<span class="math display">\[\begin{equation}
+\mathcal{L}_n(\theta) = \frac{1}{n}\big(\underline{X}_n^{\top} \Gamma_n(f_\theta)\underline{X}_n + \log \det\Gamma_n(f_\theta) \big),
+\end{equation}\]</span>
+where <span class="math inline">\([\Gamma_n(f_\theta)]_{s,t} = c_{f_\theta}(s-t)\)</span> is a covariance matrix of <span class="math inline">\(\underline{X}_n\)</span>.
+The second is a frequency-domain method which minimizes the Whittle likelihood
+<span class="math display">\[\begin{equation}
+K_n(\theta) = \frac{1}{n}\sum_{k=1}^{n}\bigg(\frac{|J_n(\omega_k)|^2}{f_\theta(\omega_k)} + \log f_\theta(\omega_k)\bigg) \qquad \omega_k = \frac{2\pi k}{n},
+\end{equation}\]</span> where <span class="math inline">\(J_n(\omega_k) =n^{-1/2}\sum_{t=1}^{n} X_t e^{it\omega_k}\)</span>, <span class="math inline">\(1 \leq k \leq n\)</span>, is the discrete Fourier transform (DFT) of the (observed) time series.</p>
+<p>The Whittle likelihood is computationally a very attractive method. Thus, it has become a popular method for parameter estimation of both long and short memory stationary time series. Moreover, the Whittle likelihood has gained traction as a quasi-likelihood between the periodogram and conjectured spectral density.</p>
+<p>Despite its advantages, it is well-known that for small samples, the Whittle likelihood can give rise to estimators with a substantial bias. <a href="https://doi.org/10.1214/aos/1176350838">Dahlhaus (1988)</a> showed that the finite sample bias in the periodogram impacts the performance of the
+Whittle likelihood. To remedy this, he proposed the <em>tapered Whittle</em> likelihood based on the tapered periodogram. He proved that the tapered periodogram led to a significant reduction in bias.</p>
+<p>However, as far as we are aware, there are no results that explain the “precise difference” between the Gaussian likelihood and the Whittle likelihood. The objective of our paper to bridge the gap between the time- and frequency-domain approaches by deriving an exact expression of the difference between the Gaussian and Whittle likelihood.</p>
+<p>The <strong>Contribution</strong> of this paper is three-fold:</p>
+<ul>
+<li><p>We obtain a linear transformation (which we named the <em>complete DFT</em>) that is “biorthogonal” to the DFT of an observed time series.</p></li>
+<li><p>We use the complete DFT to rewrite the Gaussian likelihood in the frequency domain.</p></li>
+<li><p>Using an approximation for the difference, we propose a new frequency domain quasi-likelihood criteria — the <em>boundary corrected Whittle</em> and the
+<em>hybrid Whittle</em> likelihood.</p></li>
+</ul>
+<p>In the following sections, we summarize each contribution.</p>
+</div>
+<div id="the-complete-dft" class="section level2">
+<h2>The complete DFT</h2>
+<p>We introduce our main theorem which obtains a transform that is biorthogonal to the DFT.</p>
+<blockquote>
+<p><strong>Theorem 1 (The biorthogonal transform)</strong> Let <span class="math inline">\(\{X_t\}\)</span> be a centered second order stationary time series with spectral density <span class="math inline">\(f\)</span> which is bounded and strictly positive. For <span class="math inline">\(\tau \in \mathbb{Z}\)</span>, let <span class="math inline">\(\hat{X}_{\tau,n}\)</span> denote the best linear predictors of <span class="math inline">\(X_\tau\)</span> given <span class="math inline">\(\underline{X}_n\)</span>.
+Let <span class="math inline">\(\widetilde{J_n}(\omega;f) = J_n(\omega) + \widehat{J_n}(\omega;f)\)</span> be the <em>complete DFT</em> where
+<span class="math display">\[\begin{equation*}
+\widehat{J_n}(\omega;f) = n^{-1/2} (\sum_{\tau \leq 0} \hat{X}_{\tau,n}e^{i\tau \omega} + 
+\sum_{\tau &gt; n} \hat{X}_{\tau,n}e^{i\tau \omega} ).
+\end{equation*}\]</span>
+Then,
+<span class="math display">\[\begin{equation*}
+\text{cov}(\widetilde{J_n}(\omega_{k_1};f), J_n(\omega_{k_2}))
+= f(\omega_{k_1}) \delta_{k_1 = k_2} \quad 1\leq k_1, k_2 \leq n,
+\end{equation*}\]</span> where <span class="math inline">\(\delta_{k_1 = k_2} = 1\)</span> if <span class="math inline">\(k_1=k_2\)</span> and zero otherwise.</p>
+</blockquote>
+<p>From the above theorem, the biorthogonal transform corresponding to the regular DFT—henceforth called the <strong>complete DFT</strong>—contains the regular DFT <em>plus</em> the Fourier transform of the best linear predictors outside the domain of observation. A visualization of the observations and the predictors that are involved in the construction of the complete DFT is given below.</p>
+<p><img src="/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/proj2.png" style="width:70.0%" /></p>
+</div>
+<div id="contrasting-the-gaussian-and-whittle-likelihood" class="section level2">
+<h2>Contrasting the Gaussian and Whittle likelihood</h2>
+<p>Using the complete DFT, we can represent the Gaussian likelihood in the frequency domain.</p>
+<blockquote>
+<p><strong>Theorem 2 (A frequency domain representation of the Gaussian likelihood)</strong> The quadratic term in the Gaussian likelihood can be rewritten as
+<span class="math display">\[\begin{equation*}
+\mathcal{L}_n(\theta) = \frac{1}{n}\underline{X}_n^{\top} \Gamma_n(f_\theta)\underline{X}_n 
+= \frac{1}{n} \sum_{k=1}^{n} \frac{\widetilde{J_n}(\omega_{k};f_\theta) }{f_\theta(\omega_k)}.
+\end{equation*}\]</span> This yields the difference between the Gaussian and Whittle likelihood
+<span class="math display">\[\begin{equation*}
+\mathcal{L}_n(\theta) - K_n(\theta)
+= \frac{1}{n} \sum_{k=1}^{n} \frac{\widehat{J_n}(\omega_{k};f_\theta) \overline{J_n(\omega_k)}}{f_\theta(\omega_k)}.
+\end{equation*}\]</span></p>
+</blockquote>
+<p>From the above theorem, we observe that the difference between the Gaussian and Whittle likelihood is due to the linear predictions outside the domain of observation. We interpret the Gaussian likelihood in terms of the information criterion. The Whittle likelihood estimator selects the spectral density <span class="math inline">\(f_\theta\)</span> which best fits the periodogram. On the other hand, since the complete DFT is constructed based on <span class="math inline">\(f_\theta\)</span>, the Gaussian likelihood estimator selects the spectral density which <em>simultaneously</em> predicts and fits the time series.</p>
+</div>
+<div id="new-fequency-domain-quasi-likelihood-criteria" class="section level2">
+<h2>New fequency domain quasi-likelihood criteria</h2>
+<p>For both the specified and misspecified case, the Gaussian and Whittle likelihood estimate the <em>spectral divergence</em> between the true spectral density <span class="math inline">\(f\)</span> and the conjectured spectral density <span class="math inline">\(f_\theta\)</span>:
+<span class="math display">\[\begin{equation*}
+\mathbb{E}_f [\mathcal{L}_n(\theta)] 
+~~\text{or} ~~ \mathbb{E}_f [K_n(\theta)]
+= I(f;f_\theta) + O(n^{-1}),
+\end{equation*}\]</span> where <span class="math inline">\(I(f;f_\theta) = n^{-1}\sum_{k=1}^{n}\big(\frac{f(\omega_k)}{f_\theta(\omega_k)} + \log f_\theta(\omega_k)\big)\)</span>. Therefore, even for the misspecified case, asymptotically, both estimators have a meaningful interpretation. However, there is still a finite sample bias in both likelihoods which is of order <span class="math inline">\(O(n^{-1})\)</span>. To remedy this, we introduce a new frequency domain quasi-likelihood criterion:</p>
+<blockquote>
+<p><strong>(The boundary corrected Whittle likelihood)</strong>
+<span class="math display">\[\begin{equation*}
+W_n(\theta;f) = \frac{1}{n}\sum_{k=1}^{n}\bigg(\frac{\widetilde{J_n}(\omega_{k};f)\overline{J_n(\omega_k)} }{f_\theta(\omega_k)}+
+\log f_\theta(\omega_k)\bigg).
+\end{equation*}\]</span></p>
+</blockquote>
+<p>Then, due to the Theorem 1, the (infeasible) boundary corrected Whittle likelihood is an <em>unbiased estimator</em> of the spectral divergence.
+To obtain the feasible boundary corrected Whittle criterion, we use the following approximations:</p>
+<ol style="list-style-type: decimal">
+<li>Estimate the true spectral density <span class="math inline">\(f\)</span> by fitting AR<span class="math inline">\((p)\)</span> model to the data (it is often called the <em>plug-in</em> method).</li>
+<li>Calculate the complete DFT and the boundary corrected Whittle likelihood based on the best fitting AR<span class="math inline">\((p)\)</span> spectral density,
+<span class="math inline">\(\widehat{f}_p\)</span>, described in 1.</li>
+</ol>
+<p>The resulting feasible boundary corrected Whittle criterion, denotes <span class="math inline">\(W_{p,n}(\theta;\widehat{f_p})\)</span>, gives a higher-order approximation of
+the spectral divergence than the Gaussian and Whittle likelihoods. We use <span class="math inline">\(\widehat{\theta} = \arg\min_{\theta}W_{p,n}(\theta;\widehat{f}_p)\)</span>
+for a frequency-domain parameter estimation.</p>
+<p>We mention that by a similar argument to that given above, one can also
+taper the regular DFT (but not the complete DFT) when defining the boundary corrected Whittle (the result we
+called it the <strong>hybrid Whittle</strong> likelihood). In the simulations, we have observed that this can often out perform the other likelihoods.</p>
+</div>
+<div id="simulation" class="section level2">
+<h2>Simulation</h2>
+<p>To end this post, we present some estimation results under misspecification. For sample size <span class="math inline">\(n=20\)</span>, the true data generating process is a Gaussian ARMA<span class="math inline">\((3,2)\)</span> process, but we fit the following two models</p>
+<ul>
+<li><strong>ARMA(1,1)</strong>: <span class="math inline">\(X_t = \phi X_{t-1} + \varepsilon_t + \psi \varepsilon_{t-1}\)</span> and</li>
+<li><strong>AR(2)</strong>: <span class="math inline">\(X_t = \phi_1 X_{t-1} + \phi_2 X_{t-2} + \varepsilon_t\)</span></li>
+</ul>
+<p>to the time series.
+Below shows (the logarithm of) the true spectral density and the best fitting ARMA<span class="math inline">\((1,1)\)</span> and AR<span class="math inline">\((2)\)</span> spectral densities.</p>
+<p><img src="/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/armaspec.png" style="width:70.0%" /></p>
+<p>All simulations are conducted over 1,000 replications and for each simulation, we calculate the parameter estimators of five quasi-likelihood criteria: (1) the Gaussian; (2) the Whittle; (3) the tapered Whittle; (4) the <span style="color:blue">boundary corrected Whittle</span>; and (5) the <span style="color:blue">hybrid Whittle</span>.</p>
+<p>The table below shows the bias and the standard deviation (in the parentheses) of the estimated coefficients and spectral divergence. <span style="color:red"><strong>Red text</strong></span> denotes the smallest root-mean-square error (RMSE) and <span style="color:blue"><strong>Blue text</strong></span> denotes the second smallest RMSE.</p>
+<p><img src="/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/result-table-no-caption.png" /></p>
+<p>Based on the above table, we conclude that</p>
+<ul>
+<li>The new likelihoods tend to out perform the Whittle likelihood.</li>
+<li>The new likelihoods can significantly reduce the bias and have the smallest or second smallest RMSE.</li>
+<li>There is no clear winner, but the Gaussian, Tapered Whittle, and hybrid Whittle are close contenders.</li>
+</ul>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>R. Dahlhaus. Small sample effects in time series analysis: a new asymptotic theory and a new estimate. <em>Ann. Statist.</em>, 16(2):808-841, 1988.</p>
+<p>S. Subba Rao and J. Yang. Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain. <em>Ann. Statist.</em>, 49(5):2774-2802, 2021.</p>
+</div>
+<div id="authors-biography" class="section level2">
+<h2>Authors’ biography</h2>
+<p><a href="https://sites.google.com/view/junhoyang">Junho Yang</a> is an Assistant Research Fellow in the Institute of Statistical Science at Academia Sinica, Taiwan. His research focuses on time series analysis, Toeplitz matrices, and spatial statistics and its applications.</p>
+<p><a href="https://web.stat.tamu.edu/~suhasini/">Suhasini Subba Rao</a> is a Professor of Statistics at Texas A&amp;M University, USA. Her research focuses on time series analysis, nonstationary processes, nonlinear processes, and spatio-temporal models.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

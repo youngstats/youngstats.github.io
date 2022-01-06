@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>time-series on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/time-series/</link>
+    <description>Recent content in time-series on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/time-series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</title>
+      <link>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</guid>
+      <description>OverviewSuppose \(\{X_t: t\in \mathbb{Z}\}\) is a second order stationary time series where \(c(r) = \text{cov}(X_{t+r},X_t)\) and \(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\) are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is \(\textrm{E}(X_t)=0\).Our aim is to fit a parametric second-order stationary model (specified by \(\{c_{f_\theta}(r)\}\) or \(f_\theta(\omega)\)) to the observed time series \(\underline{X}_n = (X_1, ..., X_n)^\top\).There are two classical estimation methods based on the quasi-likelihood criteria.</description>
+    </item>
+    
+  </channel>
+</rss>

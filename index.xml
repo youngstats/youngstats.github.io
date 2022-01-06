@@ -6,7 +6,140 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</title>
+      <link>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Suppose &lt;span class=&#34;math inline&#34;&gt;\(\{X_t: t\in \mathbb{Z}\}\)&lt;/span&gt; is a second order stationary time series where &lt;span class=&#34;math inline&#34;&gt;\(c(r) = \text{cov}(X_{t+r},X_t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\)&lt;/span&gt; are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is &lt;span class=&#34;math inline&#34;&gt;\(\textrm{E}(X_t)=0\)&lt;/span&gt;.
+Our aim is to fit a parametric second-order stationary model (specified by &lt;span class=&#34;math inline&#34;&gt;\(\{c_{f_\theta}(r)\}\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(f_\theta(\omega)\)&lt;/span&gt;) to the observed time series &lt;span class=&#34;math inline&#34;&gt;\(\underline{X}_n = (X_1, ..., X_n)^\top\)&lt;/span&gt;.
+There are two classical estimation methods based on the quasi-likelihood criteria. The first is a time-domain method which minimizes the (negative log) quasi Gaussian likelihood
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\mathcal{L}_n(\theta) = \frac{1}{n}\big(\underline{X}_n^{\top} \Gamma_n(f_\theta)\underline{X}_n + \log \det\Gamma_n(f_\theta) \big),
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\([\Gamma_n(f_\theta)]_{s,t} = c_{f_\theta}(s-t)\)&lt;/span&gt; is a covariance matrix of &lt;span class=&#34;math inline&#34;&gt;\(\underline{X}_n\)&lt;/span&gt;.
+The second is a frequency-domain method which minimizes the Whittle likelihood
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+K_n(\theta) = \frac{1}{n}\sum_{k=1}^{n}\bigg(\frac{|J_n(\omega_k)|^2}{f_\theta(\omega_k)} + \log f_\theta(\omega_k)\bigg) \qquad \omega_k = \frac{2\pi k}{n},
+\end{equation}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(J_n(\omega_k) =n^{-1/2}\sum_{t=1}^{n} X_t e^{it\omega_k}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1 \leq k \leq n\)&lt;/span&gt;, is the discrete Fourier transform (DFT) of the (observed) time series.&lt;/p&gt;
+&lt;p&gt;The Whittle likelihood is computationally a very attractive method. Thus, it has become a popular method for parameter estimation of both long and short memory stationary time series. Moreover, the Whittle likelihood has gained traction as a quasi-likelihood between the periodogram and conjectured spectral density.&lt;/p&gt;
+&lt;p&gt;Despite its advantages, it is well-known that for small samples, the Whittle likelihood can give rise to estimators with a substantial bias. &lt;a href=&#34;https://doi.org/10.1214/aos/1176350838&#34;&gt;Dahlhaus (1988)&lt;/a&gt; showed that the finite sample bias in the periodogram impacts the performance of the
+Whittle likelihood. To remedy this, he proposed the &lt;em&gt;tapered Whittle&lt;/em&gt; likelihood based on the tapered periodogram. He proved that the tapered periodogram led to a significant reduction in bias.&lt;/p&gt;
+&lt;p&gt;However, as far as we are aware, there are no results that explain the “precise difference” between the Gaussian likelihood and the Whittle likelihood. The objective of our paper to bridge the gap between the time- and frequency-domain approaches by deriving an exact expression of the difference between the Gaussian and Whittle likelihood.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Contribution&lt;/strong&gt; of this paper is three-fold:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We obtain a linear transformation (which we named the &lt;em&gt;complete DFT&lt;/em&gt;) that is “biorthogonal” to the DFT of an observed time series.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We use the complete DFT to rewrite the Gaussian likelihood in the frequency domain.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Using an approximation for the difference, we propose a new frequency domain quasi-likelihood criteria — the &lt;em&gt;boundary corrected Whittle&lt;/em&gt; and the
+&lt;em&gt;hybrid Whittle&lt;/em&gt; likelihood.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the following sections, we summarize each contribution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-complete-dft&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The complete DFT&lt;/h2&gt;
+&lt;p&gt;We introduce our main theorem which obtains a transform that is biorthogonal to the DFT.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 1 (The biorthogonal transform)&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(\{X_t\}\)&lt;/span&gt; be a centered second order stationary time series with spectral density &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; which is bounded and strictly positive. For &lt;span class=&#34;math inline&#34;&gt;\(\tau \in \mathbb{Z}\)&lt;/span&gt;, let &lt;span class=&#34;math inline&#34;&gt;\(\hat{X}_{\tau,n}\)&lt;/span&gt; denote the best linear predictors of &lt;span class=&#34;math inline&#34;&gt;\(X_\tau\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(\underline{X}_n\)&lt;/span&gt;.
+Let &lt;span class=&#34;math inline&#34;&gt;\(\widetilde{J_n}(\omega;f) = J_n(\omega) + \widehat{J_n}(\omega;f)\)&lt;/span&gt; be the &lt;em&gt;complete DFT&lt;/em&gt; where
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\widehat{J_n}(\omega;f) = n^{-1/2} (\sum_{\tau \leq 0} \hat{X}_{\tau,n}e^{i\tau \omega} + 
+\sum_{\tau &amp;gt; n} \hat{X}_{\tau,n}e^{i\tau \omega} ).
+\end{equation*}\]&lt;/span&gt;
+Then,
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\text{cov}(\widetilde{J_n}(\omega_{k_1};f), J_n(\omega_{k_2}))
+= f(\omega_{k_1}) \delta_{k_1 = k_2} \quad 1\leq k_1, k_2 \leq n,
+\end{equation*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\delta_{k_1 = k_2} = 1\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(k_1=k_2\)&lt;/span&gt; and zero otherwise.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From the above theorem, the biorthogonal transform corresponding to the regular DFT—henceforth called the &lt;strong&gt;complete DFT&lt;/strong&gt;—contains the regular DFT &lt;em&gt;plus&lt;/em&gt; the Fourier transform of the best linear predictors outside the domain of observation. A visualization of the observations and the predictors that are involved in the construction of the complete DFT is given below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/proj2.png&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;contrasting-the-gaussian-and-whittle-likelihood&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Contrasting the Gaussian and Whittle likelihood&lt;/h2&gt;
+&lt;p&gt;Using the complete DFT, we can represent the Gaussian likelihood in the frequency domain.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 2 (A frequency domain representation of the Gaussian likelihood)&lt;/strong&gt; The quadratic term in the Gaussian likelihood can be rewritten as
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\mathcal{L}_n(\theta) = \frac{1}{n}\underline{X}_n^{\top} \Gamma_n(f_\theta)\underline{X}_n 
+= \frac{1}{n} \sum_{k=1}^{n} \frac{\widetilde{J_n}(\omega_{k};f_\theta) }{f_\theta(\omega_k)}.
+\end{equation*}\]&lt;/span&gt; This yields the difference between the Gaussian and Whittle likelihood
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\mathcal{L}_n(\theta) - K_n(\theta)
+= \frac{1}{n} \sum_{k=1}^{n} \frac{\widehat{J_n}(\omega_{k};f_\theta) \overline{J_n(\omega_k)}}{f_\theta(\omega_k)}.
+\end{equation*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From the above theorem, we observe that the difference between the Gaussian and Whittle likelihood is due to the linear predictions outside the domain of observation. We interpret the Gaussian likelihood in terms of the information criterion. The Whittle likelihood estimator selects the spectral density &lt;span class=&#34;math inline&#34;&gt;\(f_\theta\)&lt;/span&gt; which best fits the periodogram. On the other hand, since the complete DFT is constructed based on &lt;span class=&#34;math inline&#34;&gt;\(f_\theta\)&lt;/span&gt;, the Gaussian likelihood estimator selects the spectral density which &lt;em&gt;simultaneously&lt;/em&gt; predicts and fits the time series.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;new-fequency-domain-quasi-likelihood-criteria&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;New fequency domain quasi-likelihood criteria&lt;/h2&gt;
+&lt;p&gt;For both the specified and misspecified case, the Gaussian and Whittle likelihood estimate the &lt;em&gt;spectral divergence&lt;/em&gt; between the true spectral density &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; and the conjectured spectral density &lt;span class=&#34;math inline&#34;&gt;\(f_\theta\)&lt;/span&gt;:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\mathbb{E}_f [\mathcal{L}_n(\theta)] 
+~~\text{or} ~~ \mathbb{E}_f [K_n(\theta)]
+= I(f;f_\theta) + O(n^{-1}),
+\end{equation*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(I(f;f_\theta) = n^{-1}\sum_{k=1}^{n}\big(\frac{f(\omega_k)}{f_\theta(\omega_k)} + \log f_\theta(\omega_k)\big)\)&lt;/span&gt;. Therefore, even for the misspecified case, asymptotically, both estimators have a meaningful interpretation. However, there is still a finite sample bias in both likelihoods which is of order &lt;span class=&#34;math inline&#34;&gt;\(O(n^{-1})\)&lt;/span&gt;. To remedy this, we introduce a new frequency domain quasi-likelihood criterion:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;(The boundary corrected Whittle likelihood)&lt;/strong&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+W_n(\theta;f) = \frac{1}{n}\sum_{k=1}^{n}\bigg(\frac{\widetilde{J_n}(\omega_{k};f)\overline{J_n(\omega_k)} }{f_\theta(\omega_k)}+
+\log f_\theta(\omega_k)\bigg).
+\end{equation*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then, due to the Theorem 1, the (infeasible) boundary corrected Whittle likelihood is an &lt;em&gt;unbiased estimator&lt;/em&gt; of the spectral divergence.
+To obtain the feasible boundary corrected Whittle criterion, we use the following approximations:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Estimate the true spectral density &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; by fitting AR&lt;span class=&#34;math inline&#34;&gt;\((p)\)&lt;/span&gt; model to the data (it is often called the &lt;em&gt;plug-in&lt;/em&gt; method).&lt;/li&gt;
+&lt;li&gt;Calculate the complete DFT and the boundary corrected Whittle likelihood based on the best fitting AR&lt;span class=&#34;math inline&#34;&gt;\((p)\)&lt;/span&gt; spectral density,
+&lt;span class=&#34;math inline&#34;&gt;\(\widehat{f}_p\)&lt;/span&gt;, described in 1.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The resulting feasible boundary corrected Whittle criterion, denotes &lt;span class=&#34;math inline&#34;&gt;\(W_{p,n}(\theta;\widehat{f_p})\)&lt;/span&gt;, gives a higher-order approximation of
+the spectral divergence than the Gaussian and Whittle likelihoods. We use &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\theta} = \arg\min_{\theta}W_{p,n}(\theta;\widehat{f}_p)\)&lt;/span&gt;
+for a frequency-domain parameter estimation.&lt;/p&gt;
+&lt;p&gt;We mention that by a similar argument to that given above, one can also
+taper the regular DFT (but not the complete DFT) when defining the boundary corrected Whittle (the result we
+called it the &lt;strong&gt;hybrid Whittle&lt;/strong&gt; likelihood). In the simulations, we have observed that this can often out perform the other likelihoods.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;To end this post, we present some estimation results under misspecification. For sample size &lt;span class=&#34;math inline&#34;&gt;\(n=20\)&lt;/span&gt;, the true data generating process is a Gaussian ARMA&lt;span class=&#34;math inline&#34;&gt;\((3,2)\)&lt;/span&gt; process, but we fit the following two models&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ARMA(1,1)&lt;/strong&gt;: &lt;span class=&#34;math inline&#34;&gt;\(X_t = \phi X_{t-1} + \varepsilon_t + \psi \varepsilon_{t-1}\)&lt;/span&gt; and&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AR(2)&lt;/strong&gt;: &lt;span class=&#34;math inline&#34;&gt;\(X_t = \phi_1 X_{t-1} + \phi_2 X_{t-2} + \varepsilon_t\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;to the time series.
+Below shows (the logarithm of) the true spectral density and the best fitting ARMA&lt;span class=&#34;math inline&#34;&gt;\((1,1)\)&lt;/span&gt; and AR&lt;span class=&#34;math inline&#34;&gt;\((2)\)&lt;/span&gt; spectral densities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/armaspec.png&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;All simulations are conducted over 1,000 replications and for each simulation, we calculate the parameter estimators of five quasi-likelihood criteria: (1) the Gaussian; (2) the Whittle; (3) the tapered Whittle; (4) the &lt;span style=&#34;color:blue&#34;&gt;boundary corrected Whittle&lt;/span&gt;; and (5) the &lt;span style=&#34;color:blue&#34;&gt;hybrid Whittle&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The table below shows the bias and the standard deviation (in the parentheses) of the estimated coefficients and spectral divergence. &lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Red text&lt;/strong&gt;&lt;/span&gt; denotes the smallest root-mean-square error (RMSE) and &lt;span style=&#34;color:blue&#34;&gt;&lt;strong&gt;Blue text&lt;/strong&gt;&lt;/span&gt; denotes the second smallest RMSE.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-06-reconciling-the-gaussian-and-whittle-likelihood_files/result-table-no-caption.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Based on the above table, we conclude that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The new likelihoods tend to out perform the Whittle likelihood.&lt;/li&gt;
+&lt;li&gt;The new likelihoods can significantly reduce the bias and have the smallest or second smallest RMSE.&lt;/li&gt;
+&lt;li&gt;There is no clear winner, but the Gaussian, Tapered Whittle, and hybrid Whittle are close contenders.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;R. Dahlhaus. Small sample effects in time series analysis: a new asymptotic theory and a new estimate. &lt;em&gt;Ann. Statist.&lt;/em&gt;, 16(2):808-841, 1988.&lt;/p&gt;
+&lt;p&gt;S. Subba Rao and J. Yang. Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain. &lt;em&gt;Ann. Statist.&lt;/em&gt;, 49(5):2774-2802, 2021.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors’ biography&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://sites.google.com/view/junhoyang&#34;&gt;Junho Yang&lt;/a&gt; is an Assistant Research Fellow in the Institute of Statistical Science at Academia Sinica, Taiwan. His research focuses on time series analysis, Toeplitz matrices, and spatial statistics and its applications.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.stat.tamu.edu/~suhasini/&#34;&gt;Suhasini Subba Rao&lt;/a&gt; is a Professor of Statistics at Texas A&amp;amp;M University, USA. Her research focuses on time series analysis, nonstationary processes, nonlinear processes, and spatio-temporal models.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Inclusion Process and Sticky Brownian Motions</title>
       <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
@@ -703,202 +836,6 @@ optimal estimation of the unseen. &lt;em&gt;Ann. Statist.&lt;/em&gt;, &lt;strong
 &lt;/ul&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-30-concentration-inequality-in-machine-learning_files/webinar1.jpg&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Optional stopping with Bayes factors: possibilities and limitations</title>
-      <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
-      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;In recent years, a surprising number of scientific results have failed
-to hold up to continued scrutiny. Part of this ‘replicability crisis’
-may be caused by practices that ignore the assumptions of traditional
-(frequentist) statistical methods &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-john-2012-measur-preval&#34; role=&#34;doc-biblioref&#34;&gt;John, Loewenstein, and Prelec 2012&lt;/a&gt;)&lt;/span&gt;. One of
-these assumptions is that the experimental protocol should be completely
-determined upfront. In practice, researchers often adjust the protocol
-due to unforeseen circumstances or collect data until a point has been
-proven. This practice, which is referred to as &lt;em&gt;optional stopping&lt;/em&gt;, can
-cause true hypotheses to be wrongly rejected much more often than these
-statistical methods promise.&lt;br /&gt;
-Bayes factor hypothesis testing has long been advocated as an
-alternative to traditional testing that can resolve several of its
-problems; in particular, it was claimed early on that Bayesian methods
-continue to be valid under optional stopping
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-lindley-1957-statis-parad&#34; role=&#34;doc-biblioref&#34;&gt;Lindley 1957&lt;/a&gt;; &lt;a href=&#34;#ref-RaiffaS61&#34; role=&#34;doc-biblioref&#34;&gt;Raiffa and Schlaifer 1961&lt;/a&gt;; &lt;a href=&#34;#ref-edwards-1963-bayes-statis&#34; role=&#34;doc-biblioref&#34;&gt;Edwards, Lindman, and Savage 1963&lt;/a&gt;)&lt;/span&gt;. In
-light of the replicability crisis, such claims have received much
-renewed interest
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-wagenmakers-2007-pract-solut&#34; role=&#34;doc-biblioref&#34;&gt;Wagenmakers 2007&lt;/a&gt;; &lt;a href=&#34;#ref-rouder-2014-option&#34; role=&#34;doc-biblioref&#34;&gt;Jeffrey N. Rouder 2014&lt;/a&gt;; &lt;a href=&#34;#ref-schonbrodt-2017-sequen-hypot&#34; role=&#34;doc-biblioref&#34;&gt;Schönbrodt et al. 2017&lt;/a&gt;; &lt;a href=&#34;#ref-yu-2013-when-decis&#34; role=&#34;doc-biblioref&#34;&gt;Yu et al. 2014&lt;/a&gt;; &lt;a href=&#34;#ref-sanborn-2013-frequen-implic&#34; role=&#34;doc-biblioref&#34;&gt;Sanborn and Hills 2014&lt;/a&gt;)&lt;/span&gt;.
-But what do they mean mathematically? It turns out that different
-authors mean quite different things by ‘Bayesian methods handle optional
-stopping’; moreover, such claims are often shown to hold only in an
-informal sense, or in restricted contexts. In the paper
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; we give a systematic overview and
-formalization of such claims, and explain their relevance for practice:
-can we effectively rely on Bayes factor testing to do a good job under
-optional stopping or not? As we shall see, the answer is subtle.
-Secondly, we extend the reach of such claims to more general settings,
-for which they have never been formally verified and for which
-verification is not always trivial. In the paper &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;,
-we explain claims about optional stopping for an audience of
-methodologists and applied statisticians with the help of computer
-simulations.&lt;br /&gt;
-&lt;/p&gt;
-&lt;div id=&#34;bayesian-inference&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;Bayesian inference&lt;/h1&gt;
-&lt;p&gt;Bayesianism is about a certain interpretation of the concept
-probability: as &lt;em&gt;degrees of belief&lt;/em&gt;. A Bayesian first expresses this
-belief as a probability function. We call this the prior distribution,
-and we denote it by &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\theta)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; is the
-parameter (or several parameters) of the model. After the specification
-of the prior, we obtain the data &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; and the likelihood
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(D | \theta)\)&lt;/span&gt;. Now we can compute the &lt;em&gt;posterior
-distribution&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\theta | D)\)&lt;/span&gt; with the help of &lt;em&gt;Bayes’
-theorem&lt;/em&gt;: &lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
-\mathbb{P}(\theta | D) = \frac{\mathbb{P}(D | \theta) \mathbb{P}(\theta)}{\mathbb{P}(D)}.\end{aligned}\]&lt;/span&gt;
-Suppose we want to test a null hypothesis &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; against an
-alternative hypothesis &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;. We can do this in a Bayesian way
-with &lt;em&gt;Bayes factors&lt;/em&gt;: we start with the &lt;em&gt;prior odds&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}(\mathcal{H}_1) / \mathbb{P}(\mathcal{H}_0)\)&lt;/span&gt;, our belief
-before seeing the data. Often we believe that both hypotheses are
-equally probable, then our prior odds are 1-to-1. Next we gather our
-data &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;, and update our odds with the new knowledge, using Bayes’
-theorem: &lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
-\text{posterior odds}(\mathcal{H}_1 \text{ vs. } \mathcal{H}_0) = \frac{\mathbb{P}(\mathcal{H}_1 | D)}{\mathbb{P}(\mathcal{H}_0 | D)} = \frac{\mathbb{P}(\mathcal{H}_1)}{\mathbb{P}(\mathcal{H}_0)} \frac{\mathbb{P}(D | \mathcal{H}_1)}{\mathbb{P}(D | \mathcal{H}_0)}.\end{aligned}\]&lt;/span&gt;
-The posterior odds is our updated belief about which hypothesis is more
-likely.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;three-notions-of-optional-stopping&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;Three notions of optional stopping&lt;/h1&gt;
-&lt;p&gt;Validity under optional stopping is a desirable property of hypothesis
-testing: we gather some data, look at the results, and decide whether we
-stop of gather some additional data. Informally, we call ‘peeking at the
-results to decide whether to collect more data’ &lt;em&gt;optional stopping&lt;/em&gt;, but
-if we want to make more precise what it means if we say that a test can
-handle optional stopping, it turns out that different approaches
-(frequentist, subjective Bayesian and objective Bayesian) lead to
-different interpretations and definitions. It tuns out that we can
-discern three main mathematical concepts of handling optional stopping,
-which we identify and formally define in the paper
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;.&lt;br /&gt;
-The first concept we call &lt;em&gt;subjective Bayesian optional stopping&lt;/em&gt; or
-&lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt;-independence. If one considers a purely subjective Bayesian
-setting, appropriate if one truly believes one’s prior, then Bayesian
-updating from prior to posterior is not affected by the employed
-stopping rule: one ends up with the same posterior if one had decided
-the sample size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; in advance, or if it had been determined, for
-example, because one was satisfied with the result at this &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. In this
-sense a subjective Bayesian procedure does not depend on the stopping
-rule.&lt;br /&gt;
-The second sense of optional stopping we call &lt;em&gt;calibration&lt;/em&gt;. As
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-rouder-2014-option&#34; role=&#34;doc-biblioref&#34;&gt;Jeffrey N. Rouder 2014&lt;/a&gt;)&lt;/span&gt; writes: ‘If a replicate experiment yielded a
-posterior odds of 3.5-to-1 in favor of the null, then we expect that the
-null was 3.5 times as probable as the alternative to have produced the
-data.’ In more mathematical language, this can be expressed as
-&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
-\text{post-odds} (\mathcal{H}_1 \text{ vs. } \mathcal{H}_0 | ``\text{post-odds} (\mathcal{H}_1 \text{ vs. } \mathcal{H}_0 | D ) = a&amp;quot;) = a.\end{aligned}\]&lt;/span&gt;
-We say this equation expresses &lt;em&gt;calibration of the posterior odds&lt;/em&gt;. It
-turns out that this calibration fails to hold if one does not adhere to
-a purely subjective Bayesian view, in particular, it does not hold for
-the &lt;em&gt;default&lt;/em&gt; priors the Bayesian psychology community is advocating
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-wagenmakers-2007-pract-solut&#34; role=&#34;doc-biblioref&#34;&gt;Wagenmakers 2007&lt;/a&gt;; &lt;a href=&#34;#ref-rouder-2012-default-bayes&#34; role=&#34;doc-biblioref&#34;&gt;J. N. Rouder et al. 2012&lt;/a&gt;)&lt;/span&gt;. To get a
-first idea of one of the issues: default priors sometimes depend on the
-data. Then it is unclear what &lt;em&gt;optional stopping&lt;/em&gt; really means, because
-if, using prior &lt;span class=&#34;math inline&#34;&gt;\(P_1(\theta)\)&lt;/span&gt; based on a sample of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, one had
-stopped at sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;lt; n\)&lt;/span&gt;, one should have really used prior
-&lt;span class=&#34;math inline&#34;&gt;\(P&amp;#39;_1(\theta)\)&lt;/span&gt; based on sample of size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;\)&lt;/span&gt;...but then one would have
-stopped at yet another sample size &lt;span class=&#34;math inline&#34;&gt;\(n&amp;#39;&amp;#39;\)&lt;/span&gt;, and so on. See our paper
-&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-heide2020optional&#34; role=&#34;doc-biblioref&#34;&gt; Heide and Grünwald 2020&lt;/a&gt;)&lt;/span&gt; for an extensive discussion and many examples.&lt;br /&gt;
-&lt;/p&gt;
-&lt;p&gt;The third sense is a frequentist interpretation of handling optional
-stopping, which is about controlling the Type I error of an experiment.
-A Type I error occurs when we reject the null hypothesis when it is
-true, also called &lt;em&gt;false positive&lt;/em&gt;. The frequentist interpretation of
-handling optional stopping is that the Type I error guarantee holds if
-we do not determine the sampling plan — and thus the stopping rule —
-in advance, but we may stop when we see significant results. In the case
-&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; is &lt;em&gt;simple&lt;/em&gt; (containing just one hypothesis), there is a
-well-known intriguing connection between Bayes factors and Type I error
-probabilities: if we reject &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; iff the posterior odds in
-favor of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; are smaller than some fixed level &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;,
-then we are guaranteed a Type I error of at most &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;. And
-interestingly, this holds not just for fixed sample sizes but even under
-optional stopping. However, for &lt;em&gt;composite&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; this does
-not continue to hold. Except for the special case where &lt;em&gt;all&lt;/em&gt; free
-parameters in &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; are nuisance parameters observing a group
-structure and equipped with the corresponding right-Haar prior, and are
-shared with &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;, as we prove in &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hendriksen2020optional&#34; role=&#34;doc-biblioref&#34;&gt;Hendriksen, Heide, and Grünwald 2020&lt;/a&gt;)&lt;/span&gt;.
-But for general priors and composite &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt;, this is typically
-not the case.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/screenshot.138.jpg&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Figure 1: Posterior odds in an experiment of testing whether the mean of a normal distribution is 0
-(&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt;), versus non-zero (&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt;), from 20; 000 replicate experiments. (a) The empirical sampling distribution
-of the posterior odds as a histogram under &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_0\)&lt;/span&gt; (blue) and &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}_1\)&lt;/span&gt; (pink). (b) Calibration plot: the observed
-posterior odds as a function of the nominal posterior odds.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusion&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;One can give three distinct mathematical meanings to the notion of
-&lt;em&gt;optional stopping&lt;/em&gt;. Whether or not we can say that ‘the Bayes factor
-method can handle optional stopping’ in practice is a subtle matter,
-depending on the specifics of the given situation: what models are used,
-what priors, and what is the goal of the analysis.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;authors&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Authors&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Allard.jpg&#34; height=&#34;70&#34; /&gt;
-Allard Hendriksen, CWI Amsterdam&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Rianne.jpg&#34; height=&#34;70&#34; /&gt;
-dr. Rianne de Heide, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/Peter.jpg&#34; height=&#34;70&#34; /&gt;
-prof. Peter Grünwald, Leiden University &amp;amp; CWI Amsterdam&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;References&lt;/h1&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-edwards-1963-bayes-statis&#34; class=&#34;csl-entry&#34;&gt;
-Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. &lt;span&gt;“Bayesian Statistical Inference for Psychological Research.”&lt;/span&gt; &lt;em&gt;Psychological Review&lt;/em&gt; 70 (3): 193–242. &lt;a href=&#34;https://doi.org/10.1037/h0044139&#34;&gt;https://doi.org/10.1037/h0044139&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-heide2020optional&#34; class=&#34;csl-entry&#34;&gt;
- Heide, Rianne, and Peter D. Grünwald. 2020. &lt;span&gt;“Why Optional Stopping Can Be a Problem for Bayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review, Advance Publication&lt;/em&gt;, 1–18.
-&lt;/div&gt;
-&lt;div id=&#34;ref-hendriksen2020optional&#34; class=&#34;csl-entry&#34;&gt;
-Hendriksen, Allard, Rianne Heide, and Peter Grünwald. 2020. &lt;span&gt;“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis, Advance Publication&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-john-2012-measur-preval&#34; class=&#34;csl-entry&#34;&gt;
-John, Leslie K, George Loewenstein, and Drazen Prelec. 2012. &lt;span&gt;“Measuring the Prevalence of Questionable Research Practices with Incentives for Truth Telling.”&lt;/span&gt; &lt;em&gt;Psychological Science&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-lindley-1957-statis-parad&#34; class=&#34;csl-entry&#34;&gt;
-Lindley, D. V. 1957. &lt;span&gt;“A Statistical Paradox.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; 44 (1/2): 187–92. &lt;a href=&#34;https://doi.org/10.2307/2333251&#34;&gt;https://doi.org/10.2307/2333251&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-RaiffaS61&#34; class=&#34;csl-entry&#34;&gt;
-Raiffa, H., and R. Schlaifer. 1961. &lt;em&gt;Applied Statistical Decision Theory&lt;/em&gt;. Cambridge, MA: Harvard University Press.
-&lt;/div&gt;
-&lt;div id=&#34;ref-rouder-2012-default-bayes&#34; class=&#34;csl-entry&#34;&gt;
-Rouder, J N, R D Morey, P L Speckman, and J M Province. 2012. &lt;span&gt;“Default &lt;span&gt;B&lt;/span&gt;ayes Factors for &lt;span&gt;ANOVA&lt;/span&gt; Designs.”&lt;/span&gt; &lt;em&gt;Journal of Mathematical Psychology&lt;/em&gt; 56 (5): 356–74.
-&lt;/div&gt;
-&lt;div id=&#34;ref-rouder-2014-option&#34; class=&#34;csl-entry&#34;&gt;
-Rouder, Jeffrey N. 2014. &lt;span&gt;“Optional Stopping: No Problem for &lt;span&gt;B&lt;/span&gt;ayesians.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 301–8. &lt;a href=&#34;https://doi.org/10.3758/s13423-014-0595-4&#34;&gt;https://doi.org/10.3758/s13423-014-0595-4&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-sanborn-2013-frequen-implic&#34; class=&#34;csl-entry&#34;&gt;
-Sanborn, Adam N., and Thomas T. Hills. 2014. &lt;span&gt;“The Frequentist Implications of Optional Stopping on &lt;span&gt;B&lt;/span&gt;ayesian Hypothesis Tests.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 283–300. &lt;a href=&#34;https://doi.org/10.3758/s13423-013-0518-9&#34;&gt;https://doi.org/10.3758/s13423-013-0518-9&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-schonbrodt-2017-sequen-hypot&#34; class=&#34;csl-entry&#34;&gt;
-Schönbrodt, Felix D., Eric-Jan Wagenmakers, Michael Zehetleitner, and Marco Perugini. 2017. &lt;span&gt;“Sequential Hypothesis Testing with &lt;span&gt;B&lt;/span&gt;ayes Factors: Efficiently Testing Mean Differences.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 22 (2): 322–39. &lt;a href=&#34;https://doi.org/10.1037/met0000061&#34;&gt;https://doi.org/10.1037/met0000061&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-wagenmakers-2007-pract-solut&#34; class=&#34;csl-entry&#34;&gt;
-Wagenmakers, Eric-Jan. 2007. &lt;span&gt;“A Practical Solution to the Pervasive Problems of p Values.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 14 (5): 779–804. &lt;a href=&#34;https://doi.org/10.3758/bf03194105&#34;&gt;https://doi.org/10.3758/bf03194105&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-yu-2013-when-decis&#34; class=&#34;csl-entry&#34;&gt;
-Yu, Erica C., Amber M. Sprenger, Rick P. Thomas, and Michael R. Dougherty. 2014. &lt;span&gt;“When Decision Heuristics and Science Collide.”&lt;/span&gt; &lt;em&gt;Psychonomic Bulletin &amp;amp; Review&lt;/em&gt; 21 (2): 268–82. &lt;a href=&#34;https://doi.org/10.3758/s13423-013-0495-z&#34;&gt;https://doi.org/10.3758/s13423-013-0495-z&lt;/a&gt;.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

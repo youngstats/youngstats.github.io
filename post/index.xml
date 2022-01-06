@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</title>
+      <link>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</guid>
+      <description>OverviewSuppose \(\{X_t: t\in \mathbb{Z}\}\) is a second order stationary time series where \(c(r) = \text{cov}(X_{t+r},X_t)\) and \(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\) are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is \(\textrm{E}(X_t)=0\).Our aim is to fit a parametric second-order stationary model (specified by \(\{c_{f_\theta}(r)\}\) or \(f_\theta(\omega)\)) to the observed time series \(\underline{X}_n = (X_1, ..., X_n)^\top\).There are two classical estimation methods based on the quasi-likelihood criteria.</description>
+    </item>
+    
     <item>
       <title>Inclusion Process and Sticky Brownian Motions</title>
       <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
@@ -94,15 +103,6 @@ A common technique in modern statistics is the so-called kernel trick, where dat
       <description>The fifth “One World webinar” organized by YoungStatS will take place on September 15th, 2021. Selected young European researchers active in the areas of probability and machine learning will present their recent contributions. The webinar is joint cooperation between the Young Researchers Committee of the Bernoulli Society and the YoungStatS project.
 When &amp;amp; Where:
 Wednesday, September 15th, 17:00 CESTOnline, via Zoom. The registration form is available here.</description>
-    </item>
-    
-    <item>
-      <title>Optional stopping with Bayes factors: possibilities and limitations</title>
-      <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
-      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
-      <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
     </item>
     
   </channel>
