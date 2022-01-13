@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</loc>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
