@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/bayesian-statistics">bayesian-statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</span></h1>
+
+  
+  <h3 class="author">Marta Catalano,  Antonio Lijoi and Igor Prünster
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Bayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a <strong>homogeneous</strong> sample is performed with <strong>exchangeable</strong> models of the type <span class="math inline">\(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\)</span>, where <span class="math inline">\(\tilde \mu\)</span> is a random measure and <span class="math inline">\(T\)</span> is a suitable transformation. Notable examples for <span class="math inline">\(T\)</span> include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).</p>
+<p>Very often, though, the data presents some structural <strong>heterogeneity</strong> one should carefully take into account, especially when analyzing data from different sources that are related in some way. For instance this happens in the study of clinical trials of a COVID-19 vaccine in different countries or when understanding the effects of a certain policy adopted by multiple regions. In these cases, besides modeling heterogeneity, one further aims at introducing some probabilistic mechanism that allows for <strong>borrowing information</strong> across different studies. To achieve this goal, in the last 20 years a wealth of BNP models that rely on <strong>partial exchangeability</strong> have been proposed (see Cifarelli &amp; Regazzini (1978) for prioneering ideas, MacEachern (1999, 2000) for seminal results and Quintana et al. (2021) for a recent review). The general recipe consists in assigning a different random measure <span class="math inline">\(\tilde \mu_i\)</span> to every data source or group of observations and then introduce flexible forms of dependence between the random measures. For simplicity we stick to the case of two groups, so that the partially exchangeable models are of the general form
+<span class="math display">\[\begin{equation}
+\tag{1}
+X_1,\dots,X_{n_1}| (\tilde \mu_1, \tilde \mu_2) \stackrel{\text{iid}}{\sim} T(\tilde \mu_1); \qquad \qquad
+Y_1, \dots, Y_{n_2} | (\tilde \mu_1, \tilde \mu_2) \stackrel{\text{iid}}{\sim} T(\tilde \mu_2);
+\end{equation}\]</span>
+and <span class="math inline">\((\tilde \mu_1, \tilde \mu_2) \sim Q\)</span> is a vector of dependent random measures. The borrowing of information across different groups is regulated by the amount of dependence between random measures. One can picture <strong>two extreme situations</strong>:</p>
+<ul>
+<li>When the random measures are completely dependent, that is, <span class="math inline">\(\tilde \mu_1 = \tilde \mu_2\)</span> almost surely, the observations are <strong>fully exchangeable</strong> and there is no distinction between the different groups. In such case we denote the random measures as <span class="math inline">\((\tilde \mu_1^\text{ex}, \tilde \mu_2^\text{ex})\)</span>.</li>
+<li>When the random measures are independent, the two groups of (exchangeable) observations are <strong>independent</strong> and thus do not interact.</li>
+</ul>
+<p>Thus, it is crucial to translate one’s prior beliefs on the dependence structure into the specification of the model. Interestingly, though there have been many proposals on how to model dependence, few results on how to measure it are available. The current state-of-the-art is given by the pairwise linear correlation between <span class="math inline">\(T(\tilde \mu_1)\)</span> and <span class="math inline">\(T(\tilde \mu_2)\)</span>, which provides a useful proxy based on the first two moments of the random measures, but it does not take into account their whole infinite-dimensional structure. We thus look for a measure of dependence with the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>It is <strong>model non-specific</strong> (i.e., it does not depend on the choice of transformation <span class="math inline">\(T\)</span>);</li>
+<li>It is based on the <strong>whole infinite-dimensional distribution</strong> of BNP priors;</li>
+<li>It can be naturally extended to <strong>more than 2 groups</strong> of observations;</li>
+<li>It can be <strong>strictly bounded</strong> in terms of the <strong>hyperparameters</strong> of BNP models.</li>
+</ol>
+<p>We point out that this last property is fundamental because it allows to fix the hyperparameters of BNP models so to achieve the desired level of dependence.</p>
+</div>
+<div id="proposal" class="section level2">
+<h2>Proposal</h2>
+<p>Our proposal is based on two main ideas:</p>
+<ul>
+<li><p>In partially exchangeable models (1) all the dependence between different groups of observations is introduced at the level of the random measures. Thus, we can measure the dependence directly <strong>in terms of the underlying vector of random measures</strong> <span class="math inline">\((\tilde \mu_1, \tilde \mu_2)\)</span>. This ensures Property 1.</p></li>
+<li><p>Complete dependence (<span class="math inline">\(\tilde \mu_1^{\text{ex}} = \mu_2^{\text{ex}}\)</span> almost surely) coincides with the full exchangeability of the observations, which can thus be pictured as a degenerate distribution in the space of joint distributions <span class="math inline">\(\{ \mathcal{L}(\tilde \mu_1, \tilde \mu_2) | \mathcal{L}(\tilde \mu_1) = \mathcal{L}(\tilde \mu_2) \}\)</span>, where <span class="math inline">\(\mathcal{L}\)</span> denotes the probability law of a random object (Figure 1). A natural way to measure dependence of any other joint distribution <span class="math inline">\((\tilde \mu_1, \tilde \mu_2)\)</span> is then to measure the distance from the extreme case <span class="math inline">\((\tilde \mu_1^{\text{ex}}, \tilde \mu_2^{\text{ex}})\)</span>. This ensures Property 2 and Property 3. Informally, we refer to the <strong>distance from exchangeability</strong>, with the underlying idea that the observations in (1) are partially exchangeable and, under complete dependence of the random measures, one retrieves full exchangeability of the observations.</p></li>
+</ul>
+<p><img src="/post/2022-01-17-measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models_files/1.png" /></p>
+<center>
+<em>Figure 1.</em>
+</center>
+<p>The choice of the distance on the laws of vectors of random measures is very delicate. On one hand we look for an intuitive notion of distance with a natural geometrical interpretation, on the other hand we also want to show Property 4, and these are clearly two competing aspects. We define
+<span class="math display">\[\begin{equation}
+\tag{2}
+d_{\mathcal{W}}\bigg( \mathcal{L}\begin{pmatrix} \tilde \mu_1 \\ \tilde \mu_2 \end{pmatrix}, \mathcal{L} \begin{pmatrix} \tilde \mu_1^{\text{ex}} \\ \tilde \mu_2^{\text{ex}} \end{pmatrix} \bigg) = \sup_A W\bigg( \mathcal{L}\begin{pmatrix} \tilde \mu_1(A) \\ \tilde \mu_2(A) \end{pmatrix},  \mathcal{L} \begin{pmatrix} \tilde \mu_1^{\text{ex}}(A) \\ \tilde \mu_2^{\text{ex}} (A)\end{pmatrix} \bigg),
+\end{equation}\]</span>
+where <span class="math inline">\(W\)</span> is the <strong>Wasserstein distance</strong> (of order 2) between probability distributions in <span class="math inline">\(\mathbb{R}^2\)</span>. We briefly recall that if <span class="math inline">\(C(P,Q)\)</span> = <span class="math inline">\(\{(X,Y): \mathcal{L}(X) = P; \mathcal{L}(Y) = Q\}\)</span> denotes the set of <em>couplings</em> between two probabilities <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, then
+<span class="math display">\[\begin{equation}
+\tag{3}
+W(P,Q)^2 = \inf_{(X,Y) \in C(P,Q)} \mathbb{E} \|X-Y\|^2.
+\end{equation}\]</span>
+Because of its strong geometric properties, the Wasserstein distance is ideal to compare distributions with different support as in our case (see Figure 1). Indeed, other common distances or divergences would not provide an informative notion of discrepancy in this context (e.g. total variation distance, Hellinger distance, KL-divergence). As it is often the case, there is a trade-off between the naturalness of a distance and our ability to find closed forms expressions. In particular, we have to deal with the following challenges:</p>
+<ul>
+<li><p>In general one can prove that the infimum in (3) is a minimum, that is, that there exists an <em>optimal coupling</em>. Nonetheless, since we are dealing with probabilities in <span class="math inline">\(\mathbb{R}^d\)</span> for <span class="math inline">\(d&gt;1\)</span>, a general expression for the <strong>optimal coupling is not available</strong> with very few exceptions (e.g., between multivariate normal distributions).</p></li>
+<li><p>Even if one finds the optimal coupling, the expression of the Wasserstein distance amounts to evaluating a (difficult) <strong>multivariate integral</strong>.</p></li>
+<li><p>Many noteworthy models in the BNP literature are based on dependent random measures with jointly independent vectors which, in analogy with the 1-dimensional case, we call <em>completely random vectors</em>. The law of such vectors is specified in an indirect way through a <strong>multivariate Lévy measure</strong>. Thus, we need to develop strict bounds in terms of the Lévy measures to find closed form expressions that depend on the hyperparameters of the models (Property 4).</p></li>
+</ul>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p>In our work (Catalano et al., 2021) we face the challenges above and obtain the following results:</p>
+<ul>
+<li><p>When dealing with completely random vectors, <span class="math inline">\((\tilde \mu_1(A), \tilde \mu_2(A))\)</span> can always be approximated with compound Poisson (CP) distributions. We find upper bounds of the Wasserstein distance between completely random vectors in terms of the Wasserstein distance between the jumps of the corresponding CP approximations, whose law is expressed <strong>directly in terms of the Lévy measures</strong>.</p></li>
+<li><p>We find a <strong>general expression for the optimal coupling</strong> between the jumps of the CP approximation of <span class="math inline">\((\tilde \mu_1, \tilde \mu_2)\)</span> and the ones of the CP approximation of <span class="math inline">\((\tilde \mu_1^\text{ex}, \tilde \mu_2^{\text{ex}})\)</span>.</p></li>
+<li><p>Once we have found the optimal coupling, the Wasserstein distance between the jumps of the CP approximations amounts to the evaluation of a multivariate integral. We develop <strong>case-by-case</strong> analyses to evaluate these <strong>multivariate integrals</strong> numerically.</p></li>
+</ul>
+<p>Putting these three elements together, we are able to derive strict upper bounds of the distance in (2) for <strong>noteworthy models in the BNP literature</strong>, which include compound random measures (Griffin &amp; Leisen, 2017; Riva-Palacio &amp; Leisen, 2019), Clayton Lévy copula (Tankov, 2003; Epifani &amp; Lijoi, 2010) and additive models (Griffiths &amp; Milne, 1978; Lijoi et al., 2014). These upper bounds are expressed in terms of the hyperparameters of the corresponding models (see Figure 2) and thus enable a principled prior specification of their dependence structure.</p>
+<p><img src="/post/2022-01-17-measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models_files/2.png" /></p>
+<center>
+<em>Figure 2. On the left: distance from exchangeability for additive random measures. On the right: distance from exchangeability for compound random measures.</em>
+</center>
+</div>
+<div id="discussion-and-further-work" class="section level2">
+<h2>Discussion and further work</h2>
+<p>We highlight two take-home messages:</p>
+<ul>
+<li><p>We can use the Wasserstein distance to build a natural and tractable distance on a wide class of (vectors of) random measures. This opens the way to many possible uses of a distance between infinite dimensional random structures, going beyond the measurement of dependence.</p></li>
+<li><p>A natural way to measure the dependence between infinite-dimensional random quantities is to evaluate the distance from an extreme situation, as the one of complete dependence.</p></li>
+</ul>
+<p>In Catalano et al (2021) we have moved the first steps. Yet, there are a number of questions that still remain open. In particular,</p>
+<ul>
+<li><p>We measure dependence in terms of distance from the extreme situation of complete dependence. How can we simultaneously quantify the <strong>discrepancy from</strong> the other extreme, that is, <strong>independence</strong>?</p></li>
+<li><p>Using the distance from exchangeability to measure dependence is useful for relative comparisons between dependence structures (“<span class="math inline">\(\tilde \mu_1\)</span> is more dependent than <span class="math inline">\(\tilde \mu_2\)</span>”) but prevents absolute quantifications of dependence (“<span class="math inline">\(\tilde \mu\)</span> has an intermediate dependence structure”). In order to extend the measure in this direction we need to find the <strong>maximum</strong> possible value of the <strong>distance from exchangeability</strong>.</p></li>
+</ul>
+<p>In Catalano et al (2022+) we deal with these questions. Their answer sheds light into the deep geometric properties of the Wasserstein distance, which are key to the definition of a <strong>Wasserstein Index of Dependence</strong> in [0,1]: our goal since the beginning. This opens interesting research directions on how to use the index to assess heterogeneity in the data, going beyond the restrictive assumption of independence.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>Catalano, M., Lavenant, H., Lijoi, A., Prünster, I. (2022+). A Wasserstein Index of Dependence for Random Measures. arXiv:2109.06646.</p>
+<p>Catalano, M., A. Lijoi, and I. Prünster (2021). Measuring dependence in the Wasserstein distance for Bayesian nonparametric models. Ann. Statist. 49(5), 2916–2947.</p>
+<p>Cifarelli, D.M. &amp; Regazzini, E. (1978). Nonparametric statistical problems under partial exchangeability: The role of associative means. Technical Report.</p>
+<p>Doksum, K. (1974). Tailfree and neutral random probabilities and their posterior distributions. The Annals of Probability,
+2(2):183–201.</p>
+<p>Dykstra, R. L. and Laud, P. (1981). A Bayesian nonparametric approach to reliability. The Annals of Statistics, 9(2):356– 367.</p>
+<p>Epifani, I. and Lijoi, A. (2010). Nonparametric priors for vectors of survival functions. Statist. Sinica 20 1455–1484.</p>
+<p>Hjort, N. L. (1990). Nonparametric Bayes estimators based on beta processes in models for life history data. The Annals of Statistics, 18(3):1259–1294.</p>
+<p>Griffin, J. E. &amp; Leisen, F. (2017). Compound random measures and their use in bayesian non-parametrics. J. Royal Stat. Soc. Ser. B 79, 525–545.</p>
+<p>Griffiths, R. C. and Milne, R. K. (1978). A class of bivariate Poisson processes. J. Multivariate Anal. 8 380–395.</p>
+<p>James, L. F. (2005). Bayesian Poisson process partition calculus with an application to Bayesian Lévy moving averages. The Annals of Statistics, 33(4):1771–1799.</p>
+<p>Lijoi,A., Nipoti,B. and Prünster, I. (2014). Bayesian inference with dependent normalized completely random measures. Bernoulli 20 1260–1291.</p>
+<p>MacEachern, S. N. (1999). Dependent nonparametric processes. in ASA Proceedings of the Section on Bayesian Statistical Science, Alexandria, VA: American Statistical Association.</p>
+<p>MacEachern, S. N. (2000). Dependent Dirichlet processes. Tech. Report, Ohio State University.</p>
+<p>Riva Palacio, A. and Leisen, F. (2021). Compound vectors of subordinators and their associated positive Lévy copulas. J. Multivariate Anal. 183.</p>
+<p>Quintana, F. A., Müller, P., Jara, A., and MacEachern, S. N. (2021). The dependent Dirichlet process and related models. Statistical Science, to appear.</p>
+<p>Tankov, P. (2003). Dependence structure of spectrally positive multidimensional Lévy processes. Unpub- lished Manuscript.</p>
+</div>
+<div id="authors" class="section level2">
+<h2>Authors</h2>
+<ul>
+<li><a href="https://martacatalano.github.io/">Marta Catalano</a> is Assistant Professor in the Department of Statistics at the University of Warwick.</li>
+<li><a href="https://mypage.unibocconi.eu/antoniolijoi/">Antonio Lijoi</a> is Professor in the Department of Decision Sciences at Bocconi University.</li>
+<li><a href="https://mypage.unibocconi.eu/igorpruenster/">Igor Prünster</a> is Professor in the Department of Decision Sciences at Bocconi University.</li>
+</ul>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

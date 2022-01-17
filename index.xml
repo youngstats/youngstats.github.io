@@ -6,7 +6,127 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
+      <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Bayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a &lt;strong&gt;homogeneous&lt;/strong&gt; sample is performed with &lt;strong&gt;exchangeable&lt;/strong&gt; models of the type &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu\)&lt;/span&gt; is a random measure and &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; is a suitable transformation. Notable examples for &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).&lt;/p&gt;
+&lt;p&gt;Very often, though, the data presents some structural &lt;strong&gt;heterogeneity&lt;/strong&gt; one should carefully take into account, especially when analyzing data from different sources that are related in some way. For instance this happens in the study of clinical trials of a COVID-19 vaccine in different countries or when understanding the effects of a certain policy adopted by multiple regions. In these cases, besides modeling heterogeneity, one further aims at introducing some probabilistic mechanism that allows for &lt;strong&gt;borrowing information&lt;/strong&gt; across different studies. To achieve this goal, in the last 20 years a wealth of BNP models that rely on &lt;strong&gt;partial exchangeability&lt;/strong&gt; have been proposed (see Cifarelli &amp;amp; Regazzini (1978) for prioneering ideas, MacEachern (1999, 2000) for seminal results and Quintana et al. (2021) for a recent review). The general recipe consists in assigning a different random measure &lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu_i\)&lt;/span&gt; to every data source or group of observations and then introduce flexible forms of dependence between the random measures. For simplicity we stick to the case of two groups, so that the partially exchangeable models are of the general form
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\tag{1}
+X_1,\dots,X_{n_1}| (\tilde \mu_1, \tilde \mu_2) \stackrel{\text{iid}}{\sim} T(\tilde \mu_1); \qquad \qquad
+Y_1, \dots, Y_{n_2} | (\tilde \mu_1, \tilde \mu_2) \stackrel{\text{iid}}{\sim} T(\tilde \mu_2);
+\end{equation}\]&lt;/span&gt;
+and &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1, \tilde \mu_2) \sim Q\)&lt;/span&gt; is a vector of dependent random measures. The borrowing of information across different groups is regulated by the amount of dependence between random measures. One can picture &lt;strong&gt;two extreme situations&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When the random measures are completely dependent, that is, &lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu_1 = \tilde \mu_2\)&lt;/span&gt; almost surely, the observations are &lt;strong&gt;fully exchangeable&lt;/strong&gt; and there is no distinction between the different groups. In such case we denote the random measures as &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1^\text{ex}, \tilde \mu_2^\text{ex})\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;When the random measures are independent, the two groups of (exchangeable) observations are &lt;strong&gt;independent&lt;/strong&gt; and thus do not interact.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, it is crucial to translate one’s prior beliefs on the dependence structure into the specification of the model. Interestingly, though there have been many proposals on how to model dependence, few results on how to measure it are available. The current state-of-the-art is given by the pairwise linear correlation between &lt;span class=&#34;math inline&#34;&gt;\(T(\tilde \mu_1)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(T(\tilde \mu_2)\)&lt;/span&gt;, which provides a useful proxy based on the first two moments of the random measures, but it does not take into account their whole infinite-dimensional structure. We thus look for a measure of dependence with the following properties:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;It is &lt;strong&gt;model non-specific&lt;/strong&gt; (i.e., it does not depend on the choice of transformation &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;);&lt;/li&gt;
+&lt;li&gt;It is based on the &lt;strong&gt;whole infinite-dimensional distribution&lt;/strong&gt; of BNP priors;&lt;/li&gt;
+&lt;li&gt;It can be naturally extended to &lt;strong&gt;more than 2 groups&lt;/strong&gt; of observations;&lt;/li&gt;
+&lt;li&gt;It can be &lt;strong&gt;strictly bounded&lt;/strong&gt; in terms of the &lt;strong&gt;hyperparameters&lt;/strong&gt; of BNP models.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We point out that this last property is fundamental because it allows to fix the hyperparameters of BNP models so to achieve the desired level of dependence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;proposal&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Proposal&lt;/h2&gt;
+&lt;p&gt;Our proposal is based on two main ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;In partially exchangeable models (1) all the dependence between different groups of observations is introduced at the level of the random measures. Thus, we can measure the dependence directly &lt;strong&gt;in terms of the underlying vector of random measures&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1, \tilde \mu_2)\)&lt;/span&gt;. This ensures Property 1.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Complete dependence (&lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu_1^{\text{ex}} = \mu_2^{\text{ex}}\)&lt;/span&gt; almost surely) coincides with the full exchangeability of the observations, which can thus be pictured as a degenerate distribution in the space of joint distributions &lt;span class=&#34;math inline&#34;&gt;\(\{ \mathcal{L}(\tilde \mu_1, \tilde \mu_2) | \mathcal{L}(\tilde \mu_1) = \mathcal{L}(\tilde \mu_2) \}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{L}\)&lt;/span&gt; denotes the probability law of a random object (Figure 1). A natural way to measure dependence of any other joint distribution &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1, \tilde \mu_2)\)&lt;/span&gt; is then to measure the distance from the extreme case &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1^{\text{ex}}, \tilde \mu_2^{\text{ex}})\)&lt;/span&gt;. This ensures Property 2 and Property 3. Informally, we refer to the &lt;strong&gt;distance from exchangeability&lt;/strong&gt;, with the underlying idea that the observations in (1) are partially exchangeable and, under complete dependence of the random measures, one retrieves full exchangeability of the observations.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-17-measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models_files/1.png&#34; /&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;em&gt;Figure 1.&lt;/em&gt;
+&lt;/center&gt;
+&lt;p&gt;The choice of the distance on the laws of vectors of random measures is very delicate. On one hand we look for an intuitive notion of distance with a natural geometrical interpretation, on the other hand we also want to show Property 4, and these are clearly two competing aspects. We define
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\tag{2}
+d_{\mathcal{W}}\bigg( \mathcal{L}\begin{pmatrix} \tilde \mu_1 \\ \tilde \mu_2 \end{pmatrix}, \mathcal{L} \begin{pmatrix} \tilde \mu_1^{\text{ex}} \\ \tilde \mu_2^{\text{ex}} \end{pmatrix} \bigg) = \sup_A W\bigg( \mathcal{L}\begin{pmatrix} \tilde \mu_1(A) \\ \tilde \mu_2(A) \end{pmatrix},  \mathcal{L} \begin{pmatrix} \tilde \mu_1^{\text{ex}}(A) \\ \tilde \mu_2^{\text{ex}} (A)\end{pmatrix} \bigg),
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(W\)&lt;/span&gt; is the &lt;strong&gt;Wasserstein distance&lt;/strong&gt; (of order 2) between probability distributions in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^2\)&lt;/span&gt;. We briefly recall that if &lt;span class=&#34;math inline&#34;&gt;\(C(P,Q)\)&lt;/span&gt; = &lt;span class=&#34;math inline&#34;&gt;\(\{(X,Y): \mathcal{L}(X) = P; \mathcal{L}(Y) = Q\}\)&lt;/span&gt; denotes the set of &lt;em&gt;couplings&lt;/em&gt; between two probabilities &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Q\)&lt;/span&gt;, then
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\tag{3}
+W(P,Q)^2 = \inf_{(X,Y) \in C(P,Q)} \mathbb{E} \|X-Y\|^2.
+\end{equation}\]&lt;/span&gt;
+Because of its strong geometric properties, the Wasserstein distance is ideal to compare distributions with different support as in our case (see Figure 1). Indeed, other common distances or divergences would not provide an informative notion of discrepancy in this context (e.g. total variation distance, Hellinger distance, KL-divergence). As it is often the case, there is a trade-off between the naturalness of a distance and our ability to find closed forms expressions. In particular, we have to deal with the following challenges:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;In general one can prove that the infimum in (3) is a minimum, that is, that there exists an &lt;em&gt;optimal coupling&lt;/em&gt;. Nonetheless, since we are dealing with probabilities in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^d\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(d&amp;gt;1\)&lt;/span&gt;, a general expression for the &lt;strong&gt;optimal coupling is not available&lt;/strong&gt; with very few exceptions (e.g., between multivariate normal distributions).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Even if one finds the optimal coupling, the expression of the Wasserstein distance amounts to evaluating a (difficult) &lt;strong&gt;multivariate integral&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Many noteworthy models in the BNP literature are based on dependent random measures with jointly independent vectors which, in analogy with the 1-dimensional case, we call &lt;em&gt;completely random vectors&lt;/em&gt;. The law of such vectors is specified in an indirect way through a &lt;strong&gt;multivariate Lévy measure&lt;/strong&gt;. Thus, we need to develop strict bounds in terms of the Lévy measures to find closed form expressions that depend on the hyperparameters of the models (Property 4).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;In our work (Catalano et al., 2021) we face the challenges above and obtain the following results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;When dealing with completely random vectors, &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1(A), \tilde \mu_2(A))\)&lt;/span&gt; can always be approximated with compound Poisson (CP) distributions. We find upper bounds of the Wasserstein distance between completely random vectors in terms of the Wasserstein distance between the jumps of the corresponding CP approximations, whose law is expressed &lt;strong&gt;directly in terms of the Lévy measures&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We find a &lt;strong&gt;general expression for the optimal coupling&lt;/strong&gt; between the jumps of the CP approximation of &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1, \tilde \mu_2)\)&lt;/span&gt; and the ones of the CP approximation of &lt;span class=&#34;math inline&#34;&gt;\((\tilde \mu_1^\text{ex}, \tilde \mu_2^{\text{ex}})\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Once we have found the optimal coupling, the Wasserstein distance between the jumps of the CP approximations amounts to the evaluation of a multivariate integral. We develop &lt;strong&gt;case-by-case&lt;/strong&gt; analyses to evaluate these &lt;strong&gt;multivariate integrals&lt;/strong&gt; numerically.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Putting these three elements together, we are able to derive strict upper bounds of the distance in (2) for &lt;strong&gt;noteworthy models in the BNP literature&lt;/strong&gt;, which include compound random measures (Griffin &amp;amp; Leisen, 2017; Riva-Palacio &amp;amp; Leisen, 2019), Clayton Lévy copula (Tankov, 2003; Epifani &amp;amp; Lijoi, 2010) and additive models (Griffiths &amp;amp; Milne, 1978; Lijoi et al., 2014). These upper bounds are expressed in terms of the hyperparameters of the corresponding models (see Figure 2) and thus enable a principled prior specification of their dependence structure.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-17-measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models_files/2.png&#34; /&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;em&gt;Figure 2. On the left: distance from exchangeability for additive random measures. On the right: distance from exchangeability for compound random measures.&lt;/em&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;discussion-and-further-work&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Discussion and further work&lt;/h2&gt;
+&lt;p&gt;We highlight two take-home messages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We can use the Wasserstein distance to build a natural and tractable distance on a wide class of (vectors of) random measures. This opens the way to many possible uses of a distance between infinite dimensional random structures, going beyond the measurement of dependence.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A natural way to measure the dependence between infinite-dimensional random quantities is to evaluate the distance from an extreme situation, as the one of complete dependence.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Catalano et al (2021) we have moved the first steps. Yet, there are a number of questions that still remain open. In particular,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We measure dependence in terms of distance from the extreme situation of complete dependence. How can we simultaneously quantify the &lt;strong&gt;discrepancy from&lt;/strong&gt; the other extreme, that is, &lt;strong&gt;independence&lt;/strong&gt;?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Using the distance from exchangeability to measure dependence is useful for relative comparisons between dependence structures (“&lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu_1\)&lt;/span&gt; is more dependent than &lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu_2\)&lt;/span&gt;”) but prevents absolute quantifications of dependence (“&lt;span class=&#34;math inline&#34;&gt;\(\tilde \mu\)&lt;/span&gt; has an intermediate dependence structure”). In order to extend the measure in this direction we need to find the &lt;strong&gt;maximum&lt;/strong&gt; possible value of the &lt;strong&gt;distance from exchangeability&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Catalano et al (2022+) we deal with these questions. Their answer sheds light into the deep geometric properties of the Wasserstein distance, which are key to the definition of a &lt;strong&gt;Wasserstein Index of Dependence&lt;/strong&gt; in [0,1]: our goal since the beginning. This opens interesting research directions on how to use the index to assess heterogeneity in the data, going beyond the restrictive assumption of independence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Catalano, M., Lavenant, H., Lijoi, A., Prünster, I. (2022+). A Wasserstein Index of Dependence for Random Measures. arXiv:2109.06646.&lt;/p&gt;
+&lt;p&gt;Catalano, M., A. Lijoi, and I. Prünster (2021). Measuring dependence in the Wasserstein distance for Bayesian nonparametric models. Ann. Statist. 49(5), 2916–2947.&lt;/p&gt;
+&lt;p&gt;Cifarelli, D.M. &amp;amp; Regazzini, E. (1978). Nonparametric statistical problems under partial exchangeability: The role of associative means. Technical Report.&lt;/p&gt;
+&lt;p&gt;Doksum, K. (1974). Tailfree and neutral random probabilities and their posterior distributions. The Annals of Probability,
+2(2):183–201.&lt;/p&gt;
+&lt;p&gt;Dykstra, R. L. and Laud, P. (1981). A Bayesian nonparametric approach to reliability. The Annals of Statistics, 9(2):356– 367.&lt;/p&gt;
+&lt;p&gt;Epifani, I. and Lijoi, A. (2010). Nonparametric priors for vectors of survival functions. Statist. Sinica 20 1455–1484.&lt;/p&gt;
+&lt;p&gt;Hjort, N. L. (1990). Nonparametric Bayes estimators based on beta processes in models for life history data. The Annals of Statistics, 18(3):1259–1294.&lt;/p&gt;
+&lt;p&gt;Griffin, J. E. &amp;amp; Leisen, F. (2017). Compound random measures and their use in bayesian non-parametrics. J. Royal Stat. Soc. Ser. B 79, 525–545.&lt;/p&gt;
+&lt;p&gt;Griffiths, R. C. and Milne, R. K. (1978). A class of bivariate Poisson processes. J. Multivariate Anal. 8 380–395.&lt;/p&gt;
+&lt;p&gt;James, L. F. (2005). Bayesian Poisson process partition calculus with an application to Bayesian Lévy moving averages. The Annals of Statistics, 33(4):1771–1799.&lt;/p&gt;
+&lt;p&gt;Lijoi,A., Nipoti,B. and Prünster, I. (2014). Bayesian inference with dependent normalized completely random measures. Bernoulli 20 1260–1291.&lt;/p&gt;
+&lt;p&gt;MacEachern, S. N. (1999). Dependent nonparametric processes. in ASA Proceedings of the Section on Bayesian Statistical Science, Alexandria, VA: American Statistical Association.&lt;/p&gt;
+&lt;p&gt;MacEachern, S. N. (2000). Dependent Dirichlet processes. Tech. Report, Ohio State University.&lt;/p&gt;
+&lt;p&gt;Riva Palacio, A. and Leisen, F. (2021). Compound vectors of subordinators and their associated positive Lévy copulas. J. Multivariate Anal. 183.&lt;/p&gt;
+&lt;p&gt;Quintana, F. A., Müller, P., Jara, A., and MacEachern, S. N. (2021). The dependent Dirichlet process and related models. Statistical Science, to appear.&lt;/p&gt;
+&lt;p&gt;Tankov, P. (2003). Dependence structure of spectrally positive multidimensional Lévy processes. Unpub- lished Manuscript.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://martacatalano.github.io/&#34;&gt;Marta Catalano&lt;/a&gt; is Assistant Professor in the Department of Statistics at the University of Warwick.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mypage.unibocconi.eu/antoniolijoi/&#34;&gt;Antonio Lijoi&lt;/a&gt; is Professor in the Department of Decision Sciences at Bocconi University.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mypage.unibocconi.eu/igorpruenster/&#34;&gt;Igor Prünster&lt;/a&gt; is Professor in the Department of Decision Sciences at Bocconi University.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Universal estimation with Maximum Mean Discrepancy (MMD)</title>
       <link>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</link>
@@ -958,31 +1078,6 @@ microdata using log-linear models. &lt;em&gt;J. Amer. Statist. Assoc.&lt;/em&gt;
 &lt;p&gt;Wu, Y. and Yang, P. (2019). Chebyshev polynomials, moment matching, and
 optimal estimation of the unseen. &lt;em&gt;Ann. Statist.&lt;/em&gt;, &lt;strong&gt;47&lt;/strong&gt;, 857–883.&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Depth Quantile Functions</title>
-      <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-07-01-depth-quantile-functions_files/f1.png&#34; /&gt;
-&lt;em&gt;Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the &lt;strong&gt;depth quantile function&lt;/strong&gt; (DQF), &lt;span class=&#34;math inline&#34;&gt;\(q_{ij}(\alpha)\)&lt;/span&gt; which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; which allows plotting. By construction, described below, these functions encode geometric information about the underlying data set. Consequently, we obtain a tool that permits an interpretable visualization of point cloud geometry regardless of dimension of the data. Additionally, tools from functional data analysis can now be used to solve problems (classification, anomaly detection, etc).&lt;/p&gt;
-&lt;p&gt;The primary tool used is that of Tukey’s half space depth (HSD), which provides a higher dimensional analog to the order statistics as a measure of centrality of an observation in a data set (where, for instance, the median is the most central or “deepest” point). In fact, the one dimensional version of HSD (&lt;span class=&#34;math inline&#34;&gt;\(D(x) = \min\{F_n(x), 1-F_n(x)\}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(F_n\)&lt;/span&gt; the EDF) is all we need, as we consider projections of our data onto lines before computing centrality, see below.&lt;/p&gt;
-&lt;p&gt;It is known that for HSD in any dimension, the level sets &lt;span class=&#34;math inline&#34;&gt;\(\{x:D(x)\geq\lambda\}\)&lt;/span&gt; are necessarily convex, thus not conforming to the shape of the underlying density. Additionally, in high dimensions, it’s likely that most points live near the boundary of the point cloud (the convex hull), i.e. we expect almost all points to be “non-central”. To get around this second problem, we instead consider, for every pair of points (&lt;span class=&#34;math inline&#34;&gt;\(x_i, x_j\)&lt;/span&gt;), the midpoint &lt;span class=&#34;math inline&#34;&gt;\(m_{ij} = \frac{x_i + x_j}{2}\)&lt;/span&gt; as the base point in the construction of our feature functions &lt;span class=&#34;math inline&#34;&gt;\(q_{ij}(\alpha)\)&lt;/span&gt;. Thus, we construct a &lt;em&gt;matrix&lt;/em&gt; of feature functions, with each observation corresponding to &lt;span class=&#34;math inline&#34;&gt;\(n-1\)&lt;/span&gt; feature functions, one for every other observation in the data set (though current work uses only the average of these functions or appropriate subsets of them). The choice of the midpoint as base point is motivated as follows. Consider a 2-class modal classification problem, where each class is represented by a component of a mixture of two normal distributions for which the corresponding cluster centers (the means) are sufficiently separated. When considering a pair of observations from different classes, their midpoint is likely to live in a region between the two point clouds with few nearby observations, in other words, a low density region with a high measure of centrality. The opposite can be expected for within class comparisons, i.e. two observations from the same class.&lt;/p&gt;
-&lt;p&gt;To addresses the convexity issue alluded to above, we use “local” versions of the HSD. This is done by taking random subsets of the data space containing &lt;span class=&#34;math inline&#34;&gt;\(m_{ij}\)&lt;/span&gt; and computing the HSD for this point after projection of the subset onto the line &lt;span class=&#34;math inline&#34;&gt;\(\ell_{ij}\)&lt;/span&gt; that is determined by the two points &lt;span class=&#34;math inline&#34;&gt;\(x_i,x_j\)&lt;/span&gt;. Specifically, the subsets are given by the data residing in randomly selected spherical cones of a fixed angle (which is a tuning parameter) with axis of symmetry &lt;span class=&#34;math inline&#34;&gt;\(\ell_{ij}\)&lt;/span&gt; (see figure 2.) We define a distribution of cone tips along &lt;span class=&#34;math inline&#34;&gt;\(\ell_{ij}\)&lt;/span&gt;, which induces a distribution of “local” depths (HSD), and define the DQF as the corresponding quantile function of this distribution. Using directions determined by pairs of points (i.e. the lines &lt;span class=&#34;math inline&#34;&gt;\(\ell_{ij}\)&lt;/span&gt;) addresses a challenge with high dimensional data: which direction should one look to capture interesting feature of the data? It also results in this method being automatically adaptive to sparseness (data living in a lower dimensional subspace of our data space).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-07-01-depth-quantile-functions_files/f2.png&#34; /&gt;
-&lt;em&gt;Figure 2: A local depth for midpoint in red. Depth value will be 2 for this cone tip.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;As a result of this construction, we end up with a multi-scale method, a function defined on [0,1], that is non-degenerate at both boundaries (in contrast to most multi-scale methods). One can show that the derivative of &lt;span class=&#34;math inline&#34;&gt;\(q_{ij}(\alpha)\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(\alpha\to 0\)&lt;/span&gt; yields information about the density at &lt;span class=&#34;math inline&#34;&gt;\(m_{ij}\)&lt;/span&gt;, while &lt;span class=&#34;math inline&#34;&gt;\(q_{ij}(1)\)&lt;/span&gt; is related to its centrality in the entire point cloud. The manner in which &lt;span class=&#34;math inline&#34;&gt;\(q_{ij}\)&lt;/span&gt; grows with increasing &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, while less interpretable, yields valuable information about the observations it corresponds to.&lt;/p&gt;
-&lt;p&gt;As an example of how this information might be used, we again consider the 2-class classification problem. Each observation is described by two functions, the average function &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{|C_1|}\sum_{j\in C_1}q_{ij}(\alpha)\)&lt;/span&gt; for comparisons with class 1 (&lt;span class=&#34;math inline&#34;&gt;\(C_1\)&lt;/span&gt;), and similarly the average function for comparisons with class 2. In line with the heuristic laid out above, it can be seen in figure 1 that for an observation from class 1, comparisons with class two tends to yield functions that have low density (so are slow to grow for small quantile levels) and large value for &lt;span class=&#34;math inline&#34;&gt;\(\alpha=1\)&lt;/span&gt; corresponding to high centrality. In-class comparisons have the opposite properties. A simple heuristic for solving this classification problem might be to use the first few loadings from an fPCA and your favorite classifier for Euclidean data. Results on several data sets using an untuned SVM were competitive with existing methods with extensive tuning.&lt;/p&gt;
-&lt;p&gt;Finally, the construction only depends on the data via inner products, meaning that DQFs can be constructing on any data type for which a kernel is defined, for instance persistence diagrams in topological data analysis, allowing for a visualization of non-Euclidean data in addition to high (including infinite) dimensional Euclidean data.&lt;/p&gt;
-&lt;p&gt;Reference: Chandler, G. and Polonik, W. “Multiscale geometric feature extraction for high-dimensional and non-Euclidean data with applications.” Ann. Statist. 49 (2) 988 - 1010, April 2021. (&lt;a href=&#34;https://arxiv.org/abs/1811.10178&#34; class=&#34;uri&#34;&gt;https://arxiv.org/abs/1811.10178&lt;/a&gt;)&lt;/p&gt;
 </description>
     </item>
     

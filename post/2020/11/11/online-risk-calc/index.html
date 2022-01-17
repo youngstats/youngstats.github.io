@@ -89,6 +89,8 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 <main>
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p>We first started making risk calculators with the website, <a href="nomograms.org">http://nomograms.org</a>.
@@ -120,12 +122,10 @@ Later, we launched <a href="http://rcalc.ccf.org">rcalc.ccf.org</a>, which has m
 </div>
 <p>Our R-package riskRegression provides implementations of modeling algorithms for censored data with competing risks and the cross-validation performance as described here online. Here is sample code:</p>
 <pre class="r"><code># sample R-code
-library(riskRegression)</code></pre>
-<pre><code>## Warning: package &#39;riskRegression&#39; was built under R version 4.0.5</code></pre>
-<pre class="r"><code>library(survival)
-library(randomForestSRC)</code></pre>
-<pre><code>## Warning: package &#39;randomForestSRC&#39; was built under R version 4.0.5</code></pre>
-<pre class="r"><code># simulate competing risk data
+library(riskRegression)
+library(survival)
+library(randomForestSRC)
+# simulate competing risk data
 set.seed(9)
 train.data &lt;- sampleData(n=472)
 test.data &lt;- sampleData(n=811)
