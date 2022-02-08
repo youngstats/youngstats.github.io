@@ -6,7 +6,28 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent Advances in Approximate Bayesian Inference</title>
+      <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
+      <description>Recent Advances in Approximate Bayesian Inference
+In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.
+On the webinar, selected young statisticians will present their recent works on the topic.</description>
+    </item>
+    
+    <item>
+      <title>Recent Advancements in Applied Instrumental Variable Methods</title>
+      <link>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</link>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
+      <description>Recent Advancements in Applied Instrumental Variable Methods
+Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.</description>
+    </item>
+    
     <item>
       <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
       <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
@@ -83,25 +104,6 @@ The seventh “One World webinar” organized by YoungStatS will take placeon N
       <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
       <description>Advancements in Symbolic Data Analysis
 The sixth “One World webinar” organized by YoungStatS will take place onNovember 8th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
-    </item>
-    
-    <item>
-      <title>Advances in Difference-in-Differences in Econometrics</title>
-      <link>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
-      <description>Advances in Difference-in-Differences in Econometrics
-The eighth “One World webinar” organized by YoungStatS will take placeon December 15th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
-    </item>
-    
-    <item>
-      <title>Optimal disclosure risk assessment</title>
-      <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
-      <description>Disclosure risk for microdataProtection against disclosure is a legal and ethical obligation foragencies releasing microdata files for public use. Consider a microdatasample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finitepopulation of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such thateach sample record \(X_i\) contains two disjoint types of information:identifying categorical information and sensitive information.Identifying information consists of a set of categorical variables whichmight be matchable to known units of the population.</description>
     </item>
     
   </channel>
