@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>causal-inference on YoungStatS</title>
+    <title>causal inference on YoungStatS</title>
     <link>https://youngstats.github.io/categories/causal-inference/</link>
-    <description>Recent content in causal-inference on YoungStatS</description>
+    <description>Recent content in causal inference on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/causal-inference/index.xml" rel="self" type="application/rss+xml" />
@@ -15,6 +15,16 @@
       <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
       <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
 These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
+    </item>
+    
+    <item>
+      <title>Machine learning for causal inference that works</title>
+      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
+The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
   </channel>
