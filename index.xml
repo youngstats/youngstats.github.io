@@ -13,15 +13,15 @@
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Recent Advances in Approximate Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;images/cover1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Recent Advances in Approximate Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/featured.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.&lt;/p&gt;
 &lt;p&gt;On the webinar, selected young statisticians will present their recent works on the topic.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wednesday, June 25th, 7:00 PT / 10:00 EST / 16:00 CEST&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdd1MztoBmjD8BXFzyURnSPoGolVnojTCoaZMgbQ4ooN5Fybw/viewform&#34;&gt;here&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdd1MztoBmjD8BXFzyURnSPoGolVnojTCoaZMgbQ4ooN5Fybw/viewform&#34;&gt;here&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
@@ -34,10 +34,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.julyanarbel.com/&#34;&gt;Julyan Arbel&lt;/a&gt;, Inria Grenoble Rhône-Alpes, France&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
-Europe initiative (FENStatS) supported by the Bernoulli Society for
-Mathematical Statistics and Probability and the Institute of
-Mathematical Statistics (IMS).&lt;/p&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 </description>
     </item>
     
