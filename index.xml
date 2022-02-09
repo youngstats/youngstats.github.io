@@ -13,9 +13,12 @@
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>&lt;hr&gt;
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
 &lt;p&gt;&lt;strong&gt;Recent Advances in Approximate Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;images/featured.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-02-09-recent-advances-in-approximate-bayesian-inference_files/featured.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.&lt;/p&gt;
 &lt;p&gt;On the webinar, selected young statisticians will present their recent works on the topic.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
@@ -44,8 +47,12 @@
       <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Recent Advancements in Applied Instrumental Variable Methods&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;images/featured.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Recent Advancements in Applied Instrumental Variable Methods&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-02-09-recent-advancements-in-applied-instrumental-variable-methods_files/featured.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.&lt;/p&gt;
 &lt;p&gt;In this webinar, selected econometricians will present their recent work on applied IV methods.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;

@@ -103,7 +103,7 @@ $$</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>$$
-P_{Y_t \vert (X_t^{S^<em>} = x)} = \int \underbrace{P_{Y_t \vert (X_t^{S^</em>} = x, H_t = h)}}<em>{\text{invariant in } t} P</em>{H_t \vert (X_t^{S^*} = x)} (dh).
+P_{Y_t \vert (X_t^{S^*} = x)} = \int \underbrace{P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}}_{\text{invariant in } t} P_{H_t \vert (X_t^{S^*} = x)} (dh).
 $$</p>
 <p>That is, <code>$P_{Y_t \vert (X_t^{S^*} = x)}$</code> is equal to a mixture of several distributions <code>$P_{Y_t \vert (X_t^{S^*} = x, H_t = h)}$</code>, each of which is invariant in <code>$t$</code>, but with an associated mixture distribution <code>$P_{H_t \vert (X_t^{S^*} = x)}$</code> which may change across time. We refer to this property as <code>$h$</code>-invariance (for &lsquo;hidden-invariance&rsquo;). Ideally, we would like to directly exploit this property for causal discovery, by running through all subsets <code>$S \subseteq \{1, \dots, d\}$</code> and testing whether they satisfy <code>$h$</code>-invariance. To obtain statistical tests with any reasonable amount of power, we further impose the following simplifying assumptions. We assume that</p>
 <ul>
