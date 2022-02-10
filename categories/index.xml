@@ -26,11 +26,47 @@
     </item>
     
     <item>
+      <title>nonparametric-statistics</title>
+      <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-processes</title>
+      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estimation</title>
+      <link>https://youngstats.github.io/categories/estimation/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/estimation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>robust-statistics</title>
       <link>https://youngstats.github.io/categories/robust-statistics/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/robust-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maximum-likelihood</title>
+      <link>https://youngstats.github.io/categories/maximum-likelihood/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/maximum-likelihood/</guid>
       <description></description>
     </item>
     
@@ -53,47 +89,11 @@
     </item>
     
     <item>
-      <title>probability</title>
-      <link>https://youngstats.github.io/categories/probability/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      <title>machine learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/probability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random-graphs</title>
-      <link>https://youngstats.github.io/categories/random-graphs/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/random-graphs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic-processes</title>
-      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nonparametric-statistics</title>
-      <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>high dimensional data</title>
-      <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
-      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/high-dimensional-data/</guid>
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     

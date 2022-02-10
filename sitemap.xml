@@ -26,11 +26,23 @@
     <loc>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://youngstats.github.io/categories/nonparametric-statistics/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
+    <lastmod>2022-01-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/estimation/</loc>
+    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/maximum-likelihood/</loc>
+    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
@@ -47,6 +59,12 @@
     <loc>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
+    <lastmod>2021-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/regression/</loc>
+    <lastmod>2021-12-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</loc>
     <lastmod>2021-11-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -56,9 +74,6 @@
     <loc>https://youngstats.github.io/categories/random-graphs/</loc>
     <lastmod>2021-11-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
-    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -66,9 +81,6 @@
     <lastmod>2021-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</loc>
-    <lastmod>2021-09-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/nonparametric-statistics/</loc>
     <lastmod>2021-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</loc>
@@ -86,6 +98,9 @@
     <loc>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://youngstats.github.io/categories/predictive-models/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</loc>
     <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -99,9 +114,6 @@
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/04/27/a-small-step-to-understand-gda/</loc>
-    <lastmod>2021-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</loc>
@@ -122,19 +134,19 @@
     <loc>https://youngstats.github.io/categories/generalized-linear-models/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/compositional-data/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <loc>https://youngstats.github.io/categories/variable-selection/</loc>
+    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://youngstats.github.io/categories/compositional-data/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/functional-data/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/maximum-likelihood/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/correlation/</loc>
@@ -154,6 +166,9 @@
   </url><url>
     <loc>https://youngstats.github.io/post/2021/01/31/local-knn/</loc>
     <lastmod>2021-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/latent-variables/</loc>
+    <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/partial-least-squares/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
@@ -180,9 +195,6 @@
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/hidden-markov-models/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/latent-variables/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/post/</loc>
@@ -212,9 +224,6 @@
     <loc>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/predictive-models/</loc>
-    <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/r-package/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -222,6 +231,9 @@
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/22/soliman/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/tda/</loc>

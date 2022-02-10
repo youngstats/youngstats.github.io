@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regression on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/regression/</link>
+    <description>Recent content in regression on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/regression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
+      <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
+      <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
+These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
+    </item>
+    
+    <item>
+      <title>A Scalable Empirical Bayes Approach to Variable Selection in Generalized Linear Models</title>
+      <link>https://youngstats.github.io/post/2021/03/13/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/13/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</guid>
+      <description>In the toolbox of most scientists over the past century, there have been few methods as powerful and as versatile as linear regression. The introduction of the generalized linear model (GLM) framework in the 1970’s extended the inferential and predictive capabilities to binary or count data. While the effect of this ‘Swiss Army knife’ of scientific research cannot be overstated, rapid (and amazing) technological advances in other areas have pushed it beyond its theoretical capacity.</description>
+    </item>
+    
+    <item>
+      <title>Compositional scalar-on-function regression as a tool (not only) for geological data</title>
+      <link>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
+      <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.</description>
+    </item>
+    
+  </channel>
+</rss>

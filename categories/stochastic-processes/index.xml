@@ -6,7 +6,16 @@
     <description>Recent content in stochastic-processes on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
+      <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
+      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</guid>
+      <description>OverviewBayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a homogeneous sample is performed with exchangeable models of the type \(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\), where \(\tilde \mu\) is a random measure and \(T\) is a suitable transformation. Notable examples for \(T\) include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).</description>
+    </item>
+    
     <item>
       <title>Frozen percolation on the binary tree is nonendogenous</title>
       <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>

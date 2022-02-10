@@ -64,6 +64,8 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
   
     <a href="/categories/spatiotemporal-data">spatiotemporal-data</a>
   
+     &hercon; <a href="/categories/predictive-models">predictive-models</a>
+  
   </div>
 
   <h1><span class="title">Spatiotemporal modeling and real-time prediction of origin-destination traffic demand</span></h1>
@@ -105,7 +107,7 @@ process based on <span class="math inline">\(K\)</span> basis functions <span cl
 <table>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math display">\[u_{\text{ijt}} = \mu_{\text{jt}} + \sum_{k = 1}^{K}{\gamma_{\text{jk}}B_{k}(t)} + Z_{\text{ijt}}.\]</span> (1)</td>
+<td align="center"><span class="math display">\[u_{\text{ijt}} = \mu_{\text{jt}} + \sum_{k = 1}^{K}{\gamma_{\text{jk}}B_{k}(t)} + Z_{\text{ijt}}.\]</span> <span class="math inline">\(1\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -128,7 +130,7 @@ Gaussian distribution which has the covariance structure</p>
 <table>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math display">\[\text{cov}\left( Z_{ij_{1}t_{1}},Z_{ij_{2}t_{2}} \right) = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\} \cdot \tau^{2}\exp\left\{ - \theta_{t}\left| t_{1} - t_{2} \right| \right\}.\]</span> (2)</td>
+<td align="center"><span class="math display">\[\text{cov}\left( Z_{ij_{1}t_{1}},Z_{ij_{2}t_{2}} \right) = \sigma_{j_{1},\ j_{2}}\exp\left\{ - \theta_{y}\left| \mathbf{y}_{j_{1}} - \mathbf{y}_{j_{2}} \right|^{2} \right\} \cdot \tau^{2}\exp\left\{ - \theta_{t}\left| t_{1} - t_{2} \right| \right\}.\]</span> <span class="math inline">\(2\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -146,7 +148,7 @@ We can further derive that conditioning on parameters
 <table>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math display">\[\mathbf{\Sigma} = \mathbf{R}_{\theta_{y}}\bigotimes\left\lbrack \mathbf{R}_{B} + \tau^{2}\mathbf{R}_{\theta_{t}} \right\rbrack.\]</span> (3)</td>
+<td align="center"><span class="math display">\[\mathbf{\Sigma} = \mathbf{R}_{\theta_{y}}\bigotimes\left\lbrack \mathbf{R}_{B} + \tau^{2}\mathbf{R}_{\theta_{t}} \right\rbrack.\]</span> <span class="math inline">\(3\)</span></td>
 </tr>
 </tbody>
 </table>

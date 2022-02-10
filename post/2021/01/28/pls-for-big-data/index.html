@@ -62,9 +62,11 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
   <div class="categories">
   
-    <a href="/categories/partial-least-squares">partial least squares</a>
+    <a href="/categories/partial-least-squares">partial-least-squares</a>
   
-     &hercon; <a href="/categories/high-dimensional-data">high dimensional data</a>
+     &hercon; <a href="/categories/high-dimensional-data">high-dimensional-data</a>
+  
+     &hercon; <a href="/categories/latent-variables">latent-variables</a>
   
   </div>
 
@@ -84,6 +86,7 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
 <main>
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p><em>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data</em></p>
@@ -96,7 +99,7 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 </ol>
 <p>These methods provide a range of useful methods for data exploration and prediction for datasets with high dimensional structure. However, as shown in the sparse PCA literature (Johnstone 2004) in high dimensional settings (<span class="math inline">\(n&lt;&lt;p\)</span>) the standard latent variable estimates may be biased and sparsity inducing methods are a natural choice. After reviewing the two-block PLS methods and placing them in a common framework we provide details for the application of sparse PLS methods that use regularisation via either the lasso or sparse group lasso penalisation.</p>
 <div id="finding-the-latent-variables" class="section level3">
-<h3>Finding the Latent variables</h3>
+<h3>Finding the latent variables</h3>
 <p>Let <span class="math inline">\(X: n\times p\)</span> and <span class="math inline">\(Y: n\times q\)</span> be the datasets comprised of n observations on p and q variables respectively, the latent variables <span class="math inline">\(\xi = X u\)</span> and <span class="math inline">\(\omega = Y v\)</span> bare a striking similarity to the principal components from principal component analysis (PCA) where <span class="math inline">\(u\)</span> is a p-vector and <span class="math inline">\(v\)</span> is a q-vector. The PLS-SVD, PLS-W2A and PLS-R methods optimise the sample covariance between the latent variables
 <span class="math display">\[
 \text{max}_{\xi,\omega} \widehat{Cov}(\xi, \omega) \rightarrow \text{max}_{u,v} \widehat{Cov}(Xu, Yv) = \text{max}_{u,v} u^TX^TYv

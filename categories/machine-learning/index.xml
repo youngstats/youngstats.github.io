@@ -6,7 +6,17 @@
     <description>Recent content in machine learning on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
+      <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
+      <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
+These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
+    </item>
+    
     <item>
       <title>A small step to understand Generative Adversarial Networks</title>
       <link>https://youngstats.github.io/post/2021/04/27/a-small-step-to-understand-gda/</link>
@@ -23,6 +33,17 @@
       
       <guid>https://youngstats.github.io/post/2021/03/14/analysis-of-a-two-layer-neural-network-via-displacement-convexity/</guid>
       <description>AbstractWe consider the problem of learning a function defined on a compact domain, using linear combinationsof a large number of “bump-like” components (neurons). This idea lies at the core of a variety of methodsfrom two-layer neural networks to kernel regression, to boosting. In general, the resulting risk minimizationproblem is non-convex and is solved by gradient descent or its variants. Nonetheless, little is known aboutglobal convergence properties of these approaches.</description>
+    </item>
+    
+    <item>
+      <title>Higher Order Targeted Maximum Likelihood Estimation</title>
+      <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
+      <description>Summary
+We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
+BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
     </item>
     
     <item>

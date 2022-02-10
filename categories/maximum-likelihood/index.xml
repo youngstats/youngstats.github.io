@@ -6,7 +6,16 @@
     <description>Recent content in maximum-likelihood on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/maximum-likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/maximum-likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</title>
+      <link>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</guid>
+      <description>OverviewSuppose \(\{X_t: t\in \mathbb{Z}\}\) is a second order stationary time series where \(c(r) = \text{cov}(X_{t+r},X_t)\) and \(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\) are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is \(\textrm{E}(X_t)=0\).Our aim is to fit a parametric second-order stationary model (specified by \(\{c_{f_\theta}(r)\}\) or \(f_\theta(\omega)\)) to the observed time series \(\underline{X}_n = (X_1, ..., X_n)^\top\).There are two classical estimation methods based on the quasi-likelihood criteria.</description>
+    </item>
+    
     <item>
       <title>Higher Order Targeted Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
@@ -15,7 +24,7 @@
       <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
       <description>Summary
 We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
-Background Targeted Maximum Likelihood Estimation (TMLE) It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
+BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
     </item>
     
   </channel>

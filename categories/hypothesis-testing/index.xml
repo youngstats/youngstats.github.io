@@ -13,7 +13,7 @@
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
-      <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis; The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\); The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
+      <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis. The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\). The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
     </item>
     
   </channel>

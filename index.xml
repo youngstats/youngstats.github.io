@@ -290,7 +290,7 @@ d_{k}(P,Q)=\left\lVert \mu(P)-\mu(Q)\right\rVert_{\mathcal{H}}
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
 \mathbb{E} \left[ d_k\left(P_{\hat{\theta}},P^0 \right) \right] \leq \inf_{\theta\in\Theta} d_k\left(P_{\theta},P^0 \right) + \frac{2}{\sqrt{n}}.
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;This is taken from our paper [1]. (Note that the expectation is with respect to the sample: &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}=\hat{\theta}(X_1,\dots,X_n)\)&lt;/span&gt;, the dependence with respect to the sample is always dropped from the notation in satistics and in machine learning).&lt;/p&gt;
+&lt;p&gt;This is taken from our paper [1]. (Note that the expectation is with respect to the sample: &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}=\hat{\theta}(X_1,\dots,X_n)\)&lt;/span&gt;, the dependence with respect to the sample is always dropped from the notation in statistics and in machine learning).&lt;/p&gt;
 &lt;p&gt;First, for any &lt;span class=&#34;math inline&#34;&gt;\(\theta\in\Theta\)&lt;/span&gt;,&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
 d_k\left(P_{\hat{\theta}_n},P^0 \right) \leq d_k\left(P_{\hat{\theta}_n},\hat{P}_n \right) +  d_k\left(\hat{P}_n,P^0 \right)

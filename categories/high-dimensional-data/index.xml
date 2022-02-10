@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>high dimensional data on YoungStatS</title>
+    <title>high-dimensional-data on YoungStatS</title>
     <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
-    <description>Recent content in high dimensional data on YoungStatS</description>
+    <description>Recent content in high-dimensional-data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
@@ -25,7 +25,7 @@ A common technique in modern statistics is the so-called kernel trick, where dat
       <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
       <description>Summary
 We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
-Background Targeted Maximum Likelihood Estimation (TMLE) It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
+BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
     </item>
     
     <item>
