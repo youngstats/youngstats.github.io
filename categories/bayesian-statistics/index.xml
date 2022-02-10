@@ -25,5 +25,15 @@
       <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
     </item>
     
+    <item>
+      <title>Machine learning for causal inference that works</title>
+      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
+The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
+    </item>
+    
   </channel>
 </rss>
