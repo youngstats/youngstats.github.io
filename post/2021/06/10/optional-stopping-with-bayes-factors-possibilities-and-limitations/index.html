@@ -101,19 +101,17 @@ problems; in particular, it was claimed early on that Bayesian methods
 continue to be valid under optional stopping
 <span class="citation">(<a href="#ref-lindley-1957-statis-parad" role="doc-biblioref">Lindley 1957</a>; <a href="#ref-RaiffaS61" role="doc-biblioref">Raiffa and Schlaifer 1961</a>; <a href="#ref-edwards-1963-bayes-statis" role="doc-biblioref">Edwards, Lindman, and Savage 1963</a>)</span>. In
 light of the replicability crisis, such claims have received much
-renewed interest
-<span class="citation">(<a href="#ref-wagenmakers-2007-pract-solut" role="doc-biblioref">Wagenmakers 2007</a>; <a href="#ref-rouder-2014-option" role="doc-biblioref">Jeffrey N. Rouder 2014</a>; <a href="#ref-schonbrodt-2017-sequen-hypot" role="doc-biblioref">Schönbrodt et al. 2017</a>; <a href="#ref-yu-2013-when-decis" role="doc-biblioref">Yu et al. 2014</a>; <a href="#ref-sanborn-2013-frequen-implic" role="doc-biblioref">Sanborn and Hills 2014</a>)</span>.
-But what do they mean mathematically? It turns out that different
-authors mean quite different things by ‘Bayesian methods handle optional
-stopping’; moreover, such claims are often shown to hold only in an
-informal sense, or in restricted contexts. In the paper
-<span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, Heide, and Grünwald 2020</a>)</span> we give a systematic overview and
-formalization of such claims, and explain their relevance for practice:
-can we effectively rely on Bayes factor testing to do a good job under
-optional stopping or not? As we shall see, the answer is subtle.
-Secondly, we extend the reach of such claims to more general settings,
-for which they have never been formally verified and for which
-verification is not always trivial. In the paper <span class="citation">(<a href="#ref-heide2020optional" role="doc-biblioref">Heide and Grünwald 2020</a>)</span>,
+renewed interest <span class="citation">(<a href="#ref-wagenmakers-2007-pract-solut" role="doc-biblioref">Wagenmakers 2007</a>; <a href="#ref-rouder-2014-option" role="doc-biblioref">Jeffrey N. Rouder 2014</a>; <a href="#ref-schonbrodt-2017-sequen-hypot" role="doc-biblioref">Schönbrodt et al. 2017</a>; <a href="#ref-yu-2013-when-decis" role="doc-biblioref">Yu et al. 2014</a>; <a href="#ref-sanborn-2013-frequen-implic" role="doc-biblioref">Sanborn and Hills 2014</a>)</span>. But what do they mean mathematically? It
+turns out that different authors mean quite different things by
+‘Bayesian methods handle optional stopping’; moreover, such claims are
+often shown to hold only in an informal sense, or in restricted
+contexts. In the paper <span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, de Heide, and Grünwald 2020</a>)</span> we give a systematic
+overview and formalization of such claims, and explain their relevance
+for practice: can we effectively rely on Bayes factor testing to do a
+good job under optional stopping or not? As we shall see, the answer is
+subtle. Secondly, we extend the reach of such claims to more general
+settings, for which they have never been formally verified and for which
+verification is not always trivial. In the paper <span class="citation">(<a href="#ref-heide2020optional" role="doc-biblioref">de Heide and Grünwald 2020</a>)</span>,
 we explain claims about optional stopping for an audience of
 methodologists and applied statisticians with the help of computer
 simulations.<br />
@@ -154,7 +152,7 @@ handle optional stopping, it turns out that different approaches
 different interpretations and definitions. It tuns out that we can
 discern three main mathematical concepts of handling optional stopping,
 which we identify and formally define in the paper
-<span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, Heide, and Grünwald 2020</a>)</span>.<br />
+<span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, de Heide, and Grünwald 2020</a>)</span>.<br />
 The first concept we call <em>subjective Bayesian optional stopping</em> or
 <span class="math inline">\(\tau\)</span>-independence. If one considers a purely subjective Bayesian
 setting, appropriate if one truly believes one’s prior, then Bayesian
@@ -180,9 +178,9 @@ first idea of one of the issues: default priors sometimes depend on the
 data. Then it is unclear what <em>optional stopping</em> really means, because
 if, using prior <span class="math inline">\(P_1(\theta)\)</span> based on a sample of size <span class="math inline">\(n\)</span>, one had
 stopped at sample size <span class="math inline">\(n&#39;&lt; n\)</span>, one should have really used prior
-<span class="math inline">\(P&#39;_1(\theta)\)</span> based on sample of size <span class="math inline">\(n&#39;\)</span>...but then one would have
+<span class="math inline">\(P&#39;_1(\theta)\)</span> based on sample of size <span class="math inline">\(n&#39;\)</span>…but then one would have
 stopped at yet another sample size <span class="math inline">\(n&#39;&#39;\)</span>, and so on. See our paper
-<span class="citation">(<a href="#ref-heide2020optional" role="doc-biblioref">Heide and Grünwald 2020</a>)</span> for an extensive discussion and many examples.<br />
+<span class="citation">(<a href="#ref-heide2020optional" role="doc-biblioref">de Heide and Grünwald 2020</a>)</span> for an extensive discussion and many examples.<br />
 </p>
 <p>The third sense is a frequentist interpretation of handling optional
 stopping, which is about controlling the Type I error of an experiment.
@@ -201,14 +199,16 @@ optional stopping. However, for <em>composite</em> <span class="math inline">\(\
 not continue to hold. Except for the special case where <em>all</em> free
 parameters in <span class="math inline">\(\mathcal{H}_0\)</span> are nuisance parameters observing a group
 structure and equipped with the corresponding right-Haar prior, and are
-shared with <span class="math inline">\(\mathcal{H}_1\)</span>, as we prove in <span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, Heide, and Grünwald 2020</a>)</span>.
+shared with <span class="math inline">\(\mathcal{H}_1\)</span>, as we prove in <span class="citation">(<a href="#ref-hendriksen2020optional" role="doc-biblioref">Hendriksen, de Heide, and Grünwald 2020</a>)</span>.
 But for general priors and composite <span class="math inline">\(\mathcal{H}_0\)</span>, this is typically
 not the case.</p>
 <p><img src="/post/2021-06-09-optional-stopping-with-bayes-factors-possibilities-and-limitations_files/screenshot.138.jpg" /></p>
-<p><em>Figure 1: Posterior odds in an experiment of testing whether the mean of a normal distribution is 0
-(<span class="math inline">\(\mathcal{H}_0\)</span>), versus non-zero (<span class="math inline">\(\mathcal{H}_1\)</span>), from 20; 000 replicate experiments. (a) The empirical sampling distribution
-of the posterior odds as a histogram under <span class="math inline">\(\mathcal{H}_0\)</span> (blue) and <span class="math inline">\(\mathcal{H}_1\)</span> (pink). (b) Calibration plot: the observed
-posterior odds as a function of the nominal posterior odds.</em></p>
+<p><em>Figure 1: Posterior odds in an experiment of testing whether the mean
+of a normal distribution is 0 (</em><span class="math inline">\(\mathcal{H}_0\)</span>), versus non-zero
+(<span class="math inline">\(\mathcal{H}_1\)</span>), from 20; 000 replicate experiments. (a) The empirical
+sampling distribution of the posterior odds as a histogram under
+<span class="math inline">\(\mathcal{H}_0\)</span> (blue) and <span class="math inline">\(\mathcal{H}_1\)</span> (pink). (b) Calibration plot:
+the observed posterior odds as a function of the nominal posterior odds.</p>
 </div>
 <div id="conclusion" class="section level1 unnumbered">
 <h1>Conclusion</h1>
@@ -230,14 +230,14 @@ prof. Peter Grünwald, Leiden University &amp; CWI Amsterdam</p>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-heide2020optional" class="csl-entry">
+de Heide, Rianne, and Peter D. Grünwald. 2020. <span>“Why Optional Stopping Can Be a Problem for Bayesians.”</span> <em>Psychonomic Bulletin &amp; Review, Advance Publication</em>, 1–18.
+</div>
 <div id="ref-edwards-1963-bayes-statis" class="csl-entry">
 Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. <span>“Bayesian Statistical Inference for Psychological Research.”</span> <em>Psychological Review</em> 70 (3): 193–242. <a href="https://doi.org/10.1037/h0044139">https://doi.org/10.1037/h0044139</a>.
 </div>
-<div id="ref-heide2020optional" class="csl-entry">
-Heide, Rianne de, and Peter D. Grünwald. 2020. <span>“Why Optional Stopping Can Be a Problem for Bayesians.”</span> <em>Psychonomic Bulletin &amp; Review, Advance Publication</em>, 1–18.
-</div>
 <div id="ref-hendriksen2020optional" class="csl-entry">
-Hendriksen, Allard, Rianne de Heide, and Peter Grünwald. 2020. <span>“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”</span> <em>Bayesian Analysis, Advance Publication</em>.
+Hendriksen, Allard, Rianne de Heide, and Peter Grünwald. 2020. <span>“Optional Stopping with Bayes Factors: A Categorization and Extension of Folklore Results, with an Application to Invariant Situations.”</span> <em>Bayesian Analysis, Advance Publication</em>.
 </div>
 <div id="ref-john-2012-measur-preval" class="csl-entry">
 John, Leslie K, George Loewenstein, and Drazen Prelec. 2012. <span>“Measuring the Prevalence of Questionable Research Practices with Incentives for Truth Telling.”</span> <em>Psychological Science</em>.
