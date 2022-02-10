@@ -62,13 +62,11 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
   <div class="categories">
   
-    <a href="/categories/causality">causality</a>
+    <a href="/categories/causal-inference">causal-inference</a>
   
-     &hercon; <a href="/categories/latent-variables">latent variables</a>
+     &hercon; <a href="/categories/latent-variables">latent-variables</a>
   
-     &hercon; <a href="/categories/hidden-markov-models">hidden Markov models</a>
-  
-     &hercon; <a href="/categories/post">post</a>
+     &hercon; <a href="/categories/hidden-markov-models">hidden-Markov-models</a>
   
   </div>
 
@@ -114,7 +112,7 @@ $$</p>
 <p>Under these assumptions, the above integral reduces to a discrete sum of time-invariant linear Gaussian regressions. In other words, for <code>$S = S^*$</code>, the following null hypothesis holds true.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p><code>\[H_{0,S}: \left\{ \begin{array}{l} \text{there exists } \theta = (\beta_j, \sigma_j^2)_{j=1}^\ell \text{ such that for all } t, P_{Y_t \vert X_t^S} \text{ is a mixture} \\ \text{of } \ell \text{ linear Gaussian regressions with regression parameters } \theta. \end{array} \right.\]</code></p>
+<p><code>\[H_{0,S}: \left\{ \begin{array}{l} \text{there exists } \theta = (\beta_j, \sigma_j^2)_{j=1}^\ell \text{ such that for all } t, P_{Y_t \vert X_t^S} \text{ is a mixture} \\ \text{of } \ell \text{ linear Gaussian regressions with regression parameters } \theta. \end{array} \right.\]</code></p>
 <p>Such mixtures of regressions are also known as &ldquo;switching regression&rdquo; models <a href="#1">[5]</a>, <a href="#1">[6]</a>. The above hypothesis specifies an invariance only in the mixing components of the model, while the mixing proportions are allowed to vary over time (this allows for the hidden variables to be heterogeneous). Given a family of statistical tests for <code>$(H_{0,S})_{S \subseteq \{1, \dots, d\}}$</code>, we can construct a causal discovery algorithm analogously to ordinary ICP.</p>
 <h3 id="algorithm-icph">Algorithm: ICPH</h3>
 <p>Our causal discovery algorithm ICPH (&lsquo;Invariant Causal Prediction in the presence of Hidden variables&rsquo;) operates in the following way.</p>

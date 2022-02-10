@@ -62,9 +62,11 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
   <div class="categories">
   
-    <a href="/categories/co-clustering">co-clustering</a>
+    <a href="/categories/classification">classification</a>
   
-     &hercon; <a href="/categories/latent-block-model">latent block model</a>
+     &hercon; <a href="/categories/blockmodelling">blockmodelling</a>
+  
+     &hercon; <a href="/categories/mixed-data">mixed-data</a>
   
   </div>
 
@@ -84,6 +86,7 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
 <main>
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <style>
@@ -92,11 +95,11 @@ text-align: justify}
 </style>
 <div id="abstract" class="section level1">
 <h1>Abstract</h1>
-<p>Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account. For this purpose, we present how to use the Multiple Latent Block Model <span class="citation">(Robert 2017)</span> on mixed data.</p>
+<p>Co-clustering techniques, which group observations and features simultaneously, have proven to be efficient in summarising data sets. They exploit the dualism between rows and columns and the data set is summarized in blocks (the crossing of a row-cluster and a column-cluster). However, in the case of mixed data sets (with features of different kind), it is not easy to define a co-clustering method that takes this heterogeneity into account. For this purpose, we present how to use the Multiple Latent Block Model <span class="citation">(<a href="#ref-robert17" role="doc-biblioref">Robert 2017</a>)</span> on mixed data.</p>
 </div>
 <div id="multiple-latent-block-model-for-mixed-data" class="section level1">
 <h1>Multiple Latent Block Model for mixed data</h1>
-<p>The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) <span class="citation">(Nadif and Govaert 2008)</span>, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in <span class="math inline">\(D\)</span> matrices <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span> such that <span class="math inline">\(D\)</span> is the number of kinds of data. For the sake of simplicity, we consider here that <span class="math inline">\(\boldsymbol{x}\)</span> has two different kinds of features (i.e <span class="math inline">\(D=2\)</span>). The MLBM performs a co-clustering such that the row-clusters partition is the same for all <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>, and that there is a column-clusters partition for every <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>.</p>
+<p>The Multiple Latent Block Model (MLBM) is an extension the Latent Block Model (LBM) <span class="citation">(<a href="#ref-nadif08" role="doc-biblioref">Nadif and Govaert 2008</a>)</span>, which is a probabilistic approach to perform co-clustering. It consists in separating the data matrix in <span class="math inline">\(D\)</span> matrices <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span> such that <span class="math inline">\(D\)</span> is the number of kinds of data. For the sake of simplicity, we consider here that <span class="math inline">\(\boldsymbol{x}\)</span> has two different kinds of features (i.e <span class="math inline">\(D=2\)</span>). The MLBM performs a co-clustering such that the row-clusters partition is the same for all <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>, and that there is a column-clusters partition for every <span class="math inline">\(\boldsymbol{x}^{(d)}\)</span>.</p>
 <center>
 <p><img src="/post/2021-01-05-mlbm/images/example-mlbm-notations.svg" class="class" style="width:70.0%" /></p>
 <p>Example of a mixed-data matrix with two different kinds of features co-clustered with the MLBM.</p>
@@ -174,7 +177,7 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 </div>
 <div id="use-case-analysing-a-health-quality-survey-in-oncology" class="section level1">
 <h1>Use-case: analysing a health quality survey in oncology</h1>
-<p>The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions”. In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell <span class="math inline">\((i, j)\)</span> is the response of patient <span class="math inline">\(i\)</span> to question <span class="math inline">\(j\)</span>. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?”, if the patient answers “Not at all”, the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.</p>
+<p>The data set that motivated this work is a psychological survey on women affected by a breast tumour. Patients replied at different stages of their treatment to questionnaires with answers on ordinal scales. The questions relate to different aspects of their life referred to as “dimensions.” In this use-case, we focus on three different dimensions: anxiety, depression and symptoms. The questions that relate to these dimensions are considered to be of different kinds because they are not necessarily on the same ordinal scale. In addition, they are seen as different in a semantic way by the pychologists since they do not refer to the same dimensions. The figure below represents the data set: the women are projected onto rows and the questions are projected onto columns. Therefore, the cell <span class="math inline">\((i, j)\)</span> is the response of patient <span class="math inline">\(i\)</span> to question <span class="math inline">\(j\)</span>. The shades of grey indicate how positively the individual replied. For instance, for the question “Have you had trouble sleeping?” if the patient answers “Not at all,” the corresponding cell will be white, whereas a response such as “Very much” will correspond to a black cell.</p>
 <center>
 <p><img src="/post/2021-01-05-mlbm/images/ads-original.png" class="class" style="width:50.0%" /></p>
 <p>Questionnaire’s graphical representation: patients are projected onto rows and questions are projected onto columns.</p>
@@ -187,7 +190,7 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 </div>
 <div id="remarks" class="section level1">
 <h1>Remarks</h1>
-<p>This blog post is based on <span class="citation">(Selosse, Jacques, and Biernacki 2020)</span> and <span class="citation">(Selosse et al. 2019)</span>. Furthermore, The R package <code>mixedClust</code> implements the Multiple Latent Block Model and will be available on the CRAN soon.</p>
+<p>This blog post is based on <span class="citation">(<a href="#ref-selosse20" role="doc-biblioref">Selosse, Jacques, and Biernacki 2020</a>)</span> and <span class="citation">(<a href="#ref-selosse19" role="doc-biblioref">Selosse et al. 2019</a>)</span>. Furthermore, The R package <code>mixedClust</code> implements the Multiple Latent Block Model and will be available on the CRAN soon.</p>
 <p>About the authors:</p>
 <ul>
 <li><img src="/post/2021-01-05-mlbm/images/pic-ms.jpeg" class="class" style="vertical-align: text-bottom;width: 10%" /> <strong>Margot Selosse</strong> received her Ph.D. degree from Université Lumière Lyon II in 2020. She currently is a post-doctoral researcher in the Thoth team at Inria grenoble. Her main research area is related to clustering, mixed-type data and graph representation learning.</li>
@@ -197,18 +200,18 @@ p(\boldsymbol{x};\boldsymbol{\theta})=
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
-<div id="refs" class="references">
-<div id="ref-nadif08">
-<p>Nadif, Mohamed, and Gérard Govaert. 2008. “Algorithms for Model-Based Block Gaussian Clustering.” <em>International Conference on Data Mining</em>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-nadif08" class="csl-entry">
+Nadif, Mohamed, and Gérard Govaert. 2008. <span>“Algorithms for Model-Based Block Gaussian Clustering.”</span> <em>International Conference on Data Mining</em>.
 </div>
-<div id="ref-robert17">
-<p>Robert, Valérie. 2017. “Classification Croisée Pour L’analyse de Bases de Données de Grandes Dimensions de Pharmacovigilance.” Université Paris-Sud.</p>
+<div id="ref-robert17" class="csl-entry">
+Robert, Valérie. 2017. <span>“Classification Croisée Pour l’analyse de Bases de Données de Grandes Dimensions de Pharmacovigilance.”</span> Université Paris-Sud.
 </div>
-<div id="ref-selosse20">
-<p>Selosse, Margot, Julien Jacques, and Christophe Biernacki. 2020. “Model-Based Co-Clustering for Mixed Type Data.” <em>Computational Statistics &amp; Data Analysis</em> 144: 106866.</p>
+<div id="ref-selosse20" class="csl-entry">
+Selosse, Margot, Julien Jacques, and Christophe Biernacki. 2020. <span>“Model-Based Co-Clustering for Mixed Type Data.”</span> <em>Computational Statistics &amp; Data Analysis</em> 144: 106866.
 </div>
-<div id="ref-selosse19">
-<p>Selosse, Margot, Julien Jacques, Christophe Biernacki, and Cousson-Gélie Florence. 2019. “Analysing a Quality-of-Life Survey by Using a Coclustering Model for Ordinal Data and Some Dynamic Implications.” <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 68 (5): 1327–49.</p>
+<div id="ref-selosse19" class="csl-entry">
+Selosse, Margot, Julien Jacques, Christophe Biernacki, and Cousson-Gélie Florence. 2019. <span>“Analysing a Quality-of-Life Survey by Using a Coclustering Model for Ordinal Data and Some Dynamic Implications.”</span> <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 68 (5): 1327–49.
 </div>
 </div>
 </div>

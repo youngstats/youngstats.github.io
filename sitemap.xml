@@ -206,10 +206,10 @@
     <loc>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</loc>
     <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/co-clustering/</loc>
+    <loc>https://youngstats.github.io/categories/blockmodelling/</loc>
     <lastmod>2021-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/latent-block-model/</loc>
+    <loc>https://youngstats.github.io/categories/mixed-data/</loc>
     <lastmod>2021-01-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/01/05/mlbm/</loc>
@@ -218,13 +218,7 @@
     <loc>https://youngstats.github.io/post/2020/12/15/icph/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/causality/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/hidden-markov-models/</loc>
-    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/post/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/12/04/functional-regression-control-chart/</loc>
@@ -254,28 +248,28 @@
     <loc>https://youngstats.github.io/post/2020/10/22/soliman/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
+    <loc>https://youngstats.github.io/categories/epidemiology/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/tda/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/zika-virus/</loc>
+    <loc>https://youngstats.github.io/categories/topological-data-analysis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/05/par_diggle/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/epidemiology/</loc>
+    <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
+    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/04/mozgunov/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/clinical-trials/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/design-of-experiments/</loc>
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/information-theory/</loc>
@@ -287,7 +281,10 @@
     <loc>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/network/</loc>
+    <loc>https://youngstats.github.io/categories/network-analysis/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/scientometrics/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/01/cugmas/</loc>

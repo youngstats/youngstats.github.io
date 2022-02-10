@@ -6,16 +6,7 @@
     <description>Recent content in statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ensemble Forecasting of the Zika Space-Time Spread with Topological Data Analysis</title>
-      <link>https://youngstats.github.io/post/2020/10/22/soliman/</link>
-      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/22/soliman/</guid>
-      <description>As per the records of the World Health Organization, the first formally reported incidence of Zika virus occurred in Brazil in May 2015. The disease then rapidly spread to other countries in Americas and East Asia, affecting more than 1,000,000 people. Zika virus is primarily transmitted through bites of infected mosquitoes of the species Aedes (Aedes aegypti and Aedes albopictus). The abundance of mosquitoes and, as a result, the prevalence of Zika virus infections are common in areas which have high precipitation, high temperature, and high population density.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
       <link>https://youngstats.github.io/post/2020/10/05/par_diggle/</link>
@@ -24,34 +15,6 @@
       <guid>https://youngstats.github.io/post/2020/10/05/par_diggle/</guid>
       <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.
 Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
-    </item>
-    
-    <item>
-      <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
-      <link>https://youngstats.github.io/post/2020/10/04/mozgunov/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/04/mozgunov/</guid>
-      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
-A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
-    </item>
-    
-    <item>
-      <title>Modeling COVID-19 pandemic using Bayesian analysis with application to Slovene data</title>
-      <link>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</guid>
-      <description>As the COVID-19 pandemic spread across the world at the beginning of 2020, statistically modeling its development became of big interest. The main focus of this work was to analyze the spread of the disease and its main characteristics for Slovenia using publicly available COVID-19 data. Our work takes a Bayesian semiparametric approach using which we estimate some of the main measures of interest for the pandemic (e.g. the reproduction number $R_{t}$) and give accurate forecasts of important indicators for the following days.</description>
-    </item>
-    
-    <item>
-      <title>The scientific collaboration of researchers and organizations in Slovenia</title>
-      <link>https://youngstats.github.io/post/2020/10/01/cugmas/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2020/10/01/cugmas/</guid>
-      <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
     </item>
     
   </channel>
