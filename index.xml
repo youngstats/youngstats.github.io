@@ -543,7 +543,7 @@ stochastic processes will present their contributions on these topics.&lt;/p&gt;
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.almostsurelymario.com/&#34;&gt;Mario Ayala&lt;/a&gt;, Centre INRAE
-PACA, Avignon, France. “Condensation of SIP particles and sticky Brownian motion”&lt;/li&gt;
+PACA, Avignon, France. “Condensation of SIP particles and sticky Brownian motion”. &lt;embed&gt; Powerpoint &lt;a href=&#34;https://drive.google.com/file/d/1mHywzFD00kAW2ttagf4zNsEIILtUynWI/view&#34;&gt;presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;In this talk we will first introduce the symmetric inclusion process (SIP) in the condensation regime. We will describe how to obtain, with the help of self-duality, an explicit scaling for the variance of the density field in this regime, when initially started from a homogeneous product measure. This provides relevant new information on the coarsening dynamics of condensing interacting particle systems on the infinite lattice. We obtain our result by proving convergence to sticky Brownian motion for the difference of positions of two SIP particles in the sense of Mosco convergence of Dirichlet forms.&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -558,7 +558,7 @@ University of Southern California, USA. “Extremal particles for sticky Brownia
 &lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;Sticky Brownian motions behave as independent Brownian motions when they are separated and interact when they touch, so that the coincidence time has positive Lebesgue measure with positive probability. For a specific sticky interaction we will show that as time and the number of particles are simultaneously sent to infinity, The fluctuations of the extremal particle are given by the GUE Tracy-Widom distribution. The proof involves realizing a specific sticky interaction as the limit of an exactly solvable statistical mechanics model, the Beta random walk in random environment, and using this to derive exact formulas. &lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.en.math.lmu.de/personen/mitarbeiter/swagner/index.html&#34;&gt;Stefan Wagner&lt;/a&gt;,
-Ludwig-Maximilians University Munich, Germany. “The Inclusion Process on General Spaces: Reversible Measures, Consistency and Self-Duality”&lt;/li&gt;
+Ludwig-Maximilians University Munich, Germany. “The Inclusion Process on General Spaces: Reversible Measures, Consistency and Self-Duality”. &lt;embed&gt; Powerpoint &lt;a href=&#34;https://drive.google.com/file/d/1aHTNJcheA-x_1do7Q790wMZ61E9hR8W-/view&#34;&gt;presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;The symmetric inclusion process is a well-known process describing particles hopping on a discrete set. In this talk, we want to define an analogue dynamics on an arbitrary non-discrete space (e.g. &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^d\)&lt;/span&gt;). We consider whether properties like the existence of a reversible measure, consistency and self-duality can be transferred. Regarding the last point, we obtain a general machinery that can also be applied to other consistent particle systems (e.g. sticky Brownian motion) on general spaces.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Discussant:&lt;/p&gt;
