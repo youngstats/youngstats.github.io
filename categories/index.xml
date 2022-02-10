@@ -8,11 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bayesian-statistics-computation</title>
-      <link>https://youngstats.github.io/categories/bayesian-statistics-computation/</link>
+      <title>bayesian-statistics</title>
+      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/bayesian-statistics-computation/</guid>
+      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computation</title>
+      <link>https://youngstats.github.io/categories/computation/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/computation/</guid>
       <description></description>
     </item>
     
@@ -40,15 +49,6 @@
       <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/econometrics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayesian-statistics</title>
-      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
       <description></description>
     </item>
     
