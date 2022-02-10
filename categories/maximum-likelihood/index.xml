@@ -17,6 +17,16 @@
     </item>
     
     <item>
+      <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
+      <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
+      <description>Novel Algebraic Approaches to Maximum Likelihood Estimation
+The seventh “One World webinar” organized by YoungStatS will take placeon November 17th, 2021. Maximum likelihood estimation (MLE) is a tool indata analysis to estimate a probability distribution or density in astatistical model for given data. In recent decades, algebraic andcombinatorial tools have proved useful for computing MLEs andunderstanding the geometry of the MLE problem which in recent years ledto new and interesting results in combinatorics and algebraic geometry.</description>
+    </item>
+    
+    <item>
       <title>Higher Order Targeted Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>

@@ -6,7 +6,19 @@
     <description>Recent content in biostatistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/biostatistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/biostatistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent Advances in COVID-19 modelling</title>
+      <link>https://youngstats.github.io/post/2021/02/04/covid-webinar/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/02/04/covid-webinar/</guid>
+      <description>YoungStatS project of Young Statisticians Europe, FENStatS, proudly announces our first One World YoungStatS webinar. With four young scholars, we will discuss Recent Advances in the Modelling of COVID-19, presenting novel statistical models, interesting advancements and applications of mechanistic models, as well as their combinations.
+When: Wednesday, February 10th, 16:00 (Central European Time).
+Speakers:
+ Cécile Tran Kiem (Institute Pasteur, Paris, France) Pierfrancesco Alaimo Di Loro and Marco Mingione (StatGroup-19, Italy) Kevin Kunzmann (University of Cambridge, United Kingdom)  Discussant:</description>
+    </item>
+    
     <item>
       <title>Making an Online Risk Calculator</title>
       <link>https://youngstats.github.io/post/2020/11/11/online-risk-calc/</link>

@@ -35,5 +35,27 @@
 A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
     </item>
     
+    <item>
+      <title>Recent Advances in Functional Data Analysis</title>
+      <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/29/fda-webinar/</guid>
+      <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.
+When &amp;amp; Where:
+  Wednesday, June 30th, 16:30 CEST</description>
+    </item>
+    
+    <item>
+      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
+      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
+      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
+When &amp;amp; Where:
+ Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
+    </item>
+    
   </channel>
 </rss>
