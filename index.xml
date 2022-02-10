@@ -710,13 +710,13 @@ activation times &lt;span class=&#34;math inline&#34;&gt;\((\tau_\mathbf{i})_{\m
 general &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt; and general directed graphs, one can ask whether solutions
 exist and whether they are unique in distribution or perhaps even almost
 surely.&lt;/p&gt;
-&lt;p&gt;Frozen precolation can also be defined on undirected graphs. Just
+&lt;p&gt;Frozen percolation can also be defined on undirected graphs. Just
 replace each undirected edge by two directed edges whose barriers are
 activated at the same time. The case &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt; is of special interest,
 since in this case clusters freeze as soon as they reach infinite size,
 which leads to self-organised criticality. For this reason, in the year
 2000 David Aldous introduced frozen percolation (Aldous, 2000). He proved that
-the frozen percolation equation (FPE) has a solution on the undriected
+the frozen percolation equation (FPE) has a solution on the undirected
 3-regular tree, and that under natural assumptions this solution is
 unique in law. On the other hand, Itai Benjamini and Oded Schramm
 observed that (FPE) does not have a solution on the two-dimensional
@@ -739,7 +739,7 @@ solves the &lt;em&gt;Recursive Distributional Equation&lt;/em&gt;
 Y_{[1]}\wedge Y_{[2]}\quad&amp;amp;\mbox{if }\tau_\varnothing&amp;lt;Y_{[1]}\wedge Y_{[2]},\\[5pt]
 \infty\quad&amp;amp;\mbox{otherwise,}
 \end{array}\right.\quad({\rm RDE}),\]&lt;/span&gt; where, because the solution to
-(FPE) saties the natural conditions, &lt;span class=&#34;math inline&#34;&gt;\(Y_{[1]},Y_{[2]}\)&lt;/span&gt; are independent
+(FPE) satisfies the natural conditions, &lt;span class=&#34;math inline&#34;&gt;\(Y_{[1]},Y_{[2]}\)&lt;/span&gt; are independent
 of each other and equally distributed with &lt;span class=&#34;math inline&#34;&gt;\(Y_{[\varnothing]}\)&lt;/span&gt;, and
 &lt;span class=&#34;math inline&#34;&gt;\(\tau_\varnothing\)&lt;/span&gt; is an independent Unif&lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; distributed random
 variable.&lt;/p&gt;
@@ -841,10 +841,10 @@ graphs, including &lt;span class=&#34;math inline&#34;&gt;\({\mathbb Z}^d\)&lt;/
 &lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level2 thebibliography&#34;&gt;
 &lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;D.J. Aldous and A. Bandyopadhyay. A survey of max-type recursive
-distributional equations. &lt;em&gt;Ann. Appl. Probab.&lt;/em&gt; 15(2) (2005), 1047–1110.&lt;/p&gt;
 &lt;p&gt;D.J. Aldous. The percolation process on a tree where infinite clusters
 are frozen. &lt;em&gt;Math. Proc. Cambridge Philos. Soc.&lt;/em&gt; 128 (2000), 465–477.&lt;/p&gt;
+&lt;p&gt;D.J. Aldous and A. Bandyopadhyay. A survey of max-type recursive
+distributional equations. &lt;em&gt;Ann. Appl. Probab.&lt;/em&gt; 15(2) (2005), 1047–1110.&lt;/p&gt;
 &lt;p&gt;A. Bandyopadhyay. Bivariate uniqueness and endogeny for recursive
 distributional equations: two examples. Preprint (2004),
 arXiv:math/0407175.&lt;/p&gt;
