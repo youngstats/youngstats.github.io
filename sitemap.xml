@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/</loc>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</loc>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/bayesian-computation/</loc>
     <lastmod>2022-02-08T00:00:00+00:00</lastmod>
@@ -11,16 +23,7 @@
     <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
     <lastmod>2022-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2022-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</loc>
-    <lastmod>2022-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
     <lastmod>2022-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/causal-inference/</loc>
