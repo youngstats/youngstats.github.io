@@ -8,6 +8,24 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>bayesian-statistics</title>
+      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>structural-equations</title>
+      <link>https://youngstats.github.io/categories/structural-equations/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/structural-equations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>webinars</title>
       <link>https://youngstats.github.io/categories/webinars/</link>
       <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
@@ -22,15 +40,6 @@
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/bayesian-computation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayesian-statistics</title>
-      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/robust-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>maximum-likelihood</title>
-      <link>https://youngstats.github.io/categories/maximum-likelihood/</link>
-      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/maximum-likelihood/</guid>
       <description></description>
     </item>
     
