@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
+      <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</guid>
+      <description>Theory and Methods for Inference in Multi-armed Bandit Problems
+Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
+    </item>
+    
     <item>
       <title>Selection of Priors in Bayesian Structural Equation Modeling</title>
       <link>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</link>
@@ -93,16 +103,6 @@ These are many situations, ranging in complexity and importance, where one would
       
       <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
       <description>In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
-    </item>
-    
-    <item>
-      <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
-      <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
-      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
-      <description>Novel Algebraic Approaches to Maximum Likelihood Estimation
-The seventh “One World webinar” organized by YoungStatS will take placeon November 17th, 2021. Maximum likelihood estimation (MLE) is a tool indata analysis to estimate a probability distribution or density in astatistical model for given data. In recent decades, algebraic andcombinatorial tools have proved useful for computing MLEs andunderstanding the geometry of the MLE problem which in recent years ledto new and interesting results in combinatorics and algebraic geometry.</description>
     </item>
     
   </channel>

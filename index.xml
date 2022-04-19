@@ -6,7 +6,42 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
+      <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Theory and Methods for Inference in Multi-armed Bandit Problems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-04-19-theory-and-methods-for-inference-in-multi-armed-bandit-problems_files/Slika1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference. It is now recognized that traditional inference methods are typically not valid when used in MAB-collected data, leading to considerable biases in classical estimators and other relevant issues in hypothesis testing problems.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wednesday, May 11th, 7:00 PT / 10:00 EST / 16:00 CET.&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSexdudNXI46npEnpQZ0IwmcUNejJ8wSeZBjw1lNU4CftaFwUA/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/anandkalvit&#34;&gt;Anand Kalvit&lt;/a&gt;, Columbia University
+Title: “A Closer Look at the Worst-case Behavior of Multi-armed Bandit Algorithms”&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stat.cmu.edu/~aramdas/&#34;&gt;Aaditya Ramdas&lt;/a&gt;, Carnegie Mellon University
+Title: “Safe, Anytime-Valid Inference in the face of 3 sources of bias in bandit data analysis”&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ruohanzhan.github.io/&#34;&gt;Rouhan Zhan&lt;/a&gt;, Stanford University
+Title: “Inference on Adaptively Collected Data”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. &lt;a href=&#34;https://www0.gsb.columbia.edu/faculty/azeevi/&#34;&gt;Assaf Zeevi&lt;/a&gt;, Columbia University&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Selection of Priors in Bayesian Structural Equation Modeling</title>
       <link>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</link>
@@ -891,54 +926,6 @@ and nonendogeny. Preprint (2021), arXiv:2103.14408.&lt;/p&gt;
 &lt;p&gt;B. Ráth, J.M. Swart, and T. Terpai. Frozen percolation on the binary
 tree is nonendogenous. &lt;em&gt;Ann. Probab.&lt;/em&gt; 49(5) (2021), 2272–2316.&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
-      <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
-      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Novel Algebraic Approaches to Maximum Likelihood Estimation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-10-04-novel-algebraic-approaches-to-maximum-likelihood-estimation_files/nihat_ay_v2.png&#34; height=&#34;300&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The seventh “One World webinar” organized by YoungStatS will take place
-on November 17th, 2021. Maximum likelihood estimation (MLE) is a tool in
-data analysis to estimate a probability distribution or density in a
-statistical model for given data. In recent decades, algebraic and
-combinatorial tools have proved useful for computing MLEs and
-understanding the geometry of the MLE problem which in recent years led
-to new and interesting results in combinatorics and algebraic geometry.
-Selected young researchers active in the area of algebraic statistics
-will present their recent contributions on this topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, November 17th, 18:00 Central European Time&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/1rfiEa9RWDBdT_UEHspBuOCIEwsq5UzDUqKbtGhV38Oo&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://janeivycoons.wordpress.ncsu.edu/&#34;&gt;Jane Ivy Coons&lt;/a&gt;,
-St John’s College, University of Oxford, United Kingdom&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/aidamaraj/&#34;&gt;Aida Maraj&lt;/a&gt;, University
-of Michigan – Ann Arbor, USA&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.maths.ox.ac.uk/people/anna.seigal&#34;&gt;Anna Seigal&lt;/a&gt;,
-Harvard University, USA&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.luke-amendola.appspot.com/&#34;&gt;Carlos Améndola&lt;/a&gt;, Technical University of Munich, Germany&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
-Europe initiative (FENStatS) supported by the Bernoulli Society for
-Mathematical Statistics and Probability and the Institute of
-Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=RQ61D6PFZUQ&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

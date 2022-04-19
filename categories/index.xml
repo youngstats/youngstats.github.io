@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>causal-inference</title>
+      <link>https://youngstats.github.io/categories/causal-inference/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/causal-inference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bayesian-statistics</title>
       <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
@@ -26,29 +53,11 @@
     </item>
     
     <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bayesian-computation</title>
       <link>https://youngstats.github.io/categories/bayesian-computation/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/bayesian-computation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>causal-inference</title>
-      <link>https://youngstats.github.io/categories/causal-inference/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/causal-inference/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/estimation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>robust-statistics</title>
-      <link>https://youngstats.github.io/categories/robust-statistics/</link>
-      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/robust-statistics/</guid>
       <description></description>
     </item>
     
