@@ -6,7 +6,20 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
+      <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
+      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations
+The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
+On the webinar, selected younger scholars will present their recent works on the topic.
+When &amp;amp; Where:
+Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
+    </item>
+    
     <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
@@ -96,17 +109,6 @@ The eighth “One World webinar” organized by YoungStatS will take placeon De
       <description>The fifth “One World webinar” organized by YoungStatS will take place on September 15th, 2021. Selected young European researchers active in the areas of probability and machine learning will present their recent contributions. The webinar is joint cooperation between the Young Researchers Committee of the Bernoulli Society and the YoungStatS project.
 When &amp;amp; Where:
 Wednesday, September 15th, 17:00 CESTOnline, via Zoom. The registration form is available here.</description>
-    </item>
-    
-    <item>
-      <title>Recent Advances in Functional Data Analysis</title>
-      <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/29/fda-webinar/</guid>
-      <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.
-When &amp;amp; Where:
-  Wednesday, June 30th, 16:30 CEST</description>
     </item>
     
   </channel>

@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>probability</title>
+      <link>https://youngstats.github.io/categories/probability/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-processes</title>
+      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>causal-inference</title>
       <link>https://youngstats.github.io/categories/causal-inference/</link>
@@ -22,15 +49,6 @@
       <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic-processes</title>
-      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
-      <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>estimation</title>
-      <link>https://youngstats.github.io/categories/estimation/</link>
-      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/estimation/</guid>
       <description></description>
     </item>
     

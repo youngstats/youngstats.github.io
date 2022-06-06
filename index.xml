@@ -6,7 +6,38 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
+      <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
+      <description>
+&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-06-03-regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations_files/cover_image_reg_by_noise_spde.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.&lt;/p&gt;
+&lt;p&gt;On the webinar, selected younger scholars will present their recent works on the topic.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdA_UmGknYO3Oo_yqVM80SqgnIZUgEyvINzdOMTI0BzhCMdPw/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mi.fu-berlin.de/math/groups/stoch/members/Doktoranden/kremp.html&#34;&gt;Helena Kremp&lt;/a&gt;, Freie Universität Berlin, Germany&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.iam.uni-bonn.de/users/galeati/home&#34;&gt;Lucio Galeati&lt;/a&gt;, University of Bonn, Germany&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.mics.centralesupelec.fr/en/teammics&#34;&gt;Lukas Anzeletti&lt;/a&gt;, Université Paris-Saclay, France&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://math.univ-lyon1.fr/~honore/index.html&#34;&gt;Igor Honoré&lt;/a&gt;, Université Claude Bernard Lyon 1, France&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant: &lt;a href=&#34;https://www.wias-berlin.de/people/butkovsky/&#34;&gt;Oleg Butkovsky&lt;/a&gt;, Weierstrass Institute for Applied Analysis and Stochastics, Germany&lt;/p&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
@@ -716,212 +747,6 @@ One can then regress &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}^{cace}
 &lt;h2&gt;Authors’ biography&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-06-heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach_files/PhotoHandler%20(Custom).jpeg&#34; height=&#34;70&#34; /&gt;
 &lt;a href=&#34;https://www.falcobargaglistoffi.com/&#34;&gt;&lt;strong&gt;Falco J. Bargagli Stoffi&lt;/strong&gt;&lt;/a&gt; is a Postdoctoral Research Fellow at the Harvard T.H. Chan School of Public Health.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Frozen percolation on the binary tree is nonendogenous</title>
-      <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;In frozen percolation on a graph, there is a barrier located on each
-edge. Initially, the barriers are closed and they are assigned
-i.i.d. uniformly distributed activation times. At its activation time,
-a barrier opens, provided it is not frozen. At a fixed set &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt; of
-freezing times, all barriers that percolate are frozen. In particular,
-if &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt; is the whole unit interval, this means that clusters stop
-growing as soon as they reach infinite size. Aldous (2000) showed that
-such a process can be constructed on the infinite 3-regular tree. He
-also proved uniqueness in law under natural conditions and asked
-whether almost sure uniqueness holds. We answer this question
-negatively. For general sets of freezing times, the answer turns out
-to depend subtly on &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt;.&lt;/p&gt;
-&lt;div id=&#34;definition-of-the-model&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;Definition of the model&lt;/h2&gt;
-&lt;p&gt;To construct frozen percolation on a directed graph, we place a
-&lt;em&gt;barrier&lt;/em&gt; on each directed edge. These barriers can be in three states:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-66.png&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We assign i.i.d. Unif&lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; &lt;em&gt;activation times&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)&lt;/span&gt; to the barriers
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{i}\in{\mathbb B}\)&lt;/span&gt;, and we fix a closed set &lt;span class=&#34;math inline&#34;&gt;\(\Xi\subset[0,1]\)&lt;/span&gt; of
-&lt;em&gt;freezing times&lt;/em&gt;. The states of barriers evolve according to the
-following informal description:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Initially, all barriers are closed.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;At its activation time, a barrier opens, provided it is not frozen.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;At each freezing time &lt;span class=&#34;math inline&#34;&gt;\(t\in\Xi\)&lt;/span&gt;, all closed barriers that percolate
-are frozen.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Here, we say that a barrier percolates if there starts an infinite open
-path just above it:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-71.png&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;More formally, we set &lt;span class=&#34;math display&#34;&gt;\[\begin{array}{r@{\,}c@{\,}l}
-\displaystyle{\mathbb A}_t&amp;amp;:=&amp;amp;\displaystyle\big\{\mathbf{i}\in{\mathbb B}:\tau_\mathbf{i}\leq t\big\},\\[5pt]
-\displaystyle{\mathbb F}&amp;amp;:=&amp;amp;\displaystyle\big\{\mathbf{i}\in{\mathbb B}:\mathbf{i}\mbox{ is frozen at the final time }1\big\}.
-\end{array}\]&lt;/span&gt; Then &lt;span class=&#34;math inline&#34;&gt;\({\mathbb A}_t\backslash{\mathbb F}\)&lt;/span&gt; is the set of
-barriers that are open at time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;. We write
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{i}\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty\)&lt;/span&gt;
-if &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{i}\)&lt;/span&gt; percolates at time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;. Then the &lt;em&gt;Frozen Percolation
-Equation&lt;/em&gt; reads:
-&lt;span class=&#34;math display&#34;&gt;\[{\mathbb F}=\big\{\mathbf{i}\in{\mathbb B}:\mathbf{i}\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty
-\mbox{ for some }t\in(0,\tau_\mathbf{i}]\cap\Xi\big\}\qquad({\rm FPE}).\]&lt;/span&gt;
-It is clear from our informal description that if &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt; is finite, then
-(FPE) has a solution &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}\)&lt;/span&gt;, which is a.s. unique given the
-activation times &lt;span class=&#34;math inline&#34;&gt;\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)&lt;/span&gt;. For
-general &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt; and general directed graphs, one can ask whether solutions
-exist and whether they are unique in distribution or perhaps even almost
-surely.&lt;/p&gt;
-&lt;p&gt;Frozen percolation can also be defined on undirected graphs. Just
-replace each undirected edge by two directed edges whose barriers are
-activated at the same time. The case &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt; is of special interest,
-since in this case clusters freeze as soon as they reach infinite size,
-which leads to self-organised criticality. For this reason, in the year
-2000 David Aldous introduced frozen percolation (Aldous, 2000). He proved that
-the frozen percolation equation (FPE) has a solution on the undirected
-3-regular tree, and that under natural assumptions this solution is
-unique in law. On the other hand, Itai Benjamini and Oded Schramm
-observed that (FPE) does not have a solution on the two-dimensional
-integer lattice. A sketch of their proof can be found in Section 3 of
-(van den Berg and Tóth, 2001).&lt;/p&gt;
-&lt;p&gt;If from the directed binary tree &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;, we remove a finite subtree &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;
-containing the root, then &lt;span class=&#34;math inline&#34;&gt;\(T\backslash U\)&lt;/span&gt; consists of finitely many
-disjoint subtrees &lt;span class=&#34;math inline&#34;&gt;\(T_1,\ldots,T_n\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-70.png&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We say that a solution &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}\)&lt;/span&gt; satisfies the &lt;em&gt;natural conditions&lt;/em&gt;
-if its restrictions to &lt;span class=&#34;math inline&#34;&gt;\(T_1,\ldots,T_n\)&lt;/span&gt; are i.i.d., equally distributed
-with the process on the whole tree &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;, and independent of the
-activation times in &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;. We label barriers in the obvious way and let
-&lt;span class=&#34;math inline&#34;&gt;\([\mathbf{i}]\)&lt;/span&gt; denote the vertex just below &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{i}\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-68.png&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;It is easy to see that the freezing time of the root
-&lt;span class=&#34;math display&#34;&gt;\[Y_{[\varnothing]}:=\inf\big\{t\in\Xi:[\varnothing]\overset{{{\mathbb A}_t\backslash{\mathbb F}}}{\longrightarrow}\infty\big\}\]&lt;/span&gt;
-solves the &lt;em&gt;Recursive Distributional Equation&lt;/em&gt;
-&lt;span class=&#34;math display&#34;&gt;\[Y_{[\varnothing]}\stackrel{\scriptstyle{\rm d}}{=}\gamma(\tau_\varnothing,Y_{[1]},Y_{[2]}):=\left\{\begin{array}{ll}
-Y_{[1]}\wedge Y_{[2]}\quad&amp;amp;\mbox{if }\tau_\varnothing&amp;lt;Y_{[1]}\wedge Y_{[2]},\\[5pt]
-\infty\quad&amp;amp;\mbox{otherwise,}
-\end{array}\right.\quad({\rm RDE}),\]&lt;/span&gt; where, because the solution to
-(FPE) satisfies the natural conditions, &lt;span class=&#34;math inline&#34;&gt;\(Y_{[1]},Y_{[2]}\)&lt;/span&gt; are independent
-of each other and equally distributed with &lt;span class=&#34;math inline&#34;&gt;\(Y_{[\varnothing]}\)&lt;/span&gt;, and
-&lt;span class=&#34;math inline&#34;&gt;\(\tau_\varnothing\)&lt;/span&gt; is an independent Unif&lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; distributed random
-variable.&lt;/p&gt;
-&lt;p&gt;The following theorem is a free formulation of of Theorem 1 and Lemma 5
-from (Ráth, Swart and Szőke, 2021), which using Proposition 42 of (Ráth, Swart and Terpai, 2021) are translated
-into the present setting.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For each closed &lt;span class=&#34;math inline&#34;&gt;\(\Xi\subset[0,1]\)&lt;/span&gt;, there exists a unique
-solution to (RDE) that yields a solution &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}\)&lt;/span&gt; to (FPE). In
-particular, for each closed &lt;span class=&#34;math inline&#34;&gt;\(\Xi\subset[0,1]\)&lt;/span&gt;, (FPE) has a solution
-that satisfies the natural conditions, and the joint law of
-&lt;span class=&#34;math inline&#34;&gt;\(\big(\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}},{\mathbb F}\big)\)&lt;/span&gt; is
-uniquely determined.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;For the case &lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt;, this theorem was (basically) already proved in
-(Aldous, 2000) by Aldous, who showed that in this case the freezing time of
-the root has the law
-&lt;span class=&#34;math display&#34;&gt;\[{\mathbb P}\big[Y_{[\varnothing]}&amp;gt;y\big]=1\wedge\frac{1}{2y}\qquad\big(y\in[0,1]\big),\]&lt;/span&gt;
-with
-&lt;span class=&#34;math inline&#34;&gt;\({\mathbb P}\big[Y_{[\varnothing]}=\infty\big]={\textstyle\frac{{1}}{{2}}}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;To study almost sure uniqueness in this and related problems, David
-Aldous and Antar Bandyopadhyay (Aldous and Bandyopadhyay, 2005) developed a general theory of
-&lt;em&gt;Recursive Tree Processes&lt;/em&gt;. In the general setting, almost sure
-uniqueness is called &lt;em&gt;endogeny&lt;/em&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F},{\mathbb F}&amp;#39;\)&lt;/span&gt; be
-solutions to (FPE) that satisfy the natural conditions and are
-conditionally independent given
-&lt;span class=&#34;math inline&#34;&gt;\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)&lt;/span&gt;. Then
-&lt;span class=&#34;math inline&#34;&gt;\((Y_{[\varnothing]},Y&amp;#39;_{[\varnothing]})\)&lt;/span&gt; solves the &lt;em&gt;bivariate RDE&lt;/em&gt;
-&lt;span class=&#34;math display&#34;&gt;\[(Y_{[\varnothing]},Y&amp;#39;_{[\varnothing]})\stackrel{\scriptstyle{\rm d}}{=}
-\big(\gamma(\tau_\varnothing,Y_{[1]},Y_{[2]}),\gamma(\tau_\varnothing,Y&amp;#39;_{[1]},Y&amp;#39;_{[2]})\big),\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; is the function from (RDE). In Theorem 11 of (Aldous and Bandyopadhyay, 2005), it
-is proved that &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}={\mathbb F}&amp;#39;\)&lt;/span&gt; a.s. if and only if each
-solution to the bivariate RDE with the right marginals is concentrated
-on the diagonal. After a failed proof of endogeny that turned out to
-contain an error (Bandyopadhyay, 2004), Antar Bandyopadhyay ran numerical
-calculations that strongly suggested almost sure uniqueness does not
-hold, but for 15 years nobody was able to prove this.&lt;/p&gt;
-&lt;p&gt;We discovered the problem becomes easier if we place a geometrically
-distributed number of barriers with mean one on each edge.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-67.png&#34; style=&#34;width:60.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We call this the &lt;em&gt;Marked Binary Branching Tree&lt;/em&gt; (MBBT). The MBBT
-naturally arises as the near-critical scaling limit of percolation on
-regular trees. Since it is itself a scaling limit, the MBBT has a
-natural scaling property. For fixed &lt;span class=&#34;math inline&#34;&gt;\(r\in[0,1]\)&lt;/span&gt;, the &lt;em&gt;pruned&lt;/em&gt; MBBT is
-obtained by removing all parts of the tree that do not percolate at time
-&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt; even in the absence of freezing. For the MBBT,
-&lt;span class=&#34;math inline&#34;&gt;\({\mathbb P}\big[[\varnothing]\overset{{{\mathbb A}_r}}{\longrightarrow}\infty\big]=r\)&lt;/span&gt;
-and conditional on this event, the pruned tree is equally distributed
-with a scaled version of the original tree.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-11-25-frozen-percolation-on-the-binary-tree-is-nonendogenous_files/screenshot-69.png&#34; style=&#34;width:80.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The bivariate RDE gives an integral equation for
-&lt;span class=&#34;math display&#34;&gt;\[F(s,t):={\mathbb P}\big[Y_{[\varnothing]}\leq s,\ Y&amp;#39;_{[\varnothing]}\leq t\big].\]&lt;/span&gt;
-For the MBBT, scaling gives &lt;span class=&#34;math inline&#34;&gt;\(F(rs,rt)=rF(s,t)\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((r,s,t\in[0,1])\)&lt;/span&gt;. The
-bivariate RDE now reduces to an integral equation for a function of one
-variable, which is easier to solve than the original bivariate RDE for
-the binary tree. However, as demonstrated in Proposition 42 of (Ráth, Swart and Terpai, 2021),
-frozen percolation on the binary tree and on the MBBT can be translated
-into each other. The basic idea is that several barriers on one oriented
-edge can be replaced by a single effective barrier, whose activation
-time is the maximum of the activation times of the individual barriers.
-As a result, we were able to obtain Theorem 3 of (Ráth, Swart and Terpai, 2021), which says:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For frozen percolation on the binary tree with
-&lt;span class=&#34;math inline&#34;&gt;\(\Xi=[0,1]\)&lt;/span&gt;, solutions to (FPE) are not almost surely unique.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In (Ráth, Swart and Szőke, 2021) we investigated almost sure uniqueness for frozen
-percolation on the MBBT for sets of freezing times of the form
-&lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta:=\{\theta^n:n\geq 0\}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;\theta&amp;lt;1\)&lt;/span&gt;. These sets behave
-well under scaling, so we were able to use the same techniques as in
-(Ráth, Swart and Terpai, 2021). To translate this back from the MBBT into the setting of the
-binary tree, one has to replace &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta\)&lt;/span&gt; by its image under the map
-&lt;span class=&#34;math inline&#34;&gt;\(H(t):=1/(2-t)\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((t\in[0,1])\)&lt;/span&gt;. Theorem 9 of (Ráth, Swart and Szőke, 2021) says:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; For frozen percolation on the MBBT and sets of freezing
-times of the form &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta\)&lt;/span&gt;, there exists a parameter
-&lt;span class=&#34;math inline&#34;&gt;\(\theta^\ast=0.636\ldots\)&lt;/span&gt; such that, if &lt;span class=&#34;math inline&#34;&gt;\({\mathbb F},{\mathbb F}&amp;#39;\)&lt;/span&gt; are
-solutions to (FPE) for &lt;span class=&#34;math inline&#34;&gt;\(\Xi_\theta\)&lt;/span&gt;, that satisfy the natural
-conditions and are conditionally independent given
-&lt;span class=&#34;math inline&#34;&gt;\((\tau_\mathbf{i})_{\mathbf{i}\in{\mathbb B}}\)&lt;/span&gt;, then
-&lt;span class=&#34;math inline&#34;&gt;\({\mathbb F}={\mathbb F}&amp;#39;\)&lt;/span&gt; a.s. if and only if
-&lt;span class=&#34;math inline&#34;&gt;\(\theta\leq\theta^\ast\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We have an explicit formula for the parameter &lt;span class=&#34;math inline&#34;&gt;\(\theta^\ast\)&lt;/span&gt; (see Lemma 8
-in (Ráth, Swart and Szőke, 2021)), which is rather complicated. The result shows that in
-general, one cannot hope to settle the question of almost sure
-uniqueness by “soft” arguments. Instead, any proof will always require
-some hard calculations.&lt;/p&gt;
-&lt;p&gt;A number of open problems remain, notably:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;We don’t know if distributional or almost sure uniqueness still hold
-if we drop the natural conditions.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Almost sure (non-)uniqueness is open for &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;-regular directed trees
-with &lt;span class=&#34;math inline&#34;&gt;\(n\geq 3\)&lt;/span&gt; and for more general sets of freezing times &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt;.
-The technical challenge is to replace perfect scale invariance in
-the proofs by approximate scale invariance near the critical point.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Existence and/or uniqueness of solutions to (FPE) on more general
-graphs, including &lt;span class=&#34;math inline&#34;&gt;\({\mathbb Z}^d\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(d\geq 3\)&lt;/span&gt;, is wide open.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 thebibliography&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;D.J. Aldous. The percolation process on a tree where infinite clusters
-are frozen. &lt;em&gt;Math. Proc. Cambridge Philos. Soc.&lt;/em&gt; 128 (2000), 465–477.&lt;/p&gt;
-&lt;p&gt;D.J. Aldous and A. Bandyopadhyay. A survey of max-type recursive
-distributional equations. &lt;em&gt;Ann. Appl. Probab.&lt;/em&gt; 15(2) (2005), 1047–1110.&lt;/p&gt;
-&lt;p&gt;A. Bandyopadhyay. Bivariate uniqueness and endogeny for recursive
-distributional equations: two examples. Preprint (2004),
-arXiv:math/0407175.&lt;/p&gt;
-&lt;p&gt;J. van den Berg, B. Tóth. A signal-recovery system: asymptotic
-properties, and construction of an infinite-volume process. &lt;em&gt;Stochastic
-Process. Appl.&lt;/em&gt; 96(2) (2001), 177–190.&lt;/p&gt;
-&lt;p&gt;B. Ráth, J.M. Swart, and M. Szőke. A phase transition between endogeny
-and nonendogeny. Preprint (2021), arXiv:2103.14408.&lt;/p&gt;
-&lt;p&gt;B. Ráth, J.M. Swart, and T. Terpai. Frozen percolation on the binary
-tree is nonendogenous. &lt;em&gt;Ann. Probab.&lt;/em&gt; 49(5) (2021), 2272–2316.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

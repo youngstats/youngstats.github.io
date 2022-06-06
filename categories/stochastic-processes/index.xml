@@ -6,7 +6,20 @@
     <description>Recent content in stochastic-processes on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
+      <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
+      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations
+The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
+On the webinar, selected younger scholars will present their recent works on the topic.
+When &amp;amp; Where:
+Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
+    </item>
+    
     <item>
       <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
       <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>

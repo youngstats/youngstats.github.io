@@ -6,7 +6,20 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
+      <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
+      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations
+The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
+On the webinar, selected younger scholars will present their recent works on the topic.
+When &amp;amp; Where:
+Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
+    </item>
+    
     <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
@@ -94,15 +107,6 @@ The ninth “One World webinar” organized by YoungStatS will take place onFeb
       <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
       <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
 These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
-    </item>
-    
-    <item>
-      <title>Frozen percolation on the binary tree is nonendogenous</title>
-      <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
-      <description>In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
     </item>
     
   </channel>
