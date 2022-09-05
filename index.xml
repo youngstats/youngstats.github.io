@@ -14,7 +14,6 @@
       
       <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
       <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations&lt;/strong&gt;&lt;/p&gt;
@@ -29,6 +28,10 @@
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.mi.fu-berlin.de/math/groups/stoch/members/Doktoranden/kremp.html&#34;&gt;Helena Kremp&lt;/a&gt;, Freie Universität Berlin, Germany&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: Since the works by Delarue, Diel and Cannizzaro, Chouk (in the Brownian noise setting), and our previous work, the existence and uniqueness of solutions to the martingale problem associated to multidimensional SDEs with additive &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;-stable Lévy noise for &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; in (1, 2] and rough Besov drift of regularity &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; &amp;gt; (2-2&lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;)/3 is known. Motivated by the equivalence of probabilistic weak solutions to SDEs with bounded, measurable drift and solutions to the martingale problem, we define a (non-canonical) weak solution concept for singular Lévy diffusions, proving moreover equivalence to the martingale solution in both the Young (&lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; &amp;gt; (1-&lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;)/2), as well as in the rough regime (&lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; &amp;gt; (2-2&lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;)/3). This turns out to be highly non-trivial in the rough case and forces us to define certain rough stochastic sewing integrals involved. In particular, we show that the canonical weak solution concept (introduced also by Athreya, Butkovsky, Mytnik), which is well-posed in the Young case, yields non-uniqueness of solutions in the rough case. If time permits, we apply our theory to the Brox diffusion with Lévy noise and prove a homogenization result for singular diffusions in the periodic Besov drift setting.
+The talk is based on joint work with Nicolas Perkowski.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.iam.uni-bonn.de/users/galeati/home&#34;&gt;Lucio Galeati&lt;/a&gt;, University of Bonn, Germany&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.mics.centralesupelec.fr/en/teammics&#34;&gt;Lukas Anzeletti&lt;/a&gt;, Université Paris-Saclay, France&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://math.univ-lyon1.fr/~honore/index.html&#34;&gt;Igor Honoré&lt;/a&gt;, Université Claude Bernard Lyon 1, France&lt;/li&gt;
