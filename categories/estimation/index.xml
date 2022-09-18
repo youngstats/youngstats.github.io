@@ -6,7 +6,17 @@
     <description>Recent content in estimation on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/estimation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/estimation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minimax Estimation and Identity Testing of Markov Chains</title>
+      <link>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</guid>
+      <description>We briefly review the two classical problems of distribution estimationand identity testing (in the context of property testing), then proposeto extend them to a Markovian setting. We will see that the samplecomplexity depends not only on the number of states, but also on thestationary and mixing properties of the chains.
+The distribution settingEstimation/Learning. A fundamental problem in statistics is toestimate a probability distribution from independent samples.</description>
+    </item>
+    
     <item>
       <title>Universal estimation with Maximum Mean Discrepancy (MMD)</title>
       <link>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</link>

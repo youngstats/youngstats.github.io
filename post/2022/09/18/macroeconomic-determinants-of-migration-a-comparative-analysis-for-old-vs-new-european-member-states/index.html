@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/economic-statistics">economic statistics</a>
+  
+     &hercon; <a href="/categories/applied-statistics">applied statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</span></h1>
+
+  
+  <h3 class="author">Smaranda Cimpoeru
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+<p><strong>Introduction</strong></p>
+<p>Migration is a multifaceted phenomenon including macro-, meso-, and micro-triggers that, when combined, decide an individual&rsquo;s final decision to migrate. Apart from being an essential component of population change, migration is also an important component of population estimates and labor market force estimations. Jennissen (2004) argues that the presence of migrant populations has a favorable impact on natural population growth since migrants&rsquo; age characteristics and fertility rates are often greater than those of the indigenous population. Furthermore, the migration problem is far more significant for population growth in European nations, which are generally seeing a drop in natural population increase. In this environment, it&rsquo;s critical to identify and quantify the factors involved in the decision to migrate. Income disparities or income inequality, economic development, the tax system, the economic cycle, the availability of new job opportunities, unemployment, and other variables have been highlighted as factors affecting migration by several migration theories (Kumpikaite and Zickute, 2012). People migrate for a variety of reasons, including improved living conditions or an escape from adverse circumstances in their native country. This is the foundation of Lee&rsquo;s (1966) push and pull hypothesis, which is one of the primary neo-classical migration hypotheses. Individuals are influenced by supply-push forces to leave their home country, while demand-pull variables draw migrants to the destination country.</p>
+<p>Panel data analysis is the study of datasets in which entities are observed through time and allows for the management of missing variables without having to examine them. By examining changes in the dependent variable across time, one may rule out the impact of neglected factors that fluctuate between entities but remain constant over time. The basic premise is that if unobserved factors (such as those peculiar to nations) influence the dependent variable yet stay constant over time, the changes in the dependent variable must come from other sources.</p>
+<p>The notation for panel data will be the following: \begin{equation} (x_{1,it}, x_{2,it}, &hellip;, x_{k,it}, y_{it}), i=1,2, &hellip;, n; t=1,2, &hellip;, T \end{equation}</p>
+<p>where <em>i</em> is the subscript for the entity being observed (in our case study the country) and <em>t</em> is the subscript for the date at which the entity is observed (in our case study the year). Using these notations we would have data for the variables \begin{equation} x_1, x_2, &hellip;, x_k, y \end{equation}</p>
+<p><strong>The fixed effects approach</strong></p>
+<p>The fixed effects model would be written as:</p>
+<p>\begin{equation} y_{it}=\beta_1 x_{1,it} + \beta_2 x_{2,it} + \dots + \beta_k x_{k,it} + \alpha_i + u_{it} \end{equation}</p>
+<p>where:</p>
+<ul>
+<li><em>x</em> represents the value of regressor <em>j</em>, for entity <em>i</em> and time period <em>t</em>.</li>
+<li><em>beta</em>&rsquo;s represent the coefficients of the independent variables, that do not vary across individuals.</li>
+<li><em>alpha</em>&rsquo;s represent the entity specific intercepts.</li>
+</ul>
+<p><strong>The random effects approach</strong></p>
+<p>the unobserved variable specific to the individual entity is encompassed in the error term. The entities will have a common mean value for the intercept (let’s denote this with α) and the specific differences in the intercept values of each country would be reflected in an error term (denoted with ε).</p>
+<p>\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + \epsilon_i + u_{it} \end{equation}</p>
+<p>We will obtain a composite error term, which is composed of ε, the individual (cross section) specific error <em>u</em> and a combined cross section and time series error:
+\begin{equation} w_{it}=\epsilon_i + u_{it} \end{equation}</p>
+<p>Thus substituting both equations we obtain:
+\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + w_{it} \end{equation}</p>
+<p>The main benefit of using panel data related techniques is that individual heterogeneity of individual entities (countries) can be explicitly taken into account in panel data estimation; additionally, panel data offers &ldquo;more informative data, more variability, less collinearity, more degrees of freedom, and more efficiency&rdquo; by combining time series and cross-sectional observations (Baltagi, 2001).</p>
+<p><strong>The database involved</strong></p>
+<p>The Crude Rate of Net Migration plus adjustment is the dependent variable in both estimated models. It is calculated as the annual ratio of net migration to the average population. It is expressed in terms of 1000 people (of the average population). The difference between the total number of immigrants and the total number of emigrants is referred to as net migration; statistical adjustments refers to adjusting net migration by taking the difference between total population change and natural change; the indicator roughly covers the difference between inward and outward migration. In the model, the variable is called &ldquo;Net Migration.&rdquo;</p>
+<p>The independent variables in the models are as follows:</p>
+<p>• Unemployment: The long-term unemployment rate is the percentage of people who have been jobless for more than a year out of the total number of people who are working.</p>
+<p>• Earnings (adjusted) The adjusted gross disposable income of households divided by the PPP (purchasing power parities) of the actual individual consumption of households and by the entire resident population (in purchasing power standard (PPS) per inhabitant) yields gross disposable income of households per capita.</p>
+<p>• Gini Coefficient (of equivalised disposable income): A relationship between the cumulative shares of the population disposed based on equivalised disposable income and the cumulative share of the equivalised total disposable income received by the population is defined as the Gini Coefficient (of equivalised disposable income).</p>
+<p>• Unemployment: The long-term unemployment rate is the percentage of people who have been jobless for more than a year out of the total number of people who are working.</p>
+<p>• Earnings (adjusted) The adjusted gross disposable income of households divided by the PPP (purchasing power parities) of the actual individual consumption of households and by the entire resident population (in purchasing power standard (PPS) per inhabitant) yields gross disposable income of households per capita.</p>
+<p>• Poverty: The at-risk-of-poverty rate is the proportion of people whose equivalised disposable income is less than the risk-of-poverty threshold, which is set at 60% of the national median equivalised disposable income.</p>
+<p>• Economic Freedom: A 0–10 scale that assesses the degree of economic liberty in five key areas: government size, legal system, sound money, international trade freedom, and regulation.</p>
+<p>• Hospital beds: the number of beds available in hospitals; the variable is calculated per 100,000 people.</p>
+<p>• Health spending: the overall amount spent on health as a proportion of GDP ( percent ).</p>
+<p>Eurostat is the data source for all variables except Economic Freedom. The Fraser Institute is the source of data for the Economic Freedom Index. Data was collected for 25 EU nations over a period of 18 years, from 2000 to 2017.</p>
+<p>Figure 1 depicts the dispersion of average Net Migration rates for EU nations for the period 2000–2017. Lithuania (-8.84), Latvia (-7.19), and Romania (-7.19) are the nations with the lowest average Net Migration between 2000 and 2017. (-5.48). Bulgaria, Estonia, Poland, and Slovakia all had negative Net Migration averages over the time period studied. This was to be expected, given that these economies in Central and Eastern Europe are generally migration-sending countries (Jennissen, 2004). Luxembourg, Spain, and Sweden, on the other hand, have the greatest average Net Migration rates, indicating that they are typically migrant-receiving nations. The Net Migration Rate&rsquo;s behavior proposes that the group of nations be divided into two: typically sending and traditionally receiving countries.</p>
+<p>![](Figure 1.png)</p>
+<p>![](images/Figure 1.png)</p>
+<p>Figure 1 – Average Net Migration for the period 2000 – 2017 for the EU countries</p>
+<p>Source: author’s processing in Tableau, based on Eurostat data</p>
+<p>Figure 2 depicts the significant relationship between real GDP/capita, chain linked volume (2010) in Euro/capita, and net migration rate (averages from 2000 to 2017 were used). Nations with lower GDP per capita also have negative or low Net Migration rates, indicating that &ldquo;poorer&rdquo; countries are more likely to be the source of migrant flows (sending countries). Nations with greater GDP/capita, on the other hand, have higher migration rates, implying that they are primarily receiving countries for migrants.</p>
+<p>![](Figure 2.png)</p>
+<p>Figure 2 – Net Migration rate vs. GDP/capita – comparison between old and new EU member states; source: author’s processing in Tableau, based on Eurostat data</p>
+<p>The tendency of Net Migration for old and new member states warrants the dataset being separated into two categories. It is clear from this research that the group of New Member States acts as Migrant Sending Countries for the whole time under consideration, while the Old Member States operate as Migrant Receiving Countries. As a result, the empirical application will be split into two parts: one model for the Old member nations and then another model (Table 1) for the New member states (Table 2).</p>
+<p>Table 1. Results of estimation for fixed and random effects models for Old Member States; source: author’s own results</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fixed Effects</th>
+<th>Random Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unemployment</td>
+<td>-1.0468*** (0.0903)</td>
+<td>-1.0295*** (0.0881)</td>
+</tr>
+<tr>
+<td>Ln_Income</td>
+<td>4.9042** (2.4037)</td>
+<td>8.1458*** (1.5631)</td>
+</tr>
+<tr>
+<td>Gini</td>
+<td>-0.1777 (0.1691)</td>
+<td>-0.3282** (0.1391)</td>
+</tr>
+<tr>
+<td>Poverty</td>
+<td>0.6876*** (0.1657)</td>
+<td>0.7331*** (0.1417)</td>
+</tr>
+<tr>
+<td>Economic Freedom</td>
+<td>-4.5181*** (1.5230)</td>
+<td>-2.9796*** (1.0923)</td>
+</tr>
+<tr>
+<td>Health Expenditure</td>
+<td>-1.4840*** (0.4175)</td>
+<td>-1.7844*** (0.2965)</td>
+</tr>
+<tr>
+<td>Intercept</td>
+<td>-1.6247 (25.7912)</td>
+<td>-40.0461** (17.8813)</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Within 0.4184 Between 0.6589 Overall 0.5056</td>
+<td>Within 0.4109 Between 0.8405 Overall 0.5828</td>
+</tr>
+<tr>
+<td>F</td>
+<td>29.85***</td>
+<td>229.47*** (Wald chi2)</td>
+</tr>
+<tr>
+<td>Corr (u_i, xb)</td>
+<td>0.2190</td>
+<td>0 (assumed)</td>
+</tr>
+<tr>
+<td>Sigma_u</td>
+<td>2.0795</td>
+<td>1.3274</td>
+</tr>
+<tr>
+<td>Sigma_e</td>
+<td>3.0081</td>
+<td>3.0081</td>
+</tr>
+<tr>
+<td>Rho</td>
+<td>0.3233</td>
+<td>0.1629</td>
+</tr>
+</tbody>
+</table>
+<p>*** Significant at 0.01; ** Significant at 0.05</p>
+<p>(standard errors of the coefficients are reported in parenthesis)</p>
+<p>Table 2. Results of estimation for fixed and random effects models for New Member States; source: author’s own results</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fixed Effects</th>
+<th>Random Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unemployment</td>
+<td>-0.3900** (0.1547)</td>
+<td>-0.3893*** (0.1461)</td>
+</tr>
+<tr>
+<td>Gini</td>
+<td>-0.3527** (0.1377)</td>
+<td>-0.5432*** (0.1226)</td>
+</tr>
+<tr>
+<td>Economic Freedom</td>
+<td>4.3493*** (1.1280)</td>
+<td>4.3283*** (1.0755)</td>
+</tr>
+<tr>
+<td>Health Expenditure</td>
+<td>-1.1240* (0.5841)</td>
+<td>-0.4513 (0.4765)</td>
+</tr>
+<tr>
+<td>Intercept</td>
+<td>-15.6762 (8.0909)</td>
+<td>-13.3742** (7.5791)</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Within 0.1663 Between 0.0205 Overall 0.0855</td>
+<td>Within 0.1483 Between 0.5198 Overall 0.3147</td>
+</tr>
+<tr>
+<td>F</td>
+<td>8.28***</td>
+<td>38.90*** (Wald chi2)</td>
+</tr>
+<tr>
+<td>Corr (u_i, xb)</td>
+<td>-0.1069</td>
+<td>0 (assumed)</td>
+</tr>
+<tr>
+<td>Sigma_u</td>
+<td>3.9181</td>
+<td>2.2254</td>
+</tr>
+<tr>
+<td>Sigma_e</td>
+<td>3.5999</td>
+<td>3.5999</td>
+</tr>
+<tr>
+<td>Rho</td>
+<td>0.5422</td>
+<td>0.2765</td>
+</tr>
+</tbody>
+</table>
+<p>*** Significant at 0.01; ** Significant at 0.05; * Significant at 0.1</p>
+<p>(standard errors of the coefficients are reported in parenthesis)</p>
+<p>The influence of macroeconomic factors on the Crude Rate Net Migration of European economies was quantified using panel data regression models. A preliminary study of the dependent variable&rsquo;s distribution reveals that the net migration rate differs across Old Member States (migrant-receiving nations) and New Member States (sending countries for migrants). As a result, we opt to estimate two models for the two sets of nations, following Mihi-Ramirez et al. (2017) method&rsquo;s. Unemployment rate, per capita income, Gini coefficient, poverty rate, Economic Freedom Index, and two other characteristics relating to the health system were included as independent variables (number of beds in hospitals and health expenditure as percentage in GDP). The analysed period was 2000 – 2017.</p>
+<p>The findings corroborated migratory economic theory. In terms of the labor market, unemployment is a large and powerful supply push factor for migration. Only for the Old Member states does income appear as a key influence, validating the neo-classical economic theory of migration, which claims that variations in earnings across nations are one of the main factors driving labor movement (Massey et al, 1993). Moving on to the social component, the Gini coefficient has been established as a strong driving force behind migration in both Old and New Member States. Poverty appears to be a factor with reduced explanatory power, with a positive coefficient for the Old member states and no significance for the New member states.</p>
+<p>In terms of Economic Freedom, the factor has a considerable beneficial impact on net migration rates only in the New Member States.</p>
+<p>Furthermore, health-related macroeconomic factors were included in the model, as well as the circular cumulative causation hypothesis, which states that variations in standard of living across nations are the primary cause of migration (Massey et al. 1993). The health system, on the other hand, could not be proven to be a factor of migration.</p>
+<p>Because international migration has such a substantial impact on European population dynamics, understanding and analyzing the factors that influence international migration is critical. The findings of this study might be utilized not just to produce migration forecasts, but also to establish migration policies that would improve migrants&rsquo; labor and social integration.</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

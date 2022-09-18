@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Minimax Estimation and Identity Testing of Markov Chains | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/estimation">estimation</a>
+  
+     &hercon; <a href="/categories/machine-learning">machine-learning</a>
+  
+     &hercon; <a href="/categories/markov-chains">markov-chains</a>
+  
+     &hercon; <a href="/categories/statistics">statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Minimax Estimation and Identity Testing of Markov Chains</span></h1>
+
+  
+  <h3 class="author">Geoffrey Wolfer
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<p>We briefly review the two classical problems of distribution estimation
+and identity testing (in the context of property testing), then propose
+to extend them to a Markovian setting. We will see that the sample
+complexity depends not only on the number of states, but also on the
+stationary and mixing properties of the chains.</p>
+<div id="the-distribution-setting" class="section level2">
+<h2>The distribution setting</h2>
+<p><strong>Estimation/Learning.</strong> A fundamental problem in statistics is to
+estimate a probability distribution from independent samples. Consider
+an alphabet <span class="math inline">\(\mathcal{X}\)</span> of size <span class="math inline">\(d\)</span>, and draw <span class="math inline">\(X_1, X_2, \dots, X_n\)</span>
+from a distribution <span class="math inline">\(\mu\)</span> over <span class="math inline">\(\mathcal{X}\)</span>. How large must <span class="math inline">\(n\)</span> –the
+sample size– be in order to obtain a good estimator
+<span class="math inline">\(\hat{\mu}(X_1, \dots, X_n)\)</span> of <span class="math inline">\(\mu\)</span>? In order to make the question
+precise, we choose a notion of distance <span class="math inline">\(\rho\)</span> between distributions,
+pick two small numbers <span class="math inline">\(\delta, \varepsilon &gt; 0\)</span> and can for instance
+say that an estimator is good, when with high probability <span class="math inline">\(1 - \delta\)</span>
+over the random choice of the sample, the estimator is <span class="math inline">\(\varepsilon\)</span>
+close to the true distribution. Framed as a (probably approximately
+correct) minimax problem, we define the sample complexity of the problem
+to be <span class="math display">\[\begin{equation*}
+    n_0(\varepsilon, \delta) = {\mathrm{\arg\min}} \{n \in \mathbb{N} \colon \min_{\hat{\mu}} \max_{\mu}  \mathbb{P}(\rho(\hat{\mu}(X_1, \dots, X_n), \mu) &gt; \varepsilon) &lt; \delta\},
+\end{equation*}\]</span> where the maximum is taken over all distributions over
+<span class="math inline">\(d\)</span> bins, and the minimum over all estimators. The problem of
+determining <span class="math inline">\(n_0\)</span> is then typically addressed by providing two distinct
+answers. On one hand, we construct an estimator that would be good for
+any distribution given that <span class="math inline">\(n &gt; n_0^{UB}\)</span>. Conversely, we set up a hard
+problem such that no estimator can be good when <span class="math inline">\(n &lt; n_0^{LB}\)</span>. This
+essentially leads to <span class="math display">\[\begin{equation*}
+    n_0^{LB} \leq n_0 \leq n_0^{UB},
+\end{equation*}\]</span> and the smaller the gap between the upper and lower
+bounds, the better we understand the sample complexity of the
+statistical problem. With respect to the total variation distance
+<span class="math display">\[\begin{equation*}
+    \rho_{TV}(\mu, \mu&#39;) = \frac{1}{2} \sum_{x \in \mathcal{X}} |\mu(x) - \mu&#39;(x)|,
+\end{equation*}\]</span> it is folklore (see e.g. <span class="citation">Waggoner (<a href="#ref-waggoner2015lp" role="doc-biblioref">2015</a>)</span>) that
+<span class="math display">\[\begin{equation*}
+    n_0(\varepsilon, \delta) \asymp \frac{d + \log 1 /\delta}{\varepsilon^2},
+\end{equation*}\]</span>and that the empirical distribution achieves the minimax
+rate ( <span class="math inline">\(f \asymp g\)</span> stands for <span class="math inline">\(c g \leq f \leq C g\)</span> for two universal
+constants <span class="math inline">\(c,C \in \mathbb{R}\)</span>). The take-away is that if we want to
+estimate a distribution over <span class="math inline">\(d\)</span> symbols w.r.t total variation, the
+statistical hardness of the problem grows roughly linearly with the
+support size.</p>
+<p><strong>Identity testing.</strong> A different problem is to imagine that the
+practitioner has access to independent data sampled from some unknown
+distribution <span class="math inline">\(\mu\)</span> and the full description of a reference distribution
+<span class="math inline">\(\bar{\mu}\)</span>. They then have to make a determination as to whether the
+data was sampled from <span class="math inline">\(\bar{\mu}\)</span>, or from a distribution which is at
+least <span class="math inline">\(\varepsilon\)</span> far from <span class="math inline">\(\mu\)</span> (composite). To better compare with
+the previous problem, we keep the total variation metric. We briefly
+note that the unknown distribution being closer than <span class="math inline">\(\varepsilon\)</span>, but
+not equal to <span class="math inline">\(\bar{\mu}\)</span>, is not among the choices –we require
+separation of the hypotheses.</p>
+<p>One can come up with a simple ``testing-by-learning” approach to solve
+the problem. First estimate the unknown distribution down to precision
+<span class="math inline">\(\varepsilon/2\)</span> using the sample, and then verify whether the estimator
+is close to <span class="math inline">\(\hat{\mu}\)</span>. However, identity testing corresponds to a
+binary, seemingly easier question. As such, we would expect the sample
+complexity to be less than that of the estimation problem. Among the
+first to investigate the problem in the case where <span class="math inline">\(\bar{\mu}\)</span> is the
+uniform distribution was <span class="citation">Paninski (<a href="#ref-paninski2008coincidence" role="doc-biblioref">2008</a>)</span>, who showed
+that the complexity of the problem grows roughly as the square root of
+the alphabet size, i.e. much more economical than estimation. For this
+uniformity testing problem, several procedures are known to achieve the
+minimax rate (although not all work in all regimes of parameters). One
+can for instance count the number of collisions in the sample, count the
+number of bins appearing exactly once in the sample, or even compute a
+chi-square statistic. In fact, the complexity for the worst-case
+<span class="math inline">\(\bar{\mu}\)</span> has been pinned-down to (see <span class="citation">Diakonikolas et al. (<a href="#ref-diakonikolas2017optimal" role="doc-biblioref">2017</a>)</span>)
+<span class="math display">\[\begin{equation*}
+    n_0(\varepsilon, \delta) \asymp \frac{\sqrt{d \log 1 /\delta} + \log 1 /\delta}{\varepsilon^2}
+\end{equation*}\]</span>
+In recent years, the sub-field of distribution testing
+has expanded beyond this basic question to investigate a vast collection
+of properties of distributions –see the excellent survey of
+<span class="citation">Canonne (<a href="#ref-canonne2020survey" role="doc-biblioref">2020</a>)</span> for an overview.</p>
+</div>
+<div id="the-markovian-setting" class="section level2">
+<h2>The Markovian setting</h2>
+<p>We depart from independence and increase the richness of the process by
+considering the Markovian setting. More specifically, we wish to perform
+statistical inference from sampling a ``single trajectory” of a Markov
+chain, i.e. a sequence of observations <span class="math inline">\(X_1, X_2, \dots, X_m\)</span> where
+<span class="math inline">\(X_1\)</span> is drawn from an unknown, arbitrary initial distribution, and the
+transition probabilities governing <span class="math inline">\(X_t \to X_{t+1}\)</span> are collected in a
+row-stochastic matrix <span class="math inline">\(P\)</span>. It is a challenging but fair representation
+of a process outside of the control of the scientist, that cannot for
+example be restarted, or set to any particular state. For simplicity of
+the exposition below, we will assume that <span class="math inline">\(P\)</span> is ergodic and time
+reversible, but the approach and results can be extended to the periodic
+or non-reversible cases (see the concluding remarks). To measure
+distance between Markov chains, we here consider the infinity matrix
+norm between their respective transition matrices, <span class="math display">\[\begin{equation*}
+    \rho(P, P&#39;) = \|P - P&#39;\|_{\infty} = \max_{x \in \mathcal{X}} \sum_{x&#39; \in \mathcal{X}} |P(x,x&#39;) - P&#39;(x,x&#39;)|,
+\end{equation*}\]</span> and recognize that it corresponds to a uniform control
+over the conditional distributions defined by each state w.r.t total
+variation. The notion of sample size (we have only one sample) is
+replaced with the trajectory length. Definitions of the minimax
+estimation and identity testing problems follow from this sampling model
+and choice of metric. Since the number of parameters in the model jumps
+approximately from <span class="math inline">\(d\)</span> to <span class="math inline">\(d^2\)</span>, a first guess would be to replace <span class="math inline">\(d\)</span>
+by <span class="math inline">\(d^2\)</span> in the sample complexities obtained in the iid setting.
+However, our ability to test or estimate the conditional distribution
+defined by a state is restricted by the number of times we visit it. For
+instance, if the stationary probability –the long run probability of
+visit– of some states is small, or if the chain exhibits a sticky
+behavior, we would not be able to make decisions unless the trajectory
+length increases accordingly.</p>
+<p><strong>Estimation/Learning.</strong> Finite sample analyses for the problem are
+relatively recent, with the first treatments of <span class="citation">Hao, Orlitsky, and Pichapati (<a href="#ref-hao2018learning" role="doc-biblioref">2018</a>)</span>
+in expectation and <span class="citation">Wolfer and Kontorovich (<a href="#ref-pmlr-v98-wolfer19a" role="doc-biblioref">2019</a>)</span> in the PAC framework.</p>
+<p>We estimate the unknown <span class="math inline">\(P\)</span> with the empirical tally matrix, where
+<span class="math inline">\(\widehat{P}(x,x&#39;)\)</span> is computed by counting transitions from <span class="math inline">\(x\)</span> to <span class="math inline">\(x&#39;\)</span>
+and dividing by the number of visits to <span class="math inline">\(x\)</span> (modulo some mild
+smoothing). Tighter upper and lower bounds on the sample complexity were
+later obtained (see <span class="citation">Wolfer and Kontorovich (<a href="#ref-wolfer2021" role="doc-biblioref">2021</a>)</span>)
+<span class="math display">\[\begin{equation*}
+\begin{split}
+    c \left( \frac{d}{\pi_{\star} \varepsilon^2} + \frac{d \log d}{{\gamma_\star}} \right) \leq m_0(\varepsilon, \delta) \leq C \left( \frac{d + \log 1/(\varepsilon \delta)}{\pi_{\star} \varepsilon^2} +  \frac{\log 1/(\pi_\star \delta)}{\pi_{\star} {\gamma_\star}} \right) \quad \\
+\end{split}
+\end{equation*}\]</span> where <span class="math inline">\(c, C &gt; 0\)</span> are universal constants,
+<span class="math inline">\(\pi_\star = \min_{x \in \mathcal{X}} \pi(x)\)</span> with <span class="math inline">\(\pi\)</span> the stationary
+distribution of <span class="math inline">\(P\)</span>, and <span class="math inline">\(\gamma_\star\)</span> is the absolute spectral gap
+–the difference between the two largest eigenvalues of <span class="math inline">\(P\)</span> in
+magnitude– that largely controls the mixing time of the (reversible)
+Markov chain. The bounds are independent of the starting state, but
+require a priori knowledge of bounds on <span class="math inline">\(\pi_\star\)</span> and <span class="math inline">\(\gamma_\star\)</span>
+to be informative. Notably, procedures exist to efficiently estimate
+<span class="math inline">\(\pi_\star\)</span> and <span class="math inline">\(\gamma_\star\)</span> from the data
+<span class="citation">Hsu et al. (<a href="#ref-hsu2019" role="doc-biblioref">2019</a>)</span> and <span class="citation">Wolfer (<a href="#ref-wolfer2022" role="doc-biblioref">2022</a>)</span>.</p>
+<p>We witness a stark difference between the iid and Markovian settings: a
+phase transition appears in the sample complexity. Roughly speaking and
+taking <span class="math inline">\(\varepsilon\)</span> as a constant, when the mixing time of the chain is
+larger than the number of states, the second term becomes the dominant
+one, i.e. the difficulty of estimation is chiefly controlled by how well
+we can navigate among the states. When the chain mixes more quickly,
+moving from state to state is not bottleneck, and the harder task is the
+estimation of the respective conditional distributions. An additional
+caveat is that the chain will generally not visit all states equally in
+the long run. As a result, the sample complexity necessarily depends on
+the proportion <span class="math inline">\(\pi_\star\)</span> of the trajectory spent in the least visited
+state. The astute reader may notice that when the mixing time is small
+and the stationary distribution is uniform (<span class="math inline">\(P\)</span> is doubly stochastic),
+we recover up to logarithmic factors the previously intuited complexity
+of <span class="math inline">\(d^2/\varepsilon^2\)</span>.</p>
+<p><strong>Identity testing.</strong> For the Markov chain identity testing problem
+(still w.r.t the matrix uniform norm), we rely on a two-stage testing
+procedure. First, we verify that we visited all states about
+<span class="math inline">\(\sqrt{d}/\varepsilon^2\)</span> times. As a second step, we perform identity
+testing of all conditional distributions. The Markov property ensures
+that our transition observations are drawn independently from the
+conditional distribution, thus that we can rely on one of the known iid
+testing procedures as a black-box. We obtain the below-listed upper and
+lower bounds on the sample complexity (see <span class="citation">Wolfer and Kontorovich (<a href="#ref-pmlr-v108-wolfer20a" role="doc-biblioref">2020</a>)</span>)
+<span class="math display">\[\begin{equation*}
+\begin{split}
+    c \left( \frac{\sqrt{d}}{\bar{\pi}_\star \varepsilon^2} + \frac{d}{\bar{\gamma}_\star} \right) \leq m_0(\varepsilon, \delta) \leq C \left( \frac{\sqrt{d}}{\bar{\pi}_\star \varepsilon^2} \log \frac{d}{\varepsilon \delta} + \frac{\log 1/(\bar{\pi}_\star \delta)}{\bar{\pi}_\star \bar{\gamma}_\star} \right) \qquad \\
+\end{split}
+\end{equation*}\]</span></p>
+<p><img src="/post/2022-09-18-minimax-estimation-and-identity-testing-of-markov-chains_files/Figure1.png" /></p>
+<p>Figure 1: Topology of class of Markov chains achieving the lower bounds
+in <span class="math inline">\(d /\gamma_\star\)</span>.</p>
+<p><img src="/post/2022-09-18-minimax-estimation-and-identity-testing-of-markov-chains_files/Figure2.png" /></p>
+<p>Figure 2: Example of the class in Figure 1 with <span class="math inline">\(d = 9\)</span>,
+<span class="math inline">\(\tau \in \{-1, 1\}^3\)</span> and <span class="math inline">\(0 &lt; \eta \ll 1\)</span>. The mixing time of the
+chain is of the order of <span class="math inline">\(1/\eta\)</span>, and is decoupled from the proximity
+parameter <span class="math inline">\(\varepsilon\)</span>.</p>
+<p>Perhaps surprisingly, the bounds only depends on properties
+<span class="math inline">\(\bar{\pi}_\star\)</span>, <span class="math inline">\(\bar{\gamma}_\star\)</span> of the reference stochastic
+matrix. As a matter of fact, the unknown chain need not even be
+irreducible for the procedure to work. A quadratic speed-up also appears
+in the bounds, which will affect the dominant term when the chain mixes
+faster than <span class="math inline">\(\sqrt{d}\)</span>.</p>
+<p>It is instructive to inspect the set of reversible Markov chains that
+achieves the lower bounds in <span class="math inline">\(d / \gamma_\star\)</span> (see Figure 1 and Figure
+2). Every element consists of an “inner clique” and an “outer rim”. The
+inner clique can be made arbitrarily sticky in the sense that the chain
+will only move from one state to another within the clique with
+underwhelming probability <span class="math inline">\(\eta\)</span>, which has an overall slowing effect on
+the mixing time of the chain. On the other hand, being on one state of
+the clique, the chain has at least constant –but parametrizable–
+probability of reaching one of the two connected states in the outer
+rim. In order to distinguish between two chains where one of the inner
+nodes has <span class="math inline">\(\varepsilon\)</span>-different transition probabilities towards the
+rim than the other, the trajectory will necessarily have to go through a
+large fraction of the states.</p>
+<p><strong>Related work and closing comments.</strong> As mentioned earlier in this
+note, the results are valid for a substantially larger class of chains.
+In the non-reversible setting, the absolute spectral gap can readily be
+replaced with the pseudo-spectral gap <span class="citation">Paulin (<a href="#ref-paulin2015concentration" role="doc-biblioref">2015</a>)</span>,
+and if the chain is irreducible (but possibly periodic), one can instead
+perform inference on the lazy process governed by <span class="math inline">\((P+I)/2\)</span>, which can
+be simulated with an additional fair coin. More recently,
+<span class="citation">Chan, Ding, and Li (<a href="#ref-chan2021learning" role="doc-biblioref">2021</a>)</span> investigated the Markov chain minimax learning
+and testing problems by considering cover times instead of mixing times.</p>
+<p>We end this post by stressing that the minimax rates pertain to the
+choice of metric. We refer the interested reader to
+<span class="citation">Daskalakis, Dikkala, and Gravin (<a href="#ref-daskalakis2018testing" role="doc-biblioref">2018</a>)</span>, <span class="citation">Cherapanamjeri and Bartlett (<a href="#ref-cherapanamjeri2019testing" role="doc-biblioref">2019</a>)</span> and <span class="citation">Fried and Wolfer (<a href="#ref-pmlr-v151-fried22a" role="doc-biblioref">2022</a>)</span>,
+who analyze the identity testing problem with respect to a different
+notion of discrepancy between Markov chains. Although the last-mentioned
+framework can so far only handle reversible chains, it advantageously
+leads to minimax rates that are independent of mixing or hitting.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-canonne2020survey" class="csl-entry">
+Canonne, Clément L. 2020. <span>“A Survey on Distribution Testing: Your Data Is Big. But Is It Blue?”</span> <em>Theory of Computing</em>, 1–100.
+</div>
+<div id="ref-chan2021learning" class="csl-entry">
+Chan, Siu On, Qinghua Ding, and Sing Hei Li. 2021. <span>“Learning and Testing Irreducible <span>M</span>arkov Chains via the <span class="math inline">\(k\)</span>-Cover Time.”</span> In <em>Algorithmic Learning Theory</em>, 458–80. PMLR.
+</div>
+<div id="ref-cherapanamjeri2019testing" class="csl-entry">
+Cherapanamjeri, Yeshwanth, and Peter L Bartlett. 2019. <span>“Testing Symmetric <span>M</span>arkov Chains Without Hitting.”</span> In <em>Conference on Learning Theory</em>, 758–85. PMLR.
+</div>
+<div id="ref-daskalakis2018testing" class="csl-entry">
+Daskalakis, Constantinos, Nishanth Dikkala, and Nick Gravin. 2018. <span>“Testing Symmetric <span>M</span>arkov Chains from a Single Trajectory.”</span> In <em>Conference on Learning Theory</em>, 385–409. PMLR.
+</div>
+<div id="ref-diakonikolas2017optimal" class="csl-entry">
+Diakonikolas, Ilias, Themis Gouleakis, John Peebles, and Eric Price. 2017. <span>“Optimal Identity Testing with High Probability.”</span> <em>arXiv Preprint arXiv:1708.02728</em>.
+</div>
+<div id="ref-pmlr-v151-fried22a" class="csl-entry">
+Fried, Sela, and Geoffrey Wolfer. 2022. <span>“Identity Testing of Reversible <span>M</span>arkov Chains.”</span> In <em>Proceedings of the 25th International Conference on Artificial Intelligence and Statistics</em>, 151:798–817. Proceedings of Machine Learning Research. PMLR.
+</div>
+<div id="ref-hao2018learning" class="csl-entry">
+Hao, Yi, Alon Orlitsky, and Venkatadheeraj Pichapati. 2018. <span>“On Learning <span>M</span>arkov Chains.”</span> <em>Advances in Neural Information Processing Systems</em> 31.
+</div>
+<div id="ref-hsu2019" class="csl-entry">
+Hsu, Daniel, Aryeh Kontorovich, David A. Levin, Yuval Peres, Csaba Szepesvári, and Geoffrey Wolfer. 2019. <span>“Mixing Time Estimation in Reversible <span>M</span>arkov Chains from a Single Sample Path.”</span> <em>Ann. Appl. Probab.</em> 29 (4): 2439–80. <a href="https://doi.org/10.1214/18-AAP1457">https://doi.org/10.1214/18-AAP1457</a>.
+</div>
+<div id="ref-paninski2008coincidence" class="csl-entry">
+Paninski, Liam. 2008. <span>“A Coincidence-Based Test for Uniformity Given Very Sparsely Sampled Discrete Data.”</span> <em>IEEE Transactions on Information Theory</em> 54 (10): 4750–55.
+</div>
+<div id="ref-paulin2015concentration" class="csl-entry">
+Paulin, Daniel. 2015. <span>“Concentration Inequalities for <span>M</span>arkov Chains by <span>M</span>arton Couplings and Spectral Methods.”</span> <em>Electronic Journal of Probability</em> 20: 1–32.
+</div>
+<div id="ref-waggoner2015lp" class="csl-entry">
+Waggoner, Bo. 2015. <span>“<span class="math inline">\(L_p\)</span> Testing and Learning of Discrete Distributions.”</span> In <em>Proceedings of the 2015 Conference on Innovations in Theoretical Computer Science</em>, 347–56.
+</div>
+<div id="ref-wolfer2022" class="csl-entry">
+Wolfer, Geoffrey. 2022. <span>“Empirical and Instance-Dependent Estimation of <span>M</span>arkov Chain and Mixing Time.”</span>
+</div>
+<div id="ref-pmlr-v98-wolfer19a" class="csl-entry">
+Wolfer, Geoffrey, and Aryeh Kontorovich. 2019. <span>“Minimax Learning of Ergodic <span>M</span>arkov Chains.”</span> In <em>Proceedings of the 30th International Conference on Algorithmic Learning Theory</em>, 98:904–30. Proceedings of Machine Learning Research. PMLR.
+</div>
+<div id="ref-pmlr-v108-wolfer20a" class="csl-entry">
+———. 2020. <span>“Minimax Testing of Identity to a Reference Ergodic <span>M</span>arkov Chain.”</span> In <em>Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics</em>, 108:191–201. Proceedings of Machine Learning Research. PMLR.
+</div>
+<div id="ref-wolfer2021" class="csl-entry">
+———. 2021. <span>“Statistical Estimation of Ergodic <span>M</span>arkov Chain Kernel over Discrete State Space.”</span> <em>Bernoulli</em> 27 (1): 532–53. <a href="https://doi.org/10.3150/20-BEJ1248">https://doi.org/10.3150/20-BEJ1248</a>.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

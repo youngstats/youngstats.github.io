@@ -6,7 +6,478 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</title>
+      <link>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Migration is a multifaceted phenomenon including macro-, meso-, and micro-triggers that, when combined, decide an individual&amp;rsquo;s final decision to migrate. Apart from being an essential component of population change, migration is also an important component of population estimates and labor market force estimations. Jennissen (2004) argues that the presence of migrant populations has a favorable impact on natural population growth since migrants&amp;rsquo; age characteristics and fertility rates are often greater than those of the indigenous population. Furthermore, the migration problem is far more significant for population growth in European nations, which are generally seeing a drop in natural population increase. In this environment, it&amp;rsquo;s critical to identify and quantify the factors involved in the decision to migrate. Income disparities or income inequality, economic development, the tax system, the economic cycle, the availability of new job opportunities, unemployment, and other variables have been highlighted as factors affecting migration by several migration theories (Kumpikaite and Zickute, 2012). People migrate for a variety of reasons, including improved living conditions or an escape from adverse circumstances in their native country. This is the foundation of Lee&amp;rsquo;s (1966) push and pull hypothesis, which is one of the primary neo-classical migration hypotheses. Individuals are influenced by supply-push forces to leave their home country, while demand-pull variables draw migrants to the destination country.&lt;/p&gt;
+&lt;p&gt;Panel data analysis is the study of datasets in which entities are observed through time and allows for the management of missing variables without having to examine them. By examining changes in the dependent variable across time, one may rule out the impact of neglected factors that fluctuate between entities but remain constant over time. The basic premise is that if unobserved factors (such as those peculiar to nations) influence the dependent variable yet stay constant over time, the changes in the dependent variable must come from other sources.&lt;/p&gt;
+&lt;p&gt;The notation for panel data will be the following: \begin{equation} (x_{1,it}, x_{2,it}, &amp;hellip;, x_{k,it}, y_{it}), i=1,2, &amp;hellip;, n; t=1,2, &amp;hellip;, T \end{equation}&lt;/p&gt;
+&lt;p&gt;where &lt;em&gt;i&lt;/em&gt; is the subscript for the entity being observed (in our case study the country) and &lt;em&gt;t&lt;/em&gt; is the subscript for the date at which the entity is observed (in our case study the year). Using these notations we would have data for the variables \begin{equation} x_1, x_2, &amp;hellip;, x_k, y \end{equation}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The fixed effects approach&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The fixed effects model would be written as:&lt;/p&gt;
+&lt;p&gt;\begin{equation} y_{it}=\beta_1 x_{1,it} + \beta_2 x_{2,it} + \dots + \beta_k x_{k,it} + \alpha_i + u_{it} \end{equation}&lt;/p&gt;
+&lt;p&gt;where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;x&lt;/em&gt; represents the value of regressor &lt;em&gt;j&lt;/em&gt;, for entity &lt;em&gt;i&lt;/em&gt; and time period &lt;em&gt;t&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;beta&lt;/em&gt;&amp;rsquo;s represent the coefficients of the independent variables, that do not vary across individuals.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;alpha&lt;/em&gt;&amp;rsquo;s represent the entity specific intercepts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The random effects approach&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;the unobserved variable specific to the individual entity is encompassed in the error term. The entities will have a common mean value for the intercept (let’s denote this with α) and the specific differences in the intercept values of each country would be reflected in an error term (denoted with ε).&lt;/p&gt;
+&lt;p&gt;\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + \epsilon_i + u_{it} \end{equation}&lt;/p&gt;
+&lt;p&gt;We will obtain a composite error term, which is composed of ε, the individual (cross section) specific error &lt;em&gt;u&lt;/em&gt; and a combined cross section and time series error:
+\begin{equation} w_{it}=\epsilon_i + u_{it} \end{equation}&lt;/p&gt;
+&lt;p&gt;Thus substituting both equations we obtain:
+\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + w_{it} \end{equation}&lt;/p&gt;
+&lt;p&gt;The main benefit of using panel data related techniques is that individual heterogeneity of individual entities (countries) can be explicitly taken into account in panel data estimation; additionally, panel data offers &amp;ldquo;more informative data, more variability, less collinearity, more degrees of freedom, and more efficiency&amp;rdquo; by combining time series and cross-sectional observations (Baltagi, 2001).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The database involved&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Crude Rate of Net Migration plus adjustment is the dependent variable in both estimated models. It is calculated as the annual ratio of net migration to the average population. It is expressed in terms of 1000 people (of the average population). The difference between the total number of immigrants and the total number of emigrants is referred to as net migration; statistical adjustments refers to adjusting net migration by taking the difference between total population change and natural change; the indicator roughly covers the difference between inward and outward migration. In the model, the variable is called &amp;ldquo;Net Migration.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;The independent variables in the models are as follows:&lt;/p&gt;
+&lt;p&gt;• Unemployment: The long-term unemployment rate is the percentage of people who have been jobless for more than a year out of the total number of people who are working.&lt;/p&gt;
+&lt;p&gt;• Earnings (adjusted) The adjusted gross disposable income of households divided by the PPP (purchasing power parities) of the actual individual consumption of households and by the entire resident population (in purchasing power standard (PPS) per inhabitant) yields gross disposable income of households per capita.&lt;/p&gt;
+&lt;p&gt;• Gini Coefficient (of equivalised disposable income): A relationship between the cumulative shares of the population disposed based on equivalised disposable income and the cumulative share of the equivalised total disposable income received by the population is defined as the Gini Coefficient (of equivalised disposable income).&lt;/p&gt;
+&lt;p&gt;• Unemployment: The long-term unemployment rate is the percentage of people who have been jobless for more than a year out of the total number of people who are working.&lt;/p&gt;
+&lt;p&gt;• Earnings (adjusted) The adjusted gross disposable income of households divided by the PPP (purchasing power parities) of the actual individual consumption of households and by the entire resident population (in purchasing power standard (PPS) per inhabitant) yields gross disposable income of households per capita.&lt;/p&gt;
+&lt;p&gt;• Poverty: The at-risk-of-poverty rate is the proportion of people whose equivalised disposable income is less than the risk-of-poverty threshold, which is set at 60% of the national median equivalised disposable income.&lt;/p&gt;
+&lt;p&gt;• Economic Freedom: A 0–10 scale that assesses the degree of economic liberty in five key areas: government size, legal system, sound money, international trade freedom, and regulation.&lt;/p&gt;
+&lt;p&gt;• Hospital beds: the number of beds available in hospitals; the variable is calculated per 100,000 people.&lt;/p&gt;
+&lt;p&gt;• Health spending: the overall amount spent on health as a proportion of GDP ( percent ).&lt;/p&gt;
+&lt;p&gt;Eurostat is the data source for all variables except Economic Freedom. The Fraser Institute is the source of data for the Economic Freedom Index. Data was collected for 25 EU nations over a period of 18 years, from 2000 to 2017.&lt;/p&gt;
+&lt;p&gt;Figure 1 depicts the dispersion of average Net Migration rates for EU nations for the period 2000–2017. Lithuania (-8.84), Latvia (-7.19), and Romania (-7.19) are the nations with the lowest average Net Migration between 2000 and 2017. (-5.48). Bulgaria, Estonia, Poland, and Slovakia all had negative Net Migration averages over the time period studied. This was to be expected, given that these economies in Central and Eastern Europe are generally migration-sending countries (Jennissen, 2004). Luxembourg, Spain, and Sweden, on the other hand, have the greatest average Net Migration rates, indicating that they are typically migrant-receiving nations. The Net Migration Rate&amp;rsquo;s behavior proposes that the group of nations be divided into two: typically sending and traditionally receiving countries.&lt;/p&gt;
+&lt;p&gt;![](Figure 1.png)&lt;/p&gt;
+&lt;p&gt;![](images/Figure 1.png)&lt;/p&gt;
+&lt;p&gt;Figure 1 – Average Net Migration for the period 2000 – 2017 for the EU countries&lt;/p&gt;
+&lt;p&gt;Source: author’s processing in Tableau, based on Eurostat data&lt;/p&gt;
+&lt;p&gt;Figure 2 depicts the significant relationship between real GDP/capita, chain linked volume (2010) in Euro/capita, and net migration rate (averages from 2000 to 2017 were used). Nations with lower GDP per capita also have negative or low Net Migration rates, indicating that &amp;ldquo;poorer&amp;rdquo; countries are more likely to be the source of migrant flows (sending countries). Nations with greater GDP/capita, on the other hand, have higher migration rates, implying that they are primarily receiving countries for migrants.&lt;/p&gt;
+&lt;p&gt;![](Figure 2.png)&lt;/p&gt;
+&lt;p&gt;Figure 2 – Net Migration rate vs. GDP/capita – comparison between old and new EU member states; source: author’s processing in Tableau, based on Eurostat data&lt;/p&gt;
+&lt;p&gt;The tendency of Net Migration for old and new member states warrants the dataset being separated into two categories. It is clear from this research that the group of New Member States acts as Migrant Sending Countries for the whole time under consideration, while the Old Member States operate as Migrant Receiving Countries. As a result, the empirical application will be split into two parts: one model for the Old member nations and then another model (Table 1) for the New member states (Table 2).&lt;/p&gt;
+&lt;p&gt;Table 1. Results of estimation for fixed and random effects models for Old Member States; source: author’s own results&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Fixed Effects&lt;/th&gt;
+&lt;th&gt;Random Effects&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unemployment&lt;/td&gt;
+&lt;td&gt;-1.0468*** (0.0903)&lt;/td&gt;
+&lt;td&gt;-1.0295*** (0.0881)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ln_Income&lt;/td&gt;
+&lt;td&gt;4.9042** (2.4037)&lt;/td&gt;
+&lt;td&gt;8.1458*** (1.5631)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gini&lt;/td&gt;
+&lt;td&gt;-0.1777 (0.1691)&lt;/td&gt;
+&lt;td&gt;-0.3282** (0.1391)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Poverty&lt;/td&gt;
+&lt;td&gt;0.6876*** (0.1657)&lt;/td&gt;
+&lt;td&gt;0.7331*** (0.1417)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Economic Freedom&lt;/td&gt;
+&lt;td&gt;-4.5181*** (1.5230)&lt;/td&gt;
+&lt;td&gt;-2.9796*** (1.0923)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Health Expenditure&lt;/td&gt;
+&lt;td&gt;-1.4840*** (0.4175)&lt;/td&gt;
+&lt;td&gt;-1.7844*** (0.2965)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept&lt;/td&gt;
+&lt;td&gt;-1.6247 (25.7912)&lt;/td&gt;
+&lt;td&gt;-40.0461** (17.8813)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;R2&lt;/td&gt;
+&lt;td&gt;Within 0.4184 Between 0.6589 Overall 0.5056&lt;/td&gt;
+&lt;td&gt;Within 0.4109 Between 0.8405 Overall 0.5828&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;29.85***&lt;/td&gt;
+&lt;td&gt;229.47*** (Wald chi2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Corr (u_i, xb)&lt;/td&gt;
+&lt;td&gt;0.2190&lt;/td&gt;
+&lt;td&gt;0 (assumed)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sigma_u&lt;/td&gt;
+&lt;td&gt;2.0795&lt;/td&gt;
+&lt;td&gt;1.3274&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sigma_e&lt;/td&gt;
+&lt;td&gt;3.0081&lt;/td&gt;
+&lt;td&gt;3.0081&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rho&lt;/td&gt;
+&lt;td&gt;0.3233&lt;/td&gt;
+&lt;td&gt;0.1629&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;*** Significant at 0.01; ** Significant at 0.05&lt;/p&gt;
+&lt;p&gt;(standard errors of the coefficients are reported in parenthesis)&lt;/p&gt;
+&lt;p&gt;Table 2. Results of estimation for fixed and random effects models for New Member States; source: author’s own results&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Fixed Effects&lt;/th&gt;
+&lt;th&gt;Random Effects&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unemployment&lt;/td&gt;
+&lt;td&gt;-0.3900** (0.1547)&lt;/td&gt;
+&lt;td&gt;-0.3893*** (0.1461)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gini&lt;/td&gt;
+&lt;td&gt;-0.3527** (0.1377)&lt;/td&gt;
+&lt;td&gt;-0.5432*** (0.1226)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Economic Freedom&lt;/td&gt;
+&lt;td&gt;4.3493*** (1.1280)&lt;/td&gt;
+&lt;td&gt;4.3283*** (1.0755)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Health Expenditure&lt;/td&gt;
+&lt;td&gt;-1.1240* (0.5841)&lt;/td&gt;
+&lt;td&gt;-0.4513 (0.4765)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept&lt;/td&gt;
+&lt;td&gt;-15.6762 (8.0909)&lt;/td&gt;
+&lt;td&gt;-13.3742** (7.5791)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;R2&lt;/td&gt;
+&lt;td&gt;Within 0.1663 Between 0.0205 Overall 0.0855&lt;/td&gt;
+&lt;td&gt;Within 0.1483 Between 0.5198 Overall 0.3147&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;8.28***&lt;/td&gt;
+&lt;td&gt;38.90*** (Wald chi2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Corr (u_i, xb)&lt;/td&gt;
+&lt;td&gt;-0.1069&lt;/td&gt;
+&lt;td&gt;0 (assumed)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sigma_u&lt;/td&gt;
+&lt;td&gt;3.9181&lt;/td&gt;
+&lt;td&gt;2.2254&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sigma_e&lt;/td&gt;
+&lt;td&gt;3.5999&lt;/td&gt;
+&lt;td&gt;3.5999&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rho&lt;/td&gt;
+&lt;td&gt;0.5422&lt;/td&gt;
+&lt;td&gt;0.2765&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;*** Significant at 0.01; ** Significant at 0.05; * Significant at 0.1&lt;/p&gt;
+&lt;p&gt;(standard errors of the coefficients are reported in parenthesis)&lt;/p&gt;
+&lt;p&gt;The influence of macroeconomic factors on the Crude Rate Net Migration of European economies was quantified using panel data regression models. A preliminary study of the dependent variable&amp;rsquo;s distribution reveals that the net migration rate differs across Old Member States (migrant-receiving nations) and New Member States (sending countries for migrants). As a result, we opt to estimate two models for the two sets of nations, following Mihi-Ramirez et al. (2017) method&amp;rsquo;s. Unemployment rate, per capita income, Gini coefficient, poverty rate, Economic Freedom Index, and two other characteristics relating to the health system were included as independent variables (number of beds in hospitals and health expenditure as percentage in GDP). The analysed period was 2000 – 2017.&lt;/p&gt;
+&lt;p&gt;The findings corroborated migratory economic theory. In terms of the labor market, unemployment is a large and powerful supply push factor for migration. Only for the Old Member states does income appear as a key influence, validating the neo-classical economic theory of migration, which claims that variations in earnings across nations are one of the main factors driving labor movement (Massey et al, 1993). Moving on to the social component, the Gini coefficient has been established as a strong driving force behind migration in both Old and New Member States. Poverty appears to be a factor with reduced explanatory power, with a positive coefficient for the Old member states and no significance for the New member states.&lt;/p&gt;
+&lt;p&gt;In terms of Economic Freedom, the factor has a considerable beneficial impact on net migration rates only in the New Member States.&lt;/p&gt;
+&lt;p&gt;Furthermore, health-related macroeconomic factors were included in the model, as well as the circular cumulative causation hypothesis, which states that variations in standard of living across nations are the primary cause of migration (Massey et al. 1993). The health system, on the other hand, could not be proven to be a factor of migration.&lt;/p&gt;
+&lt;p&gt;Because international migration has such a substantial impact on European population dynamics, understanding and analyzing the factors that influence international migration is critical. The findings of this study might be utilized not just to produce migration forecasts, but also to establish migration policies that would improve migrants&amp;rsquo; labor and social integration.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Minimax Estimation and Identity Testing of Markov Chains</title>
+      <link>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</guid>
+      <description>
+
+
+&lt;p&gt;We briefly review the two classical problems of distribution estimation
+and identity testing (in the context of property testing), then propose
+to extend them to a Markovian setting. We will see that the sample
+complexity depends not only on the number of states, but also on the
+stationary and mixing properties of the chains.&lt;/p&gt;
+&lt;div id=&#34;the-distribution-setting&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The distribution setting&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Estimation/Learning.&lt;/strong&gt; A fundamental problem in statistics is to
+estimate a probability distribution from independent samples. Consider
+an alphabet &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;, and draw &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, \dots, X_n\)&lt;/span&gt;
+from a distribution &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; over &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}\)&lt;/span&gt;. How large must &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; –the
+sample size– be in order to obtain a good estimator
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}(X_1, \dots, X_n)\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;? In order to make the question
+precise, we choose a notion of distance &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt; between distributions,
+pick two small numbers &lt;span class=&#34;math inline&#34;&gt;\(\delta, \varepsilon &amp;gt; 0\)&lt;/span&gt; and can for instance
+say that an estimator is good, when with high probability &lt;span class=&#34;math inline&#34;&gt;\(1 - \delta\)&lt;/span&gt;
+over the random choice of the sample, the estimator is &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;
+close to the true distribution. Framed as a (probably approximately
+correct) minimax problem, we define the sample complexity of the problem
+to be &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    n_0(\varepsilon, \delta) = {\mathrm{\arg\min}} \{n \in \mathbb{N} \colon \min_{\hat{\mu}} \max_{\mu}  \mathbb{P}(\rho(\hat{\mu}(X_1, \dots, X_n), \mu) &amp;gt; \varepsilon) &amp;lt; \delta\},
+\end{equation*}\]&lt;/span&gt; where the maximum is taken over all distributions over
+&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; bins, and the minimum over all estimators. The problem of
+determining &lt;span class=&#34;math inline&#34;&gt;\(n_0\)&lt;/span&gt; is then typically addressed by providing two distinct
+answers. On one hand, we construct an estimator that would be good for
+any distribution given that &lt;span class=&#34;math inline&#34;&gt;\(n &amp;gt; n_0^{UB}\)&lt;/span&gt;. Conversely, we set up a hard
+problem such that no estimator can be good when &lt;span class=&#34;math inline&#34;&gt;\(n &amp;lt; n_0^{LB}\)&lt;/span&gt;. This
+essentially leads to &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    n_0^{LB} \leq n_0 \leq n_0^{UB},
+\end{equation*}\]&lt;/span&gt; and the smaller the gap between the upper and lower
+bounds, the better we understand the sample complexity of the
+statistical problem. With respect to the total variation distance
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    \rho_{TV}(\mu, \mu&amp;#39;) = \frac{1}{2} \sum_{x \in \mathcal{X}} |\mu(x) - \mu&amp;#39;(x)|,
+\end{equation*}\]&lt;/span&gt; it is folklore (see e.g. &lt;span class=&#34;citation&#34;&gt;Waggoner (&lt;a href=&#34;#ref-waggoner2015lp&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;) that
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    n_0(\varepsilon, \delta) \asymp \frac{d + \log 1 /\delta}{\varepsilon^2},
+\end{equation*}\]&lt;/span&gt;and that the empirical distribution achieves the minimax
+rate ( &lt;span class=&#34;math inline&#34;&gt;\(f \asymp g\)&lt;/span&gt; stands for &lt;span class=&#34;math inline&#34;&gt;\(c g \leq f \leq C g\)&lt;/span&gt; for two universal
+constants &lt;span class=&#34;math inline&#34;&gt;\(c,C \in \mathbb{R}\)&lt;/span&gt;). The take-away is that if we want to
+estimate a distribution over &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; symbols w.r.t total variation, the
+statistical hardness of the problem grows roughly linearly with the
+support size.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Identity testing.&lt;/strong&gt; A different problem is to imagine that the
+practitioner has access to independent data sampled from some unknown
+distribution &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; and the full description of a reference distribution
+&lt;span class=&#34;math inline&#34;&gt;\(\bar{\mu}\)&lt;/span&gt;. They then have to make a determination as to whether the
+data was sampled from &lt;span class=&#34;math inline&#34;&gt;\(\bar{\mu}\)&lt;/span&gt;, or from a distribution which is at
+least &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt; far from &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; (composite). To better compare with
+the previous problem, we keep the total variation metric. We briefly
+note that the unknown distribution being closer than &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;, but
+not equal to &lt;span class=&#34;math inline&#34;&gt;\(\bar{\mu}\)&lt;/span&gt;, is not among the choices –we require
+separation of the hypotheses.&lt;/p&gt;
+&lt;p&gt;One can come up with a simple ``testing-by-learning” approach to solve
+the problem. First estimate the unknown distribution down to precision
+&lt;span class=&#34;math inline&#34;&gt;\(\varepsilon/2\)&lt;/span&gt; using the sample, and then verify whether the estimator
+is close to &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}\)&lt;/span&gt;. However, identity testing corresponds to a
+binary, seemingly easier question. As such, we would expect the sample
+complexity to be less than that of the estimation problem. Among the
+first to investigate the problem in the case where &lt;span class=&#34;math inline&#34;&gt;\(\bar{\mu}\)&lt;/span&gt; is the
+uniform distribution was &lt;span class=&#34;citation&#34;&gt;Paninski (&lt;a href=&#34;#ref-paninski2008coincidence&#34; role=&#34;doc-biblioref&#34;&gt;2008&lt;/a&gt;)&lt;/span&gt;, who showed
+that the complexity of the problem grows roughly as the square root of
+the alphabet size, i.e. much more economical than estimation. For this
+uniformity testing problem, several procedures are known to achieve the
+minimax rate (although not all work in all regimes of parameters). One
+can for instance count the number of collisions in the sample, count the
+number of bins appearing exactly once in the sample, or even compute a
+chi-square statistic. In fact, the complexity for the worst-case
+&lt;span class=&#34;math inline&#34;&gt;\(\bar{\mu}\)&lt;/span&gt; has been pinned-down to (see &lt;span class=&#34;citation&#34;&gt;Diakonikolas et al. (&lt;a href=&#34;#ref-diakonikolas2017optimal&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;)
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    n_0(\varepsilon, \delta) \asymp \frac{\sqrt{d \log 1 /\delta} + \log 1 /\delta}{\varepsilon^2}
+\end{equation*}\]&lt;/span&gt;
+In recent years, the sub-field of distribution testing
+has expanded beyond this basic question to investigate a vast collection
+of properties of distributions –see the excellent survey of
+&lt;span class=&#34;citation&#34;&gt;Canonne (&lt;a href=&#34;#ref-canonne2020survey&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; for an overview.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-markovian-setting&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Markovian setting&lt;/h2&gt;
+&lt;p&gt;We depart from independence and increase the richness of the process by
+considering the Markovian setting. More specifically, we wish to perform
+statistical inference from sampling a ``single trajectory” of a Markov
+chain, i.e. a sequence of observations &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, \dots, X_m\)&lt;/span&gt; where
+&lt;span class=&#34;math inline&#34;&gt;\(X_1\)&lt;/span&gt; is drawn from an unknown, arbitrary initial distribution, and the
+transition probabilities governing &lt;span class=&#34;math inline&#34;&gt;\(X_t \to X_{t+1}\)&lt;/span&gt; are collected in a
+row-stochastic matrix &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;. It is a challenging but fair representation
+of a process outside of the control of the scientist, that cannot for
+example be restarted, or set to any particular state. For simplicity of
+the exposition below, we will assume that &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; is ergodic and time
+reversible, but the approach and results can be extended to the periodic
+or non-reversible cases (see the concluding remarks). To measure
+distance between Markov chains, we here consider the infinity matrix
+norm between their respective transition matrices, &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    \rho(P, P&amp;#39;) = \|P - P&amp;#39;\|_{\infty} = \max_{x \in \mathcal{X}} \sum_{x&amp;#39; \in \mathcal{X}} |P(x,x&amp;#39;) - P&amp;#39;(x,x&amp;#39;)|,
+\end{equation*}\]&lt;/span&gt; and recognize that it corresponds to a uniform control
+over the conditional distributions defined by each state w.r.t total
+variation. The notion of sample size (we have only one sample) is
+replaced with the trajectory length. Definitions of the minimax
+estimation and identity testing problems follow from this sampling model
+and choice of metric. Since the number of parameters in the model jumps
+approximately from &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(d^2\)&lt;/span&gt;, a first guess would be to replace &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;
+by &lt;span class=&#34;math inline&#34;&gt;\(d^2\)&lt;/span&gt; in the sample complexities obtained in the iid setting.
+However, our ability to test or estimate the conditional distribution
+defined by a state is restricted by the number of times we visit it. For
+instance, if the stationary probability –the long run probability of
+visit– of some states is small, or if the chain exhibits a sticky
+behavior, we would not be able to make decisions unless the trajectory
+length increases accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Estimation/Learning.&lt;/strong&gt; Finite sample analyses for the problem are
+relatively recent, with the first treatments of &lt;span class=&#34;citation&#34;&gt;Hao, Orlitsky, and Pichapati (&lt;a href=&#34;#ref-hao2018learning&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;
+in expectation and &lt;span class=&#34;citation&#34;&gt;Wolfer and Kontorovich (&lt;a href=&#34;#ref-pmlr-v98-wolfer19a&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; in the PAC framework.&lt;/p&gt;
+&lt;p&gt;We estimate the unknown &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; with the empirical tally matrix, where
+&lt;span class=&#34;math inline&#34;&gt;\(\widehat{P}(x,x&amp;#39;)\)&lt;/span&gt; is computed by counting transitions from &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(x&amp;#39;\)&lt;/span&gt;
+and dividing by the number of visits to &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; (modulo some mild
+smoothing). Tighter upper and lower bounds on the sample complexity were
+later obtained (see &lt;span class=&#34;citation&#34;&gt;Wolfer and Kontorovich (&lt;a href=&#34;#ref-wolfer2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;)
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\begin{split}
+    c \left( \frac{d}{\pi_{\star} \varepsilon^2} + \frac{d \log d}{{\gamma_\star}} \right) \leq m_0(\varepsilon, \delta) \leq C \left( \frac{d + \log 1/(\varepsilon \delta)}{\pi_{\star} \varepsilon^2} +  \frac{\log 1/(\pi_\star \delta)}{\pi_{\star} {\gamma_\star}} \right) \quad \\
+\end{split}
+\end{equation*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(c, C &amp;gt; 0\)&lt;/span&gt; are universal constants,
+&lt;span class=&#34;math inline&#34;&gt;\(\pi_\star = \min_{x \in \mathcal{X}} \pi(x)\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; the stationary
+distribution of &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\gamma_\star\)&lt;/span&gt; is the absolute spectral gap
+–the difference between the two largest eigenvalues of &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; in
+magnitude– that largely controls the mixing time of the (reversible)
+Markov chain. The bounds are independent of the starting state, but
+require a priori knowledge of bounds on &lt;span class=&#34;math inline&#34;&gt;\(\pi_\star\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\gamma_\star\)&lt;/span&gt;
+to be informative. Notably, procedures exist to efficiently estimate
+&lt;span class=&#34;math inline&#34;&gt;\(\pi_\star\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\gamma_\star\)&lt;/span&gt; from the data
+&lt;span class=&#34;citation&#34;&gt;Hsu et al. (&lt;a href=&#34;#ref-hsu2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Wolfer (&lt;a href=&#34;#ref-wolfer2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We witness a stark difference between the iid and Markovian settings: a
+phase transition appears in the sample complexity. Roughly speaking and
+taking &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt; as a constant, when the mixing time of the chain is
+larger than the number of states, the second term becomes the dominant
+one, i.e. the difficulty of estimation is chiefly controlled by how well
+we can navigate among the states. When the chain mixes more quickly,
+moving from state to state is not bottleneck, and the harder task is the
+estimation of the respective conditional distributions. An additional
+caveat is that the chain will generally not visit all states equally in
+the long run. As a result, the sample complexity necessarily depends on
+the proportion &lt;span class=&#34;math inline&#34;&gt;\(\pi_\star\)&lt;/span&gt; of the trajectory spent in the least visited
+state. The astute reader may notice that when the mixing time is small
+and the stationary distribution is uniform (&lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; is doubly stochastic),
+we recover up to logarithmic factors the previously intuited complexity
+of &lt;span class=&#34;math inline&#34;&gt;\(d^2/\varepsilon^2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Identity testing.&lt;/strong&gt; For the Markov chain identity testing problem
+(still w.r.t the matrix uniform norm), we rely on a two-stage testing
+procedure. First, we verify that we visited all states about
+&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{d}/\varepsilon^2\)&lt;/span&gt; times. As a second step, we perform identity
+testing of all conditional distributions. The Markov property ensures
+that our transition observations are drawn independently from the
+conditional distribution, thus that we can rely on one of the known iid
+testing procedures as a black-box. We obtain the below-listed upper and
+lower bounds on the sample complexity (see &lt;span class=&#34;citation&#34;&gt;Wolfer and Kontorovich (&lt;a href=&#34;#ref-pmlr-v108-wolfer20a&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;)
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\begin{split}
+    c \left( \frac{\sqrt{d}}{\bar{\pi}_\star \varepsilon^2} + \frac{d}{\bar{\gamma}_\star} \right) \leq m_0(\varepsilon, \delta) \leq C \left( \frac{\sqrt{d}}{\bar{\pi}_\star \varepsilon^2} \log \frac{d}{\varepsilon \delta} + \frac{\log 1/(\bar{\pi}_\star \delta)}{\bar{\pi}_\star \bar{\gamma}_\star} \right) \qquad \\
+\end{split}
+\end{equation*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-18-minimax-estimation-and-identity-testing-of-markov-chains_files/Figure1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 1: Topology of class of Markov chains achieving the lower bounds
+in &lt;span class=&#34;math inline&#34;&gt;\(d /\gamma_\star\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-18-minimax-estimation-and-identity-testing-of-markov-chains_files/Figure2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2: Example of the class in Figure 1 with &lt;span class=&#34;math inline&#34;&gt;\(d = 9\)&lt;/span&gt;,
+&lt;span class=&#34;math inline&#34;&gt;\(\tau \in \{-1, 1\}^3\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0 &amp;lt; \eta \ll 1\)&lt;/span&gt;. The mixing time of the
+chain is of the order of &lt;span class=&#34;math inline&#34;&gt;\(1/\eta\)&lt;/span&gt;, and is decoupled from the proximity
+parameter &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Perhaps surprisingly, the bounds only depends on properties
+&lt;span class=&#34;math inline&#34;&gt;\(\bar{\pi}_\star\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\bar{\gamma}_\star\)&lt;/span&gt; of the reference stochastic
+matrix. As a matter of fact, the unknown chain need not even be
+irreducible for the procedure to work. A quadratic speed-up also appears
+in the bounds, which will affect the dominant term when the chain mixes
+faster than &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{d}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;It is instructive to inspect the set of reversible Markov chains that
+achieves the lower bounds in &lt;span class=&#34;math inline&#34;&gt;\(d / \gamma_\star\)&lt;/span&gt; (see Figure 1 and Figure
+2). Every element consists of an “inner clique” and an “outer rim”. The
+inner clique can be made arbitrarily sticky in the sense that the chain
+will only move from one state to another within the clique with
+underwhelming probability &lt;span class=&#34;math inline&#34;&gt;\(\eta\)&lt;/span&gt;, which has an overall slowing effect on
+the mixing time of the chain. On the other hand, being on one state of
+the clique, the chain has at least constant –but parametrizable–
+probability of reaching one of the two connected states in the outer
+rim. In order to distinguish between two chains where one of the inner
+nodes has &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;-different transition probabilities towards the
+rim than the other, the trajectory will necessarily have to go through a
+large fraction of the states.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Related work and closing comments.&lt;/strong&gt; As mentioned earlier in this
+note, the results are valid for a substantially larger class of chains.
+In the non-reversible setting, the absolute spectral gap can readily be
+replaced with the pseudo-spectral gap &lt;span class=&#34;citation&#34;&gt;Paulin (&lt;a href=&#34;#ref-paulin2015concentration&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;,
+and if the chain is irreducible (but possibly periodic), one can instead
+perform inference on the lazy process governed by &lt;span class=&#34;math inline&#34;&gt;\((P+I)/2\)&lt;/span&gt;, which can
+be simulated with an additional fair coin. More recently,
+&lt;span class=&#34;citation&#34;&gt;Chan, Ding, and Li (&lt;a href=&#34;#ref-chan2021learning&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; investigated the Markov chain minimax learning
+and testing problems by considering cover times instead of mixing times.&lt;/p&gt;
+&lt;p&gt;We end this post by stressing that the minimax rates pertain to the
+choice of metric. We refer the interested reader to
+&lt;span class=&#34;citation&#34;&gt;Daskalakis, Dikkala, and Gravin (&lt;a href=&#34;#ref-daskalakis2018testing&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Cherapanamjeri and Bartlett (&lt;a href=&#34;#ref-cherapanamjeri2019testing&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Fried and Wolfer (&lt;a href=&#34;#ref-pmlr-v151-fried22a&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;,
+who analyze the identity testing problem with respect to a different
+notion of discrepancy between Markov chains. Although the last-mentioned
+framework can so far only handle reversible chains, it advantageously
+leads to minimax rates that are independent of mixing or hitting.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-canonne2020survey&#34; class=&#34;csl-entry&#34;&gt;
+Canonne, Clément L. 2020. &lt;span&gt;“A Survey on Distribution Testing: Your Data Is Big. But Is It Blue?”&lt;/span&gt; &lt;em&gt;Theory of Computing&lt;/em&gt;, 1–100.
+&lt;/div&gt;
+&lt;div id=&#34;ref-chan2021learning&#34; class=&#34;csl-entry&#34;&gt;
+Chan, Siu On, Qinghua Ding, and Sing Hei Li. 2021. &lt;span&gt;“Learning and Testing Irreducible &lt;span&gt;M&lt;/span&gt;arkov Chains via the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-Cover Time.”&lt;/span&gt; In &lt;em&gt;Algorithmic Learning Theory&lt;/em&gt;, 458–80. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-cherapanamjeri2019testing&#34; class=&#34;csl-entry&#34;&gt;
+Cherapanamjeri, Yeshwanth, and Peter L Bartlett. 2019. &lt;span&gt;“Testing Symmetric &lt;span&gt;M&lt;/span&gt;arkov Chains Without Hitting.”&lt;/span&gt; In &lt;em&gt;Conference on Learning Theory&lt;/em&gt;, 758–85. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-daskalakis2018testing&#34; class=&#34;csl-entry&#34;&gt;
+Daskalakis, Constantinos, Nishanth Dikkala, and Nick Gravin. 2018. &lt;span&gt;“Testing Symmetric &lt;span&gt;M&lt;/span&gt;arkov Chains from a Single Trajectory.”&lt;/span&gt; In &lt;em&gt;Conference on Learning Theory&lt;/em&gt;, 385–409. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-diakonikolas2017optimal&#34; class=&#34;csl-entry&#34;&gt;
+Diakonikolas, Ilias, Themis Gouleakis, John Peebles, and Eric Price. 2017. &lt;span&gt;“Optimal Identity Testing with High Probability.”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:1708.02728&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-pmlr-v151-fried22a&#34; class=&#34;csl-entry&#34;&gt;
+Fried, Sela, and Geoffrey Wolfer. 2022. &lt;span&gt;“Identity Testing of Reversible &lt;span&gt;M&lt;/span&gt;arkov Chains.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 25th International Conference on Artificial Intelligence and Statistics&lt;/em&gt;, 151:798–817. Proceedings of Machine Learning Research. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hao2018learning&#34; class=&#34;csl-entry&#34;&gt;
+Hao, Yi, Alon Orlitsky, and Venkatadheeraj Pichapati. 2018. &lt;span&gt;“On Learning &lt;span&gt;M&lt;/span&gt;arkov Chains.”&lt;/span&gt; &lt;em&gt;Advances in Neural Information Processing Systems&lt;/em&gt; 31.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hsu2019&#34; class=&#34;csl-entry&#34;&gt;
+Hsu, Daniel, Aryeh Kontorovich, David A. Levin, Yuval Peres, Csaba Szepesvári, and Geoffrey Wolfer. 2019. &lt;span&gt;“Mixing Time Estimation in Reversible &lt;span&gt;M&lt;/span&gt;arkov Chains from a Single Sample Path.”&lt;/span&gt; &lt;em&gt;Ann. Appl. Probab.&lt;/em&gt; 29 (4): 2439–80. &lt;a href=&#34;https://doi.org/10.1214/18-AAP1457&#34;&gt;https://doi.org/10.1214/18-AAP1457&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-paninski2008coincidence&#34; class=&#34;csl-entry&#34;&gt;
+Paninski, Liam. 2008. &lt;span&gt;“A Coincidence-Based Test for Uniformity Given Very Sparsely Sampled Discrete Data.”&lt;/span&gt; &lt;em&gt;IEEE Transactions on Information Theory&lt;/em&gt; 54 (10): 4750–55.
+&lt;/div&gt;
+&lt;div id=&#34;ref-paulin2015concentration&#34; class=&#34;csl-entry&#34;&gt;
+Paulin, Daniel. 2015. &lt;span&gt;“Concentration Inequalities for &lt;span&gt;M&lt;/span&gt;arkov Chains by &lt;span&gt;M&lt;/span&gt;arton Couplings and Spectral Methods.”&lt;/span&gt; &lt;em&gt;Electronic Journal of Probability&lt;/em&gt; 20: 1–32.
+&lt;/div&gt;
+&lt;div id=&#34;ref-waggoner2015lp&#34; class=&#34;csl-entry&#34;&gt;
+Waggoner, Bo. 2015. &lt;span&gt;“&lt;span class=&#34;math inline&#34;&gt;\(L_p\)&lt;/span&gt; Testing and Learning of Discrete Distributions.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 2015 Conference on Innovations in Theoretical Computer Science&lt;/em&gt;, 347–56.
+&lt;/div&gt;
+&lt;div id=&#34;ref-wolfer2022&#34; class=&#34;csl-entry&#34;&gt;
+Wolfer, Geoffrey. 2022. &lt;span&gt;“Empirical and Instance-Dependent Estimation of &lt;span&gt;M&lt;/span&gt;arkov Chain and Mixing Time.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-pmlr-v98-wolfer19a&#34; class=&#34;csl-entry&#34;&gt;
+Wolfer, Geoffrey, and Aryeh Kontorovich. 2019. &lt;span&gt;“Minimax Learning of Ergodic &lt;span&gt;M&lt;/span&gt;arkov Chains.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 30th International Conference on Algorithmic Learning Theory&lt;/em&gt;, 98:904–30. Proceedings of Machine Learning Research. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-pmlr-v108-wolfer20a&#34; class=&#34;csl-entry&#34;&gt;
+———. 2020. &lt;span&gt;“Minimax Testing of Identity to a Reference Ergodic &lt;span&gt;M&lt;/span&gt;arkov Chain.”&lt;/span&gt; In &lt;em&gt;Proceedings of the Twenty Third International Conference on Artificial Intelligence and Statistics&lt;/em&gt;, 108:191–201. Proceedings of Machine Learning Research. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-wolfer2021&#34; class=&#34;csl-entry&#34;&gt;
+———. 2021. &lt;span&gt;“Statistical Estimation of Ergodic &lt;span&gt;M&lt;/span&gt;arkov Chain Kernel over Discrete State Space.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 27 (1): 532–53. &lt;a href=&#34;https://doi.org/10.3150/20-BEJ1248&#34;&gt;https://doi.org/10.3150/20-BEJ1248&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
       <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
@@ -612,151 +1083,6 @@ Below shows (the logarithm of) the true spectral density and the best fitting AR
 &lt;h2&gt;Authors’ biography&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://sites.google.com/view/junhoyang&#34;&gt;Junho Yang&lt;/a&gt; is an Assistant Research Fellow in the Institute of Statistical Science at Academia Sinica, Taiwan. His research focuses on time series analysis, Toeplitz matrices, and spatial statistics and its applications.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://web.stat.tamu.edu/~suhasini/&#34;&gt;Suhasini Subba Rao&lt;/a&gt; is a Professor of Statistics at Texas A&amp;amp;M University, USA. Her research focuses on time series analysis, nonstationary processes, nonlinear processes, and spatio-temporal models.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Inclusion Process and Sticky Brownian Motions</title>
-      <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
-      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Inclusion Process and Sticky Brownian Motions&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-24-inclusion-process-and-sticky-brownian-motions_files/Slika1w.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The ninth “One World webinar” organized by YoungStatS will take place on
-February 9th, 2022. Inclusion process (IP) is a stochastic lattice gas
-where particles perform random walks subjected to mutual attraction. For
-the inclusion process in the condensation regime one can extract that
-the scaling limit of two particles is a pair of sticky Brownian motions
-which lead to interesting recent research. In a system of sticky
-Brownian motions, particles behave as independent Brownian motions when
-apart, but have a sticky interaction when they meet. Recently, exact
-formulas for specific types of sticky interactions have been derived.&lt;/p&gt;
-&lt;p&gt;Both the Inclusion process and the system of Sticky Brownian motions
-satisfy a form of self-duality.&lt;/p&gt;
-&lt;p&gt;Selected young researchers active in this area of probability and
-stochastic processes will present their contributions on these topics.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, February 9th, 9:00 PT / 12:00 EST / 18:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdPH7VOLfFE-WkOlR9elG9Njk-2hblnysrQe5jTgN3fSwefSg/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.almostsurelymario.com/&#34;&gt;Mario Ayala&lt;/a&gt;, Centre INRAE
-PACA, Avignon, France. “Condensation of SIP particles and sticky Brownian motion”. &lt;embed&gt; Powerpoint &lt;a href=&#34;https://drive.google.com/file/d/1mHywzFD00kAW2ttagf4zNsEIILtUynWI/view&#34;&gt;presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;In this talk we will first introduce the symmetric inclusion process (SIP) in the condensation regime. We will describe how to obtain, with the help of self-duality, an explicit scaling for the variance of the density field in this regime, when initially started from a homogeneous product measure. This provides relevant new information on the coarsening dynamics of condensing interacting particle systems on the infinite lattice. We obtain our result by proving convergence to sticky Brownian motion for the difference of positions of two SIP particles in the sense of Mosco convergence of Dirichlet forms.&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://warwick.ac.uk/fac/sci/masdoc/people/studentpages/students2017/brockington/&#34;&gt;Dominic Brockington&lt;/a&gt;,
-University of Warwick, United Kingdom. “Fluctuations in the Howitt-Warren process”. &lt;embed&gt; Powerpoint &lt;a href=&#34;https://drive.google.com/file/d/19W1wT69fl1jS-o0CD93NXsETDrHiIrMU/view&#34;&gt;presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;Because of their consistency, sticky Brownian motions can be constructed as conditionally independent processes in a common random environment. The law of one such process, conditioned on the environment, is called the Howitt-Warren process. The Howitt-Warren process can also be viewed as the density of an infinite number of sticky Brownian motions. In the exactly solvable case, we study the fluctuations of this process in the large time limit.&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.math.columbia.edu/~mrychnov/&#34;&gt;Mark Rychnovsky&lt;/a&gt;,
-University of Southern California, USA. “Extremal particles for sticky Brownian motions.”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;Sticky Brownian motions behave as independent Brownian motions when they are separated and interact when they touch, so that the coincidence time has positive Lebesgue measure with positive probability. For a specific sticky interaction we will show that as time and the number of particles are simultaneously sent to infinity, The fluctuations of the extremal particle are given by the GUE Tracy-Widom distribution. The proof involves realizing a specific sticky interaction as the limit of an exactly solvable statistical mechanics model, the Beta random walk in random environment, and using this to derive exact formulas. &lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.en.math.lmu.de/personen/mitarbeiter/swagner/index.html&#34;&gt;Stefan Wagner&lt;/a&gt;,
-Ludwig-Maximilians University Munich, Germany. “The Inclusion Process on General Spaces: Reversible Measures, Consistency and Self-Duality”. &lt;embed&gt; Powerpoint &lt;a href=&#34;https://drive.google.com/file/d/1aHTNJcheA-x_1do7Q790wMZ61E9hR8W-/view&#34;&gt;presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;: &lt;em&gt;The symmetric inclusion process is a well-known process describing particles hopping on a discrete set. In this talk, we want to define an analogue dynamics on an arbitrary non-discrete space (e.g. &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^d\)&lt;/span&gt;). We consider whether properties like the existence of a reversible measure, consistency and self-duality can be transferred. Regarding the last point, we obtain a general machinery that can also be applied to other consistent particle systems (e.g. sticky Brownian motion) on general spaces.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://research.tudelft.nl/en/persons/s-floreani&#34;&gt;Simone
-Floreani&lt;/a&gt;, Delft
-University of Technology, The Netherlands&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
-Europe initiative (FENStatS) supported by the Bernoulli Society for
-Mathematical Statistics and Probability and the Institute of
-Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=MU_saK2O9gI&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
-      <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
-      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;div id=&#34;problem-setting&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Problem Setting&lt;/h2&gt;
-&lt;p&gt;In our forthcoming &lt;a href=&#34;https://arxiv.org/pdf/1905.12707.pdf&#34;&gt;paper&lt;/a&gt; on Annals of Applied Statistics, we propose a new method – which we call &lt;strong&gt;Bayesian Causal Forest with Instrumental Variable&lt;/strong&gt; (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.&lt;/p&gt;
-&lt;p&gt;These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome. When the intervention is not randomized, researchers can recur to an instrumental variable (IV) to assess the causal effects. A valid instrument, &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt;, is a variable that affects the receipt of the treatment, &lt;span class=&#34;math inline&#34;&gt;\(W\)&lt;/span&gt;, without directly affecting the outcome, &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Using an IV enables researchers to effectively control for potential confounding factors and estimate the local effect of the treatment on individuals who would take a treatment if assigned to it, and not take it if not assigned (the so-called &lt;em&gt;compliers&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;If the classical four IV assumptions (&lt;em&gt;monotonicity, exclusion restriction, unconfoundedness of the instrument, existence of compliers&lt;/em&gt;) hold, one can identify the causal effect of the treatment on the sub-population of compliers, the so-called Complier Average Causal Effect (CACE), that is:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-   \tau^{cace} = \frac{\mathbb{E}\left[Y_i\mid Z_i = 1\right]-\mathbb{E}\left[Y_i\mid Z_i = 0\right]}{\mathbb{E}\left[W_i\mid Z_i =
-        1\right]-\mathbb{E}\left[W_i\mid Z_i = 0\right]}={ITT\over\pi_C},
-    \end{equation}\]&lt;/span&gt;
-where the numerator represents the average effect of the instrument, also referred to as &lt;em&gt;Intention-To-Treat&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(ITT\)&lt;/span&gt;) effect, and the denominator represents the overall proportion of units that comply with the treatment assignment, also referred to as &lt;em&gt;proportion of compliers&lt;/em&gt; (&lt;span class=&#34;math inline&#34;&gt;\(\pi_C\)&lt;/span&gt;). For example, researchers can make use of an IV – such as being eligible for additional school funding – to isolate the causal effects of the primary treatment – i.e., receiving the funding – on the outcome of interest – i.e., the performance of students.&lt;/p&gt;
-&lt;p&gt;In IV settings, it may be of interest to disentangle the heterogeneity in the causal effects by estimating the causal effects within different subgroups. In our paper, we introduce and consider the following conditional version of CACE:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-   \tau^{cace}(x) = \frac{\mathbb{E}\left[Y_i\mid Z_i = 1, X_i=x\right]-\mathbb{E}\left[Y_i\mid Z_i = 0, X_i=x\right]}{\mathbb{E}\left[W_i\mid Z_i =
-        1, X_i=x\right]-\mathbb{E}\left[W_i\mid Z_i = 0, X_i=x\right]}= {ITT_Y(x)\over\pi_C(x)}.
-    \end{equation}\]&lt;/span&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\tau^{cace}(x)\)&lt;/span&gt; is critical as it enables researchers to investigate the heterogeneity in causal effects within different subgroups defined by partitions &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; of the features’ space.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;methodology&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;Various causal machine learning methods have been proposed to estimate conditional causal effects. However, few methods have been developed to discover and estimate heterogeneity in IVs scenarios. To account for this shortcoming, we propose the BCF-IV method. BCF-IV is a &lt;strong&gt;three steps algorithm&lt;/strong&gt; that can be used to interpretably discover the subgroups with the largest or smallest effects.&lt;/p&gt;
-&lt;p&gt;In &lt;strong&gt;step one&lt;/strong&gt;, we divide the data into two subsamples: one to build the tree for the discovery of the heterogeneous effects (&lt;em&gt;discover subsample&lt;/em&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{dis}\)&lt;/span&gt;) and another for making inference (&lt;em&gt;inference subsample&lt;/em&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{inf}\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;In &lt;strong&gt;step two&lt;/strong&gt;, we discover the heterogeneity in the conditional CACE on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{dis}\)&lt;/span&gt; by modeling separately the conditional ITT (&lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(x)\)&lt;/span&gt;) and the conditional proportion of compliers (&lt;span class=&#34;math inline&#34;&gt;\(\pi_C(x)\)&lt;/span&gt;). To do so, we adapt the Bayesian Causal Forest (BCF) method – proposed by Hanh et al. (2020), and recently featured &lt;a href=&#34;https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/&#34;&gt;on the YoungStats blog&lt;/a&gt; – for the estimation of &lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(x)\)&lt;/span&gt;, by including the IV, &lt;span class=&#34;math inline&#34;&gt;\(Z_i\)&lt;/span&gt;, in functional form for the conditional expected value of the outcome:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-    \mathbb{E}[Y_i\mid Z_i=z, X_i=x] = \mu(\pi(x),x) + ITT_{Y}(x)  z
-\end{equation}\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt; is the propensity score for the IV:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \pi(x) =  \mathbb{E}[Z_i=1\mid X_i=x].
-\end{equation}\]&lt;/span&gt;
-Both functions &lt;span class=&#34;math inline&#34;&gt;\(\mu(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(ITT_Y(\cdot)\)&lt;/span&gt; are Bayesian Additive Regression Trees (Chipman, 2010) and are given independent priors to model differently the contributions of the covariates and the treatment on &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. The conditional proportion of compliers can be expressed:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} 
-    \mathbb{E}\left[W_i\mid Z_i = 1, X_i=x\right]-\mathbb{E}\left[W_i\mid Z_i = 0, X_i=x\right]=\delta(1,x)-\delta(0,x),
-\end{equation}\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\delta(z,x)\)&lt;/span&gt; can be estimated using the Bayesian machine learning methodology for causal effects estimation proposed by Hill (2011). The conditional CACE can be computed as the ratio between conditional ITT and conditional proportion of compliers:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-   \hat{\tau}^{cace}(x) =\frac{\mu(\hat{\pi}(x), x) + \hat{ITT}_{Y}(x)  z}{\hat{\delta}(1,x)-\hat{\delta}(0,x)}.
-\end{equation}\]&lt;/span&gt;
-One can then regress &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}^{cace}(x)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; via a binary decision tree to discover, in an interpretable manner, the drivers of the heterogeneity (see, e.g., Lee et al., 2020).&lt;/p&gt;
-&lt;p&gt;In &lt;strong&gt;step three&lt;/strong&gt;, once the heterogeneous subgroups are learned, one can estimate the conditional CACE, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\tau}^{cace}(x)\)&lt;/span&gt; on the inference subsample &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{I}^{inf}\)&lt;/span&gt;. To do so, one can use the method of moments IV estimator from Angrist et al. (1996) within all the different sub-populations that were detected in the previous step. Alternative estimation strategies, such as Two-Stages-Least-Squares, can be employed as well. Finally, multiple hypotheses tests adjustments are performed to control for familywise error rate or – less stringently – for the false discovery rate.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;application&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Application&lt;/h2&gt;
-&lt;p&gt;In our motivating application, implemented via the &lt;a href=&#34;https://github.com/fbargaglistoffi/BCF-IV&#34;&gt;BCF-IV package&lt;/a&gt;, we evaluate the effects of the Equal Educational Opportunity program, promoted in Flanders (Belgium) to provide additional funding for secondary schools with a significant share of disadvantaged students. We use the quasi-randomized assignment of the funding as an IV to assess the effect of additional financial resources on students’ performance in compliant schools. The Flemish Ministry of Education provided us with data on student level characteristics and school level characteristics for the universe of pupils in the first stage of education in the school year 2010/2011 (135,682 students).&lt;/p&gt;
-&lt;p&gt;While the overall effects are negative but not significant (consistently with the findings of previous literature), there are significant differences among different sub-populations of students. Indeed, for students in schools with younger and less senior principals (i.e., principals younger than 55 years old and with less than 30 years of experience) the effects of the policy are larger (see Figure 1).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-06-heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach_files/tree.png&#34; style=&#34;width:70.0%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Figure 1. Visualization of the heterogeneous Complier Average Causal Effects (CACE) of additional funding on student performance. The tree was discovered and estimated using the proposed BCF-IV model.&lt;/em&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Conclusions&lt;/h2&gt;
-&lt;p&gt;By investigating the heterogeneity in the causal effects, BCF-IV expedites targeted policies. In fact, BCF-IV can shed light on the heterogeneity of causal effects in IVs scenarios and, in turn, provides a relevant knowledge for designing targeted interventions. Furthermore, in a Monte Carlo simulation study, we manifested that the BCF-IV technique outperforms other machine learning techniques tailored for causal inference in precisely estimating the causal effects and converges to an optimal large sample performance in identifying the subgroups with heterogeneous effects.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;essential-bibliography&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Essential bibliography&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;This article is based on:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Angrist, J. D., Imbens, G. W., &amp;amp; Rubin, D. B. (1996). &lt;em&gt;Identification of causal effects using instrumental variables.&lt;/em&gt; Journal of the American statistical Association, 91(434), 444-455.&lt;/p&gt;
-&lt;p&gt;Bargagli-Stoffi, F. J., De-Witte, K. and Gnecco, G. (2021+) &lt;em&gt;Heterogeneous causal effects with imperfect compliance: a Bayesian machine learning approach.&lt;/em&gt; The Annals of Applied Statistics, forthcoming.&lt;/p&gt;
-&lt;p&gt;Chipman, H. A., George, E. I., &amp;amp; McCulloch, R. E. (2010). &lt;em&gt;BART: Bayesian additive regression trees.&lt;/em&gt; The Annals of Applied Statistics, 4(1), 266-298.&lt;/p&gt;
-&lt;p&gt;Lee, K., Bargagli-Stoffi, F. J., &amp;amp; Dominici, F. (2020). &lt;em&gt;Causal rule ensemble: Interpretable inference of heterogeneous treatment effects&lt;/em&gt;. arXiv preprint arXiv:2009.09036.&lt;/p&gt;
-&lt;p&gt;Hahn, P. R., Murray, J. S., &amp;amp; Carvalho, C. M. (2020). &lt;em&gt;Bayesian regression tree models for causal inference: Regularization, confounding, and heterogeneous effects&lt;/em&gt;. Bayesian Analysis, 15(3), 965-1056.&lt;/p&gt;
-&lt;p&gt;Hill, J. L. (2011). &lt;em&gt;Bayesian nonparametric modeling for causal inference.&lt;/em&gt; Journal of Computational and Graphical Statistics, 20(1), 217-240.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;authors-biography&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Authors’ biography&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2021-12-06-heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach_files/PhotoHandler%20(Custom).jpeg&#34; height=&#34;70&#34; /&gt;
-&lt;a href=&#34;https://www.falcobargaglistoffi.com/&#34;&gt;&lt;strong&gt;Falco J. Bargagli Stoffi&lt;/strong&gt;&lt;/a&gt; is a Postdoctoral Research Fellow at the Harvard T.H. Chan School of Public Health.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

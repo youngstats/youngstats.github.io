@@ -3,13 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/applied-statistics/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/economic-statistics/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/estimation/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/markov-chains/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2022-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/statistics/</loc>
+    <lastmod>2022-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/probability/</loc>
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
@@ -24,9 +48,6 @@
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/causal-inference/</loc>
-    <lastmod>2022-04-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</loc>
@@ -58,9 +79,6 @@
   </url><url>
     <loc>https://youngstats.github.io/categories/nonparametric-statistics/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/estimation/</loc>
-    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
@@ -239,9 +257,6 @@
     <loc>https://youngstats.github.io/categories/statistical-process-monitoring/</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/economic-statistics/</loc>
-    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/official-statistics/</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
   </url><url>
@@ -270,9 +285,6 @@
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/04/mozgunov/</loc>
