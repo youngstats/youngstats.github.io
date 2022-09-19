@@ -6,7 +6,43 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>machine-learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimal-transport</title>
+      <link>https://youngstats.github.io/categories/optimal-transport/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/optimal-transport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>https://youngstats.github.io/categories/probability/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://youngstats.github.io/categories/statistics/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/statistics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>applied econometrics</title>
       <link>https://youngstats.github.io/categories/applied-econometrics/</link>
@@ -44,15 +80,6 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>markov-chains</title>
       <link>https://youngstats.github.io/categories/markov-chains/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
@@ -62,38 +89,11 @@
     </item>
     
     <item>
-      <title>statistics</title>
-      <link>https://youngstats.github.io/categories/statistics/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability</title>
-      <link>https://youngstats.github.io/categories/probability/</link>
-      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/probability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>stochastic-processes</title>
       <link>https://youngstats.github.io/categories/stochastic-processes/</link>
       <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     

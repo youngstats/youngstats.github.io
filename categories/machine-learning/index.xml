@@ -6,7 +6,16 @@
     <description>Recent content in machine-learning on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
+      <link></link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid></guid>
+      <description>IntroductionA NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fullycharacterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).We present a general model for the intensity function of a non-homogeneous Poissonprocess using measure transport. The model finds its roots in transportation ofprobability measure (Marzouk et al. 2016), an approach that has gainedpopularity recently for its ability to model arbitrary probabilitydensity functions.</description>
+    </item>
+    
     <item>
       <title>Minimax Estimation and Identity Testing of Markov Chains</title>
       <link>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</link>
