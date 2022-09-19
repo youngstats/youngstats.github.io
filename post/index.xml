@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
+      <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</guid>
+      <description>IntroductionA NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fullycharacterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).We present a general model for the intensity function of a non-homogeneous Poissonprocess using measure transport. The model finds its roots in transportation ofprobability measure (Marzouk et al. 2016), an approach that has gainedpopularity recently for its ability to model arbitrary probabilitydensity functions.</description>
+    </item>
+    
+    <item>
       <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</title>
       <link>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
@@ -98,15 +107,6 @@ Instrumental variables (IV) is one of most important and widespread research des
       <description>This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage: https://team-approx-bayes.github.io/blog/mmd/
 INTRODUCTIONA very old and yet very exciting problem in statistics is the definition of a universal estimator \(\hat{\theta}\). An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.
 Formally speaking, we want that for some metric \(d\) on probability distributions, for any statistical model \((P_\theta,\theta\in\Theta)\), given \(X_1,\dots,X_n\) drawn i.</description>
-    </item>
-    
-    <item>
-      <title>Reconciling the Gaussian and Whittle Likelihood with an application to estimation in the frequency domain</title>
-      <link>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</link>
-      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/01/06/reconciling-the-gaussian-and-whittle-likelihood/</guid>
-      <description>OverviewSuppose \(\{X_t: t\in \mathbb{Z}\}\) is a second order stationary time series where \(c(r) = \text{cov}(X_{t+r},X_t)\) and \(f(\omega) = \sum_{r\in\mathbb{Z}}c(r)e^{ir\omega}\) are the corresponding autocovariance and spectral density function, respectively. For notational convenience, we assume the time series is centered, that is \(\textrm{E}(X_t)=0\).Our aim is to fit a parametric second-order stationary model (specified by \(\{c_{f_\theta}(r)\}\) or \(f_\theta(\omega)\)) to the observed time series \(\underline{X}_n = (X_1, ..., X_n)^\top\).There are two classical estimation methods based on the quasi-likelihood criteria.</description>
     </item>
     
   </channel>

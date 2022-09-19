@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/optimal-transport">optimal-transport</a>
+  
+     &hercon; <a href="/categories/machine-learning">machine-learning</a>
+  
+     &hercon; <a href="/categories/probability">probability</a>
+  
+     &hercon; <a href="/categories/statistics">statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</span></h1>
+
+  
+  <h3 class="author">Tin Lok James Ng
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>A NHPP defined on <span class="math inline">\({\cal S} \subset \mathbb{R}^{d}\)</span> can be fully
+characterized through its intensity function <span class="math inline">\(\lambda: {\cal S} \rightarrow [0, \infty)\)</span>.
+We present a general model for the intensity function of a non-homogeneous Poisson
+process using measure transport. The model finds its roots in transportation of
+probability measure <span class="citation">(<a href="#ref-Marzouk2016" role="doc-biblioref">Marzouk et al. 2016</a>)</span>, an approach that has gained
+popularity recently for its ability to model arbitrary probability
+density functions. The basic idea of this approach is to construct a
+“transport map” between the complex, unknown, intensity function of
+interest, and a simpler, known, reference intensity function.</p>
+</div>
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p><strong>Measure Transport.</strong> Consider two probability measures <span class="math inline">\(\mu_0(\cdot)\)</span>
+and <span class="math inline">\(\mu_1(\cdot)\)</span> defined on <span class="math inline">\({\cal X}\)</span> and <span class="math inline">\({\cal Z}\)</span>, respectively. A
+transport map <span class="math inline">\(T: {\cal X} \rightarrow {\cal Z}\)</span> is said to push forward
+<span class="math inline">\(\mu_0(\cdot)\)</span> to <span class="math inline">\(\mu_1(\cdot)\)</span> (written compactly as
+<span class="math inline">\(T_{\#\mu_0}(\cdot) = \mu_1(\cdot)\)</span>) if and only if <span class="math display">\[\begin{eqnarray}
+\label{transport_map} \mu_1(B) = \mu_0(T^{-1}(B)), \quad \mbox{for any
+Borel subset } B \subset {\cal Z}. \end{eqnarray}\]</span></p>
+<p>Suppose <span class="math inline">\({\cal X}, {\cal Z} \subseteq \mathbb{R}^{d}\)</span>, and that both
+<span class="math inline">\(\mu_0(\cdot)\)</span> and <span class="math inline">\(\mu_1(\cdot)\)</span> are absolutely continuous with respect
+to the Lebesgue measure on <span class="math inline">\(\mathbb{R}^{d}\)</span>, with densities
+<span class="math inline">\(d\mu_0(x) = f_0(x) d x\)</span> and <span class="math inline">\(d\mu_1(z) = f_1(z) d z\)</span>, respectively.
+Furthermore, assume that the map <span class="math inline">\(T(\cdot)\)</span> is bijective differentiable
+with a differentiable inverse <span class="math inline">\(T^{-1}(\cdot)\)</span> (i.e., assume that
+<span class="math inline">\(T(\cdot)\)</span> is a <span class="math inline">\(C^{1}\)</span> diffeomorphism), then we have <span class="math display">\[\begin{equation}
+\label{eq:transport} f_0(x) = f_1(T(x)) \|\mbox{det}(\nabla T(x))\|,
+\quad x \in {\cal X}. \end{equation}\]</span></p>
+<p><strong>Triangular Map.</strong> One particular type of transport map is an
+, that is, <span class="math display">\[\begin{eqnarray}
+\label{triangular_map} T(x) = (T^{(1)}(x^{(1)}), T^{(2)}(x^{(1)},
+x^{(2)}), \ldots, T^{(d)}(x^{(1)}, \ldots, x^{(d)}))&#39;,\quad x \in {\cal
+X}, \end{eqnarray}\]</span> where, for <span class="math inline">\(k = 1,\dots, d,\)</span> one has that
+<span class="math inline">\(T^{(k)}(x^{(1)}, \ldots, x^{(k)})\)</span> is monotonically increasing in
+<span class="math inline">\(x^{(k)}\)</span>. In particular, the Jacobian matrix of an increasing
+triangular map, if it exists, is triangular with positive entries on its
+diagonal.</p>
+<p>Various approaches to parameterize an increasing triangular map have been proposed (see, for example, <span class="citation">Germain et al. (<a href="#ref-Germain2015" role="doc-biblioref">2015</a>)</span>,
+<span class="citation">Dinh, Krueger, and Bengio (<a href="#ref-Dinh2015" role="doc-biblioref">2015</a>)</span> and <span class="citation">Dinh, Sohl-Dickstein, and Bengio (<a href="#ref-Dinh2017" role="doc-biblioref">2017</a>)</span>). One class of parameterizations is based on
+the so-called “conditional networks” (<span class="citation">Papamakarios, Pavlakou, and Murray (<a href="#ref-Papamakarios2017" role="doc-biblioref">2017</a>)</span> and
+<span class="citation">Huang et al. (<a href="#ref-Huang2018" role="doc-biblioref">2018</a>)</span>): <span class="math display">\[\begin{eqnarray} T_1^{(1)}(x^{(1)})
+&amp;=&amp; S_1^{(1)}(x^{(1)}; \theta_{11}), \nonumber \\ T_1^{(k)}(x^{(1)},
+\ldots, x^{(k)}) &amp;=&amp; S_1^{(k)}( x^{(k)}; \theta_{1k}(x^{(1)}, \ldots,
+x^{(k-1)}; \vartheta_{1k}) ), \quad k = 2,\dots,d, \end{eqnarray}\]</span> for
+<span class="math inline">\(x \in {\cal X}\)</span>, where <span class="math inline">\(\theta_{1k}(x^{(1)}, \ldots, x^{(k-1)}; \vartheta_{1k}), k = 2,\dots,d\)</span> is the <span class="math inline">\(k\)</span>th “conditional
+network” that takes <span class="math inline">\(x^{(1)}, \ldots, x^{(k-1)}\)</span> as inputs and is
+parameterized by <span class="math inline">\(\vartheta_{1k}\)</span>, and <span class="math inline">\(S_1^{(k)}(\cdot)\)</span> is generally a
+very simple univariate function of <span class="math inline">\(x^{(k)}\)</span>, but with parameters that
+depend in a relatively complex manner on <span class="math inline">\(x^{(1)}, \ldots, x^{(k-1)}\)</span>
+through the network. The class of neural autoregressive flows, proposed
+by , offers more flexibility where the <span class="math inline">\(k\)</span>-th component
+of the map has the form <span class="math display">\[\begin{eqnarray} \label{uni_flow} S_1^{(k)}(
+x^{(k)}; \theta_{1k} ) = \sigma^{-1} \Big( \sum\_{i=1}^{M} w_{1ki}
+\sigma( a_{1ki} x^{(k)} + b_{1ki}) \Big), \end{eqnarray}\]</span> where
+<span class="math inline">\(\sigma^{-1}(\cdot)\)</span> is the logit function, and <span class="math inline">\(w_{1ki}\)</span> is subject to
+the constraint <span class="math inline">\(\sum_{i=1}^{M} w_{1ki} = 1\)</span>.</p>
+<p><strong>Composition of Increasing Triangular Maps.</strong> Composition of Increasing
+Triangular Mapsn does not break the required bijectivity of <span class="math inline">\(T(\cdot)\)</span>,
+since a bijective function of a bijective function is itself bijective.
+Computations also remain tractable, since the determinant of the
+gradient of the composition is simply the product of the determinants of
+the individual gradients. Specifically, consider two increasing
+triangular maps <span class="math inline">\(T_1(\cdot)\)</span> and <span class="math inline">\(T_2(\cdot)\)</span>, each constructed using
+the neural network approach described above. The composition
+<span class="math inline">\(T_2 \circ T_1 (\cdot)\)</span> is bijective, and its gradient at some
+<span class="math inline">\(x \in \cal X\)</span> has determinant,
+<span class="math display">\[ \mbox{det}(\nabla T_2 \circ T_1(x)) = (\mbox{det} (\nabla T_1(x)))(\mbox{det} (\nabla T_2(T_1(x)))).\]</span></p>
+</div>
+<div id="intensity-modeling-and-estimation-via-measure-transport" class="section level2">
+<h2>Intensity Modeling and Estimation via Measure Transport</h2>
+<p> Consider a NHPP <span class="math inline">\({\cal P}\)</span> defined on a bounded
+domain <span class="math inline">\({\cal X} \subset \mathbb{R}^{d}\)</span>. The density of a Poisson
+process with respect to the density of the unit rate Poisson process is
+given by <span class="math display">\[\begin{align} f_{\lambda}(X) &amp;= \exp(\|{\cal X}\| -
+\mu_{\lambda}({\cal X})) \prod_{x \in X} \lambda(x) \nonumber \\ &amp;=
+\exp \Big(\int_{{\cal X}} (\lambda(x) - 1)dx + \sum_{x \in X}
+\log \lambda(x) \Big) \label{fdensity}. \end{align}\]</span> where <span class="math inline">\(|B|\)</span> denote
+the Lebesgue measure of a bounded set <span class="math inline">\(B \subset \mathbb{R}^{d}\)</span>, and
+let <span class="math inline">\(X \equiv \{x_1, \ldots, x_n\},\)</span> where
+<span class="math inline">\(x_i \in {\cal X}, i = 1,\ldots,n,\)</span> and <span class="math inline">\(n \ge 1,\)</span> be a realization of
+<span class="math inline">\({\cal P}\)</span>. The unknown intensity function is estimated by a maximum
+likelihood approach, which is equivalent to minimizing the
+Kullback–Leibler (KL) divergence <span class="math inline">\(D_{KL}(p\|\|q) = \int p(x) \log (p(x)/ q(x))dx\)</span> between the true density and the estimate:
+<span class="math display">\[
+\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|\|f_{\rho})}}
+\]</span> where
+<span class="math inline">\({\cal A}\)</span> is some set of intensity functions, and <span class="math inline">\(f_\rho(\cdot)\)</span> is
+the density of a NHPP with intensity function <span class="math inline">\(\rho(\cdot)\)</span> taken with
+respect to the density of the unit rate Poisson process.</p>
+<p>In order to apply the measure transport approach to intensity function
+estimation, we first define <span class="math inline">\(\tilde{\rho}(\cdot) = \rho(\cdot) / \mu_{\rho}({\cal X})\)</span> and <span class="math inline">\(\tilde{\lambda}(x) = \lambda(x) / \mu_{\lambda}({\cal X}),\)</span> so that
+<span class="math inline">\(\tilde{\rho}(\cdot)\)</span> and <span class="math inline">\(\tilde{\lambda}(\cdot)\)</span> are valid density
+functions with respect to Lebesgue measure. The KL divergence
+<span class="math inline">\(D_{KL}(f_{\lambda} || f_{\rho})\)</span> can be written in terms of process
+densities as follows,
+<span class="math display">\[
+D_{KL}(f_{\lambda}\|\|f_{\rho}) = \mu_{\rho}({\cal X)} -
+\mu_{\lambda}({\cal X}) \int_{{\cal X}} \tilde{\lambda}(x) \log
+\tilde{\rho}(x)dx - \mu_{\lambda}({\cal X}) \log
+\mu_{\rho}({\cal X}) + \textrm{const.},
+\]</span> where “const.” captures other terms not dependent on
+<span class="math inline">\(\mu_{\rho}({\cal X})\)</span> or <span class="math inline">\(\tilde{\rho}(\cdot)\)</span>. After further
+approximations, we obtain the following optimization problem
+<span class="math display">\[
+\hat{\tilde{\lambda}}(\cdot) = \arg\min_{\tilde{\rho}(\cdot) \in {\cal \tilde{A}}} {-{\sum_{i=1}^{n} \log \tilde{\rho}(x_{i})}},
+\]</span> where
+now <span class="math inline">\(\tilde{\cal A}\)</span> is some set of process densities.</p>
+<p>We model the process density <span class="math inline">\(\tilde{\rho}(\cdot)\)</span> using the transportation of
+probability measure approach. Specifically, we seek a diffeomorphism
+<span class="math inline">\(T: {\cal X} \rightarrow {\cal Z}\)</span>, where <span class="math inline">\({\cal Z}\)</span> need not be the
+same as <span class="math inline">\({\cal X}\)</span>, such that
+<span class="math display">\[ \tilde{\rho}(x) = \eta(T(x)) | \mbox{det}\nabla T(x)|, \quad x \in {\cal X},\]</span>where
+<span class="math inline">\(\eta(\cdot)\)</span> is some simple reference density on <span class="math inline">\({\cal Z}\)</span>, and
+<span class="math inline">\(|\mbox{det}\nabla T(\cdot)| &gt; 0\)</span>.</p>
+<p>We prove that the increasing triangular maps constructed using neural autoregressive flows satisfy a
+universal property in the context of probability density approximation.</p>
+<p>Theorem 1. Let <span class="math inline">\(\cal P\)</span> be a non-homogeneous Poisson process with positive continuous process density
+<span class="math inline">\(\tilde{\lambda}(\cdot)\)</span> on <span class="math inline">\({\cal X} \subset \mathbb{R}^{d}\)</span>. Suppose
+further that the weak (Sobolev) partial derivatives of <span class="math inline">\(\tilde{\lambda}\)</span>
+up to order <span class="math inline">\(d+1\)</span> are integrable over <span class="math inline">\(\mathbb{R}^{d}\)</span>. There exists a
+sequence of triangular mappings <span class="math inline">\((T_i(\cdot))_{i}\)</span> wherein the <span class="math inline">\(k\)</span>th
+component of each map <span class="math inline">\(T^{(k)}_i(\cdot)\)</span> has the form above, and wherein the corresponding conditional networks
+are universal approximators (e.g., feedforward neural networks with
+sigmoid activation functions), such that
+<span class="math display">\[ \eta(T_i(\cdot)) \mbox{det} (\nabla T_i(\cdot)) \rightarrow \tilde{\lambda}(\cdot), \]</span>
+with respect to the sup norm on any compact subset of <span class="math inline">\(\mathbb{R}^{d}\)</span>.</p>
+</div>
+<div id="illustration" class="section level2">
+<h2>Illustration</h2>
+<p>We apply our method for intensity function estimation to an earthquake
+data set comprising 1000 seismic events of body-wave magnitude (MB) over
+4.0. The data set is available from the
+package. The events we analyze are those that occurred near Fiji from
+1964 onwards. The left panel of Figure 1 shows a scatter plot of locations of the observed seismic events.</p>
+<p>We fitted our model using a composition of five triangular maps. The estimated
+intensity surface and the standard error surface obtained using are
+shown in the middle and right panels of Figure 1, respectively. The probability that the intensity function exceeds
+various threshold can also be estimated using non-parametric bootstrap
+resampling; some examples of these exceedance probability plots are
+shown in Figure 2.</p>
+<p><img src="/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_scatter-horz.png" /></p>
+<p>Figure 1. Top-left panel: Scatter plot of earthquake events with
+body-wave magnitude greater than 4.0 near Fiji since 1964. Top-right
+panel: Estimated intensity function obtained using measure transport.
+Bottom panel: Estimated standard error of the intensity surface.</p>
+<p><img src="/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_exceed_1-horz.png" /></p>
+<p>Figure 2. Top-left panel: Estimated exceedance probability
+<span class="math inline">\(P(\lambda(\cdot) &gt; 1)\)</span>. Top-right panel: Estimated exceedance
+probability <span class="math inline">\(P(\lambda(\cdot) &gt; 5)\)</span>. Bottom panel: Estimated exceedance
+probability <span class="math inline">\(P(\lambda(\cdot) &gt; 10)\)</span>.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Dinh2015" class="csl-entry">
+Dinh, Laurent, David Krueger, and Yoshua Bengio. 2015. <span>“<span>NICE:</span> Non-Linear Independent Components Estimation.”</span> In <em>Workshop Track Proceedings of the 3rd International Conference on Learning Representations</em>.
+</div>
+<div id="ref-Dinh2017" class="csl-entry">
+Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. 2017. <span>“Density Estimation Using Real <span>NVP</span>.”</span> In <em>Conference Track Proceedings of the 5th International Conference on Learning Representations</em>.
+</div>
+<div id="ref-Germain2015" class="csl-entry">
+Germain, Mathieu, Karol Gregor, Iain Murray, and Hugo Larochelle. 2015. <span>“<span>MADE</span>: Masked Autoencoder for Distribution Estimation.”</span> In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, 881–89.
+</div>
+<div id="ref-Huang2018" class="csl-entry">
+Huang, Chin-Wei, David Krueger, Alexandre Lacoste, and Aaron Courville. 2018. <span>“Neural Autoregressive Flows.”</span> In <em>Proceedings of the 35th International Conference on Machine Learning</em>, 80:2078–87. Proceedings of Machine Learning Research.
+</div>
+<div id="ref-Marzouk2016" class="csl-entry">
+Marzouk, Youssef, Tarek Moselhy, Matthew Parno, and Alessio Spantini. 2016. <span>“Sampling via Measure Transport: An Introduction.”</span> In <em>Handbook of Uncertainty Quantification</em>, 1–41.
+</div>
+<div id="ref-Papamakarios2017" class="csl-entry">
+Papamakarios, George, Theo Pavlakou, and Iain Murray. 2017. <span>“Masked Autoregressive Flow for Density Estimation.”</span> In <em>Advances in Neural Information Processing Systems 30</em>, 2338–47. <a href="http://papers.nips.cc/paper/6828-masked-autoregressive-flow-for-density-estimation.pdf">http://papers.nips.cc/paper/6828-masked-autoregressive-flow-for-density-estimation.pdf</a>.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
