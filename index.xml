@@ -68,9 +68,9 @@ parameterized by &lt;span class=&#34;math inline&#34;&gt;\(\vartheta_{1k}\)&lt;/
 very simple univariate function of &lt;span class=&#34;math inline&#34;&gt;\(x^{(k)}\)&lt;/span&gt;, but with parameters that
 depend in a relatively complex manner on &lt;span class=&#34;math inline&#34;&gt;\(x^{(1)}, \ldots, x^{(k-1)}\)&lt;/span&gt;
 through the network. The class of neural autoregressive flows, proposed
-by , offers more flexibility where the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th component
+by &lt;span class=&#34;citation&#34;&gt;Huang et al. (&lt;a href=&#34;#ref-Huang2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, offers more flexibility where the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th component
 of the map has the form &lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray} \label{uni_flow} S_1^{(k)}(
-x^{(k)}; \theta_{1k} ) = \sigma^{-1} \Big( \sum\_{i=1}^{M} w_{1ki}
+x^{(k)}; \theta_{1k} ) = \sigma^{-1} \Big( \sum_{i=1}^{M} w_{1ki}
 \sigma( a_{1ki} x^{(k)} + b_{1ki}) \Big), \end{eqnarray}\]&lt;/span&gt; where
 &lt;span class=&#34;math inline&#34;&gt;\(\sigma^{-1}(\cdot)\)&lt;/span&gt; is the logit function, and &lt;span class=&#34;math inline&#34;&gt;\(w_{1ki}\)&lt;/span&gt; is subject to
 the constraint &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=1}^{M} w_{1ki} = 1\)&lt;/span&gt;.&lt;/p&gt;
