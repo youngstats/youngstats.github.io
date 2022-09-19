@@ -102,7 +102,7 @@ let &lt;span class=&#34;math inline&#34;&gt;\(X \equiv \{x_1, \ldots, x_n\},\)&l
 likelihood approach, which is equivalent to minimizing the
 Kullback–Leibler (KL) divergence &lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(p\|\|q) = \int p(x) \log (p(x)/ q(x))dx\)&lt;/span&gt; between the true density and the estimate:
 &lt;span class=&#34;math display&#34;&gt;\[
-\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|\|f_{\rho})}}
+\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|f_{\rho})}}
 \]&lt;/span&gt; where
 &lt;span class=&#34;math inline&#34;&gt;\({\cal A}\)&lt;/span&gt; is some set of intensity functions, and &lt;span class=&#34;math inline&#34;&gt;\(f_\rho(\cdot)\)&lt;/span&gt; is
 the density of a NHPP with intensity function &lt;span class=&#34;math inline&#34;&gt;\(\rho(\cdot)\)&lt;/span&gt; taken with
@@ -114,7 +114,7 @@ functions with respect to Lebesgue measure. The KL divergence
 &lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(f_{\lambda} || f_{\rho})\)&lt;/span&gt; can be written in terms of process
 densities as follows,
 &lt;span class=&#34;math display&#34;&gt;\[
-D_{KL}(f_{\lambda}\|\|f_{\rho}) = \mu_{\rho}({\cal X)} -
+D_{KL}(f_{\lambda}\|f_{\rho}) = \mu_{\rho}({\cal X)} -
 \mu_{\lambda}({\cal X}) \int_{{\cal X}} \tilde{\lambda}(x) \log
 \tilde{\rho}(x)dx - \mu_{\lambda}({\cal X}) \log
 \mu_{\rho}({\cal X}) + \textrm{const.},

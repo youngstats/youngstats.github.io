@@ -176,7 +176,7 @@ let <span class="math inline">\(X \equiv \{x_1, \ldots, x_n\},\)</span> where
 likelihood approach, which is equivalent to minimizing the
 Kullback–Leibler (KL) divergence <span class="math inline">\(D_{KL}(p\|\|q) = \int p(x) \log (p(x)/ q(x))dx\)</span> between the true density and the estimate:
 <span class="math display">\[
-\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|\|f_{\rho})}}
+\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|f_{\rho})}}
 \]</span> where
 <span class="math inline">\({\cal A}\)</span> is some set of intensity functions, and <span class="math inline">\(f_\rho(\cdot)\)</span> is
 the density of a NHPP with intensity function <span class="math inline">\(\rho(\cdot)\)</span> taken with
@@ -188,7 +188,7 @@ functions with respect to Lebesgue measure. The KL divergence
 <span class="math inline">\(D_{KL}(f_{\lambda} || f_{\rho})\)</span> can be written in terms of process
 densities as follows,
 <span class="math display">\[
-D_{KL}(f_{\lambda}\|\|f_{\rho}) = \mu_{\rho}({\cal X)} -
+D_{KL}(f_{\lambda}\|f_{\rho}) = \mu_{\rho}({\cal X)} -
 \mu_{\lambda}({\cal X}) \int_{{\cal X}} \tilde{\lambda}(x) \log
 \tilde{\rho}(x)dx - \mu_{\lambda}({\cal X}) \log
 \mu_{\rho}({\cal X}) + \textrm{const.},
