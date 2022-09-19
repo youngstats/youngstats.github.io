@@ -159,14 +159,14 @@ various threshold can also be estimated using non-parametric bootstrap
 resampling; some examples of these exceedance probability plots are
 shown in Figure 2.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_scatter-horz.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 1. Top-left panel: Scatter plot of earthquake events with
-body-wave magnitude greater than 4.0 near Fiji since 1964. Top-right
+&lt;p&gt;Figure 1. Left panel: Scatter plot of earthquake events with
+body-wave magnitude greater than 4.0 near Fiji since 1964. Middle
 panel: Estimated intensity function obtained using measure transport.
-Bottom panel: Estimated standard error of the intensity surface.&lt;/p&gt;
+Right panel: Estimated standard error of the intensity surface.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_exceed_1-horz.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 2. Top-left panel: Estimated exceedance probability
-&lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 1)\)&lt;/span&gt;. Top-right panel: Estimated exceedance
-probability &lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 5)\)&lt;/span&gt;. Bottom panel: Estimated exceedance
+&lt;p&gt;Figure 2. Left panel: Estimated exceedance probability
+&lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 1)\)&lt;/span&gt;. Middle panel: Estimated exceedance
+probability &lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 5)\)&lt;/span&gt;. Right panel: Estimated exceedance
 probability &lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 10)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
