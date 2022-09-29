@@ -6,7 +6,61 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent challenges in model specification testing based on different data structures</title>
+      <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
+      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;strong&gt;Recent challenges in model specification testing based on different data structures&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-29-recent-challenges-in-model-specification-testing-based-on-different-data-structures_files/Slika1-horz.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Model specification testing is one of the essential methodological tasks
+in statistics. Recently, with the development of different data
+structures, envisioning concepts from classical data setups to other
+environments becomes very important.&lt;/p&gt;
+&lt;p&gt;In the webinar, selected young statisticians will present their recent
+works end elaborate on different aspects of this topic.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available
+&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLScwfeWQzP-LQjweX0G9dg50G9BzTmmdVqqpmwlFkG94_3pgpQ/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/berrett/&#34;&gt;Thomas
+Berrett&lt;/a&gt;,
+University of Warwick, United Kingdom: &lt;em&gt;Hypothesis testing under
+local differential privacy&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.math.uni-frankfurt.de/~gerstenb/&#34;&gt;Julian G.
+Gerstenberg&lt;/a&gt;, Goethe
+Universität Frankfurt, Institute for Mathematics, Germany: &lt;em&gt;On the
+exchangeability theory and its applications in non-parametric
+statistics&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.researchgate.net/profile/Marija-Cuparic&#34;&gt;Marija
+Cuparić&lt;/a&gt;,
+University of Belgrade, Serbia: &lt;em&gt;Goodness-of-fit tests for randomly
+censored data&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.researchgate.net/profile/Charl-Pretorius&#34;&gt;Charl
+Pretorius&lt;/a&gt;,
+University of the Free State: Bloemfontein, South Africa:
+&lt;em&gt;Goodness-of-fit tests for multivariate α-stable distributions with
+application to MGARCH models&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Discussant: &lt;a href=&#34;http://poincare.matf.bg.ac.rs/~bojana/en/&#34;&gt;Bojana
+Milošević&lt;/a&gt;, University of
+Belgrade, Serbia&lt;/p&gt;
+&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
+Europe initiative (FENStatS) supported by the Bernoulli Society for
+Mathematical Statistics and Probability and the Institute of
+Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
       <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
@@ -1116,183 +1170,6 @@ Because of its strong geometric properties, the Wasserstein distance is ideal to
 &lt;li&gt;&lt;a href=&#34;https://mypage.unibocconi.eu/antoniolijoi/&#34;&gt;Antonio Lijoi&lt;/a&gt; is Professor in the Department of Decision Sciences at Bocconi University.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mypage.unibocconi.eu/igorpruenster/&#34;&gt;Igor Prünster&lt;/a&gt; is Professor in the Department of Decision Sciences at Bocconi University.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Universal estimation with Maximum Mean Discrepancy (MMD)</title>
-      <link>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</link>
-      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;em&gt;This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage:&lt;/em&gt; &lt;a href=&#34;https://team-approx-bayes.github.io/blog/mmd/&#34; class=&#34;uri&#34;&gt;https://team-approx-bayes.github.io/blog/mmd/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-01-13-universal-estimation-with-maximum-mean-discrepancy-mmd_files/cover2.png&#34; /&gt;&lt;/p&gt;
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;INTRODUCTION&lt;/h2&gt;
-&lt;p&gt;A very old and yet very exciting problem in statistics is the definition of a universal estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt;. An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.&lt;/p&gt;
-&lt;p&gt;Formally speaking, we want that for some metric &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; on probability distributions, for any statistical model &lt;span class=&#34;math inline&#34;&gt;\((P_\theta,\theta\in\Theta)\)&lt;/span&gt;, given &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; drawn i.i.d from some &lt;span class=&#34;math inline&#34;&gt;\(P^0\)&lt;/span&gt; &lt;em&gt;not necessarily in the model&lt;/em&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d\left(P_{\hat{\theta}},P^0 \right) \leq \inf_{\theta\in\Theta} d\left(P_{\theta},P^0 \right) + r_n(\Theta),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(r_n(\Theta) \rightarrow 0\)&lt;/span&gt; when &lt;span class=&#34;math inline&#34;&gt;\(n\rightarrow \infty\)&lt;/span&gt; holds, either in expectation or with large probability.&lt;/p&gt;
-&lt;p&gt;Why would this be nice? Well, first, if the model is well specified, that is, &lt;span class=&#34;math inline&#34;&gt;\(P^0 = P_{\theta^0}\)&lt;/span&gt; for some &lt;span class=&#34;math inline&#34;&gt;\(\theta^0\in\Theta\)&lt;/span&gt;, we would have:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d\left(P_{\hat{\theta}},P^0 \right) \leq  r_n(\Theta) \rightarrow 0,
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;so the estimator is consistent. But the ill-specified case is also relevant. Remember that “&lt;em&gt;all models are wrong, some models are useful&lt;/em&gt;”. A very interesting case is Huber’s contamination model: assume that the data is drawn from the model, but might be corrupted with small probability. That is, &lt;span class=&#34;math inline&#34;&gt;\(P^0 = (1-\varepsilon) P_{\theta^0} + \varepsilon Q\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\in[0,1]\)&lt;/span&gt; is small and &lt;span class=&#34;math inline&#34;&gt;\(Q\)&lt;/span&gt;, the contamination distribution, can be absolutely whatever. Then we would have:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d\left(P_{\hat{\theta}},P^0 \right) \leq d(P_{\theta^0},P^0) + r_n(\Theta) = d(P_{\theta^0},(1-\varepsilon) P_{\theta^0} + \varepsilon Q) + r_n(\Theta).
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;If the metric &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; is such that &lt;span class=&#34;math inline&#34;&gt;\(d(P_{\theta^0},(1-\varepsilon) P_{\theta^0} + \varepsilon Q) \leq C \varepsilon\)&lt;/span&gt; for some constant &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;, we end up with&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d\left(P_{\hat{\theta}},P^0 \right) \leq C \varepsilon +  r_n(\Theta),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;which means that, as long as &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt; remains quite small, the estimator is still not too bad. That is, the estimator is robust to contamination.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-mle-does-not-work&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;THE MLE DOES NOT WORK&lt;/h2&gt;
-&lt;p&gt;In case you believe that popular estimators such as Maximum Likelihood Estimator (MLE) is universal, surprise: it’s not.&lt;/p&gt;
-&lt;p&gt;First, if the model does not satisfy regularity assumptions, the MLE is not even defined. For example, consider a location model, that is, &lt;span class=&#34;math inline&#34;&gt;\(P_\theta\)&lt;/span&gt; has the density
-&lt;span class=&#34;math display&#34;&gt;\[ p_\theta(x) = g(x-\theta) \]&lt;/span&gt;
-and consider
-&lt;span class=&#34;math display&#34;&gt;\[ g(x) = \frac{\exp(-|x|)}{2\sqrt{\pi|x|}} . \]&lt;/span&gt;
-Obviously, the likelihood is infinite at each data point, that is, as soon as &lt;span class=&#34;math inline&#34;&gt;\(\theta\in\{X_1,\dots,X_n\}\)&lt;/span&gt;, we have
-&lt;span class=&#34;math display&#34;&gt;\[ \prod_{i=1}^n p_\theta(X_i) = +\infty. \]&lt;/span&gt;
-Even when the MLE is well defined, there are examples where it is known to be inconsistent [8]. It is also well known to be non robust to contamination in the data.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;some-examples-of-universal-estimators&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;SOME EXAMPLES OF UNIVERSAL ESTIMATORS&lt;/h2&gt;
-&lt;p&gt;The first example of universal estimator we are aware of: Yatracos’ estimator [7], with &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; being the total variation distance. It works with the rate &lt;span class=&#34;math inline&#34;&gt;\(r_n(\Theta) = [\mathrm{dim}(\Theta)/n]^{\frac{1}{2}}\)&lt;/span&gt; when &lt;span class=&#34;math inline&#34;&gt;\(\Theta\)&lt;/span&gt; is in some finite dimensional space. And it doesn’t work for nonparametric estimation. Still, it’s nice, and the paper is beautiful (and short). Equally beautiful is the book by Devroye and Lugosi [9] which studies many estimations methods for the total variation distance, including variants of Yatracos’ estimator.&lt;/p&gt;
-&lt;p&gt;Another example is Birgé, Barraud and Sart’s &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;-estimator [8], which satisfies a similar result for the Hellinger distance. If you want to read the paper, be aware: this is extremely difficult to prove! It is also very nice, because the Hellinger distance looks locally very similar to the KL in many models. In some sense, the &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;-estimator actually does what the MLE should do.&lt;/p&gt;
-&lt;p&gt;By the way. We live in the big data era, high dimensional data, big networks, more layers, you know. So it must be said that Yatracos’ estimator, and the &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;-estimators, cannot be used in practice. They require an exhaustive search in a fine discretization of the parameter space, don’t expect to do that with a deep NN. Don’t expect to do it either for a very shallow NN, not even for a linear regression in dimension 50 (as discussed later, a variant of Yatracos’ estimator by Devroye and Lugosi might be feasible, though).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mmd-estimation&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;MMD-ESTIMATION&lt;/h2&gt;
-&lt;p&gt;Let us now describe yet another metric, and another estimator. This metric is based on kernels. So, let &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; be a kernel on the observations space, &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}\)&lt;/span&gt;. This means that there is an Hilbert space &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{H}\)&lt;/span&gt;, equipped with a norm &lt;span class=&#34;math inline&#34;&gt;\(\left\lVert\cdot\right\rVert _{\mathcal{H}}\)&lt;/span&gt;, and a continuous map &lt;span class=&#34;math inline&#34;&gt;\(\Phi:\mathcal{X}\rightarrow \mathcal{H}\)&lt;/span&gt; such that &lt;span class=&#34;math inline&#34;&gt;\(K(x,x&amp;#39;) = \left&amp;lt;\Phi(x),\Phi(x&amp;#39;)\right&amp;gt;\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Given a probability distribution &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}\)&lt;/span&gt;, let us define the kernel mean embedding&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
- \mu(P) = \int \Phi(x) P(\mathrm{d} x) = \mathbb{E} _{X \sim P }[\Phi(X)].
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wait. Of course, this is not always defined! It is, say, if &lt;span class=&#34;math inline&#34;&gt;\(\int \left\lVert\Phi(x)\right\rVert_{\mathcal{H}} P(\mathrm{d} x) &amp;lt;+\infty\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Now, it appears that some kernels &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; are known such that:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
-&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(k(x,x) = \left\| \Phi(x) \right\|_{\mathcal{H}}^2 \leq 1\)&lt;/span&gt; for any &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;, which in turn ensures that &lt;span class=&#34;math inline&#34;&gt;\(\mu(P)\)&lt;/span&gt; is well defined for any &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(P\mapsto \mu(P)\)&lt;/span&gt; is one to one.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;For example, when &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}=\mathbb{R}^d\)&lt;/span&gt;, the Gaussian kernel&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-k(x,x&amp;#39;) = \exp\left(- \frac{\left\lVert x-x&amp;#39;\right\rVert^2}{\gamma^2} \right),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;for some &lt;span class=&#34;math inline&#34;&gt;\(\gamma&amp;gt;0\)&lt;/span&gt;, satisfies (i) and (ii).&lt;/p&gt;
-&lt;p&gt;For any such kernel,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d_{k}(P,Q)=\left\lVert \mu(P)-\mu(Q)\right\rVert_{\mathcal{H}}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;is a distance between probability distributions. We can now define the MMD-estimator. Let &lt;span class=&#34;math inline&#34;&gt;\(\hat{P}_n\)&lt;/span&gt; denote the empirical probability distribution, that is,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\hat{P} _n
-= \frac{1}{n}\sum_{i=1}^{n} \delta_{X_i}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt; is defined by&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\hat{\theta} = \arg\min_{\theta\in\Theta}d_k(P_\theta,\hat{P}_n).
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Note: [12] below provide some conditions ensuring that the minimizer indeed exists. But actually, if if does not exist, just take any &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;-minimizer for &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt; small enough, and all the good properties discussed below still hold.&lt;/p&gt;
-&lt;p&gt;Note: if you believed the statement “&lt;em&gt;Close your eyes, push the button, it works&lt;/em&gt;” above, you will of course be disappointed. Life is not that simple. The choice of the kernel &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is far from easy, and is of course context dependent.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-shortest-consistency-proof-ever&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;THE SHORTEST CONSISTENCY PROOF EVER?&lt;/h2&gt;
-&lt;p&gt;We now prove that, as long as the kernel satisfies (i) and (ii) above, for any statistical model &lt;span class=&#34;math inline&#34;&gt;\((P_\theta,\theta\in\Theta)\)&lt;/span&gt; (parametric, or not!), given &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; drawn i.i.d from some &lt;span class=&#34;math inline&#34;&gt;\(P^0\)&lt;/span&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathbb{E} \left[ d_k\left(P_{\hat{\theta}},P^0 \right) \right] \leq \inf_{\theta\in\Theta} d_k\left(P_{\theta},P^0 \right) + \frac{2}{\sqrt{n}}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;This is taken from our paper [1]. (Note that the expectation is with respect to the sample: &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}=\hat{\theta}(X_1,\dots,X_n)\)&lt;/span&gt;, the dependence with respect to the sample is always dropped from the notation in statistics and in machine learning).&lt;/p&gt;
-&lt;p&gt;First, for any &lt;span class=&#34;math inline&#34;&gt;\(\theta\in\Theta\)&lt;/span&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d_k\left(P_{\hat{\theta}_n},P^0 \right) \leq d_k\left(P_{\hat{\theta}_n},\hat{P}_n \right) +  d_k\left(\hat{P}_n,P^0 \right)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;by the triangle inequality. Using the defining property of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt;, that is, that it mimizes the first term in the right-hand side,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d_k\left(P_{\hat{\theta}_n},P^0 \right) \leq d_k\left(P_{\theta},\hat{P}_n \right) +  d_k\left(\hat{P}_n,P^0 \right),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;and using again the triangle inequality,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d_k\left(P_{\hat{\theta}_n},P^0 \right) \leq d_k \left(P_{\theta},P^0 \right) + 2 d_k\left(\hat{P}_n,P^0 \right).
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Take the expectation of both sides, and keeping in mind that this holds for any &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;, this gives:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathbb{E} \left[ d_k\left(P_{\hat{\theta}},P^0 \right) \right] \leq \inf_{\theta\in\Theta} d_k\left(P_{\theta},P^0 \right) + 2 \mathbb{E} \left[d_k\left(\hat{P}_n,P^0 \right) \right].
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;So, it all boils down to a control of the expectation of &lt;span class=&#34;math inline&#34;&gt;\(d_k(\hat{P}_n,P^0 )\)&lt;/span&gt; in the right-hand side. Using Jensen’s inequality,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathbb{E} \left[ d_k\left(\hat{P}_n,P^0 \right)\right] \leq \sqrt{\mathbb{E} \left[d_k^2\left(\hat{P}_n,P^0 \right)\right]}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;so let us just focus on bounding the expected square distance. Using the definition of the MMD distance,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathbb{E} \left[d_k^2\left(\hat{P}_n,P^0 \right)\right] = \mathbb{E} \left[ \left\lVert \frac{1}{n} \sum_{i=1}^n \Phi(X_i)-\mathbb{E}_{X\sim P^0}[\Phi(X)]  \right\rVert_{\mathcal{H}}^2 \right] = \mathrm{Var}\left(\frac{1}{n} \sum_{i=1}^n \Phi(X_i) \right)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;and so, as &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dots,X_n\)&lt;/span&gt; are i.i.d,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathbb{E} \left[d_k^2\left(\hat{P}_n,P^0 \right)\right] = \frac{1}{n} \mathrm{Var}[\Phi(X_1)] \leq \frac{1}{n} \mathbb{E}\left[ \left\lVert\Phi(X_1) \right\rVert_\mathcal{H}^2\right] \leq \frac{1}{n}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;how-to-compute-the-mmd-estimator&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;HOW TO COMPUTE THE MMD-ESTIMATOR?&lt;/h2&gt;
-&lt;p&gt;Now, of course, one question remains: is it easier to compute &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt; than Yatracos’ estimator?&lt;/p&gt;
-&lt;p&gt;This question is discussed in depth in [1] and [12]. The main message is that the minimization of &lt;span class=&#34;math inline&#34;&gt;\(d_k^2(P_\theta,\hat{P}_{n})\)&lt;/span&gt; is usually a smooth, but non-convex problem (in [1] we exhibit one model for which the problem is convex, though). An unbiased estimate of the gradient of this quantity is easy to build. So, it is possible to use a stochastic gradient algorithm (SGA), but because of the non-convexity of the problem, it is not possible to show that this will lead to a global minimum. Still, in practice, the performances of the estimator obtained by using the SGA are excellent, see [1,12].&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;historical-references&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;HISTORICAL REFERENCES&lt;/h2&gt;
-&lt;p&gt;The idea to use an estimator of the form&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\hat{\theta} = \arg\min_{\theta\in\Theta} d(P_\theta,\hat{P}_n)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;goes back to the 50s, see [5], under the name “minimum distance estimation” (MDE). The paper [6] is followed by a discussion by Sture Holm who argues that this leads to robust estimators when the distance &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; is bounded. The reader can try for example the Kolmogorov-Smirnov distance defined for &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{X}=\mathbb{R}\)&lt;/span&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-d(P,Q) = \sup_{a\in\mathbb{R}} |P(X\leq a) - Q(X\leq a)|.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Another example is the total variation distance. Note that the initial procedure proposed by Yatracos [7] is &lt;em&gt;not&lt;/em&gt; the MDE with the TV distance (but it is an MDE with respect to another, model dependent semi-metric).&lt;/p&gt;
-&lt;p&gt;Also, we mention that the procedure used by Barraud, Birgé and Sart in [8] &lt;em&gt;cannot&lt;/em&gt; be interpreted as minimum distance estimation.&lt;/p&gt;
-&lt;p&gt;The MMD distance has been used in kernel methods for years, we refer the reader to the excellent tutorial [10]. However, up to your knowledge, the first time it was used as described in this blog post was in [11] where the authors used this technique to estimate &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; in a special type of model &lt;span class=&#34;math inline&#34;&gt;\((P_\theta,\theta\in\Theta)\)&lt;/span&gt; called Generative Adversarial Network (GAN, I guess you already heard about it). The first general study of MMD-estimation is [12], where the authors study the consistency and asymptotic normality of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt; (among others!).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;advertisement-our-recent-works-on-mmd&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;ADVERTISEMENT: OUR RECENT WORKS ON MMD&lt;/h2&gt;
-&lt;p&gt;Our preprint on MMD-estimation and robustness study specifically the robustness properties of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}\)&lt;/span&gt;. Namely, in Huber’s contamination model, we study in detail the dependence of &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}[d(P_{\hat{\theta}},P^0)]\)&lt;/span&gt; with respect to &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, the sample size, and &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;, the level of contamination. Moreover, in this paper, we also extend the consistency proof to the case where the observations are not independent.&lt;/p&gt;
-&lt;p&gt;[1] &lt;a href=&#34;https://doi.org/10.3150/21-BEJ1338&#34;&gt;B.-E. Chérief-Abdellatif and P. Alquier (2019). Finite Sample Properties of Parametric MMD Estimation: Robustness to Misspecification and Dependence. Bernoulli, 2022, vol. 28(1), no. 1, pp. 181-213.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In the short paper on MMD-Bayes, we study a generalized Bayes procedure using the MMD distance:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\pi(\theta|X_1,\dots,X_n) \propto \exp\left(- \eta d_k^2(P_\theta,\hat{P}_n) \right) \pi(\theta)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; is some prior distribution and &lt;span class=&#34;math inline&#34;&gt;\(\eta&amp;gt;0\)&lt;/span&gt; some tuning parameter. This leads to robust Bayesian estimators.&lt;/p&gt;
-&lt;p&gt;[2] &lt;a href=&#34;http://proceedings.mlr.press/v118/cherief-abdellatif20a.html&#34;&gt;B.-E. Chérief-Abdellatif and P. Alquier (2020). MMD-Bayes: Robust Bayesian Estimation via Maximum Mean Discrepancy. Proceedings of The 2nd Symposium on Advances in Approximate Bayesian Inference (AABI), Proceedings of Machine Learning Research, vol. 118, pp. 1-21.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We finally have two recent preprints on MMD-estimation in regression models and in copulas models, respectively. These models have in common that they are semi-parametric: we want to estimate a parameter that does not completely define the distribution of the data. For example, in the linear regression model &lt;span class=&#34;math inline&#34;&gt;\(Y_i = \left&amp;lt;\theta,X_i\right&amp;gt; + \varepsilon_i\)&lt;/span&gt;, we usually only specify the distribution of &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;, say &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{N}(0,\sigma^2)\)&lt;/span&gt;. However, in order to use the MMD-estimator as defined above, one should also specify the distribution of the &lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;’s. In [4], we propose a trick to avoid that, but the analysis becomes immediately much more complex.&lt;/p&gt;
-&lt;p&gt;[3] &lt;a href=&#34;https://doi.org/10.1080/01621459.2021.2024836&#34;&gt;P. Alquier, B.-E. Chérief-Abdellatif, A. Derumigny and J.-D. Fermanian. Estimation of Copulas via Maximum Mean Discrepancy, to appear in Journal of the American Statistical Association.&lt;/a&gt; The paper comes with the R package: &lt;a href=&#34;https://cran.r-project.org/web/packages/MMDCopula/&#34;&gt;MMDCopula&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;[4] &lt;a href=&#34;http://arxiv.org/abs/2006.00840&#34;&gt;P. Alquier and M. Gerber (2020). Universal Robust Regression via Maximum Mean Discrepancy. Preprint arxiv:2006.00840.&lt;/a&gt; We are currently working on the corresponding R package.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;REFERENCES&lt;/h2&gt;
-&lt;p&gt;[5] &lt;a href=&#34;https://projecteuclid.org/download/pdf_1/euclid.aoms/1177707038&#34;&gt;J. Wolfowitz (1957). The minimum distance method. The Annals of Mathematical Statistics, 28(1), 75-88.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[6] P. J. Bickel (1976). Another Look at Robustness: A Review of Reviews and Some New Developments. Scandinavian Journal of Statistics 3, 145-168.&lt;/p&gt;
-&lt;p&gt;[7] &lt;a href=&#34;https://projecteuclid.org/download/pdf1/euclid.aos/1176349553&#34;&gt;Y. G. Yatracos (1985). Rates of convergence of minimum distance estimators and Kolmogorov’s entropy. The Annals of Statistics, 13(2), 768-774.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[8] &lt;a href=&#34;https://link.springer.com/article/10.1007/s00222-016-0673-5&#34;&gt;Y. Baraud, L. Birgé and M. Sart (2017). A new method for estimation and model selection: &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;-estimation. Inventiones mathematicae, 207, 425-517.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[9] &lt;a href=&#34;https://www.springer.com/gp/book/9780387951171&#34;&gt;L. Devroye and G. Lugosi (2001). Combinatorial methods in density estimation. Springer.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[10] &lt;a href=&#34;https://www.nowpublishers.com/article/Details/MAL-060&#34;&gt;K. Muandet, K. Fukumizu, B. Sriperumbudur and B. Schölkopf, (2017). Kernel mean embedding of distributions: A review and beyond. Foundations and Trends in Machine Learning, 10(1-2), 1-141.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[11] &lt;a href=&#34;http://auai.org/uai2015/proceedings/papers/230.pdf&#34;&gt;G. K. Dziugaite, D. M. Roy and Z. Ghahramani (2015). Training generative neural networks via maximum mean discrepancy optimization. UAI’15: Proceedings of the Thirty-First Conference on Uncertainty in Artificial IntelligenceJuly 2015, 258-267.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[12] &lt;a href=&#34;http://arxiv.org/abs/1906.05944&#34;&gt;F.-X. Briol, A. Barp, A. B. Duncan and M. Girolami (2019). Statistical Inference for Generative Models via Maximum Mean Discrepancy. Preprint arXiv:1906.05944.&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;about-the-author&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;ABOUT THE AUTHOR&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://pierrealquier.github.io/&#34;&gt;Pierre Alquier&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Please visit the webpage of my co-authors on this topic:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://badreddinecheriefabdellatif.github.io/&#34;&gt;Badr-Eddine Chérief-Abdellatif&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://alexisderumigny.wordpress.com/&#34;&gt;Alexis Derumigny&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.crest.fr/pagesperso.php?user=2975&#34;&gt;Jean-David Fermanian&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://research-information.bris.ac.uk/en/persons/mathieu-gerber&#34;&gt;Mathieu Gerber&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
