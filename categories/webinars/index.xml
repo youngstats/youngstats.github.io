@@ -6,20 +6,7 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Recent challenges in model specification testing based on different data structures</title>
-      <link></link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid></guid>
-      <description>Recent challenges in model specification testing based on different data structures
-Model specification testing is one of the essential methodological tasks in statistics. Recently, with the development of different data structures, envisioning concepts from classical data setups to other environments becomes very important.
-In the webinar, selected young statisticians will present their recent works end elaborate on different aspects of this topic.
-When &amp;amp; Where:
-Wednesday, November 9th, 8:00 PT / 11:00 EST / 17:00 CET.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
       <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
@@ -111,6 +98,17 @@ The sixth “One World webinar” organized by YoungStatS will take place onNov
       <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
       <description>Advances in Difference-in-Differences in Econometrics
 The eighth “One World webinar” organized by YoungStatS will take placeon December 15th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
+    </item>
+    
+    <item>
+      <title>Concentration Inequalities in Machine Learning</title>
+      <link>https://youngstats.github.io/post/2021/06/30/concentration-inequalities-in-machine-learning/</link>
+      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/06/30/concentration-inequalities-in-machine-learning/</guid>
+      <description>The fifth “One World webinar” organized by YoungStatS will take place on September 15th, 2021. Selected young European researchers active in the areas of probability and machine learning will present their recent contributions. The webinar is joint cooperation between the Young Researchers Committee of the Bernoulli Society and the YoungStatS project.
+When &amp;amp; Where:
+Wednesday, September 15th, 17:00 CESTOnline, via Zoom. The registration form is available here.Speakers:</description>
     </item>
     
   </channel>
