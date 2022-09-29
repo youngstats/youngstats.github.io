@@ -6,7 +6,7 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
       <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
@@ -111,7 +111,7 @@ respect to the density of the unit rate Poisson process.&lt;/p&gt;
 estimation, we first define &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot) = \rho(\cdot) / \mu_{\rho}({\cal X})\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}(x) = \lambda(x) / \mu_{\lambda}({\cal X}),\)&lt;/span&gt; so that
 &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}(\cdot)\)&lt;/span&gt; are valid density
 functions with respect to Lebesgue measure. The KL divergence
-&lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(f_{\lambda} || f_{\rho})\)&lt;/span&gt; can be written in terms of process
+&lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(f_{\lambda}\|f_{\rho})\)&lt;/span&gt; can be written in terms of process
 densities as follows,
 &lt;span class=&#34;math display&#34;&gt;\[
 D_{KL}(f_{\lambda}\|f_{\rho}) = \mu_{\rho}({\cal X)} -

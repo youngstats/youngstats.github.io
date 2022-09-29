@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/differential-privacy/</loc>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/model-specification/</loc>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/statistics/</loc>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
@@ -17,13 +32,7 @@
     <loc>https://youngstats.github.io/categories/optimal-transport/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/probability/</loc>
-    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/applied-econometrics/</loc>
@@ -51,9 +60,6 @@
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
-    <lastmod>2022-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/causal-inference/</loc>
