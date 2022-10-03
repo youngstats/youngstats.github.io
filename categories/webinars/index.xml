@@ -6,7 +6,17 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nonparametric inference based on statistical depth</title>
+      <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
+      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
+      <description>Nonparametric inference based on statistical depth
+The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering. Many such mappings have been introduced in the literature in recent decades and this is subject to intense research in, among other, nonparametric statistics and functional data analysis.</description>
+    </item>
+    
     <item>
       <title>Recent challenges in model specification testing based on different data structures</title>
       <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
@@ -101,16 +111,6 @@ The seventh “One World webinar” organized by YoungStatS will take placeon N
       <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
       <description>Advancements in Symbolic Data Analysis
 The sixth “One World webinar” organized by YoungStatS will take place onNovember 8th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
-    </item>
-    
-    <item>
-      <title>Advances in Difference-in-Differences in Econometrics</title>
-      <link>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
-      <description>Advances in Difference-in-Differences in Econometrics
-The eighth “One World webinar” organized by YoungStatS will take placeon December 15th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
     </item>
     
   </channel>

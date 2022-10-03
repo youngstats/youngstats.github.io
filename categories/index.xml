@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functional-Data-Analysis</title>
+      <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
+      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/functional-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nonparametric-statistics</title>
+      <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
+      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/nonparametric-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>differential-privacy</title>
       <link>https://youngstats.github.io/categories/differential-privacy/</link>
@@ -31,15 +58,6 @@
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/applied-econometrics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>applied statistics</title>
-      <link>https://youngstats.github.io/categories/applied-statistics/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/applied-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>economic statistics</title>
-      <link>https://youngstats.github.io/categories/economic-statistics/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/economic-statistics/</guid>
       <description></description>
     </item>
     

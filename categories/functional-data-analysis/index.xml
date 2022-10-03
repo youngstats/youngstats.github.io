@@ -6,7 +6,17 @@
     <description>Recent content in Functional-Data-Analysis on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nonparametric inference based on statistical depth</title>
+      <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
+      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
+      <description>Nonparametric inference based on statistical depth
+The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering. Many such mappings have been introduced in the literature in recent decades and this is subject to intense research in, among other, nonparametric statistics and functional data analysis.</description>
+    </item>
+    
     <item>
       <title>Recent Advances in Functional Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
