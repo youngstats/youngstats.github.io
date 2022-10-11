@@ -118,7 +118,6 @@ Then, for any arm &lt;span class=&#34;math inline&#34;&gt;\(w \in \mathcal{W}\)&
 Conversely, estimating the “bad” arm value &lt;span class=&#34;math inline&#34;&gt;\(Q(1)\)&lt;/span&gt; is challenging. Although the AIPW estimator is unbiased, it performs very poorly in terms of RMSE and confidence interval width. In the low and high signal case, its problem is that it does not take into account the fact that the bad arm is undersampled, so its variance is high. Of our two adaptively-weighted AIPW estimators, two-point allocation better controls the variance of bad arm estimates by more aggressively downweighting `unlikely’ observations associated with large inverse propensity weights; this results in smaller RMSE and tighter confidence intervals.
 For the sample-mean estimator, naive confidence intervals based on the normal approximation are invalid, with severe under-coverage when there’s little or
 no signal. On the other hand, the non-asymptotic confidence sequences of &lt;span class=&#34;citation&#34;&gt;Howard et al. (&lt;a href=&#34;#ref-howard2021uniform&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; are conservative and often wide.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;arm_values.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-11-inference-on-adaptively-collected-data_files/arm_values.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;extensions&#34; class=&#34;section level2&#34;&gt;
