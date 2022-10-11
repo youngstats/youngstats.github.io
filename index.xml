@@ -6,7 +6,186 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inference on Adaptively Collected Data</title>
+      <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
+      <description>
+
+
+&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;It is increasingly common for data to be collected adaptively, where experimental costs are reduced progressively by assigning promising treatments more frequently. However, adaptivity also poses great challenges on post-experiment inference, since observations are dependent, and standard estimates can be skewed and heavy-tailed. We propose a treatment-effect estimator that is consistent and asymptotically normal, allowing for constructing frequentist confidence intervals and testing hypotheses.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-11-inference-on-adaptively-collected-data_files/eye_catching.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Adaptive data collection can optimize sample efficiency during the course of the experiment for particular objectives, such as identifying the best treatment &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-russo2020simple&#34; role=&#34;doc-biblioref&#34;&gt;D. Russo 2020&lt;/a&gt;)&lt;/span&gt; or improving operational performance &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-agrawal2013thompson&#34; role=&#34;doc-biblioref&#34;&gt;Agrawal and Goyal 2013&lt;/a&gt;)&lt;/span&gt; .
+To achieve these efficiency gains, the experimenter—rather than staying with a fixed randomization rule—updates the data-collection policy (which maps individual characteristics/contexts to treatments/actions) in response to observed outcomes over the course of the experiment. In this way, the experimenter can resolve uncertainty about some aspects of the data generating process at the expense of learning little about others &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-murphy2005experimental&#34; role=&#34;doc-biblioref&#34;&gt;Murphy 2005&lt;/a&gt;)&lt;/span&gt;. A common family of the design algorithms are bandit algorithms &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-lai1985asymptotically&#34; role=&#34;doc-biblioref&#34;&gt;Lai and Robbins 1985&lt;/a&gt;)&lt;/span&gt;,
+where treatment assignments are selected to trade off exploration and exploitation to maximize the cumulative performance over time.&lt;/p&gt;
+&lt;p&gt;The increasing popularity of adaptive experiments results in the growing availability of data collected from such designs.
+A natural query arises: can we reuse the data to answer a variety of questions that may not be originally targeted by the experiments?
+However, adaptivity also poses great statistical challenges if the post-experiment objective differs significantly from the original, and standard approaches used to analyze independently collected data can be plagued by bias, excessive variance, or both. This post seeks to address the problem of offline policy evaluation, which is to estimate the expected benefit of one treatment assignment policy—often termed as &lt;em&gt;policy value&lt;/em&gt;—with data that was collected using another potentially different policy. For example, in personalized healthcare, doctors may use electronic medical records to evaluate how particular groups of patients will respond to heterogenenous treatments (e.g., different types of drugs/therapies or different dosage levels of the same drug) &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-bertsimas2017personalized&#34; role=&#34;doc-biblioref&#34;&gt;Bertsimas et al. 2017&lt;/a&gt;)&lt;/span&gt;, whereas in targeted advertising, retailers may want to understand how alternative product promotions (either in mail or online) affect different consumer segments &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-schnabel2016recommendations&#34; role=&#34;doc-biblioref&#34;&gt;Schnabel et al. 2016&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;problem-formulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Problem formulation&lt;/h2&gt;
+&lt;p&gt;Consider that samples are collected by a multi-armed bandit algorithm, where each observation is represented by a tuple &lt;span class=&#34;math inline&#34;&gt;\((W_t, Y_t)\)&lt;/span&gt;.
+The random variables &lt;span class=&#34;math inline&#34;&gt;\(W_t \in \{1, 2, \dots, K\}\)&lt;/span&gt; are called the arms, treatments or interventions.
+The reward or outcome &lt;span class=&#34;math inline&#34;&gt;\(Y_t\)&lt;/span&gt; represents the individual’s response to the treatment, for which we use the potential outcome framework and denote &lt;span class=&#34;math inline&#34;&gt;\(Y_t(w)\)&lt;/span&gt; as the random variable representing the outcome that would be observed if individual &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; were assigned to a treatment &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;.
+We here consider a stationary setting of the potential outcomes, where &lt;span class=&#34;math inline&#34;&gt;\((Y_t(1),Y_t(2),\dots, Y_t(K))\)&lt;/span&gt; is sampled from a fixed distribution.
+The set of observations up to a certain time &lt;span class=&#34;math inline&#34;&gt;\(H_t := \{(W_s, Y_s) \}_{s=1}^T\)&lt;/span&gt; is called a history.
+The treatment assignment probabilities (also known as &lt;em&gt;propensities&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(e_t(w) := \mathbb{P}[W_t = w | H_{t-1}]\)&lt;/span&gt; are
+updated over time by the experimenter, in response to the observations &lt;span class=&#34;math inline&#34;&gt;\(H_{t-1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Our goal is to estimate the value of an arm &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;, denoted by &lt;span class=&#34;math inline&#34;&gt;\(Q(w):=\mathbb{E}[Y_t(w)]\)&lt;/span&gt;.
+We will provide consistent and asymptotically normal test statistics for &lt;span class=&#34;math inline&#34;&gt;\(Q(w)\)&lt;/span&gt;, so that we can construct confidence intervals around the estimations to test hypotheses. We would like to do that even in data-poor situations in which the experimenter did not collect many samples around the arm &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;our-approach&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Our approach&lt;/h2&gt;
+&lt;p&gt;The main challenging in evaluating an arm &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt; with observational data is known as the &lt;em&gt;overlap&lt;/em&gt; issue between the target arm and the data-collection mechanism, when the arm assignments made during data collection differ substantially from the target arm &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;. This issue becomes more severe when data is collected adaptively, since overlap with the target arm can deteriorate as the experimenter shifts the data-collection mechanism in response to what they observe. As a result, estimates from standard estimators can be skewed and heavy-tailed.&lt;/p&gt;
+&lt;p&gt;Our approach to recover the asymptotic normality is done in three steps. First, we construct an unbiased arm evaluation score of each sample, which is a transformation of the observed outcome. Second, we average these scores with non-uniform and data-adaptive weights, obtaining a new estimator with controlled variance. Finally, by dividing the estimator by its estimated standard error we obtain a test statistic that is consistent and asymptotically normal.&lt;/p&gt;
+&lt;div id=&#34;step-1-constructing-an-unbiased-arm-evaluation-score-for-each-observation&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 1: Constructing an unbiased arm evaluation score for each observation&lt;/h4&gt;
+&lt;p&gt;The arm evaluation scoring rule should address the sampling bias issue, which is notorious in adaptively collected data &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-nie2018adaptively&#34; role=&#34;doc-biblioref&#34;&gt;Nie et al. 2018&lt;/a&gt;)&lt;/span&gt;. One
+natural method is to re-weight observed outcomes based on importance sampling, which results in an inverse propensity score weighted (IPW) estimator:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+  \label{eq:ipw}
+   \widehat{Q}_T^{IPW}(w) := \frac{1}{T}\sum_{t=1}^T\widehat{\Gamma}_t^{IPW}(w), \ \mbox{where} \  \widehat{\Gamma}_t^{IPW}(w) := \frac{\mathbb{I}\{W_t=w\}}{e_t(w)} Y_t.
+\end{equation}\]&lt;/span&gt;
+With the observation that &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}({W_t = w | H_{t-1}, \, Y_t(w)} = \mathbb{P}({W_t = w | H_{t-1}} = e(w;H_{t-1})\)&lt;/span&gt;, one can immediately see the unbiasedness of &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\Gamma}_t^{IPW}(w)\)&lt;/span&gt; that has &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}[\widehat{\Gamma}_t^{IPW}(w)|H_{t-1}]=Q(w)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The augmented inverse propensity weighted (AIPW) estimator generalizes the above by incorporating regression adjustment :
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+  \label{eq:aipw}
+  \begin{split}
+  &amp;amp;\widehat{Q}_T^{AIPW}(w) := \frac{1}{T}\sum_{t=1}^T \widehat{\Gamma}_t^{AIPW}(w), \ \mbox{where}\ \widehat{\Gamma}_t^{AIPW}(w) :=  \hat{\mu}_t(w) + \frac{\mathbb{I}\{W_t=w\}}{e_t(w)} \left(  Y_t - \hat{\mu}_t(w)\right).
+  \end{split}
+\end{equation}\]&lt;/span&gt;
+The symbol &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}_t(w)\)&lt;/span&gt; denotes an estimator of the conditional mean function &lt;span class=&#34;math inline&#34;&gt;\(\mu(w) = \mathbb{E}[Y_t(w)]\)&lt;/span&gt; based on the history &lt;span class=&#34;math inline&#34;&gt;\(H_{t-1}\)&lt;/span&gt;, but it need not be a good one—it could be biased or even inconsistent. The second term of &lt;span class=&#34;math inline&#34;&gt;\(Y_t - \hat{\mu}_t(w)\)&lt;/span&gt; acts as a bias-correction term:
+adding it preserves unbiasedness but also reduces the variance, since the residual—when &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}_t(w)\)&lt;/span&gt; is a reasonable estimator of &lt;span class=&#34;math inline&#34;&gt;\(\mu(w)\)&lt;/span&gt;—potentially has a smaller absolute mean as compared to the raw outcome &lt;span class=&#34;math inline&#34;&gt;\(Y_t\)&lt;/span&gt;. We will hereby use the AIPW score &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\Gamma}_t^{AIPW}(w)\)&lt;/span&gt; for each observation &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-averaging-arm-evaluations-with-adaptive-weights&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 2: Averaging arm evaluations with adaptive weights&lt;/h4&gt;
+&lt;p&gt;When data is collected non-adaptively but by a fixed randomization rule, AIPW estimator is semiparametrically efficient &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hahn1998role&#34; role=&#34;doc-biblioref&#34;&gt;Hahn 1998&lt;/a&gt;)&lt;/span&gt;. However, adaptivity makes the sampling distribution non-normal and heavy-tailed, and the variance of the AIPW scores &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\Gamma}_t^{AIPW}(w)\)&lt;/span&gt; can vary hugely over the course of experiment. In fact, the conditional variances &lt;span class=&#34;math inline&#34;&gt;\(\mbox{Var}(\widehat{\Gamma}_t^{AIPW}(w)|H_{t-1})\)&lt;/span&gt; depend primarily on the behavior of the inverse propensities &lt;span class=&#34;math inline&#34;&gt;\(1/e_t(w)\)&lt;/span&gt;, which may explode to infinity or fail to converge.&lt;/p&gt;
+&lt;p&gt;To address this difficulty, we consider a generalization of the AIPW estimator, which non-uniformly
+averages the unbiased scores &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\Gamma}^{AIPW}_t(w)\)&lt;/span&gt; using a sequence of &lt;em&gt;adaptive weights&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(h_t(w)\)&lt;/span&gt;. The resulting estimator is the &lt;em&gt;adaptively-weighted AIPW estimator&lt;/em&gt;:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+  \label{eq:aw}
+  \widehat{Q}^{h}_T(w) = \frac{\sum_{t=1}^T h_t(w) \widehat{\Gamma}_t^{AIPW}(w)}{\sum_{t=1}^T h_t(w)}.
+\end{align}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Adaptive weights &lt;span class=&#34;math inline&#34;&gt;\(h_t(w)\)&lt;/span&gt; provide an additional degree of flexibility in controlling the variance and the tail of the sampling distribution. When chosen appropriately, these weights compensate for erratic trajectories of the assignment probabilities &lt;span class=&#34;math inline&#34;&gt;\(e_t(w)\)&lt;/span&gt;, stabilizing the variance of the estimator. A natural choice of adaptive weights is to approximate the inverse standard deviation of the &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\Gamma}_t^{AIPW}(w)\)&lt;/span&gt;. In this way each re-weighted term &lt;span class=&#34;math inline&#34;&gt;\(h_t\widehat{\Gamma}_t^{AIPW}(w)\)&lt;/span&gt; has comparable variance, such that averaging these object may lead to a normal limiting distribution. We shall refer it to &lt;strong&gt;constant-allocation&lt;/strong&gt; weighting scheme since each weighted element &lt;span class=&#34;math inline&#34;&gt;\(h_t\widehat{\Gamma}_t^{AIPW}(w)\)&lt;/span&gt; contributes to roughly the same share of variance in the final estimator. Weights of this type were proposed by &lt;span class=&#34;citation&#34;&gt;Luedtke and Laan (&lt;a href=&#34;#ref-luedtke2016statistical&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt; for the purpose of estimating the expected value of
+non-unique optimal policies that possibly depend on observable covariates.&lt;/p&gt;
+&lt;p&gt;More generally, to get an adaptively-weighted AIPW estimator &lt;span class=&#34;math inline&#34;&gt;\(\widehat{Q}^{h}_T(w)\)&lt;/span&gt; that is consistent and asymptotically normal, we require the following assumptions on our weighting schemes stated below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Assumption 1&lt;/strong&gt; (Infinite sampling). &lt;span class=&#34;math inline&#34;&gt;\(\big(\sum_{t=1}^T h_t(w)]\big)^2 \,\big/\, \mathbb{E}\big[ \sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \big] \xrightarrow[T \to \infty]{p} \infty.\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Assumption 2&lt;/strong&gt; (Variance convergence). &lt;span class=&#34;math inline&#34;&gt;\(\sum_{t=1}^T \frac{h^2_t(w)}{e_t(w) } \,\bigg/\, \mathbb{E}\big[ \sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \big]\xrightarrow[T \to \infty]{L_p} 1\)&lt;/span&gt;, for some &lt;span class=&#34;math inline&#34;&gt;\(p&amp;gt;0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Assumption 3&lt;/strong&gt; (Bounded moments). &lt;span class=&#34;math inline&#34;&gt;\(\sum_{t=1}^T \frac{h^{2 + \delta}(w)}{e^{1 + \delta}(w) } \,\Big/\, \mathbb{E}\Big[ \Big(\sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \Big)^{1 +\delta/2}\Big]\xrightarrow[T \to \infty]{p} 0\)&lt;/span&gt;, for some &lt;span class=&#34;math inline&#34;&gt;\(\delta&amp;gt;0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Above, Assumption 1 requires that the effective sample size after adaptive weighting goes to infinity, which implies that the estimator converges. Assumption 3 is a Lyapunov-type regularity condition on the weights, which controls higher moments of the distribution.
+Assumption 2 is the more subtle condition that standard estimators such as AIPW estimator (i.e., &lt;span class=&#34;math inline&#34;&gt;\(h_t(w) \equiv 1\)&lt;/span&gt;) often fail to satisfy.
+We refer interesting readers to our paper &lt;span class=&#34;citation&#34;&gt;Hadad et al. (&lt;a href=&#34;#ref-hadad2021confidence&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; for a recipe on building weights that satisfy Assumption 2.
+In particular, we note a &lt;strong&gt;two-point allocation&lt;/strong&gt; weighting scheme when the assignment probabilities &lt;span class=&#34;math inline&#34;&gt;\(e_t\)&lt;/span&gt; reflect the experimenter’s belief on arm optimality (as is the case for Thompson sampling). This weighting scheme allows us to downweight samples with small propensities more boldly but still preserve the asymptotic normality, and therefore often merits smaller variance and tighter confidence intervals as compared to the constant-allocation scheme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-estimating-standard-error-and-constructing-a-test-statistic&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 3: Estimating standard error and constructing a test statistic&lt;/h4&gt;
+&lt;p&gt;With the evaluation weights discussed in step 2, when normalized by an estimate of its standard deviation, the adaptively-weighted AIPW estimator has a centered and normal asymptotic distribution. Similar ``self-normalization’’ schemes are often key to martingale central limit theorems &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-pena2008self&#34; role=&#34;doc-biblioref&#34;&gt;Peña, Lai, and Shao 2008&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;. Suppose that we observe arms &lt;span class=&#34;math inline&#34;&gt;\(W_t\)&lt;/span&gt; and rewards &lt;span class=&#34;math inline&#34;&gt;\(Y_t=Y_t(W_t)\)&lt;/span&gt;, and that the underlying potential
+outcomes &lt;span class=&#34;math inline&#34;&gt;\((Y_t(w))_{w \in \mathcal{W}}\)&lt;/span&gt; are independent and identically distributed with nonzero variance, and satisfy &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}|Y_{t}(w)|^{2+\delta} &amp;lt; \infty\)&lt;/span&gt; for some &lt;span class=&#34;math inline&#34;&gt;\(\delta &amp;gt; 0\)&lt;/span&gt; and all &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;.
+Suppose that the assignment probabilities &lt;span class=&#34;math inline&#34;&gt;\(e_t(w)\)&lt;/span&gt; are strictly positive and
+let &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}_t(w)\)&lt;/span&gt; be any history-adapted estimator of &lt;span class=&#34;math inline&#34;&gt;\(Q(w)\)&lt;/span&gt; that is bounded and that converges almost-surely
+to some constant &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\infty}(w)\)&lt;/span&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\(h_t(w)\)&lt;/span&gt; be non-negative history-adapted weights satisfying Assumptions 1-3. Suppose that either &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}_t(w)\)&lt;/span&gt; is consistent or &lt;span class=&#34;math inline&#34;&gt;\(e_t(w)\)&lt;/span&gt; has a limit
+&lt;span class=&#34;math inline&#34;&gt;\(e_{\infty}(w) \in [0, \, 1]\)&lt;/span&gt;, i.e., either
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+     \label{eq:e_mu_alternative}
+      \hat{\mu}_t(w) \xrightarrow[t \to \infty]{a.s.} Q(w)  \quad \text{or}
+      \quad e_t(w)  \xrightarrow[t \to \infty]{a.s.} e_{\infty}(w)
+\end{equation}\]&lt;/span&gt;
+Then, for any arm &lt;span class=&#34;math inline&#34;&gt;\(w \in \mathcal{W}\)&lt;/span&gt;, the adaptively-weighted estimator &lt;span class=&#34;math inline&#34;&gt;\(\widehat{Q}_T^{h}(w)\)&lt;/span&gt; is consistent for the arm value &lt;span class=&#34;math inline&#34;&gt;\(Q(w)\)&lt;/span&gt;, and the following studentized statistic is asymptotically normal:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+  \begin{aligned}
+    \label{eq:clt}
+    &amp;amp;\frac{\widehat{Q}_T^{h}(w) - Q(w)}{\widehat{V}_T^{h}(w)^{\frac{1}{2}}} \xrightarrow{d} \mathcal{N}(0, 1),
+    \ \ \ \text{where} \ \widehat{V}_T^{h}(w) := \frac{\sum_{t=1}^T h^2_t(w) \left( \widehat{\Gamma}_t(w) - \widehat{Q}_T(w) \right)^2}{\left( \sum_{t=1}^T h_t(w) \right)^2}.
+  \end{aligned}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulations&lt;/h2&gt;
+&lt;p&gt;We consider three simulation settings, each with &lt;span class=&#34;math inline&#34;&gt;\(K = 3\)&lt;/span&gt; arms that yield rewards observed with additive &lt;span class=&#34;math inline&#34;&gt;\(\text{uniform}[-1, 1]\)&lt;/span&gt; noise. The settings vary in the difference between the arm values. In the &lt;em&gt;no-signal&lt;/em&gt; case, we set arm values to &lt;span class=&#34;math inline&#34;&gt;\(Q(w) = 1\)&lt;/span&gt; for all &lt;span class=&#34;math inline&#34;&gt;\(w \in \{1, 2, 3\}\)&lt;/span&gt;; in the &lt;em&gt;low signal&lt;/em&gt; case, we set &lt;span class=&#34;math inline&#34;&gt;\(Q(w) = 0.9+ 0.1w\)&lt;/span&gt;; and &lt;em&gt;high signal&lt;/em&gt; case we set &lt;span class=&#34;math inline&#34;&gt;\(Q(w) = 0.5 + 0.5w\)&lt;/span&gt;. During the experiment, treatment is assigned by a modified Thompson sampling method: first, tentative assignment probabilities are computed via Thompson sampling with normal likelihood and normal prior&lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-russo2018tutorial&#34; role=&#34;doc-biblioref&#34;&gt;D. J. Russo et al. 2018&lt;/a&gt;)&lt;/span&gt;; they are then adjusted to impose the lower bound &lt;span class=&#34;math inline&#34;&gt;\(e_t(w) \geq (1/K)t^{-0.7}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We show comparison among four point estimators of arm values &lt;span class=&#34;math inline&#34;&gt;\(Q(w)\)&lt;/span&gt;: the sample mean, the AIPW estimator with uniform weights (labeled as “unweighted AIPW”), and the adaptively-weighted AIPW estimator with constant and two-point allocation schemes. For the AIPW-based estimators, we use the same formula given in our theorem to construct confidence intervals. For the sample mean we use the usual variance estimate &lt;span class=&#34;math inline&#34;&gt;\(\smash{\widehat{V}^{AVG}(w) := T_w^{-2} \sum_{t: W_t = w}^{T} (Y_t - \widehat{Q}^{AVG}_T(w))^2}\)&lt;/span&gt;. Approximate normality is not theoretically justified for the unweighted AIPW estimator or for the sample mean. We also consider non-asymptotic confidence intervals for the sample mean, based on the method of time-uniform confidence sequences described in &lt;span class=&#34;citation&#34;&gt;Howard et al. (&lt;a href=&#34;#ref-howard2021uniform&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;. We refer interesting readers to our paper for more results on estimating other arms as well as the contrast between arms &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hadad2021confidence&#34; role=&#34;doc-biblioref&#34;&gt;Hadad et al. 2021&lt;/a&gt; )&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The below panel demonstrates that we are able to estimate the “good” arm value &lt;span class=&#34;math inline&#34;&gt;\(Q(3)\)&lt;/span&gt; with considerable ease in high- and low-signal settings, in that all methods produce point estimates with negligible bias and small root mean-squared error, and moreover attain roughly correct coverage for large &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;.
+Conversely, estimating the “bad” arm value &lt;span class=&#34;math inline&#34;&gt;\(Q(1)\)&lt;/span&gt; is challenging. Although the AIPW estimator is unbiased, it performs very poorly in terms of RMSE and confidence interval width. In the low and high signal case, its problem is that it does not take into account the fact that the bad arm is undersampled, so its variance is high. Of our two adaptively-weighted AIPW estimators, two-point allocation better controls the variance of bad arm estimates by more aggressively downweighting `unlikely’ observations associated with large inverse propensity weights; this results in smaller RMSE and tighter confidence intervals.
+For the sample-mean estimator, naive confidence intervals based on the normal approximation are invalid, with severe under-coverage when there’s little or
+no signal. On the other hand, the non-asymptotic confidence sequences of &lt;span class=&#34;citation&#34;&gt;Howard et al. (&lt;a href=&#34;#ref-howard2021uniform&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; are conservative and often wide.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;arm_values.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-11-inference-on-adaptively-collected-data_files/arm_values.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;extensions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Extensions&lt;/h2&gt;
+&lt;p&gt;One direct extension is to apply the above adaptive weighting technique to evaluating policies on populations with hetegeneous outcomes, using data that is collected adaptively via contextual bandit algorithms. In &lt;span class=&#34;citation&#34;&gt;Zhan, Hadad, et al. (&lt;a href=&#34;#ref-zhan2021off&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, we carefully choose adaptive weights to accommodate the variances of AIPW scores that may differ not only over time but also across the context space. The resulting estimator further reduces estimation variance.&lt;/p&gt;
+&lt;p&gt;Aside from policy evaluation, learning the optimal treatment assignment policies using adaptive data is also desirable, which enables personalized decision making in a wide variety of domains. In &lt;span class=&#34;citation&#34;&gt;Zhan, Ren, et al. (&lt;a href=&#34;#ref-zhan2021policy&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, we establish the first-of-the-kind regret lower bound that characterizes the fundamental difficulty of policy learning with adaptive data. We then propose an algorithm based on re-weighted AIPW estimators and
+show that it is minimax optimal with the best weighting scheme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-author&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the author&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ruohanzhan.github.io/&#34;&gt;Ruohan Zhan&lt;/a&gt;: postdoctoral fellow at the Stanford Graduate School of Business, incoming Assistant Professor at the Hong Kong University of Science and Technology.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level3 unnumbered&#34;&gt;
+&lt;h3&gt;Bibliography&lt;/h3&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-agrawal2013thompson&#34; class=&#34;csl-entry&#34;&gt;
+Agrawal, Shipra, and Navin Goyal. 2013. &lt;span&gt;“Thompson Sampling for Contextual Bandits with Linear Payoffs.”&lt;/span&gt; In &lt;em&gt;International Conference on Machine Learning&lt;/em&gt;, 127–35. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-bertsimas2017personalized&#34; class=&#34;csl-entry&#34;&gt;
+Bertsimas, Dimitris, Nathan Kallus, Alexander M Weinstein, and Ying Daisy Zhuo. 2017. &lt;span&gt;“Personalized Diabetes Management Using Electronic Medical Records.”&lt;/span&gt; &lt;em&gt;Diabetes Care&lt;/em&gt; 40 (2): 210–17.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hadad2021confidence&#34; class=&#34;csl-entry&#34;&gt;
+Hadad, Vitor, David A Hirshberg, Ruohan Zhan, Stefan Wager, and Susan Athey. 2021. &lt;span&gt;“Confidence Intervals for Policy Evaluation in Adaptive Experiments.”&lt;/span&gt; &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt; 118 (15).
+&lt;/div&gt;
+&lt;div id=&#34;ref-hahn1998role&#34; class=&#34;csl-entry&#34;&gt;
+Hahn, Jinyong. 1998. &lt;span&gt;“On the Role of the Propensity Score in Efficient Semiparametric Estimation of Average Treatment Effects.”&lt;/span&gt; &lt;em&gt;Econometrica&lt;/em&gt;, 315–31.
+&lt;/div&gt;
+&lt;div id=&#34;ref-howard2021uniform&#34; class=&#34;csl-entry&#34;&gt;
+Howard, Steven R, Aaditya Ramdas, Jon McAuliffe, and Jasjeet Sekhon. 2021. &lt;span&gt;“Time-Uniform, Nonparametric, Non-Asymptotic Confidence Sequences.”&lt;/span&gt; &lt;em&gt;The Annals of Statistics&lt;/em&gt; Forthcoming.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lai1985asymptotically&#34; class=&#34;csl-entry&#34;&gt;
+Lai, Tze Leung, and Herbert Robbins. 1985. &lt;span&gt;“Asymptotically Efficient Adaptive Allocation Rules.”&lt;/span&gt; &lt;em&gt;Advances in Applied Mathematics&lt;/em&gt; 6 (1): 4–22.
+&lt;/div&gt;
+&lt;div id=&#34;ref-luedtke2016statistical&#34; class=&#34;csl-entry&#34;&gt;
+Luedtke, Alexander R, and Mark J van der Laan. 2016. &lt;span&gt;“Statistical Inference for the Mean Outcome Under a Possibly Non-Unique Optimal Treatment Strategy.”&lt;/span&gt; &lt;em&gt;Annals of Statistics&lt;/em&gt; 44 (2): 713.
+&lt;/div&gt;
+&lt;div id=&#34;ref-murphy2005experimental&#34; class=&#34;csl-entry&#34;&gt;
+Murphy, Susan A. 2005. &lt;span&gt;“An Experimental Design for the Development of Adaptive Treatment Strategies.”&lt;/span&gt; &lt;em&gt;Statistics in Medicine&lt;/em&gt; 24 (10): 1455–81.
+&lt;/div&gt;
+&lt;div id=&#34;ref-nie2018adaptively&#34; class=&#34;csl-entry&#34;&gt;
+Nie, Xinkun, Xiaoying Tian, Jonathan Taylor, and James Zou. 2018. &lt;span&gt;“Why Adaptively Collected Data Have Negative Bias and How to Correct for It.”&lt;/span&gt; In &lt;em&gt;Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics&lt;/em&gt;, edited by Amos Storkey and Fernando Perez-Cruz, 84:1261–69. New York: PMLR. &lt;a href=&#34;http://proceedings.mlr.press/v84/nie18a.html&#34;&gt;http://proceedings.mlr.press/v84/nie18a.html&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-pena2008self&#34; class=&#34;csl-entry&#34;&gt;
+Peña, Victor H de la, Tze Leung Lai, and Qi-Man Shao. 2008. &lt;em&gt;Self-Normalized Processes: Limit Theory and Statistical Applications&lt;/em&gt;. Berlin Heidelberg: Springer-Verlag.
+&lt;/div&gt;
+&lt;div id=&#34;ref-russo2020simple&#34; class=&#34;csl-entry&#34;&gt;
+Russo, Daniel. 2020. &lt;span&gt;“Simple Bayesian Algorithms for Best-Arm Identification.”&lt;/span&gt; &lt;em&gt;Operations Research&lt;/em&gt; 68 (6): 1625–47. &lt;a href=&#34;https://doi.org/10.1287/opre.2019.1911&#34;&gt;https://doi.org/10.1287/opre.2019.1911&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-russo2018tutorial&#34; class=&#34;csl-entry&#34;&gt;
+Russo, Daniel J., Benjamin Van Roy, Abbas Kazerouni, Ian Osband, and Zheng Wen. 2018. &lt;span&gt;“A Tutorial on Thompson Sampling.”&lt;/span&gt; &lt;em&gt;Found. Trends Mach. Learn.&lt;/em&gt; 11 (1): 1–96. &lt;a href=&#34;https://doi.org/10.1561/2200000070&#34;&gt;https://doi.org/10.1561/2200000070&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-schnabel2016recommendations&#34; class=&#34;csl-entry&#34;&gt;
+Schnabel, Tobias, Adith Swaminathan, Ashudeep Singh, Navin Chandak, and Thorsten Joachims. 2016. &lt;span&gt;“Recommendations as Treatments: Debiasing Learning and Evaluation.”&lt;/span&gt; In &lt;em&gt;International Conference on Machine Learning&lt;/em&gt;, 1670–79. PMLR.
+&lt;/div&gt;
+&lt;div id=&#34;ref-zhan2021off&#34; class=&#34;csl-entry&#34;&gt;
+Zhan, Ruohan, Vitor Hadad, David A Hirshberg, and Susan Athey. 2021. &lt;span&gt;“Off-Policy Evaluation via Adaptive Weighting with Data from Contextual Bandits.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery &amp;amp; Data Mining&lt;/em&gt;, 2125–35.
+&lt;/div&gt;
+&lt;div id=&#34;ref-zhan2021policy&#34; class=&#34;csl-entry&#34;&gt;
+Zhan, Ruohan, Zhimei Ren, Susan Athey, and Zhengyuan Zhou. 2021. &lt;span&gt;“Policy Learning with Adaptively Collected Data.”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:2105.02344&lt;/em&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
@@ -1048,44 +1227,6 @@ Wolfer, Geoffrey, and Aryeh Kontorovich. 2019. &lt;span&gt;“Minimax Learning o
 &lt;/ul&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Ee-qmAIwrxs&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent Advancements in Applied Instrumental Variable Methods</title>
-      <link>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Recent Advancements in Applied Instrumental Variable Methods&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-02-09-recent-advancements-in-applied-instrumental-variable-methods_files/featured.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.&lt;/p&gt;
-&lt;p&gt;In this webinar, selected econometricians will present their recent work on applied IV methods.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, June 29th, 8:00 PT / 11:00 EST / 17:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSe3w6IjY-oHDeRGT5HqE5_RgcZ0YGJNpTq5KDeyAdY77GqmKQ/viewform&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/borusyak/home&#34;&gt;Kirill Borusyak&lt;/a&gt;, University College London, United Kingdom: on shift-share IV and other composite instruments&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://som.yale.edu/faculty/paul-goldsmith-pinkham&#34;&gt;Paul Goldsmith-Pinkham&lt;/a&gt;, Yale University, USA: on judge/examiner instruments&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.publichealth.columbia.edu/people/our-faculty/sc4501&#34;&gt;Stephen C. Coussens&lt;/a&gt;, Columbia University, USA: on efficient estimation from compliance weighting&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://economics.uchicago.edu/directory/alexander-torgovitsky&#34;&gt;Alexander Torgovitsky&lt;/a&gt;, University of Chicago, USA: on when two-stage least squares estimates local average treatment effects, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1_MRCSLy07GY-D9vgG54mCorNAa6HjVGr/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://about.peterhull.net/&#34;&gt;Peter Hull&lt;/a&gt;, Brown University, USA&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
-Europe initiative (FENStatS) supported by the Bernoulli Society for
-Mathematical Statistics and Probability and the Institute of
-Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=7D-JKtHgSQ8&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

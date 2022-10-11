@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inference on Adaptively Collected Data</title>
+      <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
+      <description>AbstractIt is increasingly common for data to be collected adaptively, where experimental costs are reduced progressively by assigning promising treatments more frequently. However, adaptivity also poses great challenges on post-experiment inference, since observations are dependent, and standard estimates can be skewed and heavy-tailed. We propose a treatment-effect estimator that is consistent and asymptotically normal, allowing for constructing frequentist confidence intervals and testing hypotheses.
+IntroductionAdaptive data collection can optimize sample efficiency during the course of the experiment for particular objectives, such as identifying the best treatment (D.</description>
+    </item>
+    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
@@ -100,16 +110,6 @@ Structural equation modeling (SEM) is an important framework within the social s
       <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
       <description>Recent Advances in Approximate Bayesian Inference
 In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
-    </item>
-    
-    <item>
-      <title>Recent Advancements in Applied Instrumental Variable Methods</title>
-      <link>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
-      <description>Recent Advancements in Applied Instrumental Variable Methods
-Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.</description>
     </item>
     
   </channel>
