@@ -138,9 +138,7 @@ Conversely,  estimating the "bad" arm value $Q(1)$ is challenging. Although the 
 For the sample-mean estimator, naive confidence intervals based on the normal approximation are invalid, with severe under-coverage when there’s little or
 no signal. On the other hand, the non-asymptotic confidence sequences of @howard2021uniform are conservative and often wide.
 
-```{r echo=FALSE, out.width = '100%'}
-knitr::include_graphics("arm_values.png")
-```
+
 
 ![](/post/2022-10-11-ruohan_adaptive_inference_files/arm_values.png)
 

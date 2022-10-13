@@ -18,6 +18,16 @@ IntroductionAdaptive data collection can optimize sample efficiency during the
     </item>
     
     <item>
+      <title>Inference on Adaptively Collected Data</title>
+      <link>https://youngstats.github.io/post/2022/10/11/ruohan_adaptive_inference/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/11/ruohan_adaptive_inference/</guid>
+      <description>Abstract It is increasingly common for data to be collected adaptively, where experimental costs are reduced progressively by assigning promising treatments more frequently. However, adaptivity also poses great challenges on post-experiment inference, since observations are dependent, and standard estimates can be skewed and heavy-tailed. We propose a treatment-effect estimator that is consistent and asymptotically normal, allowing for constructing frequentist confidence intervals and testing hypotheses.
+Introduction Adaptive data collection can optimize sample efficiency during the course of the experiment for particular objectives, such as identifying the best treatment (D.</description>
+    </item>
+    
+    <item>
       <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
       <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
@@ -94,16 +104,6 @@ Wednesday, September 15th, 17:00 CESTOnline, via Zoom. The registration form is
       <description>Summary
 We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
 BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
-    </item>
-    
-    <item>
-      <title>Machine learning for causal inference that works</title>
-      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
-The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
   </channel>

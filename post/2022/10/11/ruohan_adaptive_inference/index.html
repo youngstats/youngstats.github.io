@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Inference on Adaptively Collected Data | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/machine-learning">machine learning</a>
+  
+     &hercon; <a href="/categories/causal-inference">causal inference</a>
+  
+  </div>
+
+  <h1><span class="title">Inference on Adaptively Collected Data</span></h1>
+
+  
+  <h3 class="author">Ruohan Zhan
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="abstract" class="section level2">
+<h2>Abstract</h2>
+<p>It is increasingly common for data to be collected adaptively, where experimental costs are reduced progressively by assigning promising treatments more frequently. However, adaptivity also poses great challenges on post-experiment inference, since observations are dependent, and standard estimates can be skewed and heavy-tailed. We propose a treatment-effect estimator that is consistent and asymptotically normal, allowing for constructing frequentist confidence intervals and testing hypotheses.</p>
+<p><img src="/post/2022-10-11-ruohan_adaptive_inference_files/eye_catching.png" /></p>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Adaptive data collection can optimize sample efficiency during the course of the experiment for particular objectives, such as identifying the best treatment <span class="citation">(<a href="#ref-russo2020simple" role="doc-biblioref">D. Russo 2020</a>)</span> or improving operational performance <span class="citation">(<a href="#ref-agrawal2013thompson" role="doc-biblioref">Agrawal and Goyal 2013</a>)</span> .
+To achieve these efficiency gains, the experimenter—rather than staying with a fixed randomization rule—updates the data-collection policy (which maps individual characteristics/contexts to treatments/actions) in response to observed outcomes over the course of the experiment. In this way, the experimenter can resolve uncertainty about some aspects of the data generating process at the expense of learning little about others <span class="citation">(<a href="#ref-murphy2005experimental" role="doc-biblioref">Murphy 2005</a>)</span>. A common family of the design algorithms are bandit algorithms <span class="citation">(<a href="#ref-lai1985asymptotically" role="doc-biblioref">Lai and Robbins 1985</a>)</span>,
+where treatment assignments are selected to trade off exploration and exploitation to maximize the cumulative performance over time.</p>
+<p>The increasing popularity of adaptive experiments results in the growing availability of data collected from such designs.
+A natural query arises: can we reuse the data to answer a variety of questions that may not be originally targeted by the experiments?
+However, adaptivity also poses great statistical challenges if the post-experiment objective differs significantly from the original, and standard approaches used to analyze independently collected data can be plagued by bias, excessive variance, or both. This post seeks to address the problem of offline policy evaluation, which is to estimate the expected benefit of one treatment assignment policy—often termed as <em>policy value</em>—with data that was collected using another potentially different policy. For example, in personalized healthcare, doctors may use electronic medical records to evaluate how particular groups of patients will respond to heterogenenous treatments (e.g., different types of drugs/therapies or different dosage levels of the same drug) <span class="citation">(<a href="#ref-bertsimas2017personalized" role="doc-biblioref">Bertsimas et al. 2017</a>)</span>, whereas in targeted advertising, retailers may want to understand how alternative product promotions (either in mail or online) affect different consumer segments <span class="citation">(<a href="#ref-schnabel2016recommendations" role="doc-biblioref">Schnabel et al. 2016</a>)</span>.</p>
+</div>
+<div id="problem-formulation" class="section level2">
+<h2>Problem formulation</h2>
+<p>Consider that samples are collected by a multi-armed bandit algorithm, where each observation is represented by a tuple <span class="math inline">\((W_t, Y_t)\)</span>.
+The random variables <span class="math inline">\(W_t \in \{1, 2, \dots, K\}\)</span> are called the arms, treatments or interventions.
+The reward or outcome <span class="math inline">\(Y_t\)</span> represents the individual’s response to the treatment, for which we use the potential outcome framework and denote <span class="math inline">\(Y_t(w)\)</span> as the random variable representing the outcome that would be observed if individual <span class="math inline">\(t\)</span> were assigned to a treatment <span class="math inline">\(w\)</span>.
+We here consider a stationary setting of the potential outcomes, where <span class="math inline">\((Y_t(1),Y_t(2),\dots, Y_t(K))\)</span> is sampled from a fixed distribution.
+The set of observations up to a certain time <span class="math inline">\(H_t := \{(W_s, Y_s) \}_{s=1}^T\)</span> is called a history.
+The treatment assignment probabilities (also known as <em>propensities</em>) <span class="math inline">\(e_t(w) := \mathbb{P}[W_t = w | H_{t-1}]\)</span> are
+updated over time by the experimenter, in response to the observations <span class="math inline">\(H_{t-1}\)</span>.</p>
+<p>Our goal is to estimate the value of an arm <span class="math inline">\(w\)</span>, denoted by <span class="math inline">\(Q(w):=\mathbb{E}[Y_t(w)]\)</span>.
+We will provide consistent and asymptotically normal test statistics for <span class="math inline">\(Q(w)\)</span>, so that we can construct confidence intervals around the estimations to test hypotheses. We would like to do that even in data-poor situations in which the experimenter did not collect many samples around the arm <span class="math inline">\(w\)</span>.</p>
+</div>
+<div id="our-approach" class="section level2">
+<h2>Our approach</h2>
+<p>The main challenging in evaluating an arm <span class="math inline">\(w\)</span> with observational data is known as the <em>overlap</em> issue between the target arm and the data-collection mechanism, when the arm assignments made during data collection differ substantially from the target arm <span class="math inline">\(w\)</span>. This issue becomes more severe when data is collected adaptively, since overlap with the target arm can deteriorate as the experimenter shifts the data-collection mechanism in response to what they observe. As a result, estimates from standard estimators can be skewed and heavy-tailed.</p>
+<p>Our approach to recover the asymptotic normality is done in three steps. First, we construct an unbiased arm evaluation score of each sample, which is a transformation of the observed outcome. Second, we average these scores with non-uniform and data-adaptive weights, obtaining a new estimator with controlled variance. Finally, by dividing the estimator by its estimated standard error we obtain a test statistic that is consistent and asymptotically normal.</p>
+<div id="step-1-constructing-an-unbiased-arm-evaluation-score-for-each-observation" class="section level4">
+<h4>Step 1: Constructing an unbiased arm evaluation score for each observation</h4>
+<p>The arm evaluation scoring rule should address the sampling bias issue, which is notorious in adaptively collected data <span class="citation">(<a href="#ref-nie2018adaptively" role="doc-biblioref">Nie et al. 2018</a>)</span>. One
+natural method is to re-weight observed outcomes based on importance sampling, which results in an inverse propensity score weighted (IPW) estimator:
+<span class="math display">\[\begin{equation}
+  \label{eq:ipw}
+   \widehat{Q}_T^{IPW}(w) := \frac{1}{T}\sum_{t=1}^T\widehat{\Gamma}_t^{IPW}(w), \ \mbox{where} \  \widehat{\Gamma}_t^{IPW}(w) := \frac{\mathbb{I}\{W_t=w\}}{e_t(w)} Y_t.
+\end{equation}\]</span>
+With the observation that <span class="math inline">\(\mathbb{P}({W_t = w | H_{t-1}, \, Y_t(w)} = \mathbb{P}({W_t = w | H_{t-1}} = e(w;H_{t-1})\)</span>, one can immediately see the unbiasedness of <span class="math inline">\(\widehat{\Gamma}_t^{IPW}(w)\)</span> that has <span class="math inline">\(\mathbb{E}[\widehat{\Gamma}_t^{IPW}(w)|H_{t-1}]=Q(w)\)</span>.</p>
+<p>The augmented inverse propensity weighted (AIPW) estimator generalizes the above by incorporating regression adjustment :
+<span class="math display">\[\begin{equation}
+  \label{eq:aipw}
+  \begin{split}
+  &amp;\widehat{Q}_T^{AIPW}(w) := \frac{1}{T}\sum_{t=1}^T \widehat{\Gamma}_t^{AIPW}(w), \ \mbox{where}\ \widehat{\Gamma}_t^{AIPW}(w) :=  \hat{\mu}_t(w) + \frac{\mathbb{I}\{W_t=w\}}{e_t(w)} \left(  Y_t - \hat{\mu}_t(w)\right).
+  \end{split}
+\end{equation}\]</span>
+The symbol <span class="math inline">\(\hat{\mu}_t(w)\)</span> denotes an estimator of the conditional mean function <span class="math inline">\(\mu(w) = \mathbb{E}[Y_t(w)]\)</span> based on the history <span class="math inline">\(H_{t-1}\)</span>, but it need not be a good one—it could be biased or even inconsistent. The second term of <span class="math inline">\(Y_t - \hat{\mu}_t(w)\)</span> acts as a bias-correction term:
+adding it preserves unbiasedness but also reduces the variance, since the residual—when <span class="math inline">\(\hat{\mu}_t(w)\)</span> is a reasonable estimator of <span class="math inline">\(\mu(w)\)</span>—potentially has a smaller absolute mean as compared to the raw outcome <span class="math inline">\(Y_t\)</span>. We will hereby use the AIPW score <span class="math inline">\(\widehat{\Gamma}_t^{AIPW}(w)\)</span> for each observation <span class="math inline">\(t\)</span>.</p>
+</div>
+<div id="step-2-averaging-arm-evaluations-with-adaptive-weights" class="section level4">
+<h4>Step 2: Averaging arm evaluations with adaptive weights</h4>
+<p>When data is collected non-adaptively but by a fixed randomization rule, AIPW estimator is semiparametrically efficient <span class="citation">(<a href="#ref-hahn1998role" role="doc-biblioref">Hahn 1998</a>)</span>. However, adaptivity makes the sampling distribution non-normal and heavy-tailed, and the variance of the AIPW scores <span class="math inline">\(\widehat{\Gamma}_t^{AIPW}(w)\)</span> can vary hugely over the course of experiment. In fact, the conditional variances <span class="math inline">\(\mbox{Var}(\widehat{\Gamma}_t^{AIPW}(w)|H_{t-1})\)</span> depend primarily on the behavior of the inverse propensities <span class="math inline">\(1/e_t(w)\)</span>, which may explode to infinity or fail to converge.</p>
+<p>To address this difficulty, we consider a generalization of the AIPW estimator, which non-uniformly
+averages the unbiased scores <span class="math inline">\(\widehat{\Gamma}^{AIPW}_t(w)\)</span> using a sequence of <em>adaptive weights</em>
+<span class="math inline">\(h_t(w)\)</span>. The resulting estimator is the <em>adaptively-weighted AIPW estimator</em>:
+<span class="math display">\[\begin{align}
+  \label{eq:aw}
+  \widehat{Q}^{h}_T(w) = \frac{\sum_{t=1}^T h_t(w) \widehat{\Gamma}_t^{AIPW}(w)}{\sum_{t=1}^T h_t(w)}.
+\end{align}\]</span></p>
+<p>Adaptive weights <span class="math inline">\(h_t(w)\)</span> provide an additional degree of flexibility in controlling the variance and the tail of the sampling distribution. When chosen appropriately, these weights compensate for erratic trajectories of the assignment probabilities <span class="math inline">\(e_t(w)\)</span>, stabilizing the variance of the estimator. A natural choice of adaptive weights is to approximate the inverse standard deviation of the <span class="math inline">\(\widehat{\Gamma}_t^{AIPW}(w)\)</span>. In this way each re-weighted term <span class="math inline">\(h_t\widehat{\Gamma}_t^{AIPW}(w)\)</span> has comparable variance, such that averaging these object may lead to a normal limiting distribution. We shall refer it to <strong>constant-allocation</strong> weighting scheme since each weighted element <span class="math inline">\(h_t\widehat{\Gamma}_t^{AIPW}(w)\)</span> contributes to roughly the same share of variance in the final estimator. Weights of this type were proposed by <span class="citation">Luedtke and Laan (<a href="#ref-luedtke2016statistical" role="doc-biblioref">2016</a>)</span> for the purpose of estimating the expected value of
+non-unique optimal policies that possibly depend on observable covariates.</p>
+<p>More generally, to get an adaptively-weighted AIPW estimator <span class="math inline">\(\widehat{Q}^{h}_T(w)\)</span> that is consistent and asymptotically normal, we require the following assumptions on our weighting schemes stated below.</p>
+<p><strong>Assumption 1</strong> (Infinite sampling). <span class="math inline">\(\big(\sum_{t=1}^T h_t(w)]\big)^2 \,\big/\, \mathbb{E}\big[ \sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \big] \xrightarrow[T \to \infty]{p} \infty.\)</span></p>
+<p><strong>Assumption 2</strong> (Variance convergence). <span class="math inline">\(\sum_{t=1}^T \frac{h^2_t(w)}{e_t(w) } \,\bigg/\, \mathbb{E}\big[ \sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \big]\xrightarrow[T \to \infty]{L_p} 1\)</span>, for some <span class="math inline">\(p&gt;0\)</span>.</p>
+<p><strong>Assumption 3</strong> (Bounded moments). <span class="math inline">\(\sum_{t=1}^T \frac{h^{2 + \delta}(w)}{e^{1 + \delta}(w) } \,\Big/\, \mathbb{E}\Big[ \Big(\sum_{t=1}^T \frac{h^2_t(w)}{e_t(w)} \Big)^{1 +\delta/2}\Big]\xrightarrow[T \to \infty]{p} 0\)</span>, for some <span class="math inline">\(\delta&gt;0\)</span>.</p>
+<p>Above, Assumption 1 requires that the effective sample size after adaptive weighting goes to infinity, which implies that the estimator converges. Assumption 3 is a Lyapunov-type regularity condition on the weights, which controls higher moments of the distribution.
+Assumption 2 is the more subtle condition that standard estimators such as AIPW estimator (i.e., <span class="math inline">\(h_t(w) \equiv 1\)</span>) often fail to satisfy.
+We refer interesting readers to our paper <span class="citation">Hadad et al. (<a href="#ref-hadad2021confidence" role="doc-biblioref">2021</a>)</span> for a recipe on building weights that satisfy Assumption 2.
+In particular, we note a <strong>two-point allocation</strong> weighting scheme when the assignment probabilities <span class="math inline">\(e_t\)</span> reflect the experimenter’s belief on arm optimality (as is the case for Thompson sampling). This weighting scheme allows us to downweight samples with small propensities more boldly but still preserve the asymptotic normality, and therefore often merits smaller variance and tighter confidence intervals as compared to the constant-allocation scheme.</p>
+</div>
+<div id="step-3-estimating-standard-error-and-constructing-a-test-statistic" class="section level4">
+<h4>Step 3: Estimating standard error and constructing a test statistic</h4>
+<p>With the evaluation weights discussed in step 2, when normalized by an estimate of its standard deviation, the adaptively-weighted AIPW estimator has a centered and normal asymptotic distribution. Similar ``self-normalization’’ schemes are often key to martingale central limit theorems <span class="citation">(<a href="#ref-pena2008self" role="doc-biblioref">Peña, Lai, and Shao 2008</a>)</span>.</p>
+<p><strong>Theorem</strong>. Suppose that we observe arms <span class="math inline">\(W_t\)</span> and rewards <span class="math inline">\(Y_t=Y_t(W_t)\)</span>, and that the underlying potential
+outcomes <span class="math inline">\((Y_t(w))_{w \in \mathcal{W}}\)</span> are independent and identically distributed with nonzero variance, and satisfy <span class="math inline">\(\mathbb{E}|Y_{t}(w)|^{2+\delta} &lt; \infty\)</span> for some <span class="math inline">\(\delta &gt; 0\)</span> and all <span class="math inline">\(w\)</span>.
+Suppose that the assignment probabilities <span class="math inline">\(e_t(w)\)</span> are strictly positive and
+let <span class="math inline">\(\hat{\mu}_t(w)\)</span> be any history-adapted estimator of <span class="math inline">\(Q(w)\)</span> that is bounded and that converges almost-surely
+to some constant <span class="math inline">\(\mu_{\infty}(w)\)</span>. Let <span class="math inline">\(h_t(w)\)</span> be non-negative history-adapted weights satisfying Assumptions 1-3. Suppose that either <span class="math inline">\(\hat{\mu}_t(w)\)</span> is consistent or <span class="math inline">\(e_t(w)\)</span> has a limit
+<span class="math inline">\(e_{\infty}(w) \in [0, \, 1]\)</span>, i.e., either
+<span class="math display">\[\begin{equation}
+     \label{eq:e_mu_alternative}
+      \hat{\mu}_t(w) \xrightarrow[t \to \infty]{a.s.} Q(w)  \quad \text{or}
+      \quad e_t(w)  \xrightarrow[t \to \infty]{a.s.} e_{\infty}(w)
+\end{equation}\]</span>
+Then, for any arm <span class="math inline">\(w \in \mathcal{W}\)</span>, the adaptively-weighted estimator <span class="math inline">\(\widehat{Q}_T^{h}(w)\)</span> is consistent for the arm value <span class="math inline">\(Q(w)\)</span>, and the following studentized statistic is asymptotically normal:
+<span class="math display">\[\begin{equation}
+  \begin{aligned}
+    \label{eq:clt}
+    &amp;\frac{\widehat{Q}_T^{h}(w) - Q(w)}{\widehat{V}_T^{h}(w)^{\frac{1}{2}}} \xrightarrow{d} \mathcal{N}(0, 1),
+    \ \ \ \text{where} \ \widehat{V}_T^{h}(w) := \frac{\sum_{t=1}^T h^2_t(w) \left( \widehat{\Gamma}_t(w) - \widehat{Q}_T(w) \right)^2}{\left( \sum_{t=1}^T h_t(w) \right)^2}.
+  \end{aligned}
+\end{equation}\]</span></p>
+</div>
+</div>
+<div id="simulations" class="section level2">
+<h2>Simulations</h2>
+<p>We consider three simulation settings, each with <span class="math inline">\(K = 3\)</span> arms that yield rewards observed with additive <span class="math inline">\(\text{uniform}[-1, 1]\)</span> noise. The settings vary in the difference between the arm values. In the <em>no-signal</em> case, we set arm values to <span class="math inline">\(Q(w) = 1\)</span> for all <span class="math inline">\(w \in \{1, 2, 3\}\)</span>; in the <em>low signal</em> case, we set <span class="math inline">\(Q(w) = 0.9+ 0.1w\)</span>; and <em>high signal</em> case we set <span class="math inline">\(Q(w) = 0.5 + 0.5w\)</span>. During the experiment, treatment is assigned by a modified Thompson sampling method: first, tentative assignment probabilities are computed via Thompson sampling with normal likelihood and normal prior<span class="citation">(<a href="#ref-russo2018tutorial" role="doc-biblioref">D. J. Russo et al. 2018</a>)</span>; they are then adjusted to impose the lower bound <span class="math inline">\(e_t(w) \geq (1/K)t^{-0.7}\)</span>.</p>
+<p>We show comparison among four point estimators of arm values <span class="math inline">\(Q(w)\)</span>: the sample mean, the AIPW estimator with uniform weights (labeled as “unweighted AIPW”), and the adaptively-weighted AIPW estimator with constant and two-point allocation schemes. For the AIPW-based estimators, we use the same formula given in our theorem to construct confidence intervals. For the sample mean we use the usual variance estimate <span class="math inline">\(\smash{\widehat{V}^{AVG}(w) := T_w^{-2} \sum_{t: W_t = w}^{T} (Y_t - \widehat{Q}^{AVG}_T(w))^2}\)</span>. Approximate normality is not theoretically justified for the unweighted AIPW estimator or for the sample mean. We also consider non-asymptotic confidence intervals for the sample mean, based on the method of time-uniform confidence sequences described in <span class="citation">Howard et al. (<a href="#ref-howard2021uniform" role="doc-biblioref">2021</a>)</span>. We refer interesting readers to our paper for more results on estimating other arms as well as the contrast between arms <span class="citation">(<a href="#ref-hadad2021confidence" role="doc-biblioref">Hadad et al. 2021</a> )</span>.</p>
+<p>The below panel demonstrates that we are able to estimate the “good” arm value <span class="math inline">\(Q(3)\)</span> with considerable ease in high- and low-signal settings, in that all methods produce point estimates with negligible bias and small root mean-squared error, and moreover attain roughly correct coverage for large <span class="math inline">\(T\)</span>.
+Conversely, estimating the “bad” arm value <span class="math inline">\(Q(1)\)</span> is challenging. Although the AIPW estimator is unbiased, it performs very poorly in terms of RMSE and confidence interval width. In the low and high signal case, its problem is that it does not take into account the fact that the bad arm is undersampled, so its variance is high. Of our two adaptively-weighted AIPW estimators, two-point allocation better controls the variance of bad arm estimates by more aggressively downweighting `unlikely’ observations associated with large inverse propensity weights; this results in smaller RMSE and tighter confidence intervals.
+For the sample-mean estimator, naive confidence intervals based on the normal approximation are invalid, with severe under-coverage when there’s little or
+no signal. On the other hand, the non-asymptotic confidence sequences of <span class="citation">Howard et al. (<a href="#ref-howard2021uniform" role="doc-biblioref">2021</a>)</span> are conservative and often wide.</p>
+<p><img src="/post/2022-10-11-ruohan_adaptive_inference_files/arm_values.png" /></p>
+</div>
+<div id="extensions" class="section level2">
+<h2>Extensions</h2>
+<p>One direct extension is to apply the above adaptive weighting technique to evaluating policies on populations with hetegeneous outcomes, using data that is collected adaptively via contextual bandit algorithms. In <span class="citation">Zhan, Hadad, et al. (<a href="#ref-zhan2021off" role="doc-biblioref">2021</a>)</span>, we carefully choose adaptive weights to accommodate the variances of AIPW scores that may differ not only over time but also across the context space. The resulting estimator further reduces estimation variance.</p>
+<p>Aside from policy evaluation, learning the optimal treatment assignment policies using adaptive data is also desirable, which enables personalized decision making in a wide variety of domains. In <span class="citation">Zhan, Ren, et al. (<a href="#ref-zhan2021policy" role="doc-biblioref">2021</a>)</span>, we establish the first-of-the-kind regret lower bound that characterizes the fundamental difficulty of policy learning with adaptive data. We then propose an algorithm based on re-weighted AIPW estimators and
+show that it is minimax optimal with the best weighting scheme.</p>
+</div>
+<div id="about-the-author" class="section level2">
+<h2>About the author</h2>
+<ul>
+<li><a href="https://ruohanzhan.github.io/">Ruohan Zhan</a>: postdoctoral fellow at the Stanford Graduate School of Business, incoming Assistant Professor at the Hong Kong University of Science and Technology.</li>
+</ul>
+<div id="bibliography" class="section level3 unnumbered">
+<h3>Bibliography</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-agrawal2013thompson" class="csl-entry">
+Agrawal, Shipra, and Navin Goyal. 2013. <span>“Thompson Sampling for Contextual Bandits with Linear Payoffs.”</span> In <em>International Conference on Machine Learning</em>, 127–35. PMLR.
+</div>
+<div id="ref-bertsimas2017personalized" class="csl-entry">
+Bertsimas, Dimitris, Nathan Kallus, Alexander M Weinstein, and Ying Daisy Zhuo. 2017. <span>“Personalized Diabetes Management Using Electronic Medical Records.”</span> <em>Diabetes Care</em> 40 (2): 210–17.
+</div>
+<div id="ref-hadad2021confidence" class="csl-entry">
+Hadad, Vitor, David A Hirshberg, Ruohan Zhan, Stefan Wager, and Susan Athey. 2021. <span>“Confidence Intervals for Policy Evaluation in Adaptive Experiments.”</span> <em>Proceedings of the National Academy of Sciences</em> 118 (15).
+</div>
+<div id="ref-hahn1998role" class="csl-entry">
+Hahn, Jinyong. 1998. <span>“On the Role of the Propensity Score in Efficient Semiparametric Estimation of Average Treatment Effects.”</span> <em>Econometrica</em>, 315–31.
+</div>
+<div id="ref-howard2021uniform" class="csl-entry">
+Howard, Steven R, Aaditya Ramdas, Jon McAuliffe, and Jasjeet Sekhon. 2021. <span>“Time-Uniform, Nonparametric, Non-Asymptotic Confidence Sequences.”</span> <em>The Annals of Statistics</em> Forthcoming.
+</div>
+<div id="ref-lai1985asymptotically" class="csl-entry">
+Lai, Tze Leung, and Herbert Robbins. 1985. <span>“Asymptotically Efficient Adaptive Allocation Rules.”</span> <em>Advances in Applied Mathematics</em> 6 (1): 4–22.
+</div>
+<div id="ref-luedtke2016statistical" class="csl-entry">
+Luedtke, Alexander R, and Mark J van der Laan. 2016. <span>“Statistical Inference for the Mean Outcome Under a Possibly Non-Unique Optimal Treatment Strategy.”</span> <em>Annals of Statistics</em> 44 (2): 713.
+</div>
+<div id="ref-murphy2005experimental" class="csl-entry">
+Murphy, Susan A. 2005. <span>“An Experimental Design for the Development of Adaptive Treatment Strategies.”</span> <em>Statistics in Medicine</em> 24 (10): 1455–81.
+</div>
+<div id="ref-nie2018adaptively" class="csl-entry">
+Nie, Xinkun, Xiaoying Tian, Jonathan Taylor, and James Zou. 2018. <span>“Why Adaptively Collected Data Have Negative Bias and How to Correct for It.”</span> In <em>Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics</em>, edited by Amos Storkey and Fernando Perez-Cruz, 84:1261–69. New York: PMLR. <a href="http://proceedings.mlr.press/v84/nie18a.html">http://proceedings.mlr.press/v84/nie18a.html</a>.
+</div>
+<div id="ref-pena2008self" class="csl-entry">
+Peña, Victor H de la, Tze Leung Lai, and Qi-Man Shao. 2008. <em>Self-Normalized Processes: Limit Theory and Statistical Applications</em>. Berlin Heidelberg: Springer-Verlag.
+</div>
+<div id="ref-russo2020simple" class="csl-entry">
+Russo, Daniel. 2020. <span>“Simple Bayesian Algorithms for Best-Arm Identification.”</span> <em>Operations Research</em> 68 (6): 1625–47. <a href="https://doi.org/10.1287/opre.2019.1911">https://doi.org/10.1287/opre.2019.1911</a>.
+</div>
+<div id="ref-russo2018tutorial" class="csl-entry">
+Russo, Daniel J., Benjamin Van Roy, Abbas Kazerouni, Ian Osband, and Zheng Wen. 2018. <span>“A Tutorial on Thompson Sampling.”</span> <em>Found. Trends Mach. Learn.</em> 11 (1): 1–96. <a href="https://doi.org/10.1561/2200000070">https://doi.org/10.1561/2200000070</a>.
+</div>
+<div id="ref-schnabel2016recommendations" class="csl-entry">
+Schnabel, Tobias, Adith Swaminathan, Ashudeep Singh, Navin Chandak, and Thorsten Joachims. 2016. <span>“Recommendations as Treatments: Debiasing Learning and Evaluation.”</span> In <em>International Conference on Machine Learning</em>, 1670–79. PMLR.
+</div>
+<div id="ref-zhan2021off" class="csl-entry">
+Zhan, Ruohan, Vitor Hadad, David A Hirshberg, and Susan Athey. 2021. <span>“Off-Policy Evaluation via Adaptive Weighting with Data from Contextual Bandits.”</span> In <em>Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery &amp; Data Mining</em>, 2125–35.
+</div>
+<div id="ref-zhan2021policy" class="csl-entry">
+Zhan, Ruohan, Zhimei Ren, Susan Athey, and Zhengyuan Zhou. 2021. <span>“Policy Learning with Adaptively Collected Data.”</span> <em>arXiv Preprint arXiv:2105.02344</em>.
+</div>
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
