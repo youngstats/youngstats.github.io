@@ -18,16 +18,6 @@ IntroductionAdaptive data collection can optimize sample efficiency during the
     </item>
     
     <item>
-      <title>Inference on Adaptively Collected Data</title>
-      <link>https://youngstats.github.io/post/2022/10/11/ruohan_adaptive_inference/</link>
-      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/11/ruohan_adaptive_inference/</guid>
-      <description>Abstract It is increasingly common for data to be collected adaptively, where experimental costs are reduced progressively by assigning promising treatments more frequently. However, adaptivity also poses great challenges on post-experiment inference, since observations are dependent, and standard estimates can be skewed and heavy-tailed. We propose a treatment-effect estimator that is consistent and asymptotically normal, allowing for constructing frequentist confidence intervals and testing hypotheses.
-Introduction Adaptive data collection can optimize sample efficiency during the course of the experiment for particular objectives, such as identifying the best treatment (D.</description>
-    </item>
-    
-    <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
       <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
