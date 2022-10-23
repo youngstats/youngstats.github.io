@@ -6,16 +6,7 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
-      <link>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
-      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
-      <description>In certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been {} for a period of time and their status at some endpoint reported.See for example the (Surveillance, Epidemiology, and End Results, US National Cancer Institute) data base, which contains a massive amount of data with extended followup on a wide range of cancers — an important source for historical data.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inference on Adaptively Collected Data</title>
       <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
@@ -109,6 +100,16 @@ Multi-armed bandit (MAB) algorithms have been argued for decades as useful to co
       <guid>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</guid>
       <description>Selection of Priors in Bayesian Structural Equation Modelling
 Structural equation modeling (SEM) is an important framework within the social sciences that encompasses a wide variety of statistical models. Traditionally, estimation of SEMs has relied on maximum likelihood. Unfortunately, there also exist a variety of situations in which maximum likelihood performs subpar. This led researchers to turn to alternative estimation methods, in particular, Bayesian estimation of SEMs or BSEM. However, it is currently unclear how to specify the prior distribution in order to attain the advantages of Bayesian approaches.</description>
+    </item>
+    
+    <item>
+      <title>Recent Advances in Approximate Bayesian Inference</title>
+      <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
+      <description>Recent Advances in Approximate Bayesian Inference
+In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
     </item>
     
   </channel>
