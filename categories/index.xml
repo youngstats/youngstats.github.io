@@ -6,7 +6,25 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cure-model</title>
+      <link>https://youngstats.github.io/categories/cure-model/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/cure-model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>survival-analysis</title>
+      <link>https://youngstats.github.io/categories/survival-analysis/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/survival-analysis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>adaptive-experiments</title>
       <link>https://youngstats.github.io/categories/adaptive-experiments/</link>
@@ -76,24 +94,6 @@
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/model-specification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>https://youngstats.github.io/categories/statistics/</link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimal-transport</title>
-      <link>https://youngstats.github.io/categories/optimal-transport/</link>
-      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/optimal-transport/</guid>
       <description></description>
     </item>
     

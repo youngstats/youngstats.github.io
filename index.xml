@@ -6,7 +6,1149 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
+      <link>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
+      <description>
+
+
+&lt;p&gt;In certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been {} for a period of time and their status at some endpoint reported.
+See for example the (Surveillance, Epidemiology, and End Results, US National Cancer Institute) data base, which contains a massive amount of data with extended followup on a wide range of cancers — an important source for historical data.&lt;br /&gt;
+In another context, in , the times of occurrence of four endpoints (overall survival, disease-specific survival, disease-free interval, or progression-free interval) for 11,160 patients across 33 cancer types were obtained from follow-up data files, with a view to making recommendations to clinicians regarding their patient’s status.&lt;/p&gt;
+&lt;p&gt;The data confronting the statistician consists of observations like this, on
+the time to the occurrence of some event such as death, or the recurrence of a disease, etc. For definiteness, suppose we are analysing overall survival, and the measurement is the life-lengths of a sample of individuals.
+A particular characteristic of this kind of data is that it is commonly
+{}. This happens when an individual’s complete lifetime is not observed, either because s/he left the study early for some reason, or was still alive at the end of the study (and all real-life studies must be terminated at some finite time).
+The censored observations must be taken into account in any analysis; to ignore them would introduce bias, in that, typically, some of the longer lifetimes would have been ignored.&lt;/p&gt;
+&lt;p&gt;Methods for the analysis of such survival data have long been known.
+See for example .
+A good place to start is simply to look at the data, literally, in the form of the
+{} (KME, ), which is a nonparametric estimator of the survival function (the tail, or complement, of the distribution describing the lifetimes) which takes into account the censoring.
+%&lt;a href=&#34;https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator&lt;/a&gt;
+An example KME plot is the first thing we see when looking at the current Wikipedia entry () for the KME.
+Notable about this example and many others we can see in the literature is that the survivor function is {}; it does not reach zero at its right endpoint.
+Equivalently, in such cases, the KME as a cdf has total mass less than 1.
+This is so for all of the data sets in .
+%, and we give other examples below.&lt;/p&gt;
+&lt;p&gt;A KME which levels off or &lt;code&gt;plateaus&#39;&#39; at its right hand end because the largest or perhaps a number of the largest lifetimes are censored  may indicate the presence of a proportion of individuals in the population who will not suffer the event, no matter how long they are followed up. We refer to them as&lt;/code&gt;cured of’’ or &lt;code&gt;immune to&#39;&#39; the event, and methods are now well  developed to deal with this kind of data, generally known as {\it  cure model } methods.  As well as providing significant extra information beyond that of a standard survival analysis, ignoring the presence of  cures in an analysis can lead to biased and misleading conclusions, sometimes  with  profound consequences for diagnostic prognostications and evaluations.   %An important application  is reported in %additional point is that  statistics such as  %$Q_n$ and $\wt\alpha_n$  can be used not only to  test for sufficient follow-up but  % also to provide measures of how much follow-up there is in a sample. %Both these aspects are  %  \cite{Liu:etal:2018},  %where   testing for and measurement of sufficient follow-up in the TCGA pan-cancer clinical data resource are done on a very extensive scale  %in order to provide recommendations to cancer researchers wishing to assess the adequacy of clinical follow-up in a medical situation.  %In \cite{Liu:etal:2018},  follow-up data files for 11,160 patients %across 33 cancer types were  % processed.   %Median follow-up times as well as median times %to event (or censorship) based on the observed times for  %four endpoints (overall survival, disease-specific survival, disease-free interval, or progression-free interval) were %calculated. %%In a very detailed analysis,  %The authors used  $Q_n$  %% and $\wt\alpha_n$  % in \cite{shen:2000} %to classify all $33 \times 4$ resulting  KMEs  as having sufficient or insufficient follow-up (or noted cases in which  tests were inconclusive)  in order to give  endpoint usage recommendations for each cancer type. %%%%%%%%%%Their results are summarized in their Table 3.  %They stress: {\it  %For each endpoint, it is very important to have a %sufficiently long follow-up time to capture the events of interest, %and the minimum follow-up time needed depends on both the %aggressiveness of the disease and the type of endpoint} (Liu et al., %\cite{Liu2018}, p.401). % % %In the analysis of time-to-event data, it is not uncommon to encounter  %survival curves which  plateau (level off) at the right hand end. % % %This may indicate the presence of a proportion of individuals in the population who will not suffer the event, no matter how long they are followed up. %We refer to them as&lt;/code&gt;cured of’’ or ``immune to’’ the event, and methods are now well developed to deal with this kind of data, generally known as cure model methods.
+% As well as providing significant extra information beyond that of a standard survival analysis, ignoring the presence of cures in an analysis can lead to biased and misleading conclusions, sometimes with profound consequences for diagnostic prognostications and evaluations.
+%&lt;br /&gt;
+%Cure models have received large and growing attention in the last few decades and it seems timely now to provide a review of their development leading up to present day applications.
+Various versions of cure models have been formulated over the years but here we concentrate on a version which seems easiest to us to formulate, analyse and interpret — {}.&lt;/p&gt;
+&lt;p&gt;The first recognition of the need for and implementation of a cure model seems to have been by .
+He collected data from a number of centres in England, for various sites of the disease and
+treatment methods, and
+noticed that, while
+the distributions of life-lengths
+(measured from the beginning of treatment) of those dying
+appeared to follow quite well a lognormal distribution,
+{}
+Accordingly, he proposed a model in which
+{}
+He went on to fit by maximum likelihood a lognormal distribution with mass at infinity –
+a mixture cure model –
+to followup data on 121 women with breast cancer, finding a significant ``cured’’ proportion in the data.
+%% We revisit Boag’s data and analysis in Sections &lt;span class=&#34;math inline&#34;&gt;\(\ref{DD}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ref{prob}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; shows the KME of the survival distribution
+with 95% confidence intervals, and a Weibull mixture distribution fitted,
+for Boag’s 121 breast cancer patients.
+The KME jumps only at uncensored (death) times, remaining constant at
+censored times.
+For this data it clearly levels off at a value less than 1, consistent with Boag’s observation of a possible cured component,
+%The KME contains further evidence about the existence of a cured component.
+with a tendency to
+remain constant at lifetimes greater than 90 months, except for one late death at
+120.6 months. The length of the level stretch at the righthand end of the KME is indicative of the amount of followup in the data.&lt;/p&gt;
+&lt;p&gt;The KME in Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; is very typical of the kind that can be seen in much of the medical literature. It displays clearly the main issues we want to address:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+has the KME levelled off at a value {}
+less than 1 thereby indicating the possible presence of immunes in the population? and&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+has the KME levelled off {} for us to be confident of this?
+%&lt;br /&gt;
+%
+% These are statistical questions, and to answer them we must apply
+% statistical methods.
+% The first step in a statistical
+% analysis of survival data with possible cures is to assess and test for their existence in the population.
+% The KME in Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{KMEsBoag}\)&lt;/span&gt; is very typical of the kind that can be seen in much of the medical literature; see, e.g., .
+% Other useful information in the sample is the KME of the censoring distribution;&lt;br /&gt;
+% Fig.&lt;span class=&#34;math inline&#34;&gt;\(\ref{censKMEBoag}\)&lt;/span&gt; shows this for Boag’s data with a Weibull distribution fitted.
+% We discuss Boag’s data and the Lui et al. analysis
+% further in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{??}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Since the prospect of a cure is surely the hope of many or most medical procedures, the importance of Boag’s insight can hardly be overstated.
+Following his groundbreaking paper a number of researchers, including
+,
+,
+,
+,
+, %,
+, % ,
+,
+,
+,
+,
+followed up with various aspects and analyses of the model, but the first systematic treatment of what is now called the long term survivor or cure mixture model seems to have been in .
+That book combines nonparametric and parametric theoretical formulations and proofs with many practical applications and examples of the model.&lt;/p&gt;
+&lt;p&gt;There has been an upsurge in interest in the model since the 1990s, with many applications areas explored, especially in medical statistics, and some substantial theoretical advances made.
+Correspondingly, computational facilities have improved tremendously, and with modern capabilities a wide variety of parametric models of censored data with long term survivors can now
+be fitted routinely with the statistical package R (); see
+,
+and .
+%%&lt;a href=&#34;https://cran.r-project.org/web/packages/flexsurvcure/flexsurvcure.pdf&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/flexsurvcure/flexsurvcure.pdf&lt;/a&gt;
+%(See and their references for goodness-of-fit tests for parametric models with censored data.)
+There have also been a number of review/overview and methodological articles:
+,
+, , ,
+%%%DONT USE ….
+%Felizzi, F., Paracha, N., Pöhlmann, J. et al. Mixture Cure Models in Oncology: A Tutorial and Practical Guidance. PharmacoEconomics Open 5, 143–155 (2021).
+and the book by . % summarising some of these aspects.&lt;/p&gt;
+&lt;p&gt;More recent work of the present authors concerns some aspects left unresolved in ,
+as well as some quite new points of view, which we discuss below.&lt;/p&gt;
+&lt;p&gt;%It seems appropriate now to present an overview drawing together earlier and some more recent developments as well as pointing out areas where further work is needed.
+%Besides those we mention, the literature has now grown too large and diverse to summarise completely here, and we confine ourselves to a selection reflecting our own main interests.
+%
+%
+%The next subsection introduces the notation to be used throughout.
+%
+%Expressions have been obtained for the distributions of these quantities under certain assumptions, and in the next section we explain these.&lt;/p&gt;
+%%
+&lt;p&gt;%We adopt the notation in and ,
+%which differs slightly from that in .
+% For the distributional results to follow we use the notation in ,
+%which should be read in conjunction with the present paper.
+A tractable and reasonably realistic model for the data is an independent and identically distributed (iid) censoring model with right censoring.
+In it, a sample of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; consists of observations on the sequence of
+iid 2-vectors
+&lt;span class=&#34;math inline&#34;&gt;\(\big(T_i=T_i^*\wedge U_i, C_i={\bf 1}(T_i^*\le U_i);\, 1\le i\le n\big)\)&lt;/span&gt;.
+%where the &lt;span class=&#34;math inline&#34;&gt;\(T_i\)&lt;/span&gt; represent the censored survival times and the &lt;span class=&#34;math inline&#34;&gt;\(C_i\)&lt;/span&gt; are the censor indicators.
+%It will be convenient to let &lt;span class=&#34;math inline&#34;&gt;\(M(n):= M(n) =\max_{1\leq i\leq n}T_i\)&lt;/span&gt;.
+%We formally set &lt;span class=&#34;math inline&#34;&gt;\(T_i^*=\infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_i = 0\)&lt;/span&gt; for immune individuals.
+%We have two independent sequences of iid positive random variables
+%&lt;span class=&#34;math inline&#34;&gt;\((T_i^*)_{1\le i\le n}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((U_i)_{1\le i\le n}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(n\in\N:=\{1,2,\ldots\}\)&lt;/span&gt;, having continuous cumulative distribution functions &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,\infty)\)&lt;/span&gt;, not degenerate at 0.
+The &lt;span class=&#34;math inline&#34;&gt;\(T_i^*\)&lt;/span&gt; with continuous
+cumulative distribution function (cdf) &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,\infty)\)&lt;/span&gt;
+represent the times of occurrence of the event under study.
+%, such as the death of a person, or the onset of a disease, etc.
+The &lt;span class=&#34;math inline&#34;&gt;\(U_i\)&lt;/span&gt;, iid with continuous cdf &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,\infty)\)&lt;/span&gt;,
+are censoring random variables, independent of the &lt;span class=&#34;math inline&#34;&gt;\(T_i^*\)&lt;/span&gt;.
+In a sample
+%from a population containing long-term survivors
+we observe the censored random variables &lt;span class=&#34;math inline&#34;&gt;\(T_i=T_i^*\wedge U_i\)&lt;/span&gt;
+%, these being potential lifetimes censored at a limit of follow-up represented for individual &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; by the random variable &lt;span class=&#34;math inline&#34;&gt;\(U_i\)&lt;/span&gt;.
+with censor indicators $ C_i={}(T_i^*U_i)$.&lt;/p&gt;
+&lt;p&gt;In the general mixture cure model, the censoring distribution &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; of the &lt;span class=&#34;math inline&#34;&gt;\(U_i\)&lt;/span&gt; is always assumed proper (total mass 1), but the distribution &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; of the &lt;span class=&#34;math inline&#34;&gt;\(T_i^*\)&lt;/span&gt; may be improper,
+%, with mass &lt;span class=&#34;math inline&#34;&gt;\(1-p\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(0\le p&amp;lt;1\)&lt;/span&gt;, at infinity. We assume &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; to be
+of the form
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}    \label{FandF0}
+    F^*(t)=pF(t),
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;p\le 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; is a proper distribution.
+&lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; is the distribution of the lifetimes of susceptible individuals in the population; only these can experience the event of interest and have a potentially uncensored failure time.
+The remainder are immune to the event of interest or cured of it.
+The presence of cured subjects is signalled by a value of &lt;span class=&#34;math inline&#34;&gt;\(p&amp;lt;1\)&lt;/span&gt;, in which case the distribution &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; is improper, with total mass &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;. %Then &lt;span class=&#34;math inline&#34;&gt;\(1-p\)&lt;/span&gt; is the proportion of immune or cured individuals in the population.&lt;/p&gt;
+&lt;p&gt;We do not know whether a particular censored lifetime in the sample is from a cured or immune individual (uncensored lifetimes are obviously not from immunes); but
+%in aggregate, the presence of cured individuals may be signalled by
+%an ``improper’’ sample Kaplan-Meier estimator (KME, ),
+% that is, one having total mass less than 1.
+% This situation arises when the largest survival time in the sample is censored,
+% and there may further be an interval of constancy of the KME at its right hand end due to a number of the largest observations being censored.
+observations on cured or immune individuals are always censored; those on susceptibles may or may not be according as the corresponding &lt;span class=&#34;math inline&#34;&gt;\(T_i^*&amp;gt;U_i\)&lt;/span&gt; or not.&lt;/p&gt;
+&lt;p&gt;%The notation &lt;span class=&#34;math inline&#34;&gt;\(\Fbar^*(t)= 1-F^*(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t\ge 0\)&lt;/span&gt;, is used for the survival function (tail function) of &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt;, and similarly &lt;span class=&#34;math inline&#34;&gt;\(\Fbar(t)= 1-F(t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Gbar(t)= 1-G(t)\)&lt;/span&gt;.
+% Let &lt;span class=&#34;math inline&#34;&gt;\(H(t):=P(T_1\le t)\)&lt;/span&gt; be the distribution of the observed survival times &lt;span class=&#34;math inline&#34;&gt;\(T_i=T_i^*\wedge U_i\)&lt;/span&gt;, with tail &lt;span class=&#34;math inline&#34;&gt;\(\Hbar(t)=1-H(t)=P(T_i^*\wedge U_i&amp;gt;t ) = \Fbar^*(t)\Gbar(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t\ge 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%
+%We restrict our discussion to the {} cure model in this survey.
+%Other models incoporating long term survivors have been proposed;
+%we discuss them just briefly in Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{omixmod}\)&lt;/span&gt;.
+%But the mixture model is easy to formulate and easy for practitioners to interpret, and it generalises easily to competing risks setups, see Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{??}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%We take a practical point of view whereby the data has prominence and the methodological developments flow from the inferences to be drawn from it.
+%So suppose we have at hand a single sample of survival data which is to be analysed statistically.
+%The first thing a statistician will want to do is look at the data, and for this we recommend the empirical distribution function estimator (KME) of the
+%lifetimes.&lt;/p&gt;
+&lt;p&gt;%%See Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{KME}\)&lt;/span&gt; for the definition.
+The KME is a highly informative data display which shows clearly in visual form the features we want to investigate.
+To define it, denote the ordered sample lifetimes as &lt;span class=&#34;math inline&#34;&gt;\(T_n^{(1)}&amp;lt; T_n^{(2)}&amp;lt; \cdots &amp;lt;T_n^{(n)}\)&lt;/span&gt;,
+with associated censor indicators
+&lt;span class=&#34;math inline&#34;&gt;\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)&lt;/span&gt;.
+%%NOTE THIS ORDERING IS THE SAME AS IN .
+Let $M(n)=T_n^{(n)}=&lt;em&gt;{1in}T_i $ be the largest survival time.
+%and let &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; be the largest observed {} survival time.
+An explicit definition of the KME is
+F_n(t):= 1-&lt;/em&gt;{1in: , T_n^{(i)} t}^n (1- ),
+ {} 0&amp;lt;tM(n),
+with &lt;span class=&#34;math inline&#34;&gt;\(\wh F_n(0):=0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\wh F_n(t):=\wh F_n(M(n))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt; M(n)\)&lt;/span&gt;.
+In &lt;span class=&#34;math inline&#34;&gt;\(\eqref{km1}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(n-i+1\)&lt;/span&gt; % := &lt;em&gt;{j=1}^n {}&lt;/em&gt;{T_j&amp;gt;T_i}$
+is the number of subjects ``at risk’’ at times just prior to &lt;span class=&#34;math inline&#34;&gt;\(T_n^{(i)}\)&lt;/span&gt;.
+Recall we assume &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; are continuous so there are no tied survival times in the data with probability 1.
+Let&lt;br /&gt;
+p_n:= F_n(M(n))
+be the value of the KME at its right extreme.
+%See , Ch. 3 and 4, for properties of &lt;span class=&#34;math inline&#34;&gt;\(\wh F_n(t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In a sample we observe data values &lt;span class=&#34;math inline&#34;&gt;\((t_i, c_i)_{1\le i\le n}\)&lt;/span&gt; for
+&lt;span class=&#34;math inline&#34;&gt;\((T_i,C_i)_{1\le i\le n}\)&lt;/span&gt;, order them as
+&lt;span class=&#34;math inline&#34;&gt;\(t_n^{(1)}&amp;lt; t_n^{(2)}&amp;lt; \cdots &amp;lt;t_n^{(n)}\)&lt;/span&gt;, and define associated censor indicators
+&lt;span class=&#34;math inline&#34;&gt;\(c_n^{(1)}, c_n^{(2)}, \ldots, c_n^{(n)}\)&lt;/span&gt;.
+Then $t_n^{(n)}=_{1in}t_i $ is the largest observed survival time.
+%and let &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; be the largest observed {} survival time.
+The sample KME is the same function with observed data values substituted for the random quantities, and we obtain a sample estimate of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; by substituting appropriately in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{defpnh}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%As an example, Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; shows the KME of the survival (lifetime) distribution
+% with 95% confidence intervals, and a Weibull mixture distribution fitted,
+% for Boag’s 121 breast cancer patients.
+% (The Weibull is a slightly better fit than the lognormal as used by Boag).
+% The KME jumps only at uncensored (death) times, remaining constant at
+%censored times. For this data it clearly levels off at a value less than 1, consistent with Boag’s observation of a possible cured component, and we see clearly the main issues we want to address:
+%
+% &lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+% has the KME levelled off at a value {} less than 1 thereby indicating the possible presence of immunes in the population? and
+%&lt;br /&gt;
+% &lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+% has the KME levelled off {} for us to be confident of this?
+%&lt;br /&gt;
+%
+% These are statistical questions, and to answer them we must apply
+% statistical methods.
+%&lt;br /&gt;
+% The first step in a statistical
+% analysis of survival data with possible cures is to assess and test for their existence in the population.&lt;/p&gt;
+&lt;p&gt;A nonparametric estimate of the population proportion dying is given by the maximum value of the KME, that is, &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; as defined by &lt;span class=&#34;math inline&#34;&gt;\(\eqref{defpnh}\)&lt;/span&gt;,
+and its complement is the estimated cure proportion, which
+as can be seen in Fig.&lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; for Boag’s data is 0.30 with a 95% confidence interval (CI) (calculated using the estimate)
+of $ [0.19, 0.48]$. This interval excludes 0, in general agreement with Boag’s observation of a possible cured component.
+This confidence interval assessment though indicative is not strictly correct usage, however, as the restriction of &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; should be taken into account, as should the fact that &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; is calculated from the KME at a random (not deterministic) time.&lt;/p&gt;
+&lt;p&gt;When a parametric mixture model such as the Weibull is fitted, a rigorous test for &lt;span class=&#34;math inline&#34;&gt;\(H_0: p=1\)&lt;/span&gt; (no immunes present) is available
+(see Section 5.3, p.109, of ), and a nonparametric test using &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; is outlined in Section 4.2, p.76, p.109, of (with percentage points in Table A.1 of the book),
+but we still do not have complete understanding of the distribution of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; under the null hypothesis &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;% An ``improper’’ sample KME
+% is suggestive but not definitive evidence of the presence of cured individuals in the population.
+%Even in the absence of cures, it’s possible for the
+%right extreme of the KME to be less than 1 just by chance; calculate this probability under the assumption of iid censoring.
+% (for which, see the next section).
+%So we need rigorous tests for whether the right extreme of the KME is significantly less than 1, and
+%how this is related to the length of the level stretch at the righthand end of the KME.&lt;/p&gt;
+&lt;p&gt;The KME contains further evidence about the existence of a cured component.
+We see in Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; a tendency for the KME to
+remain constant at lifetimes greater than 90 months, except for one late death at
+120.6 months. The length of the level stretch at the righthand end of the KME is indicative of the amount of followup in the data.
+A statistic &lt;span class=&#34;math inline&#34;&gt;\(Q_n\)&lt;/span&gt; is suggested in for assessing ``sufficient followup’’.&lt;/p&gt;
+%
+% The KME in Fig. &lt;span class=&#34;math inline&#34;&gt;\(\ref{uncensKMEBoag}\)&lt;/span&gt; is very typical of the kind that can be seen in much of the medical literature; see, e.g., .
+% Other useful information in the sample is the KME of the censoring distribution; Fig.&lt;span class=&#34;math inline&#34;&gt;\(\ref{censKMEBoag}\)&lt;/span&gt; shows this for Boag’s data with a Weibull distribution fitted.
+% We discuss Boag’s data and the Lui et al. analysis
+% further in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{??}\)&lt;/span&gt;.
+%
+% \begin{figure}[h]
+%
+%
+% \begin{subfigure}{5cm}
+%
+%
+% \end{subfigure}
+%
+% \begin{subfigure}{5cm}
+%
+%
+&lt;p&gt;%\end{subfigure}
+%\end{figure}&lt;/p&gt;
+These ideas are related to the magnitudes of the largest survival time observed,
+and the largest {} survival time observed, and the numbers of observations in the two time intervals defined by these.
+%Much of the methodology is set out in , which can be read as background to the present paper.
+%But some issues are left unresolved in that book, which we address in the present paper, along with some newly derived results.&lt;br /&gt;
+%%
+&lt;p&gt;A key structural result obtained in
+is that, conditional on the value of the largest uncensored survival time, and knowing the number of censored observations exceeding this time,
+the sample partitions into two independent subsamples, each subsample having
+the distribution of an iid sample of censored survival times, of reduced size, from truncated random variables.
+This result provides valuable insight and intuition into the construction of samples of censored survival data,
+and facilitates the calculation of explicit finite sample formulae, for example, for
+the joint distribution of the largest and the largest {} survival time observed, and for &lt;span class=&#34;math inline&#34;&gt;\(Q_n\)&lt;/span&gt;.
+Further, the asymptotic distributions of these statistics can then be worked out under conditions related to those familiar from extreme value theory.
+Our recent research is very much in this line.
+See
+(adjusting for insufficient follow-up),
+(extremes of censored and uncensored lifetimes),
+(splitting the sample at the largest uncensored observation,
+testing for sufficient followup, estimating the probability of being cured).&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+It’s very common in survival analysis to encounter a KME which has levelled off at a value less than 1. This may indicate the presence of immune or cured individuals in the population — but not always — even in the absence of cures, it’s possible for the
+right extreme of the KME to be less than 1 just by chance.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt; A significance test is available for the hypothesis &lt;span class=&#34;math inline&#34;&gt;\(H_0: p=1\)&lt;/span&gt; when a well-fitting parametric model has been found for the data.
+A wide variety of models can be fitted routinely with R (); see
+, and .
+These cover a class of generalised F models and, as a submodel, an extended generalised gamma model, which between them include as submodels most of the usual survival distributions such as the exponential, Weibull, lognormal, Gumbel,
+log-logistic, Burr, etc.
+Methods of distinguishing between them in a data analysis with the cure model are set out in .&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;&lt;br /&gt;
+A nonparametric test for &lt;span class=&#34;math inline&#34;&gt;\(H_0: p=1\)&lt;/span&gt; is available too, but at present we have to rely on simulated, tabulated, percentage points for the distribution.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+An important point is whether the KME has levelled off {} at its right endpoint.
+The &lt;span class=&#34;math inline&#34;&gt;\(Q_n\)&lt;/span&gt; statistic has been developed to measure and test for this.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+We’ve confined our discussion to the one-sample case.
+In practice, we usually have one or more groups (treatment groups, or otherwise), and/or covariates, and want to examine the effects of these.
+Much of is concerned with methods for handling this.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+We’ve also confined our discussion to medical data and survival analysis.
+But the methodology applies to many other kinds of time-to-event data.
+A wide variety of examples can be found in a web search.
+use much criminological data (time to re-arrest of a released prisoner, etc.) to illustrate the methods.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\bullet\)&lt;/span&gt;
+Ignoring the possible presence of cured, immune or long-term survivors in a population not only risks losing valuable information but can result in bias and misleading conclusions.
+An important point is that including the possibility of long-term survivors in {} survival analysis can do no damage;
+if their presence is allowed for but found not to be significant, no harm is done.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; $\bullet$
+ The mixture cure model can be regarded as a special case of a competing risks analysis where death or failure of an individual  may be due to a number of possible causes; see \cite{MZ2002}.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The issue of sufficient followup is clearly relevant in this context, but has not been addressed at all, to our knowledge.&lt;/p&gt;
+&lt;p&gt;\end{document}&lt;/p&gt;
+%%
+&lt;p&gt;%The Kaplan-Meier empirical distribution function estimator (KME) of the survival distribution of the individuals is defined as&lt;/p&gt;
+&lt;p&gt;The right extremes of the survival and censoring distributions
+play a special role in our analysis.
+Let $_{F^&lt;em&gt;}= {t&amp;gt;0:F^&lt;/em&gt;(t)=1} $
+%&lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}= \inf\{t&amp;gt;0:F(t)=1\} = \inf\{t&amp;gt;0:\)&lt;/span&gt;F^*(t)=p} $
+(with the inf of the empty set equal to &lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;) be the right extreme of the survival distribution &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt;,
+and similarly &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\tau_{G}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau_H\)&lt;/span&gt;
+%&lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}= \inf\{u&amp;gt;0:F(u)=1\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau_G= \inf\{u&amp;gt;0:G(u)=1\}\)&lt;/span&gt;&lt;br /&gt;
+are the right extremes of &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;.
+The quantity &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}\)&lt;/span&gt; represents the largest survival time of an individual in the population,
+but in a sample we can only observe times up to a maximum of &lt;span class=&#34;math inline&#34;&gt;\(\tau_H: =\min(\tau_{F^*}, \tau_G)\)&lt;/span&gt;, due to the censoring.
+We always have &lt;span class=&#34;math inline&#34;&gt;\(H(\tau_H)=1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(G(\tau_G)=1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F(\tau_{F})=1\)&lt;/span&gt;.
+When &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt;, so that &lt;span class=&#34;math inline&#34;&gt;\(F^*\equiv F\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; has total mass 1 and &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}=\tau_{F}\)&lt;/span&gt;;
+when &lt;span class=&#34;math inline&#34;&gt;\(p&amp;lt;1\)&lt;/span&gt; we have &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}=\infty\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}\le \tau_{F^*}\)&lt;/span&gt;,
+with the possibility that &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}&amp;lt; \tau_{F^*}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The relation &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; expresses that there is enough followup to allow the largest possible susceptible survival times to be observed; in the contrary situation, &lt;span class=&#34;math inline&#34;&gt;\(\tau_G&amp;lt;\tau_F\)&lt;/span&gt;, censoring is so heavy that the data is truncated at a level below the maximum possible survival time.
+Besides expressing that followup is ``sufficient’’ in this sense,
+the condition &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; arises in a number of other theoretical results.
+For example, the KME is biased downwards, but the bias is asymptotically negligible (tends to 0 in large samples) if and only if &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt;
+(provided &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; is continuous at &lt;span class=&#34;math inline&#34;&gt;\(\tau_H\)&lt;/span&gt; in case &lt;span class=&#34;math inline&#34;&gt;\(\tau_H&amp;lt;\infty\)&lt;/span&gt;; see , Theorem 3.13).
+Under this same continuity condition, &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt;
+is necessary and sufficient condition for the KME &lt;span class=&#34;math inline&#34;&gt;\(\wh F_n\)&lt;/span&gt; to be consistent for &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; on the whole line; , Thms. 3.8 and 4.2.&lt;/p&gt;
+&lt;p&gt;Convergence of the integral
+&lt;em&gt;{{0&amp;lt;t&amp;lt; &lt;/em&gt;{H}}}
+is a required assumption in Theorem 4.2.3 of giving the asymptotic distribution of the KME, and in Theorem 4.3 of
+.
+The ``sufficient followup’’ condition &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; is necessary for the convergence of the integral in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{intg}\)&lt;/span&gt; and consequently plays an important role in many of the large-sample results in and in the literature.&lt;/p&gt;
+&lt;p&gt;% and , Theorem 4.3 as…&lt;/p&gt;
+&lt;p&gt;This discussion highlights the need for information on, or assumptions about,
+the right hand endpoints of &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt;, and, especially, whether they are finite or not.
+Most practical is to assume &lt;span class=&#34;math inline&#34;&gt;\(\tau_G&amp;lt;\infty\)&lt;/span&gt; since observation must always cease at some finite point.
+In many cases the assumption &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}&amp;lt;\infty\)&lt;/span&gt; may also be natural.
+Certainly in real survival data no individual lives forever, but we would set &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}=\infty\)&lt;/span&gt; for example when studying the occurrence of an infectious disease where an immune individual would never contract the disease no matter how long the follow-up. This can certainly be the case in epidemics such as the COVID virus pandemic, for example; and in an analysis with children immune to malaria is given.&lt;/p&gt;
+&lt;p&gt;Regardless of the situation, in modelling exercises it is not uncommon to use a distribution
+with infinite right endpoint as the lifetime distribution; e.g., an exponential, Weibull, lognormal, or Gumbel, or the generalised gamma distribution fitted in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{DA}\)&lt;/span&gt;.
+In doing so we accept that the probability of seeing an extremely long lifetime under the assumed model is negligible, so the theoretical approximation is good enough for practical purposes.
+Alternatively, we could truncate the survival distribution at a (large) finite value, thus creating a distribution with &lt;span class=&#34;math inline&#34;&gt;\(\tau_F&amp;lt;\infty\)&lt;/span&gt;, as is often done in simulations; but then in practice there arises the question of where the truncation should be.
+We do not address this issue here.&lt;/p&gt;
+&lt;p&gt;%Theorem 3.2 in Maller and Zhou (1996) proposes a consistent estimator for &lt;span class=&#34;math inline&#34;&gt;\(\tau_H\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;We discuss the issue of the finiteness or otherwise of the right extremes further in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{??}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In this section we review some of the methodological advances that have been made in recent years and how they can be used to calculate distributions of statistics we are interested in.
+Calculation of exact distributions (under the iid censoring model) allows for a rigorous investigation
+of their properties and makes unnecessary the need for simulations of percentage points.
+%, though in practice the unknown distributions
+%(or their parameters) implicit in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{Qdis}\)&lt;/span&gt;
+%–&lt;span class=&#34;math inline&#34;&gt;\(\eqref{Qdis4}\)&lt;/span&gt; %%and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12a}\)&lt;/span&gt;
+%must be estimated or postulated.&lt;/p&gt;
+&lt;p&gt;A key structural result obtained in
+is that, conditional on the value of the largest uncensored survival time, and knowing the number of censored observations exceeding this time,
+the sample partitions into two independent subsamples, each subsample having
+the distribution of an iid sample of censored survival times, of reduced size, from truncated random variables.
+This result provides valuable insight and intuition into the construction of samples of censored survival data,
+and facilitates the calculation of explicit finite sample formulae.&lt;/p&gt;
+&lt;p&gt;%
+%To state the splitting result, we adopt the convention that for a
+%non-negative random variable &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; and Borel set &lt;span class=&#34;math inline&#34;&gt;\(B\subset %\R_+\)&lt;/span&gt;
+% with &lt;span class=&#34;math inline&#34;&gt;\(P(B)&amp;gt;0\)&lt;/span&gt;,
+% $(X|XB) $ is a random variable with distribution
+%&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{e: conditDistn}
+%  P(X\in A|X\in B)=P(X\in A\cap B)/P(X\in B),
+%  \quad A\subset \R_+,\,A
+%\text{ Borel}.\end{equation}
+
+Recall the notation in Section \ref{nii}.
+The splitting theorem tells us that
+the sample $S_n:=\{T_i,1\le i\le n\}$  partitions into disjoint sets as follows:
+\be \label{e:partition}
+  S_n
+  %=\{T_i,1\le i\le n\}=
+%  &amp;amp;\{M_u(n) \}\cup  \{T_i:i\leq n\; \&amp;amp;\;
+%                           T_i&amp;lt;M_u(n)\}\nonumber\\
+%&amp;amp;  \qquad \qquad
+%  \cup
+%                           \{T_i:i\leq n \;\&amp;amp; \; T_i&amp;gt;M_u(n)\}\nonumber\\
+  =S_n^&amp;lt; \cup \{M_u(n)\} \cup S_n^&amp;gt;
+\ee
+(we keep $n\ge 3$),
+where the component sets are
+\be\label{none}
+S_n^&amp;lt; :=  \{T_i:i\leq n\ {\rm and}\  T_i&amp;lt;M_u(n)\}
+\ee
+and
+\be\label{non}
+S_n^&amp;gt; :=   \{T_i:i\leq n\ {\rm and}\   T_i&amp;gt;M_u(n)\}.
+\ee
+They have the following properties.
+On $\{M_u(n)&amp;gt;0\}$, let
+\be\label{Nd1}
+N_c^&amp;gt;(M_u(n)):= \{{\rm number\ of\ censored\ observations\ exceeding}\  M_u(n)\},
+\ee
+%so that  
+%\ben
+%\{N_c^&amp;gt;(M_u(n))=r\}= \{C_{(n-r)}=1, C_{(n-r+1)} =\cdots=C_{(n)}=0\}, \ 1\le  r\le n-1.
+%\een
+where by convention we set
+\ben %\label{Nd2}
+\{N_c^&amp;gt;(M_u(n))=0\}
+=\{M_u(n)= M(n)\}
+=
+\{{\rm largest\ observation\ uncensored} \}
+%\{C_{(n)}=1\},
+\een
+and
+\ben %\label{Nd3}
+\{N_c^&amp;gt;(M_u(n))=n\}=
+\{{\rm all}\ n\ {\rm observations\ censored} \}.
+% = \{C_1=\cdots=C_n=0\}.
+\een
+%On $\{N_c^&amp;gt;(M_u(n))=0\}$ we set $M_u(n)=M(n)$, and
+On $\{N_c^&amp;gt;(M_u(n))=n\}$ set $M_u(n)=0$.
+%Note that $M_u(n)=T_{n- N_c^&amp;gt;(M_u(n))}$, so  $n- N_c^&amp;gt;(M_u(n))$ is the index of the largest uncensored observation among the ordered observations.
+Then,  conditional on knowing that $ M_u(n)=t&amp;gt;0$ and  $N_c^&amp;gt;(M_u(n))=r$,
+%%$r$  censored  observations exceed $ M_u(n)$, $0\le r\le n-1$,
+the set $S_n^&amp;lt;$ consists of $n-r-1$ iid variables with distribution that
+of $T_1$,  conditional on $T_1&amp;lt;t$;
+     and the set $S_n^&amp;gt;$ consists of $r$ iid variables with tail function
+     \begin{equation}\label{e:censort_tail}
+P(T_1^{&amp;gt;,c}(t) &amp;gt;x):=    \frac{\int_x^\infty \Fbar^*(s) G(ds)}{\int_t^\infty \Fbar^*(s)
+       G(ds)},\quad x\geq t,\end{equation}\]&lt;/span&gt;
+which is the distribution tail of a censored observation conditional on being bigger than &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;.
+%% (See Eq. (2.13) in .)
+Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(S_n^&amp;lt;\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(S_n^&amp;gt;\)&lt;/span&gt; are conditionally independent given
+$ M_u(n)=t$ and &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(M_u(n))=r\)&lt;/span&gt;.
+Note that observed lifetimes less
+than &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; may be either censored or uncensored but observed
+lifetimes greater than &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; are necessarily censored.&lt;/p&gt;
+% is contained in the next theorem and proved in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{pfs}\)&lt;/span&gt;. Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{th1}\)&lt;/span&gt; also contains the distribution in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{j0}\)&lt;/span&gt; needed for later calculations.
+%Let $_{F}= {t&amp;gt;0:F(t)&amp;lt;1} $ be the right endpoint of the support of the cdf &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt;, and similarly define &lt;span class=&#34;math inline&#34;&gt;\(\tau_G\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\tau_H\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}\)&lt;/span&gt;.&lt;br /&gt;
+%
+%
+&lt;p&gt;&lt;br /&gt;
+(i) 
+%Note that &lt;span class=&#34;math inline&#34;&gt;\(\eqref{JD}\)&lt;/span&gt; is consistent with the fact that &lt;span class=&#34;math inline&#34;&gt;\(0\le M_u(n)\le M(n)\le \tau_H\)&lt;/span&gt;, always,
+%and that
+There is no probability mass outside the region &lt;span class=&#34;math inline&#34;&gt;\([0,\tau_H]\times [0,\tau_H]\)&lt;/span&gt; so the distribution in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{JD}\)&lt;/span&gt; equals 1 for
+$ t&amp;gt;_H$, &lt;span class=&#34;math inline&#34;&gt;\(x&amp;gt;\tau_H\)&lt;/span&gt;.
+Likewise the distribution in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{4g}\)&lt;/span&gt; equals 1 for
+$ t&amp;gt;_H$.&lt;/p&gt;
+&lt;p&gt;Note also that Lines 2 and 3
+on the RHS of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{JD}\)&lt;/span&gt; include the value for &lt;span class=&#34;math inline&#34;&gt;\(t=0\)&lt;/span&gt;;
+there is mass on the interval &lt;span class=&#34;math inline&#34;&gt;\(\{t=0\}\times [0\le x\le \tau_H]\)&lt;/span&gt;, as given by the first line on the RHS of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{JD}\)&lt;/span&gt;.
+%Illustrative plots of the distributions of &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;
+%are in (supplementary to ).&lt;/p&gt;
+&lt;p&gt;(ii) 
+$M_u(n) $ has the distribution of the maximum of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; iid copies of a rv with distribution &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,\infty)\)&lt;/span&gt;.
+The distribution has mass &lt;span class=&#34;math inline&#34;&gt;\(\big(\int_{z=0}^{\tau_H} \Fbar^* (z)\rmd G(z)\big)^n\)&lt;/span&gt; at 0 corresponding to all observations being censored.
+%(It may seem pedantic to include these degenerate cases but they are important for checking that distributions are proper (have total mass 1).)&lt;/p&gt;
+&lt;p&gt;The right extreme &lt;span class=&#34;math inline&#34;&gt;\(\tau_J\)&lt;/span&gt; of the distribution &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; may be strictly less than &lt;span class=&#34;math inline&#34;&gt;\(\tau_G\)&lt;/span&gt;; in fact, we have &lt;span class=&#34;math inline&#34;&gt;\(\tau_J=\tau_{F}\wedge \tau_G\)&lt;/span&gt;.
+%, as is derived in the proof of Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{th4a}\)&lt;/span&gt;.
+No uncensored observation, including the sample maximum of the uncensored observations, can exceed the smaller of &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau_G\)&lt;/span&gt;.
+% consistent with the fact that &lt;span class=&#34;math inline&#34;&gt;\(\tau_J=\tau_{F}\wedge \tau_G\)&lt;/span&gt;.
+Note that, in general, &lt;span class=&#34;math inline&#34;&gt;\(\tau_J\ne \tau_H=\tau_{F^*}\wedge \tau_G\)&lt;/span&gt;.
+We always have &lt;span class=&#34;math inline&#34;&gt;\(H(\tau_H)=1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(G(\tau_G)=1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F(\tau_{F})=1\)&lt;/span&gt;;
+when &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt;, so that &lt;span class=&#34;math inline&#34;&gt;\(F^*\equiv F\)&lt;/span&gt;, then &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; has total mass 1 and &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}=\tau_{F}\)&lt;/span&gt;;
+when &lt;span class=&#34;math inline&#34;&gt;\(p&amp;lt;1\)&lt;/span&gt; we have &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}=\infty\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}\le \tau_{F^*}\)&lt;/span&gt;,
+with the possibility that &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}&amp;lt; \tau_{F^*}\)&lt;/span&gt;.
+%See Figure &lt;span class=&#34;math inline&#34;&gt;\(\ref{fig:2}\)&lt;/span&gt; %%and &lt;span class=&#34;math inline&#34;&gt;\(\ref{fig:7}\)&lt;/span&gt;
+%for plots of the distribution of &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;(iii)  %&lt;span class=&#34;math inline&#34;&gt;\(\eqref{4h}\)&lt;/span&gt; is correct of course since
+&lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; has the distribution of the maximum of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; iid copies of a rv with distribution &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,\tau_H]\)&lt;/span&gt;; namely,
+P(M(n)x)=H^n(x), 0x_H.
+%
+%(iv) The conditional distributions of &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(M_u(n))\)&lt;/span&gt;, and of &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; given
+%&lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;, are stated in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{pfs}\)&lt;/span&gt; following the proof of Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{th1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%Since &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; is the maximum of the &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; i.i.d rvs &lt;span class=&#34;math inline&#34;&gt;\((T_i)_{1\le i \le n}\)&lt;/span&gt; with distribution &lt;span class=&#34;math inline&#34;&gt;\(H(t)\)&lt;/span&gt;, we know immediately that
+% &lt;span class=&#34;math inline&#34;&gt;\(P(M(n)\le t)= H^n(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt;.
+Also important are the length of the time interval between the largest uncensored survival time and the largest survival time, and the ratio of those times. For them
+we have the following distributions.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+(i)  
+Setting &lt;span class=&#34;math inline&#34;&gt;\(u=0\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12a}\)&lt;/span&gt; we see that the distribution of the difference $M(n) - M_u(n) $ has mass at 0 of
+P( M(n) - M_u(n) =0 )=P( M(n) = M_u(n) )
+=
+n_{t=0}^{_H}H^{n-1}(t) (t) F&lt;sup&gt;&lt;em&gt;(t).
+This is the probability that the largest observation is uncensored (, Eq. (3.21), p.49).
+%while setting &lt;span class=&#34;math inline&#34;&gt;\(u=\tau_H\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12a}\)&lt;/span&gt; and observing that
+%
+%H(t)= ^&lt;/em&gt;(t)G(t)+(t)F&lt;/sup&gt;*(t),
+%
+%we can check that the total mass is 1 by doing the integration
+%
+%&amp;amp;&amp;amp;
+%n_{t=0}&lt;sup&gt;{&lt;em&gt;H}
+% (&lt;/em&gt;{z=t}&lt;/sup&gt;{&lt;em&gt;H} ^&lt;em&gt;(z) G(z) +H(t))^{n-1} (t) F^&lt;/em&gt;(t)
+%&amp;amp;&amp;amp;
+%=
+% (&lt;/em&gt;{z=t}^{_H} ^*(z) G(z) +H(t))^{n} |_{t=0}^{_H}
+%=
+%H&lt;sup&gt;n(&lt;em&gt;H) - (&lt;/em&gt;{z=0}&lt;/sup&gt;{_H} ^*(z) G(z))^n
+%
+%&amp;amp;&amp;amp;=
+%1- (_{z=0}^{_H} ^*(z) G(z))^n.
+%
+%Taking &lt;span class=&#34;math inline&#34;&gt;\(u=\tau_H\)&lt;/span&gt; in the second term on the RHS of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12a}\)&lt;/span&gt;
+%and adding this to the RHS of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12d}\)&lt;/span&gt; we get 1.
+See %Figures &lt;span class=&#34;math inline&#34;&gt;\(\ref{fig:4}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ref{fig:5}\)&lt;/span&gt;&lt;br /&gt;
+for illustrative plots of the distributions in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12a}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12b}\)&lt;/span&gt;
+(supplementary to ).
+%of &lt;span class=&#34;math inline&#34;&gt;\(M(n)-M_u(n)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)/M(n)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%(ii) 
+%The denominator in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12b}\)&lt;/span&gt; multiplied by &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;
+%is the expression on the LHS of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{12d}\)&lt;/span&gt; and equal to &lt;span class=&#34;math inline&#34;&gt;\(P(M_u(n)&amp;gt;0)\)&lt;/span&gt; as can be seen from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{4g}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;%In Maller and Zhou (1996) and etc. we calculated distributions of various quantities of interest related to the above rvs, and, also, for example, the probability that the largest observation is censored,
+%&lt;span class=&#34;math inline&#34;&gt;\(P(C_{(n)}=1)\)&lt;/span&gt;.
+%Under some assumptions we found their limits as &lt;span class=&#34;math inline&#34;&gt;\(n\to\infty\)&lt;/span&gt;, and how these depend on the interplay between &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; and their tails, &lt;span class=&#34;math inline&#34;&gt;\(\Fbar^*\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Gbar\)&lt;/span&gt;.&lt;br /&gt;
+%In the present paper we concentrate on &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;, and the difference between them.&lt;/p&gt;
+&lt;p&gt;%%%% 
+%\begin{example}
+%\end{example}&lt;/p&gt;
+&lt;p&gt;%The results in Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{ssT}\)&lt;/span&gt; are obtained in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{pfs}\)&lt;/span&gt; as special cases of the formulae for the joint distributions of &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt;, $M_u(n) $ and &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(M_u(n))\)&lt;/span&gt; which we derive there.&lt;/p&gt;
+&lt;p&gt;Besides the definition of &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(M_u(n))\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{Nd1}\)&lt;/span&gt;,
+we need notation for the numbers of censored observations
+smaller or greater than &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;.
+%%, the largest uncensored survival time in the sample.
+Let
+N_u(n)
+:=
+{{} },
+and when &lt;span class=&#34;math inline&#34;&gt;\(N_u(n)&amp;gt;1\)&lt;/span&gt;, define
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\label{Nd4}
+&amp;amp;
+N_u^&amp;lt;(M_u(n))\cr
+&amp;amp;:=
+\{{\rm number\ of\ uncensored\ observations\ strictly \ less\ than}\  M_u(n)\}
+\end{align}\]&lt;/span&gt;
+and
+N_c^&amp;lt;(M_u(n)):= {{}&lt;br /&gt;
+M_u(n)}.
+On &lt;span class=&#34;math inline&#34;&gt;\(\{N_u(n)=1\}\)&lt;/span&gt;, set &lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))=N_c^&amp;lt;(M_u(n))=0\)&lt;/span&gt;.
+When &lt;span class=&#34;math inline&#34;&gt;\(N_u(n)=0\)&lt;/span&gt;, we do not define
+&lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;lt;(M_u(n))\)&lt;/span&gt;.
+% (and of course there’s no need for a notation like &lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;gt;(M_u(n))\)&lt;/span&gt;
+%since such a number would always be 0.)
+Let
+N_c(n):
+=
+{{} }.
+We also use the notation &lt;span class=&#34;math inline&#34;&gt;\(\NN_n:=\{1,2,\ldots,n \}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(n=1,2,\ldots,\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;With these definitions and conventions,
+on &lt;span class=&#34;math inline&#34;&gt;\(\{N_u(n)\ge 1\}\)&lt;/span&gt; the
+&lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;lt;(M_u(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(M_u(n))\)&lt;/span&gt;
+take values in
+%
+&lt;span class=&#34;math inline&#34;&gt;\(\N_{n-1}\cup\{0\}\)&lt;/span&gt;,
+satisfying
+&lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))+N_c^&amp;lt;(M_u(n))+ N_c^&amp;gt;(M_u(n))=n-1\)&lt;/span&gt;
+and &lt;span class=&#34;math inline&#34;&gt;\(N_c(n)= N_c^&amp;gt;(M_u(n))+N_c^&amp;lt;(M_u(n))\)&lt;/span&gt;,
+and we have
+{N_u(n)=0}=
+{{} n {} } =
+{M_u(n)=0}.
+%
+%That analysis can be expanded to obtain more generally the
+%joint distribution of &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt;, $M_u(n) $, $ N_c^&amp;gt;(M_u(n))$ and &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;lt;(M_u(n))\)&lt;/span&gt;
+%(and then $ N_u^&amp;lt;(M_u(n))=n-1 -N_c&lt;sup&gt;&amp;gt;(M_u(n))-N_c&lt;/sup&gt;&amp;lt;(M_u(n))&lt;span class=&#34;math inline&#34;&gt;\(). %This allows derivation of the joint distribution of %\)&lt;/span&gt;N_c^&amp;gt;(M_u(n))$, &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;lt;(M_u(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))\)&lt;/span&gt;, variables which are also useful in addressing questions of sufficient follow-up.
+%%(We could, for example, analyse the number of censored observations exceeding &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;, as a proportion of the total number.)
+%
+%We omit the details of this more general analysis here, %
+%but give a main&lt;/p&gt;
+&lt;p&gt;The next result concerns
+the vector &lt;span class=&#34;math inline&#34;&gt;\((N_c^&amp;gt;(M_u(n)), N_c^&amp;lt;(M_u(n)), N_u^&amp;lt;(M_u(n)))\)&lt;/span&gt;.
+This vector is not as might be thought at first multinomially distributed, but it is, conditional on the value of &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;.
+We prove it as another application of the splitting property, again illustrating
+the simplicity of exposition gained by conditioning on &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;.
+We need some more notation.
+Define the functions
+p_c^&amp;gt;(t)
+&amp;amp;=&amp;amp;
+{ _{y=t}&lt;sup&gt;{&lt;em&gt;H} ^* (y)G(y)+H(t)},
+p_c^&amp;lt;(t)
+&amp;amp;=&amp;amp;
+{ &lt;/em&gt;{y=t}&lt;/sup&gt;{&lt;em&gt;H} ^* (y)G(y)+H(t)},
+p_u^&amp;lt;(t)
+&amp;amp;=&amp;amp;
+{ &lt;/em&gt;{y=t}^{_H} ^* (y)G(y)+H(t)},
+which are non-negative and %%(using &lt;span class=&#34;math inline&#34;&gt;\(\eqref{F^*GH}\)&lt;/span&gt;)
+add to 1 for each &lt;span class=&#34;math inline&#34;&gt;\(t\in (0,\tau_H)\)&lt;/span&gt;.
+%The integrals in the numerators of &lt;span class=&#34;math inline&#34;&gt;\(p_u^&amp;lt;(t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p_c^&amp;lt;(t)\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{pdefs}\)&lt;/span&gt; are sub-distribution functions related to censored and uncensored survival times, as will be seen in Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{s4}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;{&lt;em&gt;H}
+% (&lt;/em&gt;{z=t}^{_H} ^&lt;em&gt;(z) G(z) +H(t))^{n-1} (t) F^&lt;/em&gt;(t)}.
+%
+\end{theorem}&lt;/p&gt;
+&lt;p&gt; Since &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt; in Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{th2}\)&lt;/span&gt;, the conditioning on &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)=t\)&lt;/span&gt; implies
+&lt;span class=&#34;math inline&#34;&gt;\(M_u(n)&amp;gt;0\)&lt;/span&gt;, thus &lt;span class=&#34;math inline&#34;&gt;\(N_u(n)\ge 1\)&lt;/span&gt;, and there is at least one uncensored observation.
+Thus &lt;span class=&#34;math inline&#34;&gt;\(N_u^&amp;lt;(M_u(n))+N_c^&amp;lt;(M_u(n))+N_c^&amp;gt;(M_u(n))=n-1\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;An immediate application of Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{th2}\)&lt;/span&gt; is to derive the finite sample distribution of the statistic &lt;span class=&#34;math inline&#34;&gt;\(Q_n\)&lt;/span&gt;, used as a test for sufficient followup.
+We exhibit this in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{suff}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The KME was of course not available to Boag in 1949 and he used a parametric approach, inferring the existence of cures in his population from his sample estimate of the proportion cured
+(&lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt;, in his notation, obtained from a lognormal mixture fit – see our Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{intro}\)&lt;/span&gt;)
+and its standard error.
+(There is also an issue of the correctness of a confidence interval assessment which ignores the restriction of &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt;. Section 5.3 of contains a discussion of this.)
+The advent of the KME in 1958 was a major advance in the visualisation and analysis of survival data, and especially with reference to assessing the presence or otherwise of cures.
+But how to measure, and more importantly, rigorously estimate and test, for
+what we see in the KME?&lt;/p&gt;
+&lt;p&gt;That the medical literature did and still does wrestle with this problem is illustrated for example by
+the ``mini-review’’ paper of
+, from which we quote:&lt;br /&gt;
+%Analysis of Survival Curves: Statistical Methods Accounting for the Presence of Long-Term Survivors
+%Vera Damuzzo 1, Laura Agnoletto 2, Luca Leonardi 3, Marco Chiumente 4, Daniele Mengato 5, Andrea Messori 6
+%Affiliations expand
+%PMID: 31231609 PMCID: PMC6558210 DOI: 10.3389/fonc.2019.00453
+%Free PMC article
+%Abstract
+{}&lt;/p&gt;
+&lt;p&gt;The problem of course is that with cures (possibly) present, the KME is improper and theoretical quantities such as the mean survival time or expected
+``area-under-the-curve’’ are, formally, infinite, and distributions of their sample estimates will reflect this. (See the Appendix to Chapter 3 in for some discussion.)
+A remedy is to restrict their calculation to the (proper) survival distribution of the susceptibles, but this then begs the question of how to estimate this.&lt;/p&gt;
+&lt;p&gt;We can start by estimating the proportion of cured subjects in the population.
+This proportion is the complement of the susceptible proportion, of which perhaps the simplest and most intuitive estimate is &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;, the maximum value of the KME.
+The properties of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; are explored extensively in ,
+though there are still some unknown features; we discuss one such in Subsection &lt;span class=&#34;math inline&#34;&gt;\(\ref{LLC1}\)&lt;/span&gt;.
+With an estimate of the proportion of cured subjects, we can rescale the KME or a fitted parametric distribution to estimate the survival distribution of the susceptibles.&lt;/p&gt;
+&lt;p&gt;As foreshadowed in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{ext}\)&lt;/span&gt;, the sufficient followup condition &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; plays an important role. In the present context, we know that
+&lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; is consistent for &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; iff &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; (Thm.~4.1 of ), assuming &lt;span class=&#34;math inline&#34;&gt;\(F^*\)&lt;/span&gt; is continuous at &lt;span class=&#34;math inline&#34;&gt;\(\tau_{_H}\)&lt;/span&gt; in case &lt;span class=&#34;math inline&#34;&gt;\(\tau_{_H}&amp;lt;\infty\)&lt;/span&gt;. This result holds for all &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;p\le 1\)&lt;/span&gt;.
+When &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;p&amp;lt;1\)&lt;/span&gt;,
+&lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; is asymptotically normally distributed, as stated in the next section.&lt;/p&gt;
+&lt;p&gt;%&lt;span class=&#34;math inline&#34;&gt;\(\wh F_n^*\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\wh F_n\)&lt;/span&gt; are consistent for &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; iff &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\([0,infty)\)&lt;/span&gt;
+%(Thms. 3.8 and 4.2 of )&lt;/p&gt;
+&lt;p&gt;Thm.~4.3 of gives a definitive result in the case &lt;span class=&#34;math inline&#34;&gt;\(p&amp;lt;1\)&lt;/span&gt;.
+To state it we need some more notation.
+Let &lt;span class=&#34;math inline&#34;&gt;\(Z(t)\)&lt;/span&gt; be a stochastic process on &lt;span class=&#34;math inline&#34;&gt;\([0, \tau_{_H})\)&lt;/span&gt; with independent increments such that for each &lt;span class=&#34;math inline&#34;&gt;\(t&amp;lt; \tau_{_H}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(Z(t)\)&lt;/span&gt; is normally distributed with mean 0 and finite variance
+&lt;span class=&#34;math inline&#34;&gt;\(v(t)\)&lt;/span&gt;, where
+v(t) :=_{[0, t]} { dF&lt;sup&gt;&lt;em&gt;(s)((1-F^&lt;/em&gt;(s))&lt;/sup&gt;2 (1-G(s))}.
+%%The function &lt;span class=&#34;math inline&#34;&gt;\(v(t)\)&lt;/span&gt; is finite and increasing on &lt;span class=&#34;math inline&#34;&gt;\([0,\tau_{H})\)&lt;/span&gt;.
+We keep &lt;span class=&#34;math inline&#34;&gt;\(p&amp;lt;1\)&lt;/span&gt; throughout this subsection.
+This means that &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F^*}=\infty\)&lt;/span&gt; and consequently
+&lt;span class=&#34;math inline&#34;&gt;\(\tau_H=\tau_{F^*}\wedge \tau_G= \tau_G\)&lt;/span&gt;.
+%So we can replace &lt;span class=&#34;math inline&#34;&gt;\(\tau_H\)&lt;/span&gt; by $ &lt;em&gt;G$ in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{3.60}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{3.61}\)&lt;/span&gt;
+%and similar expressions.
+Further, since &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; attributes no mass to values &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;\tau_F\)&lt;/span&gt;,
+the integral in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{3.58a}\)&lt;/span&gt; can be written
+v(t) =p&lt;/em&gt;{[0, t]} {dF(s)((1-pF(s))^2 (1-G(s))},  0t&amp;lt;_F.
+Assuming in addition that the integral in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{intg}\)&lt;/span&gt; is finite,
+we also have that &lt;span class=&#34;math inline&#34;&gt;\(v(\tau_G)\)&lt;/span&gt; is finite, and recall that this implies the sufficient followup
+condition &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt;.
+%the integral in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{3.61}\)&lt;/span&gt; need only run to &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\)&lt;/span&gt;, and&lt;/p&gt;
+&lt;p&gt;The next theorem, Theorem 4.3 of , is based on Theorem 4.2.3 of .&lt;/p&gt;
+&lt;p&gt;To apply Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{ASK}\)&lt;/span&gt; in practice, we need a sample estimate for the population quantity &lt;span class=&#34;math inline&#34;&gt;\(v(\tau_G)\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{asp&amp;lt;1}\)&lt;/span&gt;.
+We can obtain this from Thm.~4.4 and the discussion following it
+in .
+A consistent estimator of &lt;span class=&#34;math inline&#34;&gt;\(v(t)\)&lt;/span&gt; is, under our assumptions,
+v_n(t):= &lt;em&gt;{i:t_i&amp;gt;t} ,  t,
+and correspondingly a
+consistent estimator of &lt;span class=&#34;math inline&#34;&gt;\(v(\tau_G)\)&lt;/span&gt; is
+v_n:= &lt;/em&gt;{i=1}^{n-1} .
+The largest uncensored survival time &lt;span class=&#34;math inline&#34;&gt;\(M_u(n) \upto \tau_F\)&lt;/span&gt; in probability as &lt;span class=&#34;math inline&#34;&gt;\(n\to \infty\)&lt;/span&gt;, so &lt;span class=&#34;math inline&#34;&gt;\(v(t)\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{3.58b}\)&lt;/span&gt; can be evaluated at time &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In the case &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt;, the asymptotic distribution of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;,
+the maximum value of the Kaplan-Meier estimator in a sample of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;,
+was unknown at the time was written.
+It still remains a seemingly difficult problem.
+Here we give some partial but enlightening results.&lt;/p&gt;
+&lt;p&gt;% Using the notation in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{nii}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; can be written as
+%
+%p_n= 1-_{i=1}^n (1- ),
+%
+%where %% &lt;span class=&#34;math inline&#34;&gt;\(NAR_i := \sum_{j=1}^n {\bf 1}_\{T_j&amp;gt;T_i\}\)&lt;/span&gt;
+%the denominator in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p1}\)&lt;/span&gt;
+%is the number of subjects at risk at time &lt;span class=&#34;math inline&#34;&gt;\(T_i\)&lt;/span&gt;.
+%Using the ordered lifetimes
+%Order the lifetimes &lt;span class=&#34;math inline&#34;&gt;\((T_i)_{1\le i\le n}\)&lt;/span&gt; as
+%&lt;span class=&#34;math inline&#34;&gt;\(T_n^{(1)}&amp;lt; T_n^{(2)}&amp;lt; \cdots &amp;lt;T_n^{(n)}\)&lt;/span&gt;
+%with associated censor indicators
+%&lt;span class=&#34;math inline&#34;&gt;\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)&lt;/span&gt;,&lt;/p&gt;
+&lt;p&gt;From &lt;span class=&#34;math inline&#34;&gt;\(\eqref{km1}\)&lt;/span&gt; we can write the complement of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; as
+1- p_n= 1-F_n(T_n^{(n)} )=
+&lt;em&gt;{i=1}^n (1- )
+= &lt;/em&gt;{i=1}^n (1- ),
+where recall that &lt;span class=&#34;math inline&#34;&gt;\(T_n^{(1)}&amp;lt; T_n^{(2)}&amp;lt; \cdots &amp;lt;T_n^{(n)}\)&lt;/span&gt; are the ordered lifetimes
+with associated censor indicators
+&lt;span class=&#34;math inline&#34;&gt;\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)&lt;/span&gt;.
+Now, provided &lt;span class=&#34;math inline&#34;&gt;\(C_n^{(n)}=0\)&lt;/span&gt;, we can take logs and turn the product into a sum.
+Since we are only interested in data for which the largest observation is censored, we will
+condition on the event &lt;span class=&#34;math inline&#34;&gt;\(\{C_n^{(n)}=0\}\)&lt;/span&gt; throughout this discussion.
+Then from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p2}\)&lt;/span&gt; we get
+|(1- p_n)|
+= &lt;em&gt;{i=2}^n |(1- )|
+= &lt;/em&gt;{i=2}^n a_i C_n^{(n-i+1)},
+where &lt;span class=&#34;math inline&#34;&gt;\(a_i:= |\log(1-1/i)|\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\ge 2\)&lt;/span&gt;.
+By Theorem 4.1 of , &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n \topr 1\)&lt;/span&gt;,
+so &lt;span class=&#34;math inline&#34;&gt;\(|\log(1- \wh p_n)|\topr \infty\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(n\to\infty\)&lt;/span&gt;, and we need to determine the rate of this divergence.
+Despite its quite simple representation, it seems rather hard to analyse &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p3}\)&lt;/span&gt;
+in full generality.
+%\footnote{&lt;/p&gt;
+&lt;p&gt;The model, also known as the proportional hazards model
+(not to be confused with Cox’s proportional hazards model),
+assumes
+(t) = (^*(t))^
+for some &lt;span class=&#34;math inline&#34;&gt;\(\beta&amp;gt;0\)&lt;/span&gt;.
+The K-G model has been criticised as being unrealistic (), nevertheless there is a substantial literature in which it is used to gain theoretical insight into the behaviour of survival models (e.g., , , Verver etc.??), and also successfully in real data analyses (e.g.??).
+We use it here similarly to get some valuable insight.
+Applied in the next lemma, the KG property greatly simplifies the analysis of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+%It is well known and easily checked
+showed that &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; are independent in the Koziol-Green model
+(see also ),
+%W. R. Allen, 1963. ” Letter to the Editor—A Note on Conditional Probability of Failure When Hazards are Proportional ,” Operations Research, INFORMS, vol. 11 (4), pages 658-659,
+hence
+&lt;span class=&#34;math inline&#34;&gt;\((T_i)_{1\le i\le n}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((C_i)_{1\le i\le n}\)&lt;/span&gt; are independent.
+%Y. Y. Chen, M. Hollander &amp;amp; N. A. Langberg (1982) Small-Sample Results for the Kaplan-Meier Estimator, Journal of the American Statistical Association, 77:377, 141-144,
+% DOI: 10.1080/01621459.1982.10477777
+Since the ordering which relabels &lt;span class=&#34;math inline&#34;&gt;\((T_i)_{1\le i\le n}\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\((T_n^{(i)})_{1\le i\le n}\)&lt;/span&gt; is
+independent of &lt;span class=&#34;math inline&#34;&gt;\((C_i)_{1\le i\le n}\)&lt;/span&gt;, it follows that
+&lt;span class=&#34;math inline&#34;&gt;\((T_n^{(i)})_{1\le i\le n}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((C_n^{(i)})_{1\le i\le n}\)&lt;/span&gt; are independent.
+Specifically, let &lt;span class=&#34;math inline&#34;&gt;\((k_n(i))_{1\le i\le n}\)&lt;/span&gt; be the random permutation which transforms
+&lt;span class=&#34;math inline&#34;&gt;\((T_i)_{1\le i\le n}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\((T_n^{(i)})_{1\le i\le n}\)&lt;/span&gt;, i.e.,
+&lt;span class=&#34;math inline&#34;&gt;\(T_n^{(i)}= T_{k_n(i)}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1\le i\le n\)&lt;/span&gt;.
+The &lt;span class=&#34;math inline&#34;&gt;\(k_n(i)\)&lt;/span&gt; are independent of &lt;span class=&#34;math inline&#34;&gt;\((C_i)_{1\le i\le n}\)&lt;/span&gt;, and, for &lt;span class=&#34;math inline&#34;&gt;\(t_i\ge 0\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(c_i\in \{0,1\}\)&lt;/span&gt;,
+&amp;amp;&amp;amp;P(T_n^{(i)}t_i, , C_n^{(i)}=c_i, , 1in)
+=
+P(T_{k_n(i)} t_i, , C_{k_n(i)}=c_i, , 1in)
+&amp;amp;&amp;amp;
+&amp;amp;=&amp;amp;
+&lt;em&gt;{k_1,, k_n}
+P(T&lt;/em&gt;{k_i} t_i, , C_{k_i}=c_i, , k_n(i)=k_i, ,1in),
+where the summation is over unequal integers &lt;span class=&#34;math inline&#34;&gt;\(k_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(1\le i\le n\)&lt;/span&gt;.
+By independence the last summation equals
+&amp;amp;&amp;amp;
+&lt;em&gt;{j_1,, j_n}
+P(T&lt;/em&gt;{k_i} t_i, , k_n(i)=k_i, ,1in)
+P(C_{k_i}=c_i, , 1in)
+&amp;amp;&amp;amp;
+&amp;amp;=&amp;amp;
+P(T_{k_n(i)} t_i, , 1in) _{i=1}^n P(C_1=c_i).
+Finally, on noting that
+P(C_1=1) =P(T_1^*U_1) = _0^{_h} (t) F^*(t) =
+,
+the lemma follows. &lt;/p&gt;
+&lt;p&gt;As a corollary to the lemma, we get from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p3}\)&lt;/span&gt;
+|(1- p_n)|
+_{i=2}^n a_i C_n^{(i)},
+where &lt;span class=&#34;math inline&#34;&gt;\(a_i= |\log(1-1/i)|\)&lt;/span&gt; and the &lt;span class=&#34;math inline&#34;&gt;\((C_n^{(i)})\)&lt;/span&gt; are iid, &lt;span class=&#34;math inline&#34;&gt;\(2\le i\le n\)&lt;/span&gt;, for each &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;.
+Using this, we can give a quite explicit representation for the limiting distribution of
+the centered sequence
+$|(1- p_n)| - E|(1- p_n)| $ in the Koziol-Green model.
+We have the following result.
+%%%Let &lt;span class=&#34;math inline&#34;&gt;\(a_i:= |\log(1-1/i)|\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\ge 2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+We use Lemma 3.16, p.47, of (see also his Theorem 3.18, p.48),
+which states that the sum &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i\ge 1} \xi_i\)&lt;/span&gt;
+of independent random variables &lt;span class=&#34;math inline&#34;&gt;\(\xi_1, \xi_2, \ldots\)&lt;/span&gt; having mean 0 and satisfying
+&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i\ge 1} E (\xi_i^2)&amp;lt;\infty\)&lt;/span&gt;, converges a.s.
+Apply this with
+&lt;span class=&#34;math inline&#34;&gt;\(Y_i= C_n^{(i)}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\xi_i:= a_i (Y_i-E(Y_i) )\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\ge 1\)&lt;/span&gt;.
+Since the &lt;span class=&#34;math inline&#34;&gt;\(Y_i\)&lt;/span&gt; are iid Bernoulli and &lt;span class=&#34;math inline&#34;&gt;\(a_i\le 2/(i-1)\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(i\ge 2\)&lt;/span&gt;, the convergence of the series
+&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i\ge 1} E\big(a_i (Y_i-E(Y_i)\big)^2\)&lt;/span&gt;
+is clear and we deduce that the rv &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{disy}\)&lt;/span&gt; is finite a.s. and clearly has the specified variance.
+The infinite divisibility of &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; follows from…
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+(i)  
+&lt;span class=&#34;math inline&#34;&gt;\(Y- E(Y)\)&lt;/span&gt; has characteristic function
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\label{cfy}
+Ee^{\rmi \theta (Y-E(Y))}
+&amp;amp;=
+\prod_{j\ge 1}  
+Ee^{\rmi \theta a_j(Y_j-EY_j)} \cr
+&amp;amp;=
+\prod_{j\ge 1} \frac{1}{\beta+1} \Big( e^{-\rmi \theta \log(1-1/j)}    +  \beta \Big)
+e^{\rmi \theta \log(1-1/j)/(\beta+1) }    \cr
+  &amp;amp;=
+  \prod_{j\ge 1}  \frac{1}{\beta+1}
+  \Big( (1-1/j)^{-\rmi \theta\beta/(\beta+1)}    +   \beta (1-1/j)^{-\rmi \theta/(\beta+11)}  \Big). \ \
+\end{align}\]&lt;/span&gt;\end{align}&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+(i)  
+Some properties of &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; are easily deduced from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{disy}\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(\eqref{cfy}\)&lt;/span&gt;.
+(e.g., moments??)&lt;/p&gt;
+&lt;p&gt;(ii)&lt;br /&gt;
+An extension of the KG model is to allow &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{kgm}\)&lt;/span&gt; to depend on &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;
+(), but we cannot generalise Lemma &lt;span class=&#34;math inline&#34;&gt;\(\ref{lem2}\)&lt;/span&gt;
+to this situation because the independence of &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; is also necessary for the KG model as stated in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{kgm}\)&lt;/span&gt;
+().
+%Zheng, G. and Gastwirth, J. L. (2001). On the Fisher information in randomly censored data.
+%Statist. Probab. Lett. 52, 421-426.&lt;/p&gt;
+&lt;p&gt;A common assumption in many theoretical and practical survival analyses
+is of a uniform distribution for &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; and an exponential distribution for &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt;:
+(t) =(1-t/){}_{{t}}
+(t) =e^{-t}, t,
+where &lt;span class=&#34;math inline&#34;&gt;\(\tau\equiv \tau_G=\tau_H&amp;gt;0\)&lt;/span&gt; and $ &amp;gt;0$.&lt;br /&gt;
+This setup was used in to simulate percentage points of the distribution of &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt; in the case &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt; for certain typical choices of &lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The tails in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{uc1}\)&lt;/span&gt; are very far from the proportionality of survival and censoring distribution tails as
+in the Koziol-Green model, and the setup does not enjoy
+the independence of survival and censoring variables obtaining in that model.
+With less information we can prove less, but still we can show that
+the centered $|(1- p_n)| $ is stochastically bounded in this situation, suggesting that
+Theorem &lt;span class=&#34;math inline&#34;&gt;\(\ref{ASKG}\)&lt;/span&gt; gives the right order of magnitude in this situation too.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+%Then a similar argument as before using Chebychev’s inequality shows that
+%
+%&amp;amp;&amp;amp;
+%|(1- p_n)| - E|(1- p_n)|
+%= O_P(1),
+%
+%so the centered $|(1- p_n)| $ is stochastically bounded.
+We use the notation and results in Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{LLC}\)&lt;/span&gt;.&lt;br /&gt;
+Refer to formula &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p3}\)&lt;/span&gt;, recall that &lt;span class=&#34;math inline&#34;&gt;\(a_i= |\log(1-1/i)|\)&lt;/span&gt; and write, for &lt;span class=&#34;math inline&#34;&gt;\(j&amp;gt;i\)&lt;/span&gt;,
+%%
+E( |(1- )| |(1- )|)
+&amp;amp;=&amp;amp;
+E(a_ia_j {}&lt;em&gt;{{C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1}})
+&amp;amp;=&amp;amp;
+a_ia_j P(C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1).  &lt;br /&gt;
+Thus from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p3}\)&lt;/span&gt;
+&amp;amp;&amp;amp;
+E
+|(1- p_n)|^2
+= E&lt;/em&gt;{i=1}^n |(1- )|^2
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp; +
+2 &lt;em&gt;{i=1}^{n-1} &lt;/em&gt;{j=i+1}^n
+E( |(1- )| |(1- )|)
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;=
+&lt;em&gt;{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+2&lt;/em&gt;{i=1}^{n-1} &lt;em&gt;{j=i+1}^n
+a_ia_j
+P(C_n^{(i)} =1, , C_n^{j}=1 ).
+Also
+&amp;amp;&amp;amp;
+E^2|(1- p_n)|=(&lt;/em&gt;{i=1}^n a_i P(C_n^{(i)}=1 ) )^2
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp; =
+&lt;em&gt;{i=1}^n a_i^2 P&lt;sup&gt;2(C_n&lt;/sup&gt;{(i)}=1 )+
+2&lt;/em&gt;{i=1}^{n-1} &lt;em&gt;{j=i+1}^n
+a_ia_j
+P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+Subtracting &lt;span class=&#34;math inline&#34;&gt;\(\eqref{k12}\)&lt;/span&gt; from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{k11}\)&lt;/span&gt; we see that
+&amp;amp;&amp;amp;{}( |(1- p_n)|)=
+E|(1- p_n)|^2 -E^2|(1- p_n)|
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;
+&lt;/em&gt;{i=1}^n P(C_n^{(i)}=1 ) (1- P(C_n^{(i)}=1 ))
++
+2&lt;em&gt;{i=1}^{n-1} &lt;/em&gt;{j=i+1}^n
+P(C_n^{(i)} =1, , C_n^{j}=1 ).
+&amp;amp;&amp;amp;
+&lt;/p&gt;
+&lt;p&gt;%
+%From &lt;span class=&#34;math inline&#34;&gt;\(\eqref{c6}\)&lt;/span&gt;
+%
+%&amp;amp;&amp;amp;
+%&lt;em&gt;{i=1}^n
+%
+%=
+%&lt;/em&gt;{i=1}^n {n i} &lt;em&gt;{t=0}^{}
+% ^{i-1}(t) H^{n-i}(t) (t) t
+% &amp;amp;&amp;amp;
+% &amp;amp;&amp;amp;=
+% &lt;/em&gt;{t=0}^{}
+%(1- (1-t/)e^{-t} )^n t
+%&amp;amp;&amp;amp;
+%&amp;amp;&amp;amp;
+%,  {} n.
+%
+To estimate the bivariate term in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{uc5a}\)&lt;/span&gt;, reverse the order of summation and consider first the summation over &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;.
+Using &lt;span class=&#34;math inline&#34;&gt;\(\eqref{c6}\)&lt;/span&gt; we calculate
+%
+&amp;amp;&amp;amp;
+&lt;em&gt;{i=1}^{j-1}
+&amp;amp;&amp;amp;=
+&lt;/em&gt;{i=1}^{j-1}
+&amp;amp;&amp;amp;
+&lt;em&gt;{t_1=0}^{} &lt;/em&gt;{t_2=0}^{t_1}
+^{i-1}(t_1) H^{n-j}(t_2) ((t_2)- (t_1) )^{j-i-1} K(t_1)K(t_2)
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;=
+&lt;em&gt;{i=1}^{j-1}
+&amp;amp;&amp;amp;
+^2 &lt;/em&gt;{t_1=0}^{} &lt;em&gt;{t_2=0}^{t_1}
+( (1-t_1/)e^{-t_1} )^{i} (1- (1-t_2/)e^{-t_2} )^{n-j}
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;
+( (1-t_2/)e^{-t_2} - (1-t_1/)e^{-t_1} )^{j-i-1}
+(1-t_2/)e^{-t_2} t_1 t_2.
+Performing the summation we get
+%%
+&amp;amp;&amp;amp;
+&lt;/em&gt;{i=1}^{j-1}
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;=
+&lt;em&gt;{t_1=0}^{} &lt;/em&gt;{t_2=0}^{t_1}
+(1- (1-t_2/)e^{-t_2} )^{n-j} (1-t_2/)e^{-t_2}
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp; (
+( (1-t_2/)e^{-t_2} )^{j-1}
+- ( (1-t_2/)e^{-t_2} - (1-t_1/)e^{-t_1} )^{j-1} )
+t_1 t_2.
+&amp;amp;&amp;amp;
+Discard the subtracted term, divide the remainder by &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; and add over &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; to get
+&amp;amp;&amp;amp;
+&lt;em&gt;{j=2}^{n}
+&lt;/em&gt;{i=1}^{j-1}
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;
+^2 &lt;em&gt;{j=2}^{n} {n j}
+&lt;/em&gt;{t_1=0}^{} &lt;em&gt;{t_2=0}^{t_1}
+(1- (1-t_2/)e^{-t_2} )^{n-j}&lt;br /&gt;
+( (1-t_2/)e^{-t_2} )^{j} t_1 t_2
+&amp;amp;&amp;amp;
+&amp;amp;&amp;amp;
+^2 &lt;/em&gt;{t_1=0}^{} &lt;em&gt;{t_2=0}^{t_1}
+t_1 t_2 = ^2 ^2.
+Thus from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{uc5a}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{uc3a}\)&lt;/span&gt; we see that
+&lt;span class=&#34;math inline&#34;&gt;\({\rm Var}\big( |\log(1- \wh p_n)|\big)\)&lt;/span&gt;
+is bounded above by
+&lt;/em&gt;{i} P(C_n^{(i)}=1 ) (1- P(C_n^{(i)}=1 )
++^2 ^2
+and hence is finite.
+Then by Chebychev’s inequality we conclude that &lt;span class=&#34;math inline&#34;&gt;\(\eqref{OP1}\)&lt;/span&gt; holds and
+the centered $|(1- p_n)| $ is stochastically bounded.
+&lt;/p&gt;
+%
+&lt;p&gt;%&lt;span class=&#34;math inline&#34;&gt;\(\eqref{k9}\)&lt;/span&gt; already gives some useful information concerning &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;.
+%We weaken the independence assumption to
+Assuming the pairwise independence of the &lt;span class=&#34;math inline&#34;&gt;\(C_n^{(i)}\)&lt;/span&gt;, i.e., that
+P(C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1)
+= P(C_n&lt;sup&gt;{(i)}=1)P(C_n&lt;/sup&gt;{(j)}=1),   j&amp;gt;i,
+allows some calculations like in the previous subsection to be carried out, and we can again show that
+the centered $|(1- p_n)| $ is stochastically bounded.
+We omit the details of this as it’s not clear when the pairwise independence assumption holds.&lt;/p&gt;
+&lt;p&gt;%This already gives very useful information concerning &lt;span class=&#34;math inline&#34;&gt;\(\wh p_n\)&lt;/span&gt;.
+%Note that, then,
+%
+%&amp;amp;&amp;amp;
+%E (C_n&lt;sup&gt;{(i)}C_n&lt;/sup&gt;{(j)}) =
+%P(C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1)
+%&amp;amp;&amp;amp;
+%&amp;amp;&amp;amp;
+%= P(C_n&lt;sup&gt;{(i)}=1)P(C_n&lt;/sup&gt;{(j)}=1)
+%= E(C_n^{(i)}) E(C_n^{(j)}),   j&amp;gt;i.
+%
+%Recall that &lt;span class=&#34;math inline&#34;&gt;\(a_i=|\log(1-1/i)|\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\ge 1\)&lt;/span&gt;. Then for &lt;span class=&#34;math inline&#34;&gt;\(j&amp;gt;i\)&lt;/span&gt;
+%
+%E( |(1- )| |(1- )|)
+%&amp;amp;=&amp;amp;
+%E(a_ia_j {}&lt;em&gt;{{C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1}})
+%&amp;amp;=&amp;amp;
+%a_ia_j P(C_n&lt;sup&gt;{(i)}=1,C_n&lt;/sup&gt;{(j)}=1),  &lt;br /&gt;
+%
+%while from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p3}\)&lt;/span&gt;
+%
+%&amp;amp;&amp;amp;
+%E
+%|(1- p_n)|^2
+%= E&lt;/em&gt;{i=1}^n |(1- )|^2
+%&amp;amp;&amp;amp;
+%&amp;amp;&amp;amp; +
+%2 &lt;em&gt;{i=1}^{n-1} &lt;/em&gt;{j=i+1}^n
+% E( |(1- )| |(1- )|)
+% &amp;amp;&amp;amp;
+% &amp;amp;&amp;amp;=
+%&lt;em&gt;{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+% 2&lt;/em&gt;{i=1}^{n-1} &lt;em&gt;{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1, , C_n^{j}=1 ).
+%
+%In view of &lt;span class=&#34;math inline&#34;&gt;\(\eqref{p2}\)&lt;/span&gt; this equals
+%
+%&lt;/em&gt;{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+% 2&lt;em&gt;{i=1}^{n-1} &lt;/em&gt;{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+%
+%Also
+%
+%&amp;amp;&amp;amp;
+%E^2|(1- p_n)|=(&lt;em&gt;{i=1}^n a_i P(C_n^{(i)}=1 ) )^2
+%&amp;amp;&amp;amp;
+%&amp;amp;&amp;amp; =
+%&lt;/em&gt;{i=1}^n a_i^2 P&lt;sup&gt;2(C_n&lt;/sup&gt;{(i)}=1 )+
+% 2&lt;em&gt;{i=1}^{n-1} &lt;/em&gt;{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+%
+%Subtract &lt;span class=&#34;math inline&#34;&gt;\(\eqref{k12}\)&lt;/span&gt; from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{k12b}\)&lt;/span&gt; and use &lt;span class=&#34;math inline&#34;&gt;\(a_i=-\log(1-1/i)\le 1/i\)&lt;/span&gt; to get
+%
+%{}( |(1- p_n)|)
+%&amp;amp;=&amp;amp;
+%&lt;em&gt;{i=1}^n a_i^2 P(C_n^{(i)}=1 )(1- P(C_n^{(i)}=1 ) )
+%&amp;amp;&amp;amp;
+%&amp;amp;=&amp;amp;
+%
+%&lt;/em&gt;{i=1}^n a_i^2
+%
+%_{i=1}^n c&amp;lt; .
+%&amp;amp;&amp;amp;
+%
+%Consequently
+%
+%E(|(1- p_n)| - E|(1- p_n)| )^2
+%=
+%{}( |(1- p_n)|) c&amp;lt; ,
+%
+%
+%and by Chebychev’s inequality we conclude that
+%
+%&amp;amp;&amp;amp;
+%|(1- p_n)| - E|(1- p_n)|
+%= O_P(1),
+%
+%thus the centered $|(1- p_n)| $ is stochastically bounded.&lt;/p&gt;
+In Section &lt;span class=&#34;math inline&#34;&gt;\(\ref{ext}\)&lt;/span&gt; we quantified the idea of ``sufficient followup’’ as the condition &lt;span class=&#34;math inline&#34;&gt;\(\tau_F\le \tau_G\)&lt;/span&gt; .
+%
+&lt;p&gt;As a test statistic for sufficient follow-up we focus on the statistic &lt;span class=&#34;math inline&#34;&gt;\(Q_n\)&lt;/span&gt; proposed in .
+This is defined as follows.
+In a sample of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, let &lt;span class=&#34;math inline&#34;&gt;\(M(n)\)&lt;/span&gt; be the largest observed survival time and let &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; be the largest observed {} survival time.
+%%With all survival times necessarily in &lt;span class=&#34;math inline&#34;&gt;\([0,M(n)]\)&lt;/span&gt;, a number
+Let &lt;span class=&#34;math inline&#34;&gt;\(N_u(n)\)&lt;/span&gt; be the number of
+uncensored survival times, necessarily in &lt;span class=&#34;math inline&#34;&gt;\([0,M_u(n)]\)&lt;/span&gt;, let
+&lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;lt;(n)\)&lt;/span&gt; be the number of censored survival times in &lt;span class=&#34;math inline&#34;&gt;\([0,M_u(n))\)&lt;/span&gt;, and let &lt;span class=&#34;math inline&#34;&gt;\(N_c^&amp;gt;(n)\)&lt;/span&gt; be
+the number of censored survival times in &lt;span class=&#34;math inline&#34;&gt;\((M_u(n), M(n)]\)&lt;/span&gt;.
+Thus there is a total of &lt;span class=&#34;math inline&#34;&gt;\(N_c(n)=N_c^&amp;lt;(n)+N_c^&amp;gt;(n)=n-N_u(n)\)&lt;/span&gt; censored survival times in the sample.
+Set &lt;span class=&#34;math inline&#34;&gt;\(\Delta_n:= 2M_u(n)-M(n)\)&lt;/span&gt;.
+As in , p.81,
+%
+define
+Q_n
+&amp;amp;=&amp;amp; #{{}[_n, M_u(n)) }
+&amp;amp;&amp;amp;
+&amp;amp;=&amp;amp;
+#{{} 2M_u(n)-M(n) }.
+(Note that we exclude &lt;span class=&#34;math inline&#34;&gt;\(M_u(n)\)&lt;/span&gt; itself when counting the number of
+uncensored observations greater than &lt;span class=&#34;math inline&#34;&gt;\(\Delta_n\)&lt;/span&gt;.)], and for any 8 and 8’ E 6,
+%if p’ F, (t) = pF, (t) for any t E [0, TI, then (p’, 8’) = (p, 8).
+%2. In the two components mixture case: For any p =(&lt;sub&gt;,q)&lt;/sub&gt; and
+%p’ = qOT E Y2 and for any x = (OT, &amp;lt;T)T and xi = (elT, E A
+%such that 8 # 5,
+%if pIT (3,. (t) = pT Om (t) for any t E [0, T] then
+%(p’, x’) E fl if p # 0 and q # 0.
+%(p’, q’; 8’) = (p, 0; 8) if q = 0 when F, # F n 2.
+%min [lip’ - p, q’; 8’ - 811, ii p’, q’ - p; 5’ - 0111 = 0 if q = 0, when F, E
+%9 n 2 and 8’ # &amp;lt;‘.
+%(p’q’; r) = (0, q; 5) if p = 0, when F; E F n 2.
+%min[/p’-q,qr;8’-(!.lpt,q’,-q;(’-&amp;lt;/]=Oifp=O, when F&amp;lt;E
+%9 n X and 8’ # 5’.
+%370 M. LEMDANI AND 0. PONS
+%We describe here all the possible cases involving a susceptibility
+%ratio problem with one or two factors. The generalization to more
+%than two factors is straightforward. We summarize the identifiability
+%assumption for all these situations by the following equivalence
+%if P’~ O, (t) = pT 0, (t) for any t E [O,Z], then (p’, r”)?’ - (p,
+%We shall then consider two equivalent parameters as two versions
+%of the same parameter, up to a permutation of their components.
+%Assumption A, implies a similar identifiability result for the hazard
+%function. It will be used in the following form
+%LEMMA 2Under C, and A,, if lim,+, suptEl-, .,I i ,m,,n (t) - j.,;,(t)l = 0.
+%then there is a cersion of (p,,~,), which converges to a limit
+%(P,x”)-(p,~) as n-tx.
+%Proof Suppose that limn_, &lt;sub&gt;up,,&lt;/sub&gt;,,,,)~ (t) - .,, (t)J = 0. By condition %, and the dominated convergence theorem, for any t E[O,T],
+%lim ,,+, log [l - p: @,” (t)] = log [I - pTO, (t)] and therefore lim ,
+%p: Ox, (t) = pT 0, (t). By boundedness of 9, and using if necessary a
+%permutation of the components of (p,, r,),, from any subsequence
+%(p,, r,), of (p,, r,), one can extract a convergent subsequence (p, , r, ),
+%having a limit (p&lt;em&gt;, r&lt;/em&gt;) that satisifes P*~ @,, (t) = PT O,(t) for any
+%t E [0, z]. Under A,, this yields the required result.
+%We can now prove the following consistency property, where the
+%type of convergence depends on the model and on the value of p, in
+%the case of k components, as described above.
+%THEOREM 1 Under the assumptions C,, A,, A,, and under H,, (b,, 4,)
+%concerges in probability to a limit equicalent to (p,, r,) as n -t x.
+%Proof For p = (p; r), let K, (&amp;amp;) = n- ’ [log L, (p; x) - log L,(p,; x,)]
+%and let
+%(i) = [: fog [=] 2, (s) - i” ;., (s) + 1 ] p: q, (r)C(s) ds.
+%We have
+%MIXTURE MODELS FOR CENSORED SURVIVAL DATA 371
+%From proposition 1, lim, supp 1 K, (Ap) – KO (&amp;amp;) 1 = 0. Moreover, according to the concavity of the logarithm function, KO is maximal for . A
+%r. = /., and of course KO (Lo) = 0. It follows that K, (3,8,) -0 in probability as n + x. Then,
+%hence KO (it,,) + 0 in probability as 11 + x. Then, using again the concavity of logarithm function we conclude that &lt;sub&gt;up,i&lt;/sub&gt;~~,, (t) 5 0 which,]
+%Suppose &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; is Uniform&lt;span class=&#34;math inline&#34;&gt;\([0,\tau_{F}]\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; is Uniform&lt;span class=&#34;math inline&#34;&gt;\([0,\tau_G]\)&lt;/span&gt;.
+Recall we assume that &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; are continuous distributions.
+We have the following limiting distributions in cases of interest.
+ Assume &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}&amp;lt; \tau_G&amp;lt;\infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;p&amp;lt;1\)&lt;/span&gt;,
+so that &lt;span class=&#34;math inline&#34;&gt;\(\tau_J=\tau_{F}&amp;lt; \tau_H= \tau_G&amp;lt;\tau_{F^*}=\infty\)&lt;/span&gt;.
+Suppose in addition that, as &lt;span class=&#34;math inline&#34;&gt;\(z\dto 0\)&lt;/span&gt;,
+(&lt;em&gt;G-z)=a_G (1+o(1)) z^L_G(z)
+ {}&lt;br /&gt;
+&lt;em&gt;0(&lt;/em&gt;{F}-z)= a&lt;/em&gt;{F}(1+o(1)) z^L_{F}(z),
+where &lt;span class=&#34;math inline&#34;&gt;\(a_G, a_{F}, \gamma, \beta\)&lt;/span&gt; are positive constants and &lt;span class=&#34;math inline&#34;&gt;\(L_G(z)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(L_{F}(z)\)&lt;/span&gt; are slowly varying as &lt;span class=&#34;math inline&#34;&gt;\(z\dto 0\)&lt;/span&gt;.
+Then the random variables
+&lt;span class=&#34;math inline&#34;&gt;\(a_n(\tau_G- M(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(b_n(\tau_{F}- M_u(n))\)&lt;/span&gt; are asymptotically independently %exponentially
+distributed with marginal cdfs, respectively,
+&amp;amp;&amp;amp;
+1- e^{- (1-p) a_Gu^}
+ {} 
+1 - e^{- pa_{F}(_{F})v^},  u, v,
+for any choice of norming sequences satisfying $a_n(nL_G(1/a_n)) ^{1/} $
+and
+&lt;span class=&#34;math inline&#34;&gt;\(b_n\sim n^{1/\beta}L_{F}(1/b_n)\)&lt;/span&gt;, as &lt;span class=&#34;math inline&#34;&gt;\(n\to\infty\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt; Assume &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}&amp;lt;\tau_G&amp;lt;\infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt;,
+so that &lt;span class=&#34;math inline&#34;&gt;\(F\equiv F\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau_J=\tau_{F}= \tau_{F^*}=\tau_H&amp;lt;\tau_G&amp;lt;\infty\)&lt;/span&gt;.
+Suppose in addition that, as &lt;span class=&#34;math inline&#34;&gt;\(z\dto 0\)&lt;/span&gt;,
+(&lt;em&gt;G-z)=a (1+o(1)) z^L(z)
+ {}&lt;br /&gt;
+&lt;em&gt;0(&lt;/em&gt;{F}-z)= a(1+o(1)) z^L(z),
+where &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; are positive constants and &lt;span class=&#34;math inline&#34;&gt;\(L(z)\)&lt;/span&gt; is slowly varying as &lt;span class=&#34;math inline&#34;&gt;\(z\dto 0\)&lt;/span&gt;.
+Choose &lt;span class=&#34;math inline&#34;&gt;\(a_n\)&lt;/span&gt; to satisfy
+$a_n(nL(1/a_n)) ^{1/} $.
+%(and now $b_n(nL&lt;/em&gt;{F}(1/b_n)) ^{1/} $).
+Then, for $ 0uv$,
+&lt;em&gt;{n}
+P( a_n(&lt;/em&gt;{F}- M(n))u, , a_n(&lt;em&gt;{F}- M_u(n))v )=1- e^{- a (&lt;/em&gt;{F}) u^}.
+%%,  u,v.
+%%=1- e^{- a_{F} u^(&lt;em&gt;{F})}.
+%%&amp;amp;&amp;amp;
+%&amp;amp;&amp;amp;=
+% 1
+%%%%%%%%%%%+ e^{- a&lt;/em&gt;{F} (u&lt;sup&gt;,v&lt;/sup&gt;) (&lt;em&gt;{F})}
+%- e^{- a&lt;/em&gt;{F} u^(&lt;em&gt;{F})},  u,v.
+%%%%%%%%%%%%- e^{- a&lt;/em&gt;{F} v^(_{F})},  u,v.
+&lt;/p&gt;
+&lt;p&gt; Assume &lt;span class=&#34;math inline&#34;&gt;\(\tau_G&amp;lt;\tau_{F}\le \infty\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;p\le 1\)&lt;/span&gt;,
+so that &lt;span class=&#34;math inline&#34;&gt;\(\tau_J= \tau_H= \tau_G&amp;lt;\tau_{F}\le \tau_{F^*}\le \infty\)&lt;/span&gt;,
+and assume that
+the first relation in
+&lt;span class=&#34;math inline&#34;&gt;\(\eqref{FGD}\)&lt;/span&gt; holds.
+Suppose in addition that, in a neighbourhood of &lt;span class=&#34;math inline&#34;&gt;\(\tau_G\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; has a density &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; which is positive and continuous at &lt;span class=&#34;math inline&#34;&gt;\(\tau_G\)&lt;/span&gt;.
+Take &lt;span class=&#34;math inline&#34;&gt;\(a_n\)&lt;/span&gt; to satisfy
+$a_n(nL_G(1/a_n)) ^{1/} $ and &lt;span class=&#34;math inline&#34;&gt;\(b_n\)&lt;/span&gt; to satisfy &lt;span class=&#34;math inline&#34;&gt;\(b_n\sim (nL_{F}(1/b_n))^{\frac{1}{1+\gamma}}\)&lt;/span&gt;.
+Then &lt;span class=&#34;math inline&#34;&gt;\(a_n(\tau_G- M(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(b_n(\tau_G- M_u(n))\)&lt;/span&gt; are asymptotically independently distributed with
+%%marginal exponential and Weibull distributions; specifically, having
+marginal cdfs, respectively,
+&amp;amp;&amp;amp;
+1- e^{-a_G (1-pF(_G))u^}
+ {} 
+1 - e^{-p a_G f(_G) v^{1+}/(1+)},  u,v.
+%Furthermore, this result remains true under the same assumptions when &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}=\infty\)&lt;/span&gt;.
+%Thus, &lt;span class=&#34;math inline&#34;&gt;\(n(\tau_J- M(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(\tau_H- M_u(n))\)&lt;/span&gt; are asymptotically independently distributed with exponential and Weibull distributions, respectively.&lt;br /&gt;
+%
+% 
+%The result in Case 3 remains true under the same assumptions when &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt;, specifically,
+% &lt;span class=&#34;math inline&#34;&gt;\(a_n(\tau_G- M(n))\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(b_n (\tau_G- M_u(n))\)&lt;/span&gt; are then asymptotically independently distributed with marginal distributions
+%$ 1- e^{- a_G_0(_G)u^}$, &lt;span class=&#34;math inline&#34;&gt;\(u&amp;gt;0\)&lt;/span&gt;, and
+%&lt;span class=&#34;math inline&#34;&gt;\(1 - e^{-a_G f(\tau_G) v^{1+\gamma}}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(v&amp;gt;0\)&lt;/span&gt;,
+% respectively, for the same choices of &lt;span class=&#34;math inline&#34;&gt;\(a_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(b_n\)&lt;/span&gt;.
+%The result also remains true under the same assumptions when &lt;span class=&#34;math inline&#34;&gt;\(\tau_{F}=\infty\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;
+In any case we have &lt;span class=&#34;math inline&#34;&gt;\(M(n)\topr \tau_H\)&lt;/span&gt; and $ M_u(n)_J$ as &lt;span class=&#34;math inline&#34;&gt;\(n\to\infty\)&lt;/span&gt;.
+\end{theorem}&lt;/p&gt;
+%
+%
+&lt;p&gt;\end{document}&lt;/p&gt;
+&lt;p&gt;\end{document}&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Inference on Adaptively Collected Data</title>
       <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
@@ -1364,41 +2506,6 @@ Wolfer, Geoffrey, and Aryeh Kontorovich. 2019. &lt;span&gt;“Minimax Learning o
 &lt;/ul&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Cuwhzd-8z4k&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent Advances in Approximate Bayesian Inference</title>
-      <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
-      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Recent Advances in Approximate Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-02-09-recent-advances-in-approximate-bayesian-inference_files/featured.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.&lt;/p&gt;
-&lt;p&gt;On the webinar, selected young statisticians will present their recent works on the topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, June 15th, 7:00 PT / 10:00 EST / 16:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdd1MztoBmjD8BXFzyURnSPoGolVnojTCoaZMgbQ4ooN5Fybw/viewform&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.lorenzopacchiardi.me/&#34;&gt;Lorenzo Pacchiardi&lt;/a&gt;, University of Oxford, United Kingdom, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1h3kbElZP1XuWNi0zYdFXg5Sve_KqVc5N/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.stats.ox.ac.uk/~pompe/&#34;&gt;Emilia Pompe&lt;/a&gt;, University of Oxford, United Kingdom, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1FtzRCxPScHyuX6541aFO44d6OOKN7Ibg/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.mimuw.edu.pl/~lr306321/&#34;&gt;Łukasz Rajkowski&lt;/a&gt;, University of Warsaw, Poland, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1-jYFEphT9QP9hpmXUKHPaXhmjgQ-67_S/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://theomoins.github.io/aboutme/&#34;&gt;Théo Moins&lt;/a&gt;, Inria Grenoble Rhône-Alpes, France, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1d-eT9CjudhQkanRBXJZOI6lxPZb5dFfX/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.julyanarbel.com/&#34;&gt;Julyan Arbel&lt;/a&gt;, Inria Grenoble Rhône-Alpes, France, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/17ZxJykILqJAjNICSWcG-TDtjTzyEj5jn/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Ee-qmAIwrxs&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

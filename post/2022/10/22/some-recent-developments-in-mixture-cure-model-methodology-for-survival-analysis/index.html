@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/survival-analysis">survival-analysis</a>
+  
+     &hercon; <a href="/categories/cure-model">cure-model</a>
+  
+  </div>
+
+  <h1><span class="title">Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</span></h1>
+
+  
+  <h3 class="author">Ross Maller,  Sidney Resnick,  Soudabeh Shemehsavar and Muzhi Zhao
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<p>In certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been {} for a period of time and their status at some endpoint reported.
+See for example the (Surveillance, Epidemiology, and End Results, US National Cancer Institute) data base, which contains a massive amount of data with extended followup on a wide range of cancers — an important source for historical data.<br />
+In another context, in , the times of occurrence of four endpoints (overall survival, disease-specific survival, disease-free interval, or progression-free interval) for 11,160 patients across 33 cancer types were obtained from follow-up data files, with a view to making recommendations to clinicians regarding their patient’s status.</p>
+<p>The data confronting the statistician consists of observations like this, on
+the time to the occurrence of some event such as death, or the recurrence of a disease, etc. For definiteness, suppose we are analysing overall survival, and the measurement is the life-lengths of a sample of individuals.
+A particular characteristic of this kind of data is that it is commonly
+{}. This happens when an individual’s complete lifetime is not observed, either because s/he left the study early for some reason, or was still alive at the end of the study (and all real-life studies must be terminated at some finite time).
+The censored observations must be taken into account in any analysis; to ignore them would introduce bias, in that, typically, some of the longer lifetimes would have been ignored.</p>
+<p>Methods for the analysis of such survival data have long been known.
+See for example .
+A good place to start is simply to look at the data, literally, in the form of the
+{} (KME, ), which is a nonparametric estimator of the survival function (the tail, or complement, of the distribution describing the lifetimes) which takes into account the censoring.
+%<a href="https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator" class="uri">https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator</a>
+An example KME plot is the first thing we see when looking at the current Wikipedia entry () for the KME.
+Notable about this example and many others we can see in the literature is that the survivor function is {}; it does not reach zero at its right endpoint.
+Equivalently, in such cases, the KME as a cdf has total mass less than 1.
+This is so for all of the data sets in .
+%, and we give other examples below.</p>
+<p>A KME which levels off or <code>plateaus'' at its right hand end because the largest or perhaps a number of the largest lifetimes are censored  may indicate the presence of a proportion of individuals in the population who will not suffer the event, no matter how long they are followed up. We refer to them as</code>cured of’’ or <code>immune to'' the event, and methods are now well  developed to deal with this kind of data, generally known as {\it  cure model } methods.  As well as providing significant extra information beyond that of a standard survival analysis, ignoring the presence of  cures in an analysis can lead to biased and misleading conclusions, sometimes  with  profound consequences for diagnostic prognostications and evaluations.   %An important application  is reported in %additional point is that  statistics such as  %$Q_n$ and $\wt\alpha_n$  can be used not only to  test for sufficient follow-up but  % also to provide measures of how much follow-up there is in a sample. %Both these aspects are  %  \cite{Liu:etal:2018},  %where   testing for and measurement of sufficient follow-up in the TCGA pan-cancer clinical data resource are done on a very extensive scale  %in order to provide recommendations to cancer researchers wishing to assess the adequacy of clinical follow-up in a medical situation.  %In \cite{Liu:etal:2018},  follow-up data files for 11,160 patients %across 33 cancer types were  % processed.   %Median follow-up times as well as median times %to event (or censorship) based on the observed times for  %four endpoints (overall survival, disease-specific survival, disease-free interval, or progression-free interval) were %calculated. %%In a very detailed analysis,  %The authors used  $Q_n$  %% and $\wt\alpha_n$  % in \cite{shen:2000} %to classify all $33 \times 4$ resulting  KMEs  as having sufficient or insufficient follow-up (or noted cases in which  tests were inconclusive)  in order to give  endpoint usage recommendations for each cancer type. %%%%%%%%%%Their results are summarized in their Table 3.  %They stress: {\it  %For each endpoint, it is very important to have a %sufficiently long follow-up time to capture the events of interest, %and the minimum follow-up time needed depends on both the %aggressiveness of the disease and the type of endpoint} (Liu et al., %\cite{Liu2018}, p.401). % % %In the analysis of time-to-event data, it is not uncommon to encounter  %survival curves which  plateau (level off) at the right hand end. % % %This may indicate the presence of a proportion of individuals in the population who will not suffer the event, no matter how long they are followed up. %We refer to them as</code>cured of’’ or ``immune to’’ the event, and methods are now well developed to deal with this kind of data, generally known as cure model methods.
+% As well as providing significant extra information beyond that of a standard survival analysis, ignoring the presence of cures in an analysis can lead to biased and misleading conclusions, sometimes with profound consequences for diagnostic prognostications and evaluations.
+%<br />
+%Cure models have received large and growing attention in the last few decades and it seems timely now to provide a review of their development leading up to present day applications.
+Various versions of cure models have been formulated over the years but here we concentrate on a version which seems easiest to us to formulate, analyse and interpret — {}.</p>
+<p>The first recognition of the need for and implementation of a cure model seems to have been by .
+He collected data from a number of centres in England, for various sites of the disease and
+treatment methods, and
+noticed that, while
+the distributions of life-lengths
+(measured from the beginning of treatment) of those dying
+appeared to follow quite well a lognormal distribution,
+{}
+Accordingly, he proposed a model in which
+{}
+He went on to fit by maximum likelihood a lognormal distribution with mass at infinity –
+a mixture cure model –
+to followup data on 121 women with breast cancer, finding a significant ``cured’’ proportion in the data.
+%% We revisit Boag’s data and analysis in Sections <span class="math inline">\(\ref{DD}\)</span> and <span class="math inline">\(\ref{prob}\)</span>.</p>
+<p>Fig. <span class="math inline">\(\ref{uncensKMEBoag}\)</span> shows the KME of the survival distribution
+with 95% confidence intervals, and a Weibull mixture distribution fitted,
+for Boag’s 121 breast cancer patients.
+The KME jumps only at uncensored (death) times, remaining constant at
+censored times.
+For this data it clearly levels off at a value less than 1, consistent with Boag’s observation of a possible cured component,
+%The KME contains further evidence about the existence of a cured component.
+with a tendency to
+remain constant at lifetimes greater than 90 months, except for one late death at
+120.6 months. The length of the level stretch at the righthand end of the KME is indicative of the amount of followup in the data.</p>
+<p>The KME in Fig. <span class="math inline">\(\ref{uncensKMEBoag}\)</span> is very typical of the kind that can be seen in much of the medical literature. It displays clearly the main issues we want to address:</p>
+<p><span class="math inline">\(\bullet\)</span>
+has the KME levelled off at a value {}
+less than 1 thereby indicating the possible presence of immunes in the population? and</p>
+<p><span class="math inline">\(\bullet\)</span>
+has the KME levelled off {} for us to be confident of this?
+%<br />
+%
+% These are statistical questions, and to answer them we must apply
+% statistical methods.
+% The first step in a statistical
+% analysis of survival data with possible cures is to assess and test for their existence in the population.
+% The KME in Fig. <span class="math inline">\(\ref{KMEsBoag}\)</span> is very typical of the kind that can be seen in much of the medical literature; see, e.g., .
+% Other useful information in the sample is the KME of the censoring distribution;<br />
+% Fig.<span class="math inline">\(\ref{censKMEBoag}\)</span> shows this for Boag’s data with a Weibull distribution fitted.
+% We discuss Boag’s data and the Lui et al. analysis
+% further in Section <span class="math inline">\(\ref{??}\)</span>.</p>
+<p>Since the prospect of a cure is surely the hope of many or most medical procedures, the importance of Boag’s insight can hardly be overstated.
+Following his groundbreaking paper a number of researchers, including
+,
+,
+,
+,
+, %,
+, % ,
+,
+,
+,
+,
+followed up with various aspects and analyses of the model, but the first systematic treatment of what is now called the long term survivor or cure mixture model seems to have been in .
+That book combines nonparametric and parametric theoretical formulations and proofs with many practical applications and examples of the model.</p>
+<p>There has been an upsurge in interest in the model since the 1990s, with many applications areas explored, especially in medical statistics, and some substantial theoretical advances made.
+Correspondingly, computational facilities have improved tremendously, and with modern capabilities a wide variety of parametric models of censored data with long term survivors can now
+be fitted routinely with the statistical package R (); see
+,
+and .
+%%<a href="https://cran.r-project.org/web/packages/flexsurvcure/flexsurvcure.pdf" class="uri">https://cran.r-project.org/web/packages/flexsurvcure/flexsurvcure.pdf</a>
+%(See and their references for goodness-of-fit tests for parametric models with censored data.)
+There have also been a number of review/overview and methodological articles:
+,
+, , ,
+%%%DONT USE ….
+%Felizzi, F., Paracha, N., Pöhlmann, J. et al. Mixture Cure Models in Oncology: A Tutorial and Practical Guidance. PharmacoEconomics Open 5, 143–155 (2021).
+and the book by . % summarising some of these aspects.</p>
+<p>More recent work of the present authors concerns some aspects left unresolved in ,
+as well as some quite new points of view, which we discuss below.</p>
+<p>%It seems appropriate now to present an overview drawing together earlier and some more recent developments as well as pointing out areas where further work is needed.
+%Besides those we mention, the literature has now grown too large and diverse to summarise completely here, and we confine ourselves to a selection reflecting our own main interests.
+%
+%
+%The next subsection introduces the notation to be used throughout.
+%
+%Expressions have been obtained for the distributions of these quantities under certain assumptions, and in the next section we explain these.</p>
+%%
+<p>%We adopt the notation in and ,
+%which differs slightly from that in .
+% For the distributional results to follow we use the notation in ,
+%which should be read in conjunction with the present paper.
+A tractable and reasonably realistic model for the data is an independent and identically distributed (iid) censoring model with right censoring.
+In it, a sample of size <span class="math inline">\(n\)</span> consists of observations on the sequence of
+iid 2-vectors
+<span class="math inline">\(\big(T_i=T_i^*\wedge U_i, C_i={\bf 1}(T_i^*\le U_i);\, 1\le i\le n\big)\)</span>.
+%where the <span class="math inline">\(T_i\)</span> represent the censored survival times and the <span class="math inline">\(C_i\)</span> are the censor indicators.
+%It will be convenient to let <span class="math inline">\(M(n):= M(n) =\max_{1\leq i\leq n}T_i\)</span>.
+%We formally set <span class="math inline">\(T_i^*=\infty\)</span> and <span class="math inline">\(C_i = 0\)</span> for immune individuals.
+%We have two independent sequences of iid positive random variables
+%<span class="math inline">\((T_i^*)_{1\le i\le n}\)</span> and <span class="math inline">\((U_i)_{1\le i\le n}\)</span>, <span class="math inline">\(n\in\N:=\{1,2,\ldots\}\)</span>, having continuous cumulative distribution functions <span class="math inline">\(F^*\)</span> and <span class="math inline">\(G\)</span> on <span class="math inline">\([0,\infty)\)</span>, not degenerate at 0.
+The <span class="math inline">\(T_i^*\)</span> with continuous
+cumulative distribution function (cdf) <span class="math inline">\(F^*\)</span> on <span class="math inline">\([0,\infty)\)</span>
+represent the times of occurrence of the event under study.
+%, such as the death of a person, or the onset of a disease, etc.
+The <span class="math inline">\(U_i\)</span>, iid with continuous cdf <span class="math inline">\(G\)</span> on <span class="math inline">\([0,\infty)\)</span>,
+are censoring random variables, independent of the <span class="math inline">\(T_i^*\)</span>.
+In a sample
+%from a population containing long-term survivors
+we observe the censored random variables <span class="math inline">\(T_i=T_i^*\wedge U_i\)</span>
+%, these being potential lifetimes censored at a limit of follow-up represented for individual <span class="math inline">\(i\)</span> by the random variable <span class="math inline">\(U_i\)</span>.
+with censor indicators $ C_i={}(T_i^*U_i)$.</p>
+<p>In the general mixture cure model, the censoring distribution <span class="math inline">\(G\)</span> of the <span class="math inline">\(U_i\)</span> is always assumed proper (total mass 1), but the distribution <span class="math inline">\(F^*\)</span> of the <span class="math inline">\(T_i^*\)</span> may be improper,
+%, with mass <span class="math inline">\(1-p\)</span>, <span class="math inline">\(0\le p&lt;1\)</span>, at infinity. We assume <span class="math inline">\(F^*\)</span> to be
+of the form
+<span class="math display">\[\begin{equation}    \label{FandF0}
+    F^*(t)=pF(t),
+\end{equation}\]</span>
+where <span class="math inline">\(0&lt;p\le 1\)</span> and <span class="math inline">\(F\)</span> is a proper distribution.
+<span class="math inline">\(F\)</span> is the distribution of the lifetimes of susceptible individuals in the population; only these can experience the event of interest and have a potentially uncensored failure time.
+The remainder are immune to the event of interest or cured of it.
+The presence of cured subjects is signalled by a value of <span class="math inline">\(p&lt;1\)</span>, in which case the distribution <span class="math inline">\(F^*\)</span> is improper, with total mass <span class="math inline">\(p\)</span>. %Then <span class="math inline">\(1-p\)</span> is the proportion of immune or cured individuals in the population.</p>
+<p>We do not know whether a particular censored lifetime in the sample is from a cured or immune individual (uncensored lifetimes are obviously not from immunes); but
+%in aggregate, the presence of cured individuals may be signalled by
+%an ``improper’’ sample Kaplan-Meier estimator (KME, ),
+% that is, one having total mass less than 1.
+% This situation arises when the largest survival time in the sample is censored,
+% and there may further be an interval of constancy of the KME at its right hand end due to a number of the largest observations being censored.
+observations on cured or immune individuals are always censored; those on susceptibles may or may not be according as the corresponding <span class="math inline">\(T_i^*&gt;U_i\)</span> or not.</p>
+<p>%The notation <span class="math inline">\(\Fbar^*(t)= 1-F^*(t)\)</span>, <span class="math inline">\(t\ge 0\)</span>, is used for the survival function (tail function) of <span class="math inline">\(F^*\)</span>, and similarly <span class="math inline">\(\Fbar(t)= 1-F(t)\)</span> and <span class="math inline">\(\Gbar(t)= 1-G(t)\)</span>.
+% Let <span class="math inline">\(H(t):=P(T_1\le t)\)</span> be the distribution of the observed survival times <span class="math inline">\(T_i=T_i^*\wedge U_i\)</span>, with tail <span class="math inline">\(\Hbar(t)=1-H(t)=P(T_i^*\wedge U_i&gt;t ) = \Fbar^*(t)\Gbar(t)\)</span>, <span class="math inline">\(t\ge 0\)</span>.</p>
+<p>%
+%We restrict our discussion to the {} cure model in this survey.
+%Other models incoporating long term survivors have been proposed;
+%we discuss them just briefly in Subsection <span class="math inline">\(\ref{omixmod}\)</span>.
+%But the mixture model is easy to formulate and easy for practitioners to interpret, and it generalises easily to competing risks setups, see Subsection <span class="math inline">\(\ref{??}\)</span>.</p>
+<p>%We take a practical point of view whereby the data has prominence and the methodological developments flow from the inferences to be drawn from it.
+%So suppose we have at hand a single sample of survival data which is to be analysed statistically.
+%The first thing a statistician will want to do is look at the data, and for this we recommend the empirical distribution function estimator (KME) of the
+%lifetimes.</p>
+<p>%%See Subsection <span class="math inline">\(\ref{KME}\)</span> for the definition.
+The KME is a highly informative data display which shows clearly in visual form the features we want to investigate.
+To define it, denote the ordered sample lifetimes as <span class="math inline">\(T_n^{(1)}&lt; T_n^{(2)}&lt; \cdots &lt;T_n^{(n)}\)</span>,
+with associated censor indicators
+<span class="math inline">\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)</span>.
+%%NOTE THIS ORDERING IS THE SAME AS IN .
+Let $M(n)=T_n^{(n)}=<em>{1in}T_i $ be the largest survival time.
+%and let <span class="math inline">\(M_u(n)\)</span> be the largest observed {} survival time.
+An explicit definition of the KME is
+F_n(t):= 1-</em>{1in: , T_n^{(i)} t}^n (1- ),
+ {} 0&lt;tM(n),
+with <span class="math inline">\(\wh F_n(0):=0\)</span> and <span class="math inline">\(\wh F_n(t):=\wh F_n(M(n))\)</span> for <span class="math inline">\(t&gt; M(n)\)</span>.
+In <span class="math inline">\(\eqref{km1}\)</span>, <span class="math inline">\(n-i+1\)</span> % := <em>{j=1}^n {}</em>{T_j&gt;T_i}$
+is the number of subjects ``at risk’’ at times just prior to <span class="math inline">\(T_n^{(i)}\)</span>.
+Recall we assume <span class="math inline">\(F^*\)</span> and <span class="math inline">\(G\)</span> are continuous so there are no tied survival times in the data with probability 1.
+Let<br />
+p_n:= F_n(M(n))
+be the value of the KME at its right extreme.
+%See , Ch. 3 and 4, for properties of <span class="math inline">\(\wh F_n(t)\)</span> and <span class="math inline">\(\wh p_n\)</span>.</p>
+<p>In a sample we observe data values <span class="math inline">\((t_i, c_i)_{1\le i\le n}\)</span> for
+<span class="math inline">\((T_i,C_i)_{1\le i\le n}\)</span>, order them as
+<span class="math inline">\(t_n^{(1)}&lt; t_n^{(2)}&lt; \cdots &lt;t_n^{(n)}\)</span>, and define associated censor indicators
+<span class="math inline">\(c_n^{(1)}, c_n^{(2)}, \ldots, c_n^{(n)}\)</span>.
+Then $t_n^{(n)}=_{1in}t_i $ is the largest observed survival time.
+%and let <span class="math inline">\(M_u(n)\)</span> be the largest observed {} survival time.
+The sample KME is the same function with observed data values substituted for the random quantities, and we obtain a sample estimate of <span class="math inline">\(\wh p_n\)</span> by substituting appropriately in <span class="math inline">\(\eqref{defpnh}\)</span>.</p>
+<p>%As an example, Fig. <span class="math inline">\(\ref{uncensKMEBoag}\)</span> shows the KME of the survival (lifetime) distribution
+% with 95% confidence intervals, and a Weibull mixture distribution fitted,
+% for Boag’s 121 breast cancer patients.
+% (The Weibull is a slightly better fit than the lognormal as used by Boag).
+% The KME jumps only at uncensored (death) times, remaining constant at
+%censored times. For this data it clearly levels off at a value less than 1, consistent with Boag’s observation of a possible cured component, and we see clearly the main issues we want to address:
+%
+% <span class="math inline">\(\bullet\)</span>
+% has the KME levelled off at a value {} less than 1 thereby indicating the possible presence of immunes in the population? and
+%<br />
+% <span class="math inline">\(\bullet\)</span>
+% has the KME levelled off {} for us to be confident of this?
+%<br />
+%
+% These are statistical questions, and to answer them we must apply
+% statistical methods.
+%<br />
+% The first step in a statistical
+% analysis of survival data with possible cures is to assess and test for their existence in the population.</p>
+<p>A nonparametric estimate of the population proportion dying is given by the maximum value of the KME, that is, <span class="math inline">\(\wh p_n\)</span> as defined by <span class="math inline">\(\eqref{defpnh}\)</span>,
+and its complement is the estimated cure proportion, which
+as can be seen in Fig.<span class="math inline">\(\ref{uncensKMEBoag}\)</span> for Boag’s data is 0.30 with a 95% confidence interval (CI) (calculated using the estimate)
+of $ [0.19, 0.48]$. This interval excludes 0, in general agreement with Boag’s observation of a possible cured component.
+This confidence interval assessment though indicative is not strictly correct usage, however, as the restriction of <span class="math inline">\(p\)</span> to <span class="math inline">\([0,1]\)</span> should be taken into account, as should the fact that <span class="math inline">\(\wh p_n\)</span> is calculated from the KME at a random (not deterministic) time.</p>
+<p>When a parametric mixture model such as the Weibull is fitted, a rigorous test for <span class="math inline">\(H_0: p=1\)</span> (no immunes present) is available
+(see Section 5.3, p.109, of ), and a nonparametric test using <span class="math inline">\(\wh p_n\)</span> is outlined in Section 4.2, p.76, p.109, of (with percentage points in Table A.1 of the book),
+but we still do not have complete understanding of the distribution of <span class="math inline">\(\wh p_n\)</span> under the null hypothesis <span class="math inline">\(H_0\)</span>.</p>
+<p>% An ``improper’’ sample KME
+% is suggestive but not definitive evidence of the presence of cured individuals in the population.
+%Even in the absence of cures, it’s possible for the
+%right extreme of the KME to be less than 1 just by chance; calculate this probability under the assumption of iid censoring.
+% (for which, see the next section).
+%So we need rigorous tests for whether the right extreme of the KME is significantly less than 1, and
+%how this is related to the length of the level stretch at the righthand end of the KME.</p>
+<p>The KME contains further evidence about the existence of a cured component.
+We see in Fig. <span class="math inline">\(\ref{uncensKMEBoag}\)</span> a tendency for the KME to
+remain constant at lifetimes greater than 90 months, except for one late death at
+120.6 months. The length of the level stretch at the righthand end of the KME is indicative of the amount of followup in the data.
+A statistic <span class="math inline">\(Q_n\)</span> is suggested in for assessing ``sufficient followup’’.</p>
+%
+% The KME in Fig. <span class="math inline">\(\ref{uncensKMEBoag}\)</span> is very typical of the kind that can be seen in much of the medical literature; see, e.g., .
+% Other useful information in the sample is the KME of the censoring distribution; Fig.<span class="math inline">\(\ref{censKMEBoag}\)</span> shows this for Boag’s data with a Weibull distribution fitted.
+% We discuss Boag’s data and the Lui et al. analysis
+% further in Section <span class="math inline">\(\ref{??}\)</span>.
+%
+% \begin{figure}[h]
+%
+%
+% \begin{subfigure}{5cm}
+%
+%
+% \end{subfigure}
+%
+% \begin{subfigure}{5cm}
+%
+%
+<p>%\end{subfigure}
+%\end{figure}</p>
+These ideas are related to the magnitudes of the largest survival time observed,
+and the largest {} survival time observed, and the numbers of observations in the two time intervals defined by these.
+%Much of the methodology is set out in , which can be read as background to the present paper.
+%But some issues are left unresolved in that book, which we address in the present paper, along with some newly derived results.<br />
+%%
+<p>A key structural result obtained in
+is that, conditional on the value of the largest uncensored survival time, and knowing the number of censored observations exceeding this time,
+the sample partitions into two independent subsamples, each subsample having
+the distribution of an iid sample of censored survival times, of reduced size, from truncated random variables.
+This result provides valuable insight and intuition into the construction of samples of censored survival data,
+and facilitates the calculation of explicit finite sample formulae, for example, for
+the joint distribution of the largest and the largest {} survival time observed, and for <span class="math inline">\(Q_n\)</span>.
+Further, the asymptotic distributions of these statistics can then be worked out under conditions related to those familiar from extreme value theory.
+Our recent research is very much in this line.
+See
+(adjusting for insufficient follow-up),
+(extremes of censored and uncensored lifetimes),
+(splitting the sample at the largest uncensored observation,
+testing for sufficient followup, estimating the probability of being cured).</p>
+<p><span class="math inline">\(\bullet\)</span>
+It’s very common in survival analysis to encounter a KME which has levelled off at a value less than 1. This may indicate the presence of immune or cured individuals in the population — but not always — even in the absence of cures, it’s possible for the
+right extreme of the KME to be less than 1 just by chance.</p>
+<p><span class="math inline">\(\bullet\)</span> A significance test is available for the hypothesis <span class="math inline">\(H_0: p=1\)</span> when a well-fitting parametric model has been found for the data.
+A wide variety of models can be fitted routinely with R (); see
+, and .
+These cover a class of generalised F models and, as a submodel, an extended generalised gamma model, which between them include as submodels most of the usual survival distributions such as the exponential, Weibull, lognormal, Gumbel,
+log-logistic, Burr, etc.
+Methods of distinguishing between them in a data analysis with the cure model are set out in .</p>
+<p><span class="math inline">\(\bullet\)</span><br />
+A nonparametric test for <span class="math inline">\(H_0: p=1\)</span> is available too, but at present we have to rely on simulated, tabulated, percentage points for the distribution.</p>
+<p><span class="math inline">\(\bullet\)</span>
+An important point is whether the KME has levelled off {} at its right endpoint.
+The <span class="math inline">\(Q_n\)</span> statistic has been developed to measure and test for this.</p>
+<p><span class="math inline">\(\bullet\)</span>
+We’ve confined our discussion to the one-sample case.
+In practice, we usually have one or more groups (treatment groups, or otherwise), and/or covariates, and want to examine the effects of these.
+Much of is concerned with methods for handling this.</p>
+<p><span class="math inline">\(\bullet\)</span>
+We’ve also confined our discussion to medical data and survival analysis.
+But the methodology applies to many other kinds of time-to-event data.
+A wide variety of examples can be found in a web search.
+use much criminological data (time to re-arrest of a released prisoner, etc.) to illustrate the methods.</p>
+<p><span class="math inline">\(\bullet\)</span>
+Ignoring the possible presence of cured, immune or long-term survivors in a population not only risks losing valuable information but can result in bias and misleading conclusions.
+An important point is that including the possibility of long-term survivors in {} survival analysis can do no damage;
+if their presence is allowed for but found not to be significant, no harm is done.</p>
+<pre><code> $\bullet$
+ The mixture cure model can be regarded as a special case of a competing risks analysis where death or failure of an individual  may be due to a number of possible causes; see \cite{MZ2002}.</code></pre>
+<p>The issue of sufficient followup is clearly relevant in this context, but has not been addressed at all, to our knowledge.</p>
+<p>\end{document}</p>
+%%
+<p>%The Kaplan-Meier empirical distribution function estimator (KME) of the survival distribution of the individuals is defined as</p>
+<p>The right extremes of the survival and censoring distributions
+play a special role in our analysis.
+Let $_{F^<em>}= {t&gt;0:F^</em>(t)=1} $
+%<span class="math inline">\(\tau_{F}= \inf\{t&gt;0:F(t)=1\} = \inf\{t&gt;0:\)</span>F^*(t)=p} $
+(with the inf of the empty set equal to <span class="math inline">\(\infty\)</span>) be the right extreme of the survival distribution <span class="math inline">\(F^*\)</span>,
+and similarly <span class="math inline">\(\tau_{F}\)</span>, <span class="math inline">\(\tau_{G}\)</span> and <span class="math inline">\(\tau_H\)</span>
+%<span class="math inline">\(\tau_{F}= \inf\{u&gt;0:F(u)=1\}\)</span> and <span class="math inline">\(\tau_G= \inf\{u&gt;0:G(u)=1\}\)</span><br />
+are the right extremes of <span class="math inline">\(F\)</span>, <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span>.
+The quantity <span class="math inline">\(\tau_{F^*}\)</span> represents the largest survival time of an individual in the population,
+but in a sample we can only observe times up to a maximum of <span class="math inline">\(\tau_H: =\min(\tau_{F^*}, \tau_G)\)</span>, due to the censoring.
+We always have <span class="math inline">\(H(\tau_H)=1\)</span>, <span class="math inline">\(G(\tau_G)=1\)</span> and <span class="math inline">\(F(\tau_{F})=1\)</span>.
+When <span class="math inline">\(p=1\)</span>, so that <span class="math inline">\(F^*\equiv F\)</span>, <span class="math inline">\(F^*\)</span> has total mass 1 and <span class="math inline">\(\tau_{F^*}=\tau_{F}\)</span>;
+when <span class="math inline">\(p&lt;1\)</span> we have <span class="math inline">\(\tau_{F^*}=\infty\)</span>, and <span class="math inline">\(\tau_{F}\le \tau_{F^*}\)</span>,
+with the possibility that <span class="math inline">\(\tau_{F}&lt; \tau_{F^*}\)</span>.</p>
+<p>The relation <span class="math inline">\(\tau_F\le \tau_G\)</span> expresses that there is enough followup to allow the largest possible susceptible survival times to be observed; in the contrary situation, <span class="math inline">\(\tau_G&lt;\tau_F\)</span>, censoring is so heavy that the data is truncated at a level below the maximum possible survival time.
+Besides expressing that followup is ``sufficient’’ in this sense,
+the condition <span class="math inline">\(\tau_F\le \tau_G\)</span> arises in a number of other theoretical results.
+For example, the KME is biased downwards, but the bias is asymptotically negligible (tends to 0 in large samples) if and only if <span class="math inline">\(\tau_F\le \tau_G\)</span>
+(provided <span class="math inline">\(F^*\)</span> is continuous at <span class="math inline">\(\tau_H\)</span> in case <span class="math inline">\(\tau_H&lt;\infty\)</span>; see , Theorem 3.13).
+Under this same continuity condition, <span class="math inline">\(\tau_F\le \tau_G\)</span>
+is necessary and sufficient condition for the KME <span class="math inline">\(\wh F_n\)</span> to be consistent for <span class="math inline">\(F^*\)</span> on the whole line; , Thms. 3.8 and 4.2.</p>
+<p>Convergence of the integral
+<em>{{0&lt;t&lt; </em>{H}}}
+is a required assumption in Theorem 4.2.3 of giving the asymptotic distribution of the KME, and in Theorem 4.3 of
+.
+The ``sufficient followup’’ condition <span class="math inline">\(\tau_F\le \tau_G\)</span> is necessary for the convergence of the integral in <span class="math inline">\(\eqref{intg}\)</span> and consequently plays an important role in many of the large-sample results in and in the literature.</p>
+<p>% and , Theorem 4.3 as…</p>
+<p>This discussion highlights the need for information on, or assumptions about,
+the right hand endpoints of <span class="math inline">\(F^*\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span>, and, especially, whether they are finite or not.
+Most practical is to assume <span class="math inline">\(\tau_G&lt;\infty\)</span> since observation must always cease at some finite point.
+In many cases the assumption <span class="math inline">\(\tau_{F}&lt;\infty\)</span> may also be natural.
+Certainly in real survival data no individual lives forever, but we would set <span class="math inline">\(\tau_{F}=\infty\)</span> for example when studying the occurrence of an infectious disease where an immune individual would never contract the disease no matter how long the follow-up. This can certainly be the case in epidemics such as the COVID virus pandemic, for example; and in an analysis with children immune to malaria is given.</p>
+<p>Regardless of the situation, in modelling exercises it is not uncommon to use a distribution
+with infinite right endpoint as the lifetime distribution; e.g., an exponential, Weibull, lognormal, or Gumbel, or the generalised gamma distribution fitted in Section <span class="math inline">\(\ref{DA}\)</span>.
+In doing so we accept that the probability of seeing an extremely long lifetime under the assumed model is negligible, so the theoretical approximation is good enough for practical purposes.
+Alternatively, we could truncate the survival distribution at a (large) finite value, thus creating a distribution with <span class="math inline">\(\tau_F&lt;\infty\)</span>, as is often done in simulations; but then in practice there arises the question of where the truncation should be.
+We do not address this issue here.</p>
+<p>%Theorem 3.2 in Maller and Zhou (1996) proposes a consistent estimator for <span class="math inline">\(\tau_H\)</span>:</p>
+<p>We discuss the issue of the finiteness or otherwise of the right extremes further in Section <span class="math inline">\(\ref{??}\)</span>.</p>
+<p>In this section we review some of the methodological advances that have been made in recent years and how they can be used to calculate distributions of statistics we are interested in.
+Calculation of exact distributions (under the iid censoring model) allows for a rigorous investigation
+of their properties and makes unnecessary the need for simulations of percentage points.
+%, though in practice the unknown distributions
+%(or their parameters) implicit in <span class="math inline">\(\eqref{Qdis}\)</span>
+%–<span class="math inline">\(\eqref{Qdis4}\)</span> %%and <span class="math inline">\(\eqref{12a}\)</span>
+%must be estimated or postulated.</p>
+<p>A key structural result obtained in
+is that, conditional on the value of the largest uncensored survival time, and knowing the number of censored observations exceeding this time,
+the sample partitions into two independent subsamples, each subsample having
+the distribution of an iid sample of censored survival times, of reduced size, from truncated random variables.
+This result provides valuable insight and intuition into the construction of samples of censored survival data,
+and facilitates the calculation of explicit finite sample formulae.</p>
+<p>%
+%To state the splitting result, we adopt the convention that for a
+%non-negative random variable <span class="math inline">\(X\)</span> and Borel set <span class="math inline">\(B\subset %\R_+\)</span>
+% with <span class="math inline">\(P(B)&gt;0\)</span>,
+% $(X|XB) $ is a random variable with distribution
+%<span class="math display">\[\begin{equation}\label{e: conditDistn}
+%  P(X\in A|X\in B)=P(X\in A\cap B)/P(X\in B),
+%  \quad A\subset \R_+,\,A
+%\text{ Borel}.\end{equation}
+
+Recall the notation in Section \ref{nii}.
+The splitting theorem tells us that
+the sample $S_n:=\{T_i,1\le i\le n\}$  partitions into disjoint sets as follows:
+\be \label{e:partition}
+  S_n
+  %=\{T_i,1\le i\le n\}=
+%  &amp;\{M_u(n) \}\cup  \{T_i:i\leq n\; \&amp;\;
+%                           T_i&lt;M_u(n)\}\nonumber\\
+%&amp;  \qquad \qquad
+%  \cup
+%                           \{T_i:i\leq n \;\&amp; \; T_i&gt;M_u(n)\}\nonumber\\
+  =S_n^&lt; \cup \{M_u(n)\} \cup S_n^&gt;
+\ee
+(we keep $n\ge 3$),
+where the component sets are
+\be\label{none}
+S_n^&lt; :=  \{T_i:i\leq n\ {\rm and}\  T_i&lt;M_u(n)\}
+\ee
+and
+\be\label{non}
+S_n^&gt; :=   \{T_i:i\leq n\ {\rm and}\   T_i&gt;M_u(n)\}.
+\ee
+They have the following properties.
+On $\{M_u(n)&gt;0\}$, let
+\be\label{Nd1}
+N_c^&gt;(M_u(n)):= \{{\rm number\ of\ censored\ observations\ exceeding}\  M_u(n)\},
+\ee
+%so that  
+%\ben
+%\{N_c^&gt;(M_u(n))=r\}= \{C_{(n-r)}=1, C_{(n-r+1)} =\cdots=C_{(n)}=0\}, \ 1\le  r\le n-1.
+%\een
+where by convention we set
+\ben %\label{Nd2}
+\{N_c^&gt;(M_u(n))=0\}
+=\{M_u(n)= M(n)\}
+=
+\{{\rm largest\ observation\ uncensored} \}
+%\{C_{(n)}=1\},
+\een
+and
+\ben %\label{Nd3}
+\{N_c^&gt;(M_u(n))=n\}=
+\{{\rm all}\ n\ {\rm observations\ censored} \}.
+% = \{C_1=\cdots=C_n=0\}.
+\een
+%On $\{N_c^&gt;(M_u(n))=0\}$ we set $M_u(n)=M(n)$, and
+On $\{N_c^&gt;(M_u(n))=n\}$ set $M_u(n)=0$.
+%Note that $M_u(n)=T_{n- N_c^&gt;(M_u(n))}$, so  $n- N_c^&gt;(M_u(n))$ is the index of the largest uncensored observation among the ordered observations.
+Then,  conditional on knowing that $ M_u(n)=t&gt;0$ and  $N_c^&gt;(M_u(n))=r$,
+%%$r$  censored  observations exceed $ M_u(n)$, $0\le r\le n-1$,
+the set $S_n^&lt;$ consists of $n-r-1$ iid variables with distribution that
+of $T_1$,  conditional on $T_1&lt;t$;
+     and the set $S_n^&gt;$ consists of $r$ iid variables with tail function
+     \begin{equation}\label{e:censort_tail}
+P(T_1^{&gt;,c}(t) &gt;x):=    \frac{\int_x^\infty \Fbar^*(s) G(ds)}{\int_t^\infty \Fbar^*(s)
+       G(ds)},\quad x\geq t,\end{equation}\]</span>
+which is the distribution tail of a censored observation conditional on being bigger than <span class="math inline">\(t\)</span>.
+%% (See Eq. (2.13) in .)
+Furthermore, <span class="math inline">\(S_n^&lt;\)</span> and <span class="math inline">\(S_n^&gt;\)</span> are conditionally independent given
+$ M_u(n)=t$ and <span class="math inline">\(N_c^&gt;(M_u(n))=r\)</span>.
+Note that observed lifetimes less
+than <span class="math inline">\(M_u(n)\)</span> may be either censored or uncensored but observed
+lifetimes greater than <span class="math inline">\(M_u(n)\)</span> are necessarily censored.</p>
+% is contained in the next theorem and proved in Section <span class="math inline">\(\ref{pfs}\)</span>. Theorem <span class="math inline">\(\ref{th1}\)</span> also contains the distribution in <span class="math inline">\(\eqref{j0}\)</span> needed for later calculations.
+%Let $_{F}= {t&gt;0:F(t)&lt;1} $ be the right endpoint of the support of the cdf <span class="math inline">\(F\)</span>, and similarly define <span class="math inline">\(\tau_G\)</span>, <span class="math inline">\(\tau_H\)</span> and <span class="math inline">\(\tau_{F^*}\)</span>.<br />
+%
+%
+<p><br />
+(i) 
+%Note that <span class="math inline">\(\eqref{JD}\)</span> is consistent with the fact that <span class="math inline">\(0\le M_u(n)\le M(n)\le \tau_H\)</span>, always,
+%and that
+There is no probability mass outside the region <span class="math inline">\([0,\tau_H]\times [0,\tau_H]\)</span> so the distribution in <span class="math inline">\(\eqref{JD}\)</span> equals 1 for
+$ t&gt;_H$, <span class="math inline">\(x&gt;\tau_H\)</span>.
+Likewise the distribution in <span class="math inline">\(\eqref{4g}\)</span> equals 1 for
+$ t&gt;_H$.</p>
+<p>Note also that Lines 2 and 3
+on the RHS of <span class="math inline">\(\eqref{JD}\)</span> include the value for <span class="math inline">\(t=0\)</span>;
+there is mass on the interval <span class="math inline">\(\{t=0\}\times [0\le x\le \tau_H]\)</span>, as given by the first line on the RHS of <span class="math inline">\(\eqref{JD}\)</span>.
+%Illustrative plots of the distributions of <span class="math inline">\(M(n)\)</span> and <span class="math inline">\(M_u(n)\)</span>
+%are in (supplementary to ).</p>
+<p>(ii) 
+$M_u(n) $ has the distribution of the maximum of <span class="math inline">\(n\)</span> iid copies of a rv with distribution <span class="math inline">\(J\)</span> on <span class="math inline">\([0,\infty)\)</span>.
+The distribution has mass <span class="math inline">\(\big(\int_{z=0}^{\tau_H} \Fbar^* (z)\rmd G(z)\big)^n\)</span> at 0 corresponding to all observations being censored.
+%(It may seem pedantic to include these degenerate cases but they are important for checking that distributions are proper (have total mass 1).)</p>
+<p>The right extreme <span class="math inline">\(\tau_J\)</span> of the distribution <span class="math inline">\(J\)</span> may be strictly less than <span class="math inline">\(\tau_G\)</span>; in fact, we have <span class="math inline">\(\tau_J=\tau_{F}\wedge \tau_G\)</span>.
+%, as is derived in the proof of Theorem <span class="math inline">\(\ref{th4a}\)</span>.
+No uncensored observation, including the sample maximum of the uncensored observations, can exceed the smaller of <span class="math inline">\(\tau_{F}\)</span> and <span class="math inline">\(\tau_G\)</span>.
+% consistent with the fact that <span class="math inline">\(\tau_J=\tau_{F}\wedge \tau_G\)</span>.
+Note that, in general, <span class="math inline">\(\tau_J\ne \tau_H=\tau_{F^*}\wedge \tau_G\)</span>.
+We always have <span class="math inline">\(H(\tau_H)=1\)</span>, <span class="math inline">\(G(\tau_G)=1\)</span> and <span class="math inline">\(F(\tau_{F})=1\)</span>;
+when <span class="math inline">\(p=1\)</span>, so that <span class="math inline">\(F^*\equiv F\)</span>, then <span class="math inline">\(F^*\)</span> has total mass 1 and <span class="math inline">\(\tau_{F^*}=\tau_{F}\)</span>;
+when <span class="math inline">\(p&lt;1\)</span> we have <span class="math inline">\(\tau_{F^*}=\infty\)</span>, and <span class="math inline">\(\tau_{F}\le \tau_{F^*}\)</span>,
+with the possibility that <span class="math inline">\(\tau_{F}&lt; \tau_{F^*}\)</span>.
+%See Figure <span class="math inline">\(\ref{fig:2}\)</span> %%and <span class="math inline">\(\ref{fig:7}\)</span>
+%for plots of the distribution of <span class="math inline">\(M_u(n)\)</span>.</p>
+<p>(iii)  %<span class="math inline">\(\eqref{4h}\)</span> is correct of course since
+<span class="math inline">\(M(n)\)</span> has the distribution of the maximum of <span class="math inline">\(n\)</span> iid copies of a rv with distribution <span class="math inline">\(H\)</span> on <span class="math inline">\([0,\tau_H]\)</span>; namely,
+P(M(n)x)=H^n(x), 0x_H.
+%
+%(iv) The conditional distributions of <span class="math inline">\(M(n)\)</span> given <span class="math inline">\(M_u(n)\)</span> and <span class="math inline">\(N_c^&gt;(M_u(n))\)</span>, and of <span class="math inline">\(M(n)\)</span> given
+%<span class="math inline">\(M_u(n)\)</span>, are stated in Section <span class="math inline">\(\ref{pfs}\)</span> following the proof of Theorem <span class="math inline">\(\ref{th1}\)</span>.</p>
+<p>%Since <span class="math inline">\(M(n)\)</span> is the maximum of the <span class="math inline">\(n\)</span> i.i.d rvs <span class="math inline">\((T_i)_{1\le i \le n}\)</span> with distribution <span class="math inline">\(H(t)\)</span>, we know immediately that
+% <span class="math inline">\(P(M(n)\le t)= H^n(t)\)</span>, <span class="math inline">\(t&gt;0\)</span>.
+Also important are the length of the time interval between the largest uncensored survival time and the largest survival time, and the ratio of those times. For them
+we have the following distributions.</p>
+<p><br />
+(i)  
+Setting <span class="math inline">\(u=0\)</span> in <span class="math inline">\(\eqref{12a}\)</span> we see that the distribution of the difference $M(n) - M_u(n) $ has mass at 0 of
+P( M(n) - M_u(n) =0 )=P( M(n) = M_u(n) )
+=
+n_{t=0}^{_H}H^{n-1}(t) (t) F<sup><em>(t).
+This is the probability that the largest observation is uncensored (, Eq. (3.21), p.49).
+%while setting <span class="math inline">\(u=\tau_H\)</span> in <span class="math inline">\(\eqref{12a}\)</span> and observing that
+%
+%H(t)= ^</em>(t)G(t)+(t)F</sup>*(t),
+%
+%we can check that the total mass is 1 by doing the integration
+%
+%&amp;&amp;
+%n_{t=0}<sup>{<em>H}
+% (</em>{z=t}</sup>{<em>H} ^<em>(z) G(z) +H(t))^{n-1} (t) F^</em>(t)
+%&amp;&amp;
+%=
+% (</em>{z=t}^{_H} ^*(z) G(z) +H(t))^{n} |_{t=0}^{_H}
+%=
+%H<sup>n(<em>H) - (</em>{z=0}</sup>{_H} ^*(z) G(z))^n
+%
+%&amp;&amp;=
+%1- (_{z=0}^{_H} ^*(z) G(z))^n.
+%
+%Taking <span class="math inline">\(u=\tau_H\)</span> in the second term on the RHS of <span class="math inline">\(\eqref{12a}\)</span>
+%and adding this to the RHS of <span class="math inline">\(\eqref{12d}\)</span> we get 1.
+See %Figures <span class="math inline">\(\ref{fig:4}\)</span> and <span class="math inline">\(\ref{fig:5}\)</span><br />
+for illustrative plots of the distributions in <span class="math inline">\(\eqref{12a}\)</span> and <span class="math inline">\(\eqref{12b}\)</span>
+(supplementary to ).
+%of <span class="math inline">\(M(n)-M_u(n)\)</span> and <span class="math inline">\(M_u(n)/M(n)\)</span>.</p>
+<p>%(ii) 
+%The denominator in <span class="math inline">\(\eqref{12b}\)</span> multiplied by <span class="math inline">\(n\)</span>
+%is the expression on the LHS of <span class="math inline">\(\eqref{12d}\)</span> and equal to <span class="math inline">\(P(M_u(n)&gt;0)\)</span> as can be seen from <span class="math inline">\(\eqref{4g}\)</span>.</p>
+<p>%In Maller and Zhou (1996) and etc. we calculated distributions of various quantities of interest related to the above rvs, and, also, for example, the probability that the largest observation is censored,
+%<span class="math inline">\(P(C_{(n)}=1)\)</span>.
+%Under some assumptions we found their limits as <span class="math inline">\(n\to\infty\)</span>, and how these depend on the interplay between <span class="math inline">\(F^*\)</span> and <span class="math inline">\(G\)</span> and their tails, <span class="math inline">\(\Fbar^*\)</span> and <span class="math inline">\(\Gbar\)</span>.<br />
+%In the present paper we concentrate on <span class="math inline">\(M(n)\)</span> and <span class="math inline">\(M_u(n)\)</span>, and the difference between them.</p>
+<p>%%%% 
+%\begin{example}
+%\end{example}</p>
+<p>%The results in Subsection <span class="math inline">\(\ref{ssT}\)</span> are obtained in Section <span class="math inline">\(\ref{pfs}\)</span> as special cases of the formulae for the joint distributions of <span class="math inline">\(M(n)\)</span>, $M_u(n) $ and <span class="math inline">\(N_c^&gt;(M_u(n))\)</span> which we derive there.</p>
+<p>Besides the definition of <span class="math inline">\(N_c^&gt;(M_u(n))\)</span> in <span class="math inline">\(\eqref{Nd1}\)</span>,
+we need notation for the numbers of censored observations
+smaller or greater than <span class="math inline">\(M_u(n)\)</span>.
+%%, the largest uncensored survival time in the sample.
+Let
+N_u(n)
+:=
+{{} },
+and when <span class="math inline">\(N_u(n)&gt;1\)</span>, define
+<span class="math display">\[\begin{align}\label{Nd4}
+&amp;
+N_u^&lt;(M_u(n))\cr
+&amp;:=
+\{{\rm number\ of\ uncensored\ observations\ strictly \ less\ than}\  M_u(n)\}
+\end{align}\]</span>
+and
+N_c^&lt;(M_u(n)):= {{}<br />
+M_u(n)}.
+On <span class="math inline">\(\{N_u(n)=1\}\)</span>, set <span class="math inline">\(N_u^&lt;(M_u(n))=N_c^&lt;(M_u(n))=0\)</span>.
+When <span class="math inline">\(N_u(n)=0\)</span>, we do not define
+<span class="math inline">\(N_u^&lt;(M_u(n))\)</span> or <span class="math inline">\(N_c^&lt;(M_u(n))\)</span>.
+% (and of course there’s no need for a notation like <span class="math inline">\(N_u^&gt;(M_u(n))\)</span>
+%since such a number would always be 0.)
+Let
+N_c(n):
+=
+{{} }.
+We also use the notation <span class="math inline">\(\NN_n:=\{1,2,\ldots,n \}\)</span>, <span class="math inline">\(n=1,2,\ldots,\)</span>.</p>
+<p>With these definitions and conventions,
+on <span class="math inline">\(\{N_u(n)\ge 1\}\)</span> the
+<span class="math inline">\(N_u^&lt;(M_u(n))\)</span>, <span class="math inline">\(N_c^&lt;(M_u(n))\)</span> and <span class="math inline">\(N_c^&gt;(M_u(n))\)</span>
+take values in
+%
+<span class="math inline">\(\N_{n-1}\cup\{0\}\)</span>,
+satisfying
+<span class="math inline">\(N_u^&lt;(M_u(n))+N_c^&lt;(M_u(n))+ N_c^&gt;(M_u(n))=n-1\)</span>
+and <span class="math inline">\(N_c(n)= N_c^&gt;(M_u(n))+N_c^&lt;(M_u(n))\)</span>,
+and we have
+{N_u(n)=0}=
+{{} n {} } =
+{M_u(n)=0}.
+%
+%That analysis can be expanded to obtain more generally the
+%joint distribution of <span class="math inline">\(M(n)\)</span>, $M_u(n) $, $ N_c^&gt;(M_u(n))$ and <span class="math inline">\(N_c^&lt;(M_u(n))\)</span>
+%(and then $ N_u^&lt;(M_u(n))=n-1 -N_c<sup>&gt;(M_u(n))-N_c</sup>&lt;(M_u(n))<span class="math inline">\(). %This allows derivation of the joint distribution of %\)</span>N_c^&gt;(M_u(n))$, <span class="math inline">\(N_c^&lt;(M_u(n))\)</span> and <span class="math inline">\(N_u^&lt;(M_u(n))\)</span>, variables which are also useful in addressing questions of sufficient follow-up.
+%%(We could, for example, analyse the number of censored observations exceeding <span class="math inline">\(M_u(n)\)</span>, as a proportion of the total number.)
+%
+%We omit the details of this more general analysis here, %
+%but give a main</p>
+<p>The next result concerns
+the vector <span class="math inline">\((N_c^&gt;(M_u(n)), N_c^&lt;(M_u(n)), N_u^&lt;(M_u(n)))\)</span>.
+This vector is not as might be thought at first multinomially distributed, but it is, conditional on the value of <span class="math inline">\(M_u(n)\)</span>.
+We prove it as another application of the splitting property, again illustrating
+the simplicity of exposition gained by conditioning on <span class="math inline">\(M_u(n)\)</span>.
+We need some more notation.
+Define the functions
+p_c^&gt;(t)
+&amp;=&amp;
+{ _{y=t}<sup>{<em>H} ^* (y)G(y)+H(t)},
+p_c^&lt;(t)
+&amp;=&amp;
+{ </em>{y=t}</sup>{<em>H} ^* (y)G(y)+H(t)},
+p_u^&lt;(t)
+&amp;=&amp;
+{ </em>{y=t}^{_H} ^* (y)G(y)+H(t)},
+which are non-negative and %%(using <span class="math inline">\(\eqref{F^*GH}\)</span>)
+add to 1 for each <span class="math inline">\(t\in (0,\tau_H)\)</span>.
+%The integrals in the numerators of <span class="math inline">\(p_u^&lt;(t)\)</span> and <span class="math inline">\(p_c^&lt;(t)\)</span> in <span class="math inline">\(\eqref{pdefs}\)</span> are sub-distribution functions related to censored and uncensored survival times, as will be seen in Subsection <span class="math inline">\(\ref{s4}\)</span>.</p>
+<p>{<em>H}
+% (</em>{z=t}^{_H} ^<em>(z) G(z) +H(t))^{n-1} (t) F^</em>(t)}.
+%
+\end{theorem}</p>
+<p> Since <span class="math inline">\(t&gt;0\)</span> in Theorem <span class="math inline">\(\ref{th2}\)</span>, the conditioning on <span class="math inline">\(M_u(n)=t\)</span> implies
+<span class="math inline">\(M_u(n)&gt;0\)</span>, thus <span class="math inline">\(N_u(n)\ge 1\)</span>, and there is at least one uncensored observation.
+Thus <span class="math inline">\(N_u^&lt;(M_u(n))+N_c^&lt;(M_u(n))+N_c^&gt;(M_u(n))=n-1\)</span>.</p>
+<p>An immediate application of Theorem <span class="math inline">\(\ref{th2}\)</span> is to derive the finite sample distribution of the statistic <span class="math inline">\(Q_n\)</span>, used as a test for sufficient followup.
+We exhibit this in Section <span class="math inline">\(\ref{suff}\)</span>.</p>
+<p>The KME was of course not available to Boag in 1949 and he used a parametric approach, inferring the existence of cures in his population from his sample estimate of the proportion cured
+(<span class="math inline">\(c\)</span>, in his notation, obtained from a lognormal mixture fit – see our Section <span class="math inline">\(\ref{intro}\)</span>)
+and its standard error.
+(There is also an issue of the correctness of a confidence interval assessment which ignores the restriction of <span class="math inline">\(p\)</span> to <span class="math inline">\([0,1]\)</span>. Section 5.3 of contains a discussion of this.)
+The advent of the KME in 1958 was a major advance in the visualisation and analysis of survival data, and especially with reference to assessing the presence or otherwise of cures.
+But how to measure, and more importantly, rigorously estimate and test, for
+what we see in the KME?</p>
+<p>That the medical literature did and still does wrestle with this problem is illustrated for example by
+the ``mini-review’’ paper of
+, from which we quote:<br />
+%Analysis of Survival Curves: Statistical Methods Accounting for the Presence of Long-Term Survivors
+%Vera Damuzzo 1, Laura Agnoletto 2, Luca Leonardi 3, Marco Chiumente 4, Daniele Mengato 5, Andrea Messori 6
+%Affiliations expand
+%PMID: 31231609 PMCID: PMC6558210 DOI: 10.3389/fonc.2019.00453
+%Free PMC article
+%Abstract
+{}</p>
+<p>The problem of course is that with cures (possibly) present, the KME is improper and theoretical quantities such as the mean survival time or expected
+``area-under-the-curve’’ are, formally, infinite, and distributions of their sample estimates will reflect this. (See the Appendix to Chapter 3 in for some discussion.)
+A remedy is to restrict their calculation to the (proper) survival distribution of the susceptibles, but this then begs the question of how to estimate this.</p>
+<p>We can start by estimating the proportion of cured subjects in the population.
+This proportion is the complement of the susceptible proportion, of which perhaps the simplest and most intuitive estimate is <span class="math inline">\(\wh p_n\)</span>, the maximum value of the KME.
+The properties of <span class="math inline">\(\wh p_n\)</span> are explored extensively in ,
+though there are still some unknown features; we discuss one such in Subsection <span class="math inline">\(\ref{LLC1}\)</span>.
+With an estimate of the proportion of cured subjects, we can rescale the KME or a fitted parametric distribution to estimate the survival distribution of the susceptibles.</p>
+<p>As foreshadowed in Section <span class="math inline">\(\ref{ext}\)</span>, the sufficient followup condition <span class="math inline">\(\tau_F\le \tau_G\)</span> plays an important role. In the present context, we know that
+<span class="math inline">\(\wh p_n\)</span> is consistent for <span class="math inline">\(p\)</span> iff <span class="math inline">\(\tau_F\le \tau_G\)</span> (Thm.~4.1 of ), assuming <span class="math inline">\(F^*\)</span> is continuous at <span class="math inline">\(\tau_{_H}\)</span> in case <span class="math inline">\(\tau_{_H}&lt;\infty\)</span>. This result holds for all <span class="math inline">\(0&lt;p\le 1\)</span>.
+When <span class="math inline">\(0&lt;p&lt;1\)</span>,
+<span class="math inline">\(\wh p_n\)</span> is asymptotically normally distributed, as stated in the next section.</p>
+<p>%<span class="math inline">\(\wh F_n^*\)</span> and <span class="math inline">\(\wh F_n\)</span> are consistent for <span class="math inline">\(F\)</span> iff <span class="math inline">\(\tau_F\le \tau_G\)</span> on <span class="math inline">\([0,infty)\)</span>
+%(Thms. 3.8 and 4.2 of )</p>
+<p>Thm.~4.3 of gives a definitive result in the case <span class="math inline">\(p&lt;1\)</span>.
+To state it we need some more notation.
+Let <span class="math inline">\(Z(t)\)</span> be a stochastic process on <span class="math inline">\([0, \tau_{_H})\)</span> with independent increments such that for each <span class="math inline">\(t&lt; \tau_{_H}\)</span>, <span class="math inline">\(Z(t)\)</span> is normally distributed with mean 0 and finite variance
+<span class="math inline">\(v(t)\)</span>, where
+v(t) :=_{[0, t]} { dF<sup><em>(s)((1-F^</em>(s))</sup>2 (1-G(s))}.
+%%The function <span class="math inline">\(v(t)\)</span> is finite and increasing on <span class="math inline">\([0,\tau_{H})\)</span>.
+We keep <span class="math inline">\(p&lt;1\)</span> throughout this subsection.
+This means that <span class="math inline">\(\tau_{F^*}=\infty\)</span> and consequently
+<span class="math inline">\(\tau_H=\tau_{F^*}\wedge \tau_G= \tau_G\)</span>.
+%So we can replace <span class="math inline">\(\tau_H\)</span> by $ <em>G$ in <span class="math inline">\(\eqref{3.60}\)</span> and <span class="math inline">\(\eqref{3.61}\)</span>
+%and similar expressions.
+Further, since <span class="math inline">\(F(t)\)</span> attributes no mass to values <span class="math inline">\(t&gt;\tau_F\)</span>,
+the integral in <span class="math inline">\(\eqref{3.58a}\)</span> can be written
+v(t) =p</em>{[0, t]} {dF(s)((1-pF(s))^2 (1-G(s))},  0t&lt;_F.
+Assuming in addition that the integral in <span class="math inline">\(\eqref{intg}\)</span> is finite,
+we also have that <span class="math inline">\(v(\tau_G)\)</span> is finite, and recall that this implies the sufficient followup
+condition <span class="math inline">\(\tau_F\le \tau_G\)</span>.
+%the integral in <span class="math inline">\(\eqref{3.61}\)</span> need only run to <span class="math inline">\(\tau_F\)</span>, and</p>
+<p>The next theorem, Theorem 4.3 of , is based on Theorem 4.2.3 of .</p>
+<p>To apply Theorem <span class="math inline">\(\ref{ASK}\)</span> in practice, we need a sample estimate for the population quantity <span class="math inline">\(v(\tau_G)\)</span> in <span class="math inline">\(\eqref{asp&lt;1}\)</span>.
+We can obtain this from Thm.~4.4 and the discussion following it
+in .
+A consistent estimator of <span class="math inline">\(v(t)\)</span> is, under our assumptions,
+v_n(t):= <em>{i:t_i&gt;t} ,  t,
+and correspondingly a
+consistent estimator of <span class="math inline">\(v(\tau_G)\)</span> is
+v_n:= </em>{i=1}^{n-1} .
+The largest uncensored survival time <span class="math inline">\(M_u(n) \upto \tau_F\)</span> in probability as <span class="math inline">\(n\to \infty\)</span>, so <span class="math inline">\(v(t)\)</span> in <span class="math inline">\(\eqref{3.58b}\)</span> can be evaluated at time <span class="math inline">\(M_u(n)\)</span>.</p>
+<p>In the case <span class="math inline">\(p=1\)</span>, the asymptotic distribution of <span class="math inline">\(\wh p_n\)</span>,
+the maximum value of the Kaplan-Meier estimator in a sample of <span class="math inline">\(n\)</span>,
+was unknown at the time was written.
+It still remains a seemingly difficult problem.
+Here we give some partial but enlightening results.</p>
+<p>% Using the notation in Section <span class="math inline">\(\ref{nii}\)</span>, <span class="math inline">\(\wh p_n\)</span> can be written as
+%
+%p_n= 1-_{i=1}^n (1- ),
+%
+%where %% <span class="math inline">\(NAR_i := \sum_{j=1}^n {\bf 1}_\{T_j&gt;T_i\}\)</span>
+%the denominator in <span class="math inline">\(\eqref{p1}\)</span>
+%is the number of subjects at risk at time <span class="math inline">\(T_i\)</span>.
+%Using the ordered lifetimes
+%Order the lifetimes <span class="math inline">\((T_i)_{1\le i\le n}\)</span> as
+%<span class="math inline">\(T_n^{(1)}&lt; T_n^{(2)}&lt; \cdots &lt;T_n^{(n)}\)</span>
+%with associated censor indicators
+%<span class="math inline">\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)</span>,</p>
+<p>From <span class="math inline">\(\eqref{km1}\)</span> we can write the complement of <span class="math inline">\(\wh p_n\)</span> as
+1- p_n= 1-F_n(T_n^{(n)} )=
+<em>{i=1}^n (1- )
+= </em>{i=1}^n (1- ),
+where recall that <span class="math inline">\(T_n^{(1)}&lt; T_n^{(2)}&lt; \cdots &lt;T_n^{(n)}\)</span> are the ordered lifetimes
+with associated censor indicators
+<span class="math inline">\(C_n^{(1)}, C_n^{(2)}, \ldots, C_n^{(n)}\)</span>.
+Now, provided <span class="math inline">\(C_n^{(n)}=0\)</span>, we can take logs and turn the product into a sum.
+Since we are only interested in data for which the largest observation is censored, we will
+condition on the event <span class="math inline">\(\{C_n^{(n)}=0\}\)</span> throughout this discussion.
+Then from <span class="math inline">\(\eqref{p2}\)</span> we get
+|(1- p_n)|
+= <em>{i=2}^n |(1- )|
+= </em>{i=2}^n a_i C_n^{(n-i+1)},
+where <span class="math inline">\(a_i:= |\log(1-1/i)|\)</span>, <span class="math inline">\(i\ge 2\)</span>.
+By Theorem 4.1 of , <span class="math inline">\(\wh p_n \topr 1\)</span>,
+so <span class="math inline">\(|\log(1- \wh p_n)|\topr \infty\)</span> as <span class="math inline">\(n\to\infty\)</span>, and we need to determine the rate of this divergence.
+Despite its quite simple representation, it seems rather hard to analyse <span class="math inline">\(\eqref{p3}\)</span>
+in full generality.
+%\footnote{</p>
+<p>The model, also known as the proportional hazards model
+(not to be confused with Cox’s proportional hazards model),
+assumes
+(t) = (^*(t))^
+for some <span class="math inline">\(\beta&gt;0\)</span>.
+The K-G model has been criticised as being unrealistic (), nevertheless there is a substantial literature in which it is used to gain theoretical insight into the behaviour of survival models (e.g., , , Verver etc.??), and also successfully in real data analyses (e.g.??).
+We use it here similarly to get some valuable insight.
+Applied in the next lemma, the KG property greatly simplifies the analysis of <span class="math inline">\(\wh p_n\)</span>.</p>
+<p><br />
+%It is well known and easily checked
+showed that <span class="math inline">\(T\)</span> and <span class="math inline">\(C\)</span> are independent in the Koziol-Green model
+(see also ),
+%W. R. Allen, 1963. ” Letter to the Editor—A Note on Conditional Probability of Failure When Hazards are Proportional ,” Operations Research, INFORMS, vol. 11 (4), pages 658-659,
+hence
+<span class="math inline">\((T_i)_{1\le i\le n}\)</span> and <span class="math inline">\((C_i)_{1\le i\le n}\)</span> are independent.
+%Y. Y. Chen, M. Hollander &amp; N. A. Langberg (1982) Small-Sample Results for the Kaplan-Meier Estimator, Journal of the American Statistical Association, 77:377, 141-144,
+% DOI: 10.1080/01621459.1982.10477777
+Since the ordering which relabels <span class="math inline">\((T_i)_{1\le i\le n}\)</span> as <span class="math inline">\((T_n^{(i)})_{1\le i\le n}\)</span> is
+independent of <span class="math inline">\((C_i)_{1\le i\le n}\)</span>, it follows that
+<span class="math inline">\((T_n^{(i)})_{1\le i\le n}\)</span> and <span class="math inline">\((C_n^{(i)})_{1\le i\le n}\)</span> are independent.
+Specifically, let <span class="math inline">\((k_n(i))_{1\le i\le n}\)</span> be the random permutation which transforms
+<span class="math inline">\((T_i)_{1\le i\le n}\)</span> to <span class="math inline">\((T_n^{(i)})_{1\le i\le n}\)</span>, i.e.,
+<span class="math inline">\(T_n^{(i)}= T_{k_n(i)}\)</span>, <span class="math inline">\(1\le i\le n\)</span>.
+The <span class="math inline">\(k_n(i)\)</span> are independent of <span class="math inline">\((C_i)_{1\le i\le n}\)</span>, and, for <span class="math inline">\(t_i\ge 0\)</span>, <span class="math inline">\(c_i\in \{0,1\}\)</span>,
+&amp;&amp;P(T_n^{(i)}t_i, , C_n^{(i)}=c_i, , 1in)
+=
+P(T_{k_n(i)} t_i, , C_{k_n(i)}=c_i, , 1in)
+&amp;&amp;
+&amp;=&amp;
+<em>{k_1,, k_n}
+P(T</em>{k_i} t_i, , C_{k_i}=c_i, , k_n(i)=k_i, ,1in),
+where the summation is over unequal integers <span class="math inline">\(k_i\)</span>, <span class="math inline">\(1\le i\le n\)</span>.
+By independence the last summation equals
+&amp;&amp;
+<em>{j_1,, j_n}
+P(T</em>{k_i} t_i, , k_n(i)=k_i, ,1in)
+P(C_{k_i}=c_i, , 1in)
+&amp;&amp;
+&amp;=&amp;
+P(T_{k_n(i)} t_i, , 1in) _{i=1}^n P(C_1=c_i).
+Finally, on noting that
+P(C_1=1) =P(T_1^*U_1) = _0^{_h} (t) F^*(t) =
+,
+the lemma follows. </p>
+<p>As a corollary to the lemma, we get from <span class="math inline">\(\eqref{p3}\)</span>
+|(1- p_n)|
+_{i=2}^n a_i C_n^{(i)},
+where <span class="math inline">\(a_i= |\log(1-1/i)|\)</span> and the <span class="math inline">\((C_n^{(i)})\)</span> are iid, <span class="math inline">\(2\le i\le n\)</span>, for each <span class="math inline">\(n\)</span>.
+Using this, we can give a quite explicit representation for the limiting distribution of
+the centered sequence
+$|(1- p_n)| - E|(1- p_n)| $ in the Koziol-Green model.
+We have the following result.
+%%%Let <span class="math inline">\(a_i:= |\log(1-1/i)|\)</span>, <span class="math inline">\(i\ge 2\)</span>.</p>
+<p><br />
+We use Lemma 3.16, p.47, of (see also his Theorem 3.18, p.48),
+which states that the sum <span class="math inline">\(\sum_{i\ge 1} \xi_i\)</span>
+of independent random variables <span class="math inline">\(\xi_1, \xi_2, \ldots\)</span> having mean 0 and satisfying
+<span class="math inline">\(\sum_{i\ge 1} E (\xi_i^2)&lt;\infty\)</span>, converges a.s.
+Apply this with
+<span class="math inline">\(Y_i= C_n^{(i)}\)</span> and <span class="math inline">\(\xi_i:= a_i (Y_i-E(Y_i) )\)</span>, <span class="math inline">\(i\ge 1\)</span>.
+Since the <span class="math inline">\(Y_i\)</span> are iid Bernoulli and <span class="math inline">\(a_i\le 2/(i-1)\)</span> for <span class="math inline">\(i\ge 2\)</span>, the convergence of the series
+<span class="math inline">\(\sum_{i\ge 1} E\big(a_i (Y_i-E(Y_i)\big)^2\)</span>
+is clear and we deduce that the rv <span class="math inline">\(Y\)</span> in <span class="math inline">\(\eqref{disy}\)</span> is finite a.s. and clearly has the specified variance.
+The infinite divisibility of <span class="math inline">\(Y\)</span> follows from…
+</p>
+<p><br />
+(i)  
+<span class="math inline">\(Y- E(Y)\)</span> has characteristic function
+<span class="math display">\[\begin{align}\label{cfy}
+Ee^{\rmi \theta (Y-E(Y))}
+&amp;=
+\prod_{j\ge 1}  
+Ee^{\rmi \theta a_j(Y_j-EY_j)} \cr
+&amp;=
+\prod_{j\ge 1} \frac{1}{\beta+1} \Big( e^{-\rmi \theta \log(1-1/j)}    +  \beta \Big)
+e^{\rmi \theta \log(1-1/j)/(\beta+1) }    \cr
+  &amp;=
+  \prod_{j\ge 1}  \frac{1}{\beta+1}
+  \Big( (1-1/j)^{-\rmi \theta\beta/(\beta+1)}    +   \beta (1-1/j)^{-\rmi \theta/(\beta+11)}  \Big). \ \
+\end{align}\]</span>\end{align}</p>
+<p><br />
+(i)  
+Some properties of <span class="math inline">\(Y\)</span> are easily deduced from <span class="math inline">\(\eqref{disy}\)</span> or <span class="math inline">\(\eqref{cfy}\)</span>.
+(e.g., moments??)</p>
+<p>(ii)<br />
+An extension of the KG model is to allow <span class="math inline">\(\beta\)</span> in <span class="math inline">\(\eqref{kgm}\)</span> to depend on <span class="math inline">\(t\)</span>
+(), but we cannot generalise Lemma <span class="math inline">\(\ref{lem2}\)</span>
+to this situation because the independence of <span class="math inline">\(T\)</span> and <span class="math inline">\(C\)</span> is also necessary for the KG model as stated in <span class="math inline">\(\eqref{kgm}\)</span>
+().
+%Zheng, G. and Gastwirth, J. L. (2001). On the Fisher information in randomly censored data.
+%Statist. Probab. Lett. 52, 421-426.</p>
+<p>A common assumption in many theoretical and practical survival analyses
+is of a uniform distribution for <span class="math inline">\(G\)</span> and an exponential distribution for <span class="math inline">\(F\)</span>:
+(t) =(1-t/){}_{{t}}
+(t) =e^{-t}, t,
+where <span class="math inline">\(\tau\equiv \tau_G=\tau_H&gt;0\)</span> and $ &gt;0$.<br />
+This setup was used in to simulate percentage points of the distribution of <span class="math inline">\(\wh p_n\)</span> in the case <span class="math inline">\(p=1\)</span> for certain typical choices of <span class="math inline">\(\tau\)</span> and <span class="math inline">\(\lambda\)</span>.</p>
+<p>The tails in <span class="math inline">\(\eqref{uc1}\)</span> are very far from the proportionality of survival and censoring distribution tails as
+in the Koziol-Green model, and the setup does not enjoy
+the independence of survival and censoring variables obtaining in that model.
+With less information we can prove less, but still we can show that
+the centered $|(1- p_n)| $ is stochastically bounded in this situation, suggesting that
+Theorem <span class="math inline">\(\ref{ASKG}\)</span> gives the right order of magnitude in this situation too.</p>
+<p><br />
+%Then a similar argument as before using Chebychev’s inequality shows that
+%
+%&amp;&amp;
+%|(1- p_n)| - E|(1- p_n)|
+%= O_P(1),
+%
+%so the centered $|(1- p_n)| $ is stochastically bounded.
+We use the notation and results in Section <span class="math inline">\(\ref{LLC}\)</span>.<br />
+Refer to formula <span class="math inline">\(\eqref{p3}\)</span>, recall that <span class="math inline">\(a_i= |\log(1-1/i)|\)</span> and write, for <span class="math inline">\(j&gt;i\)</span>,
+%%
+E( |(1- )| |(1- )|)
+&amp;=&amp;
+E(a_ia_j {}<em>{{C_n<sup>{(i)}=1,C_n</sup>{(j)}=1}})
+&amp;=&amp;
+a_ia_j P(C_n<sup>{(i)}=1,C_n</sup>{(j)}=1).  <br />
+Thus from <span class="math inline">\(\eqref{p3}\)</span>
+&amp;&amp;
+E
+|(1- p_n)|^2
+= E</em>{i=1}^n |(1- )|^2
+&amp;&amp;
+&amp;&amp; +
+2 <em>{i=1}^{n-1} </em>{j=i+1}^n
+E( |(1- )| |(1- )|)
+&amp;&amp;
+&amp;&amp;=
+<em>{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+2</em>{i=1}^{n-1} <em>{j=i+1}^n
+a_ia_j
+P(C_n^{(i)} =1, , C_n^{j}=1 ).
+Also
+&amp;&amp;
+E^2|(1- p_n)|=(</em>{i=1}^n a_i P(C_n^{(i)}=1 ) )^2
+&amp;&amp;
+&amp;&amp; =
+<em>{i=1}^n a_i^2 P<sup>2(C_n</sup>{(i)}=1 )+
+2</em>{i=1}^{n-1} <em>{j=i+1}^n
+a_ia_j
+P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+Subtracting <span class="math inline">\(\eqref{k12}\)</span> from <span class="math inline">\(\eqref{k11}\)</span> we see that
+&amp;&amp;{}( |(1- p_n)|)=
+E|(1- p_n)|^2 -E^2|(1- p_n)|
+&amp;&amp;
+&amp;&amp;
+</em>{i=1}^n P(C_n^{(i)}=1 ) (1- P(C_n^{(i)}=1 ))
++
+2<em>{i=1}^{n-1} </em>{j=i+1}^n
+P(C_n^{(i)} =1, , C_n^{j}=1 ).
+&amp;&amp;
+</p>
+<p>%
+%From <span class="math inline">\(\eqref{c6}\)</span>
+%
+%&amp;&amp;
+%<em>{i=1}^n
+%
+%=
+%</em>{i=1}^n {n i} <em>{t=0}^{}
+% ^{i-1}(t) H^{n-i}(t) (t) t
+% &amp;&amp;
+% &amp;&amp;=
+% </em>{t=0}^{}
+%(1- (1-t/)e^{-t} )^n t
+%&amp;&amp;
+%&amp;&amp;
+%,  {} n.
+%
+To estimate the bivariate term in <span class="math inline">\(\eqref{uc5a}\)</span>, reverse the order of summation and consider first the summation over <span class="math inline">\(i\)</span>.
+Using <span class="math inline">\(\eqref{c6}\)</span> we calculate
+%
+&amp;&amp;
+<em>{i=1}^{j-1}
+&amp;&amp;=
+</em>{i=1}^{j-1}
+&amp;&amp;
+<em>{t_1=0}^{} </em>{t_2=0}^{t_1}
+^{i-1}(t_1) H^{n-j}(t_2) ((t_2)- (t_1) )^{j-i-1} K(t_1)K(t_2)
+&amp;&amp;
+&amp;&amp;=
+<em>{i=1}^{j-1}
+&amp;&amp;
+^2 </em>{t_1=0}^{} <em>{t_2=0}^{t_1}
+( (1-t_1/)e^{-t_1} )^{i} (1- (1-t_2/)e^{-t_2} )^{n-j}
+&amp;&amp;
+&amp;&amp;
+( (1-t_2/)e^{-t_2} - (1-t_1/)e^{-t_1} )^{j-i-1}
+(1-t_2/)e^{-t_2} t_1 t_2.
+Performing the summation we get
+%%
+&amp;&amp;
+</em>{i=1}^{j-1}
+&amp;&amp;
+&amp;&amp;=
+<em>{t_1=0}^{} </em>{t_2=0}^{t_1}
+(1- (1-t_2/)e^{-t_2} )^{n-j} (1-t_2/)e^{-t_2}
+&amp;&amp;
+&amp;&amp; (
+( (1-t_2/)e^{-t_2} )^{j-1}
+- ( (1-t_2/)e^{-t_2} - (1-t_1/)e^{-t_1} )^{j-1} )
+t_1 t_2.
+&amp;&amp;
+Discard the subtracted term, divide the remainder by <span class="math inline">\(j\)</span> and add over <span class="math inline">\(j\)</span> to get
+&amp;&amp;
+<em>{j=2}^{n}
+</em>{i=1}^{j-1}
+&amp;&amp;
+&amp;&amp;
+^2 <em>{j=2}^{n} {n j}
+</em>{t_1=0}^{} <em>{t_2=0}^{t_1}
+(1- (1-t_2/)e^{-t_2} )^{n-j}<br />
+( (1-t_2/)e^{-t_2} )^{j} t_1 t_2
+&amp;&amp;
+&amp;&amp;
+^2 </em>{t_1=0}^{} <em>{t_2=0}^{t_1}
+t_1 t_2 = ^2 ^2.
+Thus from <span class="math inline">\(\eqref{uc5a}\)</span> and <span class="math inline">\(\eqref{uc3a}\)</span> we see that
+<span class="math inline">\({\rm Var}\big( |\log(1- \wh p_n)|\big)\)</span>
+is bounded above by
+</em>{i} P(C_n^{(i)}=1 ) (1- P(C_n^{(i)}=1 )
++^2 ^2
+and hence is finite.
+Then by Chebychev’s inequality we conclude that <span class="math inline">\(\eqref{OP1}\)</span> holds and
+the centered $|(1- p_n)| $ is stochastically bounded.
+</p>
+%
+<p>%<span class="math inline">\(\eqref{k9}\)</span> already gives some useful information concerning <span class="math inline">\(\wh p_n\)</span>.
+%We weaken the independence assumption to
+Assuming the pairwise independence of the <span class="math inline">\(C_n^{(i)}\)</span>, i.e., that
+P(C_n<sup>{(i)}=1,C_n</sup>{(j)}=1)
+= P(C_n<sup>{(i)}=1)P(C_n</sup>{(j)}=1),   j&gt;i,
+allows some calculations like in the previous subsection to be carried out, and we can again show that
+the centered $|(1- p_n)| $ is stochastically bounded.
+We omit the details of this as it’s not clear when the pairwise independence assumption holds.</p>
+<p>%This already gives very useful information concerning <span class="math inline">\(\wh p_n\)</span>.
+%Note that, then,
+%
+%&amp;&amp;
+%E (C_n<sup>{(i)}C_n</sup>{(j)}) =
+%P(C_n<sup>{(i)}=1,C_n</sup>{(j)}=1)
+%&amp;&amp;
+%&amp;&amp;
+%= P(C_n<sup>{(i)}=1)P(C_n</sup>{(j)}=1)
+%= E(C_n^{(i)}) E(C_n^{(j)}),   j&gt;i.
+%
+%Recall that <span class="math inline">\(a_i=|\log(1-1/i)|\)</span>, <span class="math inline">\(i\ge 1\)</span>. Then for <span class="math inline">\(j&gt;i\)</span>
+%
+%E( |(1- )| |(1- )|)
+%&amp;=&amp;
+%E(a_ia_j {}<em>{{C_n<sup>{(i)}=1,C_n</sup>{(j)}=1}})
+%&amp;=&amp;
+%a_ia_j P(C_n<sup>{(i)}=1,C_n</sup>{(j)}=1),  <br />
+%
+%while from <span class="math inline">\(\eqref{p3}\)</span>
+%
+%&amp;&amp;
+%E
+%|(1- p_n)|^2
+%= E</em>{i=1}^n |(1- )|^2
+%&amp;&amp;
+%&amp;&amp; +
+%2 <em>{i=1}^{n-1} </em>{j=i+1}^n
+% E( |(1- )| |(1- )|)
+% &amp;&amp;
+% &amp;&amp;=
+%<em>{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+% 2</em>{i=1}^{n-1} <em>{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1, , C_n^{j}=1 ).
+%
+%In view of <span class="math inline">\(\eqref{p2}\)</span> this equals
+%
+%</em>{i=1}^n a_i^2 P(C_n^{(i)}=1 ) +
+% 2<em>{i=1}^{n-1} </em>{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+%
+%Also
+%
+%&amp;&amp;
+%E^2|(1- p_n)|=(<em>{i=1}^n a_i P(C_n^{(i)}=1 ) )^2
+%&amp;&amp;
+%&amp;&amp; =
+%</em>{i=1}^n a_i^2 P<sup>2(C_n</sup>{(i)}=1 )+
+% 2<em>{i=1}^{n-1} </em>{j=i+1}^n
+% a_ia_j
+%P(C_n^{(i)} =1) P(C_n^{j}=1 ).
+%
+%Subtract <span class="math inline">\(\eqref{k12}\)</span> from <span class="math inline">\(\eqref{k12b}\)</span> and use <span class="math inline">\(a_i=-\log(1-1/i)\le 1/i\)</span> to get
+%
+%{}( |(1- p_n)|)
+%&amp;=&amp;
+%<em>{i=1}^n a_i^2 P(C_n^{(i)}=1 )(1- P(C_n^{(i)}=1 ) )
+%&amp;&amp;
+%&amp;=&amp;
+%
+%</em>{i=1}^n a_i^2
+%
+%_{i=1}^n c&lt; .
+%&amp;&amp;
+%
+%Consequently
+%
+%E(|(1- p_n)| - E|(1- p_n)| )^2
+%=
+%{}( |(1- p_n)|) c&lt; ,
+%
+%
+%and by Chebychev’s inequality we conclude that
+%
+%&amp;&amp;
+%|(1- p_n)| - E|(1- p_n)|
+%= O_P(1),
+%
+%thus the centered $|(1- p_n)| $ is stochastically bounded.</p>
+In Section <span class="math inline">\(\ref{ext}\)</span> we quantified the idea of ``sufficient followup’’ as the condition <span class="math inline">\(\tau_F\le \tau_G\)</span> .
+%
+<p>As a test statistic for sufficient follow-up we focus on the statistic <span class="math inline">\(Q_n\)</span> proposed in .
+This is defined as follows.
+In a sample of size <span class="math inline">\(n\)</span>, let <span class="math inline">\(M(n)\)</span> be the largest observed survival time and let <span class="math inline">\(M_u(n)\)</span> be the largest observed {} survival time.
+%%With all survival times necessarily in <span class="math inline">\([0,M(n)]\)</span>, a number
+Let <span class="math inline">\(N_u(n)\)</span> be the number of
+uncensored survival times, necessarily in <span class="math inline">\([0,M_u(n)]\)</span>, let
+<span class="math inline">\(N_c^&lt;(n)\)</span> be the number of censored survival times in <span class="math inline">\([0,M_u(n))\)</span>, and let <span class="math inline">\(N_c^&gt;(n)\)</span> be
+the number of censored survival times in <span class="math inline">\((M_u(n), M(n)]\)</span>.
+Thus there is a total of <span class="math inline">\(N_c(n)=N_c^&lt;(n)+N_c^&gt;(n)=n-N_u(n)\)</span> censored survival times in the sample.
+Set <span class="math inline">\(\Delta_n:= 2M_u(n)-M(n)\)</span>.
+As in , p.81,
+%
+define
+Q_n
+&amp;=&amp; #{{}[_n, M_u(n)) }
+&amp;&amp;
+&amp;=&amp;
+#{{} 2M_u(n)-M(n) }.
+(Note that we exclude <span class="math inline">\(M_u(n)\)</span> itself when counting the number of
+uncensored observations greater than <span class="math inline">\(\Delta_n\)</span>.)], and for any 8 and 8’ E 6,
+%if p’ F, (t) = pF, (t) for any t E [0, TI, then (p’, 8’) = (p, 8).
+%2. In the two components mixture case: For any p =(<sub>,q)</sub> and
+%p’ = qOT E Y2 and for any x = (OT, &lt;T)T and xi = (elT, E A
+%such that 8 # 5,
+%if pIT (3,. (t) = pT Om (t) for any t E [0, T] then
+%(p’, x’) E fl if p # 0 and q # 0.
+%(p’, q’; 8’) = (p, 0; 8) if q = 0 when F, # F n 2.
+%min [lip’ - p, q’; 8’ - 811, ii p’, q’ - p; 5’ - 0111 = 0 if q = 0, when F, E
+%9 n 2 and 8’ # &lt;‘.
+%(p’q’; r) = (0, q; 5) if p = 0, when F; E F n 2.
+%min[/p’-q,qr;8’-(!.lpt,q’,-q;(’-&lt;/]=Oifp=O, when F&lt;E
+%9 n X and 8’ # 5’.
+%370 M. LEMDANI AND 0. PONS
+%We describe here all the possible cases involving a susceptibility
+%ratio problem with one or two factors. The generalization to more
+%than two factors is straightforward. We summarize the identifiability
+%assumption for all these situations by the following equivalence
+%if P’~ O, (t) = pT 0, (t) for any t E [O,Z], then (p’, r”)?’ - (p,
+%We shall then consider two equivalent parameters as two versions
+%of the same parameter, up to a permutation of their components.
+%Assumption A, implies a similar identifiability result for the hazard
+%function. It will be used in the following form
+%LEMMA 2Under C, and A,, if lim,+, suptEl-, .,I i ,m,,n (t) - j.,;,(t)l = 0.
+%then there is a cersion of (p,,~,), which converges to a limit
+%(P,x”)-(p,~) as n-tx.
+%Proof Suppose that limn_, <sub>up,,</sub>,,,,)~ (t) - .,, (t)J = 0. By condition %, and the dominated convergence theorem, for any t E[O,T],
+%lim ,,+, log [l - p: @,” (t)] = log [I - pTO, (t)] and therefore lim ,
+%p: Ox, (t) = pT 0, (t). By boundedness of 9, and using if necessary a
+%permutation of the components of (p,, r,),, from any subsequence
+%(p,, r,), of (p,, r,), one can extract a convergent subsequence (p, , r, ),
+%having a limit (p<em>, r</em>) that satisifes P*~ @,, (t) = PT O,(t) for any
+%t E [0, z]. Under A,, this yields the required result.
+%We can now prove the following consistency property, where the
+%type of convergence depends on the model and on the value of p, in
+%the case of k components, as described above.
+%THEOREM 1 Under the assumptions C,, A,, A,, and under H,, (b,, 4,)
+%concerges in probability to a limit equicalent to (p,, r,) as n -t x.
+%Proof For p = (p; r), let K, (&amp;) = n- ’ [log L, (p; x) - log L,(p,; x,)]
+%and let
+%(i) = [: fog [=] 2, (s) - i” ;., (s) + 1 ] p: q, (r)C(s) ds.
+%We have
+%MIXTURE MODELS FOR CENSORED SURVIVAL DATA 371
+%From proposition 1, lim, supp 1 K, (Ap) – KO (&amp;) 1 = 0. Moreover, according to the concavity of the logarithm function, KO is maximal for . A
+%r. = /., and of course KO (Lo) = 0. It follows that K, (3,8,) -0 in probability as n + x. Then,
+%hence KO (it,,) + 0 in probability as 11 + x. Then, using again the concavity of logarithm function we conclude that <sub>up,i</sub>~~,, (t) 5 0 which,]
+%Suppose <span class="math inline">\(F\)</span> is Uniform<span class="math inline">\([0,\tau_{F}]\)</span> and <span class="math inline">\(G\)</span> is Uniform<span class="math inline">\([0,\tau_G]\)</span>.
+Recall we assume that <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are continuous distributions.
+We have the following limiting distributions in cases of interest.
+ Assume <span class="math inline">\(\tau_{F}&lt; \tau_G&lt;\infty\)</span> and <span class="math inline">\(0&lt;p&lt;1\)</span>,
+so that <span class="math inline">\(\tau_J=\tau_{F}&lt; \tau_H= \tau_G&lt;\tau_{F^*}=\infty\)</span>.
+Suppose in addition that, as <span class="math inline">\(z\dto 0\)</span>,
+(<em>G-z)=a_G (1+o(1)) z^L_G(z)
+ {}<br />
+<em>0(</em>{F}-z)= a</em>{F}(1+o(1)) z^L_{F}(z),
+where <span class="math inline">\(a_G, a_{F}, \gamma, \beta\)</span> are positive constants and <span class="math inline">\(L_G(z)\)</span> and <span class="math inline">\(L_{F}(z)\)</span> are slowly varying as <span class="math inline">\(z\dto 0\)</span>.
+Then the random variables
+<span class="math inline">\(a_n(\tau_G- M(n))\)</span> and <span class="math inline">\(b_n(\tau_{F}- M_u(n))\)</span> are asymptotically independently %exponentially
+distributed with marginal cdfs, respectively,
+&amp;&amp;
+1- e^{- (1-p) a_Gu^}
+ {} 
+1 - e^{- pa_{F}(_{F})v^},  u, v,
+for any choice of norming sequences satisfying $a_n(nL_G(1/a_n)) ^{1/} $
+and
+<span class="math inline">\(b_n\sim n^{1/\beta}L_{F}(1/b_n)\)</span>, as <span class="math inline">\(n\to\infty\)</span>.</p>
+<p> Assume <span class="math inline">\(\tau_{F}&lt;\tau_G&lt;\infty\)</span> and <span class="math inline">\(p=1\)</span>,
+so that <span class="math inline">\(F\equiv F\)</span> and <span class="math inline">\(\tau_J=\tau_{F}= \tau_{F^*}=\tau_H&lt;\tau_G&lt;\infty\)</span>.
+Suppose in addition that, as <span class="math inline">\(z\dto 0\)</span>,
+(<em>G-z)=a (1+o(1)) z^L(z)
+ {}<br />
+<em>0(</em>{F}-z)= a(1+o(1)) z^L(z),
+where <span class="math inline">\(a\)</span> and <span class="math inline">\(\beta\)</span> are positive constants and <span class="math inline">\(L(z)\)</span> is slowly varying as <span class="math inline">\(z\dto 0\)</span>.
+Choose <span class="math inline">\(a_n\)</span> to satisfy
+$a_n(nL(1/a_n)) ^{1/} $.
+%(and now $b_n(nL</em>{F}(1/b_n)) ^{1/} $).
+Then, for $ 0uv$,
+<em>{n}
+P( a_n(</em>{F}- M(n))u, , a_n(<em>{F}- M_u(n))v )=1- e^{- a (</em>{F}) u^}.
+%%,  u,v.
+%%=1- e^{- a_{F} u^(<em>{F})}.
+%%&amp;&amp;
+%&amp;&amp;=
+% 1
+%%%%%%%%%%%+ e^{- a</em>{F} (u<sup>,v</sup>) (<em>{F})}
+%- e^{- a</em>{F} u^(<em>{F})},  u,v.
+%%%%%%%%%%%%- e^{- a</em>{F} v^(_{F})},  u,v.
+</p>
+<p> Assume <span class="math inline">\(\tau_G&lt;\tau_{F}\le \infty\)</span> and <span class="math inline">\(0&lt;p\le 1\)</span>,
+so that <span class="math inline">\(\tau_J= \tau_H= \tau_G&lt;\tau_{F}\le \tau_{F^*}\le \infty\)</span>,
+and assume that
+the first relation in
+<span class="math inline">\(\eqref{FGD}\)</span> holds.
+Suppose in addition that, in a neighbourhood of <span class="math inline">\(\tau_G\)</span>, <span class="math inline">\(F\)</span> has a density <span class="math inline">\(f\)</span> which is positive and continuous at <span class="math inline">\(\tau_G\)</span>.
+Take <span class="math inline">\(a_n\)</span> to satisfy
+$a_n(nL_G(1/a_n)) ^{1/} $ and <span class="math inline">\(b_n\)</span> to satisfy <span class="math inline">\(b_n\sim (nL_{F}(1/b_n))^{\frac{1}{1+\gamma}}\)</span>.
+Then <span class="math inline">\(a_n(\tau_G- M(n))\)</span> and <span class="math inline">\(b_n(\tau_G- M_u(n))\)</span> are asymptotically independently distributed with
+%%marginal exponential and Weibull distributions; specifically, having
+marginal cdfs, respectively,
+&amp;&amp;
+1- e^{-a_G (1-pF(_G))u^}
+ {} 
+1 - e^{-p a_G f(_G) v^{1+}/(1+)},  u,v.
+%Furthermore, this result remains true under the same assumptions when <span class="math inline">\(\tau_{F}=\infty\)</span>.
+%Thus, <span class="math inline">\(n(\tau_J- M(n))\)</span> and <span class="math inline">\(\sqrt{n}(\tau_H- M_u(n))\)</span> are asymptotically independently distributed with exponential and Weibull distributions, respectively.<br />
+%
+% 
+%The result in Case 3 remains true under the same assumptions when <span class="math inline">\(p=1\)</span>, specifically,
+% <span class="math inline">\(a_n(\tau_G- M(n))\)</span> and <span class="math inline">\(b_n (\tau_G- M_u(n))\)</span> are then asymptotically independently distributed with marginal distributions
+%$ 1- e^{- a_G_0(_G)u^}$, <span class="math inline">\(u&gt;0\)</span>, and
+%<span class="math inline">\(1 - e^{-a_G f(\tau_G) v^{1+\gamma}}\)</span>, <span class="math inline">\(v&gt;0\)</span>,
+% respectively, for the same choices of <span class="math inline">\(a_n\)</span> and <span class="math inline">\(b_n\)</span>.
+%The result also remains true under the same assumptions when <span class="math inline">\(\tau_{F}=\infty\)</span>.</p>
+<p>
+In any case we have <span class="math inline">\(M(n)\topr \tau_H\)</span> and $ M_u(n)_J$ as <span class="math inline">\(n\to\infty\)</span>.
+\end{theorem}</p>
+%
+%
+<p>\end{document}</p>
+<p>\end{document}</p>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cure-model on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/cure-model/</link>
+    <description>Recent content in cure-model on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/cure-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
+      <link>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/22/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
+      <description>In certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been {} for a period of time and their status at some endpoint reported.See for example the (Surveillance, Epidemiology, and End Results, US National Cancer Institute) data base, which contains a massive amount of data with extended followup on a wide range of cancers — an important source for historical data.</description>
+    </item>
+    
+  </channel>
+</rss>
