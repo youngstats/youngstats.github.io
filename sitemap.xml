@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/adaptive-experiments/</loc>
-    <lastmod>2022-10-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/graphical-models/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/statistics/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
+    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/adaptive-experiments/</loc>
     <lastmod>2022-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/causal-inference/</loc>
@@ -18,9 +33,6 @@
     <lastmod>2022-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/machine-learning/</loc>
-    <lastmod>2022-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2022-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/functional-data-analysis/</loc>
@@ -42,9 +54,6 @@
     <lastmod>2022-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</loc>
-    <lastmod>2022-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2022-09-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</loc>
@@ -78,9 +87,6 @@
     <lastmod>2022-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</loc>
-    <lastmod>2022-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</loc>

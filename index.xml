@@ -6,7 +6,60 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphical modeling of stochastic processes driven by correlated noise</title>
+      <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-28-graphical-modeling-of-stochastic-processes-driven-by-correlated-noise_files/image1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in paper &lt;span class=&#34;citation&#34;&gt;Mogensen and Hansen (&lt;a href=&#34;#ref-mogensen2022graphical&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics. These comments are enclosed in double parentheses: ((comment)).&lt;/p&gt;
+&lt;p&gt;We will use the following example as an illustration of the main ideas. Assume that we observe a herd of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; animals moving together on a plane, that is, in a two-dimensional space (or rather on a plain!). We assume that there exists an abstract center of the herd which at each time point is at &lt;span class=&#34;math inline&#34;&gt;\((0,0)\)&lt;/span&gt;. This means that all individual movement is relative to this reference point. Paper &lt;span class=&#34;citation&#34;&gt;Niu, Blackwell, and Skarin (&lt;a href=&#34;#ref-niu2016modeling&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt; describes a similar, though possibly more realistic, model of animal movement. See the gif for an example of animal movement of a small herd, &lt;span class=&#34;math inline&#34;&gt;\(n = 3\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-28-graphical-modeling-of-stochastic-processes-driven-by-correlated-noise_files/herd.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Our paper studies the use of graphs as means of representing dependence in how a set of processes evolve. In the example, how the animal movements interact. We essentially assume that there are two different ways that the animals and their movements interact: an asymmetrical dependence and a symmetric dependence. The asymmetric dependence may be thought of as one animal reacting to the movement of another animal, e.g., a young animal following a parent. The symmetric dependence may be thought of as two animals responding in similar ways to external stimulus, e.g., an obstacle on the ground. We can model the location of each animal as a two-dimensional stochastic process such that the joint locations of the &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; animals are described by a &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt;-dimensional process, e.g., using a stochastic differential equation,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\mathrm{d}Z_t = MZ_t \mathrm{d}t + D \mathrm{d} W_t
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(Z_t = (Z_t^{1},Z_t^{2},\ldots, Z_t^{n})^T\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Z_t^i = (X_t^{i},Y_t^{i})\)&lt;/span&gt; is the location in two-dimensional space of animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; at time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; (recall that this is the location relative to the center of the herd). The matrix &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; encodes the asymmetric dependence and the matrix &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; encodes the symmetric dependence in the system.&lt;/p&gt;
+&lt;p&gt;Let’s say that &lt;span class=&#34;math inline&#34;&gt;\(n = 3\)&lt;/span&gt; and that &lt;span class=&#34;math display&#34;&gt;\[
+    M = \left(\begin{array}{ccc} M_{11} &amp;amp; M_{12} &amp;amp; M_{13} \\ 0 &amp;amp; M_{22} &amp;amp; 0 \\
+    0 &amp;amp; 0
+    &amp;amp;
+    M_{33}
+    \end{array}\right), \ \ \ \ \   D = \left(\begin{array}{ccc} D_{11} &amp;amp; 0 &amp;amp; 0
+    \\ 0 &amp;amp; D_{22} &amp;amp; D_{23} \\0 &amp;amp; D_{33}
+    &amp;amp;
+    D_{33}
+    \end{array}\right).
+    \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The submatrices of &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(M_{ij}\)&lt;/span&gt;, and of &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(D_{ij}\)&lt;/span&gt;, are &lt;span class=&#34;math inline&#34;&gt;\(2\times 2\)&lt;/span&gt;-matrices. We define a graph in terms of the matrices M and D. It has nodes &lt;span class=&#34;math inline&#34;&gt;\(1, \ldots, n\)&lt;/span&gt;, it has a directed edge &lt;span class=&#34;math inline&#34;&gt;\(i\rightarrow j\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(M_{ji}\)&lt;/span&gt; may be nonzero, and it has a blunt edge if &lt;span class=&#34;math inline&#34;&gt;\((DD^T)_{ij}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\neq j\)&lt;/span&gt;, may be nonzero. The graph encodes the sparsity patterns of the matrices, and we see that the sparsity of the above matrices is encoded by the graph &lt;strong&gt;G1&lt;/strong&gt;. The simulated movement data in the gif was generated from a system with the above sparsity in matrices &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We say that this kind of graph is a &lt;em&gt;directed correlation graph&lt;/em&gt; (cDG). The blunt edges represent symmetric dependence and the directed edges represent asymmetric dependence. ((We note that the blunt edges do not represent marginalization, but specifically correlation in the noise processes driving the model – for stochastic processes this is not the same as partial observation)). To aid our understanding of this kind of graph, we can construct an &lt;em&gt;unrolled version&lt;/em&gt; (graph &lt;strong&gt;G2&lt;/strong&gt;). In graph &lt;strong&gt;G1&lt;/strong&gt;, each node (circle) represents an entire two-dimensional process, i.e., the movement of one animal. In graph &lt;strong&gt;G2&lt;/strong&gt;, each node represents the location of an animal at a single point in time, that is, &lt;strong&gt;G2&lt;/strong&gt; represents a discretized version of the movement process. The &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;-variables represent external stimulus creating dependence between noise processes.&lt;/p&gt;
+&lt;p&gt;A cDG is more useful than it may look at first glance! If we want to predict the immediate movement of Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, say, in the herd, the cDG tells us that we only need to know the position of all animals with an arrow pointing into Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. Moreover, the immediate movement correlates only with the immediate movements of all animals connected to Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; via a blunt edge. Suppose now that there is no arrow from &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, but that we also do not observe the entire herd. Will Animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; then be predictive of the immediate movements of Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; given the position of all other observed animals? We show a key result, known as the global Markov property, to help answer this question. From the cDG one can use a purely graphical algorithm (just computations using the graph) to check conditions that are sufficient for Animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; not to be predictive given the other observed animals. ((the graphical criterion is known as &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;- or &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;-separation and is an adaptation of &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;-separation)). In summary, we can learn, from the graph alone, probabilistic facts about which groups of animals can be ignored when predicting immediate movement of other animals. This is quite useful.&lt;/p&gt;
+&lt;p&gt;Having established a useful link between the evolution of the stochastic differential equation model above and its associated graph, the paper investigates the properties of the graphs. When we have two graphs on the same node set (i.e., only the edges differ), a natural question is whether they represent the same dependence structure. In the animal movement example, we may think of each possible graph on three nodes as encoding a certain set of movement (in)dependences. If we are to learn graphs from observation of animal movement, then we need to understand which graphs encode the same set of movement (in)dependences. The paper characterizes this kind of equivalence. Finally, the paper shows that determining Markov equivalence of two directed correlation graphs is computationally hard (it is coNP-complete).&lt;/p&gt;
+&lt;p&gt;This work was supported by VILLUM FONDEN (research grant 13358).&lt;/p&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the authors&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Søren Wengel Mogensen&lt;/strong&gt;, Department of Mathematical Sciences, University of Copenhagen, Copenhagen, Denmark; Section for Cognitive Systems, Technical University of Denmark, Kgs. Lyngby, Denmark; Department of Automatic Control, Lund University, Lund, Sweden&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Niels Richard Hansen&lt;/strong&gt;, Department of Mathematical Sciences, University of Copenhagen, Copenhagen, Denmark&lt;/p&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level3 unnumbered&#34;&gt;
+&lt;h3&gt;Bibliography&lt;/h3&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-mogensen2022graphical&#34; class=&#34;csl-entry&#34;&gt;
+Mogensen, Søren Wengel, and Niels Richard Hansen. 2022. &lt;span&gt;“Graphical Modeling of Stochastic Processes Driven by Correlated Noise.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 28 (4): 3023–50.
+&lt;/div&gt;
+&lt;div id=&#34;ref-niu2016modeling&#34; class=&#34;csl-entry&#34;&gt;
+Niu, Mu, Paul G Blackwell, and Anna Skarin. 2016. &lt;span&gt;“Modeling Interdependent Animal Movement in Continuous Time.”&lt;/span&gt; &lt;em&gt;Biometrics&lt;/em&gt; 72 (2): 315–24.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Inference on Adaptively Collected Data</title>
       <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
@@ -1364,41 +1417,6 @@ Wolfer, Geoffrey, and Aryeh Kontorovich. 2019. &lt;span&gt;“Minimax Learning o
 &lt;/ul&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Cuwhzd-8z4k&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent Advances in Approximate Bayesian Inference</title>
-      <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
-      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>
-&lt;script src=&#34;https://youngstats.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Recent Advances in Approximate Bayesian Inference&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-02-09-recent-advances-in-approximate-bayesian-inference_files/featured.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.&lt;/p&gt;
-&lt;p&gt;On the webinar, selected young statisticians will present their recent works on the topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, June 15th, 7:00 PT / 10:00 EST / 16:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdd1MztoBmjD8BXFzyURnSPoGolVnojTCoaZMgbQ4ooN5Fybw/viewform&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.lorenzopacchiardi.me/&#34;&gt;Lorenzo Pacchiardi&lt;/a&gt;, University of Oxford, United Kingdom, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1h3kbElZP1XuWNi0zYdFXg5Sve_KqVc5N/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.stats.ox.ac.uk/~pompe/&#34;&gt;Emilia Pompe&lt;/a&gt;, University of Oxford, United Kingdom, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1FtzRCxPScHyuX6541aFO44d6OOKN7Ibg/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.mimuw.edu.pl/~lr306321/&#34;&gt;Łukasz Rajkowski&lt;/a&gt;, University of Warsaw, Poland, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1-jYFEphT9QP9hpmXUKHPaXhmjgQ-67_S/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://theomoins.github.io/aboutme/&#34;&gt;Théo Moins&lt;/a&gt;, Inria Grenoble Rhône-Alpes, France, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1d-eT9CjudhQkanRBXJZOI6lxPZb5dFfX/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.julyanarbel.com/&#34;&gt;Julyan Arbel&lt;/a&gt;, Inria Grenoble Rhône-Alpes, France, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/17ZxJykILqJAjNICSWcG-TDtjTzyEj5jn/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Ee-qmAIwrxs&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

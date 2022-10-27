@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>graphical-models on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/graphical-models/</link>
+    <description>Recent content in graphical-models on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/graphical-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphical modeling of stochastic processes driven by correlated noise</title>
+      <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
+      <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in paper Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
+    </item>
+    
+  </channel>
+</rss>
