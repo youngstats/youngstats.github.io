@@ -13,7 +13,7 @@
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
-      <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in paper Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
+      <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
     </item>
     
     <item>
