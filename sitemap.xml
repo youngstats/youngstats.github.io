@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/mixture-cure-models/</loc>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</loc>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/survival-analysis/</loc>
+    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/graphical-models/</loc>
-    <lastmod>2022-10-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2022-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/statistics/</loc>

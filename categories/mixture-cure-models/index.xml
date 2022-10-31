@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>survival-analysis on YoungStatS</title>
-    <link>https://youngstats.github.io/categories/survival-analysis/</link>
-    <description>Recent content in survival-analysis on YoungStatS</description>
+    <title>mixture-cure-models on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/mixture-cure-models/</link>
+    <description>Recent content in mixture-cure-models on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/survival-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/mixture-cure-models/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
       <link>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
