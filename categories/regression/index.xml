@@ -32,7 +32,7 @@ These are many situations, ranging in complexity and importance, where one would
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
-      <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.e., distribution of the size of soil grains).</description>
+      <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.</description>
     </item>
     
   </channel>

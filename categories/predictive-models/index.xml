@@ -14,7 +14,7 @@
       
       <guid>https://youngstats.github.io/post/2021/06/09/spatiotemporal-modeling-and-real-time-prediction-of-origin/</guid>
       <description>Introduction
-In the past decades, intelligent transportation system (ITS) has brought advanced technology that enables a data-rich environment and unprecedented opportunities for traffic prediction, which is considered as one of the most prevalent issues facing ITS (Li et al., 2015). We discuss the online prediction of the origin-destination (OD) demand count in traffic networks, which represents the number of trips between certain combinations of an origin and a destination. The study of OD demand prediction based on count data has a growing impact on many traffic control and management policies (Ashok, 1996, Ashok and Ben-Akiva, 2002, Li, 2005, Hazelton, 2008, Shao et al.</description>
+In the past decades, intelligent transportation system (ITS) has brought advanced technology that enables a data-rich environment and unprecedented opportunities for traffic prediction, which is considered as one of the most prevalent issues facing ITS (Li et al., 2015). We discuss the online prediction of the origin-destination (OD) demand count in traffic networks, which represents the number of trips between certain combinations of an origin and a destination.</description>
     </item>
     
     <item>
