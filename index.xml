@@ -102,7 +102,7 @@ empirical counterpart, namely the empirical distribution function
 then the one that solves the following, revised estimating equation: for
 all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
     $\frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
-    \label{eq:EE_oracle}
+    \label{eq1}\tag{1}
 \end{align}\]&lt;/span&gt; All integrals in this post are over &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;. To simplify
 our expression above and later, we have introduced the empirical copula
 &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt; that is a multivariate distribution function on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt; with a
@@ -152,9 +152,9 @@ copula: &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
 \end{align*}\]&lt;/span&gt; Finally, to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt;, we settle for the
 estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}}\)&lt;/span&gt; that solves &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
     \frac{1}{n} \sum_{i=1}^n g_m( \hat{F}_{n,1}(\hat{E}_{i,1}),\dots,\hat{F}_{n,p}(\hat{E}_{i,p}) ;\hat{\theta}^{\text{residual}}) = \int g_m(\mathbf{u};\hat{\theta}^{\text{residual}})\mathrm{d}\hat{C}_n(\mathbf{u}) = 0 .
-    \label{eq:EE_residual}
+    \label{eq2}\tag{2}
 \end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Comparing above equations, we
+&lt;p&gt;Comparing Eq. (&lt;a href=&#34;#mjx-eqn-eq2&#34;&gt;2&lt;/a&gt;) to Eq. (&lt;a href=&#34;#mjx-eqn-eq1&#34;&gt;1&lt;/a&gt;), we
 would expect that when the residual-based empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; is
 asymptotically indistinguishable from the oracle empirical copula &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;,
 the residual-based copula parameter estimator
@@ -165,9 +165,9 @@ reach this conclusion, standard estimating equation theory requires
 estimating equations at the truth should become indistinguishable,
 namely &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) - \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}C_n(\mathbf{u}) = o_p(n^{-1/2}) .
-    \label{eq:EE_diff}
+    \label{eq3}\tag{3}
 \end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;One typical, although ultimately restrictive, approach to establish above equation is to invoke integration by parts
+&lt;p&gt;One typical, although ultimately restrictive, approach to establish Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) is to invoke integration by parts
 (&lt;span class=&#34;citation&#34;&gt;Neumeyer, Omelka, and Hudecová (&lt;a href=&#34;#ref-NeumeyerOmelkaHudecova2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Chen, Huang, and Yi (&lt;a href=&#34;#ref-ChenHuangYi2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;): ideally, this would
 yield &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) \sim &amp;amp;\int \hat{C}_n(\mathbf{u})\mathrm{d}g_m(\mathbf{u};\mathbf{\theta}^*) \\
@@ -190,11 +190,11 @@ approaches 0 or 1.&lt;/p&gt;
 &lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; we instead adopted a more direct approach.
 Let
 &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*)=\frac{\partial}{\partial u_k} g_m(\mathbf{u};\mathbf{\theta}^*)\)&lt;/span&gt;.
-Then Taylor-expanding above equation we see that we will need
+Then Taylor-expanding Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) we see that we will need
 (among other ingredients) an &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt; rate for the terms on the
 right-hand side of &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
 \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}({\hat{C}_n-C_n})(\mathbf{u}) \approx \sum_{k=1}^p \left[ \frac{1}{n} \sum_{i=1}^n g_m^{[k]}(F_k(E_{i,k});\mathbf{\theta}^*) \left\{ \hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k}) \right\}  \right] .
-\label{eq:EE_diff_2}
+\label{eq4}\tag{4}
 \end{align}\]&lt;/span&gt; It is &lt;em&gt;not&lt;/em&gt; enough that the terms
 &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt; on the right-hand side are &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt;
 (in fact they are not), due to the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. We need to
@@ -285,31 +285,27 @@ improved by both the rate of &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}
 of &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; to be tightened accordingly (exactly similar to how the
 rate of &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)(t)\)&lt;/span&gt; is tightened by &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{F(t)}\)&lt;/span&gt; in the
 weighted empirical processes on the real line that we reviewed earlier).
-These features will tame the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt; in above equation.&lt;/p&gt;
+These features will tame the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Because what eventually form the ingredients of the residual-based
 copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; are the &lt;em&gt;residual ranks&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} )\)&lt;/span&gt;’s, we need
 to go one step further and consider the analogous results for them:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;p&gt;Theorem: For all &lt;span class=&#34;math inline&#34;&gt;\(n\ge 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;,
 &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-        \label{eq:res_rank_decomp}
+        \label{eq5}\tag{5}
         \hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} ) &amp;amp;= -f_k(E_{i,k}) \left\{ (\hat{m}_k-m_k)(\mathbf{X}_i) - \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] \right\} + r_{1,k}( \hat{E}_{i,k} ) + r_{2,k,i}
     \end{align}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; is as in the last theorem, and
 &lt;span class=&#34;math inline&#34;&gt;\(r_{2,k,i}\)&lt;/span&gt; is another remainder term that satisfies &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
         \max_{i\in\{1,\dots,n\}} \dfrac{ |r_{2,k,i}| }{ \log^{\frac{1}{2}}(n) n^{-\frac{1}{2}} \left\{ f_k(E_{i,k})\cdot a_n \right\}^{\frac{1}{2}} + a_n^2 } = O_p(1) .
     \end{align*}\]&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Note that simliar to &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; earlier, the rate of &lt;span class=&#34;math inline&#34;&gt;\(r_{2,k,i}\)&lt;/span&gt; also
+&lt;p&gt;Note that similar to &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; earlier, the rate of &lt;span class=&#34;math inline&#34;&gt;\(r_{2,k,i}\)&lt;/span&gt; also
 enjoys the dependence on &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty\)&lt;/span&gt; and the weighing by
 &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;results-on-residual-based-estimator-for-the-copula-parameter&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Results on residual-based estimator for the copula parameter&lt;/h2&gt;
-&lt;p&gt;We are now ready to plug in the decomposition of
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in the equation in
-the last theorem into above equation. The leading term (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;), which is
-centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. The remainder terms are
-weighted and so tame the divergence of the scores &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;.
+&lt;p&gt;We are now ready to plug in the decomposition of &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;), which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. the remainder terms are weighted and so tame the divergence of the scores &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;.
 Eventually, we arrive at the asymptotic equivalence between the
 residual-based PLE and the oracle PLE:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -317,13 +313,10 @@ residual-based PLE and the oracle PLE:&lt;/p&gt;
 additional regularity conditions which in particular require, for
 &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
         \int \left\{g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*) f_k(F_k^{\leftarrow}(u_k)) \right\}^2\mathrm{d}C(\mathbf{u}) &amp;lt; \infty,
-        \label{eq:g_m^k_divergence}
-    \end{align}\]&lt;/span&gt; the asymptotic equivalence holds. Furthermore,
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)&lt;/span&gt;.&lt;/p&gt;
+        \label{eq6}\tag{6}
+    \end{align}\]&lt;/span&gt; the asymptotic equivalence in Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) holds. Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Condition above in fact allows for quite
-non-trivial divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly
-accommodates the Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem
+&lt;p&gt;Condition (&lt;a href=&#34;#mjx-eqn-eq6&#34;&gt;6&lt;/a&gt;) in fact allows for quite non-trivial divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly accommodates the Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem
 above, one still needs to verify the correct upper bound on the
 bracketing number for embedding &lt;span class=&#34;math inline&#34;&gt;\(hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to
 be non-restrictive. For instance, for partly linear regression

@@ -176,7 +176,7 @@ empirical counterpart, namely the empirical distribution function
 then the one that solves the following, revised estimating equation: for
 all <span class="math inline">\(m\in\{1,\dots,d\}\)</span>, <span class="math display">\[\begin{align}
     $\frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
-    \label{eq:EE_oracle}
+    \label{eq1}\tag{1}
 \end{align}\]</span> All integrals in this post are over <span class="math inline">\([0,1]^p\)</span>. To simplify
 our expression above and later, we have introduced the empirical copula
 <span class="math inline">\(C_n\)</span> that is a multivariate distribution function on <span class="math inline">\([0,1]^p\)</span> with a
@@ -226,9 +226,9 @@ copula: <span class="math display">\[\begin{align*}
 \end{align*}\]</span> Finally, to estimate <span class="math inline">\(\mathbf{\theta}^*\)</span>, we settle for the
 estimator <span class="math inline">\(\hat{\theta}^{\text{residual}}\)</span> that solves <span class="math display">\[\begin{align}
     \frac{1}{n} \sum_{i=1}^n g_m( \hat{F}_{n,1}(\hat{E}_{i,1}),\dots,\hat{F}_{n,p}(\hat{E}_{i,p}) ;\hat{\theta}^{\text{residual}}) = \int g_m(\mathbf{u};\hat{\theta}^{\text{residual}})\mathrm{d}\hat{C}_n(\mathbf{u}) = 0 .
-    \label{eq:EE_residual}
+    \label{eq2}\tag{2}
 \end{align}\]</span></p>
-<p>Comparing above equations, we
+<p>Comparing Eq. (<a href="#mjx-eqn-eq2">2</a>) to Eq. (<a href="#mjx-eqn-eq1">1</a>), we
 would expect that when the residual-based empirical copula <span class="math inline">\(\hat{C}_n\)</span> is
 asymptotically indistinguishable from the oracle empirical copula <span class="math inline">\(C_n\)</span>,
 the residual-based copula parameter estimator
@@ -239,9 +239,9 @@ reach this conclusion, standard estimating equation theory requires
 estimating equations at the truth should become indistinguishable,
 namely <span class="math display">\[\begin{align}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) - \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}C_n(\mathbf{u}) = o_p(n^{-1/2}) .
-    \label{eq:EE_diff}
+    \label{eq3}\tag{3}
 \end{align}\]</span></p>
-<p>One typical, although ultimately restrictive, approach to establish above equation is to invoke integration by parts
+<p>One typical, although ultimately restrictive, approach to establish Eq. (<a href="#mjx-eqn-eq3">3</a>) is to invoke integration by parts
 (<span class="citation">Neumeyer, Omelka, and Hudecová (<a href="#ref-NeumeyerOmelkaHudecova2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Chen, Huang, and Yi (<a href="#ref-ChenHuangYi2021" role="doc-biblioref">2021</a>)</span>): ideally, this would
 yield <span class="math display">\[\begin{align*}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) \sim &amp;\int \hat{C}_n(\mathbf{u})\mathrm{d}g_m(\mathbf{u};\mathbf{\theta}^*) \\
@@ -264,11 +264,11 @@ approaches 0 or 1.</p>
 <p>In <span class="citation">Zhao, Gijbels, and Van Keilegom (<a href="#ref-ZhaoGijbelsKeilegom2022" role="doc-biblioref">2022</a>)</span> we instead adopted a more direct approach.
 Let
 <span class="math inline">\(g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*)=\frac{\partial}{\partial u_k} g_m(\mathbf{u};\mathbf{\theta}^*)\)</span>.
-Then Taylor-expanding above equation we see that we will need
+Then Taylor-expanding Eq. (<a href="#mjx-eqn-eq3">3</a>) we see that we will need
 (among other ingredients) an <span class="math inline">\(o_p(n^{-1/2})\)</span> rate for the terms on the
 right-hand side of <span class="math display">\[\begin{align}
 \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}({\hat{C}_n-C_n})(\mathbf{u}) \approx \sum_{k=1}^p \left[ \frac{1}{n} \sum_{i=1}^n g_m^{[k]}(F_k(E_{i,k});\mathbf{\theta}^*) \left\{ \hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k}) \right\}  \right] .
-\label{eq:EE_diff_2}
+\label{eq4}\tag{4}
 \end{align}\]</span> It is <em>not</em> enough that the terms
 <span class="math inline">\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)</span> on the right-hand side are <span class="math inline">\(o_p(n^{-1/2})\)</span>
 (in fact they are not), due to the divergence of <span class="math inline">\(g_m^{[k]}\)</span>. We need to
@@ -359,31 +359,27 @@ improved by both the rate of <span class="math inline">\(\|\hat{m}_k-m_k\|_\inft
 of <span class="math inline">\(r_{1,k}\)</span> to be tightened accordingly (exactly similar to how the
 rate of <span class="math inline">\(\sqrt{n}(F_n -F)(t)\)</span> is tightened by <span class="math inline">\(\sqrt{F(t)}\)</span> in the
 weighted empirical processes on the real line that we reviewed earlier).
-These features will tame the divergence of <span class="math inline">\(g_m^{[k]}\)</span> in above equation.</p>
+These features will tame the divergence of <span class="math inline">\(g_m^{[k]}\)</span> in Eq. (<a href="#mjx-eqn-eq4">4</a>).</p>
 <p>Because what eventually form the ingredients of the residual-based
 copula <span class="math inline">\(\hat{C}_n\)</span> are the <em>residual ranks</em> <span class="math inline">\(\hat{F}_{n,k}( \hat{E}_{i,k} )\)</span>’s, we need
 to go one step further and consider the analogous results for them:</p>
 <div class="alert alert-info" role="alert">
 <p>Theorem: For all <span class="math inline">\(n\ge 1\)</span>, <span class="math inline">\(k\in\{1,\dots,p\}\)</span> and <span class="math inline">\(i\in\{1,\dots,n\}\)</span>,
 <span class="math display">\[\begin{align}
-        \label{eq:res_rank_decomp}
+        \label{eq5}\tag{5}
         \hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} ) &amp;= -f_k(E_{i,k}) \left\{ (\hat{m}_k-m_k)(\mathbf{X}_i) - \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] \right\} + r_{1,k}( \hat{E}_{i,k} ) + r_{2,k,i}
     \end{align}\]</span> where <span class="math inline">\(r_{1,k}\)</span> is as in the last theorem, and
 <span class="math inline">\(r_{2,k,i}\)</span> is another remainder term that satisfies <span class="math display">\[\begin{align*}
         \max_{i\in\{1,\dots,n\}} \dfrac{ |r_{2,k,i}| }{ \log^{\frac{1}{2}}(n) n^{-\frac{1}{2}} \left\{ f_k(E_{i,k})\cdot a_n \right\}^{\frac{1}{2}} + a_n^2 } = O_p(1) .
     \end{align*}\]</span></p>
 </div>
-<p>Note that simliar to <span class="math inline">\(r_{1,k}\)</span> earlier, the rate of <span class="math inline">\(r_{2,k,i}\)</span> also
+<p>Note that similar to <span class="math inline">\(r_{1,k}\)</span> earlier, the rate of <span class="math inline">\(r_{2,k,i}\)</span> also
 enjoys the dependence on <span class="math inline">\(\|\hat{m}_k-m_k\|_\infty\)</span> and the weighing by
 <span class="math inline">\(f_k\)</span>.</p>
 </div>
 <div id="results-on-residual-based-estimator-for-the-copula-parameter" class="section level2">
 <h2>Results on residual-based estimator for the copula parameter</h2>
-<p>We are now ready to plug in the decomposition of
-<span class="math inline">\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)</span> in the equation in
-the last theorem into above equation. The leading term (the one proportional to <span class="math inline">\(f_k\)</span>), which is
-centered, is now summed over <span class="math inline">\(i\in\{1,\dots,n\}\)</span> in and so enjoys an additional <span class="math inline">\(n^{-1/2}\)</span>-scaling. The remainder terms are
-weighted and so tame the divergence of the scores <span class="math inline">\(g_m^{[k]}\)</span>.
+<p>We are now ready to plug in the decomposition of <span class="math inline">\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)</span> in Eq. (<a href="#mjx-eqn-eq5">5</a>) in the last theorem into (<a href="#mjx-eqn-eq4">4</a>). The leading term in Eq. (<a href="#mjx-eqn-eq5">5</a>) (the one proportional to <span class="math inline">\(f_k\)</span>), which is centered, is now summed over <span class="math inline">\(i\in\{1,\dots,n\}\)</span> in (<a href="#mjx-eqn-eq4">4</a>) and so enjoys an additional <span class="math inline">\(n^{-1/2}\)</span>-scaling. the remainder terms are weighted and so tame the divergence of the scores <span class="math inline">\(g_m^{[k]}\)</span>.
 Eventually, we arrive at the asymptotic equivalence between the
 residual-based PLE and the oracle PLE:</p>
 <div class="alert alert-info" role="alert">
@@ -391,13 +387,10 @@ residual-based PLE and the oracle PLE:</p>
 additional regularity conditions which in particular require, for
 <span class="math inline">\(m\in\{1,\dots,d\}\)</span> and <span class="math inline">\(k\in\{1,\dots,p\}\)</span>, <span class="math display">\[\begin{align}
         \int \left\{g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*) f_k(F_k^{\leftarrow}(u_k)) \right\}^2\mathrm{d}C(\mathbf{u}) &lt; \infty,
-        \label{eq:g_m^k_divergence}
-    \end{align}\]</span> the asymptotic equivalence holds. Furthermore,
-<span class="math inline">\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)</span>.</p>
+        \label{eq6}\tag{6}
+    \end{align}\]</span> the asymptotic equivalence in Eq. (<a href="#mjx-eqn-eq3">3</a>) holds. Furthermore, <span class="math inline">\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)</span>.</p>
 </div>
-<p>Condition above in fact allows for quite
-non-trivial divergence of the score functions <span class="math inline">\(g_m\)</span> (it certainly
-accommodates the Gaussian and the <span class="math inline">\(t\)</span>-copulas). To apply the theorem
+<p>Condition (<a href="#mjx-eqn-eq6">6</a>) in fact allows for quite non-trivial divergence of the score functions <span class="math inline">\(g_m\)</span> (it certainly accommodates the Gaussian and the <span class="math inline">\(t\)</span>-copulas). To apply the theorem
 above, one still needs to verify the correct upper bound on the
 bracketing number for embedding <span class="math inline">\(hat{m}_k-m_k\)</span>, which again turns out to
 be non-restrictive. For instance, for partly linear regression
