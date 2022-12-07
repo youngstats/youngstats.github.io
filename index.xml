@@ -101,7 +101,7 @@ empirical counterpart, namely the empirical distribution function
 &lt;em&gt;oracle&lt;/em&gt; PLE estimator &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; is
 then the one that solves the following, revised estimating equation: for
 all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-    $\frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
+    \frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
     \label{eq1}\tag{1}
 \end{align}\]&lt;/span&gt; All integrals in this post are over &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;. To simplify
 our expression above and later, we have introduced the empirical copula
