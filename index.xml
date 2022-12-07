@@ -318,7 +318,7 @@ additional regularity conditions which in particular require, for
 &lt;/div&gt;
 &lt;p&gt;Condition (&lt;a href=&#34;#mjx-eqn-eq6&#34;&gt;6&lt;/a&gt;) in fact allows for quite non-trivial divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly accommodates the Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem
 above, one still needs to verify the correct upper bound on the
-bracketing number for embedding &lt;span class=&#34;math inline&#34;&gt;\(hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to
+bracketing number for embedding &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to
 be non-restrictive. For instance, for partly linear regression
 &lt;span class=&#34;math inline&#34;&gt;\(Y_k = \tilde{m}_k(\mathbf{x}) + \mathbf{\theta}_k^\top \mathbf{w} + E_k\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{w}\in\mathbb{R}^{q_{\mathbf{L},n}}\)&lt;/span&gt;,
 we can allow the dimension &lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}\)&lt;/span&gt; of the linear covariate to grow up to
