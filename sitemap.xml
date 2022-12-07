@@ -3,15 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/mixture-cure-models/</loc>
-    <lastmod>2022-10-30T00:00:00+00:00</lastmod>
+    <loc>https://youngstats.github.io/categories/copula-models/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/empirical-processes/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/regression/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/semiparametric-statistics/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</loc>
+    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/mixture-cure-models/</loc>
     <lastmod>2022-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</loc>
@@ -144,9 +159,6 @@
     <lastmod>2021-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</loc>
-    <lastmod>2021-12-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/regression/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</loc>

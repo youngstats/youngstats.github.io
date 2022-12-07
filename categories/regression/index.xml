@@ -6,7 +6,16 @@
     <description>Recent content in regression on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/regression/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/regression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
+      <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
+      <description>OverviewIn this post we first review the concept of semi-parametric copula andthe accompanying estimation procedure of pseudo-likelihood estimation(PLE). We then generalize the estimation problem to the setting wherethe copula signal is hidden in a semi- or non-parametric regressionmodel. Under this setting we have to base the PLE on the residuals. Theparticular challenge of the diverging score function is handled via thetechnique of the weighted residual empirical processes.</description>
+    </item>
+    
     <item>
       <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
       <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
@@ -32,7 +41,7 @@ These are many situations, ranging in complexity and importance, where one would
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
-      <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.</description>
+      <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.e., distribution of the size of soil grains).</description>
     </item>
     
   </channel>

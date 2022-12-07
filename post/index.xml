@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
+      <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
+      <description>OverviewIn this post we first review the concept of semi-parametric copula andthe accompanying estimation procedure of pseudo-likelihood estimation(PLE). We then generalize the estimation problem to the setting wherethe copula signal is hidden in a semi- or non-parametric regressionmodel. Under this setting we have to base the PLE on the residuals. Theparticular challenge of the diverging score function is handled via thetechnique of the weighted residual empirical processes.</description>
+    </item>
+    
     <item>
       <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
       <link>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
@@ -14,7 +23,7 @@
       
       <guid>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
       <description>AbstractThe mixture cure model in survival analysis has received large and growing attention in the last few decades. Here we present an overview drawing together early results and some recent new developments, and pointing out areas where further work is needed.
-Introduction: the Mixture Cure ModelIn certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been followed up for a period of time and their status at some endpoint reported.</description>
+Introduction: the Mixture Cure ModelIn certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been followed up for a period of time and their status at some endpoint reported.</description>
     </item>
     
     <item>
@@ -33,7 +42,7 @@
       
       <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
       <description>AbstractIt is increasingly common for data to be collected adaptively, whereexperimental costs are reduced progressively by assigning promisingtreatments more frequently. However, adaptivity also poses greatchallenges on post-experiment inference, since observations aredependent, and standard estimates can be skewed and heavy-tailed. Wepropose a treatment-effect estimator that is consistent andasymptotically normal, allowing for constructing frequentist confidenceintervals and testing hypotheses.
-IntroductionAdaptive data collection can optimize sample efficiency during thecourse of the experiment for particular objectives, such as identifyingthe best treatment (D.</description>
+IntroductionAdaptive data collection can optimize sample efficiency during thecourse of the experiment for particular objectives, such as identifyingthe best treatment (D.</description>
     </item>
     
     <item>
@@ -98,17 +107,7 @@ The distribution settingEstimation/Learning. A fundamental problem in statistic
 The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
 On the webinar, selected younger scholars will present their recent works on the topic.
 When &amp;amp; Where:
-Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
-    </item>
-    
-    <item>
-      <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
-      <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
-      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</guid>
-      <description>Theory and Methods for Inference in Multi-armed Bandit Problems
-Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
+Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
     </item>
     
   </channel>

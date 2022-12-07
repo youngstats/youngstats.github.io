@@ -14,7 +14,7 @@
       
       <guid>https://youngstats.github.io/post/2021/01/31/local-knn/</guid>
       <description>AbstractBinary classification is one of the cornerstones of modern data science, but, until recently, our understanding of classical methods such as the k-nn algorithm was limited to settings where feature vectors were compactly supported. Based on a new analysis of this classifier, we propose a variant with significantly lower risk for heavy-tailed distributions.
-The \(k\)-nearest neighbour classifierThe basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier.</description>
+The \(k\)-nearest neighbour classifierThe basic classifier that we consider here was introduced by Fix and Hodges (1951), and is arguably the simplest and most intuitive nonparametric classifier.</description>
     </item>
     
   </channel>
