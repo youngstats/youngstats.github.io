@@ -234,7 +234,7 @@ deviation from each simulation is represented by a single red dashed
 line. The 10% and 90% quantiles of the deviations at each &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; value
 are indicated by the two blue lines. Clearly, the “band” enclosing the
 deviations gets narrower toward the boundaries of the support of
-&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.]&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;This feature can also be characterized theoretically. For instance, we
 can find the LIL for the weighted process &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)/\sqrt{F}\)&lt;/span&gt;,
 that is the classical process but now scaled by an additional standard
@@ -269,7 +269,7 @@ decomposition of a residual empirical process is &lt;span class=&#34;math displa
 controlled as follows:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;p&gt;Theorem: Suppose that we can embed &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt; into a function class
-&lt;span class=&#34;math inline&#34;&gt;\(\cal{D}\)&lt;/span&gt; with bracketing number
+&lt;span class=&#34;math inline&#34;&gt;\(\cal{D}\)&lt;/span&gt; with &lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-1-4757-2545-2_19&#34;&gt;bracketing number&lt;/a&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(N_{[]}(\tau,\cal{D}) \lesssim (1/\tau)^\beta \exp(K (1/\tau)^{1/\nu})\)&lt;/span&gt;
 where &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\nu\)&lt;/span&gt; are constants. Suppose that
 &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty=O_p(a_n)\)&lt;/span&gt; (where &lt;span class=&#34;math inline&#34;&gt;\(\|\cdot\|_\infty\)&lt;/span&gt; is the
@@ -305,7 +305,7 @@ enjoys the dependence on &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m
 &lt;/div&gt;
 &lt;div id=&#34;results-on-residual-based-estimator-for-the-copula-parameter&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Results on residual-based estimator for the copula parameter&lt;/h2&gt;
-&lt;p&gt;We are now ready to plug in the decomposition of &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;), which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. the remainder terms are weighted and so tame the divergence of the scores &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;.
+&lt;p&gt;We are now ready to plug in the decomposition of &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;), which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. The remainder terms are weighted and so tame the divergence of the scores &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;.
 Eventually, we arrive at the asymptotic equivalence between the
 residual-based PLE and the oracle PLE:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
