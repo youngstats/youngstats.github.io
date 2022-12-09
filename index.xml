@@ -41,7 +41,7 @@ has &lt;em&gt;uniform marginals&lt;/em&gt; supported on &lt;span class=&#34;math
 &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; may be. (The explicit form of &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; follows from the Sklar’s
 theorem, for instance Corollary 2.10.10 in &lt;span class=&#34;citation&#34;&gt;Nelsen (&lt;a href=&#34;#ref-Nelsen1999&#34; role=&#34;doc-biblioref&#34;&gt;2006&lt;/a&gt;)&lt;/span&gt;:
 &lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{u}) = H(F_1^{\leftarrow}(u_1),\dots,F_p^{\leftarrow}(u_p))\)&lt;/span&gt; for
-&lt;span class=&#34;math inline&#34;&gt;\(F_k^{\leftarrow}\)&lt;/span&gt; the inverse of &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(F_k^{\leftarrow}\)&lt;/span&gt; the left-continuous inverse of &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt; and
 &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u} = (u_1,\dots,u_p)^\top\in[0,1]^p\)&lt;/span&gt;.) Furthermore, by the &lt;em&gt;invariance
 property&lt;/em&gt;, if &lt;span class=&#34;math inline&#34;&gt;\(g_1,\dots,g_p\)&lt;/span&gt; are univariate strictly increasing
 functions, then &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; and its marginally transformed version
