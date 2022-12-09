@@ -30,22 +30,23 @@ technique of the weighted residual empirical processes.&lt;/p&gt;
 &lt;h1&gt;The semi-parametric copula model&lt;/h1&gt;
 &lt;p&gt;Copula has been a popular method to model multivariate dependence
 structure since its introduction in &lt;span class=&#34;citation&#34;&gt;Sklar (&lt;a href=&#34;#ref-Sklar1959&#34; role=&#34;doc-biblioref&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;. Consider a random vector
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=(E_1,\dots,E_p)^\top\in\mathbb{R}^p\)&lt;/span&gt; with joint distribution function
-&lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;; we assume throughout that &lt;span class=&#34;math inline&#34;&gt;\(E_k\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; has absolutely
-continuous marginal distribution function &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt;. Then the &lt;em&gt;copula&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;
-associated with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; is the joint distribution function of the
-marginally transformed random vector &lt;span class=&#34;math inline&#34;&gt;\((F_1(E_1),\dots,F_p(E_p))^\top\)&lt;/span&gt;.
-It is clear from this definition that &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; itself is always a
-distribution supported on the unit hypercube &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; always
-has &lt;em&gt;uniform marginals&lt;/em&gt; supported on &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; whatever the marginals of
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; may be. (The explicit form of &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; follows from the Sklar’s
-theorem, for instance Corollary 2.10.10 in &lt;span class=&#34;citation&#34;&gt;Nelsen (&lt;a href=&#34;#ref-Nelsen1999&#34; role=&#34;doc-biblioref&#34;&gt;2006&lt;/a&gt;)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{u}) = H(F_1^{\leftarrow}(u_1),\dots,F_p^{\leftarrow}(u_p))\)&lt;/span&gt; for
-&lt;span class=&#34;math inline&#34;&gt;\(F_k^{\leftarrow}\)&lt;/span&gt; the left-continuous inverse of &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt; and
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u} = (u_1,\dots,u_p)^\top\in[0,1]^p\)&lt;/span&gt;.) Furthermore, by the &lt;em&gt;invariance
-property&lt;/em&gt;, if &lt;span class=&#34;math inline&#34;&gt;\(g_1,\dots,g_p\)&lt;/span&gt; are univariate strictly increasing
-functions, then &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; and its marginally transformed version
-&lt;span class=&#34;math inline&#34;&gt;\((g_1(E_1),\dots,g_p(E_p))^\top\)&lt;/span&gt; will admit the copula.&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=(E_1,\dots,E_p)^\top\in\mathbb{R}^p\)&lt;/span&gt; with joint distribution
+function &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;; we assume throughout that &lt;span class=&#34;math inline&#34;&gt;\(E_k\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; has
+absolutely continuous marginal distribution function &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt;. Then the
+&lt;em&gt;copula&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; associated with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; is the joint distribution
+function of the marginally transformed random vector
+&lt;span class=&#34;math inline&#34;&gt;\((F_1(E_1),\dots,F_p(E_p))^\top\)&lt;/span&gt;. It is clear from this definition that
+&lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; itself is always a distribution supported on the unit hypercube
+&lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; always has &lt;em&gt;uniform marginals&lt;/em&gt; supported on &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt;
+whatever the marginals of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; may be. (The explicit form of &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;
+follows from the Sklar’s theorem, for instance Corollary 2.10.10 in
+&lt;span class=&#34;citation&#34;&gt;Nelsen (&lt;a href=&#34;#ref-Nelsen1999&#34; role=&#34;doc-biblioref&#34;&gt;2006&lt;/a&gt;)&lt;/span&gt;:
+&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{u}) = H(F_1^{\leftarrow}(u_1),\dots,F_p^{\leftarrow}(u_p))\)&lt;/span&gt;
+for &lt;span class=&#34;math inline&#34;&gt;\(F_k^{\leftarrow}\)&lt;/span&gt; the left-continuous inverse of &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u} = (u_1,\dots,u_p)^\top\in[0,1]^p\)&lt;/span&gt;.) Furthermore, by the
+&lt;em&gt;invariance property&lt;/em&gt;, if &lt;span class=&#34;math inline&#34;&gt;\(g_1,\dots,g_p\)&lt;/span&gt; are univariate strictly
+increasing functions, then &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; and its marginally transformed
+version &lt;span class=&#34;math inline&#34;&gt;\((g_1(E_1),\dots,g_p(E_p))^\top\)&lt;/span&gt; will admit the copula.&lt;/p&gt;
 &lt;p&gt;Thus, copula is a &lt;em&gt;margin-free&lt;/em&gt; measure of multivariate dependence.
 Applied in the opposite direction, one could also start from a copula
 and couple the copula with arbitrary marginals to create multivariate
@@ -59,35 +60,38 @@ copula modelling (via the so called &lt;em&gt;empirical copula&lt;/em&gt;, see f
 &lt;span class=&#34;citation&#34;&gt;Fermanian, Radulović, and Wegkamp (&lt;a href=&#34;#ref-FermanianRadulovicWegkamp2004&#34; role=&#34;doc-biblioref&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Berghaus, Bücher, and Volgushev (&lt;a href=&#34;#ref-BerghausBucherVolgushev2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;) and a
 totally parametric modelling of the random vector &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;. In the
 semi-parametric copula model, we consider a collection of possible
-distributions of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; where the copulas &lt;span class=&#34;math inline&#34;&gt;\(C=C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; are
-constrained to be parametrized by an Euclidean &lt;em&gt;copula parameter&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=(\theta_1,\dots,\theta_d)^\top\)&lt;/span&gt;, but where the marginals
-&lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; could range over all &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-tuples of absolutely
-continuous univariate distribution functions.&lt;/p&gt;
+distributions of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; where the copulas
+&lt;span class=&#34;math inline&#34;&gt;\(C=C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; are constrained to be parametrized
+by an Euclidean &lt;em&gt;copula parameter&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=(\theta_1,\dots,\theta_d)^\top\)&lt;/span&gt;, but where the
+marginals &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; could range over all
+&lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-tuples of absolutely continuous univariate distribution functions.&lt;/p&gt;
 &lt;!--------------------------------------------------------------------------------&gt;
 &lt;/div&gt;
 &lt;div id=&#34;the-pseudo-likelihood-method&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;The pseudo-likelihood method&lt;/h1&gt;
 &lt;p&gt;In the semi-parametric copula model, the primary interest is often the
-true value &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; of the copula parameter that determines the
-multivariate dependence. An obvious challenge in estimating
+true value &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; of the copula parameter that determines
+the multivariate dependence. An obvious challenge in estimating
 &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; in the copula setting is how to handle the unknown
 marginals &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt;. The canonical solution is the
 pseudo-likelihood estimation (PLE) introduced in &lt;span class=&#34;citation&#34;&gt;Oakes (&lt;a href=&#34;#ref-Oakes1994&#34; role=&#34;doc-biblioref&#34;&gt;1994&lt;/a&gt;)&lt;/span&gt; and
 &lt;span class=&#34;citation&#34;&gt;Genest, Ghoudi‬, and Rivest (&lt;a href=&#34;#ref-GenestGhoudiRivest1995&#34; role=&#34;doc-biblioref&#34;&gt;1995&lt;/a&gt;)&lt;/span&gt; that we now describe.&lt;/p&gt;
-&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(g_1(\mathbf{\cdot};\mathbf{\theta}),\dots,g_d(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; be a collection of
-appropriate &lt;em&gt;score functions&lt;/em&gt; such that the population &lt;em&gt;estimating
-equation&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E} g_m(F_1(E_1),\dots,F_p(E_p);\mathbf{\theta})=0\)&lt;/span&gt; holds only when
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=\mathbf{\theta}^*\)&lt;/span&gt;, for all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;. In principle one can
-always choose the score functions to be the ones in the maximum
-likelihood estimation, namely
+&lt;p&gt;Let
+&lt;span class=&#34;math inline&#34;&gt;\(g_1(\mathbf{\cdot};\mathbf{\theta}),\dots,g_d(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;
+be a collection of appropriate &lt;em&gt;score functions&lt;/em&gt; such that the
+population &lt;em&gt;estimating equation&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E} g_m(F_1(E_1),\dots,F_p(E_p);\mathbf{\theta})=0\)&lt;/span&gt; holds only
+when &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=\mathbf{\theta}^*\)&lt;/span&gt;, for all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;.
+In principle one can always choose the score functions to be the ones in
+the maximum likelihood estimation, namely
 &lt;span class=&#34;math inline&#34;&gt;\(g_m(\cdot;\mathbf{\theta})=\frac{\partial}{\partial \theta_m} \log c(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;
 where &lt;span class=&#34;math inline&#34;&gt;\(c(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; is the density of the copula
-&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;. Thus, if &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; were known, to estimate
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; empirically based on a sample
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;, one
-could simply “find the zero” of the empirical version of the estimating
-equation, that is to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; by
+&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;. Thus, if &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; were
+known, to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; empirically based on a sample
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; of
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;, one could simply “find the zero” of the empirical version
+of the estimating equation, that is to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; by
 &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{parametric}}\)&lt;/span&gt; that solves, for all
 &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \frac{1}{n} \sum_{i=1}^n g_m(F_1(E_{i,1}),\dots,F_p(E_{i,p});\hat{\theta}^{\text{parametric}}) =0 .
@@ -97,10 +101,10 @@ problem.) However, in semi-parametric copula modelling we commonly avoid
 setting &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; to some particular form. The PLE method solves
 this problem by replacing the unknown &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; by its
 empirical counterpart, namely the empirical distribution function
-&lt;span class=&#34;math inline&#34;&gt;\(F_{n,k}(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\{E_{i,k} \le t \}\)&lt;/span&gt;. The
-&lt;em&gt;oracle&lt;/em&gt; PLE estimator &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; is
-then the one that solves the following, revised estimating equation: for
-all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+&lt;span class=&#34;math inline&#34;&gt;\(F_{n,k}(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\{E_{i,k} \le t \}\)&lt;/span&gt;.
+The &lt;em&gt;oracle&lt;/em&gt; PLE estimator &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; of
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; is then the one that solves the following, revised
+estimating equation: for all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
     \frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
     \label{eq1}\tag{1}
 \end{align}\]&lt;/span&gt; All integrals in this post are over &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;. To simplify
@@ -110,20 +114,21 @@ mass of &lt;span class=&#34;math inline&#34;&gt;\(1/n\)&lt;/span&gt; at each of
 &lt;span class=&#34;math inline&#34;&gt;\((F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p}))^\top\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;
 (precisely,
 &lt;span class=&#34;math inline&#34;&gt;\(C_n(\mathbf{u}) = \frac{1}{n} \sum_{i=1}^n \mathbf{1}\left\{ F_{n,1}(E_{i,1})\le u_1, \dots, F_{n,p}(E_{i,p})\le u_p \right\}\)&lt;/span&gt;).
-The qualifier “oracle” in &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; is used to
-distinguish the current case when we can still directly observe the
-copula sample &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; (albeit without knowing
-&lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt;), from the case when even that sample will be subject to
-perturbation which we now turn to.&lt;/p&gt;
+The qualifier “oracle” in &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; is
+used to distinguish the current case when we can still directly observe
+the copula sample &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; (albeit without
+knowing &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt;), from the case when even that sample will be
+subject to perturbation which we now turn to.&lt;/p&gt;
 &lt;!--------------------------------------------------------------------------------&gt;
 &lt;/div&gt;
 &lt;div id=&#34;residual-based-pseudo-likelihood-for-semi-parametric-copula-adjusted-for-regression&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Residual-based pseudo-likelihood for semi-parametric copula adjusted for regression&lt;/h1&gt;
-&lt;p&gt;From now on we suppose that the copula signal &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=\mathbf{E}_{\mathbf{\theta}^*}\)&lt;/span&gt; is
-“hidden” in a multivariate response semi- or non-parametric regression
-model, a setting considered in our recent work
-(&lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;): for a covariate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\in\mathbb{R}^q\)&lt;/span&gt; (independent
-of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;) and a response &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Y}=(Y_1,\dots,Y_p)^\top\in\mathbb{R}^p\)&lt;/span&gt;,
+&lt;p&gt;From now on we suppose that the copula signal
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=\mathbf{E}_{\mathbf{\theta}^*}\)&lt;/span&gt; is “hidden” in a
+multivariate response semi- or non-parametric regression model, a
+setting considered in our recent work (&lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;): for a
+covariate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\in\mathbb{R}^q\)&lt;/span&gt; (independent of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;) and
+a response &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Y}=(Y_1,\dots,Y_p)^\top\in\mathbb{R}^p\)&lt;/span&gt;,
 &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     Y_1 &amp;amp;= m_1(\mathbf{X}) + E_1 , \\
     &amp;amp;\quad \vdots \\
@@ -134,17 +139,18 @@ function &lt;span class=&#34;math inline&#34;&gt;\(m_k\)&lt;/span&gt;, the above
 and semi-parametric regression variants such as the partly linear
 regression model and the additive model. (It’s not much more difficult
 to consider a more flexible, heteroscedastic model
-&lt;span class=&#34;math inline&#34;&gt;\(Y_k = m_k(\mathbf{X}) + \sigma_k(\mathbf{X})E_k\)&lt;/span&gt;, though we refrain from doing so in this
-post.) &lt;span class=&#34;citation&#34;&gt;Gijbels, Omelka, and Veraverbeke (&lt;a href=&#34;#ref-GijbelsOmelkaVeraverbeke2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt; considered a similar model and
-studied the resulting &lt;em&gt;empirical copula process&lt;/em&gt;.&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(Y_k = m_k(\mathbf{X}) + \sigma_k(\mathbf{X})E_k\)&lt;/span&gt;, though we refrain
+from doing so in this post.) &lt;span class=&#34;citation&#34;&gt;Gijbels, Omelka, and Veraverbeke (&lt;a href=&#34;#ref-GijbelsOmelkaVeraverbeke2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt; considered a
+similar model and studied the resulting &lt;em&gt;empirical copula process&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Under this regression model, we can observe an i.i.d. sample
-&lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y}_1,\mathbf{X}_1),\dots,(\mathbf{Y}_n,\mathbf{X}_n)\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y},\mathbf{X})\)&lt;/span&gt;, but crucially &lt;em&gt;not&lt;/em&gt;
-the copula sample &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_1, \dots, \mathbf{E}_n\)&lt;/span&gt;. To eventually arrive at our
-estimator for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; in this setting, we will first form our
-empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; based on the residuals of the regression as
-follows. Let &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k\)&lt;/span&gt; be some estimator for &lt;span class=&#34;math inline&#34;&gt;\(m_k\)&lt;/span&gt;. Let’s estimate the
-&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;th component of &lt;span class=&#34;math inline&#34;&gt;\(E_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt; by the residual
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+&lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y}_1,\mathbf{X}_1),\dots,(\mathbf{Y}_n,\mathbf{X}_n)\)&lt;/span&gt; of
+&lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y},\mathbf{X})\)&lt;/span&gt;, but crucially &lt;em&gt;not&lt;/em&gt; the copula sample
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_1, \dots, \mathbf{E}_n\)&lt;/span&gt;. To eventually arrive at our
+estimator for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; in this setting, we will first form
+our empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; based on the residuals of the
+regression as follows. Let &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k\)&lt;/span&gt; be some estimator for &lt;span class=&#34;math inline&#34;&gt;\(m_k\)&lt;/span&gt;.
+Let’s estimate the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;th component of &lt;span class=&#34;math inline&#34;&gt;\(E_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt;
+by the residual &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \hat{E}_{i,k} = Y_{i,k} - \hat{m}_k(X_i) .
 \end{align*}\]&lt;/span&gt; Then, we form the residual-based empirical distribution and
 copula: &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
@@ -154,20 +160,21 @@ estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual
     \frac{1}{n} \sum_{i=1}^n g_m( \hat{F}_{n,1}(\hat{E}_{i,1}),\dots,\hat{F}_{n,p}(\hat{E}_{i,p}) ;\hat{\theta}^{\text{residual}}) = \int g_m(\mathbf{u};\hat{\theta}^{\text{residual}})\mathrm{d}\hat{C}_n(\mathbf{u}) = 0 .
     \label{eq2}\tag{2}
 \end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Comparing Eq. (&lt;a href=&#34;#mjx-eqn-eq2&#34;&gt;2&lt;/a&gt;) to Eq. (&lt;a href=&#34;#mjx-eqn-eq1&#34;&gt;1&lt;/a&gt;), we
-would expect that when the residual-based empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; is
+&lt;p&gt;Comparing Eq. (&lt;a href=&#34;#mjx-eqn-eq2&#34;&gt;2&lt;/a&gt;) to Eq. (&lt;a href=&#34;#mjx-eqn-eq1&#34;&gt;1&lt;/a&gt;), we would
+expect that when the residual-based empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; is
 asymptotically indistinguishable from the oracle empirical copula &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;,
 the residual-based copula parameter estimator
 &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}}\)&lt;/span&gt; should be asymptotically
-indistinguishable from &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{oracle}}\)&lt;/span&gt; as well. To formally
-reach this conclusion, standard estimating equation theory requires
-(among other conditions that we will ignore in this post) that the
-estimating equations at the truth should become indistinguishable,
+indistinguishable from &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{oracle}}\)&lt;/span&gt; as well. To
+formally reach this conclusion, standard estimating equation theory
+requires (among other conditions that we will ignore in this post) that
+the estimating equations at the truth should become indistinguishable,
 namely &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) - \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}C_n(\mathbf{u}) = o_p(n^{-1/2}) .
     \label{eq3}\tag{3}
 \end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;One typical, although ultimately restrictive, approach to establish Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) is to invoke integration by parts
+&lt;p&gt;One typical, although ultimately restrictive, approach to establish Eq.
+(&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) is to invoke integration by parts
 (&lt;span class=&#34;citation&#34;&gt;Neumeyer, Omelka, and Hudecová (&lt;a href=&#34;#ref-NeumeyerOmelkaHudecova2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Chen, Huang, and Yi (&lt;a href=&#34;#ref-ChenHuangYi2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;): ideally, this would
 yield &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) \sim &amp;amp;\int \hat{C}_n(\mathbf{u})\mathrm{d}g_m(\mathbf{u};\mathbf{\theta}^*) \\
@@ -177,16 +184,16 @@ simplified and hence not-quite-correct representation of integration by
 parts (we refer the readers to Appendix A in &lt;span class=&#34;citation&#34;&gt;Radulović, Wegkamp, and Zhao (&lt;a href=&#34;#ref-RWZ2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt; for a precise
 multivariate integration by parts formula particularly useful for
 copulas), but it already conveys the underlying idea: the aim is to
-convert &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt; in the integrals from measures to integrands
-so that proving the closeness between the two integrals is clearly
-reduced to proving the closeness between &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;. However,
-the integration by parts trick, although popular, often requires
-&lt;em&gt;bounded&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; to properly define the measure &lt;span class=&#34;math inline&#34;&gt;\(\mathrm{d}g_m\)&lt;/span&gt;, but this is
-often &lt;em&gt;not satisfied for even the most common copulas&lt;/em&gt;. For instance, in
-Gaussian copula, the score functions are quadratic forms of the
-&lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}(\mathbf{u}_k)\)&lt;/span&gt;’s where &lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}\)&lt;/span&gt; is the standard normal quantile function
-(see Eq. (2.2) in &lt;span class=&#34;citation&#34;&gt;Segers, Akker, and Werker (&lt;a href=&#34;#ref-SVW2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;), so are clearly divergent as &lt;span class=&#34;math inline&#34;&gt;\(u_k\)&lt;/span&gt;
-approaches 0 or 1.&lt;/p&gt;
+convert &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt; in the integrals from measures to
+integrands so that proving the closeness between the two integrals is
+clearly reduced to proving the closeness between &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;.
+However, the integration by parts trick, although popular, often
+requires &lt;em&gt;bounded&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; to properly define the measure &lt;span class=&#34;math inline&#34;&gt;\(\mathrm{d}g_m\)&lt;/span&gt;,
+but this is often &lt;em&gt;not satisfied for even the most common copulas&lt;/em&gt;. For
+instance, in Gaussian copula, the score functions are quadratic forms of
+the &lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}(\mathbf{u}_k)\)&lt;/span&gt;’s where &lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}\)&lt;/span&gt; is the
+standard normal quantile function (see Eq. (2.2) in &lt;span class=&#34;citation&#34;&gt;Segers, Akker, and Werker (&lt;a href=&#34;#ref-SVW2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;), so are
+clearly divergent as &lt;span class=&#34;math inline&#34;&gt;\(u_k\)&lt;/span&gt; approaches 0 or 1.&lt;/p&gt;
 &lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; we instead adopted a more direct approach.
 Let
 &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*)=\frac{\partial}{\partial u_k} g_m(\mathbf{u};\mathbf{\theta}^*)\)&lt;/span&gt;.
@@ -196,13 +203,14 @@ right-hand side of &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
 \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}({\hat{C}_n-C_n})(\mathbf{u}) \approx \sum_{k=1}^p \left[ \frac{1}{n} \sum_{i=1}^n g_m^{[k]}(F_k(E_{i,k});\mathbf{\theta}^*) \left\{ \hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k}) \right\}  \right] .
 \label{eq4}\tag{4}
 \end{align}\]&lt;/span&gt; It is &lt;em&gt;not&lt;/em&gt; enough that the terms
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt; on the right-hand side are &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt;
-(in fact they are not), due to the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. We need to
-take a more careful look at &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt;, whose
-analysis belongs to &lt;em&gt;residual empirical processes&lt;/em&gt;. To demonstrate the
-benefits of considering the &lt;em&gt;weighted&lt;/em&gt; version of such processes, we
-first review some basic literature on the weighted (non-residual)
-empirical processes in the simplified setting of the real line.&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt; on the right-hand side
+are &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt; (in fact they are not), due to the divergence of
+&lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. We need to take a more careful look at
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt;, whose analysis belongs
+to &lt;em&gt;residual empirical processes&lt;/em&gt;. To demonstrate the benefits of
+considering the &lt;em&gt;weighted&lt;/em&gt; version of such processes, we first review
+some basic literature on the weighted (non-residual) empirical processes
+in the simplified setting of the real line.&lt;/p&gt;
 &lt;!--------------------------------------------------------------------------------&gt;
 &lt;/div&gt;
 &lt;div id=&#34;weighted-empirical-processes-on-the-real-line&#34; class=&#34;section level1&#34;&gt;
@@ -210,16 +218,16 @@ empirical processes in the simplified setting of the real line.&lt;/p&gt;
 &lt;p&gt;In this section we consider estimating a distribution function &lt;span class=&#34;math inline&#34;&gt;\(F=F_U\)&lt;/span&gt;
 of a random variable &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;. We rely on the empirical distribution function
 &lt;span class=&#34;math inline&#34;&gt;\(F_n\)&lt;/span&gt; constructed from the i.i.d. observations &lt;span class=&#34;math inline&#34;&gt;\(U_1, \dots, U_n\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(F_n(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\left\{U_i\le t\right\}\)&lt;/span&gt;. The
-resulting classical empirical process on the real line
-&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n} (F_n -F)(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt; must be one of the most extensively
-studied objects in all of probability; for illustration we will just
-quote a form of the associated law of the iterated logarithm (LIL):
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+&lt;span class=&#34;math inline&#34;&gt;\(F_n(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\left\{U_i\le t\right\}\)&lt;/span&gt;.
+The resulting classical empirical process on the real line
+&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n} (F_n -F)(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt; must be one of the most
+extensively studied objects in all of probability; for illustration we
+will just quote a form of the associated law of the iterated logarithm
+(LIL): &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \limsup_{n\rightarrow\infty} \sup_{t} \left|\dfrac{1}{\sqrt{\log\log(n)}} \sqrt{n} (F_n -F)(t) \right| = \dfrac{1}{\sqrt{2}} .
-\end{align*}\]&lt;/span&gt; Clearly, the LIL treats all points &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt; &lt;em&gt;equally&lt;/em&gt;.
-However, in reality the &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; at some &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; is easier to estimate than
-others. This is essentially because the variability
+\end{align*}\]&lt;/span&gt; Clearly, the LIL treats all points &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt;
+&lt;em&gt;equally&lt;/em&gt;. However, in reality the &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; at some &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; is easier to
+estimate than others. This is essentially because the variability
 &lt;span class=&#34;math inline&#34;&gt;\(\text{var}\left\{F_n(t)\right\}=F(t)\left\{1-F(t)\right\}/n\)&lt;/span&gt; approaches
 &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; when &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; approaches &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;, for any &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. We can clearly
 observe this feature in the small simulation study represented by the
@@ -227,14 +235,13 @@ following figure, where the “band” enclosing the deviations (based on
 100 Monte-Carlo simulations) gets narrower toward the boundaries of the
 support of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-12-07-weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression_files/weighted_Fn_02.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Above: Plot of the deviation &lt;span class=&#34;math inline&#34;&gt;\(F_n-F\)&lt;/span&gt;, for sample size &lt;span class=&#34;math inline&#34;&gt;\(n=50\)&lt;/span&gt;,
-based on 100 Monte-Carlo simulations. For simplicity we assumed
-&lt;span class=&#34;math inline&#34;&gt;\(U\sim{Unif}(0,1)\)&lt;/span&gt;, so &lt;span class=&#34;math inline&#34;&gt;\(F(t)=t\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(t\in[0,1]\)&lt;/span&gt;. The
-deviation from each simulation is represented by a single red dashed
-line. The 10% and 90% quantiles of the deviations at each &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; value
-are indicated by the two blue lines. Clearly, the “band” enclosing the
-deviations gets narrower toward the boundaries of the support of
-&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Above: Plot of the deviation &lt;span class=&#34;math inline&#34;&gt;\(F_n-F\)&lt;/span&gt;, for sample size &lt;span class=&#34;math inline&#34;&gt;\(n=50\)&lt;/span&gt;, based on
+100 Monte-Carlo simulations. For simplicity we assumed
+&lt;span class=&#34;math inline&#34;&gt;\(U\sim{Unif}(0,1)\)&lt;/span&gt;, so &lt;span class=&#34;math inline&#34;&gt;\(F(t)=t\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(t\in[0,1]\)&lt;/span&gt;. The deviation from each
+simulation is represented by a single red dashed line. The 10% and 90%
+quantiles of the deviations at each &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; value are indicated by the two
+blue lines. Clearly, the “band” enclosing the deviations gets narrower
+toward the boundaries of the support of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;This feature can also be characterized theoretically. For instance, we
 can find the LIL for the weighted process &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)/\sqrt{F}\)&lt;/span&gt;,
 that is the classical process but now scaled by an additional standard
@@ -262,19 +269,21 @@ consider the weighted residual empirical processes.&lt;/p&gt;
 &lt;div id=&#34;results-on-weighted-residual-empirical-process&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Results on weighted residual empirical process&lt;/h2&gt;
 &lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt; be the density of &lt;span class=&#34;math inline&#34;&gt;\(E_k\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\cal{T}_n\)&lt;/span&gt; be the &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt;-field
-generated by the &lt;span class=&#34;math inline&#34;&gt;\((\mathbf{X}_i,\mathbf{Y}_i)\)&lt;/span&gt;’s, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;. The usual
-decomposition of a residual empirical process is &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+generated by the &lt;span class=&#34;math inline&#34;&gt;\((\mathbf{X}_i,\mathbf{Y}_i)\)&lt;/span&gt;’s, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;.
+The usual decomposition of a residual empirical process is
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
     \hat{F}_{n,k}(t) - F_{n,k}(t) = f_k(t) \cdot \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] + r_{1,k}(t)
 \end{align*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; is a remainder term that could be
 controlled as follows:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;Theorem: Suppose that we can embed &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt; into a function class
-&lt;span class=&#34;math inline&#34;&gt;\(\cal{D}\)&lt;/span&gt; with &lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-1-4757-2545-2_19&#34;&gt;bracketing number&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: Suppose that we can embed &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt; into a function
+class &lt;span class=&#34;math inline&#34;&gt;\(\cal{D}\)&lt;/span&gt; with &lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-1-4757-2545-2_19&#34;&gt;bracketing
+number&lt;/a&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(N_{[]}(\tau,\cal{D}) \lesssim (1/\tau)^\beta \exp(K (1/\tau)^{1/\nu})\)&lt;/span&gt;
 where &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\nu\)&lt;/span&gt; are constants. Suppose that
 &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty=O_p(a_n)\)&lt;/span&gt; (where &lt;span class=&#34;math inline&#34;&gt;\(\|\cdot\|_\infty\)&lt;/span&gt; is the
-supremum norm over the support of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\)&lt;/span&gt;). Then under mild regularity
-conditions, &lt;span class=&#34;math display&#34;&gt;\[\begin{gather*}
+supremum norm over the support of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\)&lt;/span&gt;). Then under mild
+regularity conditions, &lt;span class=&#34;math display&#34;&gt;\[\begin{gather*}
         \sup_{t\in\ \mathbb{R}} \dfrac{|r_{1,k}(t)|}{ n^{-\frac{1}{2}} \left\{ f_k(t) \cdot a_n + a_n^2\right\}^{\frac{1}{2}(1-1/\nu)} + n^{-\frac{1}{1+1/\nu}} + a_n^2 } = O_p( 1 ) .
     \end{gather*}\]&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -285,12 +294,14 @@ improved by both the rate of &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}
 of &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; to be tightened accordingly (exactly similar to how the
 rate of &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)(t)\)&lt;/span&gt; is tightened by &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{F(t)}\)&lt;/span&gt; in the
 weighted empirical processes on the real line that we reviewed earlier).
-These features will tame the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;).&lt;/p&gt;
+These features will tame the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt; in Eq.
+(&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Because what eventually form the ingredients of the residual-based
-copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; are the &lt;em&gt;residual ranks&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} )\)&lt;/span&gt;’s, we need
-to go one step further and consider the analogous results for them:&lt;/p&gt;
+copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; are the &lt;em&gt;residual ranks&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} )\)&lt;/span&gt;’s, we need to go one step further and
+consider the analogous results for them:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;Theorem: For all &lt;span class=&#34;math inline&#34;&gt;\(n\ge 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;,
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: For all &lt;span class=&#34;math inline&#34;&gt;\(n\ge 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;,
 &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
         \label{eq5}\tag{5}
         \hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} ) &amp;amp;= -f_k(E_{i,k}) \left\{ (\hat{m}_k-m_k)(\mathbf{X}_i) - \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] \right\} + r_{1,k}( \hat{E}_{i,k} ) + r_{2,k,i}
@@ -305,23 +316,34 @@ enjoys the dependence on &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m
 &lt;/div&gt;
 &lt;div id=&#34;results-on-residual-based-estimator-for-the-copula-parameter&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Results on residual-based estimator for the copula parameter&lt;/h2&gt;
-&lt;p&gt;We are now ready to plug in the decomposition of &lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;), which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. The remainder terms are weighted and so tame the divergence of the scores &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;.
-Eventually, we arrive at the asymptotic equivalence between the
-residual-based PLE and the oracle PLE:&lt;/p&gt;
+&lt;p&gt;We are now ready to plug in the decomposition of
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq.
+(&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The
+leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;),
+which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in
+(&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. The
+remainder terms are weighted and so tame the divergence of the scores
+&lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. Eventually, we arrive at the asymptotic equivalence between
+the residual-based PLE and the oracle PLE:&lt;/p&gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;Theorem: Under the conditions of the last two theorems, and some
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: Under the conditions of the last two theorems, and some
 additional regularity conditions which in particular require, for
 &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
         \int \left\{g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*) f_k(F_k^{\leftarrow}(u_k)) \right\}^2\mathrm{d}C(\mathbf{u}) &amp;lt; \infty,
         \label{eq6}\tag{6}
-    \end{align}\]&lt;/span&gt; the asymptotic equivalence in Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) holds. Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)&lt;/span&gt;.&lt;/p&gt;
+    \end{align}\]&lt;/span&gt; the asymptotic equivalence in Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;)
+holds. Furthermore,
+&lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Condition (&lt;a href=&#34;#mjx-eqn-eq6&#34;&gt;6&lt;/a&gt;) in fact allows for quite non-trivial divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly accommodates the Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem
-above, one still needs to verify the correct upper bound on the
-bracketing number for embedding &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to
-be non-restrictive. For instance, for partly linear regression
-&lt;span class=&#34;math inline&#34;&gt;\(Y_k = \tilde{m}_k(\mathbf{x}) + \mathbf{\theta}_k^\top \mathbf{w} + E_k\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{w}\in\mathbb{R}^{q_{\mathbf{L},n}}\)&lt;/span&gt;,
-we can allow the dimension &lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}\)&lt;/span&gt; of the linear covariate to grow up to
+&lt;p&gt;Condition (&lt;a href=&#34;#mjx-eqn-eq6&#34;&gt;6&lt;/a&gt;) in fact allows for quite non-trivial
+divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly accommodates the
+Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem above, one still
+needs to verify the correct upper bound on the bracketing number for
+embedding &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to be non-restrictive.
+For instance, for partly linear regression
+&lt;span class=&#34;math inline&#34;&gt;\(Y_k = \tilde{m}_k(\mathbf{x}) + \mathbf{\theta}_k^\top \mathbf{w} + E_k\)&lt;/span&gt;
+with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{w}\in\mathbb{R}^{q_{\mathbf{L},n}}\)&lt;/span&gt;, we can allow the
+dimension &lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}\)&lt;/span&gt; of the linear covariate to grow up to
 &lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}=o(n^{1/4})\)&lt;/span&gt;.&lt;/p&gt;
 &lt;!--------------------------------------------------------------------------------&gt;
 &lt;/div&gt;
