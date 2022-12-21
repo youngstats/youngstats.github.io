@@ -6,7 +6,16 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>youngstats</title>
+      <link>https://youngstats.github.io/categories/youngstats/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/youngstats/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>copula-models</title>
       <link>https://youngstats.github.io/categories/copula-models/</link>
@@ -85,15 +94,6 @@
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>adaptive-experiments</title>
-      <link>https://youngstats.github.io/categories/adaptive-experiments/</link>
-      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/adaptive-experiments/</guid>
       <description></description>
     </item>
     

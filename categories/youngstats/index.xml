@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>youngstats on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/youngstats/</link>
+    <description>Recent content in youngstats on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/youngstats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Merry Christmas and Happy New Year 2023!</title>
+      <link>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</guid>
+      <description>Dear Followers of the YoungStatS project, Dear All!
+It has been an exciting year for our project, including 7 One World YoungStatS webinars and 10 blogposts from leading authors in all areas of statistics, probability and econometrics.
+In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).
+And we thank You, readers of our postings and participants at our webinars for your support and feedback thus far!</description>
+    </item>
+    
+  </channel>
+</rss>
