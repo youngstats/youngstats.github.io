@@ -236,9 +236,8 @@ model{
 &lt;/div&gt;
 &lt;div id=&#34;r-inla-implementation&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;R-INLA implementation&lt;/h2&gt;
-&lt;p&gt;To account for measurement error, we can consider the following hierarchical model:
-d
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+&lt;p&gt;To account for measurement error, we can consider the following hierarchical model:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
 y_i|\mu_i \sim N(\mu_i, \sigma_\epsilon^2), \\
 \mu_i = \beta_0 + \beta_1 \text{HV}_i + \beta_2 \text{HI}_i +  \sigma\mathbf{x}_i,
 \end{equation*}\]&lt;/span&gt;
