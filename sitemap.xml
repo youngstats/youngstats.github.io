@@ -3,15 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-computation/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</loc>
-    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
+    <loc>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</loc>
     <lastmod>2022-12-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/youngstats/</loc>
@@ -122,17 +134,11 @@
     <loc>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</loc>
     <lastmod>2022-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
-    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</loc>
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/structural-equations/</loc>
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/bayesian-computation/</loc>
-    <lastmod>2022-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</loc>
     <lastmod>2022-02-08T00:00:00+00:00</lastmod>
@@ -145,9 +151,6 @@
   </url><url>
     <loc>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</loc>
     <lastmod>2022-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
-    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
