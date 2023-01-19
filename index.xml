@@ -27,8 +27,7 @@
 
 &lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Overview&lt;/h2&gt;
-&lt;p&gt;sss
-Traditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments &lt;span class=&#34;math inline&#34;&gt;\(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\)&lt;/span&gt; are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.&lt;/p&gt;
+&lt;p&gt;Traditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments &lt;span class=&#34;math inline&#34;&gt;\(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\)&lt;/span&gt; are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;why-go-beyond-gaussian-models&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Why go beyond Gaussian models?&lt;/h2&gt;

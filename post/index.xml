@@ -13,7 +13,7 @@
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</guid>
-      <description>OverviewsssTraditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments \(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\) are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.</description>
+      <description>OverviewTraditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments \(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\) are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.</description>
     </item>
     
     <item>
