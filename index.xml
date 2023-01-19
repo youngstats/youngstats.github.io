@@ -94,7 +94,7 @@ where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Lambda}\)&lt;/span&
 &lt;div id=&#34;fitting-a-non-gaussian-model-in-stan-columbus-dataset&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Fitting a non-Gaussian model in Stan (Columbus dataset)&lt;/h2&gt;
 &lt;p&gt;The Columbus dataset consists of crime rates in thousands (&lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt;) in 49 counties of Columbus, Ohio, and can be found in the &lt;code&gt;spdep&lt;/code&gt; R package. The next Leaflet widget shows the crime rates.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-01-19-fitting-robust-non-gaussian-models-in-stan-and-r-inla_files/Cabral_Image_3_Columbus.png&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;line-block&#34;&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-01-19-fitting-robust-non-gaussian-models-in-stan-and-r-inla_files/Cabral_Image_3_Columbus.png&#34; /&gt;|&lt;/div&gt;
 &lt;p&gt;We consider the following model:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
 y_i= \beta_0 + \beta_1 \text{HV}_i + \beta_2 \text{HI}_i +  \sigma\mathbf{x}_i,
