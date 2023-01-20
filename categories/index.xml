@@ -8,20 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bayesian-computation</title>
-      <link>https://youngstats.github.io/categories/bayesian-computation/</link>
-      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/bayesian-computation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bayesian-statistics</title>
       <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gaussian-models</title>
+      <link>https://youngstats.github.io/categories/gaussian-models/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/gaussian-models/</guid>
       <description></description>
     </item>
     
