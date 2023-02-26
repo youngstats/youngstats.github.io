@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Asymptotic Statistics in Non-Sparse Networks | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/network-analysis">network-analysis</a>
+  
+     &hercon; <a href="/categories/asymptotic-statistics">asymptotic-statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Asymptotic Statistics in Non-Sparse Networks</span></h1>
+
+  
+  <h3 class="author">Laurent Davezies,  Xavier d'Haultfoeuille and Yannick Guyonvarch
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<p><img src="/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/cover.png" /></p>
+<p>Exchangeable arrays have been studied since the late 70’s (<span class="citation">Aldous (<a href="#ref-Aldous" role="doc-biblioref">1983</a>)</span>,
+<span class="citation">Kallenberg (<a href="#ref-kallenberg05" role="doc-biblioref">2005</a>)</span>). <span class="citation">Eagleson and Weber (<a href="#ref-eagleson" role="doc-biblioref">1978</a>)</span> and <span class="citation">Silverman (<a href="#ref-silverman" role="doc-biblioref">1976</a>)</span> establish Strong Law of Large
+Numbers and Central Limit Theorems for such arrays. Because non-sparse
+networks and multiway clustering are related to exchangeable arrays,
+they have received recent attention in statistics and econometrics
+(<span class="citation">Davezies, D’Haultfœuille, and Guyonvarch (<a href="#ref-davezies1" role="doc-biblioref">2018</a>)</span>, <span class="citation">Davezies, D’Haultfœuille, and Guyonvarch (<a href="#ref-davezies2" role="doc-biblioref">2021</a>)</span>, <span class="citation">Menzel (<a href="#ref-menzel" role="doc-biblioref">2018</a>)</span>). We focus below on non-sparse networks
+and present uniformity results at the basis of the asymptotic normality
+of many nonlinear estimators. We also show the general validity of a
+bootstrap scheme adapted to such data.</p>
+<div id="non-sparse-networks-dyadic-data-and-exchangeability" class="section level2">
+<h2>Non-sparse Networks, Dyadic data and exchangeability</h2>
+<p>Dyadic data are random variables (or vectors) <span class="math inline">\(Y_{i,j}\)</span> indexed by <span class="math inline">\(i\)</span>
+and <span class="math inline">\(j\)</span>, two units from the same population. For instance, <span class="math inline">\(Y_{i,j}\)</span>
+could be exports from country <span class="math inline">\(i\)</span> to country <span class="math inline">\(j\)</span>. Another example is
+taken from digital networks where <span class="math inline">\(Y_{i,j}\)</span> could be, e.g., the numbers
+of messages from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span>. It is useful to represent such data as
+arrays:</p>
+<p><img src="/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure1.png" /></p>
+<p>In this set set-up, the <span class="math inline">\(n(n-1)\)</span> variables are potentially dependent
+because <span class="math inline">\(Y_{i,j}\)</span> is likely correlated with <span class="math inline">\(Y_{i&#39;,j&#39;}\)</span> if
+<span class="math inline">\(\{i,j\}\cap\{i&#39;,j&#39;\}\neq \emptyset\)</span>. In the first example, exports from
+<span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> are correlated with exports from <span class="math inline">\(j\)</span> to <span class="math inline">\(i\)</span>, but also with
+other exports or imports of <span class="math inline">\(i\)</span> or <span class="math inline">\(j\)</span>. The following assumptions allow
+for such correlations, while keeping important aspects of iid sampling:
+<span class="math display">\[\begin{align*}
+\textbf{Joint exchangeability: } &amp; (Y_{i,j})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}\text{ has the same distribution as }(Y_{\pi(i),\pi(j)})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}, \\
+&amp; \text{ for any permutation }\pi \text{ of }\mathbb{N}^{\ast}, \\
+\textbf{Dissociation: } &amp; (Y_{i,j})_{(i,j)\in \{1,...,k\}^2, i\neq j}\text{ and } (Y_{i,j})_{(i,j)\in \{k+1,k+2,...\}^2, i\neq j} \text{ are independent,} \\ &amp; \text{for any }k \in \mathbb{N}^{\ast}.
+\end{align*}\]</span></p>
+<p>These notions generalize “iidness”: if <span class="math inline">\((X_i)_{i\geq 1}\)</span> are i.i.d.,
+then <span class="math inline">\(Y_{i,j}=X_i\)</span>, for any <span class="math inline">\(i\neq j\)</span>, defines a jointly exchangeable
+and dissociated array.</p>
+</div>
+<div id="simple-law-of-large-numbers-lln-and-central-limit-theorems-clt" class="section level2">
+<h2>Simple law of large numbers (LLN) and central limit theorems (CLT)</h2>
+<p>The following results generalize the usual LLN and CLT for iid data to
+jointly exchangeable and dissociated arrays:</p>
+<p>These results actually hold for “multiadic” data, viz. data indexed by
+<span class="math inline">\(k\)</span>-tuples instead of pairs. This has a nice consequence. If the
+variables <span class="math inline">\((Y_{i,j})_{i\neq j}\)</span> are jointly exchangeable and
+dissociated, the variables
+<span class="math inline">\(Z_{i,j,k}=(Y_{i,j}+Y_{j,i})(Y_{i,k}+Y_{k,i})&#39;\)</span> (with <span class="math inline">\(i, j\)</span> and <span class="math inline">\(k\)</span> all
+distinct) also are. Then by the LLN above, we have, if
+<span class="math inline">\(\mathbb{E}\left(|Y_{1,2}|^2\right)&lt;\infty\)</span>,
+<span class="math display">\[\frac{1}{n(n-1)(n-2)}\sum_{1\leq i,j,k\leq n}Z_{i,j,k}\xrightarrow{a.s.}\mathbb{E} \left((Y_{1,2}+Y_{2,1})(Y_{1,3}+Y_{3,1})&#39;\right).\]</span>
+Next, if we let
+<span class="math inline">\(\overline{Y}_i=\frac{1}{n-1}\sum_{\substack{1\leq j \leq n\\ j\neq i}}(Y_{i,j}+Y_{j,i})\)</span>
+and <span class="math inline">\(\overline{Y}=\frac{1}{n}\sum_{i=1}^{n}\overline{Y}_{i}\)</span>, we obtain
+<span class="math display">\[\widehat{V}=\frac{1}{n}\sum_{1\leq i \leq n}(\overline{Y}_i-\overline{Y})(\overline{Y}_i-\overline{Y})&#39;\xrightarrow{a.s.} V.\]</span>
+Hence, t-tests or F-tests of the hypothesis
+<span class="math inline">\(\mathbb{E}(Y_{1,2})=\theta_0\)</span> using <span class="math inline">\(\widehat{V}\)</span> are asymptotically
+valid as soon as <span class="math inline">\(V\)</span> is non-singular.</p>
+</div>
+<div id="uniform-lln-and-clt" class="section level2">
+<h2>Uniform LLN and CLT</h2>
+<p>The previous results are nonetheless insufficient in many cases,
+especially with nonlinear (e.g., M- or Z-) estimators. A common way to
+handle such problems, then, is to render ``simple’’ LLN and CLT
+uniform over suitable classes of functions. Specifically, for
+<span class="math inline">\(f\in \mathcal{F}\)</span> a class of bounded functions with values in
+<span class="math inline">\(\mathbb{R}^k\)</span>, let
+<span class="math inline">\(\mathbb{P}_n(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i,j})\)</span> and
+<span class="math inline">\(\mathbb{G}_n(f)=\sqrt{n}\left(\mathbb{P}_n(f)-E(f(Y_{1,2}))\right)\)</span>.
+The class <span class="math inline">\(\mathcal{F}\)</span> is called Glivenko-Cantelli if, basically,
+<span class="math display">\[\begin{align}%\text{ almost-surely and in }L^1 :
+    \lim_n \sup_{f\in \mathcal{F}}\left|\mathbb{P}_n(f)-\mathbb{E}(f(Y_{1,2}))\right|\xrightarrow{a.s.} 0.\label{eq1}\tag{1}
+\end{align}\]</span> Similarly, The class <span class="math inline">\(\mathcal{F}\)</span> is Donsker for the
+distribution of <span class="math inline">\((Y_{i,j})_{i\neq j\geq 1}\)</span> if
+<span class="math display">\[\begin{align}\mathbb{G}_n\stackrel{d}{\longrightarrow}\mathbb{G},\label{eq2}\tag{2}\end{align}\]</span>
+with <span class="math inline">\(\mathbb{G}\)</span> a Gaussian process indexed on <span class="math inline">\(\mathcal{F}\)</span>.</p>
+<p>Results <span class="math inline">\(\eqref{eq1}\)</span> and <span class="math inline">\(\eqref{eq2}\)</span> have been shown for iid data under
+various conditions. We consider two standard ones involving the
+so-called covering numbers of <span class="math inline">\(\mathcal{F}\)</span>. First, we introduce
+additional notation. For any <span class="math inline">\(\eta &gt; 0\)</span> and any seminorm <span class="math inline">\(||\cdot||\)</span> on
+a space including <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(N(\eta, \mathcal{F}, ||\cdot||)\)</span>
+denotes the minimal number of <span class="math inline">\(||\cdot||\)</span>-closed balls of radius <span class="math inline">\(\eta\)</span>
+with centers in <span class="math inline">\(\mathcal{F}\)</span> needed to cover <span class="math inline">\(\mathcal{F}\)</span>. The
+seminorms we consider hereafter are
+<span class="math inline">\(|f|_{\mu,r} = \left(\int |f|^rd\mu\right)^{1/r}\)</span> for any <span class="math inline">\(r \geq 1\)</span> and
+probability measure <span class="math inline">\(\mu\)</span>. Hereafter, an envelope of <span class="math inline">\(F\)</span> is a measurable
+function <span class="math inline">\(F\)</span> satisfying <span class="math inline">\(F(u) \geq \sup_{f\in \mathcal{F}} |f(u)|\)</span>. We
+let <span class="math inline">\(\mathcal{Q}\)</span> denote the set of probability measures with finite
+support. Finally, <span class="math inline">\(P\)</span> denotes the distribution of one random variable.</p>
+<p>The conditions for <span class="math inline">\(\eqref{eq1}\)</span> and <span class="math inline">\(\eqref{eq2}\)</span> to hold with iid data are
+then:</p>
+<ul>
+<li><p>Condition <span class="math inline">\(CG(\mathcal{F})\)</span>:
+<span class="math inline">\(\forall \eta&gt;0, \sup_{Q\in \mathcal{Q}}N\left(\eta|F|_{Q,1},\mathcal{F},|.|_{Q,1}\right)&lt;\infty,\)</span>
+with <span class="math inline">\(|F|_{P,1}&lt;\infty\)</span>.</p></li>
+<li><p>Condition <span class="math inline">\(D(\mathcal{F})\)</span>:
+<span class="math inline">\(\int_0^{+\infty}\sup_{Q\in \mathcal{Q}}\sqrt{\log N\left(\eta|F|_{Q,2},\mathcal{F},|.|_{Q,2}\right)}d\eta&lt;+\infty,\)</span>
+with <span class="math inline">\(|F|_{P,2}&lt;\infty\)</span>.</p></li>
+</ul>
+<p>Remarkably, these results directly extend to jointly exchangeable and
+dissociated arrays:</p>
+<ul>
+<li><p>If Condition <span class="math inline">\(CG(\mathcal{F})\)</span> holds then <span class="math inline">\(\eqref{eq1}\)</span> holds.</p></li>
+<li><p>If Condition <span class="math inline">\(D(\mathcal{F})\)</span> holds then <span class="math inline">\(\eqref{eq2}\)</span> holds, with
+<span class="math inline">\(\mathbb{G}\)</span> having a covariance kernel <span class="math inline">\(K\)</span> defined by
+<span class="math display">\[K(f_1,f_2)=Cov\left(f_1(Y_{1,2})+f_1(Y_{2,1}),f_2(Y_{1,3})+f_2(Y_{3,1})\right).\]</span></p></li>
+</ul>
+<p>Uniform LLN and CLT also hold using standard conditions on bracketing
+numbers, instead of covering numbers as above.</p>
+<p><strong>Take-away: the main asymptotic results used to establish the
+properties of nonlinear estimators with iid data also hold with jointly
+exchangeable and dissociated arrays.</strong></p>
+<p>Hence, asymptotically normal estimators with iid data are also
+asymptotically normal with jointly exchangeable and dissociated arrays.
+The only difference lies in their rate of convergence and their
+asymptotic variance <span class="math inline">\(V\)</span>. If <span class="math inline">\(V\)</span> is not singular, inference can be based
+on consistent estimation of <span class="math inline">\(V\)</span>, as explained above. But a simple
+bootstrap scheme can also be used.</p>
+</div>
+<div id="bootstrapping-exchangeable-arrays" class="section level2">
+<h2>Bootstrapping exchangeable arrays</h2>
+<p>The main message here is that <strong>even if the parameters of interest
+depend on “edges” distribution, we have to bootstrap vertices!</strong><br />
+Specifically, consider <span class="math inline">\((1^{\ast}, 2^{\ast},...,n^{\ast})\)</span> and iid
+sample drawn uniformly from <span class="math inline">\(\{1,...,n\}\)</span>, and consider the bootstrap
+sample <span class="math inline">\((Y_{i^{\ast},j^{\ast}})_{i\neq j, i^*\neq j^*}\)</span>.</p>
+<p>To illustrate the bootstrap scheme, imagine a 5-vertices network, and a
+bootstrap sample of vertices
+<span class="math inline">\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)</span>, the
+corresponding bootstrapped network is:</p>
+<p><img src="/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure2.png" /></p>
+<p>Figure 1: Bootstrapped network for
+<span class="math inline">\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)</span>}</p>
+<p>The bootstrapped average is
+<span class="math inline">\(\mathbb{P}_n^{\ast}(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i^{\ast},j^{\ast}})\mathbb{1}_{\{i^{\ast}\neq j^{\ast}\}}\)</span>,
+while the bootstrapped process is
+<span class="math inline">\(\mathbb{G}_n^{\ast}(f)=\sqrt{n}\left(\mathbb{P}_n^{\ast}(f)-\mathbb{P}_n(f)\right)\)</span>.</p>
+<p>As with iid data, the bootstrap scheme above leads to consistent
+inference if Condition <span class="math inline">\(D(\mathcal{F})\)</span> holds. Specifically, we then
+have, conditional on <span class="math inline">\((Y_{i,j})_{i,j\in \mathbb{N}^2}\)</span> and almost
+surely,
+<span class="math display">\[\begin{align}\mathbb{G}_n^{\ast}\stackrel{d}{\longrightarrow}\mathbb{G},\end{align}\]</span>
+where <span class="math inline">\(\mathbb{G}\)</span> is the same Gaussian process as above. This ensures
+the validity of the bootstrap in many nonlinear contexts.</p>
+</div>
+<div id="bibliography" class="section level2 unnumbered">
+<h2>Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Aldous" class="csl-entry">
+Aldous, D. J. 1983. <em>Exchangeability and Related Topics</em>. Springer Verlag.
+</div>
+<div id="ref-davezies1" class="csl-entry">
+Davezies, Laurent, Xavier D’Haultfœuille, and Yannick Guyonvarch. 2018. <span>“Asymptotic Results Under Multiway Clustering.”</span>
+</div>
+<div id="ref-davezies2" class="csl-entry">
+———. 2021. <span>“Empirical Process Results for Exchangeable Arrays.”</span>
+</div>
+<div id="ref-eagleson" class="csl-entry">
+Eagleson, G. K., and N. C. Weber. 1978. <em>Limit Theorems for Weakly Exchangeable Arrays</em>. Mathematical Proceedings of the Cambridge Philosophical Society.
+</div>
+<div id="ref-kallenberg05" class="csl-entry">
+Kallenberg, O. 2005. <em>Probabilistic Symmetries and Invariance Principles</em>. Springer.
+</div>
+<div id="ref-menzel" class="csl-entry">
+Menzel, Konrad. 2018. <span>“Bootstrap with Clustering in Two or More Dimensions.”</span>
+</div>
+<div id="ref-silverman" class="csl-entry">
+Silverman, B. W. 1976. <span>“Empirical Process Results for Exchangeable Arrays.”</span>
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

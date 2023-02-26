@@ -6,7 +6,185 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Asymptotic Statistics in Non-Sparse Networks</title>
+      <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/cover.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Exchangeable arrays have been studied since the late 70’s (&lt;span class=&#34;citation&#34;&gt;Aldous (&lt;a href=&#34;#ref-Aldous&#34; role=&#34;doc-biblioref&#34;&gt;1983&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;Kallenberg (&lt;a href=&#34;#ref-kallenberg05&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;). &lt;span class=&#34;citation&#34;&gt;Eagleson and Weber (&lt;a href=&#34;#ref-eagleson&#34; role=&#34;doc-biblioref&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Silverman (&lt;a href=&#34;#ref-silverman&#34; role=&#34;doc-biblioref&#34;&gt;1976&lt;/a&gt;)&lt;/span&gt; establish Strong Law of Large
+Numbers and Central Limit Theorems for such arrays. Because non-sparse
+networks and multiway clustering are related to exchangeable arrays,
+they have received recent attention in statistics and econometrics
+(&lt;span class=&#34;citation&#34;&gt;Davezies, D’Haultfœuille, and Guyonvarch (&lt;a href=&#34;#ref-davezies1&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Davezies, D’Haultfœuille, and Guyonvarch (&lt;a href=&#34;#ref-davezies2&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Menzel (&lt;a href=&#34;#ref-menzel&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;). We focus below on non-sparse networks
+and present uniformity results at the basis of the asymptotic normality
+of many nonlinear estimators. We also show the general validity of a
+bootstrap scheme adapted to such data.&lt;/p&gt;
+&lt;div id=&#34;non-sparse-networks-dyadic-data-and-exchangeability&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Non-sparse Networks, Dyadic data and exchangeability&lt;/h2&gt;
+&lt;p&gt;Dyadic data are random variables (or vectors) &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; indexed by &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;
+and &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, two units from the same population. For instance, &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt;
+could be exports from country &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to country &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. Another example is
+taken from digital networks where &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; could be, e.g., the numbers
+of messages from &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. It is useful to represent such data as
+arrays:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In this set set-up, the &lt;span class=&#34;math inline&#34;&gt;\(n(n-1)\)&lt;/span&gt; variables are potentially dependent
+because &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; is likely correlated with &lt;span class=&#34;math inline&#34;&gt;\(Y_{i&amp;#39;,j&amp;#39;}\)&lt;/span&gt; if
+&lt;span class=&#34;math inline&#34;&gt;\(\{i,j\}\cap\{i&amp;#39;,j&amp;#39;\}\neq \emptyset\)&lt;/span&gt;. In the first example, exports from
+&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; are correlated with exports from &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;, but also with
+other exports or imports of &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. The following assumptions allow
+for such correlations, while keeping important aspects of iid sampling:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+\textbf{Joint exchangeability: } &amp;amp; (Y_{i,j})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}\text{ has the same distribution as }(Y_{\pi(i),\pi(j)})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}, \\
+&amp;amp; \text{ for any permutation }\pi \text{ of }\mathbb{N}^{\ast}, \\
+\textbf{Dissociation: } &amp;amp; (Y_{i,j})_{(i,j)\in \{1,...,k\}^2, i\neq j}\text{ and } (Y_{i,j})_{(i,j)\in \{k+1,k+2,...\}^2, i\neq j} \text{ are independent,} \\ &amp;amp; \text{for any }k \in \mathbb{N}^{\ast}.
+\end{align*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;These notions generalize “iidness”: if &lt;span class=&#34;math inline&#34;&gt;\((X_i)_{i\geq 1}\)&lt;/span&gt; are i.i.d.,
+then &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}=X_i\)&lt;/span&gt;, for any &lt;span class=&#34;math inline&#34;&gt;\(i\neq j\)&lt;/span&gt;, defines a jointly exchangeable
+and dissociated array.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-law-of-large-numbers-lln-and-central-limit-theorems-clt&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple law of large numbers (LLN) and central limit theorems (CLT)&lt;/h2&gt;
+&lt;p&gt;The following results generalize the usual LLN and CLT for iid data to
+jointly exchangeable and dissociated arrays:&lt;/p&gt;
+&lt;p&gt;These results actually hold for “multiadic” data, viz. data indexed by
+&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-tuples instead of pairs. This has a nice consequence. If the
+variables &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i\neq j}\)&lt;/span&gt; are jointly exchangeable and
+dissociated, the variables
+&lt;span class=&#34;math inline&#34;&gt;\(Z_{i,j,k}=(Y_{i,j}+Y_{j,i})(Y_{i,k}+Y_{k,i})&amp;#39;\)&lt;/span&gt; (with &lt;span class=&#34;math inline&#34;&gt;\(i, j\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; all
+distinct) also are. Then by the LLN above, we have, if
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}\left(|Y_{1,2}|^2\right)&amp;lt;\infty\)&lt;/span&gt;,
+&lt;span class=&#34;math display&#34;&gt;\[\frac{1}{n(n-1)(n-2)}\sum_{1\leq i,j,k\leq n}Z_{i,j,k}\xrightarrow{a.s.}\mathbb{E} \left((Y_{1,2}+Y_{2,1})(Y_{1,3}+Y_{3,1})&amp;#39;\right).\]&lt;/span&gt;
+Next, if we let
+&lt;span class=&#34;math inline&#34;&gt;\(\overline{Y}_i=\frac{1}{n-1}\sum_{\substack{1\leq j \leq n\\ j\neq i}}(Y_{i,j}+Y_{j,i})\)&lt;/span&gt;
+and &lt;span class=&#34;math inline&#34;&gt;\(\overline{Y}=\frac{1}{n}\sum_{i=1}^{n}\overline{Y}_{i}\)&lt;/span&gt;, we obtain
+&lt;span class=&#34;math display&#34;&gt;\[\widehat{V}=\frac{1}{n}\sum_{1\leq i \leq n}(\overline{Y}_i-\overline{Y})(\overline{Y}_i-\overline{Y})&amp;#39;\xrightarrow{a.s.} V.\]&lt;/span&gt;
+Hence, t-tests or F-tests of the hypothesis
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}(Y_{1,2})=\theta_0\)&lt;/span&gt; using &lt;span class=&#34;math inline&#34;&gt;\(\widehat{V}\)&lt;/span&gt; are asymptotically
+valid as soon as &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; is non-singular.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uniform-lln-and-clt&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Uniform LLN and CLT&lt;/h2&gt;
+&lt;p&gt;The previous results are nonetheless insufficient in many cases,
+especially with nonlinear (e.g., M- or Z-) estimators. A common way to
+handle such problems, then, is to render ``simple’’ LLN and CLT
+uniform over suitable classes of functions. Specifically, for
+&lt;span class=&#34;math inline&#34;&gt;\(f\in \mathcal{F}\)&lt;/span&gt; a class of bounded functions with values in
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^k\)&lt;/span&gt;, let
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}_n(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i,j})\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}_n(f)=\sqrt{n}\left(\mathbb{P}_n(f)-E(f(Y_{1,2}))\right)\)&lt;/span&gt;.
+The class &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; is called Glivenko-Cantelli if, basically,
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}%\text{ almost-surely and in }L^1 :
+    \lim_n \sup_{f\in \mathcal{F}}\left|\mathbb{P}_n(f)-\mathbb{E}(f(Y_{1,2}))\right|\xrightarrow{a.s.} 0.\label{eq1}\tag{1}
+\end{align}\]&lt;/span&gt; Similarly, The class &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; is Donsker for the
+distribution of &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i\neq j\geq 1}\)&lt;/span&gt; if
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\mathbb{G}_n\stackrel{d}{\longrightarrow}\mathbb{G},\label{eq2}\tag{2}\end{align}\]&lt;/span&gt;
+with &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; a Gaussian process indexed on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Results &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; have been shown for iid data under
+various conditions. We consider two standard ones involving the
+so-called covering numbers of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;. First, we introduce
+additional notation. For any &lt;span class=&#34;math inline&#34;&gt;\(\eta &amp;gt; 0\)&lt;/span&gt; and any seminorm &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt; on
+a space including &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(N(\eta, \mathcal{F}, ||\cdot||)\)&lt;/span&gt;
+denotes the minimal number of &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt;-closed balls of radius &lt;span class=&#34;math inline&#34;&gt;\(\eta\)&lt;/span&gt;
+with centers in &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; needed to cover &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;. The
+seminorms we consider hereafter are
+&lt;span class=&#34;math inline&#34;&gt;\(|f|_{\mu,r} = \left(\int |f|^rd\mu\right)^{1/r}\)&lt;/span&gt; for any &lt;span class=&#34;math inline&#34;&gt;\(r \geq 1\)&lt;/span&gt; and
+probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;. Hereafter, an envelope of &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; is a measurable
+function &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; satisfying &lt;span class=&#34;math inline&#34;&gt;\(F(u) \geq \sup_{f\in \mathcal{F}} |f(u)|\)&lt;/span&gt;. We
+let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{Q}\)&lt;/span&gt; denote the set of probability measures with finite
+support. Finally, &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; denotes the distribution of one random variable.&lt;/p&gt;
+&lt;p&gt;The conditions for &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; to hold with iid data are
+then:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Condition &lt;span class=&#34;math inline&#34;&gt;\(CG(\mathcal{F})\)&lt;/span&gt;:
+&lt;span class=&#34;math inline&#34;&gt;\(\forall \eta&amp;gt;0, \sup_{Q\in \mathcal{Q}}N\left(\eta|F|_{Q,1},\mathcal{F},|.|_{Q,1}\right)&amp;lt;\infty,\)&lt;/span&gt;
+with &lt;span class=&#34;math inline&#34;&gt;\(|F|_{P,1}&amp;lt;\infty\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt;:
+&lt;span class=&#34;math inline&#34;&gt;\(\int_0^{+\infty}\sup_{Q\in \mathcal{Q}}\sqrt{\log N\left(\eta|F|_{Q,2},\mathcal{F},|.|_{Q,2}\right)}d\eta&amp;lt;+\infty,\)&lt;/span&gt;
+with &lt;span class=&#34;math inline&#34;&gt;\(|F|_{P,2}&amp;lt;\infty\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remarkably, these results directly extend to jointly exchangeable and
+dissociated arrays:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If Condition &lt;span class=&#34;math inline&#34;&gt;\(CG(\mathcal{F})\)&lt;/span&gt; holds then &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; holds.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt; holds then &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; holds, with
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; having a covariance kernel &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; defined by
+&lt;span class=&#34;math display&#34;&gt;\[K(f_1,f_2)=Cov\left(f_1(Y_{1,2})+f_1(Y_{2,1}),f_2(Y_{1,3})+f_2(Y_{3,1})\right).\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uniform LLN and CLT also hold using standard conditions on bracketing
+numbers, instead of covering numbers as above.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Take-away: the main asymptotic results used to establish the
+properties of nonlinear estimators with iid data also hold with jointly
+exchangeable and dissociated arrays.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hence, asymptotically normal estimators with iid data are also
+asymptotically normal with jointly exchangeable and dissociated arrays.
+The only difference lies in their rate of convergence and their
+asymptotic variance &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt;. If &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; is not singular, inference can be based
+on consistent estimation of &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt;, as explained above. But a simple
+bootstrap scheme can also be used.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bootstrapping-exchangeable-arrays&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bootstrapping exchangeable arrays&lt;/h2&gt;
+&lt;p&gt;The main message here is that &lt;strong&gt;even if the parameters of interest
+depend on “edges” distribution, we have to bootstrap vertices!&lt;/strong&gt;&lt;br /&gt;
+Specifically, consider &lt;span class=&#34;math inline&#34;&gt;\((1^{\ast}, 2^{\ast},...,n^{\ast})\)&lt;/span&gt; and iid
+sample drawn uniformly from &lt;span class=&#34;math inline&#34;&gt;\(\{1,...,n\}\)&lt;/span&gt;, and consider the bootstrap
+sample &lt;span class=&#34;math inline&#34;&gt;\((Y_{i^{\ast},j^{\ast}})_{i\neq j, i^*\neq j^*}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;To illustrate the bootstrap scheme, imagine a 5-vertices network, and a
+bootstrap sample of vertices
+&lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;, the
+corresponding bootstrapped network is:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 1: Bootstrapped network for
+&lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;}&lt;/p&gt;
+&lt;p&gt;The bootstrapped average is
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}_n^{\ast}(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i^{\ast},j^{\ast}})\mathbb{1}_{\{i^{\ast}\neq j^{\ast}\}}\)&lt;/span&gt;,
+while the bootstrapped process is
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}_n^{\ast}(f)=\sqrt{n}\left(\mathbb{P}_n^{\ast}(f)-\mathbb{P}_n(f)\right)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;As with iid data, the bootstrap scheme above leads to consistent
+inference if Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt; holds. Specifically, we then
+have, conditional on &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i,j\in \mathbb{N}^2}\)&lt;/span&gt; and almost
+surely,
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\mathbb{G}_n^{\ast}\stackrel{d}{\longrightarrow}\mathbb{G},\end{align}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; is the same Gaussian process as above. This ensures
+the validity of the bootstrap in many nonlinear contexts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-Aldous&#34; class=&#34;csl-entry&#34;&gt;
+Aldous, D. J. 1983. &lt;em&gt;Exchangeability and Related Topics&lt;/em&gt;. Springer Verlag.
+&lt;/div&gt;
+&lt;div id=&#34;ref-davezies1&#34; class=&#34;csl-entry&#34;&gt;
+Davezies, Laurent, Xavier D’Haultfœuille, and Yannick Guyonvarch. 2018. &lt;span&gt;“Asymptotic Results Under Multiway Clustering.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-davezies2&#34; class=&#34;csl-entry&#34;&gt;
+———. 2021. &lt;span&gt;“Empirical Process Results for Exchangeable Arrays.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-eagleson&#34; class=&#34;csl-entry&#34;&gt;
+Eagleson, G. K., and N. C. Weber. 1978. &lt;em&gt;Limit Theorems for Weakly Exchangeable Arrays&lt;/em&gt;. Mathematical Proceedings of the Cambridge Philosophical Society.
+&lt;/div&gt;
+&lt;div id=&#34;ref-kallenberg05&#34; class=&#34;csl-entry&#34;&gt;
+Kallenberg, O. 2005. &lt;em&gt;Probabilistic Symmetries and Invariance Principles&lt;/em&gt;. Springer.
+&lt;/div&gt;
+&lt;div id=&#34;ref-menzel&#34; class=&#34;csl-entry&#34;&gt;
+Menzel, Konrad. 2018. &lt;span&gt;“Bootstrap with Clustering in Two or More Dimensions.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-silverman&#34; class=&#34;csl-entry&#34;&gt;
+Silverman, B. W. 1976. &lt;span&gt;“Empirical Process Results for Exchangeable Arrays.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Fitting robust non-Gaussian models in Stan and R-INLA</title>
       <link>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</link>
@@ -1467,367 +1645,6 @@ Papamakarios, George, Theo Pavlakou, and Iain Murray. 2017. &lt;span&gt;“Maske
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</title>
-      <link>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Migration is a multifaceted phenomenon including macro-, meso-, and
-micro-triggers that, when combined, decide an individual’s final
-decision to migrate. Apart from being an essential component of
-population change, migration is also an important component of
-population estimates and labor market force estimations. Jennissen
-(2004) argues that the presence of migrant populations has a favorable
-impact on natural population growth since migrants’ age characteristics
-and fertility rates are often greater than those of the indigenous
-population. Furthermore, the migration problem is far more significant
-for population growth in European nations, which are generally seeing a
-drop in natural population increase. In this environment, it’s critical
-to identify and quantify the factors involved in the decision to
-migrate. Income disparities or income inequality, economic development,
-the tax system, the economic cycle, the availability of new job
-opportunities, unemployment, and other variables have been highlighted
-as factors affecting migration by several migration theories (Kumpikaite
-and Zickute, 2012). People migrate for a variety of reasons, including
-improved living conditions or an escape from adverse circumstances in
-their native country. This is the foundation of Lee’s (1966) push and
-pull hypothesis, which is one of the primary neo-classical migration
-hypotheses. Individuals are influenced by supply-push forces to leave
-their home country, while demand-pull variables draw migrants to the
-destination country.&lt;/p&gt;
-&lt;p&gt;Panel data analysis is the study of datasets in which entities are
-observed through time and allows for the management of missing variables
-without having to examine them. By examining changes in the dependent
-variable across time, one may rule out the impact of neglected factors
-that fluctuate between entities but remain constant over time. The basic
-premise is that if unobserved factors (such as those peculiar to
-nations) influence the dependent variable yet stay constant over time,
-the changes in the dependent variable must come from other sources.&lt;/p&gt;
-&lt;p&gt;The notation for panel data will be the following:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} (x_{1,it}, x_{2,it}, ..., x_{k,it}, y_{it}), i=1,2, ..., n; t=1,2, ..., T \end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;em&gt;i&lt;/em&gt; is the subscript for the entity being observed (in our case
-study the country) and &lt;em&gt;t&lt;/em&gt; is the subscript for the date at which the
-entity is observed (in our case study the year). Using these notations
-we would have data for the variables
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} x_1, x_2, ..., x_k, y \end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The fixed effects approach&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The fixed effects model would be written as:&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} y_{it}=\beta_1 x_{1,it} + \beta_2 x_{2,it} + \dots + \beta_k x_{k,it} + \alpha_i + u_{it} \end{equation}\]&lt;/span&gt;
-&lt;p&gt;where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(x_{j,it}\)&lt;/span&gt; represents the value of regressor &lt;em&gt;j&lt;/em&gt;, for entity &lt;em&gt;i&lt;/em&gt; and
-time period &lt;em&gt;t&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\beta_j\)&lt;/span&gt; represents the coefficients of the independent variables,
-that do not vary across individuals.&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\alpha_i\)&lt;/span&gt; represents the entity specific intercepts.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;The random effects approach&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;the unobserved variable specific to the individual entity is encompassed
-in the error term. The entities will have a common mean value for the
-intercept (let’s denote this with &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;) and the specific differences
-in the intercept values of each country would be reflected in an error
-term (denoted with &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i\)&lt;/span&gt;).&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + \epsilon_i + u_{it} \end{equation}\]&lt;/span&gt;
-&lt;p&gt;We will obtain a composite error term, which is composed of
-&lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i\)&lt;/span&gt;, the individual (cross section) specific error &lt;span class=&#34;math inline&#34;&gt;\(u_{it}\)&lt;/span&gt; and
-a combined cross section and time series error:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} w_{it}=\epsilon_i + u_{it} \end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Thus substituting both equations we obtain:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation} y_{it}=\alpha + \sum_{j=1}^{k} \beta_j x_{j,it} + w_{it} \end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The main benefit of using panel data related techniques is that
-individual heterogeneity of individual entities (countries) can be
-explicitly taken into account in panel data estimation; additionally,
-panel data offers “more informative data, more variability, less
-collinearity, more degrees of freedom, and more efficiency” by combining
-time series and cross-sectional observations (Baltagi, 2001).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The database involved&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The Crude Rate of Net Migration plus adjustment is the dependent
-variable in both estimated models. It is calculated as the annual ratio
-of net migration to the average population. It is expressed in terms of
-1000 people (of the average population). The difference between the
-total number of immigrants and the total number of emigrants is referred
-to as net migration; statistical adjustments refers to adjusting net
-migration by taking the difference between total population change and
-natural change; the indicator roughly covers the difference between
-inward and outward migration. In the model, the variable is called “Net
-Migration.”&lt;/p&gt;
-&lt;p&gt;The independent variables in the models are as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unemployment: The long-term unemployment rate is the percentage of
-people who have been jobless for more than a year out of the total
-number of people who are working.&lt;/li&gt;
-&lt;li&gt;Earnings (adjusted): The adjusted gross disposable income of
-households divided by the PPP (purchasing power parities) of the actual
-individual consumption of households and by the entire resident
-population (in purchasing power standard (PPS) per inhabitant) yields
-gross disposable income of households per capita.&lt;/li&gt;
-&lt;li&gt;Gini Coefficient (of equivalised disposable income): A relationship
-between the cumulative shares of the population disposed based on
-equivalised disposable income and the cumulative share of the
-equivalised total disposable income received by the population is
-defined as the Gini Coefficient (of equivalised disposable income).&lt;/li&gt;
-&lt;li&gt;Poverty: The at-risk-of-poverty rate is the proportion of people whose
-equivalised disposable income is less than the risk-of-poverty
-threshold, which is set at 60% of the national median equivalised
-disposable income.&lt;/li&gt;
-&lt;li&gt;Economic Freedom: A 0–10 scale that assesses the degree of economic
-liberty in five key areas: government size, legal system, sound money,
-international trade freedom, and regulation.&lt;/li&gt;
-&lt;li&gt;Hospital beds: the number of beds available in hospitals; the variable
-is calculated per 100,000 people.&lt;/li&gt;
-&lt;li&gt;Health spending: the overall amount spent on health as a proportion of
-GDP ( percent ).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Eurostat is the data source for all variables except Economic Freedom.
-The Fraser Institute is the source of data for the Economic Freedom
-Index. Data was collected for 25 EU nations over a period of 18 years,
-from 2000 to 2017.&lt;/p&gt;
-&lt;p&gt;Figure 1 depicts the dispersion of average Net Migration rates for EU
-nations for the period 2000–2017. Lithuania (-8.84), Latvia (-7.19),
-and Romania (-7.19) are the nations with the lowest average Net
-Migration between 2000 and 2017. (-5.48). Bulgaria, Estonia, Poland, and
-Slovakia all had negative Net Migration averages over the time period
-studied. This was to be expected, given that these economies in Central
-and Eastern Europe are generally migration-sending countries (Jennissen,
-2004). Luxembourg, Spain, and Sweden, on the other hand, have the
-greatest average Net Migration rates, indicating that they are typically
-migrant-receiving nations. The Net Migration Rate’s behavior proposes
-that the group of nations be divided into two: typically sending and
-traditionally receiving countries.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-18-macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states_files/Figure%201.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 1 – Average Net Migration for the period 2000 – 2017 for the EU
-countries; source: author’s processing in Tableau, based on Eurostat data.&lt;/p&gt;
-&lt;p&gt;Figure 2 depicts the significant relationship between real GDP/capita,
-chain linked volume (2010) in Euro/capita, and net migration rate
-(averages from 2000 to 2017 were used). Nations with lower GDP per
-capita also have negative or low Net Migration rates, indicating that
-“poorer” countries are more likely to be the source of migrant flows
-(sending countries). Nations with greater GDP/capita, on the other hand,
-have higher migration rates, implying that they are primarily receiving
-countries for migrants.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-18-macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states_files/Figure%202.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 2 – Net Migration rate vs. GDP/capita – comparison between old
-and new EU member states; source: author’s processing in Tableau, based
-on Eurostat data.&lt;/p&gt;
-&lt;p&gt;The tendency of Net Migration for old and new member states warrants the
-dataset being separated into two categories. It is clear from this
-research that the group of New Member States acts as Migrant Sending
-Countries for the whole time under consideration, while the Old Member
-States operate as Migrant Receiving Countries. As a result, the
-empirical application will be split into two parts: one model for the
-Old member nations and then another model (Table 1) for the New member
-states (Table 2).&lt;/p&gt;
-&lt;p&gt;Table 1. Results of estimation for fixed and random effects models for
-Old Member States; source: author’s own results&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col width=&#34;23%&#34; /&gt;
-&lt;col width=&#34;38%&#34; /&gt;
-&lt;col width=&#34;38%&#34; /&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Fixed Effects&lt;/th&gt;
-&lt;th&gt;Random Effects&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Unemployment&lt;/td&gt;
-&lt;td&gt;-1.0468*** (0.0903)&lt;/td&gt;
-&lt;td&gt;-1.0295*** (0.0881)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Ln_Income&lt;/td&gt;
-&lt;td&gt;4.9042** (2.4037)&lt;/td&gt;
-&lt;td&gt;8.1458*** (1.5631)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Gini&lt;/td&gt;
-&lt;td&gt;-0.1777 (0.1691)&lt;/td&gt;
-&lt;td&gt;-0.3282** (0.1391)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Poverty&lt;/td&gt;
-&lt;td&gt;0.6876*** (0.1657)&lt;/td&gt;
-&lt;td&gt;0.7331*** (0.1417)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Economic Freedom&lt;/td&gt;
-&lt;td&gt;-4.5181*** (1.5230)&lt;/td&gt;
-&lt;td&gt;-2.9796*** (1.0923)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Health Expenditure&lt;/td&gt;
-&lt;td&gt;-1.4840*** (0.4175)&lt;/td&gt;
-&lt;td&gt;-1.7844*** (0.2965)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Intercept&lt;/td&gt;
-&lt;td&gt;-1.6247 (25.7912)&lt;/td&gt;
-&lt;td&gt;-40.0461** (17.8813)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;R2&lt;/td&gt;
-&lt;td&gt;Within 0.4184 Between 0.6589 Overall 0.5056&lt;/td&gt;
-&lt;td&gt;Within 0.4109 Between 0.8405 Overall 0.5828&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;F&lt;/td&gt;
-&lt;td&gt;29.85***&lt;/td&gt;
-&lt;td&gt;229.47*** (Wald chi2)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Corr (u_i, xb)&lt;/td&gt;
-&lt;td&gt;0.2190&lt;/td&gt;
-&lt;td&gt;0 (assumed)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Sigma_u&lt;/td&gt;
-&lt;td&gt;2.0795&lt;/td&gt;
-&lt;td&gt;1.3274&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Sigma_e&lt;/td&gt;
-&lt;td&gt;3.0081&lt;/td&gt;
-&lt;td&gt;3.0081&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Rho&lt;/td&gt;
-&lt;td&gt;0.3233&lt;/td&gt;
-&lt;td&gt;0.1629&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;*** Significant at 0.01; ** Significant at 0.05&lt;/p&gt;
-&lt;p&gt;(standard errors of the coefficients are reported in parenthesis)&lt;/p&gt;
-&lt;p&gt;Table 2. Results of estimation for fixed and random effects models for
-New Member States; source: author’s own results&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col width=&#34;23%&#34; /&gt;
-&lt;col width=&#34;38%&#34; /&gt;
-&lt;col width=&#34;38%&#34; /&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Fixed Effects&lt;/th&gt;
-&lt;th&gt;Random Effects&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Unemployment&lt;/td&gt;
-&lt;td&gt;-0.3900** (0.1547)&lt;/td&gt;
-&lt;td&gt;-0.3893*** (0.1461)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Gini&lt;/td&gt;
-&lt;td&gt;-0.3527** (0.1377)&lt;/td&gt;
-&lt;td&gt;-0.5432*** (0.1226)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Economic Freedom&lt;/td&gt;
-&lt;td&gt;4.3493*** (1.1280)&lt;/td&gt;
-&lt;td&gt;4.3283*** (1.0755)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Health Expenditure&lt;/td&gt;
-&lt;td&gt;-1.1240* (0.5841)&lt;/td&gt;
-&lt;td&gt;-0.4513 (0.4765)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Intercept&lt;/td&gt;
-&lt;td&gt;-15.6762 (8.0909)&lt;/td&gt;
-&lt;td&gt;-13.3742** (7.5791)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;R2&lt;/td&gt;
-&lt;td&gt;Within 0.1663 Between 0.0205 Overall 0.0855&lt;/td&gt;
-&lt;td&gt;Within 0.1483 Between 0.5198 Overall 0.3147&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;F&lt;/td&gt;
-&lt;td&gt;8.28***&lt;/td&gt;
-&lt;td&gt;38.90*** (Wald chi2)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Corr (u_i, xb)&lt;/td&gt;
-&lt;td&gt;-0.1069&lt;/td&gt;
-&lt;td&gt;0 (assumed)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Sigma_u&lt;/td&gt;
-&lt;td&gt;3.9181&lt;/td&gt;
-&lt;td&gt;2.2254&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Sigma_e&lt;/td&gt;
-&lt;td&gt;3.5999&lt;/td&gt;
-&lt;td&gt;3.5999&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Rho&lt;/td&gt;
-&lt;td&gt;0.5422&lt;/td&gt;
-&lt;td&gt;0.2765&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;*** Significant at 0.01; ** Significant at 0.05; * Significant at
-0.1&lt;/p&gt;
-&lt;p&gt;(standard errors of the coefficients are reported in parenthesis)&lt;/p&gt;
-&lt;p&gt;The influence of macroeconomic factors on the Crude Rate Net Migration
-of European economies was quantified using panel data regression models.
-A preliminary study of the dependent variable’s distribution reveals
-that the net migration rate differs across Old Member States
-(migrant-receiving nations) and New Member States (sending countries for
-migrants). As a result, we opt to estimate two models for the two sets
-of nations, following Mihi-Ramirez et al. (2017) method’s. Unemployment
-rate, per capita income, Gini coefficient, poverty rate, Economic
-Freedom Index, and two other characteristics relating to the health
-system were included as independent variables (number of beds in
-hospitals and health expenditure as percentage in GDP). The analysed
-period was 2000 – 2017.&lt;/p&gt;
-&lt;p&gt;The findings corroborated migratory economic theory. In terms of the
-labor market, unemployment is a large and powerful supply push factor
-for migration. Only for the Old Member states does income appear as a
-key influence, validating the neo-classical economic theory of
-migration, which claims that variations in earnings across nations are
-one of the main factors driving labor movement (Massey et al, 1993).
-Moving on to the social component, the Gini coefficient has been
-established as a strong driving force behind migration in both Old and
-New Member States. Poverty appears to be a factor with reduced
-explanatory power, with a positive coefficient for the Old member states
-and no significance for the New member states.&lt;/p&gt;
-&lt;p&gt;In terms of Economic Freedom, the factor has a considerable beneficial
-impact on net migration rates only in the New Member States.&lt;/p&gt;
-&lt;p&gt;Furthermore, health-related macroeconomic factors were included in the
-model, as well as the circular cumulative causation hypothesis, which
-states that variations in standard of living across nations are the
-primary cause of migration (Massey et al. 1993). The health system, on
-the other hand, could not be proven to be a factor of migration.&lt;/p&gt;
-&lt;p&gt;Because international migration has such a substantial impact on
-European population dynamics, understanding and analyzing the factors
-that influence international migration is critical. The findings of this
-study might be utilized not just to produce migration forecasts, but
-also to establish migration policies that would improve migrants’ labor
-and social integration.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Author:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Smaranda Cimpoeru, PhD&lt;/p&gt;
-&lt;p&gt;Department of Statistics and Econometrics, The Bucharest University of
-Economic Studies&lt;/p&gt;
-&lt;p&gt;E-mail:
-&lt;a href=&#34;mailto:smaranda.cimpoeru@csie.ase.ro&#34; class=&#34;email&#34;&gt;smaranda.cimpoeru@csie.ase.ro&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

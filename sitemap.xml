@@ -3,21 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
-    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
+    <loc>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/asymptotic-statistics/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/network-analysis/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
     <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</loc>
     <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/gaussian-models/</loc>
-    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/robust-statistics/</loc>
@@ -366,9 +375,6 @@
     <lastmod>2020-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2020/10/01/modeling-covid-19/</loc>
-    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/network-analysis/</loc>
     <lastmod>2020-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/scientometrics/</loc>

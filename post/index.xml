@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Asymptotic Statistics in Non-Sparse Networks</title>
+      <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
+      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) establish Strong Law of LargeNumbers and Central Limit Theorems for such arrays. Because non-sparsenetworks and multiway clustering are related to exchangeable arrays,they have received recent attention in statistics and econometrics(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networksand present uniformity results at the basis of the asymptotic normalityof many nonlinear estimators.</description>
+    </item>
+    
     <item>
       <title>Fitting robust non-Gaussian models in Stan and R-INLA</title>
       <link>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</link>
@@ -96,16 +105,6 @@ In the webinar, selected young statisticians will present their recentworks and
       
       <guid>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</guid>
       <description>IntroductionA NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fullycharacterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).We present a general model for the intensity function of a non-homogeneous Poissonprocess using measure transport. The model finds its roots in transportation ofprobability measure (Marzouk et al. 2016), an approach that has gainedpopularity recently for its ability to model arbitrary probabilitydensity functions.</description>
-    </item>
-    
-    <item>
-      <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</title>
-      <link>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</link>
-      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</guid>
-      <description>Introduction
-Migration is a multifaceted phenomenon including macro-, meso-, andmicro-triggers that, when combined, decide an individual’s finaldecision to migrate. Apart from being an essential component ofpopulation change, migration is also an important component ofpopulation estimates and labor market force estimations. Jennissen(2004) argues that the presence of migrant populations has a favorableimpact on natural population growth since migrants’ age characteristicsand fertility rates are often greater than those of the indigenouspopulation.</description>
     </item>
     
   </channel>

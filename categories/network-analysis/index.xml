@@ -6,7 +6,16 @@
     <description>Recent content in network-analysis on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/network-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/network-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Asymptotic Statistics in Non-Sparse Networks</title>
+      <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
+      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) establish Strong Law of LargeNumbers and Central Limit Theorems for such arrays. Because non-sparsenetworks and multiway clustering are related to exchangeable arrays,they have received recent attention in statistics and econometrics(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networksand present uniformity results at the basis of the asymptotic normalityof many nonlinear estimators.</description>
+    </item>
+    
     <item>
       <title>The scientific collaboration of researchers and organizations in Slovenia</title>
       <link>https://youngstats.github.io/post/2020/10/01/cugmas/</link>
