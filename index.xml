@@ -141,7 +141,7 @@ sample &lt;span class=&#34;math inline&#34;&gt;\((Y_{i^{\ast},j^{\ast}})_{i\neq 
 bootstrap sample of vertices
 &lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;, the
 corresponding bootstrapped network is:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure2_2.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 1: Bootstrapped network for
 &lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;}&lt;/p&gt;
 &lt;p&gt;The bootstrapped average is
