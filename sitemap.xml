@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/causal-inference/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
@@ -11,13 +29,7 @@
     <loc>https://youngstats.github.io/categories/asymptotic-statistics/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/network-analysis/</loc>
-    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
@@ -77,13 +89,7 @@
     <loc>https://youngstats.github.io/categories/adaptive-experiments/</loc>
     <lastmod>2022-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/causal-inference/</loc>
-    <lastmod>2022-10-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</loc>
-    <lastmod>2022-10-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2022-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/functional-data-analysis/</loc>
@@ -93,9 +99,6 @@
     <lastmod>2022-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/nonparametric-statistics/</loc>
-    <lastmod>2022-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
     <lastmod>2022-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/differential-privacy/</loc>

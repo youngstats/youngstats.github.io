@@ -6,7 +6,40 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distribution generalization in causal inference</title>
+      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;strong&gt;Distribution generalization in causal inference&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-28-distribution-generalization-in-causal-inference_files/cover_jointimszurichyoungstats_causal.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;1st joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&lt;/li&gt;
+&lt;li&gt;Online, via Zoom. The registration form is available
+&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdWLS-kZZUhaNHxmEmVUWLiUzKQ6JARRCHrrj-B3tOgWWrkgQ/viewform?usp=mail_form_link&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://statweb.rutgers.edu/zijguo/&#34;&gt;Zijian Guo&lt;/a&gt;, Rutgers University: “&lt;em&gt;Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies&lt;/em&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries. Associations that are consistently observed across multiple source populations are more likely to be generalized to target populations with possible distributional shifts. In this paper, we model the heterogeneous multi-source data with multiple high-dimensional regressions and make inferences for the maximin effect (Meinshausen and Bühlmann, AoS, 43(4), 1801–1830). The maximin effect provides a measure of stable associations across multi-source data. A significant maximin effect indicates that a variable has commonly shared effects across multiple source populations, and these shared effects may be generalized to a broader set of target populations. There are challenges associated with inferring maximin effects because its point estimator can have a non-standard limiting distribution. We devise a novel sampling method to construct valid confidence intervals for maximin effects. The proposed confidence interval attains a parametric length. This sampling procedure and the related theoretical analysis are of independent interest for solving other non-standard inference problems. Using genetic data on yeast growth in multiple environments, we demonstrate that the genetic variants with significant maximin effects have generalizable effects under new environments.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://saramagliacane.github.io/&#34;&gt;Sara Magliacane&lt;/a&gt;, University of Amsterdam and MIT-IBM Watson AI LAB: “&lt;em&gt;Causality-inspired ML: what can causality do for ML?&lt;/em&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: Applying machine learning to real-world cases often requires methods that are robust w.r.t. heterogeneity, missing not at random or corrupt data, selection bias, non i.i.d. data etc. and that can generalize across different domains. Moreover, many tasks are inherently trying to answer causal questions and gather actionable insights, a task for which correlations are usually not enough. Several of these issues are addressed in the rich causal inference literature. On the other hand, often classical causal inference methods require either a complete knowledge of a causal graph or enough experimental data (interventions) to estimate it accurately. Recently, a new line of research has focused on causality-inspired machine learning, i.e. on the application ideas from causal inference to machine learning methods without necessarily knowing or even trying to estimate the complete causal graph. In this talk, I will present an example of this line of research in the unsupervised domain adaptation case, in which we have labelled data in a set of source domains and unlabelled data in a target domain (“zero-shot”), for which we want to predict the labels. In particular, given certain assumptions, our approach is able to select a set of provably “stable” features (a separating set), for which the generalization error can be bound, even in case of arbitrarily large distribution shifts. As opposed to other works, it also exploits the information in the unlabelled target data, allowing for some unseen shifts w.r.t. to the source domains. While using ideas from causal inference, our method never aims at reconstructing the causal graph or even the Markov equivalence class, showing that causal inference ideas can help machine learning even in this more relaxed setting.&lt;/p&gt;
+&lt;p&gt;Discussant: &lt;a href=&#34;https://niklaspfister.github.io/&#34;&gt;Niklas Pfister&lt;/a&gt;, University of Copenhagen&lt;/p&gt;
+&lt;p&gt;YoungStatS project of the Young Statisticians Europe initiative (FENStatS) is supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Asymptotic Statistics in Non-Sparse Networks</title>
       <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
@@ -1457,194 +1490,6 @@ Europe initiative (FENStatS) supported by the Bernoulli Society for
 Mathematical Statistics and Probability and the Institute of
 Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=eupF0Zs_5sk&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
-      <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
-      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</guid>
-      <description>
-
-
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;A NHPP defined on &lt;span class=&#34;math inline&#34;&gt;\({\cal S} \subset \mathbb{R}^{d}\)&lt;/span&gt; can be fully
-characterized through its intensity function &lt;span class=&#34;math inline&#34;&gt;\(\lambda: {\cal S} \rightarrow [0, \infty)\)&lt;/span&gt;.
-We present a general model for the intensity function of a non-homogeneous Poisson
-process using measure transport. The model finds its roots in transportation of
-probability measure &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-Marzouk2016&#34; role=&#34;doc-biblioref&#34;&gt;Marzouk et al. 2016&lt;/a&gt;)&lt;/span&gt;, an approach that has gained
-popularity recently for its ability to model arbitrary probability
-density functions. The basic idea of this approach is to construct a
-“transport map” between the complex, unknown, intensity function of
-interest, and a simpler, known, reference intensity function.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Background&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Measure Transport.&lt;/strong&gt; Consider two probability measures &lt;span class=&#34;math inline&#34;&gt;\(\mu_0(\cdot)\)&lt;/span&gt;
-and &lt;span class=&#34;math inline&#34;&gt;\(\mu_1(\cdot)\)&lt;/span&gt; defined on &lt;span class=&#34;math inline&#34;&gt;\({\cal X}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\({\cal Z}\)&lt;/span&gt;, respectively. A
-transport map &lt;span class=&#34;math inline&#34;&gt;\(T: {\cal X} \rightarrow {\cal Z}\)&lt;/span&gt; is said to push forward
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_0(\cdot)\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\mu_1(\cdot)\)&lt;/span&gt; (written compactly as
-&lt;span class=&#34;math inline&#34;&gt;\(T_{\#\mu_0}(\cdot) = \mu_1(\cdot)\)&lt;/span&gt;) if and only if &lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray}
-\label{transport_map} \mu_1(B) = \mu_0(T^{-1}(B)), \quad \mbox{for any
-Borel subset } B \subset {\cal Z}. \end{eqnarray}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Suppose &lt;span class=&#34;math inline&#34;&gt;\({\cal X}, {\cal Z} \subseteq \mathbb{R}^{d}\)&lt;/span&gt;, and that both
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_0(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\mu_1(\cdot)\)&lt;/span&gt; are absolutely continuous with respect
-to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^{d}\)&lt;/span&gt;, with densities
-&lt;span class=&#34;math inline&#34;&gt;\(d\mu_0(x) = f_0(x) d x\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(d\mu_1(z) = f_1(z) d z\)&lt;/span&gt;, respectively.
-Furthermore, assume that the map &lt;span class=&#34;math inline&#34;&gt;\(T(\cdot)\)&lt;/span&gt; is bijective differentiable
-with a differentiable inverse &lt;span class=&#34;math inline&#34;&gt;\(T^{-1}(\cdot)\)&lt;/span&gt; (i.e., assume that
-&lt;span class=&#34;math inline&#34;&gt;\(T(\cdot)\)&lt;/span&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(C^{1}\)&lt;/span&gt; diffeomorphism), then we have &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\label{eq:transport} f_0(x) = f_1(T(x)) \|\mbox{det}(\nabla T(x))\|,
-\quad x \in {\cal X}. \end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Triangular Map.&lt;/strong&gt; One particular type of transport map is an
-, that is, &lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray}
-\label{triangular_map} T(x) = (T^{(1)}(x^{(1)}), T^{(2)}(x^{(1)},
-x^{(2)}), \ldots, T^{(d)}(x^{(1)}, \ldots, x^{(d)}))&amp;#39;,\quad x \in {\cal
-X}, \end{eqnarray}\]&lt;/span&gt; where, for &lt;span class=&#34;math inline&#34;&gt;\(k = 1,\dots, d,\)&lt;/span&gt; one has that
-&lt;span class=&#34;math inline&#34;&gt;\(T^{(k)}(x^{(1)}, \ldots, x^{(k)})\)&lt;/span&gt; is monotonically increasing in
-&lt;span class=&#34;math inline&#34;&gt;\(x^{(k)}\)&lt;/span&gt;. In particular, the Jacobian matrix of an increasing
-triangular map, if it exists, is triangular with positive entries on its
-diagonal.&lt;/p&gt;
-&lt;p&gt;Various approaches to parameterize an increasing triangular map have been proposed (see, for example, &lt;span class=&#34;citation&#34;&gt;Germain et al. (&lt;a href=&#34;#ref-Germain2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Dinh, Krueger, and Bengio (&lt;a href=&#34;#ref-Dinh2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Dinh, Sohl-Dickstein, and Bengio (&lt;a href=&#34;#ref-Dinh2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;). One class of parameterizations is based on
-the so-called “conditional networks” (&lt;span class=&#34;citation&#34;&gt;Papamakarios, Pavlakou, and Murray (&lt;a href=&#34;#ref-Papamakarios2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt; and
-&lt;span class=&#34;citation&#34;&gt;Huang et al. (&lt;a href=&#34;#ref-Huang2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;): &lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray} T_1^{(1)}(x^{(1)})
-&amp;amp;=&amp;amp; S_1^{(1)}(x^{(1)}; \theta_{11}), \nonumber \\ T_1^{(k)}(x^{(1)},
-\ldots, x^{(k)}) &amp;amp;=&amp;amp; S_1^{(k)}( x^{(k)}; \theta_{1k}(x^{(1)}, \ldots,
-x^{(k-1)}; \vartheta_{1k}) ), \quad k = 2,\dots,d, \end{eqnarray}\]&lt;/span&gt; for
-&lt;span class=&#34;math inline&#34;&gt;\(x \in {\cal X}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\theta_{1k}(x^{(1)}, \ldots, x^{(k-1)}; \vartheta_{1k}), k = 2,\dots,d\)&lt;/span&gt; is the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;th “conditional
-network” that takes &lt;span class=&#34;math inline&#34;&gt;\(x^{(1)}, \ldots, x^{(k-1)}\)&lt;/span&gt; as inputs and is
-parameterized by &lt;span class=&#34;math inline&#34;&gt;\(\vartheta_{1k}\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(S_1^{(k)}(\cdot)\)&lt;/span&gt; is generally a
-very simple univariate function of &lt;span class=&#34;math inline&#34;&gt;\(x^{(k)}\)&lt;/span&gt;, but with parameters that
-depend in a relatively complex manner on &lt;span class=&#34;math inline&#34;&gt;\(x^{(1)}, \ldots, x^{(k-1)}\)&lt;/span&gt;
-through the network. The class of neural autoregressive flows, proposed
-by &lt;span class=&#34;citation&#34;&gt;Huang et al. (&lt;a href=&#34;#ref-Huang2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, offers more flexibility where the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-th component
-of the map has the form &lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray} \label{uni_flow} S_1^{(k)}(
-x^{(k)}; \theta_{1k} ) = \sigma^{-1} \Big( \sum_{i=1}^{M} w_{1ki}
-\sigma( a_{1ki} x^{(k)} + b_{1ki}) \Big), \end{eqnarray}\]&lt;/span&gt; where
-&lt;span class=&#34;math inline&#34;&gt;\(\sigma^{-1}(\cdot)\)&lt;/span&gt; is the logit function, and &lt;span class=&#34;math inline&#34;&gt;\(w_{1ki}\)&lt;/span&gt; is subject to
-the constraint &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=1}^{M} w_{1ki} = 1\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Composition of Increasing Triangular Maps.&lt;/strong&gt; Composition of Increasing
-Triangular Mapsn does not break the required bijectivity of &lt;span class=&#34;math inline&#34;&gt;\(T(\cdot)\)&lt;/span&gt;,
-since a bijective function of a bijective function is itself bijective.
-Computations also remain tractable, since the determinant of the
-gradient of the composition is simply the product of the determinants of
-the individual gradients. Specifically, consider two increasing
-triangular maps &lt;span class=&#34;math inline&#34;&gt;\(T_1(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(T_2(\cdot)\)&lt;/span&gt;, each constructed using
-the neural network approach described above. The composition
-&lt;span class=&#34;math inline&#34;&gt;\(T_2 \circ T_1 (\cdot)\)&lt;/span&gt; is bijective, and its gradient at some
-&lt;span class=&#34;math inline&#34;&gt;\(x \in \cal X\)&lt;/span&gt; has determinant,
-&lt;span class=&#34;math display&#34;&gt;\[ \mbox{det}(\nabla T_2 \circ T_1(x)) = (\mbox{det} (\nabla T_1(x)))(\mbox{det} (\nabla T_2(T_1(x)))).\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;intensity-modeling-and-estimation-via-measure-transport&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Intensity Modeling and Estimation via Measure Transport&lt;/h2&gt;
-&lt;p&gt; Consider a NHPP &lt;span class=&#34;math inline&#34;&gt;\({\cal P}\)&lt;/span&gt; defined on a bounded
-domain &lt;span class=&#34;math inline&#34;&gt;\({\cal X} \subset \mathbb{R}^{d}\)&lt;/span&gt;. The density of a Poisson
-process with respect to the density of the unit rate Poisson process is
-given by &lt;span class=&#34;math display&#34;&gt;\[\begin{align} f_{\lambda}(X) &amp;amp;= \exp(\|{\cal X}\| -
-\mu_{\lambda}({\cal X})) \prod_{x \in X} \lambda(x) \nonumber \\ &amp;amp;=
-\exp \Big(\int_{{\cal X}} (\lambda(x) - 1)dx + \sum_{x \in X}
-\log \lambda(x) \Big) \label{fdensity}. \end{align}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(|B|\)&lt;/span&gt; denote
-the Lebesgue measure of a bounded set &lt;span class=&#34;math inline&#34;&gt;\(B \subset \mathbb{R}^{d}\)&lt;/span&gt;, and
-let &lt;span class=&#34;math inline&#34;&gt;\(X \equiv \{x_1, \ldots, x_n\},\)&lt;/span&gt; where
-&lt;span class=&#34;math inline&#34;&gt;\(x_i \in {\cal X}, i = 1,\ldots,n,\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(n \ge 1,\)&lt;/span&gt; be a realization of
-&lt;span class=&#34;math inline&#34;&gt;\({\cal P}\)&lt;/span&gt;. The unknown intensity function is estimated by a maximum
-likelihood approach, which is equivalent to minimizing the
-Kullback–Leibler (KL) divergence &lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(p\|\|q) = \int p(x) \log (p(x)/ q(x))dx\)&lt;/span&gt; between the true density and the estimate:
-&lt;span class=&#34;math display&#34;&gt;\[
-\hat{\lambda}(\cdot) = \arg\min_{\rho(\cdot) \in {\cal A} }{{D_{KL}(f_{\lambda}\|f_{\rho})}}
-\]&lt;/span&gt; where
-&lt;span class=&#34;math inline&#34;&gt;\({\cal A}\)&lt;/span&gt; is some set of intensity functions, and &lt;span class=&#34;math inline&#34;&gt;\(f_\rho(\cdot)\)&lt;/span&gt; is
-the density of a NHPP with intensity function &lt;span class=&#34;math inline&#34;&gt;\(\rho(\cdot)\)&lt;/span&gt; taken with
-respect to the density of the unit rate Poisson process.&lt;/p&gt;
-&lt;p&gt;In order to apply the measure transport approach to intensity function
-estimation, we first define &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot) = \rho(\cdot) / \mu_{\rho}({\cal X})\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}(x) = \lambda(x) / \mu_{\lambda}({\cal X}),\)&lt;/span&gt; so that
-&lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}(\cdot)\)&lt;/span&gt; are valid density
-functions with respect to Lebesgue measure. The KL divergence
-&lt;span class=&#34;math inline&#34;&gt;\(D_{KL}(f_{\lambda}\|f_{\rho})\)&lt;/span&gt; can be written in terms of process
-densities as follows,
-&lt;span class=&#34;math display&#34;&gt;\[
-D_{KL}(f_{\lambda}\|f_{\rho}) = \mu_{\rho}({\cal X)} -
-\mu_{\lambda}({\cal X}) \int_{{\cal X}} \tilde{\lambda}(x) \log
-\tilde{\rho}(x)dx - \mu_{\lambda}({\cal X}) \log
-\mu_{\rho}({\cal X}) + \textrm{const.},
-\]&lt;/span&gt; where “const.” captures other terms not dependent on
-&lt;span class=&#34;math inline&#34;&gt;\(\mu_{\rho}({\cal X})\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot)\)&lt;/span&gt;. After further
-approximations, we obtain the following optimization problem
-&lt;span class=&#34;math display&#34;&gt;\[
-\hat{\tilde{\lambda}}(\cdot) = \arg\min_{\tilde{\rho}(\cdot) \in {\cal \tilde{A}}} {-{\sum_{i=1}^{n} \log \tilde{\rho}(x_{i})}},
-\]&lt;/span&gt; where
-now &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\cal A}\)&lt;/span&gt; is some set of process densities.&lt;/p&gt;
-&lt;p&gt;We model the process density &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\rho}(\cdot)\)&lt;/span&gt; using the transportation of
-probability measure approach. Specifically, we seek a diffeomorphism
-&lt;span class=&#34;math inline&#34;&gt;\(T: {\cal X} \rightarrow {\cal Z}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\({\cal Z}\)&lt;/span&gt; need not be the
-same as &lt;span class=&#34;math inline&#34;&gt;\({\cal X}\)&lt;/span&gt;, such that
-&lt;span class=&#34;math display&#34;&gt;\[ \tilde{\rho}(x) = \eta(T(x)) | \mbox{det}\nabla T(x)|, \quad x \in {\cal X},\]&lt;/span&gt;where
-&lt;span class=&#34;math inline&#34;&gt;\(\eta(\cdot)\)&lt;/span&gt; is some simple reference density on &lt;span class=&#34;math inline&#34;&gt;\({\cal Z}\)&lt;/span&gt;, and
-&lt;span class=&#34;math inline&#34;&gt;\(|\mbox{det}\nabla T(\cdot)| &amp;gt; 0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;We prove that the increasing triangular maps constructed using neural autoregressive flows satisfy a
-universal property in the context of probability density approximation.&lt;/p&gt;
-&lt;p&gt;Theorem 1. Let &lt;span class=&#34;math inline&#34;&gt;\(\cal P\)&lt;/span&gt; be a non-homogeneous Poisson process with positive continuous process density
-&lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}(\cdot)\)&lt;/span&gt; on &lt;span class=&#34;math inline&#34;&gt;\({\cal X} \subset \mathbb{R}^{d}\)&lt;/span&gt;. Suppose
-further that the weak (Sobolev) partial derivatives of &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\lambda}\)&lt;/span&gt;
-up to order &lt;span class=&#34;math inline&#34;&gt;\(d+1\)&lt;/span&gt; are integrable over &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^{d}\)&lt;/span&gt;. There exists a
-sequence of triangular mappings &lt;span class=&#34;math inline&#34;&gt;\((T_i(\cdot))_{i}\)&lt;/span&gt; wherein the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;th
-component of each map &lt;span class=&#34;math inline&#34;&gt;\(T^{(k)}_i(\cdot)\)&lt;/span&gt; has the form above, and wherein the corresponding conditional networks
-are universal approximators (e.g., feedforward neural networks with
-sigmoid activation functions), such that
-&lt;span class=&#34;math display&#34;&gt;\[ \eta(T_i(\cdot)) \mbox{det} (\nabla T_i(\cdot)) \rightarrow \tilde{\lambda}(\cdot), \]&lt;/span&gt;
-with respect to the sup norm on any compact subset of &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^{d}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;illustration&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Illustration&lt;/h2&gt;
-&lt;p&gt;We apply our method for intensity function estimation to an earthquake
-data set comprising 1000 seismic events of body-wave magnitude (MB) over
-4.0. The data set is available from the
-package. The events we analyze are those that occurred near Fiji from
-1964 onwards. The left panel of Figure 1 shows a scatter plot of locations of the observed seismic events.&lt;/p&gt;
-&lt;p&gt;We fitted our model using a composition of five triangular maps. The estimated
-intensity surface and the standard error surface obtained using are
-shown in the middle and right panels of Figure 1, respectively. The probability that the intensity function exceeds
-various threshold can also be estimated using non-parametric bootstrap
-resampling; some examples of these exceedance probability plots are
-shown in Figure 2.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_scatter-horz.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 1. Left panel: Scatter plot of earthquake events with
-body-wave magnitude greater than 4.0 near Fiji since 1964. Middle
-panel: Estimated intensity function obtained using measure transport.
-Right panel: Estimated standard error of the intensity surface.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-19-non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport_files/quake_exceed_1-horz.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 2. Left panel: Estimated exceedance probability
-&lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 1)\)&lt;/span&gt;. Middle panel: Estimated exceedance
-probability &lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 5)\)&lt;/span&gt;. Right panel: Estimated exceedance
-probability &lt;span class=&#34;math inline&#34;&gt;\(P(\lambda(\cdot) &amp;gt; 10)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-Dinh2015&#34; class=&#34;csl-entry&#34;&gt;
-Dinh, Laurent, David Krueger, and Yoshua Bengio. 2015. &lt;span&gt;“&lt;span&gt;NICE:&lt;/span&gt; Non-Linear Independent Components Estimation.”&lt;/span&gt; In &lt;em&gt;Workshop Track Proceedings of the 3rd International Conference on Learning Representations&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Dinh2017&#34; class=&#34;csl-entry&#34;&gt;
-Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. 2017. &lt;span&gt;“Density Estimation Using Real &lt;span&gt;NVP&lt;/span&gt;.”&lt;/span&gt; In &lt;em&gt;Conference Track Proceedings of the 5th International Conference on Learning Representations&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Germain2015&#34; class=&#34;csl-entry&#34;&gt;
-Germain, Mathieu, Karol Gregor, Iain Murray, and Hugo Larochelle. 2015. &lt;span&gt;“&lt;span&gt;MADE&lt;/span&gt;: Masked Autoencoder for Distribution Estimation.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 32nd International Conference on Machine Learning&lt;/em&gt;, 881–89.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Huang2018&#34; class=&#34;csl-entry&#34;&gt;
-Huang, Chin-Wei, David Krueger, Alexandre Lacoste, and Aaron Courville. 2018. &lt;span&gt;“Neural Autoregressive Flows.”&lt;/span&gt; In &lt;em&gt;Proceedings of the 35th International Conference on Machine Learning&lt;/em&gt;, 80:2078–87. Proceedings of Machine Learning Research.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Marzouk2016&#34; class=&#34;csl-entry&#34;&gt;
-Marzouk, Youssef, Tarek Moselhy, Matthew Parno, and Alessio Spantini. 2016. &lt;span&gt;“Sampling via Measure Transport: An Introduction.”&lt;/span&gt; In &lt;em&gt;Handbook of Uncertainty Quantification&lt;/em&gt;, 1–41.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Papamakarios2017&#34; class=&#34;csl-entry&#34;&gt;
-Papamakarios, George, Theo Pavlakou, and Iain Murray. 2017. &lt;span&gt;“Masked Autoregressive Flow for Density Estimation.”&lt;/span&gt; In &lt;em&gt;Advances in Neural Information Processing Systems 30&lt;/em&gt;, 2338–47. &lt;a href=&#34;http://papers.nips.cc/paper/6828-masked-autoregressive-flow-for-density-estimation.pdf&#34;&gt;http://papers.nips.cc/paper/6828-masked-autoregressive-flow-for-density-estimation.pdf&lt;/a&gt;.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

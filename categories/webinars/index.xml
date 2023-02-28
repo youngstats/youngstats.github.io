@@ -6,7 +6,21 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distribution generalization in causal inference</title>
+      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
+      <description>Distribution generalization in causal inference
+Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
+1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
+When &amp;amp; Where:
+Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
+Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
+    </item>
+    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
@@ -101,16 +115,6 @@ The ninth “One World webinar” organized by YoungStatS will take place onFeb
       <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
       <description>Novel Algebraic Approaches to Maximum Likelihood Estimation
 The seventh “One World webinar” organized by YoungStatS will take placeon November 17th, 2021. Maximum likelihood estimation (MLE) is a tool indata analysis to estimate a probability distribution or density in astatistical model for given data. In recent decades, algebraic andcombinatorial tools have proved useful for computing MLEs andunderstanding the geometry of the MLE problem which in recent years ledto new and interesting results in combinatorics and algebraic geometry.</description>
-    </item>
-    
-    <item>
-      <title>Advancements in Symbolic Data Analysis</title>
-      <link>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
-      <description>Advancements in Symbolic Data Analysis
-The sixth “One World webinar” organized by YoungStatS will take place onNovember 8th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
     </item>
     
   </channel>

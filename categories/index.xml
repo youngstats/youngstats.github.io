@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>causal-inference</title>
+      <link>https://youngstats.github.io/categories/causal-inference/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/causal-inference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>asymptotic-statistics</title>
       <link>https://youngstats.github.io/categories/asymptotic-statistics/</link>
@@ -67,33 +94,6 @@
       <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/copula-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>empirical-processes</title>
-      <link>https://youngstats.github.io/categories/empirical-processes/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/empirical-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>https://youngstats.github.io/categories/regression/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>semiparametric-statistics</title>
-      <link>https://youngstats.github.io/categories/semiparametric-statistics/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/semiparametric-statistics/</guid>
       <description></description>
     </item>
     

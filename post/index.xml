@@ -6,7 +6,21 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distribution generalization in causal inference</title>
+      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
+      <description>Distribution generalization in causal inference
+Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
+1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
+When &amp;amp; Where:
+Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
+Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
+    </item>
+    
     <item>
       <title>Asymptotic Statistics in Non-Sparse Networks</title>
       <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
@@ -96,15 +110,6 @@ The notion of center of an object, be it a set of observations, a physical objec
 Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET
 Model specification testing is one of the essential methodological tasksin statistics. Recently, with the development of different datastructures, envisioning concepts from classical data setups to otherenvironments becomes very important.
 In the webinar, selected young statisticians will present their recentworks and elaborate on different aspects of this topic.</description>
-    </item>
-    
-    <item>
-      <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
-      <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
-      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</guid>
-      <description>IntroductionA NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fullycharacterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).We present a general model for the intensity function of a non-homogeneous Poissonprocess using measure transport. The model finds its roots in transportation ofprobability measure (Marzouk et al. 2016), an approach that has gainedpopularity recently for its ability to model arbitrary probabilitydensity functions.</description>
     </item>
     
   </channel>
