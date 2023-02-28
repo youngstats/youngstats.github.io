@@ -6,21 +6,7 @@
     <description>Recent content in machine-learning on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Distribution generalization in causal inference</title>
-      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
-      <description>Distribution generalization in causal inference
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
-1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inference on Adaptively Collected Data</title>
       <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
@@ -108,6 +94,16 @@ Wednesday, September 15th, 17:00 CESTOnline, via Zoom. The registration form is
       <description>Summary
 We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
 BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
+    </item>
+    
+    <item>
+      <title>Machine learning for causal inference that works</title>
+      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
+      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
+The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
   </channel>

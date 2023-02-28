@@ -17,11 +17,20 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <title>data-science</title>
+      <link>https://youngstats.github.io/categories/data-science/</link>
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <guid>https://youngstats.github.io/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learningh</title>
+      <link>https://youngstats.github.io/categories/machine-learningh/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learningh/</guid>
       <description></description>
     </item>
     
@@ -85,15 +94,6 @@
       <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/youngstats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>copula-models</title>
-      <link>https://youngstats.github.io/categories/copula-models/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/copula-models/</guid>
       <description></description>
     </item>
     
