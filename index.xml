@@ -6,7 +6,116 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Procrustes Analysis for High-Dimensional Data</title>
+      <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
+      <description>
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;Procrustes problem&lt;/strong&gt; aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.&lt;/p&gt;
+&lt;p&gt;The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature. Despite this, essentially all applications comprise spatial coordinates (i.e., two- or three-dimensional). &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0896627311007811&#34;&gt;Haxby et al. (2011)&lt;/a&gt; first utilized this approach in a different context: align functional Magnetic Resonance Images (fMRI). The coordinates are hence substituted by voxels (i.e., three-dimensional pixels), and the problem becomes inherently &lt;strong&gt;high-dimensional&lt;/strong&gt;. The approach rapidly grew in popularity in the neuroimaging community because of its effectiveness. However, the proposed solution needs to be revised: the extension from the spatial context to a more general and high-dimensional one is a theoretical challenge that needs adequate attention.&lt;/p&gt;
+&lt;p&gt;We must deal essentially with two problems moving in the high-dimensional context like the fMRI one:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Ill-posed solution&lt;/strong&gt;: It is a barely noticeable problem with spatial coordinates because the solution of the orthogonal transformation is unique up to rotations; hence, the user can choose the point of view that provides the nicest picture. When the dimensions do not have a spatial meaning (e.g., fMRI data), any rotation completely changes the interpretation of the results.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Computational burden&lt;/strong&gt;: The estimation algorithm of Procrustes-based methods involves a series of singular value decomposition (SVD) of &lt;span class=&#34;math inline&#34;&gt;\(m \times m\)&lt;/span&gt; matrices (&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt; dimensions). In a typical fMRI data set, the subjects (i.e., the matrices to be aligned) have a few hundred (observations/rows) &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; and hundreds of thousands of voxels (dimensions/columns) &lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;proposal&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Proposal&lt;/h2&gt;
+&lt;p&gt;To tackle these problems, in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;, we revised the &lt;strong&gt;perturbation model&lt;/strong&gt; proposed by &lt;a href=&#34;https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1991.tb01825.x&#34;&gt;Goodall, 1991&lt;/a&gt;, which rephrases the Procrustes problem as a statistical model.&lt;/p&gt;
+&lt;div id=&#34;background&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Background&lt;/h3&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\{\mathbf{X}_{i} \in \mathrm{I\!R}^{n \times m} \}_{i = 1,\dots ,N}\)&lt;/span&gt; be a set of matrices to be aligned and &lt;span class=&#34;math inline&#34;&gt;\({\mathcal {O}}(m)\)&lt;/span&gt; the orthogonal group in dimension &lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;. The perturbation model is defined as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+{\mathbf{X}}_i= \alpha _i ({\mathbf{M}} + {\mathbf{E}}_i){\mathbf{R}}_i^\top + {\mathbf {1}}_n^\top {\mathbf{t}}_i \quad \quad \text {subject to }\quad {\mathbf{R}}_i \in {\mathcal {O}}(m)
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{E}}_i \sim \mathcal{MN}\mathcal{}_{n,m}(0,\mathbf{\Sigma }_n,\mathbf{\Sigma }_m)\)&lt;/span&gt; - i.e., the matrix normal distribution with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\Sigma }_n \in \mathrm{I\!R}^{n \times n}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\Sigma }_m \in \mathrm{I\!R}^{m \times m}\)&lt;/span&gt; scale parameters - &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{M}} \in \mathrm{I\!R}^{n \times m}\)&lt;/span&gt; is the shared reference matrix, &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i \in \mathrm{I\!R}^{+}\)&lt;/span&gt; is the isotropic scaling, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{t}_i \in \mathrm{I\!R}^{1 \times m}\)&lt;/span&gt; defines the translation vector, and &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{1}}_n \in \mathrm{I\!R}^{1 \times n}\)&lt;/span&gt; is a vector of ones.&lt;/p&gt;
+&lt;p&gt;This work mainly aims to compare the shapes &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}_{i}\)&lt;/span&gt; instead of the form’s analysis of the matrices. For that, the parameters of interest are &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{t}_i\)&lt;/span&gt;, whereas &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{M}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\Sigma}_n\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\Sigma}_m\)&lt;/span&gt; are considered as nuisance parameters for each &lt;span class=&#34;math inline&#34;&gt;\(i=1,\dots,N\)&lt;/span&gt;. Clearly, the estimation of the unknown parameters changes if these nuisance parameters are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Known&lt;/strong&gt; (Theorem 1 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;): Let the SVD of &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1} {\mathbf{M}} \mathbf{\Sigma }_m^{-1}\)&lt;/span&gt; be &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{U}}_i {\mathbf{D}}_i {\mathbf{V}}_i^\top\)&lt;/span&gt;. Then, the maximum likelihood estimators equal
+&lt;span class=&#34;math display&#34; id=&#34;eq:mle&#34;&gt;\[\begin{equation}
+\hat{\mathbf{R}}_i^\top = {\mathbf{U}}_i {\mathbf{V}}_i^\top \quad \hat{\alpha _i}_{\hat{\mathbf{R}}_i^\top}^{\top}=||\mathbf{\Sigma }_m^{-1/2}\hat{\mathbf{R}}_i^\top {\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1/2}||^2/tr({\mathbf{D}}_i). \tag{1}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Unknown&lt;/strong&gt; (Algorithm 1 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;): no closed-form solution for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_i\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\alpha_i\)&lt;/span&gt;, and an iterative algorithm proposed by &lt;a href=&#34;https://link.springer.com/article/10.1007/BF02291478&#34;&gt;Gower, 1975&lt;/a&gt; must be used where at each step the nuisance parameters are updated.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When &lt;span class=&#34;math inline&#34;&gt;\(n&amp;lt;&amp;lt;m\)&lt;/span&gt; in both cases (unknown and known nuisance parameters) the Procrustes solutions are infinite (Lemma 1 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;) and the SVD leads to polynomial time complexity in &lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;, i.e., we must deal with problems (i) and (ii) described in the first section.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;promises-model-and-efficient-promises-model&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;ProMises model and Efficient ProMises model&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;, we dealt with problem (i) proposing the &lt;strong&gt;ProMises (Procrustes von Mises–Fisher) model&lt;/strong&gt;, while with problem (ii) proposing the &lt;strong&gt;Efficient ProMises model&lt;/strong&gt;. Therefore:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
+&lt;li&gt;&lt;p&gt;The &lt;strong&gt;ill-posed problem&lt;/strong&gt; is solved by assuming that the orthogonal matrix parameter &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_i\)&lt;/span&gt; follows the von Mises–Fisher distribution (&lt;a href=&#34;https://academic.oup.com/biomet/article-abstract/59/3/665/484888?login=true&#34;&gt;Downs, 1972&lt;/a&gt;), i.e.,&lt;span class=&#34;math display&#34;&gt;\[f({\mathbf{R}}_i) = C({\mathbf{F}}, k ) \exp \big \{tr(k {\mathbf{F}}^\top {\mathbf{R}}_i)\big \},\]&lt;/span&gt; and choosing a proper location matrix parameter &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F} \in \mathbb{R}^{m \times m}\)&lt;/span&gt;. We call this extension the &lt;strong&gt;ProMises model&lt;/strong&gt;.
+In particular, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F} \in \mathbb{R}^{m \times m}\)&lt;/span&gt; must be specified to be a &lt;strong&gt;full rank&lt;/strong&gt; matrix to have a unique maximum a posteriori solution for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_i\)&lt;/span&gt; with the orientation structure of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F}\)&lt;/span&gt; (Lemma 3 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;). The prior information about &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{R}}_i\)&lt;/span&gt;’s structure is directly entered in the SVD step; the maximum a posteriori estimators turn out to be a slight modification of the estimators defined in Equation &lt;a href=&#34;#eq:mle&#34;&gt;(1)&lt;/a&gt;. We decompose &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1} {\mathbf{M}} \mathbf{\Sigma }_m^{-1} + k {\mathbf{F}}\)&lt;/span&gt; instead of &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1} {\mathbf{M}} \mathbf{\Sigma }_m^{-1}\)&lt;/span&gt; (Theorem 2 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The &lt;strong&gt;computational burden&lt;/strong&gt; is reduced, proving that the minimization problem is solved by projecting the matrices &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}_i\)&lt;/span&gt; into an &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;-lower dimensional space using a specific &lt;strong&gt;semi-orthogonal transformation&lt;/strong&gt;. Considering the thin SVD of &lt;span class=&#34;math inline&#34;&gt;\({\mathbf{X}}_i = {\mathbf{L}}_i {\mathbf{S}}_i {\mathbf{Q}}_i^\top\)&lt;/span&gt; for each &lt;span class=&#34;math inline&#34;&gt;\(i=1\dots,N\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Q}_i\)&lt;/span&gt; has dimensions &lt;span class=&#34;math inline&#34;&gt;\(m \times n\)&lt;/span&gt;, the following holds &lt;span class=&#34;math display&#34;&gt;\[\max _{{\mathbf{R}}_i \in {\mathcal {O}}(m)} tr({\mathbf{R}}_i^\top {\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1} {\mathbf{X}}_j \mathbf{\Sigma }_m^{-1} + k \mathbf{F}) = \max _{{\mathbf{R}}_i^{\star } \in {\mathcal {O}}(n)} tr({\mathbf{R}}_i^{ \star \top } {\mathbf{Q}}_i^\top {\mathbf{X}}_i^\top \mathbf{\Sigma }_n^{-1} {\mathbf{X}}_j \mathbf{\Sigma }_m^{-1} {\mathbf{Q}}_j^\top + k \mathbf{Q}_i^\top \mathbf{F} \mathbf{Q}_j)\]&lt;/span&gt; (Lemma 5 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;). We reach the same maximum while working in the reduced space of the first &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; eigenvectors, which contains all the information, instead of the full data set.
+The ProMises model applies to matrices with virtually any number of columns. We denote this approach as the &lt;strong&gt;Efficient ProMises model&lt;/strong&gt;.
+In practice, it projects the matrices &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}_i\)&lt;/span&gt; into an &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;-lower-dimensional space using a specific semi-orthogonal transformation &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Q}_i\)&lt;/span&gt; which preserves all the data’s information. It aligns, then, the reduced &lt;span class=&#34;math inline&#34;&gt;\(n \times n\)&lt;/span&gt; matrices &lt;span class=&#34;math inline&#34;&gt;\(\{{\mathbf{X}}_i {\mathbf{Q}}_i \in \mathrm{I\!R}^{n \times n }\}_{i = 1, \dots , N}\)&lt;/span&gt; by the &lt;strong&gt;ProMises model&lt;/strong&gt;. Finally, it projects the aligned matrices back to the original &lt;span class=&#34;math inline&#34;&gt;\(n \times m\)&lt;/span&gt;-size matrices &lt;span class=&#34;math inline&#34;&gt;\(\{{\mathbf{X}}_i \in \mathrm{I\!R}^{n \times m }\}_{i = 1, \dots , N}\)&lt;/span&gt; using the transpose of &lt;span class=&#34;math inline&#34;&gt;\(\{{\mathbf{Q}}_i\}_{i = 1, \dots , N}\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Finally, we proved that the proposed prior distribution is conjugate, making the estimation process quite fast (Algorithm 2 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;). The location posterior parameter equaling the following:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[{\mathbf{F}}^\star =\mathbf{X_i}^\top \mathbf{\Sigma }_n^{-1} {\mathbf{M}} \mathbf{\Sigma }_m^{-1} + k {\mathbf{F}}.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;which can be rephrased as a combination of the maximum likelihood estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{{\hat{R}}}_i\)&lt;/span&gt; and the prior mode &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{P}\)&lt;/span&gt; (i.e., the orthogonal part of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F}\)&lt;/span&gt;), multiplied by corresponding measures of variation.&lt;/p&gt;
+&lt;p&gt;The method proposed is implemented in &lt;a href=&#34;https://github.com/angeella/ProMisesModel&#34; class=&#34;uri&#34;&gt;https://github.com/angeella/ProMisesModel&lt;/a&gt; using the programming language Python and in &lt;a href=&#34;https://github.com/angeella/alignProMises&#34; class=&#34;uri&#34;&gt;https://github.com/angeella/alignProMises&lt;/a&gt; in the R package &lt;code&gt;alignProMises&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fmri-application&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;fMRI application&lt;/h2&gt;
+&lt;div id=&#34;motivation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The alignment problem is recognized in fMRI multi-subject studies because the brain’s anatomical and functional structures vary across subjects. The most used anatomical alignment is the Montréal Neurological Institute (MNI) space normalization, i.e., the brain images are aligned to an anatomical template by affine transformations using a set of major anatomical landmarks. However, this alignment does not explore the between-subjects variability in anatomical positions of the functional loci since the functional brain regions are not consistently placed on the anatomical landmarks defined by the MNI template.&lt;/p&gt;
+&lt;p&gt;Specifically, each subject’s brain activation can be represented by a matrix, where the rows represent the stimuli/time points, and the columns represent the voxels. The stimuli are time-synchronized among subjects, so we have correspondence among the matrices’ rows. However, the columns are not assumed to be in correspondence among subjects. Each time series of brain activation (i.e., each of the matrices’ columns) represents the voxels’ functional characteristics that the anatomical normalization fails to align. We aim to represent the neural responses to stimuli in a common high-dimensional space rather than in a canonical anatomical space that does not consider the variability of functional topographies loci. For further details about the functional alignment problem in the fMRI data analysis framework, please see &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.26170&#34;&gt;Andreella et al. (2022)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-description&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data description&lt;/h3&gt;
+&lt;p&gt;We applied the proposed method to data from Pernet et al. (2015), available at &lt;a href=&#34;https://openneuro.org/datasets/ds000158/versions/1.0.0&#34;&gt;https://openneuro.org/datasets/ds000158/versions/1.0.0&lt;/a&gt;. The study consists of neural activations of &lt;span class=&#34;math inline&#34;&gt;\(218\)&lt;/span&gt; subjects passively listening to vocal (i.e., speech) and nonvocal sounds. Using a standard processing procedure, we preprocessed the data using the Functional MRI of the Brain Software Library (FSL). Anatomical and functional alignments (based on the Efficient ProMises model) were compared, having images preprocessed in the same way, but in one case, the functional alignment was applied, while in the other case not. For details about the experimental design and data acquisition, please see &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S1053811915005558&#34;&gt;Pernet et al. (2015)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the fMRI context, we defined the hyperparameter &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F}\)&lt;/span&gt; as a Euclidean similarity matrix using each voxel’s &lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;D anatomical coordinates. In this way, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{F}\)&lt;/span&gt; is a symmetric matrix with ones in the diagonal, which means that voxels with the same spatial location are combined with weights equaling &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;, and the weights decrease as the voxels to be combined are more spatially distant. This definition also satisfies the requirement to have unique solutions of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_i\)&lt;/span&gt;, i.e., full-rank matrix (Lemma 3 in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;functional-connectivity&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Functional connectivity&lt;/h3&gt;
+&lt;p&gt;We performed seed-based correlation analysis, which shows the level of functional connectivity between a seed and every voxel in the brain. The analysis process was defined as follows: First, the subject images were aligned using the Efficient ProMises model, then the element-wise arithmetic mean across subjects was calculated, and finally, the functional connectivity analysis was developed on this average matrix.&lt;/p&gt;
+&lt;p&gt;We considered the frontal pole as seed, being a region with functional diversity. Figure 1 shows the correlation values between the seed and each voxel in the brain using data without functional alignment (top of Figure 1 and with functional alignment using the Efficient ProMises model (bottom of Figure 1). The first evidence is that the functional alignment produces more interpretable maps, where the various regions, such as the superior temporal gyrus, are delineated by marked spatial edges, while the non-aligned map produces more spread regions, hence being less interpretable. It is interesting to evaluate the regions more correlated with the frontal pole, for example, the superior temporal gyrus. This region is associated with the processing of auditory stimuli. The correlation of the superior temporal gyrus with the seed is clear in the bottom part of Figure 1, where functionally aligned images are used.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-02-procrustes-analysis-for-high-dimensional-data_files/cover.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure: Seed-based correlation map using data only aligned anatomically (top figure), and data also functionally aligned by the Efficient ProMises model (bottom figure). The black point refers to the seed used (i.e., frontal pole with MNI coordinates (0, 64, 18)).&lt;/p&gt;
+&lt;p&gt;The preprocessed data are available on the GitHub repository: &lt;a href=&#34;http://github.com/angeella/fMRIdata&#34; class=&#34;uri&#34;&gt;http://github.com/angeella/fMRIdata&lt;/a&gt;, as well as the code used to perform functional connectivity: &lt;a href=&#34;https://github.com/angeella/ProMisesModel/&#34; class=&#34;uri&#34;&gt;https://github.com/angeella/ProMisesModel/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;take-home-messages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Take home messages&lt;/h2&gt;
+&lt;p&gt;We proposed the Efficient ProMises model in &lt;a href=&#34;https://link.springer.com/article/10.1007/s11336-022-09859-5&#34;&gt;Andreella and Finos, 2022&lt;/a&gt;, which provides a methodologically grounded approach to the Procrustes problem allowing functional alignment on high-dimensional data in a computationally efficient way.&lt;/p&gt;
+&lt;p&gt;The issues of the many Procrustes-based functional alignment approaches:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;non-uniqueness, i.e., critical interpretation of the aligned matrices and related results, and&lt;/li&gt;
+&lt;li&gt;inapplicability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;when &lt;span class=&#34;math inline&#34;&gt;\(n≪m\)&lt;/span&gt; are completely surpassed. Indeed, the ProMises method returns unique and interpretable orthogonal transformations, and its efficient approach extends the applicability to high-dimensional data.&lt;/p&gt;
+&lt;p&gt;The presented method is particularly useful in fMRI data analysis because it allows the functional alignment of images having roughly &lt;span class=&#34;math inline&#34;&gt;\(200 \times 200,000\)&lt;/span&gt; dimensions, obtaining a unique representation of the aligned images in the brain space and a unique interpretation of the related results.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Andreella, A., &amp;amp; Finos, L. (2022). Procrustes analysis for high-dimensional data. Psychometrika, 87(4), 1422-1438.&lt;/p&gt;
+&lt;p&gt;Andreella, A., Finos, L., &amp;amp; Lindquist, M. A. (2023). Enhanced hyperalignment via spatial prior information. Human Brain Mapping, 44(4), 1725-1740.&lt;/p&gt;
+&lt;p&gt;Downs, T. D. (1972). Orientation statistics. Biometrika, 59(3), 665-676.&lt;/p&gt;
+&lt;p&gt;Goodall, C. (1991). Procrustes methods in the statistical analysis of shape. Journal of the Royal Statistical Society: Series B (Methodological), 53(2), 285-321.&lt;/p&gt;
+&lt;p&gt;Gower, J. C. (1975). Generalized procrustes analysis. Psychometrika, 40, 33-51.&lt;/p&gt;
+&lt;p&gt;Haxby, J. V., Guntupalli, J. S., Connolly, A. C., Halchenko, Y. O., Conroy, B. R., Gobbini, M. I., … &amp;amp; Ramadge, P. J. (2011). A common, high-dimensional model of the representational space in human ventral temporal cortex. Neuron, 72(2), 404-416.&lt;/p&gt;
+&lt;p&gt;Pernet, C. R., McAleer, P., Latinus, M., Gorgolewski, K. J., Charest, I., Bestelmeyer, P. E., … &amp;amp; Belin, P. (2015). The human voice areas: Spatial organization and inter-individual variability in temporal and extra-temporal cortices. Neuroimage, 119, 164-174.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Authors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://angeella.github.io/&#34;&gt;Angela Andreella&lt;/a&gt; is an assistant professor in social statistics in the Department of Economics at the University of Venice.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://livioivil.github.io/&#34;&gt;Livio Finos&lt;/a&gt; is a full professor in statistics in the Department of Statistics at the University of Padova.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Distribution generalization and causal inference</title>
       <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
@@ -1433,63 +1542,6 @@ Zhan, Ruohan, Zhimei Ren, Susan Athey, and Zhengyuan Zhou. 2021. &lt;span&gt;“
 &lt;p&gt;Discussant: &lt;a href=&#34;https://sites.google.com/site/germainvanbever&#34;&gt;Germain Van Bever&lt;/a&gt;, Université de Namur, Belgium, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1L-hbQ8Y0rh0TXeS9muNoiyJzhRL7oI3J/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/p&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=FxSWsoOi5jE&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent challenges in model specification testing based on different data structures</title>
-      <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Recent challenges in model specification testing based on different
-data structures&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-09-29-recent-challenges-in-model-specification-testing-based-on-different-data-structures_files/Slika1-horz.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Model specification testing is one of the essential methodological tasks
-in statistics. Recently, with the development of different data
-structures, envisioning concepts from classical data setups to other
-environments becomes very important.&lt;/p&gt;
-&lt;p&gt;In the webinar, selected young statisticians will present their recent
-works and elaborate on different aspects of this topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLScwfeWQzP-LQjweX0G9dg50G9BzTmmdVqqpmwlFkG94_3pgpQ/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/berrett/&#34;&gt;Thomas
-Berrett&lt;/a&gt;,
-University of Warwick, United Kingdom: &lt;em&gt;Hypothesis testing under
-local differential privacy&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.math.uni-frankfurt.de/~gerstenb/&#34;&gt;Julian G.
-Gerstenberg&lt;/a&gt;, Goethe
-Universität Frankfurt, Institute for Mathematics, Germany: &lt;em&gt;On the
-exchangeability theory and its applications in non-parametric
-statistics&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.researchgate.net/profile/Marija-Cuparic&#34;&gt;Marija
-Cuparić&lt;/a&gt;,
-University of Belgrade, Serbia: &lt;em&gt;Goodness-of-fit tests for randomly
-censored data&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.researchgate.net/profile/Charl-Pretorius&#34;&gt;Charl
-Pretorius&lt;/a&gt;,
-University of the Free State, Bloemfontein, South Africa:
-&lt;em&gt;Goodness-of-fit tests for multivariate&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;&lt;em&gt;-stable
-distributions with application to MGARCH models&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant: &lt;a href=&#34;http://poincare.matf.bg.ac.rs/~bojana/en/&#34;&gt;Bojana
-Milošević&lt;/a&gt;, University of
-Belgrade, Serbia&lt;/p&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians
-Europe initiative (FENStatS) supported by the Bernoulli Society for
-Mathematical Statistics and Probability and the Institute of
-Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=eupF0Zs_5sk&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

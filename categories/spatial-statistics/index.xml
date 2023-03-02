@@ -6,7 +6,17 @@
     <description>Recent content in spatial statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Procrustes Analysis for High-Dimensional Data</title>
+      <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
+      <description>OverviewThe Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.
+The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
+    </item>
+    
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
       <link>https://youngstats.github.io/post/2020/10/05/par_diggle/</link>

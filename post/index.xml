@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Procrustes Analysis for High-Dimensional Data</title>
+      <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
+      <description>OverviewThe Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.
+The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
+    </item>
+    
     <item>
       <title>Distribution generalization and causal inference</title>
       <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
@@ -98,18 +108,6 @@ IntroductionAdaptive data collection can optimize sample efficiency during the
       <description>Nonparametric inference based on statistical depth
 Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET
 The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
-    </item>
-    
-    <item>
-      <title>Recent challenges in model specification testing based on different data structures</title>
-      <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
-      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</guid>
-      <description>Recent challenges in model specification testing based on differentdata structures
-Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET
-Model specification testing is one of the essential methodological tasksin statistics. Recently, with the development of different datastructures, envisioning concepts from classical data setups to otherenvironments becomes very important.
-In the webinar, selected young statisticians will present their recentworks and elaborate on different aspects of this topic.</description>
     </item>
     
   </channel>
