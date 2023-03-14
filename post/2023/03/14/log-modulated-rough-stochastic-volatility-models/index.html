@@ -92,7 +92,7 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 <h2>Rough Volatility</h2>
 <p>New insights about the regularity of the instantaneous variance obtained
 from realized variance data (see <span class="citation">Gatheral, Jaisson, and Rosenbaum (<a href="#ref-GJR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Bennedsen, Lunde, and Pakkanen (<a href="#ref-BLP16" role="doc-biblioref">2021, to appear</a>)</span>, <span class="citation">Fukasawa, Takabatake, and Westphal (<a href="#ref-FTW19" role="doc-biblioref">2019</a>)</span>), have inspired
-the development of so-called stochastic volatility models
+the development of so-called <em>rough</em> stochastic volatility models
 in the financial literature. In simple terms, such a model can be
 described by the following SDE <span class="math display">\[\begin{equation}
     \label{eq:stoch-vol}
@@ -131,7 +131,7 @@ fractional Brownian motion is no longer square integrable, and thus new
 processes or techniques must be employed in order to study the behavior
 of stochastic volatility models in this regime. Some interesting efforts
 has been made to understand this problem. In particular, the theory of
-has been used to this end, see for
+<em>Gaussian multiplicative chaos</em> has been used to this end, see for
 instance the review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. Indeed, a proper scaling limit of fBm
 <span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see, for
 instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>). However, the resulting
@@ -139,7 +139,7 @@ random element is no longer a (continuous) stochastic process and only
 makes sense in terms of a generalized function (distribution), and it is
 therefore more challenging to use in practice.</p>
 <p>One way to overcome this problem is to use techniques related to the
-theory of , see for instance the
+theory of <em>Gaussian multiplicative chaos</em>, see for instance the
 review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. With this advanced framework, a proper scaling limit
 of fBm <span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see,
 for instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>).</p>
@@ -191,7 +191,7 @@ typically used in rough volatility models.</p>
 continuous interpolation for <span class="math inline">\(H \in [0,1/2)\)</span>, in the sense that all such
 choices of <span class="math inline">\(H\)</span> are valid within the same model, with no apparent breaks
 between them. To illustrate this observation, we consider a
-<strong>super-rough Bergomi model</strong>, which is simply obtained by replacing the
+<em>super-rough Bergomi model</em>, which is simply obtained by replacing the
 Riemann-Liouville fBm by the process <span class="math inline">\(\hat{W}\)</span> in the rough Bergomi
 model of <span class="citation">Bayer, Friz, and Gatheral (<a href="#ref-BFG16" role="doc-biblioref">2016</a>)</span>. Figure 2 shows the ATM-skew for various expires and
 values of <span class="math inline">\(H\)</span> between – and including – <span class="math inline">\(0\)</span> and <span class="math inline">\(0.1\)</span>. Indeed, the

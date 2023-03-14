@@ -20,7 +20,7 @@
 &lt;h2&gt;Rough Volatility&lt;/h2&gt;
 &lt;p&gt;New insights about the regularity of the instantaneous variance obtained
 from realized variance data (see &lt;span class=&#34;citation&#34;&gt;Gatheral, Jaisson, and Rosenbaum (&lt;a href=&#34;#ref-GJR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bennedsen, Lunde, and Pakkanen (&lt;a href=&#34;#ref-BLP16&#34; role=&#34;doc-biblioref&#34;&gt;2021, to appear&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Fukasawa, Takabatake, and Westphal (&lt;a href=&#34;#ref-FTW19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;), have inspired
-the development of so-called stochastic volatility models
+the development of so-called &lt;em&gt;rough&lt;/em&gt; stochastic volatility models
 in the financial literature. In simple terms, such a model can be
 described by the following SDE &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
     \label{eq:stoch-vol}
@@ -59,7 +59,7 @@ fractional Brownian motion is no longer square integrable, and thus new
 processes or techniques must be employed in order to study the behavior
 of stochastic volatility models in this regime. Some interesting efforts
 has been made to understand this problem. In particular, the theory of
-has been used to this end, see for
+&lt;em&gt;Gaussian multiplicative chaos&lt;/em&gt; has been used to this end, see for
 instance the review paper &lt;span class=&#34;citation&#34;&gt;Rhodes and Vargas (&lt;a href=&#34;#ref-RV14&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;. Indeed, a proper scaling limit of fBm
 &lt;span class=&#34;math inline&#34;&gt;\(W^H\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt; produces a log-correlated Gaussian field (see, for
 instance, &lt;span class=&#34;citation&#34;&gt;Neuman and Rosenbaum (&lt;a href=&#34;#ref-NR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Hager and Neuman (&lt;a href=&#34;#ref-hager2020multiplicative&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;). However, the resulting
@@ -67,7 +67,7 @@ random element is no longer a (continuous) stochastic process and only
 makes sense in terms of a generalized function (distribution), and it is
 therefore more challenging to use in practice.&lt;/p&gt;
 &lt;p&gt;One way to overcome this problem is to use techniques related to the
-theory of , see for instance the
+theory of &lt;em&gt;Gaussian multiplicative chaos&lt;/em&gt;, see for instance the
 review paper &lt;span class=&#34;citation&#34;&gt;Rhodes and Vargas (&lt;a href=&#34;#ref-RV14&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;. With this advanced framework, a proper scaling limit
 of fBm &lt;span class=&#34;math inline&#34;&gt;\(W^H\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt; produces a log-correlated Gaussian field (see,
 for instance, &lt;span class=&#34;citation&#34;&gt;Neuman and Rosenbaum (&lt;a href=&#34;#ref-NR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Hager and Neuman (&lt;a href=&#34;#ref-hager2020multiplicative&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
@@ -119,7 +119,7 @@ typically used in rough volatility models.&lt;/p&gt;
 continuous interpolation for &lt;span class=&#34;math inline&#34;&gt;\(H \in [0,1/2)\)&lt;/span&gt;, in the sense that all such
 choices of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; are valid within the same model, with no apparent breaks
 between them. To illustrate this observation, we consider a
-&lt;strong&gt;super-rough Bergomi model&lt;/strong&gt;, which is simply obtained by replacing the
+&lt;em&gt;super-rough Bergomi model&lt;/em&gt;, which is simply obtained by replacing the
 Riemann-Liouville fBm by the process &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; in the rough Bergomi
 model of &lt;span class=&#34;citation&#34;&gt;Bayer, Friz, and Gatheral (&lt;a href=&#34;#ref-BFG16&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;. Figure 2 shows the ATM-skew for various expires and
 values of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; between – and including – &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.1\)&lt;/span&gt;. Indeed, the
