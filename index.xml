@@ -93,8 +93,7 @@ resulting rough volatility models are close to the corresponding
 standard rough volatility models for &lt;span class=&#34;math inline&#34;&gt;\(H \gg 0\)&lt;/span&gt;, see Figure 1 where we
 compare the classical rough Bergomi model with the so called super rough
 Bergomi model (created with the logarithmic modification of the fBm).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1a.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1-side.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Above: Comparisons between the ATM skews of a rough Bergomi model and a
 corresponding super-rough Bergomi model for
 &lt;span class=&#34;math inline&#34;&gt;\(H \in \{0.01, 0.05, 0.09\}\)&lt;/span&gt;. Skews are computed by Monte Carlo
