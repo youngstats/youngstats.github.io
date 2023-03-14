@@ -90,53 +90,143 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
 <div id="rough-volatility" class="section level2">
 <h2>Rough Volatility</h2>
-<p>New insights about the regularity of the instantaneous variance obtained from realized variance data (see <span class="citation">Gatheral, Jaisson, and Rosenbaum (<a href="#ref-GJR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Bennedsen, Lunde, and Pakkanen (<a href="#ref-BLP16" role="doc-biblioref">2021, to appear</a>)</span>, <span class="citation">Fukasawa, Takabatake, and Westphal (<a href="#ref-FTW19" role="doc-biblioref">2019</a>)</span>), have inspired the development of so-called stochastic volatility models in the financial literature.
-In simple terms, such a model can be described by the following SDE
-<span class="math display">\[\begin{equation}
+<p>New insights about the regularity of the instantaneous variance obtained
+from realized variance data (see <span class="citation">Gatheral, Jaisson, and Rosenbaum (<a href="#ref-GJR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Bennedsen, Lunde, and Pakkanen (<a href="#ref-BLP16" role="doc-biblioref">2021, to appear</a>)</span>, <span class="citation">Fukasawa, Takabatake, and Westphal (<a href="#ref-FTW19" role="doc-biblioref">2019</a>)</span>), have inspired
+the development of so-called stochastic volatility models
+in the financial literature. In simple terms, such a model can be
+described by the following SDE <span class="math display">\[\begin{equation}
     \label{eq:stoch-vol}
     dS_t = S_t \sqrt{v_t}dB_t,
-\end{equation}\]</span>
-where the logarithm of the instantaneous variance process <span class="math inline">\(v\)</span> behaves similarly to a fractional Brownian motion (fBm) with Hurst index <span class="math inline">\(0 &lt; H &lt; 1/2\)</span>. One of the attractive features of rough volatility models is that they can explain the long-established power-law explosion of the at-the-money (ATM) skew of options as time-to-maturity <span class="math inline">\(T \to 0\)</span> and, thus, provide excellent fits to the implied volatility surface, as was observed in <span class="citation">Bayer, Friz, and Gatheral (<a href="#ref-BFG16" role="doc-biblioref">2016</a>)</span>, but already anticipated much earlier in <span class="citation">Alòs, León, and Vives (<a href="#ref-ALV07" role="doc-biblioref">2007</a>)</span>, <span class="citation">Fukasawa (<a href="#ref-fukasawa2011" role="doc-biblioref">2011</a>)</span>.
-In mathematical terms, let <span class="math inline">\(\sigma_{BS}(T,k)\)</span> denote the the implied volatility of an option with time to maturity <span class="math inline">\(T\)</span> and log-moneyness <span class="math inline">\(k\)</span>. We define the ATM skew as
-<span class="math display">\[\begin{equation*}
+\end{equation}\]</span> where the logarithm of the instantaneous variance process
+<span class="math inline">\(v\)</span> behaves similarly to a fractional Brownian motion (fBm) with Hurst
+index <span class="math inline">\(0 &lt; H &lt; 1/2\)</span>. One of the attractive features of rough volatility
+models is that they can explain the long-established power-law explosion
+of the at-the-money (ATM) skew of options as time-to-maturity <span class="math inline">\(T \to 0\)</span>
+and, thus, provide excellent fits to the implied volatility surface, as
+was observed in <span class="citation">Bayer, Friz, and Gatheral (<a href="#ref-BFG16" role="doc-biblioref">2016</a>)</span>, but already anticipated much earlier in <span class="citation">Alòs, León, and Vives (<a href="#ref-ALV07" role="doc-biblioref">2007</a>)</span>,
+<span class="citation">Fukasawa (<a href="#ref-fukasawa2011" role="doc-biblioref">2011</a>)</span>. In mathematical terms, let <span class="math inline">\(\sigma_{BS}(T,k)\)</span> denote the
+the implied volatility of an option with time to maturity <span class="math inline">\(T\)</span> and
+log-moneyness <span class="math inline">\(k\)</span>. We define the ATM skew as <span class="math display">\[\begin{equation*}
      \text{ATM-skew}(T) = \partial_k \sigma_{BS}(T,k)|_{k=0},  
-\end{equation*}\]</span>
-and it is this quantity which can be observed to have a power law explosion when <span class="math inline">\(T\rightarrow 0\)</span>.</p>
-<p>Rough volatility models provide a framework which allows to get excellent fits to market data simultaneously w.r.t. to time series of prices of the underlying and to option prices, with few parameters.</p>
+\end{equation*}\]</span> and it is this quantity which can be observed to have a
+power law explosion when <span class="math inline">\(T\rightarrow 0\)</span>.</p>
+<p>Rough volatility models provide a framework which allows to get
+excellent fits to market data simultaneously w.r.t. to time series of
+prices of the underlying and to option prices, with few parameters.</p>
 </div>
 <div id="super-rough-volatility" class="section level2">
 <h2>Super rough volatility?</h2>
-<p>Empirical studies of realized variance data as well as studies of the ATM skew in the implied volatility surfaces tend to conclude that <span class="math inline">\(H \ll 1/2\)</span>, often even <span class="math inline">\(H &lt; 0.1\)</span>. As both these estimates involve a certain kind of smoothing – realized variance being an estimate of <span class="math inline">\(\int_t^{t+h} v_sds\)</span> rather than <span class="math inline">\(v_t\)</span> itself, option prices and their implied skews being in general not available or reliable very close to maturity – this begs the question, if <span class="math inline">\(H\)</span> actually might even be equal to <span class="math inline">\(0\)</span>.</p>
-<p>From the realized variance viewpoint, <span class="citation">Fukasawa, Takabatake, and Westphal (<a href="#ref-FTW19" role="doc-biblioref">2019</a>)</span> indeed seems to suggest that <span class="math inline">\(H\)</span> could be <span class="math inline">\(0\)</span>. However, for a fractional Brownian motion, <span class="math inline">\(H=0\)</span> is not allowed since in this case the the integral kernel of the fractional Brownian motion is no longer square integrable, and thus new processes or techniques must be employed in order to study the behavior of stochastic volatility models in this regime. Some interesting efforts has been made to understand this problem. In particular, the theory of has been used to this end, see for instance the review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. Indeed, a proper scaling limit of fBm <span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see, for instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>}). However, the resulting random element is no longer a (continuous) stochastic process and only makes sense in terms of a generalized function (distribution), and it is therefore more challenging to use in practice.</p>
-<p>One way to overcome this problem is to use techniques related to the theory of , see for instance the review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. With this advanced framework, a proper scaling limit of fBm <span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see, for instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>).</p>
+<p>Empirical studies of realized variance data as well as studies of the
+ATM skew in the implied volatility surfaces tend to conclude that
+<span class="math inline">\(H \ll 1/2\)</span>, often even <span class="math inline">\(H &lt; 0.1\)</span>. As both these estimates involve a
+certain kind of smoothing – realized variance being an estimate of
+<span class="math inline">\(\int_t^{t+h} v_sds\)</span> rather than <span class="math inline">\(v_t\)</span> itself, option prices and their
+implied skews being in general not available or reliable very close to
+maturity – this begs the question, if <span class="math inline">\(H\)</span> actually might even be equal
+to <span class="math inline">\(0\)</span>.</p>
+<p>From the realized variance viewpoint, <span class="citation">Fukasawa, Takabatake, and Westphal (<a href="#ref-FTW19" role="doc-biblioref">2019</a>)</span> indeed seems to suggest
+that <span class="math inline">\(H\)</span> could be <span class="math inline">\(0\)</span>. However, for a fractional Brownian motion, <span class="math inline">\(H=0\)</span>
+is not allowed since in this case the the integral kernel of the
+fractional Brownian motion is no longer square integrable, and thus new
+processes or techniques must be employed in order to study the behavior
+of stochastic volatility models in this regime. Some interesting efforts
+has been made to understand this problem. In particular, the theory of
+has been used to this end, see for
+instance the review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. Indeed, a proper scaling limit of fBm
+<span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see, for
+instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>). However, the resulting
+random element is no longer a (continuous) stochastic process and only
+makes sense in terms of a generalized function (distribution), and it is
+therefore more challenging to use in practice.</p>
+<p>One way to overcome this problem is to use techniques related to the
+theory of , see for instance the
+review paper <span class="citation">Rhodes and Vargas (<a href="#ref-RV14" role="doc-biblioref">2014</a>)</span>. With this advanced framework, a proper scaling limit
+of fBm <span class="math inline">\(W^H\)</span> as <span class="math inline">\(H \to 0\)</span> produces a log-correlated Gaussian field (see,
+for instance, <span class="citation">Neuman and Rosenbaum (<a href="#ref-NR18" role="doc-biblioref">2018</a>)</span>, <span class="citation">Hager and Neuman (<a href="#ref-hager2020multiplicative" role="doc-biblioref">2020</a>)</span>).</p>
 </div>
 <div id="logarithmic-modulation-of-the-fbm" class="section level2">
 <h2>Logarithmic modulation of the fBm</h2>
-<p>In our recent work <span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span> we investigate the <span class="math inline">\(H=0\)</span> problem from a different point of view. We consider an actual continuous stochastic process with <span class="math inline">\(H=0\)</span> by introducing a logarithmic term in the definition of the kernel <span class="math inline">\(K:\mathbb{R}_+\rightarrow \mathbb{R}\)</span>, which for small <span class="math inline">\(r&gt;0\)</span> behaves similarly to
-<span class="math display">\[\begin{align}
+<p>In our recent work <span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span> we investigate the <span class="math inline">\(H=0\)</span> problem
+from a different point of view. We consider an actual continuous
+stochastic process with <span class="math inline">\(H=0\)</span> by introducing a logarithmic term in the
+definition of the kernel <span class="math inline">\(K:\mathbb{R}_+\rightarrow \mathbb{R}\)</span>, which
+for small <span class="math inline">\(r&gt;0\)</span> behaves similarly to <span class="math display">\[\begin{align}
     r^{H-\frac{1}{2}}\log(1/r)^{-p}\label{eq1}\tag{1}
-\end{align}\]</span>
-for some parameter <span class="math inline">\(p&gt;1\)</span>. This modification ensures that <span class="math inline">\(K\)</span> remains square integrable for all <span class="math inline">\(H \in [0,1/2)\)</span>. Hence, the resulting family of Gaussian Volterra processes <span class="math inline">\(\hat{W}\)</span> will be continuous and with finite variance even for <span class="math inline">\(H=0\)</span>, and the ambiguities of the asymptotic analysis for <span class="math inline">\(H\to0\)</span> cease to matter, as we can simply do the asymptotic for <span class="math inline">\(H=0\)</span>. We stress again that <span class="math inline">\(\hat{W}\)</span> is a proper, continuous Gaussian process even for <span class="math inline">\(H=0\)</span>.</p>
-<p>At the same time, as we apply our logarithmic modification only close to the singularity of the power-law kernel, we may expect that the resulting rough volatility models are close to the corresponding standard rough volatility models for <span class="math inline">\(H \gg 0\)</span>, see Figure 1 where we compare the classical rough Bergomi model with the so called super rough Bergomi model (created with the logarithmic modification of the fBm).</p>
+\end{align}\]</span> for some parameter <span class="math inline">\(p&gt;1\)</span>. This modification ensures that <span class="math inline">\(K\)</span>
+remains square integrable for all <span class="math inline">\(H \in [0,1/2)\)</span>. Hence, the resulting
+family of Gaussian Volterra processes <span class="math inline">\(\hat{W}\)</span> will be continuous and
+with finite variance even for <span class="math inline">\(H=0\)</span>, and the ambiguities of the
+asymptotic analysis for <span class="math inline">\(H\to0\)</span> cease to matter, as we can simply do the
+asymptotic for <span class="math inline">\(H=0\)</span>. We stress again that <span class="math inline">\(\hat{W}\)</span> is a proper,
+continuous Gaussian process even for <span class="math inline">\(H=0\)</span>.</p>
+<p>At the same time, as we apply our logarithmic modification only close to
+the singularity of the power-law kernel, we may expect that the
+resulting rough volatility models are close to the corresponding
+standard rough volatility models for <span class="math inline">\(H \gg 0\)</span>, see Figure 1 where we
+compare the classical rough Bergomi model with the so called super rough
+Bergomi model (created with the logarithmic modification of the fBm).</p>
 <p><img src="/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1.png" /></p>
 <p><img src="/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1a.png" /></p>
-<p>Above: Comparisons between the ATM skews of a rough Bergomi model and a corresponding super-rough Bergomi model for <span class="math inline">\(H \in \{0.01, 0.05, 0.09\}\)</span>. Skews are computed by Monte Carlo simulation.</p>
+<p>Above: Comparisons between the ATM skews of a rough Bergomi model and a
+corresponding super-rough Bergomi model for
+<span class="math inline">\(H \in \{0.01, 0.05, 0.09\}\)</span>. Skews are computed by Monte Carlo
+simulation.</p>
 <p><img src="/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image2.png" /></p>
-<p>Above: ATM implied volatility skews (absolute values) in the (super-) rough Bergomi model plotted against expiry <span class="math inline">\(t\)</span> and Hurst index <span class="math inline">\(H\)</span>. Skews are computed by Monte Carlo simulation based on exact simulation of the underlying (log-modulated) fBm. Note that <span class="math inline">\(H = 0\)</span> is included in the plot in the super-rough case. Note how this seems in keeping with the findings in <span class="citation">Forde et al. (<a href="#ref-forde_bergomi_H0" role="doc-biblioref">2020</a>)</span>, of a vanishing skewness as <span class="math inline">\(H\downarrow 0\)</span> in rough Bergomi.</p>
+<p>Above: ATM implied volatility skews (absolute values) in the (super-)
+rough Bergomi model plotted against expiry <span class="math inline">\(t\)</span> and Hurst index <span class="math inline">\(H\)</span>.
+Skews are computed by Monte Carlo simulation based on exact simulation
+of the underlying (log-modulated) fBm. Note that <span class="math inline">\(H = 0\)</span> is included in
+the plot in the super-rough case. Note how this seems in keeping with
+the findings in <span class="citation">Forde et al. (<a href="#ref-forde_bergomi_H0" role="doc-biblioref">2020</a>)</span>, of a vanishing skewness as
+<span class="math inline">\(H\downarrow 0\)</span> in rough Bergomi.</p>
 </div>
 <div id="the-power-law-explosion-of-the-atm-skew" class="section level2">
 <h2>The power law explosion of the ATM skew</h2>
-<p>The process we propose here can be seen as an extension of the log Brownian motion studied in <span class="citation">Mocioalca and Viens (<a href="#ref-MocioalcaViens2005" role="doc-biblioref">2005</a>)</span>, to include a fractional power. This allows for a better comparison with classical fractional processes, such as the Riemann-Liouville fractional Brownian motion, typically used in rough volatility models.</p>
-<p>In this way, we are able to obtain rough volatility models which allow continuous interpolation for <span class="math inline">\(H \in [0,1/2)\)</span>, in the sense that all such choices of <span class="math inline">\(H\)</span> are valid within the same model, with no apparent breaks between them. To illustrate this observation, we consider a , which is simply obtained by replacing the Riemann-Liouville fBm by the process $ $ in the rough Bergomi model of <span class="citation">Bayer, Friz, and Gatheral (<a href="#ref-BFG16" role="doc-biblioref">2016</a>)</span>. Figure 2 shows the ATM-skew for various expires and values of <span class="math inline">\(H\)</span> between – and including – <span class="math inline">\(0\)</span> and <span class="math inline">\(0.1\)</span>. Indeed, the surface “looks” smooth in <span class="math inline">\(H\)</span>, visually indicating a smooth transition from the power law explosion <span class="math inline">\(T^{H-1/2}\)</span> for <span class="math inline">\(H&gt;0\)</span> to the skew behaviour at <span class="math inline">\(H = 0\)</span>.</p>
-<p>In contrast, the skew-behaviour changes remarkably for the standard rough Bergomi model for small <span class="math inline">\(H\)</span>, see Figure 1. In particular, the skew flattens significantly for very small <span class="math inline">\(H\)</span>. The log-modulated version in Figure 2 shows no signs of this flattening. To the contrary, a more refined analysis, which is the main goal of our article, shows that the skew behaves like <span class="math inline">\(T^{H-1/2}\)</span> – up to logarithmic terms – and, hence, steepens as <span class="math inline">\(H \to 0\)</span>.</p>
-<p>Note in particular that the log-fBm does not have a scale invariance property due to the logarithmic term in the kernel, thereby making any short time asymptotics very difficult. However, by employing the vol-of-vol expansion in <span class="citation">Fukasawa (<a href="#ref-fukasawa2011" role="doc-biblioref">2011</a>)</span> we obtain an asymptotic formula for the ATM skew when the volatility-of-volatility <span class="math inline">\(\epsilon\)</span> is small. Indeed, we obtain a skew formula of the form
-<span class="math display">\[\begin{equation}
+<p>The process we propose here can be seen as an extension of the log
+Brownian motion studied in <span class="citation">Mocioalca and Viens (<a href="#ref-MocioalcaViens2005" role="doc-biblioref">2005</a>)</span>, to include a fractional
+power. This allows for a better comparison with classical fractional
+processes, such as the Riemann-Liouville fractional Brownian motion,
+typically used in rough volatility models.</p>
+<p>In this way, we are able to obtain rough volatility models which allow
+continuous interpolation for <span class="math inline">\(H \in [0,1/2)\)</span>, in the sense that all such
+choices of <span class="math inline">\(H\)</span> are valid within the same model, with no apparent breaks
+between them. To illustrate this observation, we consider a
+<strong>super-rough Bergomi model</strong>, which is simply obtained by replacing the
+Riemann-Liouville fBm by the process <span class="math inline">\(\hat{W}\)</span> in the rough Bergomi
+model of <span class="citation">Bayer, Friz, and Gatheral (<a href="#ref-BFG16" role="doc-biblioref">2016</a>)</span>. Figure 2 shows the ATM-skew for various expires and
+values of <span class="math inline">\(H\)</span> between – and including – <span class="math inline">\(0\)</span> and <span class="math inline">\(0.1\)</span>. Indeed, the
+surface “looks” smooth in <span class="math inline">\(H\)</span>, visually indicating a smooth transition
+from the power law explosion <span class="math inline">\(T^{H-1/2}\)</span> for <span class="math inline">\(H&gt;0\)</span> to the skew behaviour
+at <span class="math inline">\(H = 0\)</span>.</p>
+<p>In contrast, the skew-behaviour changes remarkably for the standard
+rough Bergomi model for small <span class="math inline">\(H\)</span>, see Figure 1. In particular, the skew
+flattens significantly for very small <span class="math inline">\(H\)</span>. The log-modulated version in
+Figure 2 shows no signs of this flattening. To the contrary, a more
+refined analysis, which is the main goal of our article, shows that the
+skew behaves like <span class="math inline">\(T^{H-1/2}\)</span> – up to logarithmic terms – and, hence,
+steepens as <span class="math inline">\(H \to 0\)</span>.</p>
+<p>Note in particular that the log-fBm does not have a scale invariance
+property due to the logarithmic term in the kernel, thereby making any
+short time asymptotics very difficult. However, by employing the
+vol-of-vol expansion in <span class="citation">Fukasawa (<a href="#ref-fukasawa2011" role="doc-biblioref">2011</a>)</span> we obtain an asymptotic formula
+for the ATM skew when the volatility-of-volatility <span class="math inline">\(\epsilon\)</span> is small.
+Indeed, we obtain a skew formula of the form <span class="math display">\[\begin{equation}
     \label{eq:skew-asymptotic}
     \text{ATM-skew} \approx a_{H,\zeta,p}\, \rho \,\log(1/T)^{-p} \, T^{H-1/2} \epsilon, \text{ as } T \to 0,
-\end{equation}\]</span>
-with Hurst parameter <span class="math inline">\(H\in[0,1/2)\)</span>, see Theorem 5.4 in <span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span>. Here, <span class="math inline">\(p&gt;1\)</span> is a parameter of the kernel defined in <span class="math inline">\(\eqref{eq1}\)</span>, and <span class="math inline">\(a_{H,\zeta,p}\)</span> is a constant depending on <span class="math inline">\(H\)</span> – and other parameters – which is smooth in <span class="math inline">\(H\)</span> with <span class="math inline">\(a_{0,\zeta,p} \neq 0\)</span>.
-This shows us that the explosion of the ATM skew in a stochastic volatility model generated from the log modulated version of a fBm behaves similarly to <span class="math inline">\(T^{H-\frac{1}{2}}\)</span>, the power law explosion of the rough Bergomi model when <span class="math inline">\(H&gt;0\)</span>, while still preserving this property when <span class="math inline">\(H=0\)</span>, providing a simple extension of the rough Bergomi model to capture an important feature of the volatility surface.</p>
-<p>Disclaimer: The following material is based on the published article <span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span>, and the reuse of figures and material for the blog post has been approved by the journal SIAM Journal of Financial Mathematics.</p>
+\end{equation}\]</span> with Hurst parameter <span class="math inline">\(H\in[0,1/2)\)</span>, see Theorem 5.4 in
+<span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span>. Here, <span class="math inline">\(p&gt;1\)</span> is a parameter of the kernel defined
+in <span class="math inline">\(\eqref{eq1}\)</span>, and <span class="math inline">\(a_{H,\zeta,p}\)</span> is a constant depending on <span class="math inline">\(H\)</span> –
+and other parameters – which is smooth in <span class="math inline">\(H\)</span> with
+<span class="math inline">\(a_{0,\zeta,p} \neq 0\)</span>. This shows us that the explosion of the ATM skew
+in a stochastic volatility model generated from the log modulated
+version of a fBm behaves similarly to <span class="math inline">\(T^{H-\frac{1}{2}}\)</span>, the power law
+explosion of the rough Bergomi model when <span class="math inline">\(H&gt;0\)</span>, while still preserving
+this property when <span class="math inline">\(H=0\)</span>, providing a simple extension of the rough
+Bergomi model to capture an important feature of the volatility surface.</p>
+<p>Disclaimer: The following material is based on the published article
+<span class="citation">Bayer, Harang, and Pigato (<a href="#ref-BayerHarangPigato21" role="doc-biblioref">2021</a>)</span>, and the reuse of figures and material for the blog
+post has been approved by the journal SIAM Journal of Financial
+Mathematics.</p>
 </div>
 <div id="bibliography" class="section level2 unnumbered">
 <h2>Bibliography</h2>
