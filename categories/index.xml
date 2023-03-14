@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>financial-mathematics</title>
+      <link>https://youngstats.github.io/categories/financial-mathematics/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/financial-mathematics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>https://youngstats.github.io/categories/probability/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-differential-equations</title>
+      <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>high-dimensional-data</title>
       <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
@@ -67,33 +94,6 @@
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/asymptotic-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network-analysis</title>
-      <link>https://youngstats.github.io/categories/network-analysis/</link>
-      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/network-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayesian-statistics</title>
-      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gaussian-models</title>
-      <link>https://youngstats.github.io/categories/gaussian-models/</link>
-      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/gaussian-models/</guid>
       <description></description>
     </item>
     

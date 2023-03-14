@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log-modulated rough stochastic volatility models</title>
+      <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</guid>
+      <description>Rough VolatilityNew insights about the regularity of the instantaneous variance obtained from realized variance data (see Gatheral, Jaisson, and Rosenbaum (2018), Bennedsen, Lunde, and Pakkanen (2021, to appear), Fukasawa, Takabatake, and Westphal (2019)), have inspired the development of so-called stochastic volatility models in the financial literature.In simple terms, such a model can be described by the following SDE\[\begin{equation}\label{eq:stoch-vol}dS_t = S_t \sqrt{v_t}dB_t,\end{equation}\]where the logarithm of the instantaneous variance process \(v\) behaves similarly to a fractional Brownian motion (fBm) with Hurst index \(0 &amp;lt; H &amp;lt; 1/2\).</description>
+    </item>
+    
     <item>
       <title>Procrustes Analysis for High-Dimensional Data</title>
       <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
@@ -97,17 +106,6 @@ Introduction: the Mixture Cure ModelIn certain clinical trials or observational
       <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
       <description>AbstractIt is increasingly common for data to be collected adaptively, whereexperimental costs are reduced progressively by assigning promisingtreatments more frequently. However, adaptivity also poses greatchallenges on post-experiment inference, since observations aredependent, and standard estimates can be skewed and heavy-tailed. Wepropose a treatment-effect estimator that is consistent andasymptotically normal, allowing for constructing frequentist confidenceintervals and testing hypotheses.
 IntroductionAdaptive data collection can optimize sample efficiency during thecourse of the experiment for particular objectives, such as identifyingthe best treatment (D.</description>
-    </item>
-    
-    <item>
-      <title>Nonparametric inference based on statistical depth</title>
-      <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
-      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
-      <description>Nonparametric inference based on statistical depth
-Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET
-The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
     </item>
     
   </channel>

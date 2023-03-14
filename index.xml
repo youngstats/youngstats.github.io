@@ -6,7 +6,110 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log-modulated rough stochastic volatility models</title>
+      <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</guid>
+      <description>
+
+
+&lt;div id=&#34;rough-volatility&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Rough Volatility&lt;/h2&gt;
+&lt;p&gt;New insights about the regularity of the instantaneous variance obtained from realized variance data (see &lt;span class=&#34;citation&#34;&gt;Gatheral, Jaisson, and Rosenbaum (&lt;a href=&#34;#ref-GJR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bennedsen, Lunde, and Pakkanen (&lt;a href=&#34;#ref-BLP16&#34; role=&#34;doc-biblioref&#34;&gt;2021, to appear&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Fukasawa, Takabatake, and Westphal (&lt;a href=&#34;#ref-FTW19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;), have inspired the development of so-called stochastic volatility models in the financial literature.
+In simple terms, such a model can be described by the following SDE
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \label{eq:stoch-vol}
+    dS_t = S_t \sqrt{v_t}dB_t,
+\end{equation}\]&lt;/span&gt;
+where the logarithm of the instantaneous variance process &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; behaves similarly to a fractional Brownian motion (fBm) with Hurst index &lt;span class=&#34;math inline&#34;&gt;\(0 &amp;lt; H &amp;lt; 1/2\)&lt;/span&gt;. One of the attractive features of rough volatility models is that they can explain the long-established power-law explosion of the at-the-money (ATM) skew of options as time-to-maturity &lt;span class=&#34;math inline&#34;&gt;\(T \to 0\)&lt;/span&gt; and, thus, provide excellent fits to the implied volatility surface, as was observed in &lt;span class=&#34;citation&#34;&gt;Bayer, Friz, and Gatheral (&lt;a href=&#34;#ref-BFG16&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;, but already anticipated much earlier in &lt;span class=&#34;citation&#34;&gt;Alòs, León, and Vives (&lt;a href=&#34;#ref-ALV07&#34; role=&#34;doc-biblioref&#34;&gt;2007&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Fukasawa (&lt;a href=&#34;#ref-fukasawa2011&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;.
+In mathematical terms, let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{BS}(T,k)\)&lt;/span&gt; denote the the implied volatility of an option with time to maturity &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; and log-moneyness &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;. We define the ATM skew as
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+     \text{ATM-skew}(T) = \partial_k \sigma_{BS}(T,k)|_{k=0},  
+\end{equation*}\]&lt;/span&gt;
+and it is this quantity which can be observed to have a power law explosion when &lt;span class=&#34;math inline&#34;&gt;\(T\rightarrow 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Rough volatility models provide a framework which allows to get excellent fits to market data simultaneously w.r.t. to time series of prices of the underlying and to option prices, with few parameters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;super-rough-volatility&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Super rough volatility?&lt;/h2&gt;
+&lt;p&gt;Empirical studies of realized variance data as well as studies of the ATM skew in the implied volatility surfaces tend to conclude that &lt;span class=&#34;math inline&#34;&gt;\(H \ll 1/2\)&lt;/span&gt;, often even &lt;span class=&#34;math inline&#34;&gt;\(H &amp;lt; 0.1\)&lt;/span&gt;. As both these estimates involve a certain kind of smoothing – realized variance being an estimate of &lt;span class=&#34;math inline&#34;&gt;\(\int_t^{t+h} v_sds\)&lt;/span&gt; rather than &lt;span class=&#34;math inline&#34;&gt;\(v_t\)&lt;/span&gt; itself, option prices and their implied skews being in general not available or reliable very close to maturity – this begs the question, if &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; actually might even be equal to &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;From the realized variance viewpoint, &lt;span class=&#34;citation&#34;&gt;Fukasawa, Takabatake, and Westphal (&lt;a href=&#34;#ref-FTW19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; indeed seems to suggest that &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; could be &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;. However, for a fractional Brownian motion, &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; is not allowed since in this case the the integral kernel of the fractional Brownian motion is no longer square integrable, and thus new processes or techniques must be employed in order to study the behavior of stochastic volatility models in this regime. Some interesting efforts has been made to understand this problem. In particular, the theory of has been used to this end, see for instance the review paper &lt;span class=&#34;citation&#34;&gt;Rhodes and Vargas (&lt;a href=&#34;#ref-RV14&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;. Indeed, a proper scaling limit of fBm &lt;span class=&#34;math inline&#34;&gt;\(W^H\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt; produces a log-correlated Gaussian field (see, for instance, &lt;span class=&#34;citation&#34;&gt;Neuman and Rosenbaum (&lt;a href=&#34;#ref-NR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Hager and Neuman (&lt;a href=&#34;#ref-hager2020multiplicative&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;}). However, the resulting random element is no longer a (continuous) stochastic process and only makes sense in terms of a generalized function (distribution), and it is therefore more challenging to use in practice.&lt;/p&gt;
+&lt;p&gt;One way to overcome this problem is to use techniques related to the theory of , see for instance the review paper &lt;span class=&#34;citation&#34;&gt;Rhodes and Vargas (&lt;a href=&#34;#ref-RV14&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;. With this advanced framework, a proper scaling limit of fBm &lt;span class=&#34;math inline&#34;&gt;\(W^H\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt; produces a log-correlated Gaussian field (see, for instance, &lt;span class=&#34;citation&#34;&gt;Neuman and Rosenbaum (&lt;a href=&#34;#ref-NR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Hager and Neuman (&lt;a href=&#34;#ref-hager2020multiplicative&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;logarithmic-modulation-of-the-fbm&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Logarithmic modulation of the fBm&lt;/h2&gt;
+&lt;p&gt;In our recent work &lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we investigate the &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; problem from a different point of view. We consider an actual continuous stochastic process with &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; by introducing a logarithmic term in the definition of the kernel &lt;span class=&#34;math inline&#34;&gt;\(K:\mathbb{R}_+\rightarrow \mathbb{R}\)&lt;/span&gt;, which for small &lt;span class=&#34;math inline&#34;&gt;\(r&amp;gt;0\)&lt;/span&gt; behaves similarly to
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
+    r^{H-\frac{1}{2}}\log(1/r)^{-p}\label{eq1}\tag{1}
+\end{align}\]&lt;/span&gt;
+for some parameter &lt;span class=&#34;math inline&#34;&gt;\(p&amp;gt;1\)&lt;/span&gt;. This modification ensures that &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; remains square integrable for all &lt;span class=&#34;math inline&#34;&gt;\(H \in [0,1/2)\)&lt;/span&gt;. Hence, the resulting family of Gaussian Volterra processes &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; will be continuous and with finite variance even for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;, and the ambiguities of the asymptotic analysis for &lt;span class=&#34;math inline&#34;&gt;\(H\to0\)&lt;/span&gt; cease to matter, as we can simply do the asymptotic for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;. We stress again that &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; is a proper, continuous Gaussian process even for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;At the same time, as we apply our logarithmic modification only close to the singularity of the power-law kernel, we may expect that the resulting rough volatility models are close to the corresponding standard rough volatility models for &lt;span class=&#34;math inline&#34;&gt;\(H \gg 0\)&lt;/span&gt;, see Figure 1 where we compare the classical rough Bergomi model with the so called super rough Bergomi model (created with the logarithmic modification of the fBm).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Above: Comparisons between the ATM skews of a rough Bergomi model and a corresponding super-rough Bergomi model for &lt;span class=&#34;math inline&#34;&gt;\(H \in \{0.01, 0.05, 0.09\}\)&lt;/span&gt;. Skews are computed by Monte Carlo simulation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1b.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Above: ATM implied volatility skews (absolute values) in the (super-) rough Bergomi model plotted against expiry &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; and Hurst index &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;. Skews are computed by Monte Carlo simulation based on exact simulation of the underlying (log-modulated) fBm. Note that &lt;span class=&#34;math inline&#34;&gt;\(H = 0\)&lt;/span&gt; is included in the plot in the super-rough case. Note how this seems in keeping with the findings in &lt;span class=&#34;citation&#34;&gt;Forde et al. (&lt;a href=&#34;#ref-forde_bergomi_H0&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, of a vanishing skewness as &lt;span class=&#34;math inline&#34;&gt;\(H\downarrow 0\)&lt;/span&gt; in rough Bergomi.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-power-law-explosion-of-the-atm-skew&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The power law explosion of the ATM skew&lt;/h2&gt;
+&lt;p&gt;The process we propose here can be seen as an extension of the log Brownian motion studied in &lt;span class=&#34;citation&#34;&gt;Mocioalca and Viens (&lt;a href=&#34;#ref-MocioalcaViens2005&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;, to include a fractional power. This allows for a better comparison with classical fractional processes, such as the Riemann-Liouville fractional Brownian motion, typically used in rough volatility models.&lt;/p&gt;
+&lt;p&gt;In this way, we are able to obtain rough volatility models which allow continuous interpolation for &lt;span class=&#34;math inline&#34;&gt;\(H \in [0,1/2)\)&lt;/span&gt;, in the sense that all such choices of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; are valid within the same model, with no apparent breaks between them. To illustrate this observation, we consider a , which is simply obtained by replacing the Riemann-Liouville fBm by the process $ $ in the rough Bergomi model of &lt;span class=&#34;citation&#34;&gt;Bayer, Friz, and Gatheral (&lt;a href=&#34;#ref-BFG16&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;. Figure 2 shows the ATM-skew for various expires and values of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; between – and including – &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.1\)&lt;/span&gt;. Indeed, the surface ``looks’’ smooth in &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;, visually indicating a smooth transition from the power law explosion &lt;span class=&#34;math inline&#34;&gt;\(T^{H-1/2}\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(H&amp;gt;0\)&lt;/span&gt; to the skew behaviour at &lt;span class=&#34;math inline&#34;&gt;\(H = 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In contrast, the skew-behaviour changes remarkably for the standard rough Bergomi model for small &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;, see Figure 1. In particular, the skew flattens significantly for very small &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;. The log-modulated version in Figure 2 shows no signs of this flattening. To the contrary, a more refined analysis, which is the main goal of our article, shows that the skew behaves like &lt;span class=&#34;math inline&#34;&gt;\(T^{H-1/2}\)&lt;/span&gt; – up to logarithmic terms – and, hence, steepens as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Note in particular that the log-fBm does not have a scale invariance property due to the logarithmic term in the kernel, thereby making any short time asymptotics very difficult. However, by employing the vol-of-vol expansion in &lt;span class=&#34;citation&#34;&gt;Fukasawa (&lt;a href=&#34;#ref-fukasawa2011&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt; we obtain an asymptotic formula for the ATM skew when the volatility-of-volatility &lt;span class=&#34;math inline&#34;&gt;\(\epsilon\)&lt;/span&gt; is small. Indeed, we obtain a skew formula of the form
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \label{eq:skew-asymptotic}
+    \text{ATM-skew} \approx a_{H,\zeta,p}\, \rho \,\log(1/T)^{-p} \, T^{H-1/2} \epsilon, \text{ as } T \to 0,
+\end{equation}\]&lt;/span&gt;
+with Hurst parameter &lt;span class=&#34;math inline&#34;&gt;\(H\in[0,1/2)\)&lt;/span&gt;, see Theorem 5.4 in &lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;. Here, &lt;span class=&#34;math inline&#34;&gt;\(p&amp;gt;1\)&lt;/span&gt; is a parameter of the kernel defined in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(a_{H,\zeta,p}\)&lt;/span&gt; is a constant depending on &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; – and other parameters – which is smooth in &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(a_{0,\zeta,p} \neq 0\)&lt;/span&gt;.
+This shows us that the explosion of the ATM skew in a stochastic volatility model generated from the log modulated version of a fBm behaves similarly to &lt;span class=&#34;math inline&#34;&gt;\(T^{H-\frac{1}{2}}\)&lt;/span&gt;, the power law explosion of the rough Bergomi model when &lt;span class=&#34;math inline&#34;&gt;\(H&amp;gt;0\)&lt;/span&gt;, while still preserving this property when &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;, providing a simple extension of the rough Bergomi model to capture an important feature of the volatility surface.&lt;/p&gt;
+&lt;p&gt;Disclaimer: The following material is based on the published article &lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, and the reuse of figures and material for the blog post has been approved by the journal SIAM Journal of Financial Mathematics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-ALV07&#34; class=&#34;csl-entry&#34;&gt;
+Alòs, Elisa, Jorge A León, and Josep Vives. 2007. &lt;span&gt;“On the Short-Time Behavior of the Implied Volatility for Jump-Diffusion Models with Stochastic Volatility.”&lt;/span&gt; &lt;em&gt;Finance and Stochastics&lt;/em&gt; 11 (4): 571–89.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BFG16&#34; class=&#34;csl-entry&#34;&gt;
+Bayer, Christian, Peter K. Friz, and Jim Gatheral. 2016. &lt;span&gt;“Pricing Under Rough Volatility.”&lt;/span&gt; &lt;em&gt;Quantitative Finance&lt;/em&gt; 16 (6): 887–904.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BayerHarangPigato21&#34; class=&#34;csl-entry&#34;&gt;
+Bayer, Christian, Fabian A. Harang, and Paolo Pigato. 2021. &lt;span&gt;“Log-Modulated Rough Stochastic Volatility Models.”&lt;/span&gt; &lt;em&gt;SIAM J. Financial Math.&lt;/em&gt; 12 (3): 1257–84. &lt;a href=&#34;https://doi.org/10.1137/20M135902X&#34;&gt;https://doi.org/10.1137/20M135902X&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BLP16&#34; class=&#34;csl-entry&#34;&gt;
+Bennedsen, Mikkel, Asger Lunde, and Mikko S Pakkanen. 2021, to appear. &lt;span&gt;“Decoupling the Short-and Long-Term Behavior of Stochastic Volatility.”&lt;/span&gt; &lt;em&gt;Journal of Financial Econometrics&lt;/em&gt;, 2021, to appear.
+&lt;/div&gt;
+&lt;div id=&#34;ref-forde_bergomi_H0&#34; class=&#34;csl-entry&#34;&gt;
+Forde, Martin, Masaaki Fukasawa, Stefan Gerhold, and Benjamin Smith. 2020. &lt;span&gt;“The Rough &lt;span&gt;B&lt;/span&gt;ergomi Model as &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\(H\to 0\)&lt;/span&gt;&lt;/span&gt; - Skew Flattening/Blow up and Non-&lt;span&gt;G&lt;/span&gt;aussian Rough Volatility.”&lt;/span&gt; &lt;em&gt;Available at Https://Nms.kcl.ac.uk/Martin.forde/&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-fukasawa2011&#34; class=&#34;csl-entry&#34;&gt;
+Fukasawa, Masaaki. 2011. &lt;span&gt;“Asymptotic Analysis for Stochastic Volatility: Martingale Expansion.”&lt;/span&gt; &lt;em&gt;Finance and Stochastics&lt;/em&gt; 15: 635–54. https://doi.org/&lt;a href=&#34;https://doi.org/10.1007/s00780-010-0136-6&#34;&gt;https://doi.org/10.1007/s00780-010-0136-6&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-FTW19&#34; class=&#34;csl-entry&#34;&gt;
+Fukasawa, Masaaki, Tetsuya Takabatake, and Rebecca Westphal. 2019. &lt;span&gt;“Is Volatility Rough?”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:1905.04852&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-GJR18&#34; class=&#34;csl-entry&#34;&gt;
+Gatheral, Jim, Thibault Jaisson, and Mathieu Rosenbaum. 2018. &lt;span&gt;“Volatility Is Rough.”&lt;/span&gt; &lt;em&gt;Quantitative Finance&lt;/em&gt; 18 (6): 933–49.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hager2020multiplicative&#34; class=&#34;csl-entry&#34;&gt;
+Hager, Paul, and Eyal Neuman. 2020. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;The Multiplicative Chaos of &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; Fractional Brownian Fields&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Preprint arXiv:2008.01385&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MocioalcaViens2005&#34; class=&#34;csl-entry&#34;&gt;
+Mocioalca, Oana, and Frederi Viens. 2005. &lt;span&gt;“Skorohod Integration and Stochastic Calculus Beyond the Fractional &lt;span&gt;B&lt;/span&gt;rownian Scale.”&lt;/span&gt; &lt;em&gt;J. Funct. Anal.&lt;/em&gt; 222 (2): 385–434. &lt;a href=&#34;https://doi.org/10.1016/j.jfa.2004.07.013&#34;&gt;https://doi.org/10.1016/j.jfa.2004.07.013&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-NR18&#34; class=&#34;csl-entry&#34;&gt;
+Neuman, Eyal, and Mathieu Rosenbaum. 2018. &lt;span&gt;“Fractional &lt;span&gt;B&lt;/span&gt;rownian Motion with Zero &lt;span&gt;H&lt;/span&gt;urst Parameter: A Rough Volatility Viewpoint.”&lt;/span&gt; &lt;em&gt;Electronic Communications in Probability&lt;/em&gt; 23.
+&lt;/div&gt;
+&lt;div id=&#34;ref-RV14&#34; class=&#34;csl-entry&#34;&gt;
+Rhodes, Rémi, and Vincent Vargas. 2014. &lt;span&gt;“Gaussian Multiplicative Chaos and Applications: A Review.”&lt;/span&gt; &lt;em&gt;Probability Surveys&lt;/em&gt; 11: 315–92.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Procrustes Analysis for High-Dimensional Data</title>
       <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
@@ -1511,37 +1614,6 @@ Zhan, Ruohan, Zhimei Ren, Susan Athey, and Zhengyuan Zhou. 2021. &lt;span&gt;“
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Nonparametric inference based on statistical depth</title>
-      <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
-      <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Nonparametric inference based on statistical depth&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-03-nonparametric-inference-based-on-statistical-depth_files/cover2.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering. Many such mappings have been introduced in the literature in recent decades and this is subject to intense research in, among other, nonparametric statistics and functional data analysis.&lt;/p&gt;
-&lt;p&gt;In the webinar, selected statisticians will present their recent works and elaborate on different aspects of this topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdsX2FS-Dpmris0W1yfUbwYOUdXfA5qoY2T4ujP5XAuLGLFwA/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://dimitri.konen.web.ulb.be/&#34;&gt;Dimitri Konen&lt;/a&gt;, Université Libre de Bruxelles (ULB), Belgium, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/10D3bNPuAmzuUzJmaL1tE7788p_G_pJTu/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www2.karlin.mff.cuni.cz/~nagy/index.php&#34;&gt;Stanislav Nagy&lt;/a&gt;, Faculty of Mathematics and Physics, Charles University, Czech Republic, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1yrouPnanWb29fQxj7-8yDrZpM37_WNZa/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://perso.telecom-paristech.fr/mozharovskyi/&#34;&gt;Pavlo Mozharovskyi&lt;/a&gt;, LTCI, Telecom Paris, Institut Polytechnique de Paris, France&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Discussant: &lt;a href=&#34;https://sites.google.com/site/germainvanbever&#34;&gt;Germain Van Bever&lt;/a&gt;, Université de Namur, Belgium, &lt;embed&gt; link to &lt;a href=&#34;https://drive.google.com/file/d/1L-hbQ8Y0rh0TXeS9muNoiyJzhRL7oI3J/view&#34;&gt;Presentation&lt;/a&gt;. &lt;/embed&gt;&lt;/p&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=FxSWsoOi5jE&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
