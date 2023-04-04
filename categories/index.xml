@@ -6,7 +6,43 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bayesian-statistics</title>
+      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extreme-value-theory</title>
+      <link>https://youngstats.github.io/categories/extreme-value-theory/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/extreme-value-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quantile-regression</title>
+      <link>https://youngstats.github.io/categories/quantile-regression/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/quantile-regression/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>financial-mathematics</title>
       <link>https://youngstats.github.io/categories/financial-mathematics/</link>
@@ -58,42 +94,6 @@
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/causal-inference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data-science</title>
-      <link>https://youngstats.github.io/categories/data-science/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine-learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>asymptotic-statistics</title>
-      <link>https://youngstats.github.io/categories/asymptotic-statistics/</link>
-      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/asymptotic-statistics/</guid>
       <description></description>
     </item>
     

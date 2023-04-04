@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent advances in extreme value theory</title>
+      <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
+      <description>Recent advances in extreme value theory
+Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
+Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
+    </item>
+    
     <item>
       <title>Log-modulated rough stochastic volatility models</title>
       <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
@@ -96,16 +107,6 @@ Introduction: the Mixture Cure ModelIn certain clinical trials or observational
       
       <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
       <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
-    </item>
-    
-    <item>
-      <title>Inference on Adaptively Collected Data</title>
-      <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
-      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
-      <description>AbstractIt is increasingly common for data to be collected adaptively, whereexperimental costs are reduced progressively by assigning promisingtreatments more frequently. However, adaptivity also poses greatchallenges on post-experiment inference, since observations aredependent, and standard estimates can be skewed and heavy-tailed. Wepropose a treatment-effect estimator that is consistent andasymptotically normal, allowing for constructing frequentist confidenceintervals and testing hypotheses.
-IntroductionAdaptive data collection can optimize sample efficiency during thecourse of the experiment for particular objectives, such as identifyingthe best treatment (D.</description>
     </item>
     
   </channel>

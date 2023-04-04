@@ -6,7 +6,18 @@
     <description>Recent content in bayesian-statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent advances in extreme value theory</title>
+      <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
+      <description>Recent advances in extreme value theory
+Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
+Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
+    </item>
+    
     <item>
       <title>Fitting robust non-Gaussian models in Stan and R-INLA</title>
       <link>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</link>
@@ -92,16 +103,6 @@ Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is ava
       
       <guid>https://youngstats.github.io/post/2021/03/13/a-scalable-empirical-bayes-approach-to-variable-selection-in-generalized-linear-models/</guid>
       <description>In the toolbox of most scientists over the past century, there have been few methods as powerful and as versatile as linear regression. The introduction of the generalized linear model (GLM) framework in the 1970’s extended the inferential and predictive capabilities to binary or count data. While the effect of this ‘Swiss Army knife’ of scientific research cannot be overstated, rapid (and amazing) technological advances in other areas have pushed it beyond its theoretical capacity.</description>
-    </item>
-    
-    <item>
-      <title>Machine learning for causal inference that works</title>
-      <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
-The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
     
   </channel>
