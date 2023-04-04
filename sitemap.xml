@@ -5,25 +5,19 @@
     <loc>https://youngstats.github.io/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/extreme-value-theory/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/quantile-regression/</loc>
+    <loc>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</loc>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/financial-mathematics/</loc>
@@ -56,7 +50,7 @@
     <loc>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</loc>
     <lastmod>2023-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
     <lastmod>2023-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</loc>
@@ -67,6 +61,9 @@
   </url><url>
     <loc>https://youngstats.github.io/categories/network-analysis/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
+    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</loc>
     <lastmod>2023-01-19T00:00:00+00:00</lastmod>

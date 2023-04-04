@@ -6,7 +6,18 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent advances in extreme value theory</title>
+      <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
+      <description>Recent advances in extreme value theory
+Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
+Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
+    </item>
+    
     <item>
       <title>Distribution generalization and causal inference</title>
       <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
@@ -105,16 +116,6 @@ Instrumental variables (IV) is one of most important and widespread research des
       <guid>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</guid>
       <description>Inclusion Process and Sticky Brownian Motions
 The ninth “One World webinar” organized by YoungStatS will take place onFebruary 9th, 2022. Inclusion process (IP) is a stochastic lattice gaswhere particles perform random walks subjected to mutual attraction. Forthe inclusion process in the condensation regime one can extract thatthe scaling limit of two particles is a pair of sticky Brownian motionswhich lead to interesting recent research. In a system of stickyBrownian motions, particles behave as independent Brownian motions whenapart, but have a sticky interaction when they meet.</description>
-    </item>
-    
-    <item>
-      <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
-      <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
-      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
-      <description>Novel Algebraic Approaches to Maximum Likelihood Estimation
-The seventh “One World webinar” organized by YoungStatS will take placeon November 17th, 2021. Maximum likelihood estimation (MLE) is a tool indata analysis to estimate a probability distribution or density in astatistical model for given data. In recent decades, algebraic andcombinatorial tools have proved useful for computing MLEs andunderstanding the geometry of the MLE problem which in recent years ledto new and interesting results in combinatorics and algebraic geometry.</description>
     </item>
     
   </channel>
