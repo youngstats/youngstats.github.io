@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
+      <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
+      <description>Passive scalar turbulence is the study of how a scalar quantity, such astemperature or salinity, is transported by an incompressible fluid. Thisprocess is modeled by the advection diffusion equation\[\begin{equation}\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is anincompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameterand \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settlesinto a statistical steady state and complex self-similar structuresarise due to repeated stretching and folding by the velocity field.</description>
+    </item>
+    
     <item>
       <title>Recent advances in extreme value theory</title>
       <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
@@ -98,15 +107,6 @@ And we thank You, readers of our postings and participants at our webinars for y
       <guid>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
       <description>AbstractThe mixture cure model in survival analysis has received large and growing attention in the last few decades. Here we present an overview drawing together early results and some recent new developments, and pointing out areas where further work is needed.
 Introduction: the Mixture Cure ModelIn certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been followed up for a period of time and their status at some endpoint reported.</description>
-    </item>
-    
-    <item>
-      <title>Graphical modeling of stochastic processes driven by correlated noise</title>
-      <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
-      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
-      <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
     </item>
     
   </channel>

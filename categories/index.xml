@@ -6,7 +6,25 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>stochastic-differential-equations</title>
+      <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-processes</title>
+      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>extreme-value-theory</title>
       <link>https://youngstats.github.io/categories/extreme-value-theory/</link>
@@ -44,15 +62,6 @@
     </item>
     
     <item>
-      <title>stochastic-differential-equations</title>
-      <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
-      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>high-dimensional-data</title>
       <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
@@ -85,15 +94,6 @@
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine-learning</title>
-      <link>https://youngstats.github.io/categories/machine-learning/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     

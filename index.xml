@@ -6,7 +6,250 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
+      <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
+      <description>
+
+
+&lt;p&gt;Passive scalar turbulence is the study of how a scalar quantity, such as
+temperature or salinity, is transported by an incompressible fluid. This
+process is modeled by the &lt;em&gt;advection diffusion equation&lt;/em&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}
+\end{equation}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is the scalar quantity, &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; is an
+incompressible velocity field, &lt;span class=&#34;math inline&#34;&gt;\(\kappa&amp;gt;0\)&lt;/span&gt; is the diffusivity parameter
+and &lt;span class=&#34;math inline&#34;&gt;\(s_t\)&lt;/span&gt; is a replenishing source. As &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; evolves, it often settles
+into a statistical steady state and complex self-similar structures
+arise due to repeated stretching and folding by the velocity field.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/A7T4U4sYDAs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;p&gt;Figure 1: A numerical simulation of scalar turbulence on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{T}^2\)&lt;/span&gt;
+advected by the stochastic Navier-Stokes equations&lt;/p&gt;
+&lt;p&gt;In his 1959 work (&lt;span class=&#34;citation&#34;&gt;Batchelor (&lt;a href=&#34;#ref-Batchelor59&#34; role=&#34;doc-biblioref&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;) Batchelor made a significant step toward
+understanding these structures. He predicted that, on average, the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt;
+power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; displays a &lt;span class=&#34;math inline&#34;&gt;\(|k|^{-1}\)&lt;/span&gt; power law
+(Batchelor’s law) for the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt; power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; along
+frequencies &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; in the so-called &lt;em&gt;viscous convective range&lt;/em&gt;, i.e.,
+length-scales sufficiently small such that the fluid motion is
+viscosity-dominated but large enough so as not to be dissipated by
+molecular diffusion. This law has since been verified in physical,
+numerical, and experimental settings (e.g. &lt;span class=&#34;citation&#34;&gt;Grant et al. (&lt;a href=&#34;#ref-GrantEtAl68&#34; role=&#34;doc-biblioref&#34;&gt;1968&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Antonia and Orlandi (&lt;a href=&#34;#ref-AO03&#34; role=&#34;doc-biblioref&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;Gibson and Schwarz (&lt;a href=&#34;#ref-GibsonSchwarz63&#34; role=&#34;doc-biblioref&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;) and is frequently used by scientists to predict the
+distribution of pollutants and biological matter in the ocean and
+atmosphere. Despite this success, Batchelor’s law has evaded rigorous
+mathematical proof.&lt;/p&gt;
+&lt;p&gt;The purpose of this post is to report progress with Jacob Bedrossian and
+Alex Blumenthal on the development of rigorous mathematical tools for
+studying Batchelor’s law when &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; evolves according to a randomly
+forced fluid model. The primary example is the &lt;em&gt;incompressible
+stochastic Navier-Stokes equations&lt;/em&gt; on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{T}^2\)&lt;/span&gt;,&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\partial_t u_t + u_t\cdot\nabla u_t + \nabla p_t - \nu \Delta u_t = \xi_t, \\
+\mathbf{div} u_t=0,\label{eqSNS}\tag{SNS}
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;though other well-posed models (not restricted two dimensions) can be
+considered. Here the stochastic forcing &lt;span class=&#34;math inline&#34;&gt;\(\xi_t\)&lt;/span&gt; is assumed to be a
+non-degenerate, white-in-time, spatially Sobolev regular Gaussian
+forcing. The viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu &amp;gt; 0\)&lt;/span&gt; can be considered the inverse
+Reynolds number.&lt;/p&gt;
+&lt;p&gt;For this model and a host of other fluid models, in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt; we
+prove a version Batchelor’s prediction on the cumulative power spectrum,
+when the viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu&amp;gt;0\)&lt;/span&gt; is fixed.&lt;/p&gt;
+&lt;p&gt;Theorem 1 &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2019a&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\Pi_{\leq N}\)&lt;/span&gt; denote the projection onto Fourier modes with
+&lt;span class=&#34;math inline&#34;&gt;\(|k|\leq N\)&lt;/span&gt;. Let the source &lt;span class=&#34;math inline&#34;&gt;\(s_t\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; be a white-in-time
+Gaussian process and &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; be given by &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; as described above.
+Then there exists a unique stationary probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu^\kappa\)&lt;/span&gt;
+for the Markov process &lt;span class=&#34;math inline&#34;&gt;\((u_t,g_t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;-independent constants
+&lt;span class=&#34;math inline&#34;&gt;\(C \geq 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ell_0\leq 1\)&lt;/span&gt; such that&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\frac{1}{C_0}\log N \leq \mathbb{E}_{\mu^\kappa} \|\Pi_{\leq N}g\|^{2}_{L^2}  \leq C_0\log N \quad \text{for}\quad \ell_{0}^{-1} \leq |k|\leq \kappa^{-1/2}.\label{eqBL}\tag{BL}
+\end{equation}\]&lt;/span&gt;
+&lt;div id=&#34;uniform-in-kappa-exponential-mixing-and-batchelors-law&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Uniform-in-&lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt; exponential mixing and Batchelor’s law&lt;/h2&gt;
+&lt;p&gt;The key ingredient in obtaining Batchelor’s law is the mixing properties
+of the velocity field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt;, and a quantitative understanding of how
+that mixing interacts with the diffusion. In the absence of a scalar
+source (&lt;span class=&#34;math inline&#34;&gt;\(s_t =0\)&lt;/span&gt;) and molecular diffusivity (&lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt;), the velocity
+field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; filaments &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; and forms small scales as it homogenizes, a
+process known as &lt;em&gt;mixing&lt;/em&gt; (see Figure 2).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-28-chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence_files/Figure%202.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2: Mixing of a circular blob, showing filamentation and formation
+of small scales.&lt;/p&gt;
+&lt;p&gt;Mixing of the scalar &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; (assuming it is mean zero) can be quantified
+using a negative Sobolev norm. Commonly chosen is the &lt;span class=&#34;math inline&#34;&gt;\(H^{-1}\)&lt;/span&gt; norm
+&lt;span class=&#34;math inline&#34;&gt;\(\|g_t\|_{H^{-1}} := \|(-\Delta)^{-1/2}g_t\|_{L^2}\)&lt;/span&gt;, which essentially
+measures the average filamentation width, though there are many other
+expedient choices &lt;span class=&#34;citation&#34;&gt;Thiffeault (&lt;a href=&#34;#ref-Thiffeault2012-xs&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we show that solutions to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; cause the advection
+diffusion equation (without source but with diffusion) to mix
+exponentially fast with a rate that is &lt;em&gt;uniform in the diffusivity&lt;/em&gt;
+parameter &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Theorem 2 &lt;span class=&#34;citation&#34;&gt;(Uniform-in-diffusivity mixing, &lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2021&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Let&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise. There exists
+a &lt;strong&gt;deterministic&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\gamma &amp;gt; 0\)&lt;/span&gt;, independent of &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;, such that for
+all initial &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt;, and all &lt;span class=&#34;math inline&#34;&gt;\(\kappa \in [0,1]\)&lt;/span&gt; there is a random constant
+&lt;span class=&#34;math inline&#34;&gt;\(D_\kappa = D_\kappa(u_0,\omega)\)&lt;/span&gt; so that for all zero-mean
+&lt;span class=&#34;math inline&#34;&gt;\(g_0 \in H^1\)&lt;/span&gt; and all &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt; the following holds almost surely
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\|g_t\|_{H^{-1}} \leq D_\kappa e^{-\gamma t}\|g_0\|_{H^1}.\label{eqEM}\tag{EM}
+\end{equation}\]&lt;/span&gt; &lt;em&gt;The random constant&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(D_\kappa\)&lt;/span&gt;, has finite second
+moment &lt;strong&gt;uniformly bounded in&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Theorem 2 can be seen as a direct consequence of Theorem 1 and follows
+from a fairly straight forward argument using the mild form of
+&lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; and estimates on the stochastic convolution. This argument
+is carried out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lagrangian-chaos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Lagrangian chaos&lt;/h2&gt;
+&lt;p&gt;It has long been understood in the physics community (e.g. &lt;span class=&#34;citation&#34;&gt;Bohr et al. (&lt;a href=&#34;#ref-BMOV05&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;Antonsen Jr and Ott (&lt;a href=&#34;#ref-AntonsenOtt1991&#34; role=&#34;doc-biblioref&#34;&gt;1991&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ott (&lt;a href=&#34;#ref-ott-1999&#34; role=&#34;doc-biblioref&#34;&gt;1999&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Shraiman and Siggia (&lt;a href=&#34;#ref-ShraimanSiggia00&#34; role=&#34;doc-biblioref&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the predominant
+mechanism for mixing in spatially regular fluids is the chaotic motion
+of the particle trajectories &lt;span class=&#34;math inline&#34;&gt;\(x_t = \phi^t(x)\)&lt;/span&gt; of the &lt;strong&gt;Lagrangian flow
+map&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\phi^t : \mathbb{T}^d \to \mathbb{T}^d\)&lt;/span&gt; associated to the
+velocity field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt;, defined by &lt;span class=&#34;math display&#34;&gt;\[
+  \frac{d}{dt} \phi^t(x) = u_t(\phi^t(x)), \quad \phi^0(x) = x\in \mathbb{T}d.
+\]&lt;/span&gt; Here we characterize chaos through having a &lt;em&gt;positive Lyapunov
+exponent&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+0&amp;lt; \lambda_1 := \lim_{t\to \infty} \frac{1}{t}\log|D_x\phi^t| \, .\label{eqPE}\tag{PE}
+\end{equation}\]&lt;/span&gt; This property is typically referred to as &lt;strong&gt;Lagrangian
+chaos&lt;/strong&gt; in the fluid mechanics literature.&lt;/p&gt;
+&lt;p&gt;In the deterministic setting, proving positivity of Lyapunov exponents
+as in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; is currently hopelessly out of reach due to the
+possible formation of coherent structures and lack of ergodicity.
+However, starting with the seminal work of Furstenberg
+(&lt;span class=&#34;citation&#34;&gt;Furstenberg (&lt;a href=&#34;#ref-furstenberg1963noncommuting&#34; role=&#34;doc-biblioref&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;), significant success has been achieved in
+proving existence and positivity of Lyapunov exponents in the context of
+&lt;em&gt;random dynamical systems&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold2013random&#34; role=&#34;doc-biblioref&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kifer (&lt;a href=&#34;#ref-kifer2012ergodic&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;P. H. Baxendale (&lt;a href=&#34;#ref-baxendale1989lyapunov&#34; role=&#34;doc-biblioref&#34;&gt;1989&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ledrappier and Young (&lt;a href=&#34;#ref-ledrappier1985metric&#34; role=&#34;doc-biblioref&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt;). Ideas in this vein are
+what enabled us to prove the following Lagrangian chaos result, the
+first step in the proof of Theorem 3.&lt;/p&gt;
+&lt;p&gt;Theorem 3 &lt;span class=&#34;citation&#34;&gt;(Lagrangian chaos, &lt;a href=&#34;#ref-BBPS18&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2018&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise as above, then
+there exists a &lt;strong&gt;deterministic&lt;/strong&gt; constant &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 &amp;gt; 0\)&lt;/span&gt; (independent
+of &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\omega\)&lt;/span&gt;) for which &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; holds almost surely.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;decay-of-correlations-and-mixing&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Decay of correlations and mixing&lt;/h2&gt;
+&lt;p&gt;Let us now address how &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqEM}\)&lt;/span&gt; is obtained in the case
+&lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt;. In this case, the solution &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is given by
+&lt;span class=&#34;math inline&#34;&gt;\(g_t = g_0 \circ (\phi^t)^{-1}\)&lt;/span&gt;. In view of this, &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; suggests
+that &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is `stretched out’ considerably as &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; increases, leading to
+a rapid generation of high frequencies as oppositely signed values of
+the concentration profile &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; ``pile up’’ against each other almost
+everywhere in the domain. Indeed, this local-to-global mechanism is
+widely used in dynamics. It is known as &lt;em&gt;decay of correlations&lt;/em&gt; and
+takes the form &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\left|\int (f\circ \phi^t)\, g dx \right| \leq D_\kappa e^{-\gamma t}\|f\|_{H^1}\|g\|_{H^1}\label{eq1}\tag{1}
+\end{equation}\]&lt;/span&gt; for each mean zero &lt;span class=&#34;math inline&#34;&gt;\(f,g\in H^1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt;. This is
+equivalent to exponential mixing &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqEM}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Despite this simple picture, passing from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt;
+requires serious work. When random driving is present, the &lt;strong&gt;two-point
+process&lt;/strong&gt; is a powerful tool for proving exponential correlation decay
+(&lt;span class=&#34;citation&#34;&gt;P. Baxendale and Stroock (&lt;a href=&#34;#ref-baxendale1988large&#34; role=&#34;doc-biblioref&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Dolgopyat et al. (&lt;a href=&#34;#ref-dolgopyat2004sample&#34; role=&#34;doc-biblioref&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;In our context, this is the Markov process that simultaneously tracks
+two particles subjected to the same velocity field
+&lt;span class=&#34;math inline&#34;&gt;\((u_t,\phi^t(x),\phi^t(y))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(x \neq y\)&lt;/span&gt;. Correlation decay for
+generic noise realizations is connected with the rate at which the
+probabilistic law of &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), \phi^t(y))\)&lt;/span&gt; relaxes to its
+equilibrium statistics (known as &lt;em&gt;geometric ergodicity&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;The proof of Theorem 2 with &lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt; utilizes this connection using
+tools from the theory of Markov chains, particularly the Harris theorem
+&lt;span class=&#34;citation&#34;&gt;Meyn and Tweedie (&lt;a href=&#34;#ref-meyn2012markov&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;. The main difficulty to overcome here is the degeneracy
+in the &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), \phi^t(y))\)&lt;/span&gt; process near the diagonal
+&lt;span class=&#34;math inline&#34;&gt;\(\{x=y\}\)&lt;/span&gt;. One needs to show that any time two particles are close, they
+separate again exponentially fast. This effectively amounts to a large
+deviation estimate on the convergence of finite-time Lyapunov exponents
+to the asymptotic Lyapunov exponent deduced in Theorem 3, and is carried
+out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19I&#34; role=&#34;doc-biblioref&#34;&gt;2019b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;It remains to incorporate molecular diffusion (&lt;span class=&#34;math inline&#34;&gt;\(\kappa &amp;gt; 0\)&lt;/span&gt;) into this
+scheme. This comes down again to the two-point process, now with
+Lagrangian flow &lt;span class=&#34;math inline&#34;&gt;\(\phi^t_\kappa\)&lt;/span&gt; augmented by an additional white noise
+term with variance &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{\kappa}\)&lt;/span&gt; to account for molecular diffusivity.
+The primary step is to show that one can pass to the singular limit
+&lt;span class=&#34;math inline&#34;&gt;\(\kappa \to 0\)&lt;/span&gt; in the dominant eigenvalue, eigenfunction pair for the
+Perron-Frobenius operator corresponding to
+&lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t_\kappa(x), \phi^t_\kappa(y))\)&lt;/span&gt;; this is carried out in
+&lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-AO03&#34; class=&#34;csl-entry&#34;&gt;
+Antonia, RA, and P Orlandi. 2003. &lt;span&gt;“Effect of Schmidt Number on Small-Scale Passive Scalar Turbulence.”&lt;/span&gt; &lt;em&gt;Appl. Mech. Rev.&lt;/em&gt; 56 (6): 615–32.
+&lt;/div&gt;
+&lt;div id=&#34;ref-AntonsenOtt1991&#34; class=&#34;csl-entry&#34;&gt;
+Antonsen Jr, Thomas M, and Edward Ott. 1991. &lt;span&gt;“Multifractal Power Spectra of Passive Scalars Convected by Chaotic Fluid Flows.”&lt;/span&gt; &lt;em&gt;Physical Review A&lt;/em&gt; 44 (2): 851.
+&lt;/div&gt;
+&lt;div id=&#34;ref-arnold2013random&#34; class=&#34;csl-entry&#34;&gt;
+Arnold, Ludwig. 2013. &lt;em&gt;Random Dynamical Systems&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Batchelor59&#34; class=&#34;csl-entry&#34;&gt;
+Batchelor, George K. 1959. &lt;span&gt;“Small-Scale Variation of Convected Quantities Like Temperature in Turbulent Fluid Part 1. General Discussion and the Case of Small Conductivity.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 5 (1): 113–33.
+&lt;/div&gt;
+&lt;div id=&#34;ref-baxendale1989lyapunov&#34; class=&#34;csl-entry&#34;&gt;
+Baxendale, Peter H. 1989. &lt;span&gt;“Lyapunov Exponents and Relative Entropy for a Stochastic Flow of Diffeomorphisms.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt; 81 (4): 521–54.
+&lt;/div&gt;
+&lt;div id=&#34;ref-baxendale1988large&#34; class=&#34;csl-entry&#34;&gt;
+Baxendale, PH, and DW Stroock. 1988. &lt;span&gt;“Large Deviations and Stochastic Flows of Diffeomorphisms.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt; 80 (2): 169–215.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BBPSbatch19&#34; class=&#34;csl-entry&#34;&gt;
+Bedrossian, Jacob, Alex Blumenthal, and Sam Punshon-Smith. 2019a. &lt;span&gt;“The &lt;span&gt;Batchelor&lt;/span&gt; Spectrum of Passive Scalar Turbulence in Stochastic Fluid Mechanics.”&lt;/span&gt; &lt;em&gt;Comm. Pure Appl. Math.&lt;/em&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-BBPS18&#34; class=&#34;csl-entry&#34;&gt;
+Bedrossian, Jacob, Alex Blumenthal, and Samuel Punshon-Smith. 2018. &lt;span&gt;“Lagrangian Chaos and Scalar Advection in Stochastic Fluid Mechanics.”&lt;/span&gt; &lt;em&gt;J. Euro. Math. Soc.&lt;/em&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-BBPS19I&#34; class=&#34;csl-entry&#34;&gt;
+———. 2019b. &lt;span&gt;“Almost-Sure Exponential Mixing of Passive Scalars by the Stochastic &lt;span&gt;N&lt;/span&gt;avier-&lt;span&gt;S&lt;/span&gt;tokes Equations.”&lt;/span&gt; &lt;em&gt;Ann. Of Prob.&lt;/em&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-BBPS19II&#34; class=&#34;csl-entry&#34;&gt;
+———. 2021. &lt;span&gt;“Almost-Sure Enhanced Dissipation and Uniform-in-Diffusivity Exponential Mixing for Advection-Diffusion by Stochastic &lt;span&gt;N&lt;/span&gt;avier-&lt;span&gt;S&lt;/span&gt;tokes.”&lt;/span&gt; &lt;em&gt;Prob. Theory Rel. Fields&lt;/em&gt; 179 (3): 777–834.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BMOV05&#34; class=&#34;csl-entry&#34;&gt;
+Bohr, Tomas, Mogens H Jensen, Giovanni Paladin, and Angelo Vulpiani. 2005. &lt;em&gt;Dynamical Systems Approach to Turbulence&lt;/em&gt;. Cambridge University Press.
+&lt;/div&gt;
+&lt;div id=&#34;ref-dolgopyat2004sample&#34; class=&#34;csl-entry&#34;&gt;
+Dolgopyat, Dmitry, Vadim Kaloshin, Leonid Koralov, et al. 2004. &lt;span&gt;“Sample Path Properties of the Stochastic Flows.”&lt;/span&gt; &lt;em&gt;The Annals of Probability&lt;/em&gt; 32 (1A): 1–27.
+&lt;/div&gt;
+&lt;div id=&#34;ref-furstenberg1963noncommuting&#34; class=&#34;csl-entry&#34;&gt;
+Furstenberg, Harry. 1963. &lt;span&gt;“Noncommuting Random Products.”&lt;/span&gt; &lt;em&gt;Transactions of the American Mathematical Society&lt;/em&gt; 108 (3): 377–428.
+&lt;/div&gt;
+&lt;div id=&#34;ref-GibsonSchwarz63&#34; class=&#34;csl-entry&#34;&gt;
+Gibson, CHj, and WH Schwarz. 1963. &lt;span&gt;“The Universal Equilibrium Spectra of Turbulent Velocity and Scalar Fields.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 16 (3): 365–84.
+&lt;/div&gt;
+&lt;div id=&#34;ref-GrantEtAl68&#34; class=&#34;csl-entry&#34;&gt;
+Grant, HL, BA Hughes, WM Vogel, and A Moilliet. 1968. &lt;span&gt;“The Spectrum of Temperature Fluctuations in Turbulent Flow.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 34 (3): 423–42.
+&lt;/div&gt;
+&lt;div id=&#34;ref-kifer2012ergodic&#34; class=&#34;csl-entry&#34;&gt;
+Kifer, Yuri. 2012. &lt;em&gt;Ergodic Theory of Random Transformations&lt;/em&gt;. Vol. 10. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ledrappier1985metric&#34; class=&#34;csl-entry&#34;&gt;
+Ledrappier, François, and L-S Young. 1985. &lt;span&gt;“The Metric Entropy of Diffeomorphisms: Part i: Characterization of Measures Satisfying Pesin’s Entropy Formula.”&lt;/span&gt; &lt;em&gt;Annals of Mathematics&lt;/em&gt;, 509–39.
+&lt;/div&gt;
+&lt;div id=&#34;ref-meyn2012markov&#34; class=&#34;csl-entry&#34;&gt;
+Meyn, Sean P, and Richard L Tweedie. 2012. &lt;em&gt;Markov Chains and Stochastic Stability&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ott-1999&#34; class=&#34;csl-entry&#34;&gt;
+Ott, E. 1999. &lt;span&gt;“The Role of Lagrangian Chaos in the Creation of Multifractal Measures.”&lt;/span&gt; In &lt;em&gt;Fundamental Problematic Issues in Turbulence&lt;/em&gt;, edited by Albert Gyr, Wolfgang Kinzelbach, and Arkady Tsinober, 381–403. Basel: Birkh&lt;span&gt;ä&lt;/span&gt;user Basel.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ShraimanSiggia00&#34; class=&#34;csl-entry&#34;&gt;
+Shraiman, Boris I, and Eric D Siggia. 2000. &lt;span&gt;“Scalar Turbulence.”&lt;/span&gt; &lt;em&gt;Nature&lt;/em&gt; 405 (6787): 639.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Thiffeault2012-xs&#34; class=&#34;csl-entry&#34;&gt;
+Thiffeault, Jean-Luc. 2012. &lt;span&gt;“Using Multiscale Norms to Quantify Mixing and Transport.”&lt;/span&gt; &lt;em&gt;Nonlinearity&lt;/em&gt; 25 (2): R1–44.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Recent advances in extreme value theory</title>
       <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
@@ -1329,59 +1572,6 @@ Maller, R., and X. Zhou. 1996. &lt;span&gt;“Survival Analysis with Long Term S
 &lt;/div&gt;
 &lt;div id=&#34;ref-SEER2019&#34; class=&#34;csl-entry&#34;&gt;
 National Cancer Institute, DCCPS. 2019. &lt;span&gt;“Surveillance, Epidemiology, and End Results (SEER) Program Research Data (1975-2016).”&lt;/span&gt; &lt;em&gt;Surveillance, Epidemiology, and End Results (SEER) Program (Www.seer.cancer.gov) Research Data (1975-2016)&lt;/em&gt;.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Graphical modeling of stochastic processes driven by correlated noise</title>
-      <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
-      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-28-graphical-modeling-of-stochastic-processes-driven-by-correlated-noise_files/image1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in &lt;span class=&#34;citation&#34;&gt;Mogensen and Hansen (&lt;a href=&#34;#ref-mogensen2022graphical&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics. These comments are enclosed in double parentheses: ((comment)).&lt;/p&gt;
-&lt;p&gt;We will use the following example as an illustration of the main ideas. Assume that we observe a herd of &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; animals moving together on a plane, that is, in a two-dimensional space (or rather on a plane). We assume that there exists an abstract center of the herd which at each time point is at &lt;span class=&#34;math inline&#34;&gt;\((0,0)\)&lt;/span&gt;. This means that all individual movement is relative to this reference point. &lt;span class=&#34;citation&#34;&gt;Niu, Blackwell, and Skarin (&lt;a href=&#34;#ref-niu2016modeling&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt; describe a similar, though possibly more realistic, model of animal movement. See the gif for an example of animal movement of a small herd, &lt;span class=&#34;math inline&#34;&gt;\(n = 3\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-10-28-graphical-modeling-of-stochastic-processes-driven-by-correlated-noise_files/herd.gif&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Our paper studies the use of graphs as means of representing dependence in how a set of processes evolve. In the example, how the animal movements interact. We essentially assume that there are two different ways that the animals and their movements interact: an asymmetrical dependence and a symmetric dependence. The asymmetric dependence may be thought of as one animal reacting to the movement of another animal, e.g., a young animal following a parent. The symmetric dependence may be thought of as two animals responding in similar ways to external stimulus, e.g., an obstacle on the ground. We can model the location of each animal as a two-dimensional stochastic process such that the joint locations of the &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; animals are described by a &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt;-dimensional process, e.g., using a stochastic differential equation,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\mathrm{d}Z_t = MZ_t \mathrm{d}t + D \mathrm{d} W_t
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(Z_t = (Z_t^{1},Z_t^{2},\ldots, Z_t^{n})^T\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Z_t^i = (X_t^{i},Y_t^{i})\)&lt;/span&gt; is the location in two-dimensional space of animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; at time &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; (recall that this is the location relative to the center of the herd). The matrix &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; encodes the asymmetric dependence and the matrix &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; encodes the symmetric dependence in the system.&lt;/p&gt;
-&lt;p&gt;Let’s say that &lt;span class=&#34;math inline&#34;&gt;\(n = 3\)&lt;/span&gt; and that &lt;span class=&#34;math display&#34;&gt;\[
-    M = \left(\begin{array}{ccc} M_{11} &amp;amp; M_{12} &amp;amp; M_{13} \\ 0 &amp;amp; M_{22} &amp;amp; 0 \\
-    0 &amp;amp; 0
-    &amp;amp;
-    M_{33}
-    \end{array}\right), \ \ \ \ \   D = \left(\begin{array}{ccc} D_{11} &amp;amp; 0 &amp;amp; 0
-    \\ 0 &amp;amp; D_{22} &amp;amp; D_{23} \\0 &amp;amp; D_{33}
-    &amp;amp;
-    D_{33}
-    \end{array}\right).
-    \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The submatrices of &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(M_{ij}\)&lt;/span&gt;, and of &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(D_{ij}\)&lt;/span&gt;, are &lt;span class=&#34;math inline&#34;&gt;\(2\times 2\)&lt;/span&gt;-matrices. We define a graph in terms of the matrices M and D. It has nodes &lt;span class=&#34;math inline&#34;&gt;\(1, \ldots, n\)&lt;/span&gt;, it has a directed edge &lt;span class=&#34;math inline&#34;&gt;\(i\rightarrow j\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(M_{ji}\)&lt;/span&gt; may be nonzero, and it has a blunt edge if &lt;span class=&#34;math inline&#34;&gt;\((DD^T)_{ij}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\neq j\)&lt;/span&gt;, may be nonzero. The graph encodes the sparsity patterns of the matrices, and we see that the sparsity of the above matrices is encoded by the graph &lt;strong&gt;G1&lt;/strong&gt;. The simulated movement data in the gif was generated from a system with the above sparsity in matrices &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;We say that this kind of graph is a &lt;em&gt;directed correlation graph&lt;/em&gt; (cDG). The blunt edges represent symmetric dependence and the directed edges represent asymmetric dependence. ((We note that the blunt edges do not represent marginalization, but specifically correlation in the noise processes driving the model – for stochastic processes this is not the same as partial observation)). To aid our understanding of this kind of graph, we can construct an &lt;em&gt;unrolled version&lt;/em&gt; (graph &lt;strong&gt;G2&lt;/strong&gt;). In graph &lt;strong&gt;G1&lt;/strong&gt;, each node (circle) represents an entire two-dimensional process, i.e., the movement of one animal. In graph &lt;strong&gt;G2&lt;/strong&gt;, each node represents the location of an animal at a single point in time, that is, &lt;strong&gt;G2&lt;/strong&gt; represents a discretized version of the movement process. The &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;-variables represent external stimulus creating dependence between noise processes.&lt;/p&gt;
-&lt;p&gt;A cDG is more useful than it may look at first glance! If we want to predict the immediate movement of Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, say, in the herd, the cDG tells us that we only need to know the position of all animals with an arrow pointing into Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. Moreover, the immediate movement correlates only with the immediate movements of all animals connected to Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; via a blunt edge. Suppose now that there is no arrow from &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, but that we also do not observe the entire herd. Will Animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; then be predictive of the immediate movements of Animal &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; given the position of all other observed animals? We show a key result, known as the global Markov property, to help answer this question. From the cDG one can use a purely graphical algorithm (just computations using the graph) to check conditions that are sufficient for Animal &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; not to be predictive given the other observed animals. ((this graphical criterion is known as &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;- or &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;-separation and is an adaptation of &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;-separation)). In summary, we can learn, from the graph alone, probabilistic facts about which groups of animals can be ignored when predicting immediate movement of other animals. This is quite useful.&lt;/p&gt;
-&lt;p&gt;Having established a useful link between the evolution of the stochastic differential equation model above and its associated graph, the paper investigates the properties of the graphs. When we have two graphs on the same node set (i.e., only the edges differ), a natural question is whether they represent the same dependence structure. In the animal movement example, we may think of each possible graph on three nodes as encoding a certain set of movement (in)dependences. If we are to learn graphs from observation of animal movement, then we need to understand which graphs encode the same set of movement (in)dependences. The paper characterizes this kind of equivalence. Finally, the paper shows that determining Markov equivalence of two directed correlation graphs is computationally hard (it is coNP-complete).&lt;/p&gt;
-&lt;p&gt;This work was supported by VILLUM FONDEN (research grant 13358).&lt;/p&gt;
-&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;About the authors&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Søren Wengel Mogensen&lt;/strong&gt;, Department of Automatic Control, Lund University, Lund, Sweden&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Niels Richard Hansen&lt;/strong&gt;, Department of Mathematical Sciences, University of Copenhagen, Copenhagen, Denmark&lt;/p&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level3 unnumbered&#34;&gt;
-&lt;h3&gt;Bibliography&lt;/h3&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-mogensen2022graphical&#34; class=&#34;csl-entry&#34;&gt;
-Mogensen, Søren Wengel, and Niels Richard Hansen. 2022. &lt;span&gt;“Graphical Modeling of Stochastic Processes Driven by Correlated Noise.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 28 (4): 3023–50.
-&lt;/div&gt;
-&lt;div id=&#34;ref-niu2016modeling&#34; class=&#34;csl-entry&#34;&gt;
-Niu, Mu, Paul G Blackwell, and Anna Skarin. 2016. &lt;span&gt;“Modeling Interdependent Animal Movement in Continuous Time.”&lt;/span&gt; &lt;em&gt;Biometrics&lt;/em&gt; 72 (2): 315–24.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
