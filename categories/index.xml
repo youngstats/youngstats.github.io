@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>fluid-dynamics</title>
+      <link>https://youngstats.github.io/categories/fluid-dynamics/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/fluid-dynamics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>stochastic-differential-equations</title>
       <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
@@ -85,15 +94,6 @@
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/causal-inference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data-science</title>
-      <link>https://youngstats.github.io/categories/data-science/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/data-science/</guid>
       <description></description>
     </item>
     
