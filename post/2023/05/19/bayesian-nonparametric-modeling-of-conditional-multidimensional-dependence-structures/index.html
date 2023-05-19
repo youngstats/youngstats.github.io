@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/bayesian-nonparametrics">bayesian-nonparametrics</a>
+  
+     &hercon; <a href="/categories/bayesian-statistics">bayesian-statistics</a>
+  
+     &hercon; <a href="/categories/copula-models">copula-models</a>
+  
+  </div>
+
+  <h1><span class="title">Bayesian nonparametric modeling of conditional multidimensional dependence structures</span></h1>
+
+  
+  <h3 class="author">Rosario Barone and Luciana Dalla Valle
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>In many real data applications we are often required to model jointly <span class="math inline">\(d\geq 3\)</span> continuous random variables, denoted as <span class="math inline">\(Y_1,\dots,Y_d\)</span> . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as <span class="math inline">\(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\)</span> . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure. Furthermore, the idea of modelling the effect of covariates on the dependence structure described by copulas has recently attracted increasing attention.</p>
+</div>
+<div id="proposal" class="section level2">
+<h2>Proposal</h2>
+<p>In <span class="citation">Barone and Dalla Valle (<a href="#ref-barone2023bayesian" role="doc-biblioref">2023</a>)</span> we provide a flexible Bayesian mixture model that returns easy-to-interpret results, estimating the effects of covariates on high-dimensional dependence structures and showing good performances in both clustering with unknown number of components and density estimation.</p>
+</div>
+<div id="dirichlet-process-mixture-of-conditional-vines" class="section level2">
+<h2>Dirichlet process mixture of conditional vines</h2>
+<p>Let us consider <span class="math inline">\(Y_1, \ldots, Y_d\)</span> , which are continuous random variables of interest and let <span class="math inline">\(\textbf{X}=(X_1, \ldots, X_p)\)</span> be a vector of covariates that may affect the dependence between <span class="math inline">\(Y_1, \ldots, Y_d\)</span>. Then, the conditional joint distribution function of <span class="math inline">\((Y_1, \ldots, Y_d)\)</span> given <span class="math inline">\(\textbf{X}= \textbf{x}\)</span> is</p>
+<p><span class="math display">\[
+F_x (y_1, \ldots, y_d) = P(Y_1 \leq y_1, \ldots, Y_d \leq y_d | \textbf{X}= \textbf{x}),
+\]</span></p>
+<p>under the assumption that such conditional distribution exists (see <span class="citation">Gijbels et al. (<a href="#ref-gijbels2012multivariate" role="doc-biblioref">2012</a>)</span>, <span class="citation">Abegaz, Gijbels, and Veraverbeke (<a href="#ref-abegaz2012semiparametric" role="doc-biblioref">2012</a>)</span> and <span class="citation">Acar, Craiu, and Yao (<a href="#ref-acar2011dependence" role="doc-biblioref">2011</a>)</span> ). We denote the conditional marginals of <span class="math inline">\(F_x\)</span> as</p>
+<p><span class="math display">\[
+\begin{eqnarray*}F_{1,x}(y_1) &amp; = &amp; P(Y_1 \leq y_1 | \textbf{X}= \textbf{x}), \\&amp; &amp; \ldots \\F_{d,x}(y_d) &amp; = &amp; P(Y_d \leq y_d | \textbf{X}= \textbf{x}). \end{eqnarray*}
+\]</span></p>
+<p>If the marginals are continuous, then Sklar’s theorem <span class="citation">(<a href="#ref-sklar1959fonctions" role="doc-biblioref">Sklar 1959</a>)</span> allows us to write</p>
+<p><span class="math display">\[
+C_x (u_1, \ldots, u_d) = F_x \left( F_{1,x}^{-1} (u_1), \ldots, F_{d,x}^{-1} (u_d) \right)
+\]</span></p>
+<p>where <span class="math inline">\(F_{j,x}^{-1} (u_j) = \inf \left\{ y_j : F_{j,x} \geq u_j \right\}\)</span>, for <span class="math inline">\(j = 1,\ldots, d\)</span> , are the conditional quantile functions and <span class="math inline">\(u_j = F_{j,x}(y_j)\)</span>. The conditional copula <span class="math inline">\(C_x\)</span> fully describes the conditional dependence structure of <span class="math inline">\((Y_1, \ldots, Y_d)\)</span> given <span class="math inline">\(\textbf{X}= \textbf{x}\)</span>. Therefore, the conditional joint distribution function can be written as</p>
+<p><span class="math display">\[
+F_x (Y_1, \ldots, Y_d) = C_x \left( F_{1,x}(y_1), \ldots, F_{d,x} (y_d) \right).
+\]</span></p>
+<p>Let us denote the copula density corresponding to the distribution <span class="math inline">\(C_x \left( F_{1x}(y_1), \ldots, F_{dx} (y_d) \right)\)</span> as</p>
+<p><span class="math display">\[
+c_x \left(u_1, \ldots, u_d \right) = c_{\boldsymbol{\theta}} (u_1, \ldots, u_d | \textbf{x}) = c_{\boldsymbol{\theta}(\textbf{x})} (u_1, \ldots, u_d),
+\]</span> where <span class="math inline">\(\boldsymbol{\theta}\)</span> is the parameter vector of the <span class="math inline">\(d\)</span>-variate copula density. We assume that the function <span class="math inline">\(\boldsymbol{\theta}(\textbf{x})\)</span> depends on a vector of parameters <span class="math inline">\(\boldsymbol{\beta}\)</span> such that <span class="math display">\[\begin{equation}
+\label{condcop}
+c_{\boldsymbol{\theta}(\textbf{x})} (u_1, \ldots, u_d) = c_{\boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})} (u_1, \ldots, u_d) = c_{1:d} (u_1, \ldots, u_d \,  |  \, \boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})).
+\end{equation}\]</span></p>
+<p>The \eqref{condcop} can be written in terms of vines <span class="citation">Czado (<a href="#ref-czado2019analyzing" role="doc-biblioref">2019</a>)</span>, where each pair-copula depends on the vector of covariates <span class="math inline">\(\textbf{X}\)</span>.</p>
+<center>
+<div class="figure">
+<img src="/post/2023-05-19-bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures_files/vine.png" width="350" alt="" />
+<p class="caption">Trivariate vine representation.</p>
+</div>
+</center>
+<p>The vine representation can be generalized to special vine distribution classes, the most popular of which are D-vines (see <span class="citation">Bedford and Cooke (<a href="#ref-bedford2001probability" role="doc-biblioref">2001</a>)</span>, <span class="citation">Aas et al. (<a href="#ref-aas2009pair" role="doc-biblioref">2009</a>)</span> and <span class="citation">Czado (<a href="#ref-czado2019analyzing" role="doc-biblioref">2019</a>)</span>).The conditional D-vine decomposition takes the form</p>
+<p><span class="math display">\[
+\begin{multline*}c_{1:d} (u_1,\ldots, u_d \,| \,\boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})) = \\ \prod_{\ell=1}^{d-1}\prod_{k=1}^{d-\ell}c_{k,\ell+k; k+1, \ldots, k+\ell-1}\left\{F_{k | k+1, \ldots, k+\ell-1,x} (y_k | y_{k+1, \ldots, k+\ell-1}),  \right. \\ \left. F_{\ell+k | k+1, \ldots, k+\ell-1,x} (y_{\ell+k}| y_{k+1, \ldots, k+\ell-1}) \,  |  \,  \boldsymbol{\theta}_{k,\ell+k; k+1, \ldots, k+\ell-1}(\textbf{x}| \boldsymbol{\beta})\right\}.\end{multline*}
+\]</span></p>
+<p>In <span class="citation">Barone and Dalla Valle (<a href="#ref-barone2023bayesian" role="doc-biblioref">2023</a>)</span>, we model multivariate dependence structures specified as the product of <span class="math inline">\(\nu=d(d-1)/2\)</span> pair copulas, indexed by the <span class="math inline">\(\nu\times(q+1)\)</span>-dimensional vector of parameters <span class="math inline">\(\boldsymbol{\beta}\)</span>. The covariates <span class="math inline">\(f_{h}(x_h)\)</span>, <span class="math inline">\(h=1,\dots,p\)</span>, are independent random variables with parameters <span class="math inline">\(\boldsymbol{\phi}=\left (\phi_{1},\dots,\phi_p \right)\)</span>. Note that <span class="math inline">\(q\ge p\)</span> and its value depends on the chosen link function; for example if the link is linear <span class="math inline">\(q=p\)</span>. Let the vector of parameters <span class="math inline">\(\boldsymbol{\xi}=\left (\boldsymbol{\beta},\boldsymbol{\phi} \right)\)</span> be defined on the parameter space <span class="math inline">\(\Xi\)</span>. We rewrite the density <span class="math inline">\(\textbf{f}_{G}(\textbf{x}) \cdot c_G(\cdot, \ldots, \cdot | \textbf{x})\)</span> as an infinite mixture of conditional vine copulas with kernel <span class="math inline">\(\textbf{f}_{\boldsymbol{\xi}}(\textbf{x})\cdot c_{\boldsymbol{\xi}}(\cdot, \ldots, \cdot | \textbf{x})\)</span> with respect to the mixing measure <span class="math inline">\(G\)</span>, that is<span class="math display">\[
+ \textbf{f}_{G} (\textbf{x}) c_{G} (u_1, \ldots, u_d  | \textbf{x}) = 
+\int  \textbf{f}_{\boldsymbol{\phi_j}}(\textbf{x})  c_{1:d}(u_1, \ldots, u_d \, | \, \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}_j))dG(\boldsymbol{\xi}).
+\]</span>With a Dirichlet Process (DP) prior on <span class="math inline">\(G\)</span>, we get a Dirichlet Process Mixture (DPM) of conditional vine copulas, which may be alternatively represented as</p>
+<p><span class="math display">\[
+\textbf{f}_{\boldsymbol{\phi}} (\textbf{x}) c_{ \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}) } (u_1, \ldots, u_d \, | \, \textbf{x}) = \sum_{j=1}^{\infty} \omega_j \,\textbf{f}_{\boldsymbol{\phi_j}}(\textbf{x})  c_{1:d}(u_1, \ldots, u_d \, | \, \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}_j)),
+\]</span></p>
+<p>where the weights <span class="math inline">\(\omega_j\)</span> sum to <span class="math inline">\(1\)</span>. The posterior distribution <span class="math inline">\(\Pi(G| \textbf{Y},\textbf{X})\)</span> is a mixture of DP models, mixing with respect to the latent variables <span class="math inline">\(\boldsymbol{\xi}_i\)</span> specific to each observation <span class="math inline">\(i\)</span> <span class="math inline">\((F_1(y_{1i}),\dots,F_d(y_{di}))\)</span> </p>
+<p>for <span class="math inline">\(i=1,\dots,N\)</span>:</p>
+<p><span class="math display">\[
+G| \textbf{Y},\textbf{X} \sim\int DP\left (MG_0+\sum_{i=1}^N\delta_{\boldsymbol{\phi}_i\boldsymbol{\beta}_i } \right )d\Pi(\boldsymbol{\phi},\boldsymbol{\beta}|\textbf{y},\textbf{x}),
+\]</span>where <span class="math inline">\(M\)</span> is the concentration parameter, <span class="math inline">\(G_0\)</span> is the centring measure and <span class="math inline">\(\delta_t\)</span> denotes the Dirac measure at <span class="math inline">\(t\)</span>.</p>
+<p>Posterior inference is performed via MCMC sampling by using a Pólya-urn scheme for integrating out of the model the random distribution function from the Dirichlet process <span class="citation">MacEachern and Müller (<a href="#ref-maceachern1998estimating" role="doc-biblioref">1998</a>)</span>.</p>
+</div>
+<div id="financial-development-and-natural-disasters-data" class="section level2">
+<h2>Financial development and natural disasters data</h2>
+<p>We present an application to a heterogeneous dataset to study the impacts of worldwide natural disasters on international financial development. We define a <span class="math inline">\(4\)</span>-dimensional vine copula with marginals denoting the FD index in <span class="math inline">\(4\)</span> consecutive years and consider the occurrence of a natural disaster as a binary covariate taking value <span class="math inline">\(1\)</span> if the total damage is over 100 million dollars and <span class="math inline">\(0\)</span> otherwise. The pair copulas parameters are associated to the covariates through a link function <span class="math inline">\(g\)</span>, such that</p>
+<p><span class="math display">\[
+\rho (\textbf{x} | \boldsymbol{\beta}) = g^{-1} ( \eta(\textbf{x} | \boldsymbol{\beta}) )
+\]</span> where <span class="math inline">\(g^{-1}\)</span> is the Fisher’s transform and <span class="math inline">\(\eta(\cdot)\)</span> is the calibration function <span class="math inline">\(\eta=\beta_0 +\beta_1 X\)</span>. We set <span class="math inline">\(M=1\)</span> and <span class="math inline">\(G_0\)</span> as a flat multivariate Gaussian distribution centred on a vector of zeros.</p>
+<div class="figure">
+<img src="/post/2023-05-19-bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures_files/FDdata.png" alt="" />
+<p class="caption">The top left panel shows the barplot of the number of observations allocated to the two estimated mixture components. The top right panel compares the posterior densities of the calibration function parameter <span class="math inline">\(\beta_{1_{12}}\)</span> (which is related to the first time interval (12)) for the first (solid line) and the second (dashed line) mixture components. The left and right bottom panels show, for the first and second mixture components, the boxplots of the calibration function parameters <span class="math inline">\(\beta_{1}\)</span> for the first, second and third time intervals (12; 23; 34).</p>
+</div>
+<p>The two estimated mixture components present substantial differences in terms of how they are impacted by natural disasters. For the first cluster (<span class="math inline">\(\psi=1\)</span>) the model estimates a general negative effect which tends to remain constant until the fourth year;  instead, for the second cluster (<span class="math inline">\(\psi=2\)</span>) the model estimates a positive effect of the natural disaster on the time dependence between yearly FD indexes. </p>
+</div>
+<div id="take-home-message" class="section level2">
+<h2>Take home message</h2>
+<p>In <span class="citation">Barone and Dalla Valle (<a href="#ref-barone2023bayesian" role="doc-biblioref">2023</a>)</span> we present an innovative methodology that allows for:</p>
+<ul>
+<li><p>flexible modeling of high-dimensional dependency structures, also considering the impact of one or more covariates and accounting for individual as well as temporal heterogeneity in a natural way;</p></li>
+<li><p>clustering without assuming the number of components a priori and density estimation;</p></li>
+<li><p>easy interpretation of the results.</p></li>
+</ul>
+</div>
+<div id="about-the-authors" class="section level2">
+<h2>About the authors</h2>
+<ul>
+<li><a href="https://economia.uniroma2.it/faculty/675/barone-rosario">Rosario Barone</a>, University of Rome Tor Vergata.</li>
+<li><a href="https://www.plymouth.ac.uk/staff/luciana-dalla-valle">Luciana Dalla Valle</a>, University of Plymouth.</li>
+</ul>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-aas2009pair" class="csl-entry">
+Aas, Kjersti, Claudia Czado, Arnoldo Frigessi, and Henrik Bakken. 2009. <span>“Pair-Copula Constructions of Multiple Dependence.”</span> <em>Insurance: Mathematics and Economics</em> 44 (2): 182–98.
+</div>
+<div id="ref-abegaz2012semiparametric" class="csl-entry">
+Abegaz, Fentaw, Irène Gijbels, and Noël Veraverbeke. 2012. <span>“Semiparametric Estimation of Conditional Copulas.”</span> <em>Journal of Multivariate Analysis</em> 110: 43–73.
+</div>
+<div id="ref-acar2011dependence" class="csl-entry">
+Acar, Elif F, Radu V Craiu, and Fang Yao. 2011. <span>“Dependence Calibration in Conditional Copulas: A Nonparametric Approach.”</span> <em>Biometrics</em> 67 (2): 445–53.
+</div>
+<div id="ref-barone2023bayesian" class="csl-entry">
+Barone, Rosario, and Luciana Dalla Valle. 2023. <span>“Bayesian Nonparametric Modeling of Conditional Multidimensional Dependence Structures.”</span> <em>Journal of Computational and Graphical Statistics</em>, 1–10.
+</div>
+<div id="ref-bedford2001probability" class="csl-entry">
+Bedford, Tim, and Roger M Cooke. 2001. <span>“Probability Density Decomposition for Conditionally Dependent Random Variables Modeled by Vines.”</span> <em>Annals of Mathematics and Artificial Intelligence</em> 32 (1-4): 245–68.
+</div>
+<div id="ref-czado2019analyzing" class="csl-entry">
+Czado, Claudia. 2019. <em>Analyzing Dependent Data with Vine Copulas</em>. <em>Lecture Notes in Statistics, Springer</em>. Springer.
+</div>
+<div id="ref-gijbels2012multivariate" class="csl-entry">
+Gijbels, Irene, Marek Omelka, Noël Veraverbeke, et al. 2012. <span>“Multivariate and Functional Covariates and Conditional Copulas.”</span> <em>Electronic Journal of Statistics</em> 6: 1273–1306.
+</div>
+<div id="ref-maceachern1998estimating" class="csl-entry">
+MacEachern, Steven N, and Peter Müller. 1998. <span>“Estimating Mixture of Dirichlet Process Models.”</span> <em>Journal of Computational and Graphical Statistics</em> 7 (2): 223–38.
+</div>
+<div id="ref-sklar1959fonctions" class="csl-entry">
+Sklar, A. 1959. <span>“Fonctions d<span>é</span> Repartition <span class="nocase">à</span> n Dimension Et Leurs Marges.”</span> <em>Universit<span>é</span> Paris</em> 8 (3.2): 1–3.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

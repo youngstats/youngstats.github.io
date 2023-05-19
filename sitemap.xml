@@ -3,18 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</loc>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-nonparametrics/</loc>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/copula-models/</loc>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</loc>
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/fluid-dynamics/</loc>
-    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/stochastic-differential-equations/</loc>
@@ -71,9 +83,6 @@
     <loc>https://youngstats.github.io/categories/network-analysis/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/bayesian-statistics/</loc>
-    <lastmod>2023-01-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</loc>
     <lastmod>2023-01-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -88,9 +97,6 @@
   </url><url>
     <loc>https://youngstats.github.io/categories/youngstats/</loc>
     <lastmod>2022-12-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/copula-models/</loc>
-    <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/empirical-processes/</loc>
     <lastmod>2022-12-07T00:00:00+00:00</lastmod>

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
+      <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
+      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
+      <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
+    </item>
+    
     <item>
       <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
       <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
@@ -97,16 +106,6 @@ And we thank You, readers of our postings and participants at our webinars for y
       
       <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
       <description>OverviewIn this post we first review the concept of semi-parametric copula andthe accompanying estimation procedure of pseudo-likelihood estimation(PLE). We then generalize the estimation problem to the setting wherethe copula signal is hidden in a semi- or non-parametric regressionmodel. Under this setting we have to base the PLE on the residuals. Theparticular challenge of the diverging score function is handled via thetechnique of the weighted residual empirical processes.</description>
-    </item>
-    
-    <item>
-      <title>Some Recent Developments in Mixture Cure Model Methodology for Survival Analysis</title>
-      <link>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</link>
-      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/10/30/some-recent-developments-in-mixture-cure-model-methodology-for-survival-analysis/</guid>
-      <description>AbstractThe mixture cure model in survival analysis has received large and growing attention in the last few decades. Here we present an overview drawing together early results and some recent new developments, and pointing out areas where further work is needed.
-Introduction: the Mixture Cure ModelIn certain clinical trials or observational studies, either prospective or based on historically accumulated data, individuals are or have been followed up for a period of time and their status at some endpoint reported.</description>
     </item>
     
   </channel>

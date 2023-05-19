@@ -6,7 +6,16 @@
     <description>Recent content in copula-models on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/copula-models/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/copula-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
+      <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
+      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
+      <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
+    </item>
+    
     <item>
       <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
       <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>

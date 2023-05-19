@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bayesian Nonparametrics on YoungStatS</title>
+    <title>bayesian-nonparametrics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/bayesian-nonparametrics/</link>
-    <description>Recent content in Bayesian Nonparametrics on YoungStatS</description>
+    <description>Recent content in bayesian-nonparametrics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://youngstats.github.io/categories/bayesian-nonparametrics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-nonparametrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Developments in Bayesian Nonparametrics</title>
-      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
-      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
+      <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
+      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
-      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
-When &amp;amp; Where:
- Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
+      <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
+      <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
     </item>
     
   </channel>
