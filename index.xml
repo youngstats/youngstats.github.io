@@ -6,7 +6,246 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The scaling limit of Baxter permutations</title>
+      <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</guid>
+      <description>
+
+
+&lt;div id=&#34;meanders-monotone-meanders-and-baxter-permutations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Meanders, monotone meanders, and Baxter permutations&lt;/h2&gt;
+&lt;p&gt;Versions of the following question can be traced back at least to the work of Henri Poincaré (&lt;span class=&#34;citation&#34;&gt;Poincaré (&lt;a href=&#34;#ref-poincare-meander&#34;&gt;1912&lt;/a&gt;)&lt;/span&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In how many ways a simple loop in the plane can cross a line a specified number of times?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Despite many efforts, this question remains open after more than a century.
+Let us start by mathematically formalizing the latter question.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1.1.&lt;/strong&gt; A &lt;em&gt;meander&lt;/em&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\in\mathbb{N}\)&lt;/span&gt; is a simple loop &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; (i.e., a homeomorphic image of the circle) in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; which crosses the real line &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; exactly &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; times and does not touch the line without crossing it, viewed modulo orientation-preserving homeomorphisms from &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; which take &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%201.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 1: &lt;strong&gt;Left:&lt;/strong&gt; A meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;, with the intersection points of the loop and the line labeled by the order in which they are hit by the loop (in black) and the line (in red) starting at the blue vertex.
+The associated meandric permutation is &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}=1,4,3,2,5,12,7,8,9,10,11,6\)&lt;/span&gt; (in one-line notation); see Definition 1.1.
+&lt;strong&gt;Right:&lt;/strong&gt; The same meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt; seen as a pair of Jordan curves in the sphere.&lt;/p&gt;
+&lt;p&gt;See the left-hand sides of Figures 1 and 2 for some illustrations of meanders.
+A meander of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; can equivalently be thought of as a pair of Jordan curves in the sphere which intersect exactly &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; times and which do not intersect without crossing, viewed modulo orientation-preserving homeomorphisms from the sphere to itself.
+The correspondence with Definition 1.1 is obtained by viewing &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; as a curve in the Riemann sphere.
+See the right-hand side of Figure 1.&lt;/p&gt;
+&lt;p&gt;Each meander can be bijectively encoded with the corresponding &lt;em&gt;meandric permutation&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1.2.&lt;/strong&gt; For a meander &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, the corresponding &lt;em&gt;meandric permutation&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}\)&lt;/span&gt; is the permutation of &lt;span class=&#34;math inline&#34;&gt;\([1,2n]\cap\mathbb{Z}\)&lt;/span&gt; obtained as follows.
+Order the &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; intersection points of &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; from left to right.
+Then, consider the second order in which these intersection points are hit by &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; when we start &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; from the leftmost intersection point and traverse it counterclockwise.
+Then &lt;span class=&#34;math inline&#34;&gt;\(\sigma_\ell (i)=j\)&lt;/span&gt; if some intersection point is the &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;-th visited point by the first order and the &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;-th visited point by the second one.&lt;/p&gt;
+&lt;p&gt;See Figure 1 for an example and the right-hand side of Figure 2 for the plots of two large uniform meandric permutations.
+Note that any meandric permutation fixes 1.
+It is easily verified that the mapping &lt;span class=&#34;math inline&#34;&gt;\(\ell\mapsto\sigma_{\ell}\)&lt;/span&gt; is a bijection from the set of meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; to the set of meandric permutations of size &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt;.
+The study of meandric permutations dates back to at least the paper &lt;span class=&#34;citation&#34;&gt;Rosenstiehl (&lt;a href=&#34;#ref-rosentiehl-meander&#34;&gt;1984&lt;/a&gt;)&lt;/span&gt;, where they are called “planar permutations”.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Meander256-side.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2: &lt;strong&gt;Left:&lt;/strong&gt; Two large uniform meanders &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; of size 256 and 2048.
+&lt;strong&gt;Right:&lt;/strong&gt; The plots of the two corresponding meandric permutations &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}\)&lt;/span&gt;; the blue dots correspond to the values &lt;span class=&#34;math inline&#34;&gt;\((i,\sigma_\ell(i))_{i = 1,\dots,|\sigma_\ell|}\)&lt;/span&gt;.
+These simulations are obtained using the Markov chain Monte Carlo algorithm from &lt;span class=&#34;citation&#34;&gt;Heitsch and Tetali (&lt;a href=&#34;#ref-heitsch2011meander&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The term “meander” was first coined by &lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold-meander&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;.
+Meanders are of interest in physics and computational biology as models of polymer folding &lt;span class=&#34;citation&#34;&gt;Di Francesco, Golinelli, and Guitter (&lt;a href=&#34;#ref-dgg-meander-folding&#34;&gt;1997&lt;/a&gt;)&lt;/span&gt;.
+There is a vast mathematical literature devoted to the enumeration of various types of meanders, which has connections to many different subjects, from combinatorics to theoretical physics and more recently to the geometry of moduli spaces (&lt;span class=&#34;citation&#34;&gt;Delecroix et al. (&lt;a href=&#34;#ref-Delecroix-enum-meand&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;).
+See &lt;span class=&#34;citation&#34;&gt;Zvonkin (&lt;a href=&#34;#ref-zvonkin-meander-survey&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; for a brief recent survey of this literature and &lt;span class=&#34;citation&#34;&gt;La Croix (&lt;a href=&#34;#ref-lacroix-meander-survey&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt; for a more detailed account.
+Additionally, meanders are the connected components of &lt;em&gt;meandric systems&lt;/em&gt;, recently studied in &lt;span class=&#34;citation&#34;&gt;Curien et al. (&lt;a href=&#34;#ref-ckst-noodle&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kargin (&lt;a href=&#34;#ref-Kargin-cycles-meander&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Goulden, Nica, and Puder (&lt;a href=&#34;#ref-Goulden-Asymptotics-meandric&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Féray and Thévenin (&lt;a href=&#34;#ref-Feray-components-mendric&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Fukuda and Nechita (&lt;a href=&#34;#ref-fn-meander-system&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Borga, Gwynne, and Park (&lt;a href=&#34;#ref-borga2022geometry&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The problem of enumerating &lt;em&gt;all&lt;/em&gt; meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; – this is the Question (1.1) – is open and seemingly quite difficult. But, it was conjectured by Di Francesco, Golinelli, and Guitter (&lt;span class=&#34;citation&#34;&gt;Di Francesco, Golinelli, and Guitter (&lt;a href=&#34;#ref-dgg-meander-asymptotics&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the number of meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; behaves asymptotically like &lt;span class=&#34;math inline&#34;&gt;\(C \cdot A^n n^{-\alpha}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\alpha = (29 + \sqrt{145})/12\)&lt;/span&gt;. This conjecture was later numerically tested by Jensen and Gutmann (&lt;span class=&#34;citation&#34;&gt;Jensen and Guttmann (&lt;a href=&#34;#ref-Jensen-num-meanders&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;), where they also proposed the numerical estimate of &lt;span class=&#34;math inline&#34;&gt;\(A \approx 12.26\)&lt;/span&gt;. The best known rigorous bounds for the constant &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; are &lt;span class=&#34;math inline&#34;&gt;\(11.380\leq A \leq 12.901\)&lt;/span&gt;, as proved in &lt;span class=&#34;citation&#34;&gt;Albert and Paterson (&lt;a href=&#34;#ref-Albert-bounds-meanders&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;A candidate scaling limit for meanders and meandric permutations was recently proposed and studied in &lt;span class=&#34;citation&#34;&gt;Borga, Gwynne, and Sun (&lt;a href=&#34;#ref-borga2022permutons&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In this paper, we will address a simpler but very related model, i.e.&lt;em&gt;monotone meanders&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1.3.&lt;/strong&gt; A &lt;strong&gt;monotone meander&lt;/strong&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\in\mathbb{N}\)&lt;/span&gt; is a pair of simple curves &lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; which cross each other exactly &lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt; times and such that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; starts on the left-hand side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;, ends on the right-hand side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; and never moves in the left direction.
+(Equivalently, it is the graph of a continuous function from &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt;.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; starts on the bottom side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;, ends on the top side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; and never moves in the bottom direction.
+(Equivalently, it is the graph of a continuous function from &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; rotated by 90 degrees.)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As in the case of meanders, to each monotone meander we can associate the corresponding &lt;strong&gt;monotone meandric permutation&lt;/strong&gt;. Two monotone meanders are equivalent if they induce the same monotone meandric permutation.&lt;/p&gt;
+&lt;p&gt;See Figure 3 for an example. Note that a monotone meandric permutation maps even numbers to even numbers, and odd numbers to odd numbers. The permutation mapping odd numbers is called a &lt;strong&gt;Baxter permutation&lt;/strong&gt;, while the permutation mapping even numbers is called a &lt;strong&gt;reduced Baxter permutation&lt;/strong&gt;. It can be shown &lt;span class=&#34;citation&#34;&gt;Baxter (&lt;a href=&#34;#ref-baxter-permutation&#34;&gt;1964&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;William M. Boyce (&lt;a href=&#34;#ref-MR0250516&#34;&gt;1967&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;William Martin Boyce (&lt;a href=&#34;#ref-boyce1981&#34;&gt;1981&lt;/a&gt;)&lt;/span&gt; that the Baxter permutation corresponding to a monotone meandric permutation uniquely determine the monotone meandric permutation itself.
+Hence there is a natural bijection between monotone meandric permutations and Baxter permutations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%203.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 3: &lt;strong&gt;Left:&lt;/strong&gt; A monotone meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;, with the intersection points labeled by the order in which they are hit by the curve &lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; (in red) and the curve &lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; (in blue).
+&lt;strong&gt;Right:&lt;/strong&gt; The associated monotone meandric permutation: the Baxter permutation corresponds to the black dots, while the reduced Baxter permutation corresponds to the white dots.&lt;/p&gt;
+&lt;p&gt;Baxter permutations were introduced by Glen Baxter in 1964 &lt;span class=&#34;citation&#34;&gt;Baxter (&lt;a href=&#34;#ref-baxter-permutation&#34;&gt;1964&lt;/a&gt;)&lt;/span&gt; while studying fixed points of commuting functions. They are classical examples of pattern-avoiding permutations, which have been intensively studied both in the probabilistic and combinatorial literature (see e.g. &lt;span class=&#34;citation&#34;&gt;William M. Boyce (&lt;a href=&#34;#ref-MR0250516&#34;&gt;1967&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Chung et al. (&lt;a href=&#34;#ref-MR491652&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Mallows (&lt;a href=&#34;#ref-MR555815&#34;&gt;1979&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bousquet-Mélou (&lt;a href=&#34;#ref-MR2028288&#34;&gt;2002/03&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Canary (&lt;a href=&#34;#ref-MR2679559&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Felsner et al. (&lt;a href=&#34;#ref-MR2763051&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bouvel et al. (&lt;a href=&#34;#ref-MR3882946&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;). They are known to be connected with various other interesting combinatorial structures, such as bipolar orientations &lt;span class=&#34;citation&#34;&gt;Bonichon, Bousquet-Mélou, and Fusy (&lt;a href=&#34;#ref-BBMF11&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;, walks in cones &lt;span class=&#34;citation&#34;&gt;Kenyon et al. (&lt;a href=&#34;#ref-KMSW19&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, certain pairs of binary trees and a family of triples of non-intersecting lattice paths &lt;span class=&#34;citation&#34;&gt;Felsner et al. (&lt;a href=&#34;#ref-MR2763051&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;, and domino tilings of Aztec diamonds &lt;span class=&#34;citation&#34;&gt;Canary (&lt;a href=&#34;#ref-MR2679559&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The diagrams of two large uniform Baxter permutations is plotted in Figure 4.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 4: The diagrams of two uniform Baxter permutations of size 3253 and 4520.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;main-results-the-permuton-limit-of-baxter-permutations-and-its-intensity-measure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Main results: the permuton limit of Baxter permutations and its intensity measure&lt;/h2&gt;
+&lt;p&gt;In recent years there has been an increasing interest in studying limits of random non-uniform permutations. One approach is to look at the convergence of relevant statistics, such as the number of cycles, the number of inversions, or the length of the longest increasing subsequence. For a brief overview of this approach see e.g. &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021random&#34;&gt;2021a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The more recent approach is to directly determine the scaling limits of permutation diagrams. Here given a permutation &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, its &lt;em&gt;diagram&lt;/em&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(n \times n\)&lt;/span&gt; table with &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; points at position &lt;span class=&#34;math inline&#34;&gt;\((i,\sigma(i))\)&lt;/span&gt; for all &lt;span class=&#34;math inline&#34;&gt;\(i\in[n]:=\{1,2,\dots,n\}\)&lt;/span&gt;. (See the right-hand side of Figure 3 for an example.) Their scaling limits are called &lt;em&gt;permutons&lt;/em&gt;. See e.g. &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021random&#34;&gt;2021a&lt;/a&gt;)&lt;/span&gt; for an overview of this approach.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 2.1.&lt;/strong&gt; A Borel probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; on the unit square &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; is a &lt;strong&gt;permuton&lt;/strong&gt; if both of its marginals are uniform, i.e., &lt;span class=&#34;math inline&#34;&gt;\(\mu([a,b]\times[0,1]) = \mu([0,1]\times[a,b])=b-a\)&lt;/span&gt; for any &lt;span class=&#34;math inline&#34;&gt;\(0\le a&amp;lt;b\le 1\)&lt;/span&gt;.
+A permutation &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; can be viewed as a permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma}\)&lt;/span&gt; by uniformly distributing mass to the squares &lt;span class=&#34;math inline&#34;&gt;\(\{[\frac{i-1}{n}, \frac{i}{n}]\times [\frac{\sigma(i)-1}{n}, \frac{\sigma(i)}{n}]: i \in [n]\}.\)&lt;/span&gt; More precisely, &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+        \mu_\sigma(A)
+        =
+        n
+        \sum_{i=1}^n
+        Leb
+        \big([(i-1)/n, i/n]
+        \times
+        [(\sigma(i)-1)/n,\sigma(i)/n]
+        \cap
+        A\big),
+    \end{equation*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; is a Borel measurable set of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For a &lt;em&gt;deterministic&lt;/em&gt; sequence of permutations &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt;, we say that &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; &lt;em&gt;converge in the permuton sense&lt;/em&gt; to a limiting permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;, if the permutons &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma_n}\)&lt;/span&gt; induced by &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; converge weakly to &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;.
+The set of permutons equipped with the topology of weak convergence of measures can be viewed as a compact metric space.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; studied the expected limiting permuton of the so-called &lt;em&gt;doubly alternating Baxter permutations&lt;/em&gt;.
+The authors raised the question of proving the existence of the &lt;em&gt;Baxter permuton&lt;/em&gt; as the scaling limit of uniform Baxter permutations, and determine its expected density.
+The existence of the Baxter permuton was established in &lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-BM20&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 2.2&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; be a uniform Baxter permutation of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;.
+The following convergence w.r.t. the permuton topology holds: &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma_n}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\xrightarrow{d}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a random permuton called the &lt;em&gt;Baxter permuton&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark 2.3.&lt;/strong&gt; In &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021skewperm&#34;&gt;2021b&lt;/a&gt;)&lt;/span&gt;, a two-parameter family of permutons called the &lt;em&gt;skew Brownian permuton&lt;/em&gt; was introduced.
+This family includes the Baxter permuton and a well-studied one-parameter family of permutons, called the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2018separable&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2017universal&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;), as special cases.&lt;/p&gt;
+&lt;p&gt;The Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a &lt;em&gt;random&lt;/em&gt; probability measure on the unit square (with uniform marginals); recall Figure 4.
+The next result is an explicit expression of its intensity measure, defined by &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_{B}](\cdot):=\mathbb E [\mu_{B}(\cdot)]\)&lt;/span&gt;, which answers &lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 2.4.&lt;/strong&gt; Consider the Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt;.
+Define the function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eqn-rho}
+        \rho(t, x, r):= \frac{1}{t^2} \left(\left(\frac{3rx}{2t}-1\right)e^{-\frac{r^2+x^2-rx}{2t}}+e^{-\frac{(x+r)^2}{2t}}\right).
+    \end{equation}\]&lt;/span&gt; Then the intensity measure &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_B]\)&lt;/span&gt; is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
+{Moreover}, it has the following density function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eqn-baxter-density}
+        p_B(x, y) = c\int_{\max\{0, x+y-1\}}^{\min\{x, y\}}\int_{\mathbb R_{+}^4}\rho(y-z, \ell_1, \ell_2)\rho(z, \ell_2, \ell_3)\rho(x-z, \ell_3, \ell_4)\rho(1+z-x-y, \ell_4, \ell_1)\,\ d\ell_1 d\ell_2 d\ell_3 d\ell_4\, dz,
+    \end{equation}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; is a normalizing constant.&lt;/p&gt;
+&lt;p&gt;We remark that, further computation of the integral (2.2) is tricky, as it involves integrating a four-dimensional Gaussian in the first quadrant.
+We also recall that the intensity measure of other universal random limiting permutons has been investigated in the literature.
+For instance, the intensity measure of the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt;, was determined by Maazoun in &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
+We recall that the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt;, defined for all &lt;span class=&#34;math inline&#34;&gt;\(q\in[0,1]\)&lt;/span&gt;, is a one-parameter universal family of limiting permutons arising form pattern-avoiding permutations. In &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, it was proved that for all &lt;span class=&#34;math inline&#34;&gt;\(q\in(0,1)\)&lt;/span&gt;, the intensity measure $E[^q_S]$$ of the biased Brownian separable permuton is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
+Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E[\mu^q_S]\)&lt;/span&gt; has the following density function&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+    p^q_S(x, y) =\int_{\max\{0,x+y -1\}}^{\min\{x,y\}} \frac{3q^2(1-q)^2 \,da }
+    {2\pi(a(x-a)(1-x-y+a)(y-a))^{3/2}{\left(\frac{q^2}{a}+\frac{(1-q)^2}{(x-a)}+\frac{q^2}{(1-x-y+a)}+\frac{(1-q)^2}{(y-a)}\right)^{5/2}}}.
+\end{equation*}\]&lt;/span&gt; The proof of &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; relies on an explicit construction of the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt; from a one-dimensional Brownian excursion decorated with i.i.d. plus and minus signs.
+To the best of our knowledge this proof cannot be easily extended to the Baxter permuton case.
+Our proof of Theorem 2.4 uses the combination of two main achievements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;A connection (&lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021skewperm&#34;&gt;2021b&lt;/a&gt;)&lt;/span&gt;) between the Baxter permuton (and more generally the skew Brownian permuton of Remark 2.3) and some well-known families of random curves and random surfaces: the &lt;strong&gt;Schramm-Loewner evolution (SLE)&lt;/strong&gt; curves and the &lt;strong&gt;Liouville quantum gravity (LQG)&lt;/strong&gt; spheres.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Some integrability results (&lt;span class=&#34;citation&#34;&gt;Ang, Holden, and Sun (&lt;a href=&#34;#ref-AHS20&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;) for SLE curves and LQG spheres which go under the name of &lt;strong&gt;conformal welding of quantum surfaces&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Explaining the results above would require a long digression; hence we just conclude this article with some plots of &lt;span class=&#34;math inline&#34;&gt;\(p_B(x, y)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p^q_S(x, y)\)&lt;/span&gt; using numerical approximations of the integrals.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure5.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 5: &lt;strong&gt;From left to right:&lt;/strong&gt; The diagrams of the densities &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.1}(x,y)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.4}(x,y)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,y)\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,y)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure6.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 6: Some sections of the densities &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,y)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,y)\)&lt;/span&gt;.
+&lt;strong&gt;From left to right:&lt;/strong&gt; In red (resp. in blue) we plot the diagrams of &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,x)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,x)\)&lt;/span&gt;), &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,1/2)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,1/2)\)&lt;/span&gt;), and &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,1/4)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,1/4)\)&lt;/span&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-Albert-bounds-meanders&#34; class=&#34;csl-entry&#34;&gt;
+Albert, M. H., and M. S. Paterson. 2005. &lt;span&gt;“Bounds for the Growth Rate of Meander Numbers.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 112 (2): 250–62. &lt;a href=&#34;https://doi.org/10.1016/j.jcta.2005.02.006&#34;&gt;https://doi.org/10.1016/j.jcta.2005.02.006&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-AHS20&#34; class=&#34;csl-entry&#34;&gt;
+Ang, Morris, Nina Holden, and Xin Sun. 2020. &lt;span&gt;“Conformal Welding of Quantum Disks.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2009.08389&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-arnold-meander&#34; class=&#34;csl-entry&#34;&gt;
+Arnold, V. I. 1988. &lt;span&gt;“The Branched Covering &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\({\bf C}{\rm P}^2\to S^4\)&lt;/span&gt;&lt;/span&gt;, Hyperbolicity and Projective Topology.”&lt;/span&gt; &lt;em&gt;Sibirsk. Mat. Zh.&lt;/em&gt; 29 (5): 36–47, 237. &lt;a href=&#34;https://doi.org/10.1007/BF00970265&#34;&gt;https://doi.org/10.1007/BF00970265&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-bassino2017universal&#34; class=&#34;csl-entry&#34;&gt;
+Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, Mickaël Maazoun, and Adeline Pierrot. 2020. &lt;span&gt;“Universal Limits of Substitution-Closed Permutation Classes.”&lt;/span&gt; &lt;em&gt;J. Eur. Math. Soc. (JEMS)&lt;/em&gt; 22 (11): 3565–3639. &lt;a href=&#34;https://doi.org/10.4171/jems/993&#34;&gt;https://doi.org/10.4171/jems/993&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-bassino2018separable&#34; class=&#34;csl-entry&#34;&gt;
+Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, and Adeline Pierrot. 2018. &lt;span&gt;“The &lt;span&gt;B&lt;/span&gt;rownian Limit of Separable Permutations.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 46 (4): 2134–89. &lt;a href=&#34;https://doi.org/10.1214/17-AOP1223&#34;&gt;https://doi.org/10.1214/17-AOP1223&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-baxter-permutation&#34; class=&#34;csl-entry&#34;&gt;
+Baxter, Glen. 1964. &lt;span&gt;“On Fixed Points of the Composite of Commuting Functions.”&lt;/span&gt; &lt;em&gt;Proc. Amer. Math. Soc.&lt;/em&gt; 15: 851–55.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BBMF11&#34; class=&#34;csl-entry&#34;&gt;
+Bonichon, Nicolas, Mireille Bousquet-Mélou, and Éric Fusy. 2010. &lt;span&gt;“Baxter Permutations and Plane Bipolar Orientations.”&lt;/span&gt; &lt;em&gt;S&lt;span&gt;é&lt;/span&gt;minaire Lotharingien de Combinatoire&lt;/em&gt; 61: B61Ah.
+&lt;/div&gt;
+&lt;div id=&#34;ref-borga2021random&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo. 2021a. &lt;span&gt;“Random Permutations – a Geometric Point of View.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2107.09699 (Ph.D. Thesis)&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-borga2021skewperm&#34; class=&#34;csl-entry&#34;&gt;
+———. 2021b. &lt;span&gt;“The Skew &lt;span&gt;B&lt;/span&gt;rownian Permuton: A New Universality Class for Random Constrained Permutations.”&lt;/span&gt; &lt;em&gt;Proceedings of the London Mathematical Society (to Appear)&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-borga2022geometry&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo, Ewain Gwynne, and Minjae Park. 2022. &lt;span&gt;“On the Geometry of Uniform Meandric Systems.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2212.00534&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-borga2022permutons&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo, Ewain Gwynne, and Xin Sun. 2022. &lt;span&gt;“Permutons, Meanders, and &lt;span&gt;SLE&lt;/span&gt;-Decorated &lt;span&gt;L&lt;/span&gt;iouville Quantum Gravity.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2207.02319&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-BM20&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo, and Mickaël Maazoun. 2022. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR2028288&#34; class=&#34;csl-entry&#34;&gt;
+Bousquet-Mélou, M. 2002/03. &lt;span&gt;“Four Classes of Pattern-Avoiding Permutations Under One Roof: Generating Trees with Two Labels.”&lt;/span&gt; &lt;em&gt;Electron. J. Combin.&lt;/em&gt; 9 (2): Research paper 19, 31. &lt;a href=&#34;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&#34;&gt;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR3882946&#34; class=&#34;csl-entry&#34;&gt;
+Bouvel, Mathilde, Veronica Guerrini, Andrew Rechnitzer, and Simone Rinaldi. 2018. &lt;span&gt;“Semi-&lt;span&gt;B&lt;/span&gt;axter and Strong-&lt;span&gt;B&lt;/span&gt;axter: Two Relatives of the &lt;span&gt;B&lt;/span&gt;axter Sequence.”&lt;/span&gt; &lt;em&gt;SIAM J. Discrete Math.&lt;/em&gt; 32 (4): 2795–2819. &lt;a href=&#34;https://doi.org/10.1137/17M1126734&#34;&gt;https://doi.org/10.1137/17M1126734&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR0250516&#34; class=&#34;csl-entry&#34;&gt;
+Boyce, William M. 1967. &lt;span&gt;“Generation of a Class of Permutations Associated with Commuting Functions.”&lt;/span&gt; &lt;em&gt;Math. Algorithms 2 (1967), 19–26; Addendum, Ibid.&lt;/em&gt; 3: 25–26.
+&lt;/div&gt;
+&lt;div id=&#34;ref-boyce1981&#34; class=&#34;csl-entry&#34;&gt;
+Boyce, William Martin. 1981. &lt;span&gt;“Baxter Permutations and Functional Composition.”&lt;/span&gt; &lt;em&gt;Houston Journal Of Mathematics&lt;/em&gt; 7 (2).
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR2679559&#34; class=&#34;csl-entry&#34;&gt;
+Canary, Hal. 2010. &lt;span&gt;“Aztec Diamonds and &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;Electron. J. Combin.&lt;/em&gt; 17 (1): Research Paper 105, 12. &lt;a href=&#34;http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html&#34;&gt;http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR491652&#34; class=&#34;csl-entry&#34;&gt;
+Chung, Fan-Rong K., Ronald L. Graham, Verner Emil Hoggatt Jr., and Mark Kleiman. 1978. &lt;span&gt;“The Number of &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 24 (3): 382–94. &lt;a href=&#34;https://doi.org/10.1016/0097-3165(78)90068-7&#34;&gt;https://doi.org/10.1016/0097-3165(78)90068-7&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ckst-noodle&#34; class=&#34;csl-entry&#34;&gt;
+Curien, Nicolas, Gady Kozma, Vladas Sidoravicius, and Laurent Tournier. 2019. &lt;span&gt;“Uniqueness of the Infinite Noodle.”&lt;/span&gt; &lt;em&gt;Ann. Inst. Henri Poincaré D&lt;/em&gt; 6 (2): 221–38. &lt;a href=&#34;https://doi.org/10.4171/AIHPD/70&#34;&gt;https://doi.org/10.4171/AIHPD/70&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Delecroix-enum-meand&#34; class=&#34;csl-entry&#34;&gt;
+Delecroix, Vincent, Élise Goujard, Peter Zograf, and Anton Zorich. 2020. &lt;span&gt;“Enumeration of Meanders and &lt;span&gt;M&lt;/span&gt;asur-&lt;span&gt;V&lt;/span&gt;eech Volumes.”&lt;/span&gt; &lt;em&gt;Forum Math. Pi&lt;/em&gt; 8: e4, 80. &lt;a href=&#34;https://doi.org/10.1017/fmp.2020.2&#34;&gt;https://doi.org/10.1017/fmp.2020.2&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-dgg-meander-folding&#34; class=&#34;csl-entry&#34;&gt;
+Di Francesco, P., O. Golinelli, and E. Guitter. 1997. &lt;span&gt;“Meander, Folding, and Arch Statistics.”&lt;/span&gt; &lt;em&gt;Math. Comput. Modelling&lt;/em&gt; 26 (8-10): 97–147. &lt;a href=&#34;https://doi.org/10.1016/S0895-7177(97)00202-1&#34;&gt;https://doi.org/10.1016/S0895-7177(97)00202-1&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-dgg-meander-asymptotics&#34; class=&#34;csl-entry&#34;&gt;
+———. 2000. &lt;span&gt;“Meanders: Exact Asymptotics.”&lt;/span&gt; &lt;em&gt;Nuclear Phys. B&lt;/em&gt; 570 (3): 699–712. &lt;a href=&#34;https://doi.org/10.1016/S0550-3213(99)00753-1&#34;&gt;https://doi.org/10.1016/S0550-3213(99)00753-1&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR3238333&#34; class=&#34;csl-entry&#34;&gt;
+Dokos, Theodore, and Igor Pak. 2014. &lt;span&gt;“The Expected Shape of Random Doubly Alternating &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;Online J. Anal. Comb.&lt;/em&gt; 9: 12.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR2763051&#34; class=&#34;csl-entry&#34;&gt;
+Felsner, Stefan, Éric Fusy, Marc Noy, and David Orden. 2011. &lt;span&gt;“Bijections for &lt;span&gt;B&lt;/span&gt;axter Families and Related Objects.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 118 (3): 993–1020. &lt;a href=&#34;https://doi.org/10.1016/j.jcta.2010.03.017&#34;&gt;https://doi.org/10.1016/j.jcta.2010.03.017&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Feray-components-mendric&#34; class=&#34;csl-entry&#34;&gt;
+Féray, Valentin, and Paul Thévenin. 2022. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Components in meandric systems and the infinite noodle&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;ArXiv e-Prints&lt;/em&gt;, January. &lt;a href=&#34;https://arxiv.org/abs/\arxiv{2201.11572}&#34;&gt;https://arxiv.org/abs/\arxiv{2201.11572}&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-fn-meander-system&#34; class=&#34;csl-entry&#34;&gt;
+Fukuda, Motohisa, and Ion Nechita. 2019. &lt;span&gt;“Enumerating Meandric Systems with Large Number of Loops.”&lt;/span&gt; &lt;em&gt;Ann. Inst. Henri Poincaré D&lt;/em&gt; 6 (4): 607–40. &lt;a href=&#34;https://doi.org/10.4171/AIHPD/80&#34;&gt;https://doi.org/10.4171/AIHPD/80&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Goulden-Asymptotics-meandric&#34; class=&#34;csl-entry&#34;&gt;
+Goulden, I. P., Alexandru Nica, and Doron Puder. 2020. &lt;span&gt;“Asymptotics for a Class of Meandric Systems, via the &lt;span&gt;H&lt;/span&gt;asse Diagram of &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\({\rm NC}(n)\)&lt;/span&gt;&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Int. Math. Res. Not. IMRN&lt;/em&gt;, no. 4: 983–1034. &lt;a href=&#34;https://doi.org/10.1093/imrn/rny044&#34;&gt;https://doi.org/10.1093/imrn/rny044&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-heitsch2011meander&#34; class=&#34;csl-entry&#34;&gt;
+Heitsch, Christine E, and Prasad Tetali. 2011. &lt;span&gt;“Meander Graphs.”&lt;/span&gt; In &lt;em&gt;Discrete Mathematics and Theoretical Computer Science&lt;/em&gt;, 469–80. Discrete Mathematics; Theoretical Computer Science.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Jensen-num-meanders&#34; class=&#34;csl-entry&#34;&gt;
+Jensen, Iwan, and Anthony J. Guttmann. 2000. &lt;span&gt;“Critical Exponents of Plane Meanders.”&lt;/span&gt; &lt;em&gt;J. Phys. A&lt;/em&gt; 33 (21): L187–92. &lt;a href=&#34;https://doi.org/10.1088/0305-4470/33/21/101&#34;&gt;https://doi.org/10.1088/0305-4470/33/21/101&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Kargin-cycles-meander&#34; class=&#34;csl-entry&#34;&gt;
+Kargin, Vladislav. 2020. &lt;span&gt;“Cycles in Random Meander Systems.”&lt;/span&gt; &lt;em&gt;J. Stat. Phys.&lt;/em&gt; 181 (6): 2322–45. &lt;a href=&#34;https://doi.org/10.1007/s10955-020-02665-2&#34;&gt;https://doi.org/10.1007/s10955-020-02665-2&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-KMSW19&#34; class=&#34;csl-entry&#34;&gt;
+Kenyon, Richard, Jason Miller, Scott Sheffield, and David B Wilson. 2019. &lt;span&gt;“Bipolar Orientations on Planar Maps and &lt;span&gt;SLE&lt;/span&gt;&lt;span class=&#34;math inline&#34;&gt;\(_{12}\)&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;The Annals of Probability&lt;/em&gt; 47 (3): 1240–69.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lacroix-meander-survey&#34; class=&#34;csl-entry&#34;&gt;
+La Croix, Michael. 2003. &lt;span&gt;“&lt;span&gt;A&lt;/span&gt;pproaches to the Enumerative Theory of Meanders.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR4079636&#34; class=&#34;csl-entry&#34;&gt;
+Maazoun, Mickaël. 2020. &lt;span&gt;“On the &lt;span&gt;B&lt;/span&gt;rownian Separable Permuton.”&lt;/span&gt; &lt;em&gt;Combin. Probab. Comput.&lt;/em&gt; 29 (2): 241–66. &lt;a href=&#34;https://doi.org/10.1017/s0963548319000300&#34;&gt;https://doi.org/10.1017/s0963548319000300&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-MR555815&#34; class=&#34;csl-entry&#34;&gt;
+Mallows, Colin L. 1979. &lt;span&gt;“Baxter Permutations Rise Again.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 27 (3): 394–96.
+&lt;/div&gt;
+&lt;div id=&#34;ref-poincare-meander&#34; class=&#34;csl-entry&#34;&gt;
+Poincaré, Henri. 1912. &lt;span&gt;“&lt;span&gt;S&lt;/span&gt;ur Un t&lt;span&gt;é&lt;/span&gt;or&lt;span&gt;è&lt;/span&gt;me de g&lt;span&gt;é&lt;/span&gt;om&lt;span&gt;é&lt;/span&gt;trie.”&lt;/span&gt; &lt;em&gt;Rend. Del Circ. Mat. Palermo&lt;/em&gt; 33: 375–407.
+&lt;/div&gt;
+&lt;div id=&#34;ref-rosentiehl-meander&#34; class=&#34;csl-entry&#34;&gt;
+Rosenstiehl, P. 1984. &lt;span&gt;“Planar Permutations Defined by Two Intersecting &lt;span&gt;J&lt;/span&gt;ordan Curves.”&lt;/span&gt; In &lt;em&gt;Graph Theory and Combinatorics (&lt;span&gt;C&lt;/span&gt;ambridge, 1983)&lt;/em&gt;, 259–71. Academic Press, London.
+&lt;/div&gt;
+&lt;div id=&#34;ref-zvonkin-meander-survey&#34; class=&#34;csl-entry&#34;&gt;
+Zvonkin, Alexander. 2021. &lt;span&gt;“&lt;span&gt;M&lt;/span&gt;eanders: A &lt;span&gt;P&lt;/span&gt;ersonal &lt;span&gt;P&lt;/span&gt;erspective.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
       <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
@@ -167,7 +406,7 @@ arise due to repeated stretching and folding by the velocity field.&lt;/p&gt;
 &lt;/p&gt;
 &lt;p&gt;Figure 1: A numerical simulation of scalar turbulence on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{T}^2\)&lt;/span&gt;
 advected by the stochastic Navier-Stokes equations (all rights to the video content belong to Sam Punshon-Smith).&lt;/p&gt;
-&lt;p&gt;In his 1959 work (&lt;span class=&#34;citation&#34;&gt;Batchelor (&lt;a href=&#34;#ref-Batchelor59&#34; role=&#34;doc-biblioref&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;) Batchelor made a significant step toward
+&lt;p&gt;In his 1959 work (&lt;span class=&#34;citation&#34;&gt;Batchelor (&lt;a href=&#34;#ref-Batchelor59&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;) Batchelor made a significant step toward
 understanding these structures. He predicted that, on average, the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt;
 power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; displays a &lt;span class=&#34;math inline&#34;&gt;\(|k|^{-1}\)&lt;/span&gt; power law
 (Batchelor’s law) for the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt; power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; along
@@ -175,8 +414,8 @@ frequencies &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; in the so
 length-scales sufficiently small such that the fluid motion is
 viscosity-dominated but large enough so as not to be dissipated by
 molecular diffusion. This law has since been verified in physical,
-numerical, and experimental settings (e.g. &lt;span class=&#34;citation&#34;&gt;Grant et al. (&lt;a href=&#34;#ref-GrantEtAl68&#34; role=&#34;doc-biblioref&#34;&gt;1968&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Antonia and Orlandi (&lt;a href=&#34;#ref-AO03&#34; role=&#34;doc-biblioref&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Gibson and Schwarz (&lt;a href=&#34;#ref-GibsonSchwarz63&#34; role=&#34;doc-biblioref&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;) and is frequently used by scientists to predict the
+numerical, and experimental settings (e.g. &lt;span class=&#34;citation&#34;&gt;Grant et al. (&lt;a href=&#34;#ref-GrantEtAl68&#34;&gt;1968&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Antonia and Orlandi (&lt;a href=&#34;#ref-AO03&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;Gibson and Schwarz (&lt;a href=&#34;#ref-GibsonSchwarz63&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;) and is frequently used by scientists to predict the
 distribution of pollutants and biological matter in the ocean and
 atmosphere. Despite this success, Batchelor’s law has evaded rigorous
 mathematical proof.&lt;/p&gt;
@@ -194,10 +433,10 @@ considered. Here the stochastic forcing &lt;span class=&#34;math inline&#34;&gt;
 non-degenerate, white-in-time, spatially Sobolev regular Gaussian
 forcing. The viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu &amp;gt; 0\)&lt;/span&gt; can be considered the inverse
 Reynolds number.&lt;/p&gt;
-&lt;p&gt;For this model and a host of other fluid models, in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt; we
+&lt;p&gt;For this model and a host of other fluid models, in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt; we
 prove a version Batchelor’s prediction on the cumulative power spectrum,
 when the viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu&amp;gt;0\)&lt;/span&gt; is fixed.&lt;/p&gt;
-&lt;p&gt;Theorem 1 &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2019a&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Theorem 1 &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2019a&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\Pi_{\leq N}\)&lt;/span&gt; denote the projection onto Fourier modes with
 &lt;span class=&#34;math inline&#34;&gt;\(|k|\leq N\)&lt;/span&gt;. Let the source &lt;span class=&#34;math inline&#34;&gt;\(s_t\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; be a white-in-time
 Gaussian process and &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; be given by &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; as described above.
@@ -222,12 +461,12 @@ of small scales.&lt;/p&gt;
 using a negative Sobolev norm. Commonly chosen is the &lt;span class=&#34;math inline&#34;&gt;\(H^{-1}\)&lt;/span&gt; norm
 &lt;span class=&#34;math inline&#34;&gt;\(\|g_t\|_{H^{-1}} := \|(-\Delta)^{-1/2}g_t\|_{L^2}\)&lt;/span&gt;, which essentially
 measures the average filamentation width, though there are many other
-expedient choices &lt;span class=&#34;citation&#34;&gt;Thiffeault (&lt;a href=&#34;#ref-Thiffeault2012-xs&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we show that solutions to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; cause the advection
+expedient choices &lt;span class=&#34;citation&#34;&gt;Thiffeault (&lt;a href=&#34;#ref-Thiffeault2012-xs&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we show that solutions to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; cause the advection
 diffusion equation (without source but with diffusion) to mix
 exponentially fast with a rate that is &lt;em&gt;uniform in the diffusivity&lt;/em&gt;
 parameter &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Theorem 2 &lt;span class=&#34;citation&#34;&gt;(Uniform-in-diffusivity mixing, &lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2021&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Theorem 2 &lt;span class=&#34;citation&#34;&gt;(Uniform-in-diffusivity mixing, &lt;a href=&#34;#ref-BBPS19II&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2021&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Let&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise. There exists
 a &lt;strong&gt;deterministic&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\gamma &amp;gt; 0\)&lt;/span&gt;, independent of &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;, such that for
 all initial &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt;, and all &lt;span class=&#34;math inline&#34;&gt;\(\kappa \in [0,1]\)&lt;/span&gt; there is a random constant
@@ -240,12 +479,12 @@ moment &lt;strong&gt;uniformly bounded in&lt;/strong&gt; &lt;span class=&#34;mat
 &lt;p&gt;Theorem 2 can be seen as a direct consequence of Theorem 1 and follows
 from a fairly straight forward argument using the mild form of
 &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; and estimates on the stochastic convolution. This argument
-is carried out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34; role=&#34;doc-biblioref&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+is carried out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;lagrangian-chaos&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Lagrangian chaos&lt;/h2&gt;
-&lt;p&gt;It has long been understood in the physics community (e.g. &lt;span class=&#34;citation&#34;&gt;Bohr et al. (&lt;a href=&#34;#ref-BMOV05&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Antonsen Jr and Ott (&lt;a href=&#34;#ref-AntonsenOtt1991&#34; role=&#34;doc-biblioref&#34;&gt;1991&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ott (&lt;a href=&#34;#ref-ott-1999&#34; role=&#34;doc-biblioref&#34;&gt;1999&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Shraiman and Siggia (&lt;a href=&#34;#ref-ShraimanSiggia00&#34; role=&#34;doc-biblioref&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the predominant
+&lt;p&gt;It has long been understood in the physics community (e.g. &lt;span class=&#34;citation&#34;&gt;Bohr et al. (&lt;a href=&#34;#ref-BMOV05&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;Antonsen Jr and Ott (&lt;a href=&#34;#ref-AntonsenOtt1991&#34;&gt;1991&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ott (&lt;a href=&#34;#ref-ott-1999&#34;&gt;1999&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Shraiman and Siggia (&lt;a href=&#34;#ref-ShraimanSiggia00&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the predominant
 mechanism for mixing in spatially regular fluids is the chaotic motion
 of the particle trajectories &lt;span class=&#34;math inline&#34;&gt;\(x_t = \phi^t(x)\)&lt;/span&gt; of the &lt;strong&gt;Lagrangian flow
 map&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\phi^t : \mathbb{T}^d \to \mathbb{T}^d\)&lt;/span&gt; associated to the
@@ -260,13 +499,13 @@ chaos&lt;/strong&gt; in the fluid mechanics literature.&lt;/p&gt;
 as in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; is currently hopelessly out of reach due to the
 possible formation of coherent structures and lack of ergodicity.
 However, starting with the seminal work of Furstenberg
-(&lt;span class=&#34;citation&#34;&gt;Furstenberg (&lt;a href=&#34;#ref-furstenberg1963noncommuting&#34; role=&#34;doc-biblioref&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;), significant success has been achieved in
+(&lt;span class=&#34;citation&#34;&gt;Furstenberg (&lt;a href=&#34;#ref-furstenberg1963noncommuting&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;), significant success has been achieved in
 proving existence and positivity of Lyapunov exponents in the context of
-&lt;em&gt;random dynamical systems&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold2013random&#34; role=&#34;doc-biblioref&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kifer (&lt;a href=&#34;#ref-kifer2012ergodic&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;P. H. Baxendale (&lt;a href=&#34;#ref-baxendale1989lyapunov&#34; role=&#34;doc-biblioref&#34;&gt;1989&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ledrappier and Young (&lt;a href=&#34;#ref-ledrappier1985metric&#34; role=&#34;doc-biblioref&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt;). Ideas in this vein are
+&lt;em&gt;random dynamical systems&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold2013random&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kifer (&lt;a href=&#34;#ref-kifer2012ergodic&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;,
+&lt;span class=&#34;citation&#34;&gt;P. H. Baxendale (&lt;a href=&#34;#ref-baxendale1989lyapunov&#34;&gt;1989&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ledrappier and Young (&lt;a href=&#34;#ref-ledrappier1985metric&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt;). Ideas in this vein are
 what enabled us to prove the following Lagrangian chaos result, the
 first step in the proof of Theorem 3.&lt;/p&gt;
-&lt;p&gt;Theorem 3 &lt;span class=&#34;citation&#34;&gt;(Lagrangian chaos, &lt;a href=&#34;#ref-BBPS18&#34; role=&#34;doc-biblioref&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2018&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Theorem 3 &lt;span class=&#34;citation&#34;&gt;(Lagrangian chaos, &lt;a href=&#34;#ref-BBPS18&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2018&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise as above, then
 there exists a &lt;strong&gt;deterministic&lt;/strong&gt; constant &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 &amp;gt; 0\)&lt;/span&gt; (independent
 of &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\omega\)&lt;/span&gt;) for which &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; holds almost surely.&lt;/p&gt;
@@ -288,7 +527,7 @@ equivalent to exponential mixing &lt;span class=&#34;math inline&#34;&gt;\(\eqre
 &lt;p&gt;Despite this simple picture, passing from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt;
 requires serious work. When random driving is present, the &lt;strong&gt;two-point
 process&lt;/strong&gt; is a powerful tool for proving exponential correlation decay
-(&lt;span class=&#34;citation&#34;&gt;P. Baxendale and Stroock (&lt;a href=&#34;#ref-baxendale1988large&#34; role=&#34;doc-biblioref&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Dolgopyat et al. (&lt;a href=&#34;#ref-dolgopyat2004sample&#34; role=&#34;doc-biblioref&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
+(&lt;span class=&#34;citation&#34;&gt;P. Baxendale and Stroock (&lt;a href=&#34;#ref-baxendale1988large&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Dolgopyat et al. (&lt;a href=&#34;#ref-dolgopyat2004sample&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
 &lt;p&gt;In our context, this is the Markov process that simultaneously tracks
 two particles subjected to the same velocity field
 &lt;span class=&#34;math inline&#34;&gt;\((u_t,\phi^t(x),\phi^t(y))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(x \neq y\)&lt;/span&gt;. Correlation decay for
@@ -297,13 +536,13 @@ probabilistic law of &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), 
 equilibrium statistics (known as &lt;em&gt;geometric ergodicity&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;The proof of Theorem 2 with &lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt; utilizes this connection using
 tools from the theory of Markov chains, particularly the Harris theorem
-&lt;span class=&#34;citation&#34;&gt;Meyn and Tweedie (&lt;a href=&#34;#ref-meyn2012markov&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;. The main difficulty to overcome here is the degeneracy
+&lt;span class=&#34;citation&#34;&gt;Meyn and Tweedie (&lt;a href=&#34;#ref-meyn2012markov&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;. The main difficulty to overcome here is the degeneracy
 in the &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), \phi^t(y))\)&lt;/span&gt; process near the diagonal
 &lt;span class=&#34;math inline&#34;&gt;\(\{x=y\}\)&lt;/span&gt;. One needs to show that any time two particles are close, they
 separate again exponentially fast. This effectively amounts to a large
 deviation estimate on the convergence of finite-time Lyapunov exponents
 to the asymptotic Lyapunov exponent deduced in Theorem 3, and is carried
-out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19I&#34; role=&#34;doc-biblioref&#34;&gt;2019b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19I&#34;&gt;2019b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;It remains to incorporate molecular diffusion (&lt;span class=&#34;math inline&#34;&gt;\(\kappa &amp;gt; 0\)&lt;/span&gt;) into this
 scheme. This comes down again to the two-point process, now with
 Lagrangian flow &lt;span class=&#34;math inline&#34;&gt;\(\phi^t_\kappa\)&lt;/span&gt; augmented by an additional white noise
@@ -312,7 +551,7 @@ The primary step is to show that one can pass to the singular limit
 &lt;span class=&#34;math inline&#34;&gt;\(\kappa \to 0\)&lt;/span&gt; in the dominant eigenvalue, eigenfunction pair for the
 Perron-Frobenius operator corresponding to
 &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t_\kappa(x), \phi^t_\kappa(y))\)&lt;/span&gt;; this is carried out in
-&lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;Bibliography&lt;/h2&gt;
@@ -1204,403 +1443,6 @@ West, Mike. 1984. &lt;span&gt;“Outlier Models and Prior Distributions in Bayes
 &lt;p&gt;YoungStatS project will resume after the New Year including webinars on random matrix theory, causal AI inference, topological data analysis, copula models and extreme value theory, and regular blogposts. You would also be able to read shorter interviews with some of our webinar speakers and blogpost authors soon in the IMS Bulletin.&lt;/p&gt;
 &lt;p&gt;We wish you to have a great holiday time - Merry Christmas and a Happy New Year 2023!&lt;/p&gt;
 &lt;p&gt;Editorial Members of the YoungStatS project.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
-      <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
-      <description>
-
-
-&lt;div id=&#34;overview&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Overview&lt;/h1&gt;
-&lt;p&gt;In this post we first review the concept of semi-parametric copula and
-the accompanying estimation procedure of pseudo-likelihood estimation
-(PLE). We then generalize the estimation problem to the setting where
-the copula signal is hidden in a semi- or non-parametric regression
-model. Under this setting we have to base the PLE on the residuals. The
-particular challenge of the diverging score function is handled via the
-technique of the weighted residual empirical processes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-semi-parametric-copula-model&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;The semi-parametric copula model&lt;/h1&gt;
-&lt;p&gt;Copula has been a popular method to model multivariate dependence
-structure since its introduction in &lt;span class=&#34;citation&#34;&gt;Sklar (&lt;a href=&#34;#ref-Sklar1959&#34; role=&#34;doc-biblioref&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;. Consider a random vector
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=(E_1,\dots,E_p)^\top\in\mathbb{R}^p\)&lt;/span&gt; with joint distribution
-function &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;; we assume throughout that &lt;span class=&#34;math inline&#34;&gt;\(E_k\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; has
-absolutely continuous marginal distribution function &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt;. Then the
-&lt;em&gt;copula&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; associated with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; is the joint distribution
-function of the marginally transformed random vector
-&lt;span class=&#34;math inline&#34;&gt;\((F_1(E_1),\dots,F_p(E_p))^\top\)&lt;/span&gt;. It is clear from this definition that
-&lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; itself is always a distribution supported on the unit hypercube
-&lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; always has &lt;em&gt;uniform marginals&lt;/em&gt; supported on &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt;
-whatever the marginals of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; may be. (The explicit form of &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;
-follows from the Sklar’s theorem, for instance Corollary 2.10.10 in
-&lt;span class=&#34;citation&#34;&gt;Nelsen (&lt;a href=&#34;#ref-Nelsen1999&#34; role=&#34;doc-biblioref&#34;&gt;2006&lt;/a&gt;)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{u}) = H(F_1^{\leftarrow}(u_1),\dots,F_p^{\leftarrow}(u_p))\)&lt;/span&gt;
-for &lt;span class=&#34;math inline&#34;&gt;\(F_k^{\leftarrow}\)&lt;/span&gt; the left-continuous inverse of &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt; and
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{u} = (u_1,\dots,u_p)^\top\in[0,1]^p\)&lt;/span&gt;.) Furthermore, by the
-&lt;em&gt;invariance property&lt;/em&gt;, if &lt;span class=&#34;math inline&#34;&gt;\(g_1,\dots,g_p\)&lt;/span&gt; are univariate strictly
-increasing functions, then &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; and its marginally transformed
-version &lt;span class=&#34;math inline&#34;&gt;\((g_1(E_1),\dots,g_p(E_p))^\top\)&lt;/span&gt; will admit the copula.&lt;/p&gt;
-&lt;p&gt;Thus, copula is a &lt;em&gt;margin-free&lt;/em&gt; measure of multivariate dependence.
-Applied in the opposite direction, one could also start from a copula
-and couple the copula with arbitrary marginals to create multivariate
-distributions in a flexible manner. For instance, beyond the usual
-applications in finance and economy, copulas could be used in the latter
-manner to model the dependence among the repeated observations in
-longitudinal data (&lt;span class=&#34;citation&#34;&gt;Sun, Frees, and Rosenberg (&lt;a href=&#34;#ref-SunFreesRosenberg2008&#34; role=&#34;doc-biblioref&#34;&gt;2008&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;In this post we will focus on the &lt;em&gt;semi-parametric&lt;/em&gt; copula model that
-serves as a middle ground between a totally non-parametric approach to
-copula modelling (via the so called &lt;em&gt;empirical copula&lt;/em&gt;, see for instance
-&lt;span class=&#34;citation&#34;&gt;Fermanian, Radulović, and Wegkamp (&lt;a href=&#34;#ref-FermanianRadulovicWegkamp2004&#34; role=&#34;doc-biblioref&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Berghaus, Bücher, and Volgushev (&lt;a href=&#34;#ref-BerghausBucherVolgushev2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;) and a
-totally parametric modelling of the random vector &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;. In the
-semi-parametric copula model, we consider a collection of possible
-distributions of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; where the copulas
-&lt;span class=&#34;math inline&#34;&gt;\(C=C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; are constrained to be parametrized
-by an Euclidean &lt;em&gt;copula parameter&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=(\theta_1,\dots,\theta_d)^\top\)&lt;/span&gt;, but where the
-marginals &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt; could range over all
-&lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-tuples of absolutely continuous univariate distribution functions.&lt;/p&gt;
-&lt;!--------------------------------------------------------------------------------&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-pseudo-likelihood-method&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;The pseudo-likelihood method&lt;/h1&gt;
-&lt;p&gt;In the semi-parametric copula model, the primary interest is often the
-true value &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; of the copula parameter that determines
-the multivariate dependence. An obvious challenge in estimating
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; in the copula setting is how to handle the unknown
-marginals &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt;. The canonical solution is the
-pseudo-likelihood estimation (PLE) introduced in &lt;span class=&#34;citation&#34;&gt;Oakes (&lt;a href=&#34;#ref-Oakes1994&#34; role=&#34;doc-biblioref&#34;&gt;1994&lt;/a&gt;)&lt;/span&gt; and
-&lt;span class=&#34;citation&#34;&gt;Genest, Ghoudi‬, and Rivest (&lt;a href=&#34;#ref-GenestGhoudiRivest1995&#34; role=&#34;doc-biblioref&#34;&gt;1995&lt;/a&gt;)&lt;/span&gt; that we now describe.&lt;/p&gt;
-&lt;p&gt;Let
-&lt;span class=&#34;math inline&#34;&gt;\(g_1(\mathbf{\cdot};\mathbf{\theta}),\dots,g_d(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;
-be a collection of appropriate &lt;em&gt;score functions&lt;/em&gt; such that the
-population &lt;em&gt;estimating equation&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E} g_m(F_1(E_1),\dots,F_p(E_p);\mathbf{\theta})=0\)&lt;/span&gt; holds only
-when &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}=\mathbf{\theta}^*\)&lt;/span&gt;, for all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;.
-In principle one can always choose the score functions to be the ones in
-the maximum likelihood estimation, namely
-&lt;span class=&#34;math inline&#34;&gt;\(g_m(\cdot;\mathbf{\theta})=\frac{\partial}{\partial \theta_m} \log c(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(c(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt; is the density of the copula
-&lt;span class=&#34;math inline&#34;&gt;\(C(\mathbf{\cdot};\mathbf{\theta})\)&lt;/span&gt;. Thus, if &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; were
-known, to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; empirically based on a sample
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; of
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;, one could simply “find the zero” of the empirical version
-of the estimating equation, that is to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; by
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{parametric}}\)&lt;/span&gt; that solves, for all
-&lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \frac{1}{n} \sum_{i=1}^n g_m(F_1(E_{i,1}),\dots,F_p(E_{i,p});\hat{\theta}^{\text{parametric}}) =0 .
-\end{align*}\]&lt;/span&gt; (The superscript “parametric” points to the fact that when
-&lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; are known, we are basically solving a parametric
-problem.) However, in semi-parametric copula modelling we commonly avoid
-setting &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt; to some particular form. The PLE method solves
-this problem by replacing the unknown &lt;span class=&#34;math inline&#34;&gt;\(F_k\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; by its
-empirical counterpart, namely the empirical distribution function
-&lt;span class=&#34;math inline&#34;&gt;\(F_{n,k}(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\{E_{i,k} \le t \}\)&lt;/span&gt;.
-The &lt;em&gt;oracle&lt;/em&gt; PLE estimator &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; of
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; is then the one that solves the following, revised
-estimating equation: for all &lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-    \frac{1}{n} \sum_{i=1}^n g_m(F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p});\mathbf{\hat{\theta}}^{\text{oracle}}) = \int g_m(\mathbf{u};\mathbf{\hat{\theta}}^{\text{oracle}})\mathrm{d}C_n(\mathbf{u}) = 0.
-    \label{eq1}\tag{1}
-\end{align}\]&lt;/span&gt; All integrals in this post are over &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt;. To simplify
-our expression above and later, we have introduced the empirical copula
-&lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt; that is a multivariate distribution function on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^p\)&lt;/span&gt; with a
-mass of &lt;span class=&#34;math inline&#34;&gt;\(1/n\)&lt;/span&gt; at each of
-&lt;span class=&#34;math inline&#34;&gt;\((F_{n,1}(E_{i,1}),\dots,F_{n,p}(E_{i,p}))^\top\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;
-(precisely,
-&lt;span class=&#34;math inline&#34;&gt;\(C_n(\mathbf{u}) = \frac{1}{n} \sum_{i=1}^n \mathbf{1}\left\{ F_{n,1}(E_{i,1})\le u_1, \dots, F_{n,p}(E_{i,p})\le u_p \right\}\)&lt;/span&gt;).
-The qualifier “oracle” in &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\hat{\theta}}^{\text{oracle}}\)&lt;/span&gt; is
-used to distinguish the current case when we can still directly observe
-the copula sample &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_i\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; (albeit without
-knowing &lt;span class=&#34;math inline&#34;&gt;\(F_1,\dots,F_p\)&lt;/span&gt;), from the case when even that sample will be
-subject to perturbation which we now turn to.&lt;/p&gt;
-&lt;!--------------------------------------------------------------------------------&gt;
-&lt;/div&gt;
-&lt;div id=&#34;residual-based-pseudo-likelihood-for-semi-parametric-copula-adjusted-for-regression&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Residual-based pseudo-likelihood for semi-parametric copula adjusted for regression&lt;/h1&gt;
-&lt;p&gt;From now on we suppose that the copula signal
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}=\mathbf{E}_{\mathbf{\theta}^*}\)&lt;/span&gt; is “hidden” in a
-multivariate response semi- or non-parametric regression model, a
-setting considered in our recent work (&lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;): for a
-covariate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\in\mathbb{R}^q\)&lt;/span&gt; (independent of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}\)&lt;/span&gt;) and
-a response &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Y}=(Y_1,\dots,Y_p)^\top\in\mathbb{R}^p\)&lt;/span&gt;,
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    Y_1 &amp;amp;= m_1(\mathbf{X}) + E_1 , \\
-    &amp;amp;\quad \vdots \\
-    Y_p &amp;amp;= m_p(\mathbf{X}) + E_p .
-\end{align*}\]&lt;/span&gt; In its raw form, the model above is a purely non-parametric
-regression model; by specifying particular forms of the regression
-function &lt;span class=&#34;math inline&#34;&gt;\(m_k\)&lt;/span&gt;, the above will accommodate a wide range of popular non-
-and semi-parametric regression variants such as the partly linear
-regression model and the additive model. (It’s not much more difficult
-to consider a more flexible, heteroscedastic model
-&lt;span class=&#34;math inline&#34;&gt;\(Y_k = m_k(\mathbf{X}) + \sigma_k(\mathbf{X})E_k\)&lt;/span&gt;, though we refrain
-from doing so in this post.) &lt;span class=&#34;citation&#34;&gt;Gijbels, Omelka, and Veraverbeke (&lt;a href=&#34;#ref-GijbelsOmelkaVeraverbeke2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt; considered a
-similar model and studied the resulting &lt;em&gt;empirical copula process&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Under this regression model, we can observe an i.i.d. sample
-&lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y}_1,\mathbf{X}_1),\dots,(\mathbf{Y}_n,\mathbf{X}_n)\)&lt;/span&gt; of
-&lt;span class=&#34;math inline&#34;&gt;\((\mathbf{Y},\mathbf{X})\)&lt;/span&gt;, but crucially &lt;em&gt;not&lt;/em&gt; the copula sample
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E}_1, \dots, \mathbf{E}_n\)&lt;/span&gt;. To eventually arrive at our
-estimator for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt; in this setting, we will first form
-our empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; based on the residuals of the
-regression as follows. Let &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k\)&lt;/span&gt; be some estimator for &lt;span class=&#34;math inline&#34;&gt;\(m_k\)&lt;/span&gt;.
-Let’s estimate the &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;th component of &lt;span class=&#34;math inline&#34;&gt;\(E_i=(E_{i,1},\dots,E_{i,p})^\top\)&lt;/span&gt;
-by the residual &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \hat{E}_{i,k} = Y_{i,k} - \hat{m}_k(X_i) .
-\end{align*}\]&lt;/span&gt; Then, we form the residual-based empirical distribution and
-copula: &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \hat{F}_{n,k}(t) = \dfrac{1}{n+1} \sum_{i=1}^n \mathbf{1}\{ \hat{E}_{i,k} \le t \},\quad \hat{C}_n(\mathbf{u}) = \frac{1}{n} \sum_{i=1}^n \prod_{k=1}^p \mathbf{1}\{\hat{F}_{n,k}(\hat{E}_{i,k})\le u_k \}.
-\end{align*}\]&lt;/span&gt; Finally, to estimate &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{\theta}^*\)&lt;/span&gt;, we settle for the
-estimator &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}}\)&lt;/span&gt; that solves &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-    \frac{1}{n} \sum_{i=1}^n g_m( \hat{F}_{n,1}(\hat{E}_{i,1}),\dots,\hat{F}_{n,p}(\hat{E}_{i,p}) ;\hat{\theta}^{\text{residual}}) = \int g_m(\mathbf{u};\hat{\theta}^{\text{residual}})\mathrm{d}\hat{C}_n(\mathbf{u}) = 0 .
-    \label{eq2}\tag{2}
-\end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Comparing Eq. (&lt;a href=&#34;#mjx-eqn-eq2&#34;&gt;2&lt;/a&gt;) to Eq. (&lt;a href=&#34;#mjx-eqn-eq1&#34;&gt;1&lt;/a&gt;), we would
-expect that when the residual-based empirical copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; is
-asymptotically indistinguishable from the oracle empirical copula &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;,
-the residual-based copula parameter estimator
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}}\)&lt;/span&gt; should be asymptotically
-indistinguishable from &lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{oracle}}\)&lt;/span&gt; as well. To
-formally reach this conclusion, standard estimating equation theory
-requires (among other conditions that we will ignore in this post) that
-the estimating equations at the truth should become indistinguishable,
-namely &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-    \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) - \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}C_n(\mathbf{u}) = o_p(n^{-1/2}) .
-    \label{eq3}\tag{3}
-\end{align}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;One typical, although ultimately restrictive, approach to establish Eq.
-(&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) is to invoke integration by parts
-(&lt;span class=&#34;citation&#34;&gt;Neumeyer, Omelka, and Hudecová (&lt;a href=&#34;#ref-NeumeyerOmelkaHudecova2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Chen, Huang, and Yi (&lt;a href=&#34;#ref-ChenHuangYi2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;): ideally, this would
-yield &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}\hat{C}_n(\mathbf{u}) \sim &amp;amp;\int \hat{C}_n(\mathbf{u})\mathrm{d}g_m(\mathbf{u};\mathbf{\theta}^*) \\
-    \stackrel{\text{up to}~o_p(n^{-1/2})}{\approx} &amp;amp; C_n(\mathbf{u})\mathrm{d}g_m(\mathbf{u};\mathbf{\theta}^*) \sim \int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}C_n(\mathbf{u}) .
-\end{align*}\]&lt;/span&gt; In the above “&lt;span class=&#34;math inline&#34;&gt;\(\sim\)&lt;/span&gt;” is only meant to give a drastically
-simplified and hence not-quite-correct representation of integration by
-parts (we refer the readers to Appendix A in &lt;span class=&#34;citation&#34;&gt;Radulović, Wegkamp, and Zhao (&lt;a href=&#34;#ref-RWZ2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt; for a precise
-multivariate integration by parts formula particularly useful for
-copulas), but it already conveys the underlying idea: the aim is to
-convert &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt; in the integrals from measures to
-integrands so that proving the closeness between the two integrals is
-clearly reduced to proving the closeness between &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(C_n\)&lt;/span&gt;.
-However, the integration by parts trick, although popular, often
-requires &lt;em&gt;bounded&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; to properly define the measure &lt;span class=&#34;math inline&#34;&gt;\(\mathrm{d}g_m\)&lt;/span&gt;,
-but this is often &lt;em&gt;not satisfied for even the most common copulas&lt;/em&gt;. For
-instance, in Gaussian copula, the score functions are quadratic forms of
-the &lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}(\mathbf{u}_k)\)&lt;/span&gt;’s where &lt;span class=&#34;math inline&#34;&gt;\(\Phi^{\leftarrow}\)&lt;/span&gt; is the
-standard normal quantile function (see Eq. (2.2) in &lt;span class=&#34;citation&#34;&gt;Segers, Akker, and Werker (&lt;a href=&#34;#ref-SVW2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;), so are
-clearly divergent as &lt;span class=&#34;math inline&#34;&gt;\(u_k\)&lt;/span&gt; approaches 0 or 1.&lt;/p&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Zhao, Gijbels, and Van Keilegom (&lt;a href=&#34;#ref-ZhaoGijbelsKeilegom2022&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; we instead adopted a more direct approach.
-Let
-&lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*)=\frac{\partial}{\partial u_k} g_m(\mathbf{u};\mathbf{\theta}^*)\)&lt;/span&gt;.
-Then Taylor-expanding Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;) we see that we will need
-(among other ingredients) an &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt; rate for the terms on the
-right-hand side of &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-\int g_m(\mathbf{u};\mathbf{\theta}^*)\mathrm{d}({\hat{C}_n-C_n})(\mathbf{u}) \approx \sum_{k=1}^p \left[ \frac{1}{n} \sum_{i=1}^n g_m^{[k]}(F_k(E_{i,k});\mathbf{\theta}^*) \left\{ \hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k}) \right\}  \right] .
-\label{eq4}\tag{4}
-\end{align}\]&lt;/span&gt; It is &lt;em&gt;not&lt;/em&gt; enough that the terms
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt; on the right-hand side
-are &lt;span class=&#34;math inline&#34;&gt;\(o_p(n^{-1/2})\)&lt;/span&gt; (in fact they are not), due to the divergence of
-&lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. We need to take a more careful look at
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}(\hat{E}_{i,k})-F_{n,k}(E_{i,k})\)&lt;/span&gt;, whose analysis belongs
-to &lt;em&gt;residual empirical processes&lt;/em&gt;. To demonstrate the benefits of
-considering the &lt;em&gt;weighted&lt;/em&gt; version of such processes, we first review
-some basic literature on the weighted (non-residual) empirical processes
-in the simplified setting of the real line.&lt;/p&gt;
-&lt;!--------------------------------------------------------------------------------&gt;
-&lt;/div&gt;
-&lt;div id=&#34;weighted-empirical-processes-on-the-real-line&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Weighted empirical processes on the real line&lt;/h1&gt;
-&lt;p&gt;In this section we consider estimating a distribution function &lt;span class=&#34;math inline&#34;&gt;\(F=F_U\)&lt;/span&gt;
-of a random variable &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;. We rely on the empirical distribution function
-&lt;span class=&#34;math inline&#34;&gt;\(F_n\)&lt;/span&gt; constructed from the i.i.d. observations &lt;span class=&#34;math inline&#34;&gt;\(U_1, \dots, U_n\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(F_n(t) = \frac{1}{n+1} \sum_{i=1}^n \mathbf{1}\left\{U_i\le t\right\}\)&lt;/span&gt;.
-The resulting classical empirical process on the real line
-&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n} (F_n -F)(t)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt; must be one of the most
-extensively studied objects in all of probability; for illustration we
-will just quote a form of the associated law of the iterated logarithm
-(LIL): &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \limsup_{n\rightarrow\infty} \sup_{t} \left|\dfrac{1}{\sqrt{\log\log(n)}} \sqrt{n} (F_n -F)(t) \right| = \dfrac{1}{\sqrt{2}} .
-\end{align*}\]&lt;/span&gt; Clearly, the LIL treats all points &lt;span class=&#34;math inline&#34;&gt;\(t\in \mathbb{R}\)&lt;/span&gt;
-&lt;em&gt;equally&lt;/em&gt;. However, in reality the &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; at some &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; is easier to
-estimate than others. This is essentially because the variability
-&lt;span class=&#34;math inline&#34;&gt;\(\text{var}\left\{F_n(t)\right\}=F(t)\left\{1-F(t)\right\}/n\)&lt;/span&gt; approaches
-&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; when &lt;span class=&#34;math inline&#34;&gt;\(F(t)\)&lt;/span&gt; approaches &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;, for any &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;. We can clearly
-observe this feature in the small simulation study represented by the
-following figure, where the “band” enclosing the deviations (based on
-100 Monte-Carlo simulations) gets narrower toward the boundaries of the
-support of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-12-07-weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression_files/weighted_Fn_02.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Above: Plot of the deviation &lt;span class=&#34;math inline&#34;&gt;\(F_n-F\)&lt;/span&gt;, for sample size &lt;span class=&#34;math inline&#34;&gt;\(n=50\)&lt;/span&gt;, based on
-100 Monte-Carlo simulations. For simplicity we assumed
-&lt;span class=&#34;math inline&#34;&gt;\(U\sim{Unif}(0,1)\)&lt;/span&gt;, so &lt;span class=&#34;math inline&#34;&gt;\(F(t)=t\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(t\in[0,1]\)&lt;/span&gt;. The deviation from each
-simulation is represented by a single red dashed line. The 10% and 90%
-quantiles of the deviations at each &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; value are indicated by the two
-blue lines. Clearly, the “band” enclosing the deviations gets narrower
-toward the boundaries of the support of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;This feature can also be characterized theoretically. For instance, we
-can find the LIL for the weighted process &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)/\sqrt{F}\)&lt;/span&gt;,
-that is the classical process but now scaled by an additional standard
-deviation factor &lt;span class=&#34;math inline&#34;&gt;\(1/\sqrt{F}\)&lt;/span&gt;, from &lt;span class=&#34;citation&#34;&gt;Csáki (&lt;a href=&#34;#ref-Csaki1977&#34; role=&#34;doc-biblioref&#34;&gt;1977&lt;/a&gt;)&lt;/span&gt;: for some &lt;span class=&#34;math inline&#34;&gt;\(0&amp;lt;C&amp;lt;\infty\)&lt;/span&gt;,
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \limsup_{n\rightarrow\infty} \sup_{F(t)\in(\frac{1}{n},\frac{1}{2}]} \left|\dfrac{\log\log\log(n)}{\log\log(n)} \sqrt{n}\dfrac{(F_n -F)(t)}{\sqrt{F(t)}}\right| = C.
-\end{align*}\]&lt;/span&gt; Compared to the LIL for the unweighted process earlier, we
-can see that the weighted process is just slightly more difficult to
-bound, but now &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)(t)\)&lt;/span&gt; clearly enjoys a tighter bound
-toward the boundaries of the support of &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; due to the vanishing
-&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{F(t)}\)&lt;/span&gt; there.&lt;/p&gt;
-&lt;p&gt;Such results on the weighted empirical processes can be generalized to
-settings beyond the real line, for instance to sets in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^p\)&lt;/span&gt;
-(&lt;span class=&#34;citation&#34;&gt;Alexander (&lt;a href=&#34;#ref-Alexander1987&#34; role=&#34;doc-biblioref&#34;&gt;1987&lt;/a&gt;)&lt;/span&gt;) and sets of functions
-(&lt;span class=&#34;citation&#34;&gt;Giné, Koltchinskii, and Wellner (&lt;a href=&#34;#ref-GineKoltchinskiiJonWellner2003&#34; role=&#34;doc-biblioref&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
-&lt;!--------------------------------------------------------------------------------&gt;
-&lt;/div&gt;
-&lt;div id=&#34;results-for-residual-based-estimators&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Results for residual-based estimators&lt;/h1&gt;
-&lt;p&gt;For us, the idea of the weighted empirical processes will be applied to
-the residual empirical processes, which will further culminate in our
-eventual result on the residual-based estimator
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}}\)&lt;/span&gt; for the copula parameter. We will first
-consider the weighted residual empirical processes.&lt;/p&gt;
-&lt;div id=&#34;results-on-weighted-residual-empirical-process&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Results on weighted residual empirical process&lt;/h2&gt;
-&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt; be the density of &lt;span class=&#34;math inline&#34;&gt;\(E_k\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\cal{T}_n\)&lt;/span&gt; be the &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt;-field
-generated by the &lt;span class=&#34;math inline&#34;&gt;\((\mathbf{X}_i,\mathbf{Y}_i)\)&lt;/span&gt;’s, &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;.
-The usual decomposition of a residual empirical process is
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-    \hat{F}_{n,k}(t) - F_{n,k}(t) = f_k(t) \cdot \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] + r_{1,k}(t)
-\end{align*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; is a remainder term that could be
-controlled as follows:&lt;/p&gt;
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: Suppose that we can embed &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt; into a function
-class &lt;span class=&#34;math inline&#34;&gt;\(\cal{D}\)&lt;/span&gt; with &lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-1-4757-2545-2_19&#34;&gt;bracketing
-number&lt;/a&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(N_{[]}(\tau,\cal{D}) \lesssim (1/\tau)^\beta \exp(K (1/\tau)^{1/\nu})\)&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\nu\)&lt;/span&gt; are constants. Suppose that
-&lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty=O_p(a_n)\)&lt;/span&gt; (where &lt;span class=&#34;math inline&#34;&gt;\(\|\cdot\|_\infty\)&lt;/span&gt; is the
-supremum norm over the support of &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\)&lt;/span&gt;). Then under mild
-regularity conditions, &lt;span class=&#34;math display&#34;&gt;\[\begin{gather*}
-        \sup_{t\in\ \mathbb{R}} \dfrac{|r_{1,k}(t)|}{ n^{-\frac{1}{2}} \left\{ f_k(t) \cdot a_n + a_n^2\right\}^{\frac{1}{2}(1-1/\nu)} + n^{-\frac{1}{1+1/\nu}} + a_n^2 } = O_p( 1 ) .
-    \end{gather*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Clearly, the convergence rate of the remainder term &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; is
-improved by both the rate of &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty\)&lt;/span&gt; and the weight
-&lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;. The latter point is especially beneficial when &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt; is a density
-“of the usual shape” that decays at its tails, which will allow the rate
-of &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; to be tightened accordingly (exactly similar to how the
-rate of &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}(F_n -F)(t)\)&lt;/span&gt; is tightened by &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{F(t)}\)&lt;/span&gt; in the
-weighted empirical processes on the real line that we reviewed earlier).
-These features will tame the divergence of &lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt; in Eq.
-(&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Because what eventually form the ingredients of the residual-based
-copula &lt;span class=&#34;math inline&#34;&gt;\(\hat{C}_n\)&lt;/span&gt; are the &lt;em&gt;residual ranks&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} )\)&lt;/span&gt;’s, we need to go one step further and
-consider the analogous results for them:&lt;/p&gt;
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: For all &lt;span class=&#34;math inline&#34;&gt;\(n\ge 1\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt;,
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-        \label{eq5}\tag{5}
-        \hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} ) &amp;amp;= -f_k(E_{i,k}) \left\{ (\hat{m}_k-m_k)(\mathbf{X}_i) - \mathbb{E}\left[ (\hat{m}_k-m_k)(\mathbf{X}) | \cal{T}_n \right] \right\} + r_{1,k}( \hat{E}_{i,k} ) + r_{2,k,i}
-    \end{align}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; is as in the last theorem, and
-&lt;span class=&#34;math inline&#34;&gt;\(r_{2,k,i}\)&lt;/span&gt; is another remainder term that satisfies &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-        \max_{i\in\{1,\dots,n\}} \dfrac{ |r_{2,k,i}| }{ \log^{\frac{1}{2}}(n) n^{-\frac{1}{2}} \left\{ f_k(E_{i,k})\cdot a_n \right\}^{\frac{1}{2}} + a_n^2 } = O_p(1) .
-    \end{align*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Note that similar to &lt;span class=&#34;math inline&#34;&gt;\(r_{1,k}\)&lt;/span&gt; earlier, the rate of &lt;span class=&#34;math inline&#34;&gt;\(r_{2,k,i}\)&lt;/span&gt; also
-enjoys the dependence on &lt;span class=&#34;math inline&#34;&gt;\(\|\hat{m}_k-m_k\|_\infty\)&lt;/span&gt; and the weighing by
-&lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;results-on-residual-based-estimator-for-the-copula-parameter&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Results on residual-based estimator for the copula parameter&lt;/h2&gt;
-&lt;p&gt;We are now ready to plug in the decomposition of
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{F}_{n,k}( \hat{E}_{i,k} ) - F_{n,k}( E_{i,k} )\)&lt;/span&gt; in Eq.
-(&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) in the last theorem into (&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;). The
-leading term in Eq. (&lt;a href=&#34;#mjx-eqn-eq5&#34;&gt;5&lt;/a&gt;) (the one proportional to &lt;span class=&#34;math inline&#34;&gt;\(f_k\)&lt;/span&gt;),
-which is centered, is now summed over &lt;span class=&#34;math inline&#34;&gt;\(i\in\{1,\dots,n\}\)&lt;/span&gt; in
-(&lt;a href=&#34;#mjx-eqn-eq4&#34;&gt;4&lt;/a&gt;) and so enjoys an additional &lt;span class=&#34;math inline&#34;&gt;\(n^{-1/2}\)&lt;/span&gt;-scaling. The
-remainder terms are weighted and so tame the divergence of the scores
-&lt;span class=&#34;math inline&#34;&gt;\(g_m^{[k]}\)&lt;/span&gt;. Eventually, we arrive at the asymptotic equivalence between
-the residual-based PLE and the oracle PLE:&lt;/p&gt;
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: Under the conditions of the last two theorems, and some
-additional regularity conditions which in particular require, for
-&lt;span class=&#34;math inline&#34;&gt;\(m\in\{1,\dots,d\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\in\{1,\dots,p\}\)&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-        \int \left\{g_m^{[k]}(\mathbf{u};\mathbf{\theta}^*) f_k(F_k^{\leftarrow}(u_k)) \right\}^2\mathrm{d}C(\mathbf{u}) &amp;lt; \infty,
-        \label{eq6}\tag{6}
-    \end{align}\]&lt;/span&gt; the asymptotic equivalence in Eq. (&lt;a href=&#34;#mjx-eqn-eq3&#34;&gt;3&lt;/a&gt;)
-holds. Furthermore,
-&lt;span class=&#34;math inline&#34;&gt;\(\hat{\theta}^{\text{residual}} - \hat{\theta}^{\text{oracle}} = o_p(n^{-1/2})\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Condition (&lt;a href=&#34;#mjx-eqn-eq6&#34;&gt;6&lt;/a&gt;) in fact allows for quite non-trivial
-divergence of the score functions &lt;span class=&#34;math inline&#34;&gt;\(g_m\)&lt;/span&gt; (it certainly accommodates the
-Gaussian and the &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;-copulas). To apply the theorem above, one still
-needs to verify the correct upper bound on the bracketing number for
-embedding &lt;span class=&#34;math inline&#34;&gt;\(\hat{m}_k-m_k\)&lt;/span&gt;, which again turns out to be non-restrictive.
-For instance, for partly linear regression
-&lt;span class=&#34;math inline&#34;&gt;\(Y_k = \tilde{m}_k(\mathbf{x}) + \mathbf{\theta}_k^\top \mathbf{w} + E_k\)&lt;/span&gt;
-with &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{w}\in\mathbb{R}^{q_{\mathbf{L},n}}\)&lt;/span&gt;, we can allow the
-dimension &lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}\)&lt;/span&gt; of the linear covariate to grow up to
-&lt;span class=&#34;math inline&#34;&gt;\(q_{\mathbf{L},n}=o(n^{1/4})\)&lt;/span&gt;.&lt;/p&gt;
-&lt;!--------------------------------------------------------------------------------&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;Bibliography&lt;/h1&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-Alexander1987&#34; class=&#34;csl-entry&#34;&gt;
-Alexander, Kenneth S. 1987. &lt;span&gt;“Rates of Growth and Sample Moduli for Weighted Empirical Processes Indexed by Sets.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt; 75 (3): 379–423.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BerghausBucherVolgushev2017&#34; class=&#34;csl-entry&#34;&gt;
-Berghaus, Betina, Axel Bücher, and Stanislav Volgushev. 2017. &lt;span&gt;“Weak Convergence of the Empirical Copula Process with Respect to Weighted Metrics.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 23 (1): 743–72.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ChenHuangYi2021&#34; class=&#34;csl-entry&#34;&gt;
-Chen, Xiaohong, Zhuo Huang, and Yanping Yi. 2021. &lt;span&gt;“Efficient Estimation of Multivariate Semi-Nonparametric &lt;span&gt;GARCH&lt;/span&gt; Filtered Copula Models.”&lt;/span&gt; &lt;em&gt;Journal of Econometrics&lt;/em&gt; 222 (1): 484–501.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Csaki1977&#34; class=&#34;csl-entry&#34;&gt;
-Csáki, E. 1977. &lt;span&gt;“The Law of the Iterated Logarithm for Normalized Empirical Distribution Function.”&lt;/span&gt; &lt;em&gt;Zeitschrift Für Wahrscheinlichkeitstheorie Und Verwandte Gebiete&lt;/em&gt; 238 (2): 147–67.
-&lt;/div&gt;
-&lt;div id=&#34;ref-FermanianRadulovicWegkamp2004&#34; class=&#34;csl-entry&#34;&gt;
-Fermanian, Jean-David, Dragan Radulović, and Marten Wegkamp. 2004. &lt;span&gt;“Weak Convergence of Empirical Copula Processes.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 10 (5): 847–60.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GenestGhoudiRivest1995&#34; class=&#34;csl-entry&#34;&gt;
-Genest, Christian, ‪Kilani Ghoudi‬, and ‪Louis-Paul Rivest. 1995. &lt;span&gt;“A Semiparametric Estimation Procedure of Dependence Parameters in Multivariate Families of Distributions.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; 82: 543–52.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GijbelsOmelkaVeraverbeke2015&#34; class=&#34;csl-entry&#34;&gt;
-Gijbels, Irène, Marek Omelka, and Noël Veraverbeke. 2015. &lt;span&gt;“Estimation of a Copula When a Covariate Affects Only Marginal Distributions.”&lt;/span&gt; &lt;em&gt;Scandinavian Journal of Statistics&lt;/em&gt; 42 (4): 1109–26.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GineKoltchinskiiJonWellner2003&#34; class=&#34;csl-entry&#34;&gt;
-Giné, Evarist, Vladimir Koltchinskii, and Jon. A. Wellner. 2003. &lt;span&gt;“Ratio Limit Theorems for Empirical Processes.”&lt;/span&gt; In &lt;em&gt;Stochastic Inequalities and Applications&lt;/em&gt;, edited by Evarist Giné, Christian Houdré, and David Nualart, 249–78. Birkhäuser.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Nelsen1999&#34; class=&#34;csl-entry&#34;&gt;
-Nelsen, Roger B. 2006. &lt;em&gt;An &lt;span&gt;I&lt;/span&gt;ntroduction to &lt;span&gt;C&lt;/span&gt;opulas&lt;/em&gt;. 2nd ed. New York: Springer.
-&lt;/div&gt;
-&lt;div id=&#34;ref-NeumeyerOmelkaHudecova2019&#34; class=&#34;csl-entry&#34;&gt;
-Neumeyer, Natalie, Marek Omelka, and Šárka Hudecová. 2019. &lt;span&gt;“A Copula Approach for Dependence Modeling in Multivariate Nonparametric Time Series.”&lt;/span&gt; &lt;em&gt;Journal of Multivariate Analysis&lt;/em&gt; 171: 139–62.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Oakes1994&#34; class=&#34;csl-entry&#34;&gt;
-Oakes, David. 1994. &lt;span&gt;“Multivariate Survival Distributions.”&lt;/span&gt; &lt;em&gt;Journal of Nonparametric Statistics&lt;/em&gt; 3 (3–4): 343–54.
-&lt;/div&gt;
-&lt;div id=&#34;ref-RWZ2017&#34; class=&#34;csl-entry&#34;&gt;
-Radulović, Dragan, Marten Wegkamp, and Yue Zhao. 2017. &lt;span&gt;“Weak Convergence of Empirical Copula Processes Indexed by Functions.”&lt;/span&gt; &lt;em&gt;Bernoulli&lt;/em&gt; 23 (4): 3346–84.
-&lt;/div&gt;
-&lt;div id=&#34;ref-SVW2014&#34; class=&#34;csl-entry&#34;&gt;
-Segers, Johan, Ramon van den Akker, and Bas J. M. Werker. 2014. &lt;span&gt;“Semiparametric &lt;span&gt;G&lt;/span&gt;aussian Copula Models: Geometry and Efficient Rank-Based Estimation.”&lt;/span&gt; &lt;em&gt;The Annals of Statistics&lt;/em&gt; 42 (5): 1911–40.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Sklar1959&#34; class=&#34;csl-entry&#34;&gt;
-Sklar, Abe. 1959. &lt;span&gt;“Fonctions de Répartition à n Dimensions Et Leurs Marges.”&lt;/span&gt; &lt;em&gt;Publications de l’Institut de Statistique de L’Université de Paris&lt;/em&gt; 8: 229–31.
-&lt;/div&gt;
-&lt;div id=&#34;ref-SunFreesRosenberg2008&#34; class=&#34;csl-entry&#34;&gt;
-Sun, Jiafeng, Edward W. Frees, and Marjorie A. Rosenberg. 2008. &lt;span&gt;“Heavy-Tailed Longitudinal Data Modeling Using Copulas.”&lt;/span&gt; &lt;em&gt;Insurance: Mathematics and Economics&lt;/em&gt; 42 (2): 817–30.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ZhaoGijbelsKeilegom2022&#34; class=&#34;csl-entry&#34;&gt;
-Zhao, Yue, Irène Gijbels, and Ingrid Van Keilegom. 2022. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Parametric copula adjusted for non- and semiparametric regression&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;The Annals of Statistics&lt;/em&gt; 50 (2): 754–80.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

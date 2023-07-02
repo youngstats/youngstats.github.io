@@ -6,7 +6,34 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>combinatorics</title>
+      <link>https://youngstats.github.io/categories/combinatorics/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/combinatorics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability-theory</title>
+      <link>https://youngstats.github.io/categories/probability-theory/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/probability-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random-geometry</title>
+      <link>https://youngstats.github.io/categories/random-geometry/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/random-geometry/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bayesian-nonparametrics</title>
       <link>https://youngstats.github.io/categories/bayesian-nonparametrics/</link>
@@ -67,33 +94,6 @@
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/extreme-value-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>financial-mathematics</title>
-      <link>https://youngstats.github.io/categories/financial-mathematics/</link>
-      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/financial-mathematics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability</title>
-      <link>https://youngstats.github.io/categories/probability/</link>
-      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/probability/</guid>
       <description></description>
     </item>
     

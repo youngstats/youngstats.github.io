@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>probability-theory on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/probability-theory/</link>
+    <description>Recent content in probability-theory on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/probability-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The scaling limit of Baxter permutations</title>
+      <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</guid>
+      <description>Meanders, monotone meanders, and Baxter permutationsVersions of the following question can be traced back at least to the work of Henri Poincaré (Poincaré (1912)):
+In how many ways a simple loop in the plane can cross a line a specified number of times?
+Despite many efforts, this question remains open after more than a century.Let us start by mathematically formalizing the latter question.
+Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (i.</description>
+    </item>
+    
+  </channel>
+</rss>

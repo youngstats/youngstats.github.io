@@ -6,7 +6,19 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The scaling limit of Baxter permutations</title>
+      <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</guid>
+      <description>Meanders, monotone meanders, and Baxter permutationsVersions of the following question can be traced back at least to the work of Henri Poincaré (Poincaré (1912)):
+In how many ways a simple loop in the plane can cross a line a specified number of times?
+Despite many efforts, this question remains open after more than a century.Let us start by mathematically formalizing the latter question.
+Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (i.</description>
+    </item>
+    
     <item>
       <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
       <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
@@ -97,15 +109,6 @@ Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Id
 It has been an exciting year for our project, including 7 One World YoungStatS webinars and blogposts from leading authors in various areas of statistics, probability and econometrics.
 In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).
 And we thank You, readers of our postings and participants at our webinars for your support and feedback thus far!</description>
-    </item>
-    
-    <item>
-      <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
-      <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
-      <description>OverviewIn this post we first review the concept of semi-parametric copula andthe accompanying estimation procedure of pseudo-likelihood estimation(PLE). We then generalize the estimation problem to the setting wherethe copula signal is hidden in a semi- or non-parametric regressionmodel. Under this setting we have to base the PLE on the residuals. Theparticular challenge of the diverging score function is handled via thetechnique of the weighted residual empirical processes.</description>
     </item>
     
   </channel>

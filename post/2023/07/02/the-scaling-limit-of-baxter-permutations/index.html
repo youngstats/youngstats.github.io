@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>The scaling limit of Baxter permutations | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/random-geometry">random-geometry</a>
+  
+     &hercon; <a href="/categories/probability-theory">probability-theory</a>
+  
+     &hercon; <a href="/categories/combinatorics">combinatorics</a>
+  
+  </div>
+
+  <h1><span class="title">The scaling limit of Baxter permutations</span></h1>
+
+  
+  <h3 class="author">Jacopo Borga
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="meanders-monotone-meanders-and-baxter-permutations" class="section level2">
+<h2>Meanders, monotone meanders, and Baxter permutations</h2>
+<p>Versions of the following question can be traced back at least to the work of Henri Poincaré (<span class="citation">Poincaré (<a href="#ref-poincare-meander">1912</a>)</span>):</p>
+<p><em>In how many ways a simple loop in the plane can cross a line a specified number of times?</em></p>
+<p>Despite many efforts, this question remains open after more than a century.
+Let us start by mathematically formalizing the latter question.</p>
+<p><strong>Definition 1.1.</strong> A <em>meander</em> of size <span class="math inline">\(n\in\mathbb{N}\)</span> is a simple loop <span class="math inline">\(\ell\)</span> (i.e., a homeomorphic image of the circle) in <span class="math inline">\(\mathbb{R^2}\)</span> which crosses the real line <span class="math inline">\(\mathbb{R}\)</span> exactly <span class="math inline">\(2n\)</span> times and does not touch the line without crossing it, viewed modulo orientation-preserving homeomorphisms from <span class="math inline">\(\mathbb{R^2}\)</span> to <span class="math inline">\(\mathbb{R^2}\)</span> which take <span class="math inline">\(\mathbb{R}\)</span> to <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%201.png" /></p>
+<p>Figure 1: <strong>Left:</strong> A meander of size <span class="math inline">\(6\)</span>, with the intersection points of the loop and the line labeled by the order in which they are hit by the loop (in black) and the line (in red) starting at the blue vertex.
+The associated meandric permutation is <span class="math inline">\(\sigma_{\ell}=1,4,3,2,5,12,7,8,9,10,11,6\)</span> (in one-line notation); see Definition 1.1.
+<strong>Right:</strong> The same meander of size <span class="math inline">\(6\)</span> seen as a pair of Jordan curves in the sphere.</p>
+<p>See the left-hand sides of Figures 1 and 2 for some illustrations of meanders.
+A meander of size <span class="math inline">\(n\)</span> can equivalently be thought of as a pair of Jordan curves in the sphere which intersect exactly <span class="math inline">\(2n\)</span> times and which do not intersect without crossing, viewed modulo orientation-preserving homeomorphisms from the sphere to itself.
+The correspondence with Definition 1.1 is obtained by viewing <span class="math inline">\(\mathbb{R}\)</span> as a curve in the Riemann sphere.
+See the right-hand side of Figure 1.</p>
+<p>Each meander can be bijectively encoded with the corresponding <em>meandric permutation</em>.</p>
+<p><strong>Definition 1.2.</strong> For a meander <span class="math inline">\(\ell\)</span> of size <span class="math inline">\(n\)</span>, the corresponding <em>meandric permutation</em> <span class="math inline">\(\sigma_{\ell}\)</span> is the permutation of <span class="math inline">\([1,2n]\cap\mathbb{Z}\)</span> obtained as follows.
+Order the <span class="math inline">\(2n\)</span> intersection points of <span class="math inline">\(\ell\)</span> with <span class="math inline">\(\mathbb{R}\)</span> from left to right.
+Then, consider the second order in which these intersection points are hit by <span class="math inline">\(\ell\)</span> when we start <span class="math inline">\(\ell\)</span> from the leftmost intersection point and traverse it counterclockwise.
+Then <span class="math inline">\(\sigma_\ell (i)=j\)</span> if some intersection point is the <span class="math inline">\(i\)</span>-th visited point by the first order and the <span class="math inline">\(j\)</span>-th visited point by the second one.</p>
+<p>See Figure 1 for an example and the right-hand side of Figure 2 for the plots of two large uniform meandric permutations.
+Note that any meandric permutation fixes 1.
+It is easily verified that the mapping <span class="math inline">\(\ell\mapsto\sigma_{\ell}\)</span> is a bijection from the set of meanders of size <span class="math inline">\(n\)</span> to the set of meandric permutations of size <span class="math inline">\(2n\)</span>.
+The study of meandric permutations dates back to at least the paper <span class="citation">Rosenstiehl (<a href="#ref-rosentiehl-meander">1984</a>)</span>, where they are called “planar permutations”.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Meander256-side.png" /></p>
+<p>Figure 2: <strong>Left:</strong> Two large uniform meanders <span class="math inline">\(\ell\)</span> of size 256 and 2048.
+<strong>Right:</strong> The plots of the two corresponding meandric permutations <span class="math inline">\(\sigma_{\ell}\)</span>; the blue dots correspond to the values <span class="math inline">\((i,\sigma_\ell(i))_{i = 1,\dots,|\sigma_\ell|}\)</span>.
+These simulations are obtained using the Markov chain Monte Carlo algorithm from <span class="citation">Heitsch and Tetali (<a href="#ref-heitsch2011meander">2011</a>)</span>.</p>
+<p>The term “meander” was first coined by <span class="citation">Arnold (<a href="#ref-arnold-meander">1988</a>)</span>.
+Meanders are of interest in physics and computational biology as models of polymer folding <span class="citation">Di Francesco, Golinelli, and Guitter (<a href="#ref-dgg-meander-folding">1997</a>)</span>.
+There is a vast mathematical literature devoted to the enumeration of various types of meanders, which has connections to many different subjects, from combinatorics to theoretical physics and more recently to the geometry of moduli spaces (<span class="citation">Delecroix et al. (<a href="#ref-Delecroix-enum-meand">2020</a>)</span>).
+See <span class="citation">Zvonkin (<a href="#ref-zvonkin-meander-survey">2021</a>)</span> for a brief recent survey of this literature and <span class="citation">La Croix (<a href="#ref-lacroix-meander-survey">2003</a>)</span> for a more detailed account.
+Additionally, meanders are the connected components of <em>meandric systems</em>, recently studied in <span class="citation">Curien et al. (<a href="#ref-ckst-noodle">2019</a>)</span>, <span class="citation">Kargin (<a href="#ref-Kargin-cycles-meander">2020</a>)</span>, <span class="citation">Goulden, Nica, and Puder (<a href="#ref-Goulden-Asymptotics-meandric">2020</a>)</span>, <span class="citation">Féray and Thévenin (<a href="#ref-Feray-components-mendric">2022</a>)</span>, <span class="citation">Fukuda and Nechita (<a href="#ref-fn-meander-system">2019</a>)</span>, <span class="citation">Borga, Gwynne, and Park (<a href="#ref-borga2022geometry">2022</a>)</span>.</p>
+<p>The problem of enumerating <em>all</em> meanders of size <span class="math inline">\(n\)</span> – this is the Question (1.1) – is open and seemingly quite difficult. But, it was conjectured by Di Francesco, Golinelli, and Guitter (<span class="citation">Di Francesco, Golinelli, and Guitter (<a href="#ref-dgg-meander-asymptotics">2000</a>)</span>) that the number of meanders of size <span class="math inline">\(n\)</span> behaves asymptotically like <span class="math inline">\(C \cdot A^n n^{-\alpha}\)</span>, where <span class="math inline">\(\alpha = (29 + \sqrt{145})/12\)</span>. This conjecture was later numerically tested by Jensen and Gutmann (<span class="citation">Jensen and Guttmann (<a href="#ref-Jensen-num-meanders">2000</a>)</span>), where they also proposed the numerical estimate of <span class="math inline">\(A \approx 12.26\)</span>. The best known rigorous bounds for the constant <span class="math inline">\(A\)</span> are <span class="math inline">\(11.380\leq A \leq 12.901\)</span>, as proved in <span class="citation">Albert and Paterson (<a href="#ref-Albert-bounds-meanders">2005</a>)</span>.</p>
+<p>A candidate scaling limit for meanders and meandric permutations was recently proposed and studied in <span class="citation">Borga, Gwynne, and Sun (<a href="#ref-borga2022permutons">2022</a>)</span>.</p>
+<p>In this paper, we will address a simpler but very related model, i.e.<em>monotone meanders</em>.</p>
+<p><strong>Definition 1.3.</strong> A <strong>monotone meander</strong> of size <span class="math inline">\(n\in\mathbb{N}\)</span> is a pair of simple curves <span class="math inline">\(\ell_1\)</span> and <span class="math inline">\(\ell_2\)</span> in <span class="math inline">\([0,1]^2\)</span> which cross each other exactly <span class="math inline">\(2n-1\)</span> times and such that:</p>
+<ul>
+<li><p><span class="math inline">\(\ell_1\)</span> starts on the left-hand side of <span class="math inline">\([0,1]^2\)</span>, ends on the right-hand side of <span class="math inline">\([0,1]^2\)</span> and never moves in the left direction.
+(Equivalently, it is the graph of a continuous function from <span class="math inline">\([0,1]\)</span> to <span class="math inline">\([0,1]\)</span>.)</p></li>
+<li><p><span class="math inline">\(\ell_2\)</span> starts on the bottom side of <span class="math inline">\([0,1]^2\)</span>, ends on the top side of <span class="math inline">\([0,1]^2\)</span> and never moves in the bottom direction.
+(Equivalently, it is the graph of a continuous function from <span class="math inline">\([0,1]\)</span> to <span class="math inline">\([0,1]\)</span> rotated by 90 degrees.)</p></li>
+</ul>
+<p>As in the case of meanders, to each monotone meander we can associate the corresponding <strong>monotone meandric permutation</strong>. Two monotone meanders are equivalent if they induce the same monotone meandric permutation.</p>
+<p>See Figure 3 for an example. Note that a monotone meandric permutation maps even numbers to even numbers, and odd numbers to odd numbers. The permutation mapping odd numbers is called a <strong>Baxter permutation</strong>, while the permutation mapping even numbers is called a <strong>reduced Baxter permutation</strong>. It can be shown <span class="citation">Baxter (<a href="#ref-baxter-permutation">1964</a>)</span>, <span class="citation">William M. Boyce (<a href="#ref-MR0250516">1967</a>)</span>, <span class="citation">William Martin Boyce (<a href="#ref-boyce1981">1981</a>)</span> that the Baxter permutation corresponding to a monotone meandric permutation uniquely determine the monotone meandric permutation itself.
+Hence there is a natural bijection between monotone meandric permutations and Baxter permutations.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%203.png" /></p>
+<p>Figure 3: <strong>Left:</strong> A monotone meander of size <span class="math inline">\(6\)</span>, with the intersection points labeled by the order in which they are hit by the curve <span class="math inline">\(\ell_1\)</span> (in red) and the curve <span class="math inline">\(\ell_2\)</span> (in blue).
+<strong>Right:</strong> The associated monotone meandric permutation: the Baxter permutation corresponds to the black dots, while the reduced Baxter permutation corresponds to the white dots.</p>
+<p>Baxter permutations were introduced by Glen Baxter in 1964 <span class="citation">Baxter (<a href="#ref-baxter-permutation">1964</a>)</span> while studying fixed points of commuting functions. They are classical examples of pattern-avoiding permutations, which have been intensively studied both in the probabilistic and combinatorial literature (see e.g. <span class="citation">William M. Boyce (<a href="#ref-MR0250516">1967</a>)</span>, <span class="citation">Chung et al. (<a href="#ref-MR491652">1978</a>)</span>, <span class="citation">Mallows (<a href="#ref-MR555815">1979</a>)</span>, <span class="citation">Bousquet-Mélou (<a href="#ref-MR2028288">2002/03</a>)</span>, <span class="citation">Canary (<a href="#ref-MR2679559">2010</a>)</span>, <span class="citation">Felsner et al. (<a href="#ref-MR2763051">2011</a>)</span>, <span class="citation">Bouvel et al. (<a href="#ref-MR3882946">2018</a>)</span>). They are known to be connected with various other interesting combinatorial structures, such as bipolar orientations <span class="citation">Bonichon, Bousquet-Mélou, and Fusy (<a href="#ref-BBMF11">2010</a>)</span>, walks in cones <span class="citation">Kenyon et al. (<a href="#ref-KMSW19">2019</a>)</span>, certain pairs of binary trees and a family of triples of non-intersecting lattice paths <span class="citation">Felsner et al. (<a href="#ref-MR2763051">2011</a>)</span>, and domino tilings of Aztec diamonds <span class="citation">Canary (<a href="#ref-MR2679559">2010</a>)</span>.</p>
+<p>The diagrams of two large uniform Baxter permutations is plotted in Figure 4.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure4.png" /></p>
+<p>Figure 4: The diagrams of two uniform Baxter permutations of size 3253 and 4520.</p>
+</div>
+<div id="main-results-the-permuton-limit-of-baxter-permutations-and-its-intensity-measure" class="section level2">
+<h2>Main results: the permuton limit of Baxter permutations and its intensity measure</h2>
+<p>In recent years there has been an increasing interest in studying limits of random non-uniform permutations. One approach is to look at the convergence of relevant statistics, such as the number of cycles, the number of inversions, or the length of the longest increasing subsequence. For a brief overview of this approach see e.g. <span class="citation">Borga (<a href="#ref-borga2021random">2021a</a>)</span>.</p>
+<p>The more recent approach is to directly determine the scaling limits of permutation diagrams. Here given a permutation <span class="math inline">\(\sigma\)</span> of size <span class="math inline">\(n\)</span>, its <em>diagram</em> is a <span class="math inline">\(n \times n\)</span> table with <span class="math inline">\(n\)</span> points at position <span class="math inline">\((i,\sigma(i))\)</span> for all <span class="math inline">\(i\in[n]:=\{1,2,\dots,n\}\)</span>. (See the right-hand side of Figure 3 for an example.) Their scaling limits are called <em>permutons</em>. See e.g. <span class="citation">Borga (<a href="#ref-borga2021random">2021a</a>)</span> for an overview of this approach.</p>
+<p><strong>Definition 2.1.</strong> A Borel probability measure <span class="math inline">\(\mu\)</span> on the unit square <span class="math inline">\([0,1]^2\)</span> is a <strong>permuton</strong> if both of its marginals are uniform, i.e., <span class="math inline">\(\mu([a,b]\times[0,1]) = \mu([0,1]\times[a,b])=b-a\)</span> for any <span class="math inline">\(0\le a&lt;b\le 1\)</span>.
+A permutation <span class="math inline">\(\sigma\)</span> can be viewed as a permuton <span class="math inline">\(\mu_{\sigma}\)</span> by uniformly distributing mass to the squares <span class="math inline">\(\{[\frac{i-1}{n}, \frac{i}{n}]\times [\frac{\sigma(i)-1}{n}, \frac{\sigma(i)}{n}]: i \in [n]\}.\)</span> More precisely, <span class="math display">\[\begin{equation*}
+        \mu_\sigma(A)
+        =
+        n
+        \sum_{i=1}^n
+        Leb
+        \big([(i-1)/n, i/n]
+        \times
+        [(\sigma(i)-1)/n,\sigma(i)/n]
+        \cap
+        A\big),
+    \end{equation*}\]</span> where <span class="math inline">\(A\)</span> is a Borel measurable set of <span class="math inline">\([0,1]^2\)</span>.</p>
+<p>For a <em>deterministic</em> sequence of permutations <span class="math inline">\(\sigma_n\)</span>, we say that <span class="math inline">\(\sigma_n\)</span> <em>converge in the permuton sense</em> to a limiting permuton <span class="math inline">\(\mu\)</span>, if the permutons <span class="math inline">\(\mu_{\sigma_n}\)</span> induced by <span class="math inline">\(\sigma_n\)</span> converge weakly to <span class="math inline">\(\mu\)</span>.
+The set of permutons equipped with the topology of weak convergence of measures can be viewed as a compact metric space.</p>
+<p><span class="citation">Dokos and Pak (<a href="#ref-MR3238333">2014</a>)</span> studied the expected limiting permuton of the so-called <em>doubly alternating Baxter permutations</em>.
+The authors raised the question of proving the existence of the <em>Baxter permuton</em> as the scaling limit of uniform Baxter permutations, and determine its expected density.
+The existence of the Baxter permuton was established in <span class="citation">Borga and Maazoun (<a href="#ref-BM20">2022</a>)</span>.</p>
+<p><strong>Theorem 2.2</strong> Let <span class="math inline">\(\sigma_n\)</span> be a uniform Baxter permutation of size <span class="math inline">\(n\)</span>.
+The following convergence w.r.t. the permuton topology holds: <span class="math inline">\(\mu_{\sigma_n}\)</span> <span class="math inline">\(\xrightarrow{d}\)</span> <span class="math inline">\(\mu_B\)</span> where <span class="math inline">\(\mu_B\)</span> is a random permuton called the <em>Baxter permuton</em>.</p>
+<p><strong>Remark 2.3.</strong> In <span class="citation">Borga (<a href="#ref-borga2021skewperm">2021b</a>)</span>, a two-parameter family of permutons called the <em>skew Brownian permuton</em> was introduced.
+This family includes the Baxter permuton and a well-studied one-parameter family of permutons, called the <em>biased Brownian separable permuton</em> (<span class="citation">Bassino et al. (<a href="#ref-bassino2018separable">2018</a>)</span>, <span class="citation">Bassino et al. (<a href="#ref-bassino2017universal">2020</a>)</span>), as special cases.</p>
+<p>The Baxter permuton <span class="math inline">\(\mu_B\)</span> is a <em>random</em> probability measure on the unit square (with uniform marginals); recall Figure 4.
+The next result is an explicit expression of its intensity measure, defined by <span class="math inline">\(\mathbb E [\mu_{B}](\cdot):=\mathbb E [\mu_{B}(\cdot)]\)</span>, which answers <span class="citation">Dokos and Pak (<a href="#ref-MR3238333">2014</a>)</span>.</p>
+<p><strong>Theorem 2.4.</strong> Consider the Baxter permuton <span class="math inline">\(\mu_B\)</span>.
+Define the function <span class="math display">\[\begin{equation}\label{eqn-rho}
+        \rho(t, x, r):= \frac{1}{t^2} \left(\left(\frac{3rx}{2t}-1\right)e^{-\frac{r^2+x^2-rx}{2t}}+e^{-\frac{(x+r)^2}{2t}}\right).
+    \end{equation}\]</span> Then the intensity measure <span class="math inline">\(\mathbb E [\mu_B]\)</span> is absolutely continuous with respect to the Lebesgue measure on <span class="math inline">\([0,1]^2\)</span>.
+{Moreover}, it has the following density function <span class="math display">\[\begin{equation}\label{eqn-baxter-density}
+        p_B(x, y) = c\int_{\max\{0, x+y-1\}}^{\min\{x, y\}}\int_{\mathbb R_{+}^4}\rho(y-z, \ell_1, \ell_2)\rho(z, \ell_2, \ell_3)\rho(x-z, \ell_3, \ell_4)\rho(1+z-x-y, \ell_4, \ell_1)\,\ d\ell_1 d\ell_2 d\ell_3 d\ell_4\, dz,
+    \end{equation}\]</span> where <span class="math inline">\(c\)</span> is a normalizing constant.</p>
+<p>We remark that, further computation of the integral (2.2) is tricky, as it involves integrating a four-dimensional Gaussian in the first quadrant.
+We also recall that the intensity measure of other universal random limiting permutons has been investigated in the literature.
+For instance, the intensity measure of the <em>biased Brownian separable permuton</em>, was determined by Maazoun in <span class="citation">Maazoun (<a href="#ref-MR4079636">2020</a>)</span>.
+We recall that the biased Brownian separable permuton <span class="math inline">\(\mu^q_S\)</span>, defined for all <span class="math inline">\(q\in[0,1]\)</span>, is a one-parameter universal family of limiting permutons arising form pattern-avoiding permutations. In <span class="citation">Maazoun (<a href="#ref-MR4079636">2020</a>)</span>, it was proved that for all <span class="math inline">\(q\in(0,1)\)</span>, the intensity measure $E[^q_S]$$ of the biased Brownian separable permuton is absolutely continuous with respect to the Lebesgue measure on <span class="math inline">\([0,1]^2\)</span>.
+Furthermore, <span class="math inline">\(\mathbb E[\mu^q_S]\)</span> has the following density function</p>
+<p><span class="math display">\[\begin{equation*}
+    p^q_S(x, y) =\int_{\max\{0,x+y -1\}}^{\min\{x,y\}} \frac{3q^2(1-q)^2 \,da }
+    {2\pi(a(x-a)(1-x-y+a)(y-a))^{3/2}{\left(\frac{q^2}{a}+\frac{(1-q)^2}{(x-a)}+\frac{q^2}{(1-x-y+a)}+\frac{(1-q)^2}{(y-a)}\right)^{5/2}}}.
+\end{equation*}\]</span> The proof of <span class="citation">Maazoun (<a href="#ref-MR4079636">2020</a>)</span> relies on an explicit construction of the biased Brownian separable permuton <span class="math inline">\(\mu^q_S\)</span> from a one-dimensional Brownian excursion decorated with i.i.d. plus and minus signs.
+To the best of our knowledge this proof cannot be easily extended to the Baxter permuton case.
+Our proof of Theorem 2.4 uses the combination of two main achievements:</p>
+<ul>
+<li><p>A connection (<span class="citation">Borga (<a href="#ref-borga2021skewperm">2021b</a>)</span>) between the Baxter permuton (and more generally the skew Brownian permuton of Remark 2.3) and some well-known families of random curves and random surfaces: the <strong>Schramm-Loewner evolution (SLE)</strong> curves and the <strong>Liouville quantum gravity (LQG)</strong> spheres.</p></li>
+<li><p>Some integrability results (<span class="citation">Ang, Holden, and Sun (<a href="#ref-AHS20">2020</a>)</span>) for SLE curves and LQG spheres which go under the name of <strong>conformal welding of quantum surfaces</strong>.</p></li>
+</ul>
+<p>Explaining the results above would require a long digression; hence we just conclude this article with some plots of <span class="math inline">\(p_B(x, y)\)</span> and <span class="math inline">\(p^q_S(x, y)\)</span> using numerical approximations of the integrals.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure5.png" /></p>
+<p>Figure 5: <strong>From left to right:</strong> The diagrams of the densities <span class="math inline">\(p_S^{0.1}(x,y)\)</span>, <span class="math inline">\(p_S^{0.4}(x,y)\)</span>, <span class="math inline">\(p_S^{0.5}(x,y)\)</span>, and <span class="math inline">\(p_B(x,y)\)</span>.</p>
+<p><img src="/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure6.png" /></p>
+<p>Figure 6: Some sections of the densities <span class="math inline">\(p_S^{0.5}(x,y)\)</span> and <span class="math inline">\(p_B(x,y)\)</span>.
+<strong>From left to right:</strong> In red (resp. in blue) we plot the diagrams of <span class="math inline">\(p_S^{0.5}(x,x)\)</span> (resp. <span class="math inline">\(p_B(x,x)\)</span>), <span class="math inline">\(p_S^{0.5}(x,1/2)\)</span> (resp. <span class="math inline">\(p_B(x,1/2)\)</span>), and <span class="math inline">\(p_S^{0.5}(x,1/4)\)</span> (resp. <span class="math inline">\(p_B(x,1/4)\)</span>).</p>
+</div>
+<div id="bibliography" class="section level2 unnumbered">
+<h2>Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Albert-bounds-meanders" class="csl-entry">
+Albert, M. H., and M. S. Paterson. 2005. <span>“Bounds for the Growth Rate of Meander Numbers.”</span> <em>J. Combin. Theory Ser. A</em> 112 (2): 250–62. <a href="https://doi.org/10.1016/j.jcta.2005.02.006">https://doi.org/10.1016/j.jcta.2005.02.006</a>.
+</div>
+<div id="ref-AHS20" class="csl-entry">
+Ang, Morris, Nina Holden, and Xin Sun. 2020. <span>“Conformal Welding of Quantum Disks.”</span> <em>arXiv Preprint:2009.08389</em>.
+</div>
+<div id="ref-arnold-meander" class="csl-entry">
+Arnold, V. I. 1988. <span>“The Branched Covering <span><span class="math inline">\({\bf C}{\rm P}^2\to S^4\)</span></span>, Hyperbolicity and Projective Topology.”</span> <em>Sibirsk. Mat. Zh.</em> 29 (5): 36–47, 237. <a href="https://doi.org/10.1007/BF00970265">https://doi.org/10.1007/BF00970265</a>.
+</div>
+<div id="ref-bassino2017universal" class="csl-entry">
+Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, Mickaël Maazoun, and Adeline Pierrot. 2020. <span>“Universal Limits of Substitution-Closed Permutation Classes.”</span> <em>J. Eur. Math. Soc. (JEMS)</em> 22 (11): 3565–3639. <a href="https://doi.org/10.4171/jems/993">https://doi.org/10.4171/jems/993</a>.
+</div>
+<div id="ref-bassino2018separable" class="csl-entry">
+Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, and Adeline Pierrot. 2018. <span>“The <span>B</span>rownian Limit of Separable Permutations.”</span> <em>Ann. Probab.</em> 46 (4): 2134–89. <a href="https://doi.org/10.1214/17-AOP1223">https://doi.org/10.1214/17-AOP1223</a>.
+</div>
+<div id="ref-baxter-permutation" class="csl-entry">
+Baxter, Glen. 1964. <span>“On Fixed Points of the Composite of Commuting Functions.”</span> <em>Proc. Amer. Math. Soc.</em> 15: 851–55.
+</div>
+<div id="ref-BBMF11" class="csl-entry">
+Bonichon, Nicolas, Mireille Bousquet-Mélou, and Éric Fusy. 2010. <span>“Baxter Permutations and Plane Bipolar Orientations.”</span> <em>S<span>é</span>minaire Lotharingien de Combinatoire</em> 61: B61Ah.
+</div>
+<div id="ref-borga2021random" class="csl-entry">
+Borga, Jacopo. 2021a. <span>“Random Permutations – a Geometric Point of View.”</span> <em>arXiv Preprint:2107.09699 (Ph.D. Thesis)</em>.
+</div>
+<div id="ref-borga2021skewperm" class="csl-entry">
+———. 2021b. <span>“The Skew <span>B</span>rownian Permuton: A New Universality Class for Random Constrained Permutations.”</span> <em>Proceedings of the London Mathematical Society (to Appear)</em>.
+</div>
+<div id="ref-borga2022geometry" class="csl-entry">
+Borga, Jacopo, Ewain Gwynne, and Minjae Park. 2022. <span>“On the Geometry of Uniform Meandric Systems.”</span> <em>arXiv Preprint:2212.00534</em>.
+</div>
+<div id="ref-borga2022permutons" class="csl-entry">
+Borga, Jacopo, Ewain Gwynne, and Xin Sun. 2022. <span>“Permutons, Meanders, and <span>SLE</span>-Decorated <span>L</span>iouville Quantum Gravity.”</span> <em>arXiv Preprint:2207.02319</em>.
+</div>
+<div id="ref-BM20" class="csl-entry">
+Borga, Jacopo, and Mickaël Maazoun. 2022. <span>“Scaling and Local Limits of <span>B</span>axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”</span> <em>Ann. Probab.</em> 50 (4): 1359–1417. <a href="https://doi.org/10.1214/21-aop1559">https://doi.org/10.1214/21-aop1559</a>.
+</div>
+<div id="ref-MR2028288" class="csl-entry">
+Bousquet-Mélou, M. 2002/03. <span>“Four Classes of Pattern-Avoiding Permutations Under One Roof: Generating Trees with Two Labels.”</span> <em>Electron. J. Combin.</em> 9 (2): Research paper 19, 31. <a href="http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html">http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html</a>.
+</div>
+<div id="ref-MR3882946" class="csl-entry">
+Bouvel, Mathilde, Veronica Guerrini, Andrew Rechnitzer, and Simone Rinaldi. 2018. <span>“Semi-<span>B</span>axter and Strong-<span>B</span>axter: Two Relatives of the <span>B</span>axter Sequence.”</span> <em>SIAM J. Discrete Math.</em> 32 (4): 2795–2819. <a href="https://doi.org/10.1137/17M1126734">https://doi.org/10.1137/17M1126734</a>.
+</div>
+<div id="ref-MR0250516" class="csl-entry">
+Boyce, William M. 1967. <span>“Generation of a Class of Permutations Associated with Commuting Functions.”</span> <em>Math. Algorithms 2 (1967), 19–26; Addendum, Ibid.</em> 3: 25–26.
+</div>
+<div id="ref-boyce1981" class="csl-entry">
+Boyce, William Martin. 1981. <span>“Baxter Permutations and Functional Composition.”</span> <em>Houston Journal Of Mathematics</em> 7 (2).
+</div>
+<div id="ref-MR2679559" class="csl-entry">
+Canary, Hal. 2010. <span>“Aztec Diamonds and <span>B</span>axter Permutations.”</span> <em>Electron. J. Combin.</em> 17 (1): Research Paper 105, 12. <a href="http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html">http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html</a>.
+</div>
+<div id="ref-MR491652" class="csl-entry">
+Chung, Fan-Rong K., Ronald L. Graham, Verner Emil Hoggatt Jr., and Mark Kleiman. 1978. <span>“The Number of <span>B</span>axter Permutations.”</span> <em>J. Combin. Theory Ser. A</em> 24 (3): 382–94. <a href="https://doi.org/10.1016/0097-3165(78)90068-7">https://doi.org/10.1016/0097-3165(78)90068-7</a>.
+</div>
+<div id="ref-ckst-noodle" class="csl-entry">
+Curien, Nicolas, Gady Kozma, Vladas Sidoravicius, and Laurent Tournier. 2019. <span>“Uniqueness of the Infinite Noodle.”</span> <em>Ann. Inst. Henri Poincaré D</em> 6 (2): 221–38. <a href="https://doi.org/10.4171/AIHPD/70">https://doi.org/10.4171/AIHPD/70</a>.
+</div>
+<div id="ref-Delecroix-enum-meand" class="csl-entry">
+Delecroix, Vincent, Élise Goujard, Peter Zograf, and Anton Zorich. 2020. <span>“Enumeration of Meanders and <span>M</span>asur-<span>V</span>eech Volumes.”</span> <em>Forum Math. Pi</em> 8: e4, 80. <a href="https://doi.org/10.1017/fmp.2020.2">https://doi.org/10.1017/fmp.2020.2</a>.
+</div>
+<div id="ref-dgg-meander-folding" class="csl-entry">
+Di Francesco, P., O. Golinelli, and E. Guitter. 1997. <span>“Meander, Folding, and Arch Statistics.”</span> <em>Math. Comput. Modelling</em> 26 (8-10): 97–147. <a href="https://doi.org/10.1016/S0895-7177(97)00202-1">https://doi.org/10.1016/S0895-7177(97)00202-1</a>.
+</div>
+<div id="ref-dgg-meander-asymptotics" class="csl-entry">
+———. 2000. <span>“Meanders: Exact Asymptotics.”</span> <em>Nuclear Phys. B</em> 570 (3): 699–712. <a href="https://doi.org/10.1016/S0550-3213(99)00753-1">https://doi.org/10.1016/S0550-3213(99)00753-1</a>.
+</div>
+<div id="ref-MR3238333" class="csl-entry">
+Dokos, Theodore, and Igor Pak. 2014. <span>“The Expected Shape of Random Doubly Alternating <span>B</span>axter Permutations.”</span> <em>Online J. Anal. Comb.</em> 9: 12.
+</div>
+<div id="ref-MR2763051" class="csl-entry">
+Felsner, Stefan, Éric Fusy, Marc Noy, and David Orden. 2011. <span>“Bijections for <span>B</span>axter Families and Related Objects.”</span> <em>J. Combin. Theory Ser. A</em> 118 (3): 993–1020. <a href="https://doi.org/10.1016/j.jcta.2010.03.017">https://doi.org/10.1016/j.jcta.2010.03.017</a>.
+</div>
+<div id="ref-Feray-components-mendric" class="csl-entry">
+Féray, Valentin, and Paul Thévenin. 2022. <span>“<span class="nocase">Components in meandric systems and the infinite noodle</span>.”</span> <em>ArXiv e-Prints</em>, January. <a href="https://arxiv.org/abs/\arxiv{2201.11572}">https://arxiv.org/abs/\arxiv{2201.11572}</a>.
+</div>
+<div id="ref-fn-meander-system" class="csl-entry">
+Fukuda, Motohisa, and Ion Nechita. 2019. <span>“Enumerating Meandric Systems with Large Number of Loops.”</span> <em>Ann. Inst. Henri Poincaré D</em> 6 (4): 607–40. <a href="https://doi.org/10.4171/AIHPD/80">https://doi.org/10.4171/AIHPD/80</a>.
+</div>
+<div id="ref-Goulden-Asymptotics-meandric" class="csl-entry">
+Goulden, I. P., Alexandru Nica, and Doron Puder. 2020. <span>“Asymptotics for a Class of Meandric Systems, via the <span>H</span>asse Diagram of <span><span class="math inline">\({\rm NC}(n)\)</span></span>.”</span> <em>Int. Math. Res. Not. IMRN</em>, no. 4: 983–1034. <a href="https://doi.org/10.1093/imrn/rny044">https://doi.org/10.1093/imrn/rny044</a>.
+</div>
+<div id="ref-heitsch2011meander" class="csl-entry">
+Heitsch, Christine E, and Prasad Tetali. 2011. <span>“Meander Graphs.”</span> In <em>Discrete Mathematics and Theoretical Computer Science</em>, 469–80. Discrete Mathematics; Theoretical Computer Science.
+</div>
+<div id="ref-Jensen-num-meanders" class="csl-entry">
+Jensen, Iwan, and Anthony J. Guttmann. 2000. <span>“Critical Exponents of Plane Meanders.”</span> <em>J. Phys. A</em> 33 (21): L187–92. <a href="https://doi.org/10.1088/0305-4470/33/21/101">https://doi.org/10.1088/0305-4470/33/21/101</a>.
+</div>
+<div id="ref-Kargin-cycles-meander" class="csl-entry">
+Kargin, Vladislav. 2020. <span>“Cycles in Random Meander Systems.”</span> <em>J. Stat. Phys.</em> 181 (6): 2322–45. <a href="https://doi.org/10.1007/s10955-020-02665-2">https://doi.org/10.1007/s10955-020-02665-2</a>.
+</div>
+<div id="ref-KMSW19" class="csl-entry">
+Kenyon, Richard, Jason Miller, Scott Sheffield, and David B Wilson. 2019. <span>“Bipolar Orientations on Planar Maps and <span>SLE</span><span class="math inline">\(_{12}\)</span>.”</span> <em>The Annals of Probability</em> 47 (3): 1240–69.
+</div>
+<div id="ref-lacroix-meander-survey" class="csl-entry">
+La Croix, Michael. 2003. <span>“<span>A</span>pproaches to the Enumerative Theory of Meanders.”</span>
+</div>
+<div id="ref-MR4079636" class="csl-entry">
+Maazoun, Mickaël. 2020. <span>“On the <span>B</span>rownian Separable Permuton.”</span> <em>Combin. Probab. Comput.</em> 29 (2): 241–66. <a href="https://doi.org/10.1017/s0963548319000300">https://doi.org/10.1017/s0963548319000300</a>.
+</div>
+<div id="ref-MR555815" class="csl-entry">
+Mallows, Colin L. 1979. <span>“Baxter Permutations Rise Again.”</span> <em>J. Combin. Theory Ser. A</em> 27 (3): 394–96.
+</div>
+<div id="ref-poincare-meander" class="csl-entry">
+Poincaré, Henri. 1912. <span>“<span>S</span>ur Un t<span>é</span>or<span>è</span>me de g<span>é</span>om<span>é</span>trie.”</span> <em>Rend. Del Circ. Mat. Palermo</em> 33: 375–407.
+</div>
+<div id="ref-rosentiehl-meander" class="csl-entry">
+Rosenstiehl, P. 1984. <span>“Planar Permutations Defined by Two Intersecting <span>J</span>ordan Curves.”</span> In <em>Graph Theory and Combinatorics (<span>C</span>ambridge, 1983)</em>, 259–71. Academic Press, London.
+</div>
+<div id="ref-zvonkin-meander-survey" class="csl-entry">
+Zvonkin, Alexander. 2021. <span>“<span>M</span>eanders: A <span>P</span>ersonal <span>P</span>erspective.”</span>
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
