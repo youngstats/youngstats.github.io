@@ -6,7 +6,25 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>graphical-models</title>
+      <link>https://youngstats.github.io/categories/graphical-models/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/graphical-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spatial statistics</title>
+      <link>https://youngstats.github.io/categories/spatial-statistics/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/spatial-statistics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>combinatorics</title>
       <link>https://youngstats.github.io/categories/combinatorics/</link>
@@ -76,24 +94,6 @@
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic-processes</title>
-      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>extreme-value-theory</title>
-      <link>https://youngstats.github.io/categories/extreme-value-theory/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/extreme-value-theory/</guid>
       <description></description>
     </item>
     

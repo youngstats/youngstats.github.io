@@ -6,7 +6,204 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
+      <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
+      <description>
+
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Abundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (&lt;span class=&#34;citation&#34;&gt;Wackernagel (&lt;a href=&#34;#ref-wackernagel2013multivariate&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Cressie and Wikle (&lt;a href=&#34;#ref-creswikle11&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Banerjee and Gelfand (&lt;a href=&#34;#ref-ban14&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.&lt;/p&gt;
+&lt;p&gt;In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (&lt;span class=&#34;citation&#34;&gt;Dey and Banerjee (&lt;a href=&#34;#ref-dey2021ggp&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;) to model the data. First, we’ll introduce the general multivariate spatial model, and then we will introduce a variable graph and how to simulate a Graphical Gaussian process (Matérn) for that variable graph. Next, we will lay out the estimation steps of GGP parameters and how the estimated parameters compare against the truth.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;model&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Model&lt;/h1&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(y(s)\)&lt;/span&gt; denote a &lt;span class=&#34;math inline&#34;&gt;\(q\times 1\)&lt;/span&gt; vector of spatially-indexed dependent outcomes for any location &lt;span class=&#34;math inline&#34;&gt;\(s \in \mathcal D \subset \mathbb{R}^d\)&lt;/span&gt; with typically &lt;span class=&#34;math inline&#34;&gt;\(d=2\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;. On our spatial domain &lt;span class=&#34;math inline&#34;&gt;\(\mathcal D\)&lt;/span&gt;, a multivariate spatial regression model provides a marginal spatial regression model for each outcome as follows:
+&lt;span class=&#34;math display&#34; id=&#34;eq:mgp&#34;&gt;\[\begin{equation}
+y_i(s) = x_i(s)^{T}\beta_i + w_i(s) + \epsilon_i(s)\;,\quad i=1,2,\ldots,q,\; s \in \mathcal D
+\tag{1}
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(y_i(s)\)&lt;/span&gt; is the &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;-th element of &lt;span class=&#34;math inline&#34;&gt;\(y(s)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_i(s)\)&lt;/span&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(p_i\times 1\)&lt;/span&gt; vector of predictors, &lt;span class=&#34;math inline&#34;&gt;\(\beta_i\)&lt;/span&gt; is the &lt;span class=&#34;math inline&#34;&gt;\(p_i\times 1\)&lt;/span&gt; vector of slopes, &lt;span class=&#34;math inline&#34;&gt;\(w_i(s)\)&lt;/span&gt; is a spatially correlated process and &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i(s) \stackrel{ind}{\sim} N(0,\tau^2_i)\)&lt;/span&gt; is the random error in outcome &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;. We usually assume that &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_i(s)\)&lt;/span&gt; are independent across &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;, whereas &lt;span class=&#34;math inline&#34;&gt;\(w(s)=(w_1(s), w_2(s),\ldots, w_q(s))^T\)&lt;/span&gt; is a zero-centred multivariate Gaussian process (GP) with a zero mean and a cross-covariance function that introduces dependency across space and among the &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt; variables. Let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal S_i\)&lt;/span&gt; represent the collection of places where the &lt;span class=&#34;math inline&#34;&gt;\(i-\)&lt;/span&gt;th variable was observed. The reference set of locations for our approach is &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L = \cup_i\mathcal S_i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The definition of &lt;span class=&#34;math inline&#34;&gt;\(w(s)\)&lt;/span&gt; as the &lt;span class=&#34;math inline&#34;&gt;\(q \times 1\)&lt;/span&gt; multivariate graphical Matérn GP (&lt;span class=&#34;citation&#34;&gt;Dey and Banerjee (&lt;a href=&#34;#ref-dey2021ggp&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;) with respect to a decomposable variable graph &lt;span class=&#34;math inline&#34;&gt;\({\mathcal G}_{\mathcal V}\)&lt;/span&gt; yields the distribution of each &lt;span class=&#34;math inline&#34;&gt;\(w_i\)&lt;/span&gt;. The marginal parameters for each component Matérn process &lt;span class=&#34;math inline&#34;&gt;\(w_i(\cdot)\)&lt;/span&gt; are denoted by &lt;span class=&#34;math inline&#34;&gt;\(\{\phi_{ii}, \sigma_{ii} | i = 1.\ldots,q\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;It is sufficient to limit the intra-site covariance matrix &lt;span class=&#34;math inline&#34;&gt;\(\Sigma=(\sigma_{ij})\)&lt;/span&gt; to be of the following form to assure a valid multivariate Matérn cross-covariance function (Theorem 1 of &lt;span class=&#34;citation&#34;&gt;Apanasovich and Sun (&lt;a href=&#34;#ref-apanasovich2012valid&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34; id=&#34;eq:constraints&#34;&gt;\[\begin{equation}
+\begin{array}{cc}
+   \nu_{ij} =&amp;amp; \frac 12 (\nu_{ii} + \nu_{jj}) + \Delta_A (1 - A_{ij}) \mbox{ where } \Delta_A \geq 0, A=(A_{ij}) \mbox{ for all } i \geq 0, A_{ii}=1 \\
+    \sum_{i,j} c_ic_j\phi_{ij} \leq 0  &amp;amp;\mbox{ is a conditionally non-negative definite matrix } \\
+    \sigma_{ij} =&amp;amp; b_{ij} \frac{\Gamma(\frac 12 (\nu_{ii}+\nu_{jj} + d))\Gamma(\nu_{ij})}{\phi_{ij}^{2\Delta_A+\nu_{ii}+\nu_{jj}}\Gamma(\nu_{ij} + \frac d2)} \mbox{ where } \Delta_A \geq 0, \mbox{ and } B=(b_{ij}) &amp;gt; 0, \mbox{ i.e., is p.d.}
+\end{array}
+\tag{2}
+\end{equation}\]&lt;/span&gt;
+This is equal to &lt;span class=&#34;math inline&#34;&gt;\(\Sigma = (B \odot (\gamma_{ij}))\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\gamma_{ij}\)&lt;/span&gt;’s are constants collecting the components in &lt;a href=&#34;#eq:constraints&#34;&gt;(2)&lt;/a&gt; involving just &lt;span class=&#34;math inline&#34;&gt;\(\nu_{ij}\)&lt;/span&gt;’s and &lt;span class=&#34;math inline&#34;&gt;\(\phi_{ij}\)&lt;/span&gt;’s, and &lt;span class=&#34;math inline&#34;&gt;\(\odot\)&lt;/span&gt; indicates the Hadamard (element-wise) product.&lt;/p&gt;
+&lt;p&gt;In the following example, we’ll assume &lt;span class=&#34;math inline&#34;&gt;\(\Delta_A=0, \nu_{ij} = \frac{\nu_{ii}+\nu_{jj}}{2}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\phi_{ij}^2 = \frac{\phi_{ii}^2 + \phi_{jj}^2}{2}\)&lt;/span&gt;. The constraints in &lt;a href=&#34;#eq:constraints&#34;&gt;(2)&lt;/a&gt; simplifies to -&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34; id=&#34;eq:constraints-simp&#34;&gt;\[\begin{equation}
+\begin{array}{cc}
+    \sigma_{ij} =&amp;amp; (\sigma_{ii} \sigma_{jj})^{\frac{1}{2}} * \frac{\phi_{ii}^{\nu_{ii}}\phi_{jj}^{\nu_{jj}}}{\phi_{ij}^{\nu_{ij}}}  \frac{\Gamma(\nu_{ij})}{\Gamma(\nu_{ii})^{\frac 12} \Gamma(\nu_{ij})^{\frac 12}} r_{ij} \mbox{ where }, \mbox{ and } R=(r_{ij}) &amp;gt; 0, \mbox{ i.e., is p.d.}
+\end{array}
+\tag{3}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We also take &lt;span class=&#34;math inline&#34;&gt;\(\nu_{ii} = \nu_{jj} = 0.5\)&lt;/span&gt; in our case and hence, we only need to estimate the marginal scale (&lt;span class=&#34;math inline&#34;&gt;\(\phi_{ii}\)&lt;/span&gt;) and variance parameters (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ii}\)&lt;/span&gt;) and cross-correlation parameters &lt;span class=&#34;math inline&#34;&gt;\(r_{ij}\)&lt;/span&gt;. We also assume variable graph (&lt;span class=&#34;math inline&#34;&gt;\({\mathcal G}_{\mathcal V}\)&lt;/span&gt;) to be decomposable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Simulation&lt;/h1&gt;
+&lt;p&gt;As a first step of simulation, we need to fix a decomposable variable graph (&lt;span class=&#34;math inline&#34;&gt;\({\mathcal G}_{\mathcal V}\)&lt;/span&gt;). Depending on the perfect ordering of cliques in the graph, the density function of the full process can be factorized. Using this property, we can calculate the variance-covarinace matrix of the GGP and use it to simulate observation from a multivariate GGP.&lt;/p&gt;
+&lt;div id=&#34;decomposable-variable-graph&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Decomposable variable graph&lt;/h2&gt;
+&lt;p&gt;If &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; is decomposable, it has a perfect clique sequence &lt;span class=&#34;math inline&#34;&gt;\(\{K_1,K_2,\cdots,K_p\}\)&lt;/span&gt; with separators &lt;span class=&#34;math inline&#34;&gt;\(\{S_2,\ldots,S_m\}\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(w(\mathcal L)\)&lt;/span&gt;’s joint density may be factorized as follows.
+&lt;span class=&#34;math display&#34; id=&#34;eq:ggp-fact-2&#34;&gt;\[\begin{equation}
+    f_M(w(\mathcal L)) = \frac{\Pi_{m=1}^{p} f_C(w_{K_m}( \mathcal L))}{\Pi_{m=2}^{p} f_C(w_{S_m}( \mathcal L))}\;,
+\tag{4}
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(S_m=F_{m-1} \cap K_m\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F_{m-1}= K_1 \cup \cdots \cup K_{m-1}\)&lt;/span&gt;, and
+&lt;span class=&#34;math inline&#34;&gt;\(f_A\)&lt;/span&gt; denotes the the density of a GP over &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L\)&lt;/span&gt; with covariance function &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(A \in \{M,C\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Here, we assume we have &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables with each being observed at &lt;span class=&#34;math inline&#34;&gt;\(250\)&lt;/span&gt; locations uniformly chosen from the &lt;span class=&#34;math inline&#34;&gt;\((0,1) \times (0,1)\)&lt;/span&gt; square. We assume the variable graph to be as follows.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-3-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We calculate the perfect ordering of the cliques of the graph above and list the cliques and separators below. To visualize the decomposition, we also plot the junction tree (definition below) of the graph -&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;junction graph&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; of a decomposable graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; is a complete graph with the cliques of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; as its nodes. Every edge in the junction graph is denoted as a link, which is also the intersection of the two cliques, and can be empty. A &lt;strong&gt;spanning tree&lt;/strong&gt; of a graph is defined as a subgraph comprising all the vertices of the original graph and is a tree (acyclic graph). If a spanning tree &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; of the junction graph of &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; satisfies the following property: for any two cliques &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; of the graph, every node in the unique path between &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; in the tree contains &lt;span class=&#34;math inline&#34;&gt;\(C \cap D\)&lt;/span&gt;. Then &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; is called the &lt;strong&gt;junction tree&lt;/strong&gt; for the graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt;. Here, the junction tree of the graph has the perfectly ordered cliques as its nodes and the separators denoted as edges.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-4-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-5-1.png&#34; /&gt;
+Hence, in this case, the likelihood of the decomposable GGP would be as follows -
+&lt;span class=&#34;math display&#34; id=&#34;eq:ggp-fact-ex&#34;&gt;\[\begin{equation}
+    f_M(w(\mathcal L)) = \frac{f_C(w_{(1,2,3)}(\mathcal L)) f_C(w_{(2,3,4)}(\mathcal L)) f_C(w_{(4,5,6)}(\mathcal L)) f_C(w_{(6,7,8)}(\mathcal L)) f_C(w_{(8,9,10)}(\mathcal L))}{f_C(w_{(2,3)}(\mathcal L)) f_C(w_{(4)}(\mathcal L)) f_C(w_{(6)}(\mathcal L)) f_C(w_{(8)}(\mathcal L))}\;,
+\tag{5}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulating-latent-ggp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulating latent GGP&lt;/h2&gt;
+&lt;p&gt;First we fix the marginal and cross-covariance parameters of the process.&lt;/p&gt;
+&lt;p&gt;Now, the precision matrix of the GGP &lt;span class=&#34;math inline&#34;&gt;\(w(\mathcal L)\)&lt;/span&gt; satisfies (Lemma 5.5 of &lt;span class=&#34;citation&#34;&gt;Lauritzen (&lt;a href=&#34;#ref-lauritzen1996graphical&#34;&gt;1996&lt;/a&gt;)&lt;/span&gt;)
+&lt;span class=&#34;math display&#34; id=&#34;eq:m-decomp&#34;&gt;\[\begin{equation}
+M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L}]}^{-1}]^{\mathcal V \times \mathcal L} - \sum_{m=2}^{p} [{C}_{[S_m \boxtimes \mathcal{G_L}]}^{-1}] ^{\mathcal V \times \mathcal L}\;, %= \sum_{m=1}^{p} [{M}_{[K_m \boxtimes \mathcal{G_L}]}^{-1}] ^\mathcal V - \sum_{m=2}^{p} [{M}_{[S_m \boxtimes \mathcal{G_L}]}^{-1}] ^\mathcal V\;
+\tag{6}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;#eq:m-decomp&#34;&gt;(6)&lt;/a&gt; and &lt;a href=&#34;#eq:ggp-fact-2&#34;&gt;(4)&lt;/a&gt; shows that inverting the full cross-covariance matrix only requires inverting the clique and separator specific covariance matrices. Hence, the computational complexity for calculating likelihood of a multivariate GGP boils down to &lt;span class=&#34;math inline&#34;&gt;\(O(n^3 c^3)\)&lt;/span&gt; (here, &lt;span class=&#34;math inline&#34;&gt;\(O(250^3 * 27)\)&lt;/span&gt;) where &lt;span class=&#34;math inline&#34;&gt;\(c= 3\)&lt;/span&gt; is the maximum size of a clique in the perfect clique ordering of the graph. On the contrary, the likelihood of a full GGP would need &lt;span class=&#34;math inline&#34;&gt;\(O(n^3 q^3)\)&lt;/span&gt; complexity, i.e. &lt;span class=&#34;math inline&#34;&gt;\(O(250^3 * 1000)\)&lt;/span&gt; in our case.&lt;/p&gt;
+&lt;p&gt;We use the &lt;a href=&#34;#eq:m-decomp&#34;&gt;(6)&lt;/a&gt; to calculate the covariance of the latent GGP and we use it to simulate the latent process.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulating-multivariate-spatial-outcome&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulating multivariate spatial outcome&lt;/h2&gt;
+&lt;p&gt;Now we use &lt;a href=&#34;#eq:mgp&#34;&gt;(1)&lt;/a&gt; to simulate our multivariate outcome &lt;span class=&#34;math inline&#34;&gt;\(y_i(.), i= 1, \cdots, 10\)&lt;/span&gt;. In order to do that, we fix some covariates &lt;span class=&#34;math inline&#34;&gt;\(x_i(\cdot)\)&lt;/span&gt; and simulate error process &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{i}(\cdot)\)&lt;/span&gt; independently from &lt;span class=&#34;math inline&#34;&gt;\(N(0,\tau^2_{ii})\)&lt;/span&gt;. We take &lt;span class=&#34;math inline&#34;&gt;\(\tau_{ii}^2=\tau^2=0.25\)&lt;/span&gt; for all &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For analyzing the prediction accuracy of our method, we randomly pick &lt;span class=&#34;math inline&#34;&gt;\(20\%\)&lt;/span&gt; of the locations for each outcome variable and consider them missing. We will only be working with the training set to fit the model and judge our prediction accuracy on the test set.&lt;/p&gt;
+&lt;p&gt;Now we visualize the surface of the training data by variables below.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-analysis&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data analysis&lt;/h1&gt;
+&lt;p&gt;The analysis of our simulated data can be broken down in the following steps.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Marginal parameter estimation&lt;/strong&gt;: We estimate the marginal scale (&lt;span class=&#34;math inline&#34;&gt;\(\phi_{ii}\)&lt;/span&gt;), variance (&lt;span class=&#34;math inline&#34;&gt;\(\sigma^2_{ii}\)&lt;/span&gt;) and smoothness parameters (&lt;span class=&#34;math inline&#34;&gt;\(\nu_{ii}\)&lt;/span&gt;) from the component Gaussian processes. We also estimate the error variance (&lt;span class=&#34;math inline&#34;&gt;\(\tau^2_{ii}\)&lt;/span&gt;) for each marginal processes.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Initialize Gibbs sampling&lt;/strong&gt;: For this step, we need the following components:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Processing the variable graph&lt;/strong&gt;: We fix our variable graph for the estimation process. First we calculate cliques, separators of the graph. Then we color the nodes and edges of the graph for parallel computation purposes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Starting cross-correlation&lt;/strong&gt;: We use the estimated marginal parameters and an initial correlation parameter to start off.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Gibbs sampling&lt;/strong&gt;: We run our Gibbs sampler in two steps -&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Sampling latent spatial processes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sampling latent correlations&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;marginal-parameter-estimation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Marginal parameter estimation&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;We first estimate the marginal process parameters using &lt;strong&gt;BRISC&lt;/strong&gt; package in R. We estimate scale (&lt;span class=&#34;math inline&#34;&gt;\(\phi_{ii}\)&lt;/span&gt;) and variance (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ii}\)&lt;/span&gt;) parameters. We fix the marginal smoothness (&lt;span class=&#34;math inline&#34;&gt;\(\nu_ii\)&lt;/span&gt;) and cross-smoothness (&lt;span class=&#34;math inline&#34;&gt;\(\nu_{ij}\)&lt;/span&gt;) parameters at &lt;span class=&#34;math inline&#34;&gt;\(0.5\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Same as the true cross-covariance, we calculate the cross-scale parameters as: &lt;span class=&#34;math inline&#34;&gt;\(\phi_{ij}= \sqrt{\frac{\phi_{ii}^2 + \phi_{jj}^2}{2}}\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;We estimate the marginal regression coefficients (&lt;span class=&#34;math inline&#34;&gt;\(\beta_i\)&lt;/span&gt;).&lt;/li&gt;
+&lt;li&gt;We estimate the marginal error variance (&lt;span class=&#34;math inline&#34;&gt;\(\tau_{ii}^2\)&lt;/span&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initialize-gibbs-sampling&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Initialize Gibbs sampling&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Process the variable graph&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First, we color the nodes of the variable graph. This will allow us to simulate the latent processes belonging to the same color in parallel.&lt;/p&gt;
+&lt;p&gt;We also construct a new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)=(E_\mathcal V,E^*)\)&lt;/span&gt; which denotes this graph on the set of edges &lt;span class=&#34;math inline&#34;&gt;\(E_\mathcal V\)&lt;/span&gt;, i.e., there is an edge &lt;span class=&#34;math inline&#34;&gt;\(((i,j),(i&amp;#39;,j&amp;#39;))\)&lt;/span&gt; in this new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(\{i,i&amp;#39;,j,j&amp;#39;\}\)&lt;/span&gt; are in some clique &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_V\)&lt;/span&gt;. This allows us to facilitate parallel update of cross-correlation parameters corresponding to edges in the same color.&lt;/p&gt;
+&lt;p&gt;These two procedures are examples of chromatic Gibbs sampling.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-13-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;strong&gt;Calculate initial cross-covariance matrix&lt;/strong&gt;: Start with an initial cross-correlation matrix. We Take a convex combination: &lt;span class=&#34;math inline&#34;&gt;\(0.5*diag(q) + 0.5*cor(Y.train)\)&lt;/span&gt;. Then we use this initial cross-correlation parameters and estimated marginal parameters to store the cross covariance matrices for cliques and separators only.&lt;/p&gt;
+&lt;p&gt;The largest matrix we need to store is of size &lt;span class=&#34;math inline&#34;&gt;\(nq_c \times nq_c\)&lt;/span&gt; matrix where &lt;span class=&#34;math inline&#34;&gt;\(q_c\)&lt;/span&gt; is the size of maximum clique or separator).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gibbs-sampling&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Gibbs sampling&lt;/h2&gt;
+&lt;p&gt;We iteratively perform the following steps until we reach a desired number of samples (&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;) -
+1. &lt;strong&gt;Sampling latent processes&lt;/strong&gt; : Using random draws from multivariate normal distribution
+2. &lt;strong&gt;Sampling correlations&lt;/strong&gt;: Metropolis-hastings
+3. &lt;strong&gt;Jumping between graphs&lt;/strong&gt;: Reversible jump MCMC.&lt;/p&gt;
+&lt;div id=&#34;sampling-latent-processes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Sampling latent processes&lt;/h3&gt;
+&lt;p&gt;To update the latent random effects &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;, let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L=\{s_1,\ldots,s_n\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(o_i=\mbox{diag}(I(s_1 \in \mathcal S_i), \ldots, I(s_n \in \mathcal S_i))\)&lt;/span&gt; denote the vector of missing observations for the &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;-th outcome. With &lt;span class=&#34;math inline&#34;&gt;\(X_{i}(\mathcal L) = (x_i(s_1),\ldots,x_i(s_n))^T\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(y_i(\mathcal L)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(w_i(\mathcal L)\)&lt;/span&gt; defined similarly, we obtain
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+\begin{split}
+p(w_i(\mathcal L) | \cdot) &amp;amp; \sim N\left(\mathcal M_i^{-1}\mu_i, \mathcal M_i^{-1}\right)\;, \mbox{ where } \\
+\mathcal M_i &amp;amp; =\frac{1}{\tau_i^2}\mbox{diag}(o_i) + \sum_{K \ni i}M_{\{i\} \times \mathcal L|(K\setminus \{i\}) \times \mathcal L}^{-1} - \sum_{S \ni i}M^{-1}_{\{i\} \times \mathcal L|(S\setminus \{i\}) \times \mathcal L}\;, \\
+\mu_i &amp;amp;= \frac{(y_i(\mathcal L) - x_i(\mathcal L)^{T}\beta_i)\odot o_i}{\tau_i^2} + \\
+&amp;amp; \qquad \sum_{K \ni i}  T_{i}(K) w({(K\setminus \{i\}) \times \mathcal L}) - \sum_{S \ni i} T_i(S) w({(S\setminus \{i\}) \times \mathcal L})\;, \\
+T_{i}(A) &amp;amp;= M_{\{i\} \times \mathcal L|(A\setminus \{i\}) \times \mathcal L}^{-1}  M_{\{i\} \times \mathcal L,(A\setminus \{i\}) \times \mathcal L}M_{(A\setminus \{i\}) \times \mathcal L}^{-1}, \mbox{ for } A \in \{K,S\}.\\
+% U_i(S) &amp;amp;= M_{\{i\} \times \mathcal L|(S\setminus \{i\}) \times \mathcal L}^{-1}  M_{(S\setminus \{i\}) \times \mathcal L,\{i\} \times \mathcal L}M_{(S\setminus \{i\}) \times \mathcal L}^{-1}.
+\end{split}\label{eqn: gibbs-sam-latent}
+\end{equation*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;%We denote &lt;span class=&#34;math inline&#34;&gt;\(\mathscr T_i= \mathcal L \setminus \mathscr S_i\)&lt;/span&gt;.
+% for a clique &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; in variable graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{G_V}\)&lt;/span&gt;, the set - &lt;span class=&#34;math inline&#34;&gt;\(K \times \mathcal L = K \times \mathscr S\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(S \times \mathcal L= S \times \mathscr S\)&lt;/span&gt;,
+%&lt;span class=&#34;math inline&#34;&gt;\(i_{K}=\{K \setminus i\} \times \mathscr S\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i \times \mathscr S_i = i_{\mathscr S}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i \times \mathscr T_i= i_{\mathscr T}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(i_{K} \cup i_{\mathscr T}= i_{K\mathscr T}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(i_{K} \cup i_{\mathscr S}= i_{K \times \mathcal L}\)&lt;/span&gt; . Also, for a clique &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; in containing a variable &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;, let’s denote &lt;span class=&#34;math inline&#34;&gt;\(M_{i_{{\mathscr S}.K}} = M_{i_{\mathscr S}} - M_{i_{\mathscr S}, i_{K\mathscr T}}M_{i_{K\mathscr T}}^{-1}M_{i_{K\mathscr T},i_{\mathscr S}}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M_{i_{{\mathscr T}.K}} = M_{i_{\mathscr T}} - M_{i_{\mathscr T}, i_{K \times \mathcal L}}M_{i_{K \times \mathcal L}}^{-1}M_{i_{K \times \mathcal L},i_{\mathscr T}}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sampling-cross-correlation-parameters&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Sampling cross-correlation parameters&lt;/h3&gt;
+&lt;p&gt;Requires only checking positive-definiteness of the clique-specific cross-covariance matrix and inverting it. The largest matrix inversion across all these updates is of the order &lt;span class=&#34;math inline&#34;&gt;\(nc \times nc\)&lt;/span&gt;, corresponding to the largest clique. The largest matrix that needs storing is also of dimension &lt;span class=&#34;math inline&#34;&gt;\(nc \times nc\)&lt;/span&gt;. These result in appreciable reduction of computations from any multivariate Matérn model that involves &lt;span class=&#34;math inline&#34;&gt;\(nq \times nq\)&lt;/span&gt; matrices and positive-definiteness checks for &lt;span class=&#34;math inline&#34;&gt;\(q \times q\)&lt;/span&gt; matrices at every iteration.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;For every correlation parameter corresponding to edges in the current graph, we draw a new correlation value from the proposal distribution.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We accept or reject the proposal based on the Metropolis-Hastings acceptance probability.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Results&lt;/h1&gt;
+&lt;p&gt;We create three plots below among true and estimated parameters for - (1) product of marginal scale and variance parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ii}\)&lt;/span&gt;), (2) cross-correlation parameter (&lt;span class=&#34;math inline&#34;&gt;\(r_{ij}\)&lt;/span&gt;) and (3) product of cross-covariance and cross-scale parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ij}*\phi_{ij}\)&lt;/span&gt;). The points on all the plots align on the &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line thus showing the accuracy of our estimation. We also create a plot across &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables showing true test data values and predicted values from our model. The points align on &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line and mean-square error varied from &lt;span class=&#34;math inline&#34;&gt;\(0.403\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(1.064\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-4.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;About the authors&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://debangandey.rbind.io&#34;&gt;Debangan Dey&lt;/a&gt;, National Institute of Mental Health.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://abhidatta.com/&#34;&gt;Abhirup Datta&lt;/a&gt;, Dept. of Biostatistics, Johns Hopkins Bloomberg School of Public Health.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sudipto.bol.ucla.edu/&#34;&gt;Sudipto Banerjee&lt;/a&gt;, Dept. of Biostatistics, UCLA Fielding School of Public Health.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;Bibliography&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-apanasovich2012valid&#34; class=&#34;csl-entry&#34;&gt;
+Apanasovich, Marc G Genton, Tatiyana V, and Ying Sun. 2012. &lt;span&gt;“A Valid Matern Class of Cross-Covariance Functions for Multivariate Random Fields with Any Number of Components.”&lt;/span&gt; &lt;em&gt;Journal of the American Statistical Association&lt;/em&gt; 107 (497): 180–93.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ban14&#34; class=&#34;csl-entry&#34;&gt;
+Banerjee, B. P. Carlin, S., and A. E. Gelfand. 2014. &lt;em&gt;Hierarchical Modeling and Analysis for Spatial Data&lt;/em&gt;. Chapman &amp;amp; Hall/CRC, Boca Raton, FL.
+&lt;/div&gt;
+&lt;div id=&#34;ref-creswikle11&#34; class=&#34;csl-entry&#34;&gt;
+Cressie, Noel A. C., and Christopher K. Wikle. 2011. &lt;em&gt;Statistics for Spatio-Temporal Data&lt;/em&gt;. Wiley Series in Probability and Statistics. Wiley, Hoboken, NJ.
+&lt;/div&gt;
+&lt;div id=&#34;ref-dey2021ggp&#34; class=&#34;csl-entry&#34;&gt;
+Dey, Abhirup Datta, Debangan, and Sudipto Banerjee. 2021. &lt;span&gt;“Graphical Gaussian Process Models for Highly Multivariate Spatial Data.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; December.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lauritzen1996graphical&#34; class=&#34;csl-entry&#34;&gt;
+Lauritzen, Steffen L. 1996. &lt;em&gt;Graphical Models&lt;/em&gt;. Vol. 17. Clarendon Press.
+&lt;/div&gt;
+&lt;div id=&#34;ref-wackernagel2013multivariate&#34; class=&#34;csl-entry&#34;&gt;
+Wackernagel, Hans. 2013. &lt;em&gt;Multivariate Geostatistics: An Introduction with Applications&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>The scaling limit of Baxter permutations</title>
       <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
@@ -1423,26 +1620,6 @@ West, Mike. 1984. &lt;span&gt;“Outlier Models and Prior Distributions in Bayes
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Merry Christmas and Happy New Year 2023!</title>
-      <link>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/12/21/merry-christmas-and-happy-new-year-2023/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2022-12-21-merry-christmas-and-happy-new-year-2023_files/Final_Image.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Dear Followers of the YoungStatS project, Dear All!&lt;/p&gt;
-&lt;p&gt;It has been an exciting year for our project, including 7 One World YoungStatS webinars and blogposts from leading authors in various areas of statistics, probability and econometrics.&lt;/p&gt;
-&lt;p&gt;In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;And we thank You, readers of our postings and participants at our webinars for your support and feedback thus far!&lt;/p&gt;
-&lt;p&gt;YoungStatS project will resume after the New Year including webinars on random matrix theory, causal AI inference, topological data analysis, copula models and extreme value theory, and regular blogposts. You would also be able to read shorter interviews with some of our webinar speakers and blogpost authors soon in the IMS Bulletin.&lt;/p&gt;
-&lt;p&gt;We wish you to have a great holiday time - Merry Christmas and a Happy New Year 2023!&lt;/p&gt;
-&lt;p&gt;Editorial Members of the YoungStatS project.&lt;/p&gt;
 </description>
     </item>
     

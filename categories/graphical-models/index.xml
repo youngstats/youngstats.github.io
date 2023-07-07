@@ -6,7 +6,17 @@
     <description>Recent content in graphical-models on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/graphical-models/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/graphical-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
+      <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
+      <description>IntroductionAbundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (Wackernagel (2013), Cressie and Wikle (2011), Banerjee and Gelfand (2014)). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.
+In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (Dey and Banerjee (2021)) to model the data.</description>
+    </item>
+    
     <item>
       <title>Graphical modeling of stochastic processes driven by correlated noise</title>
       <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
