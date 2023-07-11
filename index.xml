@@ -102,7 +102,7 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 &lt;li&gt;&lt;strong&gt;Processing the variable graph&lt;/strong&gt;: We fix our variable graph for the estimation process. First we calculate cliques, separators of the graph. Then we color the nodes and edges of the graph for parallel computation purposes.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Starting cross-correlation&lt;/strong&gt;: We use the estimated marginal parameters and an initial correlation parameter to start off.&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Gibbs sampling&lt;/strong&gt;: We run our Gibbs sampler in two steps -&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Gibbs sampling&lt;/strong&gt;: We run our Gibbs sampler in two steps:&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Sampling latent spatial processes&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Sampling latent correlations&lt;/strong&gt;&lt;/li&gt;
@@ -131,10 +131,12 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 &lt;/div&gt;
 &lt;div id=&#34;gibbs-sampling&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Gibbs sampling&lt;/h2&gt;
-&lt;p&gt;We iteratively perform the following steps until we reach a desired number of samples (&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;) -
-1. &lt;strong&gt;Sampling latent processes&lt;/strong&gt; : Using random draws from multivariate normal distribution
-2. &lt;strong&gt;Sampling correlations&lt;/strong&gt;: Metropolis-hastings
-3. &lt;strong&gt;Jumping between graphs&lt;/strong&gt;: Reversible jump MCMC.&lt;/p&gt;
+&lt;p&gt;We iteratively perform the following steps until we reach a desired number of samples (&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;).&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Sampling latent processes&lt;/strong&gt; : Using random draws from multivariate normal distribution&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sampling correlations&lt;/strong&gt;: Metropolis-hastings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jumping between graphs&lt;/strong&gt;: Reversible jump MCMC.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div id=&#34;sampling-latent-processes&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Sampling latent processes&lt;/h3&gt;
 &lt;p&gt;To update the latent random effects &lt;span class=&#34;math inline&#34;&gt;\(w\)&lt;/span&gt;, let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L=\{s_1,\ldots,s_n\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(o_i=\mbox{diag}(I(s_1 \in \mathcal S_i), \ldots, I(s_n \in \mathcal S_i))\)&lt;/span&gt; denote the vector of missing observations for the &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;-th outcome. With &lt;span class=&#34;math inline&#34;&gt;\(X_{i}(\mathcal L) = (x_i(s_1),\ldots,x_i(s_n))^T\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(y_i(\mathcal L)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(w_i(\mathcal L)\)&lt;/span&gt; defined similarly, we obtain
@@ -305,7 +307,7 @@ Define the function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\
 &lt;p&gt;We remark that, further computation of the integral (2.2) is tricky, as it involves integrating a four-dimensional Gaussian in the first quadrant.
 We also recall that the intensity measure of other universal random limiting permutons has been investigated in the literature.
 For instance, the intensity measure of the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt;, was determined by Maazoun in &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
-We recall that the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt;, defined for all &lt;span class=&#34;math inline&#34;&gt;\(q\in[0,1]\)&lt;/span&gt;, is a one-parameter universal family of limiting permutons arising form pattern-avoiding permutations. In &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, it was proved that for all &lt;span class=&#34;math inline&#34;&gt;\(q\in(0,1)\)&lt;/span&gt;, the intensity measure $E[^q_S]$$ of the biased Brownian separable permuton is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
+We recall that the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt;, defined for all &lt;span class=&#34;math inline&#34;&gt;\(q\in[0,1]\)&lt;/span&gt;, is a one-parameter universal family of limiting permutons arising form pattern-avoiding permutations. In &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, it was proved that for all &lt;span class=&#34;math inline&#34;&gt;\(q\in(0,1)\)&lt;/span&gt;, the intensity measure &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E[\mu^q_S]\)&lt;/span&gt; of the biased Brownian separable permuton is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
 Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E[\mu^q_S]\)&lt;/span&gt; has the following density function&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
     p^q_S(x, y) =\int_{\max\{0,x+y -1\}}^{\min\{x,y\}} \frac{3q^2(1-q)^2 \,da }

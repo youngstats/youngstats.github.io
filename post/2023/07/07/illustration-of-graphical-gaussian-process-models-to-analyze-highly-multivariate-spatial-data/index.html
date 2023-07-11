@@ -172,7 +172,7 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 <li><strong>Processing the variable graph</strong>: We fix our variable graph for the estimation process. First we calculate cliques, separators of the graph. Then we color the nodes and edges of the graph for parallel computation purposes.</li>
 <li><strong>Starting cross-correlation</strong>: We use the estimated marginal parameters and an initial correlation parameter to start off.</li>
 </ol></li>
-<li><p><strong>Gibbs sampling</strong>: We run our Gibbs sampler in two steps -</p>
+<li><p><strong>Gibbs sampling</strong>: We run our Gibbs sampler in two steps:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Sampling latent spatial processes</strong></li>
 <li><strong>Sampling latent correlations</strong></li>
@@ -201,10 +201,12 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 </div>
 <div id="gibbs-sampling" class="section level2">
 <h2>Gibbs sampling</h2>
-<p>We iteratively perform the following steps until we reach a desired number of samples (<span class="math inline">\(N\)</span>) -
-1. <strong>Sampling latent processes</strong> : Using random draws from multivariate normal distribution
-2. <strong>Sampling correlations</strong>: Metropolis-hastings
-3. <strong>Jumping between graphs</strong>: Reversible jump MCMC.</p>
+<p>We iteratively perform the following steps until we reach a desired number of samples (<span class="math inline">\(N\)</span>).</p>
+<ol style="list-style-type: decimal">
+<li><strong>Sampling latent processes</strong> : Using random draws from multivariate normal distribution</li>
+<li><strong>Sampling correlations</strong>: Metropolis-hastings</li>
+<li><strong>Jumping between graphs</strong>: Reversible jump MCMC.</li>
+</ol>
 <div id="sampling-latent-processes" class="section level3">
 <h3>Sampling latent processes</h3>
 <p>To update the latent random effects <span class="math inline">\(w\)</span>, let <span class="math inline">\(\mathcal L=\{s_1,\ldots,s_n\}\)</span> and <span class="math inline">\(o_i=\mbox{diag}(I(s_1 \in \mathcal S_i), \ldots, I(s_n \in \mathcal S_i))\)</span> denote the vector of missing observations for the <span class="math inline">\(i\)</span>-th outcome. With <span class="math inline">\(X_{i}(\mathcal L) = (x_i(s_1),\ldots,x_i(s_n))^T\)</span>, <span class="math inline">\(y_i(\mathcal L)\)</span> and <span class="math inline">\(w_i(\mathcal L)\)</span> defined similarly, we obtain
