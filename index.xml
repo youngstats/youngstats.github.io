@@ -290,14 +290,14 @@ A permutation &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; ca
 The set of permutons equipped with the topology of weak convergence of measures can be viewed as a compact metric space.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; studied the expected limiting permuton of the so-called &lt;em&gt;doubly alternating Baxter permutations&lt;/em&gt;.
 The authors raised the question of proving the existence of the &lt;em&gt;Baxter permuton&lt;/em&gt; as the scaling limit of uniform Baxter permutations, and determine its expected density.
-The existence of the Baxter permuton was established in &lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-BM20&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theorem 2.2&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; be a uniform Baxter permutation of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;.
+The existence of the Baxter permuton was established in &lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-BM20&#34;&gt;2022a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 2.2&lt;/strong&gt; (&lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-bm-baxter-permutation&#34;&gt;2022b&lt;/a&gt;)&lt;/span&gt;, Theorem 1.9) Let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; be a uniform Baxter permutation of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;.
 The following convergence w.r.t. the permuton topology holds: &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma_n}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\xrightarrow{d}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a random permuton called the &lt;em&gt;Baxter permuton&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Remark 2.3.&lt;/strong&gt; In &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021skewperm&#34;&gt;2021b&lt;/a&gt;)&lt;/span&gt;, a two-parameter family of permutons called the &lt;em&gt;skew Brownian permuton&lt;/em&gt; was introduced.
 This family includes the Baxter permuton and a well-studied one-parameter family of permutons, called the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2018separable&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2017universal&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;), as special cases.&lt;/p&gt;
 &lt;p&gt;The Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a &lt;em&gt;random&lt;/em&gt; probability measure on the unit square (with uniform marginals); recall Figure 4.
 The next result is an explicit expression of its intensity measure, defined by &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_{B}](\cdot):=\mathbb E [\mu_{B}(\cdot)]\)&lt;/span&gt;, which answers &lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theorem 2.4.&lt;/strong&gt; Consider the Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt;.
+&lt;p&gt;&lt;strong&gt;Theorem 2.4.&lt;/strong&gt; (&lt;span class=&#34;citation&#34;&gt;Borga et al. (&lt;a href=&#34;#ref-bhsy-baxter-permuton&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;, Theorem 1.3) Consider the Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt;.
 Define the function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eqn-rho}
         \rho(t, x, r):= \frac{1}{t^2} \left(\left(\frac{3rx}{2t}-1\right)e^{-\frac{r^2+x^2-rx}{2t}}+e^{-\frac{(x+r)^2}{2t}}\right).
     \end{equation}\]&lt;/span&gt; Then the intensity measure &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_B]\)&lt;/span&gt; is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
@@ -362,8 +362,14 @@ Borga, Jacopo, Ewain Gwynne, and Minjae Park. 2022. &lt;span&gt;“On the Geomet
 &lt;div id=&#34;ref-borga2022permutons&#34; class=&#34;csl-entry&#34;&gt;
 Borga, Jacopo, Ewain Gwynne, and Xin Sun. 2022. &lt;span&gt;“Permutons, Meanders, and &lt;span&gt;SLE&lt;/span&gt;-Decorated &lt;span&gt;L&lt;/span&gt;iouville Quantum Gravity.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2207.02319&lt;/em&gt;.
 &lt;/div&gt;
+&lt;div id=&#34;ref-bhsy-baxter-permuton&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo, Nina Holden, Xin Sun, and Pu Yu. 2023. &lt;span&gt;“Baxter Permuton and &lt;span&gt;L&lt;/span&gt;iouville Quantum Gravity.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt;, 1–49.
+&lt;/div&gt;
+&lt;div id=&#34;ref-bm-baxter-permutation&#34; class=&#34;csl-entry&#34;&gt;
+Borga, Jacopo, and Mickaël Maazoun. 2022b. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
+&lt;/div&gt;
 &lt;div id=&#34;ref-BM20&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo, and Mickaël Maazoun. 2022. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
+———. 2022a. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
 &lt;/div&gt;
 &lt;div id=&#34;ref-MR2028288&#34; class=&#34;csl-entry&#34;&gt;
 Bousquet-Mélou, M. 2002/03. &lt;span&gt;“Four Classes of Pattern-Avoiding Permutations Under One Roof: Generating Trees with Two Labels.”&lt;/span&gt; &lt;em&gt;Electron. J. Combin.&lt;/em&gt; 9 (2): Research paper 19, 31. &lt;a href=&#34;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&#34;&gt;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&lt;/a&gt;.
