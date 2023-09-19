@@ -6,7 +6,43 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data-science</title>
+      <link>https://youngstats.github.io/categories/data-science/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://youngstats.github.io/categories/statistics/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>graphical-models</title>
       <link>https://youngstats.github.io/categories/graphical-models/</link>
@@ -58,42 +94,6 @@
       <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/bayesian-nonparametrics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayesian-statistics</title>
-      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>copula-models</title>
-      <link>https://youngstats.github.io/categories/copula-models/</link>
-      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/copula-models/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fluid-dynamics</title>
-      <link>https://youngstats.github.io/categories/fluid-dynamics/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/fluid-dynamics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic-differential-equations</title>
-      <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
       <description></description>
     </item>
     

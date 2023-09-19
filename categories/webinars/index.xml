@@ -6,7 +6,21 @@
     <description>Recent content in webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithmic Fairness</title>
+      <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</guid>
+      <description>Algorithmic Fairness
+Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 15:30 CET
+2nd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
+When &amp;amp; Where:
+Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 15:30 CETOnline, via Zoom. The registration form is availablehere.Speakers:
+Linjun Zhang, Rutgers University: “Fair conformal prediction”Abstract: Multi-calibration is a powerful and evolving concept originating in the field of algorithmic fairness.</description>
+    </item>
+    
     <item>
       <title>Recent advances in extreme value theory</title>
       <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
@@ -106,16 +120,6 @@ In approximate Bayesian computation, likelihood function is intractable and need
       <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
       <description>Recent Advancements in Applied Instrumental Variable Methods
 Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.</description>
-    </item>
-    
-    <item>
-      <title>Inclusion Process and Sticky Brownian Motions</title>
-      <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
-      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</guid>
-      <description>Inclusion Process and Sticky Brownian Motions
-The ninth “One World webinar” organized by YoungStatS will take place onFebruary 9th, 2022. Inclusion process (IP) is a stochastic lattice gaswhere particles perform random walks subjected to mutual attraction. Forthe inclusion process in the condensation regime one can extract thatthe scaling limit of two particles is a pair of sticky Brownian motionswhich lead to interesting recent research. In a system of stickyBrownian motions, particles behave as independent Brownian motions whenapart, but have a sticky interaction when they meet.</description>
     </item>
     
   </channel>
