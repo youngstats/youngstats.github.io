@@ -6,7 +6,17 @@
     <description>Recent content in high-dimensional-data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
+      <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
+      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.
+Crossed random effects models (CREM)CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
+    </item>
+    
     <item>
       <title>Procrustes Analysis for High-Dimensional Data</title>
       <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>

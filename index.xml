@@ -6,7 +6,134 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
+      <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
+      <description>
+
+
+&lt;style&gt;
+body {
+text-align: justify
+fig.align = &#39;center&#34;}
+&lt;/style&gt;
+&lt;p&gt;In the following we show how it is possible to obtain &lt;strong&gt;parallelizable, unbiased and computationally cheap&lt;/strong&gt; estimates of Crossed random effects models with a &lt;strong&gt;linear cost&lt;/strong&gt; in the number of datapoints (and paramaters) exploiting &lt;strong&gt;couplings&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;crossed-random-effects-models-crem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Crossed random effects models (CREM)&lt;/h2&gt;
+&lt;p&gt;CREM model a continuous response variables &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; as depending on the sum of unknown effects of &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; categorical predictors. Think of the &lt;span class=&#34;math inline&#34;&gt;\(Y_n\)&lt;/span&gt; as the ratings given to university courses, along with some factors potentially impacting such a score, e.g. student identity, code of the course, department teaching it, professors ecc. Aim of the model is investigating the effect of each of those factors on the overall score. In their simplest version (i.e. linear, intercept-only case), the model takes the form:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+	\label{eq:crem}
+	\mathcal{L}(y_n) =  f \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)},\tau_0^{-1}\right) \text{ for } n=1,...,N,
+\end{equation}\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; indicates the density of some distribution whose mean is the sum of &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;, a global mean, and &lt;span class=&#34;math inline&#34;&gt;\(a^{(k)}_{i_{k[n]}}\)&lt;/span&gt;, i.e. the unknown effects of the student identity, the department teaching it ecc.&lt;/p&gt;
+&lt;p&gt;We are interested in studying how the cost of estimating the unknown effects scales as the number of observations &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; and of parameters &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; grows to &lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;. Our goal is an algorithm whose complexity scales linearly in &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;, and we call such algorithms “scalable”. Both in the Frequentist and in the Bayesian literature, these models are difficult to estimate: works of &lt;span class=&#34;citation&#34;&gt;Gao and Owen (&lt;a href=&#34;#ref-gao_16&#34; role=&#34;doc-biblioref&#34;&gt;2016a&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Gao and Owen (&lt;a href=&#34;#ref-gao19&#34; role=&#34;doc-biblioref&#34;&gt;2016b&lt;/a&gt;)&lt;/span&gt; showed how the “vanilla” implementation of GLS and of Gibbs samplers have a computational cost that grows at best as &lt;span class=&#34;math inline&#34;&gt;\(O(N^\frac{3}{2})\)&lt;/span&gt;. Recent works by &lt;span class=&#34;citation&#34;&gt;Papaspiliopoulos, Roberts, and Zanella (&lt;a href=&#34;#ref-papaspiliopoulos2018scalable&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Ghosh, Hastie, and Owen (&lt;a href=&#34;#ref-gosh_back&#34; role=&#34;doc-biblioref&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; proposed, respectively, a collapsed Gibbs sampler and a “backfitting” iterative algorithm that exhibit computational costs linear in the number of observations; in particular the MCMC induced by the collapsed scheme is proved to have a mixing time that is &lt;span class=&#34;math inline&#34;&gt;\(O(1)\)&lt;/span&gt; under certain asymptotic regimes.&lt;/p&gt;
+&lt;p&gt;It is possible to further improve the MCMC estimates exploiting couplings: as showed in &lt;span class=&#34;citation&#34;&gt;Jacob, O’Leary, and Atchadé (&lt;a href=&#34;#ref-jacob2019unbiased&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Glynn and Rhee (&lt;a href=&#34;#ref-glynn_rhee&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;, coupling two MCMC chains allows to derive unbiased estimators of posterior quantities, provided that the two coupled chains are exactly equal after a finite number of iterations. Furthermore, the same construction provides theoretical foundations for the early stopping of the chains (once met) and allows for the parallelization of independent experiments.&lt;/p&gt;
+&lt;p&gt;The extra computational cost one has to pay is represented by the product between the cost of each iteration and the expected number of iterations needed for coalescence. As for the former, it is possible to devise many coupling algorithms for which the cost of each iteration is easily computable and linear in the number of observations. As for the expected meeting time, for chains arising from a Gibbs sampling scheme targeting Gaussian distributions, it is possible to show that is directly related to the mixing time of the single Markov chain, and indeed it differs from the latter only by a logarithmic factor up to some constants (see the Sections below for more details). Hence chains that mix fast also meet in a small number of iteration and therefore provide unbiased estimates with low computational cost.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;couplings-for-estimation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Couplings for estimation&lt;/h2&gt;
+&lt;p&gt;Theoretically speaking, given &lt;span class=&#34;math inline&#34;&gt;\(X,Y\)&lt;/span&gt; random variables distributed according to &lt;span class=&#34;math inline&#34;&gt;\(P,Q\)&lt;/span&gt; respectively, a coupling of the two is random variables &lt;span class=&#34;math inline&#34;&gt;\((X, Y)\)&lt;/span&gt; on the joint space such that the marginal distribution of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; is &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and the marginal distribution of Y is &lt;span class=&#34;math inline&#34;&gt;\(Q\)&lt;/span&gt;.
+Clearly, given two marginal distributions, there are infinitely many joint distributions with those as marginals. Below some of the possible couplings of a &lt;span class=&#34;math inline&#34;&gt;\(N(1,1)\)&lt;/span&gt; (on the x-axis) and &lt;span class=&#34;math inline&#34;&gt;\(N(0,1)\)&lt;/span&gt; on the y-axis. Starting clockwise from top left: maximal independent (i.e. a coupling maximizing the probability of equal draws), maximal reflection, independent (bivariate independent normal) and &lt;span class=&#34;math inline&#34;&gt;\(W2\)&lt;/span&gt;-optimal (maximally correlated draws).&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Couplings of Gaussian distributions&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Couplings might be used for obtaining unbiased estimators in MCMC inference, as shown in &lt;span class=&#34;citation&#34;&gt;Jacob, O’Leary, and Atchadé (&lt;a href=&#34;#ref-jacob2019unbiased&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
+Given a target probability distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; and an integrable function &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt;, we are interested in estimating: &lt;span class=&#34;math display&#34;&gt;\[\mathbb{E}_{\pi}[h(\boldsymbol{\Theta})] = \int h(\boldsymbol{\theta}) \pi(d\boldsymbol{\theta}).\]&lt;/span&gt;
+Usually, one would sample a chain according to some Markov kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, designed to leave the chain &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; invariant, i.e. a Gibbs kernel or random walk Metropolis &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-Metropolis&#34; role=&#34;doc-biblioref&#34;&gt;Hastings 1970&lt;/a&gt;)&lt;/span&gt;. Below the sample path of such a chain.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Sample path of a single MC&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Instead of waiting until convergence, one could run two coupled Markov chains &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^1_t)_{t\ge -1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^2_t)_{t \ge0}\)&lt;/span&gt;, which marginally starts from some base distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi_0\)&lt;/span&gt; and evolves according to the same kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, but some correlation is induced in order to let the chains meet after an almost surely finite number of iterations. Basically at iteration &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; instead of sampling from &lt;span class=&#34;math inline&#34;&gt;\(X_{t+1} \sim P(X_t, \cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y_{t+1} \sim P(Y_t, \cdot)\)&lt;/span&gt; independently, we sample from a coupling of the two distributions.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Sample path of coupled MCs&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Then, for any fixed &lt;span class=&#34;math inline&#34;&gt;\(m \ge k\)&lt;/span&gt;, we can run coupled chains for &lt;span class=&#34;math inline&#34;&gt;\(\max(m, T)\)&lt;/span&gt; iterations and &lt;span class=&#34;math inline&#34;&gt;\(H_{k:m}\)&lt;/span&gt; is an unbiased estimator:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+	H_{k:m} &amp;amp; = \frac{1}{m-k+1} \sum_{l=k}^m h(\boldsymbol{\Theta}^1_l) + \sum_{l=k+1}^{\tau} \min \left(1, \frac{l-k}{m-k+1}\right) \left(h(\boldsymbol{\Theta}^1_l)-h(\boldsymbol{\Theta}^2_{l})\right) \\ &amp;amp;= MCMC_{k:m} + BC_{k:m}.
+\end{align*}\]&lt;/span&gt;
+The form of the estimator includes two terms: the first term corresponds to a standard MCMC average with &lt;span class=&#34;math inline&#34;&gt;\(m-k+1\)&lt;/span&gt; total iterations and &lt;span class=&#34;math inline&#34;&gt;\(k-1\)&lt;/span&gt; burn-in steps, and the other term is a “bias correction”, the part that corrects the bias present in the MCMC average.&lt;/p&gt;
+&lt;p&gt;For more details give a look up at &lt;a href=&#34;https://sites.google.com/site/pierrejacob/cmclectures&#34; class=&#34;uri&#34;&gt;https://sites.google.com/site/pierrejacob/cmclectures&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In order two yield small meeting times, we implement a “two-step” coupling strategy: whenever the chains are “far away” (in some notion that will be clarified later) use a coupling whose aim is to bring the realizations closer to each other; whenever “close enough”, choose a coupling maximizing the meeting probabilities. The heuristic for this construction is that whenever a maximal coupling fails, components are sampled far away in the space, thus reducing the coalescence probability for the next steps.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bound-on-coupling-time&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bound on coupling time&lt;/h2&gt;
+&lt;p&gt;Consider &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\theta}_t)_{t\ge 1}=(\boldsymbol{\theta}^1_t, \boldsymbol{\theta}^2_t)_{t\ge 0}\)&lt;/span&gt;, two &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt;-reversible Markov chains arising from a Gibbs sampler targeting &lt;span class=&#34;math inline&#34;&gt;\(\pi=N(\boldsymbol{\mu},\Sigma)\)&lt;/span&gt;. If a “two-step” strategy is implemented, with maximal reflection and &lt;span class=&#34;math inline&#34;&gt;\(W2\)&lt;/span&gt; optimal couplings, then for every &lt;span class=&#34;math inline&#34;&gt;\(\delta &amp;gt;0\)&lt;/span&gt;, the meeting time &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; is bounded by
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+		\mathbb{E}[T| \boldsymbol{\theta}_0] \le 5 + 3 \max \left(n^*_\delta, T_{rel} \left[\frac{\ln(T_{rel})}{2} + C_0 + C_\varepsilon \right] (1+\delta)  \right),
+	\end{equation}\]&lt;/span&gt;on}
+where &lt;span class=&#34;math inline&#34;&gt;\(C_0\)&lt;/span&gt; denotes a constant solely depending on &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}^1_0, \boldsymbol{\theta}^2_0\)&lt;/span&gt; and the posterior variance &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(C_\varepsilon\)&lt;/span&gt; depends on the fixed parameters &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(n^*_\delta = inf_{n_0} \{ n_0 \ge 1: \forall n \ge n_0 \; 1-\| B^n \|^\frac{1}{n} \ge \frac{1-\rho(B)}{1+\delta} \}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Given the above, if one is able to design a single MCMC chain mixing in say &lt;span class=&#34;math inline&#34;&gt;\(O(1)\)&lt;/span&gt;, then the extra cost of an unbiased estimate is nothing more than a &lt;span class=&#34;math inline&#34;&gt;\(\ln\left( O(1) \right)\)&lt;/span&gt; plus a constant.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulations&lt;/h2&gt;
+&lt;p&gt;We simulate data coming from the model for different asymptotic regimes and parameter specification. We study the behaviour of the meeting times as the dimensionality of the model increase. We implement the “two step” Algorithm, using maximal reflection and &lt;span class=&#34;math inline&#34;&gt;\(W2\)&lt;/span&gt;-optimal couplings.&lt;/p&gt;
+&lt;p&gt;We consider two asymptotic regimes, called &lt;em&gt;outfill asymptotic&lt;/em&gt;, where both the number of parameters &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; and the number of observation &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; increase, but with different speeds according to the chosen setting.
+Consider first a model with &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt; factors and &lt;span class=&#34;math inline&#34;&gt;\(I_1= I_2 = \{50, 100,250,500,750,1000 \}\)&lt;/span&gt; different possible levels. Suppose that the number of observations grows quadratically wrt the number of parameters, i.e. &lt;span class=&#34;math display&#34;&gt;\[ N= O(p^2)\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
+Below we report the average meeting time for the sampler with fixed and free variances, alongside with the bound for the collapsed Gibbs sampler with fixed variances, for different values of &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Results of the simulations suggest that the expected number of iterations converges to &lt;span class=&#34;math inline&#34;&gt;\(O(1)\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; increases, while diverges for the plain vanilla Gibbs sampler (not even plotted because of different scale). It is also clear that the bound closely resembles the estimated average meeting times.&lt;/p&gt;
+&lt;p&gt;We consider now an even sparser asymptotic regime, where instead the number of observation grows at the same rate of the number of parameters.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{N}{p} \approx \alpha \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
+Estimates for the mean number of iterations for the fixed and free variance case are plotted below, alongside the corresponding theoretical bounds.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Lastly, we want to highlight that while the bound presented in the Theorem above only applies for Gibbs samplers targeting Gaussian distributions, the methodology is still valid for general target distributions and provide small meeting times. We report below the average meeting times of chains targeting a CREM with Laplace response.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+	\mathcal{L}(y_n) = Laplace \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)} \right) \text{ for } n=1,...,N,
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Average meeting times for Laplace CREMS&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-author&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the author&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://paoloceriani.github.io&#34;&gt;Paolo Ceriani&lt;/a&gt;, PhD student, Bocconi University, Italy.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.google.com/site/gzanellawebpage/home&#34;&gt;Giacomo Zanella&lt;/a&gt;, Assistant Professor, Bocconi University, Italy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-gao_16&#34; class=&#34;csl-entry&#34;&gt;
+Gao, Katelyn, and Art Owen. 2016a. &lt;span&gt;“Efficient Moment Calculations for Variance Components in Large Unbalanced Crossed Random Effects Models.”&lt;/span&gt; &lt;em&gt;Electronic Journal of Statistics&lt;/em&gt; 11 (January). &lt;a href=&#34;https://doi.org/10.1214/17-EJS1236&#34;&gt;https://doi.org/10.1214/17-EJS1236&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-gao19&#34; class=&#34;csl-entry&#34;&gt;
+———. 2016b. &lt;span&gt;“Estimation and Inference for Very Large Linear Mixed Effects Models.”&lt;/span&gt; &lt;em&gt;Statistica Sinica&lt;/em&gt;, October. &lt;a href=&#34;https://doi.org/10.5705/ss.202018.0029&#34;&gt;https://doi.org/10.5705/ss.202018.0029&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-gosh_back&#34; class=&#34;csl-entry&#34;&gt;
+Ghosh, Swarnadip, Trevor J. Hastie, and Art B. Owen. 2022. &lt;span&gt;“Backfitting for Large Scale Crossed Random Effects Regressions.”&lt;/span&gt; &lt;em&gt;The Annals of Statistics&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-glynn_rhee&#34; class=&#34;csl-entry&#34;&gt;
+Glynn, Peter W., and Chang-han Rhee. 2014. &lt;span&gt;“Exact Estimation for Markov Chain Equilibrium Expectations.”&lt;/span&gt; &lt;em&gt;Journal of Applied Probability&lt;/em&gt; 51A: 377–89. &lt;a href=&#34;http://www.jstor.org/stable/43284129&#34;&gt;http://www.jstor.org/stable/43284129&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-Metropolis&#34; class=&#34;csl-entry&#34;&gt;
+Hastings, W. K. 1970. &lt;span&gt;“Monte Carlo Sampling Methods Using Markov Chains and Their Applications.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; 57 (1): 97–109. &lt;a href=&#34;http://www.jstor.org/stable/2334940&#34;&gt;http://www.jstor.org/stable/2334940&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-jacob2019unbiased&#34; class=&#34;csl-entry&#34;&gt;
+Jacob, Pierre E., John O’Leary, and Yves F. Atchadé. 2020. &lt;span&gt;“Unbiased Markov Chain Monte Carlo Methods with Couplings.”&lt;/span&gt; &lt;em&gt;Journal of the Royal Statistical Society: Series B (Statistical Methodology)&lt;/em&gt; 82 (3): 543–600. https://doi.org/&lt;a href=&#34;https://doi.org/10.1111/rssb.12336&#34;&gt;https://doi.org/10.1111/rssb.12336&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-papaspiliopoulos2018scalable&#34; class=&#34;csl-entry&#34;&gt;
+Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Scalable inference for crossed random effects models&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt; 107 (1): 25–40. &lt;a href=&#34;https://doi.org/10.1093/biomet/asz058&#34;&gt;https://doi.org/10.1093/biomet/asz058&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Algorithmic Fairness</title>
       <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
@@ -1230,184 +1357,6 @@ In practice, it projects the matrices &lt;span class=&#34;math inline&#34;&gt;\(
 &lt;p&gt;Discussant: &lt;a href=&#34;https://niklaspfister.github.io/&#34;&gt;Niklas Pfister&lt;/a&gt;, University of Copenhagen&lt;/p&gt;
 &lt;p&gt;YoungStatS project of the Young Statisticians Europe initiative (FENStatS) is supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=XQ-Udp_WaMM&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Asymptotic Statistics in Non-Sparse Networks</title>
-      <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
-      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/cover.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Exchangeable arrays have been studied since the late 70’s (&lt;span class=&#34;citation&#34;&gt;Aldous (&lt;a href=&#34;#ref-Aldous&#34; role=&#34;doc-biblioref&#34;&gt;1983&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Kallenberg (&lt;a href=&#34;#ref-kallenberg05&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;). &lt;span class=&#34;citation&#34;&gt;Eagleson and Weber (&lt;a href=&#34;#ref-eagleson&#34; role=&#34;doc-biblioref&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Silverman (&lt;a href=&#34;#ref-silverman&#34; role=&#34;doc-biblioref&#34;&gt;1976&lt;/a&gt;)&lt;/span&gt; established Strong Law of Large
-Numbers and Central Limit Theorems for such arrays. Because non-sparse
-networks and multiway clustering are related to exchangeable arrays,
-they have received recent attention in statistics and econometrics
-(&lt;span class=&#34;citation&#34;&gt;Davezies, D’Haultfœuille, and Guyonvarch (&lt;a href=&#34;#ref-davezies1&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Davezies, D’Haultfœuille, and Guyonvarch (&lt;a href=&#34;#ref-davezies2&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Menzel (&lt;a href=&#34;#ref-menzel&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;). We focus below on non-sparse networks
-and present uniformity results at the basis of the asymptotic normality
-of many nonlinear estimators. We also show the general validity of a
-bootstrap scheme adapted to such data.&lt;/p&gt;
-&lt;div id=&#34;non-sparse-networks-dyadic-data-and-exchangeability&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Non-sparse Networks, Dyadic data and exchangeability&lt;/h2&gt;
-&lt;p&gt;Dyadic data are random variables (or vectors) &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; indexed by &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;
-and &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;, two units from the same population. For instance, &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt;
-could be exports from country &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to country &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. Another example is
-taken from digital networks where &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; could be, e.g., the numbers
-of messages from &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. It is useful to represent such data as
-arrays:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In this set set-up, the &lt;span class=&#34;math inline&#34;&gt;\(n(n-1)\)&lt;/span&gt; variables are potentially dependent
-because &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}\)&lt;/span&gt; is likely correlated with &lt;span class=&#34;math inline&#34;&gt;\(Y_{i&amp;#39;,j&amp;#39;}\)&lt;/span&gt; if
-&lt;span class=&#34;math inline&#34;&gt;\(\{i,j\}\cap\{i&amp;#39;,j&amp;#39;\}\neq \emptyset\)&lt;/span&gt;. In the first example, exports from
-&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; are correlated with exports from &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;, but also with
-other exports or imports of &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;. The following assumptions allow
-for such correlations, while keeping important aspects of iid sampling:
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
-\textbf{Joint exchangeability: } &amp;amp; (Y_{i,j})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}\text{ has the same distribution as }(Y_{\pi(i),\pi(j)})_{(i,j)\in \mathbb{N}^{\ast 2}, i\neq j}, \\
-&amp;amp; \text{ for any permutation }\pi \text{ of }\mathbb{N}^{\ast}, \\
-\textbf{Dissociation: } &amp;amp; (Y_{i,j})_{(i,j)\in \{1,...,k\}^2, i\neq j}\text{ and } (Y_{i,j})_{(i,j)\in \{k+1,k+2,...\}^2, i\neq j} \text{ are independent,} \\ &amp;amp; \text{for any }k \in \mathbb{N}^{\ast}.
-\end{align*}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;These notions generalize “iidness”: if &lt;span class=&#34;math inline&#34;&gt;\((X_i)_{i\geq 1}\)&lt;/span&gt; are i.i.d.,
-then &lt;span class=&#34;math inline&#34;&gt;\(Y_{i,j}=X_i\)&lt;/span&gt;, for any &lt;span class=&#34;math inline&#34;&gt;\(i\neq j\)&lt;/span&gt;, defines a jointly exchangeable
-and dissociated array.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;simple-law-of-large-numbers-lln-and-central-limit-theorems-clt&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Simple law of large numbers (LLN) and central limit theorems (CLT)&lt;/h2&gt;
-&lt;p&gt;The following results generalize the usual LLN and CLT for iid data to
-jointly exchangeable and dissociated arrays:&lt;/p&gt;
-&lt;p&gt;These results actually hold for “multiadic” data, viz. data indexed by
-&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;-tuples instead of pairs. This has a nice consequence. If the
-variables &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i\neq j}\)&lt;/span&gt; are jointly exchangeable and
-dissociated, the variables
-&lt;span class=&#34;math inline&#34;&gt;\(Z_{i,j,k}=(Y_{i,j}+Y_{j,i})(Y_{i,k}+Y_{k,i})&amp;#39;\)&lt;/span&gt; (with &lt;span class=&#34;math inline&#34;&gt;\(i, j\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; all
-distinct) also are. Then by the LLN above, we have, if
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}\left(|Y_{1,2}|^2\right)&amp;lt;\infty\)&lt;/span&gt;,
-&lt;span class=&#34;math display&#34;&gt;\[\frac{1}{n(n-1)(n-2)}\sum_{1\leq i,j,k\leq n}Z_{i,j,k}\xrightarrow{a.s.}\mathbb{E} \left((Y_{1,2}+Y_{2,1})(Y_{1,3}+Y_{3,1})&amp;#39;\right).\]&lt;/span&gt;
-Next, if we let
-&lt;span class=&#34;math inline&#34;&gt;\(\overline{Y}_i=\frac{1}{n-1}\sum_{\substack{1\leq j \leq n\\ j\neq i}}(Y_{i,j}+Y_{j,i})\)&lt;/span&gt;
-and &lt;span class=&#34;math inline&#34;&gt;\(\overline{Y}=\frac{1}{n}\sum_{i=1}^{n}\overline{Y}_{i}\)&lt;/span&gt;, we obtain
-&lt;span class=&#34;math display&#34;&gt;\[\widehat{V}=\frac{1}{n}\sum_{1\leq i \leq n}(\overline{Y}_i-\overline{Y})(\overline{Y}_i-\overline{Y})&amp;#39;\xrightarrow{a.s.} V.\]&lt;/span&gt;
-Hence, t-tests or F-tests of the hypothesis
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{E}(Y_{1,2})=\theta_0\)&lt;/span&gt; using &lt;span class=&#34;math inline&#34;&gt;\(\widehat{V}\)&lt;/span&gt; are asymptotically
-valid as soon as &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; is non-singular.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;uniform-lln-and-clt&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Uniform LLN and CLT&lt;/h2&gt;
-&lt;p&gt;The previous results are nonetheless insufficient in many cases,
-especially with nonlinear (e.g., M- or Z-) estimators. A common way to
-handle such problems, then, is to render “simple” LLN and CLT
-uniform over suitable classes of functions. Specifically, for
-&lt;span class=&#34;math inline&#34;&gt;\(f\in \mathcal{F}\)&lt;/span&gt; a class of bounded functions with values in
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}^k\)&lt;/span&gt;, let
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}_n(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i,j})\)&lt;/span&gt; and
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}_n(f)=\sqrt{n}\left(\mathbb{P}_n(f)-E(f(Y_{1,2}))\right)\)&lt;/span&gt;.
-The class &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; is called Glivenko-Cantelli if, basically,
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}%\text{ almost-surely and in }L^1 :
-    \lim_n \sup_{f\in \mathcal{F}}\left|\mathbb{P}_n(f)-\mathbb{E}(f(Y_{1,2}))\right|\xrightarrow{a.s.} 0.\label{eq1}\tag{1}
-\end{align}\]&lt;/span&gt; Similarly, The class &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; is Donsker for the
-distribution of &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i\neq j\geq 1}\)&lt;/span&gt; if
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\mathbb{G}_n\stackrel{d}{\longrightarrow}\mathbb{G},\label{eq2}\tag{2}\end{align}\]&lt;/span&gt;
-with &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; a Gaussian process indexed on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Results &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; have been shown for iid data under
-various conditions. We consider two standard ones involving the
-so-called covering numbers of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;. First, we introduce
-additional notation. For any &lt;span class=&#34;math inline&#34;&gt;\(\eta &amp;gt; 0\)&lt;/span&gt; and any seminorm &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt; on
-a space including &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(N(\eta, \mathcal{F}, ||\cdot||)\)&lt;/span&gt;
-denotes the minimal number of &lt;span class=&#34;math inline&#34;&gt;\(||\cdot||\)&lt;/span&gt;-closed balls of radius &lt;span class=&#34;math inline&#34;&gt;\(\eta\)&lt;/span&gt;
-with centers in &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt; needed to cover &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{F}\)&lt;/span&gt;. The
-seminorms we consider hereafter are
-&lt;span class=&#34;math inline&#34;&gt;\(|f|_{\mu,r} = \left(\int |f|^rd\mu\right)^{1/r}\)&lt;/span&gt; for any &lt;span class=&#34;math inline&#34;&gt;\(r \geq 1\)&lt;/span&gt; and
-probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;. Hereafter, an envelope of &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; is a measurable
-function &lt;span class=&#34;math inline&#34;&gt;\(F\)&lt;/span&gt; satisfying &lt;span class=&#34;math inline&#34;&gt;\(F(u) \geq \sup_{f\in \mathcal{F}} |f(u)|\)&lt;/span&gt;. We
-let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{Q}\)&lt;/span&gt; denote the set of probability measures with finite
-support. Finally, &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; denotes the distribution of one random variable.&lt;/p&gt;
-&lt;p&gt;The conditions for &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; to hold with iid data are
-then:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Condition &lt;span class=&#34;math inline&#34;&gt;\(CG(\mathcal{F})\)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(\forall \eta&amp;gt;0, \sup_{Q\in \mathcal{Q}}N\left(\eta|F|_{Q,1},\mathcal{F},|.|_{Q,1}\right)&amp;lt;\infty,\)&lt;/span&gt;
-with &lt;span class=&#34;math inline&#34;&gt;\(|F|_{P,1}&amp;lt;\infty\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt;:
-&lt;span class=&#34;math inline&#34;&gt;\(\int_0^{+\infty}\sup_{Q\in \mathcal{Q}}\sqrt{\log N\left(\eta|F|_{Q,2},\mathcal{F},|.|_{Q,2}\right)}d\eta&amp;lt;+\infty,\)&lt;/span&gt;
-with &lt;span class=&#34;math inline&#34;&gt;\(|F|_{P,2}&amp;lt;\infty\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Remarkably, these results directly extend to jointly exchangeable and
-dissociated arrays:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;If Condition &lt;span class=&#34;math inline&#34;&gt;\(CG(\mathcal{F})\)&lt;/span&gt; holds then &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt; holds.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt; holds then &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq2}\)&lt;/span&gt; holds, with
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; having a covariance kernel &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; defined by
-&lt;span class=&#34;math display&#34;&gt;\[K(f_1,f_2)=Cov\left(f_1(Y_{1,2})+f_1(Y_{2,1}),f_2(Y_{1,3})+f_2(Y_{3,1})\right).\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Uniform LLN and CLT also hold using standard conditions on bracketing
-numbers, instead of covering numbers as above.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Take-away: the main asymptotic results used to establish the
-properties of nonlinear estimators with iid data also hold with jointly
-exchangeable and dissociated arrays.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Hence, asymptotically normal estimators with iid data are also
-asymptotically normal with jointly exchangeable and dissociated arrays.
-The only difference lies in their rate of convergence and their
-asymptotic variance &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt;. If &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; is not singular, inference can be based
-on consistent estimation of &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt;, as explained above. But a simple
-bootstrap scheme can also be used.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bootstrapping-exchangeable-arrays&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Bootstrapping exchangeable arrays&lt;/h2&gt;
-&lt;p&gt;The main message here is that &lt;strong&gt;even if the parameters of interest
-depend on “edges” distribution, we have to bootstrap vertices!&lt;/strong&gt;&lt;br /&gt;
-Specifically, consider &lt;span class=&#34;math inline&#34;&gt;\((1^{\ast}, 2^{\ast},...,n^{\ast})\)&lt;/span&gt; and iid
-sample drawn uniformly from &lt;span class=&#34;math inline&#34;&gt;\(\{1,...,n\}\)&lt;/span&gt;, and consider the bootstrap
-sample &lt;span class=&#34;math inline&#34;&gt;\((Y_{i^{\ast},j^{\ast}})_{i\neq j, i^*\neq j^*}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;To illustrate the bootstrap scheme, imagine a 5-vertices network, and a
-bootstrap sample of vertices
-&lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;, the
-corresponding bootstrapped network is:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-26-asymptotic-statistics-in-non-sparse-networks_files/figure2_2.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 1: Bootstrapped network for
-&lt;span class=&#34;math inline&#34;&gt;\((1^{\ast},2^{\ast},3^{\ast},4^{\ast},5^{\ast})=(2,1,2,5,4)\)&lt;/span&gt;}&lt;/p&gt;
-&lt;p&gt;The bootstrapped average is
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{P}_n^{\ast}(f)=\frac{1}{n(n-1)}\sum_{1\leq i,j\leq n}f(Y_{i^{\ast},j^{\ast}})\mathbb{1}_{\{i^{\ast}\neq j^{\ast}\}}\)&lt;/span&gt;,
-while the bootstrapped process is
-&lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}_n^{\ast}(f)=\sqrt{n}\left(\mathbb{P}_n^{\ast}(f)-\mathbb{P}_n(f)\right)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;As with iid data, the bootstrap scheme above leads to consistent
-inference if Condition &lt;span class=&#34;math inline&#34;&gt;\(D(\mathcal{F})\)&lt;/span&gt; holds. Specifically, we then
-have, conditional on &lt;span class=&#34;math inline&#34;&gt;\((Y_{i,j})_{i,j\in \mathbb{N}^2}\)&lt;/span&gt; and almost
-surely,
-&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\mathbb{G}_n^{\ast}\stackrel{d}{\longrightarrow}\mathbb{G},\end{align}\]&lt;/span&gt;
-where &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{G}\)&lt;/span&gt; is the same Gaussian process as above. This ensures
-the validity of the bootstrap in many nonlinear contexts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;Bibliography&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-Aldous&#34; class=&#34;csl-entry&#34;&gt;
-Aldous, D. J. 1983. &lt;em&gt;Exchangeability and Related Topics&lt;/em&gt;. Springer Verlag.
-&lt;/div&gt;
-&lt;div id=&#34;ref-davezies1&#34; class=&#34;csl-entry&#34;&gt;
-Davezies, Laurent, Xavier D’Haultfœuille, and Yannick Guyonvarch. 2018. &lt;span&gt;“Asymptotic Results Under Multiway Clustering.”&lt;/span&gt; &lt;em&gt;ArXiv e-Prints, Eprint 1807.07925&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-davezies2&#34; class=&#34;csl-entry&#34;&gt;
-———. 2021. &lt;span&gt;“Empirical Process Results for Exchangeable Arrays.”&lt;/span&gt; &lt;em&gt;The Annals of Statistics&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-eagleson&#34; class=&#34;csl-entry&#34;&gt;
-Eagleson, G. K., and N. C. Weber. 1978. &lt;em&gt;Limit Theorems for Weakly Exchangeable Arrays&lt;/em&gt;. Mathematical Proceedings of the Cambridge Philosophical Society.
-&lt;/div&gt;
-&lt;div id=&#34;ref-kallenberg05&#34; class=&#34;csl-entry&#34;&gt;
-Kallenberg, O. 2005. &lt;em&gt;Probabilistic Symmetries and Invariance Principles&lt;/em&gt;. Springer.
-&lt;/div&gt;
-&lt;div id=&#34;ref-menzel&#34; class=&#34;csl-entry&#34;&gt;
-Menzel, Konrad. 2018. &lt;span&gt;“Bootstrap with Clustering in Two or More Dimensions.”&lt;/span&gt; &lt;em&gt;Working Paper&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-silverman&#34; class=&#34;csl-entry&#34;&gt;
-Silverman, B. W. 1976. &lt;span&gt;“Empirical Process Results for Exchangeable Arrays.”&lt;/span&gt; &lt;em&gt;Advances in Applied Probability&lt;/em&gt;.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Linear-cost unbiased estimator for large crossed random effect models via couplings | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/bayesian-statistics">bayesian-statistics</a>
+  
+     &hercon; <a href="/categories/bayesian-computation">bayesian-computation</a>
+  
+     &hercon; <a href="/categories/high-dimensional-data">high-dimensional-data</a>
+  
+     &hercon; <a href="/categories/machine-learning">machine-learning</a>
+  
+  </div>
+
+  <h1><span class="title">Linear-cost unbiased estimator for large crossed random effect models via couplings</span></h1>
+
+  
+  <h3 class="author">Paolo Ceriani and Giacomo Zanella
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<style>
+body {
+text-align: justify
+fig.align = 'center"}
+</style>
+<p>In the following we show how it is possible to obtain <strong>parallelizable, unbiased and computationally cheap</strong> estimates of Crossed random effects models with a <strong>linear cost</strong> in the number of datapoints (and paramaters) exploiting <strong>couplings</strong>.</p>
+<div id="crossed-random-effects-models-crem" class="section level2">
+<h2>Crossed random effects models (CREM)</h2>
+<p>CREM model a continuous response variables <span class="math inline">\(Y\)</span> as depending on the sum of unknown effects of <span class="math inline">\(K\)</span> categorical predictors. Think of the <span class="math inline">\(Y_n\)</span> as the ratings given to university courses, along with some factors potentially impacting such a score, e.g. student identity, code of the course, department teaching it, professors ecc. Aim of the model is investigating the effect of each of those factors on the overall score. In their simplest version (i.e. linear, intercept-only case), the model takes the form:</p>
+<p><span class="math display">\[\begin{equation}
+	\label{eq:crem}
+	\mathcal{L}(y_n) =  f \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)},\tau_0^{-1}\right) \text{ for } n=1,...,N,
+\end{equation}\]</span>
+where <span class="math inline">\(f\)</span> indicates the density of some distribution whose mean is the sum of <span class="math inline">\(\mu\)</span>, a global mean, and <span class="math inline">\(a^{(k)}_{i_{k[n]}}\)</span>, i.e. the unknown effects of the student identity, the department teaching it ecc.</p>
+<p>We are interested in studying how the cost of estimating the unknown effects scales as the number of observations <span class="math inline">\(N\)</span> and of parameters <span class="math inline">\(p\)</span> grows to <span class="math inline">\(\infty\)</span>. Our goal is an algorithm whose complexity scales linearly in <span class="math inline">\(N\)</span> and <span class="math inline">\(p\)</span>, and we call such algorithms “scalable”. Both in the Frequentist and in the Bayesian literature, these models are difficult to estimate: works of <span class="citation">Gao and Owen (<a href="#ref-gao_16" role="doc-biblioref">2016a</a>)</span> and <span class="citation">Gao and Owen (<a href="#ref-gao19" role="doc-biblioref">2016b</a>)</span> showed how the “vanilla” implementation of GLS and of Gibbs samplers have a computational cost that grows at best as <span class="math inline">\(O(N^\frac{3}{2})\)</span>. Recent works by <span class="citation">Papaspiliopoulos, Roberts, and Zanella (<a href="#ref-papaspiliopoulos2018scalable" role="doc-biblioref">2019</a>)</span> and <span class="citation">Ghosh, Hastie, and Owen (<a href="#ref-gosh_back" role="doc-biblioref">2022</a>)</span> proposed, respectively, a collapsed Gibbs sampler and a “backfitting” iterative algorithm that exhibit computational costs linear in the number of observations; in particular the MCMC induced by the collapsed scheme is proved to have a mixing time that is <span class="math inline">\(O(1)\)</span> under certain asymptotic regimes.</p>
+<p>It is possible to further improve the MCMC estimates exploiting couplings: as showed in <span class="citation">Jacob, O’Leary, and Atchadé (<a href="#ref-jacob2019unbiased" role="doc-biblioref">2020</a>)</span> and <span class="citation">Glynn and Rhee (<a href="#ref-glynn_rhee" role="doc-biblioref">2014</a>)</span>, coupling two MCMC chains allows to derive unbiased estimators of posterior quantities, provided that the two coupled chains are exactly equal after a finite number of iterations. Furthermore, the same construction provides theoretical foundations for the early stopping of the chains (once met) and allows for the parallelization of independent experiments.</p>
+<p>The extra computational cost one has to pay is represented by the product between the cost of each iteration and the expected number of iterations needed for coalescence. As for the former, it is possible to devise many coupling algorithms for which the cost of each iteration is easily computable and linear in the number of observations. As for the expected meeting time, for chains arising from a Gibbs sampling scheme targeting Gaussian distributions, it is possible to show that is directly related to the mixing time of the single Markov chain, and indeed it differs from the latter only by a logarithmic factor up to some constants (see the Sections below for more details). Hence chains that mix fast also meet in a small number of iteration and therefore provide unbiased estimates with low computational cost.</p>
+</div>
+<div id="couplings-for-estimation" class="section level2">
+<h2>Couplings for estimation</h2>
+<p>Theoretically speaking, given <span class="math inline">\(X,Y\)</span> random variables distributed according to <span class="math inline">\(P,Q\)</span> respectively, a coupling of the two is random variables <span class="math inline">\((X, Y)\)</span> on the joint space such that the marginal distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(P\)</span> and the marginal distribution of Y is <span class="math inline">\(Q\)</span>.
+Clearly, given two marginal distributions, there are infinitely many joint distributions with those as marginals. Below some of the possible couplings of a <span class="math inline">\(N(1,1)\)</span> (on the x-axis) and <span class="math inline">\(N(0,1)\)</span> on the y-axis. Starting clockwise from top left: maximal independent (i.e. a coupling maximizing the probability of equal draws), maximal reflection, independent (bivariate independent normal) and <span class="math inline">\(W2\)</span>-optimal (maximally correlated draws).</p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg" alt="" />
+<p class="caption">Couplings of Gaussian distributions</p>
+</div>
+<p>Couplings might be used for obtaining unbiased estimators in MCMC inference, as shown in <span class="citation">Jacob, O’Leary, and Atchadé (<a href="#ref-jacob2019unbiased" role="doc-biblioref">2020</a>)</span>.
+Given a target probability distribution <span class="math inline">\(\pi\)</span> and an integrable function <span class="math inline">\(h\)</span>, we are interested in estimating: <span class="math display">\[\mathbb{E}_{\pi}[h(\boldsymbol{\Theta})] = \int h(\boldsymbol{\theta}) \pi(d\boldsymbol{\theta}).\]</span>
+Usually, one would sample a chain according to some Markov kernel <span class="math inline">\(P\)</span>, designed to leave the chain <span class="math inline">\(\pi\)</span> invariant, i.e. a Gibbs kernel or random walk Metropolis <span class="citation">(<a href="#ref-Metropolis" role="doc-biblioref">Hastings 1970</a>)</span>. Below the sample path of such a chain.</p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png" alt="" />
+<p class="caption">Sample path of a single MC</p>
+</div>
+<p>Instead of waiting until convergence, one could run two coupled Markov chains <span class="math inline">\((\boldsymbol{\Theta}^1_t)_{t\ge -1}\)</span> and <span class="math inline">\((\boldsymbol{\Theta}^2_t)_{t \ge0}\)</span>, which marginally starts from some base distribution <span class="math inline">\(\pi_0\)</span> and evolves according to the same kernel <span class="math inline">\(P\)</span>, but some correlation is induced in order to let the chains meet after an almost surely finite number of iterations. Basically at iteration <span class="math inline">\(t\)</span> instead of sampling from <span class="math inline">\(X_{t+1} \sim P(X_t, \cdot)\)</span> and <span class="math inline">\(Y_{t+1} \sim P(Y_t, \cdot)\)</span> independently, we sample from a coupling of the two distributions.</p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png" alt="" />
+<p class="caption">Sample path of coupled MCs</p>
+</div>
+<p>Then, for any fixed <span class="math inline">\(m \ge k\)</span>, we can run coupled chains for <span class="math inline">\(\max(m, T)\)</span> iterations and <span class="math inline">\(H_{k:m}\)</span> is an unbiased estimator:
+<span class="math display">\[\begin{align*}
+	H_{k:m} &amp; = \frac{1}{m-k+1} \sum_{l=k}^m h(\boldsymbol{\Theta}^1_l) + \sum_{l=k+1}^{\tau} \min \left(1, \frac{l-k}{m-k+1}\right) \left(h(\boldsymbol{\Theta}^1_l)-h(\boldsymbol{\Theta}^2_{l})\right) \\ &amp;= MCMC_{k:m} + BC_{k:m}.
+\end{align*}\]</span>
+The form of the estimator includes two terms: the first term corresponds to a standard MCMC average with <span class="math inline">\(m-k+1\)</span> total iterations and <span class="math inline">\(k-1\)</span> burn-in steps, and the other term is a “bias correction”, the part that corrects the bias present in the MCMC average.</p>
+<p>For more details give a look up at <a href="https://sites.google.com/site/pierrejacob/cmclectures" class="uri">https://sites.google.com/site/pierrejacob/cmclectures</a>.</p>
+<p>In order two yield small meeting times, we implement a “two-step” coupling strategy: whenever the chains are “far away” (in some notion that will be clarified later) use a coupling whose aim is to bring the realizations closer to each other; whenever “close enough”, choose a coupling maximizing the meeting probabilities. The heuristic for this construction is that whenever a maximal coupling fails, components are sampled far away in the space, thus reducing the coalescence probability for the next steps.</p>
+</div>
+<div id="bound-on-coupling-time" class="section level2">
+<h2>Bound on coupling time</h2>
+<p>Consider <span class="math inline">\((\boldsymbol{\theta}_t)_{t\ge 1}=(\boldsymbol{\theta}^1_t, \boldsymbol{\theta}^2_t)_{t\ge 0}\)</span>, two <span class="math inline">\(\pi\)</span>-reversible Markov chains arising from a Gibbs sampler targeting <span class="math inline">\(\pi=N(\boldsymbol{\mu},\Sigma)\)</span>. If a “two-step” strategy is implemented, with maximal reflection and <span class="math inline">\(W2\)</span> optimal couplings, then for every <span class="math inline">\(\delta &gt;0\)</span>, the meeting time <span class="math inline">\(T\)</span> is bounded by
+<span class="math display">\[\begin{equation}
+		\mathbb{E}[T| \boldsymbol{\theta}_0] \le 5 + 3 \max \left(n^*_\delta, T_{rel} \left[\frac{\ln(T_{rel})}{2} + C_0 + C_\varepsilon \right] (1+\delta)  \right),
+	\end{equation}\]</span>on}
+where <span class="math inline">\(C_0\)</span> denotes a constant solely depending on <span class="math inline">\(\boldsymbol{\theta}^1_0, \boldsymbol{\theta}^2_0\)</span> and the posterior variance <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(C_\varepsilon\)</span> depends on the fixed parameters <span class="math inline">\(\varepsilon\)</span>, and <span class="math inline">\(n^*_\delta = inf_{n_0} \{ n_0 \ge 1: \forall n \ge n_0 \; 1-\| B^n \|^\frac{1}{n} \ge \frac{1-\rho(B)}{1+\delta} \}\)</span>.</p>
+<p>Given the above, if one is able to design a single MCMC chain mixing in say <span class="math inline">\(O(1)\)</span>, then the extra cost of an unbiased estimate is nothing more than a <span class="math inline">\(\ln\left( O(1) \right)\)</span> plus a constant.</p>
+</div>
+<div id="simulations" class="section level2">
+<h2>Simulations</h2>
+<p>We simulate data coming from the model for different asymptotic regimes and parameter specification. We study the behaviour of the meeting times as the dimensionality of the model increase. We implement the “two step” Algorithm, using maximal reflection and <span class="math inline">\(W2\)</span>-optimal couplings.</p>
+<p>We consider two asymptotic regimes, called <em>outfill asymptotic</em>, where both the number of parameters <span class="math inline">\(p\)</span> and the number of observation <span class="math inline">\(N\)</span> increase, but with different speeds according to the chosen setting.
+Consider first a model with <span class="math inline">\(K=2\)</span> factors and <span class="math inline">\(I_1= I_2 = \{50, 100,250,500,750,1000 \}\)</span> different possible levels. Suppose that the number of observations grows quadratically wrt the number of parameters, i.e. <span class="math display">\[ N= O(p^2)\]</span> <span class="math display">\[ p \rightarrow +\infty.\]</span>
+Below we report the average meeting time for the sampler with fixed and free variances, alongside with the bound for the collapsed Gibbs sampler with fixed variances, for different values of <span class="math inline">\(I\)</span>.</p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png" alt="" />
+<p class="caption">Average meeting times for Gaussian CREMS</p>
+</div>
+<p>Results of the simulations suggest that the expected number of iterations converges to <span class="math inline">\(O(1)\)</span> as <span class="math inline">\(N\)</span> increases, while diverges for the plain vanilla Gibbs sampler (not even plotted because of different scale). It is also clear that the bound closely resembles the estimated average meeting times.</p>
+<p>We consider now an even sparser asymptotic regime, where instead the number of observation grows at the same rate of the number of parameters.</p>
+<p><span class="math display">\[ \frac{N}{p} \approx \alpha \]</span> <span class="math display">\[ p \rightarrow +\infty.\]</span>
+Estimates for the mean number of iterations for the fixed and free variance case are plotted below, alongside the corresponding theoretical bounds.</p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png" alt="" />
+<p class="caption">Average meeting times for Gaussian CREMS</p>
+</div>
+<p>Lastly, we want to highlight that while the bound presented in the Theorem above only applies for Gibbs samplers targeting Gaussian distributions, the methodology is still valid for general target distributions and provide small meeting times. We report below the average meeting times of chains targeting a CREM with Laplace response.</p>
+<p><span class="math display">\[\begin{equation}
+	\mathcal{L}(y_n) = Laplace \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)} \right) \text{ for } n=1,...,N,
+\end{equation}\]</span></p>
+<div class="figure">
+<img src="/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png" alt="" />
+<p class="caption">Average meeting times for Laplace CREMS</p>
+</div>
+</div>
+<div id="about-the-author" class="section level2">
+<h2>About the author</h2>
+<ul>
+<li><a href="https://paoloceriani.github.io">Paolo Ceriani</a>, PhD student, Bocconi University, Italy.</li>
+<li><a href="https://sites.google.com/site/gzanellawebpage/home">Giacomo Zanella</a>, Assistant Professor, Bocconi University, Italy.</li>
+</ul>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-gao_16" class="csl-entry">
+Gao, Katelyn, and Art Owen. 2016a. <span>“Efficient Moment Calculations for Variance Components in Large Unbalanced Crossed Random Effects Models.”</span> <em>Electronic Journal of Statistics</em> 11 (January). <a href="https://doi.org/10.1214/17-EJS1236">https://doi.org/10.1214/17-EJS1236</a>.
+</div>
+<div id="ref-gao19" class="csl-entry">
+———. 2016b. <span>“Estimation and Inference for Very Large Linear Mixed Effects Models.”</span> <em>Statistica Sinica</em>, October. <a href="https://doi.org/10.5705/ss.202018.0029">https://doi.org/10.5705/ss.202018.0029</a>.
+</div>
+<div id="ref-gosh_back" class="csl-entry">
+Ghosh, Swarnadip, Trevor J. Hastie, and Art B. Owen. 2022. <span>“Backfitting for Large Scale Crossed Random Effects Regressions.”</span> <em>The Annals of Statistics</em>.
+</div>
+<div id="ref-glynn_rhee" class="csl-entry">
+Glynn, Peter W., and Chang-han Rhee. 2014. <span>“Exact Estimation for Markov Chain Equilibrium Expectations.”</span> <em>Journal of Applied Probability</em> 51A: 377–89. <a href="http://www.jstor.org/stable/43284129">http://www.jstor.org/stable/43284129</a>.
+</div>
+<div id="ref-Metropolis" class="csl-entry">
+Hastings, W. K. 1970. <span>“Monte Carlo Sampling Methods Using Markov Chains and Their Applications.”</span> <em>Biometrika</em> 57 (1): 97–109. <a href="http://www.jstor.org/stable/2334940">http://www.jstor.org/stable/2334940</a>.
+</div>
+<div id="ref-jacob2019unbiased" class="csl-entry">
+Jacob, Pierre E., John O’Leary, and Yves F. Atchadé. 2020. <span>“Unbiased Markov Chain Monte Carlo Methods with Couplings.”</span> <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 82 (3): 543–600. https://doi.org/<a href="https://doi.org/10.1111/rssb.12336">https://doi.org/10.1111/rssb.12336</a>.
+</div>
+<div id="ref-papaspiliopoulos2018scalable" class="csl-entry">
+Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. <span>“<span class="nocase">Scalable inference for crossed random effects models</span>.”</span> <em>Biometrika</em> 107 (1): 25–40. <a href="https://doi.org/10.1093/biomet/asz058">https://doi.org/10.1093/biomet/asz058</a>.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
