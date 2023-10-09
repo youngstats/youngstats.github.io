@@ -104,7 +104,7 @@ following figure further clarifies this concept.&lt;/p&gt;
 row shows different coefficient matrix patterns, while the bottom row
 shows the corresponding spline, where dots represent knots and the set D
 is highlighted in red. The first 2 columns show a coefficient matrix
-with isolated zeros and a (d-1) x (d-1) block of zeros, respectevely.
+with isolated zeros and a (d-1) x (d-1) block of zeros, respectively.
 None of the two is able to produce a sparse function. In the last
 column, conversely, an entire d x d block of coefficients is null and
 the resulting function is indeed sparse.&lt;/em&gt;&lt;/p&gt;
@@ -261,7 +261,7 @@ identity, also known as the matrix inversion lemma.&lt;/p&gt;
 &lt;p&gt;When the response is scalar, we have the following modifications. The
 design matrix is &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Z} = \mathbf{X}
 \boldsymbol{\Phi}^T\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{y}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}\)&lt;/span&gt; are vectors of
-dimension respectevely &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and the diagonal matrix &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{D}_{b}\)&lt;/span&gt;
+dimension respectively &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and the diagonal matrix &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{D}_{b}\)&lt;/span&gt;
 is of dimension &lt;span class=&#34;math inline&#34;&gt;\(M \times M\)&lt;/span&gt;. The optimization
 problem is still valid and the same class of algorithms can be employed
 to obtain the solution.&lt;/p&gt;
