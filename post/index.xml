@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Locally Sparse Functional Regression</title>
+      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <description>OverviewIn this post we present a new estimation procedure for functional linearregression useful when the regression surface – or curve – is supposedto be exactly zero within specific regions of its domain. Our approachinvolves regularization techniques, merging a B-spline representation ofthe unknown coefficient function with a peculiar overlap group lassopenalty. The methodology is illustrated on the well-known Swedishmortality dataset and can be employed by \({\tt R}\)users through the package \({\tt fdaSP}\).</description>
+    </item>
+    
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
@@ -99,20 +108,6 @@ Extreme value theory is concerned with the accurate statistical assessment of th
       <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
       <description>OverviewThe Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.
 The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
-    </item>
-    
-    <item>
-      <title>Distribution generalization and causal inference</title>
-      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
-      <description>Distribution generalization and causal inference
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
-1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
     </item>
     
   </channel>

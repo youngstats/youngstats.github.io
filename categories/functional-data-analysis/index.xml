@@ -6,7 +6,16 @@
     <description>Recent content in Functional-Data-Analysis on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Locally Sparse Functional Regression</title>
+      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <description>OverviewIn this post we present a new estimation procedure for functional linearregression useful when the regression surface – or curve – is supposedto be exactly zero within specific regions of its domain. Our approachinvolves regularization techniques, merging a B-spline representation ofthe unknown coefficient function with a peculiar overlap group lassopenalty. The methodology is illustrated on the well-known Swedishmortality dataset and can be employed by \({\tt R}\)users through the package \({\tt fdaSP}\).</description>
+    </item>
+    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>

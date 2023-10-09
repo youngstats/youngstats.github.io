@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Locally Sparse Functional Regression | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/functional-data-analysis">functional-data-analysis</a>
+  
+     &hercon; <a href="/categories/nonparametric-statistics">nonparametric-statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Locally Sparse Functional Regression</span></h1>
+
+  
+  <h3 class="author">Mauro Bernardi,  Antonio Canale and Marco Stefanucci
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>In this post we present a new estimation procedure for functional linear
+regression useful when the regression surface – or curve – is supposed
+to be exactly zero within specific regions of its domain. Our approach
+involves regularization techniques, merging a B-spline representation of
+the unknown coefficient function with a peculiar overlap group lasso
+penalty. The methodology is illustrated on the well-known Swedish
+mortality dataset and can be employed by <span class="math inline">\({\tt R}\)</span>
+users through the package <span class="math inline">\({\tt fdaSP}\)</span>.</p>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>We consider the framework on which a functional response
+<span class="math inline">\(y_i(s)\)</span> with <span class="math inline">\(s \in \mathcal{S}\)</span> is observed together with a functional covariate
+<span class="math inline">\(x_i(t)\)</span> with <span class="math inline">\(t \in \mathcal{T}\)</span> for <span class="math inline">\(i=1, \dots, n\)</span>. The simplest
+modeling strategy for function-on-function regression is the <em>concurrent
+model,</em> which assumes that <span class="math inline">\(\mathcal{T} = \mathcal{S}\)</span> and the covariate <span class="math inline">\(x(\cdot)\)</span> influences
+<span class="math inline">\(y(s)\)</span> only through its values <span class="math inline">\(x(s)\)</span> at the domain point <span class="math inline">\(s \in \mathcal{S}\)</span>.
+The relation when both variables are centered is given by</p>
+<p><span class="math display">\[ y_i(s) = x_i(s)\psi(s) + e_i(s)\]</span></p>
+<p>where <span class="math inline">\(\psi(s)\)</span> is the regression function and
+<span class="math inline">\(e_i(s)\)</span> is a functional zero-mean random error.
+The more general approach, named <em>nonconcurrent functional linear
+model,</em> allows <span class="math inline">\(y_i(s)\)</span> to entirely depend on the
+functional regressor in the following way</p>
+<p><span class="math display">\[ y_i(s) = \int_{\mathcal{T}} x_i(t) \psi(t, s) dt + e_i(s) .
+\]</span> The model allows <span class="math inline">\(\mathcal{T} \neq
+\mathcal{S}\)</span> and the bivariate function <span class="math inline">\(\psi(t,
+s)\)</span> represents the impact of <span class="math inline">\(x(\cdot)\)</span> evaluated at <span class="math inline">\(t \in \mathcal{T}\)</span> on
+<span class="math inline">\(y_i(s)\)</span> and usually is a “dense” function. Our
+goal is to introduce a <em>nonconcurrent functional linear model</em> that
+allows for local sparsity patterns. Specifically, we want that
+<span class="math inline">\(\psi(t, s) = 0\)</span> for <span class="math inline">\((t, s) \in
+\mathcal{D}_0\)</span> with <span class="math inline">\(\mathcal{D}_0\)</span> being a suitable subset of the domain
+<span class="math inline">\(\mathcal{D}\)</span> of <span class="math inline">\(\psi(\cdot)\)</span>, with <span class="math inline">\(\mathcal{D} = \mathcal{S} \times
+\mathcal{T}\)</span>, thus, inducing locally sparse
+Hilbert-Schmidt operators. Note that the set
+<span class="math inline">\(\mathcal{D}_0\)</span> is unknown and need to be
+estimated from data.</p>
+</div>
+<div id="locally-sparse-functional-model" class="section level2">
+<h2>Locally sparse functional model</h2>
+<div id="b-splines-and-sparsity" class="section level3">
+<h3>B-splines and sparsity</h3>
+<p>In order to represent functional objects using basis expansion, we
+select a basis <span class="math inline">\(\{\theta_l(s), l = 1, \dots , L\}\)</span> of dimension <span class="math inline">\(L\)</span> in the space of square
+integrable functions on <span class="math inline">\(\mathcal{S}\)</span> and a basis
+<span class="math inline">\(\{\varphi_m(t), m = 1, \dots ,M\}\)</span> of
+dimension <span class="math inline">\(M\)</span> in the space of square integrable
+functions on <span class="math inline">\(\mathcal{T}\)</span>. Exploiting a tensor
+product expansion of these two, we represent the regression coefficient
+<span class="math inline">\(\psi\)</span> as</p>
+<p><span class="math display">\[\begin{eqnarray} \psi(t,s) &amp; = \sum_{m=1}^M \sum_{l=1}^L
+\psi_{ml} \varphi_m(t) \theta_l(s) = &amp; (\varphi_1(t), \dots,
+\varphi_M(t)) \left( \begin{matrix} \psi_{1,1} &amp; \cdots &amp;
+\psi_{1,L} \\ \vdots &amp; \ddots&amp; \vdots \\ \psi_{M,1} &amp; \cdots
+&amp; \psi_{M,L} \end{matrix}\right) \left( \begin{matrix}
+\theta_{1}(s)\\ \vdots \\ \theta_{L}(s) \end{matrix}\right) =
+\boldsymbol{\varphi}(t)^T \boldsymbol{\Psi}
+\boldsymbol{\theta}(s), \label{eq:tensorproduct}
+\end{eqnarray}\]</span></p>
+<p>where <span class="math inline">\(\psi_{ml} \in \mathbb{R}\)</span> for <span class="math inline">\(l=1,
+\dots, L\)</span> and <span class="math inline">\(m=1, \dots, M\)</span>.
+A key point is to assume that elements in this representation are
+B-splines (De Boor 1978) of order <span class="math inline">\(d\)</span> with <span class="math inline">\(L −
+d\)</span> and <span class="math inline">\(M − d\)</span> interior knots,
+respectively. Suitable zero patterns in the B-spline basis coefficients
+of <span class="math inline">\(\boldsymbol{\Psi}\)</span> induce sparsity in
+<span class="math inline">\(\psi(t, s)\)</span>. Let <span class="math inline">\(\tau_1 &lt; \dots &lt; \tau_m
+&lt; \dots &lt; \tau_{M−d+2}\)</span> and <span class="math inline">\(\sigma_1 &lt;
+\dots &lt; \sigma_l &lt; \dots &lt; \sigma_{L−d+2}\)</span>
+denote the knots defining the tensor product splines, with <span class="math inline">\(\tau_1,
+\tau_{M−d+2}\)</span> and <span class="math inline">\(\sigma_1,
+\sigma_{L−d+2}\)</span> being the boundaries of the two
+domains, and let <span class="math inline">\(\mathcal{D}_{ml} \in \mathcal{D}\)</span> be the rectangular subset of <span class="math inline">\(\mathcal{D}\)</span> defined as <span class="math inline">\(\mathcal{D}_{ml} = (\tau_m, \tau_{m+1})
+\times (\sigma_l, \sigma_{l+1})\)</span> for <span class="math inline">\(m = 1,
+\dots ,M − d + 1\)</span> and <span class="math inline">\(l = 1, \dots , L − d +
+1\)</span>. To obtain <span class="math inline">\(\psi(t, s) = 0\)</span>
+for each <span class="math inline">\((t, s) \in \mathcal{D}_{ml}\)</span>, it is
+sufficient that all the coefficients <span class="math inline">\(\psi_{m'l'}\)</span> with <span class="math inline">\(m' = m, \dots ,m + d − 1\)</span> and
+<span class="math inline">\(l' = l, \dots , l+d−1\)</span> are jointly zero. The
+following figure further clarifies this concept.</p>
+<p><img src="/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png" /></p>
+<p><em>Bivariate example with tensor product cubic B-splines (d=4). The top
+row shows different coefficient matrix patterns, while the bottom row
+shows the corresponding spline, where dots represent knots and the set D
+is highlighted in red. The first 2 columns show a coefficient matrix
+with isolated zeros and a (d-1) x (d-1) block of zeros, respectevely.
+None of the two is able to produce a sparse function. In the last
+column, conversely, an entire d x d block of coefficients is null and
+the resulting function is indeed sparse.</em></p>
+<p>The previous figure suggests that, in general, <span class="math inline">\(\psi(t, s)\)</span> equals zero in the region identified by two pairs of
+consecutive knots if the related <span class="math inline">\(d\)</span> ×
+<span class="math inline">\(d\)</span> block of coefficients of
+<span class="math inline">\(\boldsymbol{\Psi}\)</span> is entirely set to zero.
+Therefore, <span class="math inline">\(\boldsymbol{\Psi}\)</span> should be suitably
+partitioned in several blocks of dimensions <span class="math inline">\(d\)</span> ×
+<span class="math inline">\(d\)</span> on which a joint sparsity penalty is induced.</p>
+<p>Note that in the simpler situation where a functional covariate
+<span class="math inline">\(x_i(t)\)</span> and a scalar response <span class="math inline">\(y_i\)</span> are observed we have the following simplifications. The
+functional linear model is</p>
+<p><span class="math display">\[ y_i = \int x_i(t) \psi(t) dt + e_i, \]</span> the
+regression function is expanded as <span class="math inline">\(\psi(t) = \sum_{m=1}^M
+\psi_m \varphi_m(t)\)</span> and the set <span class="math inline">\(\mathcal{D}_m
+= (\tau_m, \tau_{m+1})\)</span> is an interval of the real
+line. To obtain <span class="math inline">\(\psi(t) = 0\)</span> for each <span class="math inline">\(t \in
+\mathcal{D}_{m}\)</span>, it is sufficient that all the
+coefficients <span class="math inline">\(\psi_{m'}\)</span> with <span class="math inline">\(m' = m,
+\dots ,m + d − 1\)</span> are jointly zero and
+<span class="math inline">\(\psi(t)\)</span> equals zero in the interval identified
+by two pairs of consecutive knots if the related <span class="math inline">\(d-\)</span>dimensional subvector of coefficients is entirely set to zero.
+This behaviour is illustrated in the next figure.</p>
+<p><img src="/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png" /></p>
+<p><em>Univariate cubic B-spline basis and resulting spline functions. Dashed
+curves correspond to bases with a zero-valued coefficient. Only in the
+case when d=4 consecutive coefficients are zero the resulting spline
+function is null on a set of positive Lebesgue measure (in red).</em></p>
+</div>
+<div id="overlap-group-lasso" class="section level3">
+<h3>Overlap group Lasso</h3>
+<p>Having in mind the above mentioned B-splines sparsity properties, in
+order to estimate a locally-sparse regression surface, we minimize the
+following objective function</p>
+<p><span class="math display">\[ \frac{1}{2} \sum_{i=1}^n \int \bigg( y_i(s) - \int
+x_i(t)\psi(t,s) dt \bigg)^2 ds + \lambda
+\Omega(\boldsymbol{\Psi}), \]</span></p>
+<p>but, instead of specifying the functional form for the penalty
+<span class="math inline">\(\Omega(\cdot)\)</span> as the widely-employed Lasso
+(Tibshirani, 1996) or group-Lasso (Yuan and Lin, 2006) that would not
+work properly (see paper for details), we propose to use something truly
+tailored for the problem. First, instead of a disjoint partition, we
+define an overlapping sequence of blocks of size <span class="math inline">\(d\)</span> × <span class="math inline">\(d\)</span>. Specifically, we introduce the
+block index <span class="math inline">\(b = 1, \dots , B\)</span> with the total
+number of blocks denoted by <span class="math inline">\(B = (M − d + 1) \times (L − d +
+1)\)</span>. Notably, there is a block for each set
+<span class="math inline">\(\mathcal{D}_{ml}\)</span>. This overlapping group
+structure allows <span class="math inline">\(\mathcal{D}_0\)</span> to be the union
+of any set <span class="math inline">\(\mathcal{D}_{ml}\)</span> by moving a block
+of minimum size. An example of overlapping covering when
+<span class="math inline">\(d=4\)</span> (cubic splines) is shown in the following
+figure.</p>
+<p><img src="/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png" /></p>
+<p><em>Overlapping covering of the coefficient matrix (L = M = 12) with the
+first 4 blocks of size d × d, d = 4. Colors according to the balancing
+vector.</em></p>
+<p>This construction suggests specifying a penalty <span class="math inline">\(\Omega\)</span> for overlapping groups of coefficients, which has attracted
+significant interest in the last decade, see Jacob, Obozinski and Vert
+(2009), Jenatton, Audibert and Bach (2011) and Lim and Hastie (2015).
+Being interested in the sparsity structure of the matrix of coefficients
+<span class="math inline">\(\boldsymbol{\Psi}\)</span> rather than its support we
+particularize the previous problem as</p>
+<p><span class="math display">\[ \frac{1}{2} \sum_{i=1}^n \int \left( y_i(s) - \int x_i(t)
+\psi(t,s) dt \right)^2 ds + \lambda \sum_{b=1}^{B+1} || c_{b}
+\odot \boldsymbol{\psi} ||_2, \]</span></p>
+<p>where <span class="math inline">\(\lambda &gt; 0\)</span> is a fixed penalization term,
+and <span class="math inline">\(\Omega\)</span> specifies in the sum of <span class="math inline">\(B +
+1\)</span> Euclidean norms <span class="math inline">\(\lVert c_b \odot
+\boldsymbol{\psi} \rVert_2\)</span>, where
+<span class="math inline">\(\boldsymbol{\psi} = \text{vec}(\boldsymbol{\Psi})\)</span>, and <span class="math inline">\(\odot\)</span> represents the Hadamard
+product. The index <span class="math inline">\(b\)</span> denotes the block of
+coefficients in <span class="math inline">\(\boldsymbol{\Psi}\)</span>, with the
+first <span class="math inline">\(B\)</span> blocks being consistent with the
+aforementioned construction and the last block containing all
+coefficients in <span class="math inline">\(\boldsymbol{\Psi}\)</span>. Vectors of
+size <span class="math inline">\(ML\)</span>, denoted by <span class="math inline">\(c_b\)</span>,
+are needed to extract the correct subset of entries of
+<span class="math inline">\(\boldsymbol{\Psi}\)</span> and contain also known
+constants that equally balance the penalization of the coefficients.
+This <em>balancing</em> is needed because the parameters close to the
+boundaries appear in fewer groups than the central ones. Note that this
+penalty constitutes a special case of the norm defined by Jenatton,
+Audibert, and Bach (2011).</p>
+<p>In the case of a scalar response, the objective function becomes</p>
+<p><span class="math display">\[ \frac{1}{2} \sum_{i=1}^n \left( y_i - \int x_i(t) \psi(t)
+dt \right)^2 + \lambda \sum_{b=1}^{B+1} || c_{b} \odot
+\boldsymbol{\psi} ||_2 \]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{\psi}\)</span> and <span class="math inline">\(c_b\)</span> are vectors of dimension <span class="math inline">\(M\)</span> and each of
+the first <span class="math inline">\(B\)</span> blocks contains <span class="math inline">\(d\)</span> consecutive coefficients, as in the following example.</p>
+<p><img src="/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png" /></p>
+<p><em>Overlapping covering of the coefficient vector (M = 12) when the
+response is scalar with the first 4 blocks of size d = 4. Colors
+according to the balancing vector.</em></p>
+</div>
+</div>
+<div id="computational-considerations" class="section level2">
+<h2>Computational Considerations</h2>
+<p>To develop an efficient computational strategy, we introduce the
+empirical counterparts of the quantities described in the previous
+section assuming to observe a sample of response curves
+<span class="math inline">\(y_i\)</span> with <span class="math inline">\(i=1, \dots,n\)</span> on
+a common grid of <span class="math inline">\(G\)</span> points, i.e. <span class="math inline">\(y_i =
+(y_i(s_1), \dots, y_i(s_G))^T\)</span>. Let also
+<span class="math inline">\(x_i\)</span> be the related functional covariate observed
+on a possibly different but— common across <span class="math inline">\(i\)</span>—grid of points, that for simplicity and without loss of
+generality, we assume of length <span class="math inline">\(G\)</span>. Let
+<span class="math inline">\(\mathbf{X}\)</span> be the <span class="math inline">\(n \times G\)</span> matrix with <span class="math inline">\(x_i\)</span> in the rows. Let
+<span class="math inline">\(\boldsymbol{\Phi}\)</span> and
+<span class="math inline">\(\boldsymbol{\Theta}\)</span> be the <span class="math inline">\(M \times
+G\)</span> and <span class="math inline">\(L \times G\)</span> matrices
+defined as <span class="math display">\[ \boldsymbol{\Phi} = \begin{pmatrix} \varphi_1(t_1)
+&amp; \cdots &amp; \varphi_1(t_G) \\ \vdots&amp;&amp;\vdots \\ \varphi_m(t_1) &amp;
+\cdots &amp; \varphi_m(t_G) \\ \vdots&amp;&amp;\vdots \\ \varphi_M(t_1) &amp;
+\cdots &amp; \varphi_M(t_G) \\ \end{pmatrix}, \quad \quad
+\boldsymbol{\Theta} = \begin{pmatrix} \theta_1(s_1) &amp; \dots &amp;
+\theta_1(s_G) \\ \vdots&amp;&amp;\vdots \\ \theta_l(s_1) &amp; \cdots &amp;
+\theta_l(s_G) \\ \vdots&amp;&amp;\vdots \\ \theta_L(s_1) &amp; \cdots &amp;
+\theta_L(s_G) \\ \end{pmatrix}, \]</span> and let
+<span class="math inline">\(\mathbf{Y}\)</span> and <span class="math inline">\({\bf E}\)</span>
+be the <span class="math inline">\(n\times G\)</span> matrices obtained as
+<span class="math inline">\(\mathbf{Y} = (y_1, \dots, y_n)^T\)</span> and
+<span class="math inline">\(\mathbf{E} = (e_1, \dots, e_n)^T\)</span> , with
+<span class="math inline">\(e_i = (e_i(s_1), \dots, e_i(s_G))^T\)</span>. The
+function-on-function linear regression model can be equivalently written
+in matrix form as <span class="math display">\[ \mathbf{Y} = \mathbf{X} \boldsymbol{\Phi}^T
+\boldsymbol{\Psi} \boldsymbol{\Theta} + {\bf E}. \]</span></p>
+<p>Applying the vectorization operator on each side of the equality above,
+we obtain the new optimization problem</p>
+<p><span class="math display">\[ \frac{1}{2}\Vert \mathbf{y} - \mathbf{Z}
+\boldsymbol{\psi}\Vert_2^2 + \lambda \sum_{b=1}^{B+1} \Vert
+\mathbf{D}_{b}\boldsymbol{\psi} \Vert_2, \]</span></p>
+<p>where <span class="math inline">\(\mathbf{y}=\text{vec}(\mathbf{Y})\)</span>,
+<span class="math inline">\(\boldsymbol{\psi}=\text{vec}(\boldsymbol{\Psi})\)</span> is the vector of coefficients of dimension <span class="math inline">\(LM\)</span>, <span class="math inline">\(\mathbf{Z} = \boldsymbol{\Theta}^T \otimes
+\mathbf{X} \boldsymbol{\Phi}^T\)</span> and
+<span class="math inline">\(\mathbf{D}_b=\mathrm{diag}(c_b)\)</span> is a diagonal
+matrix whose elements correspond to the elements of the vector
+<span class="math inline">\(c_b\)</span>. The minimization of the quantity above is
+challenging because of the non-separability of the overlap group Lasso
+penalty. We propose a Majorization-Minimization (MM) algorithm (Lange,
+2016) to obtain the solution, although other choices are viable e.g.,
+the Alternating Direction Method of Multipliers (ADMM), see Boyd et
+al. (2011). The MM procedure works in two steps: in the first step a
+majorizing function
+<span class="math inline">\(\mathcal{Q}(\boldsymbol{\psi}\vert\widehat{\boldsymbol{\psi}}^{k})\)</span> based on the actual estimate is determined and in the second
+step this function is minimized. Alternating between the two guarantees
+the convergence to a solution of the original problem. The curious
+reader can find the expression of
+<span class="math inline">\(\mathcal{Q}(\boldsymbol{\psi}\vert\widehat{\boldsymbol{\psi}}^{k})\)</span> in the original paper, here we just point out that the function
+is quadratic and admits an explicit solution in the form of generalized
+ridge regression. A further speed-up, when the dimension of the problem
+is high, is made exploiting the Sherman-Morrison-Woodbury matrix
+identity, also known as the matrix inversion lemma.</p>
+<p>When the response is scalar, we have the following modifications. The
+design matrix is <span class="math inline">\(\mathbf{Z} = \mathbf{X}
+\boldsymbol{\Phi}^T\)</span>, <span class="math inline">\(\mathbf{y}\)</span> and <span class="math inline">\(\boldsymbol{\psi}\)</span> are vectors of
+dimension respectevely <span class="math inline">\(n\)</span> and <span class="math inline">\(M\)</span> and the diagonal matrix <span class="math inline">\(\mathbf{D}_{b}\)</span>
+is of dimension <span class="math inline">\(M \times M\)</span>. The optimization
+problem is still valid and the same class of algorithms can be employed
+to obtain the solution.</p>
+</div>
+<div id="swedish-mortality-revisited" class="section level2">
+<h2>Swedish mortality revisited</h2>
+<p>We apply the proposed locally sparse estimator to the Swedish mortality
+dataset, where the aim is to predict the log-hazard function on a given
+year from the same quantity on the previous year. We implement the model
+with <span class="math inline">\(d = 4, M = L = 20\)</span> basis functions on each
+dimension and select the optimal value of <span class="math inline">\(\lambda\)</span> by means of cross-validation. A perspective plot of the
+estimated surface is depicted in the last figure of the post. The
+estimate shows a marked positive diagonal confirming the positive
+influence on the log-hazard rate at age <span class="math inline">\(s\)</span> of the
+previous year’s curve evaluated on a neighborhood of <span class="math inline">\(s\)</span>. At the same time, the flat zero regions outside the diagonal
+suggest that there is no influence of the curves evaluated at distant
+ages. Our estimate is more regular than previous approaches and its
+qualitative interpretation sharper and easier. Refer, for example, to
+Figure 10.11 of Ramsay, Hooker, and Graves (2009).</p>
+<p><img src="/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png" /></p>
+<p><em>Estimated regression surface for the Swedish mortality dataset.</em></p>
+<p>This result witnesses the practical relevance of adopting the proposed
+approach. Indeed, the resulting estimate, while being reminiscent of a
+concurrent model—inheriting its ease of interpretation—gives further
+insights and improves the fit, representing the desired intermediate
+solution between the concurrent and nonconcurrent models.</p>
+</div>
+<div id="tt-r-package" class="section level2">
+<h2><span class="math inline">\({\tt R}\)</span> package</h2>
+<p>The method is implemented in <span class="math inline">\({\tt R}\)</span> through the
+package <span class="math inline">\({\tt fdaSP}\)</span>, available on CRAN. The
+function <span class="math inline">\({\tt f2fSP}\)</span> can be used for a
+functional response regression model while <span class="math inline">\({\tt f2sSP}\)</span> for a scalar response one. The two counterparts
+<span class="math inline">\(\texttt{f2fSP_cv}\)</span> and
+<span class="math inline">\(\texttt{f2sSP_cv}\)</span> are useful to select the
+tuning parameter by means of cross-validation.</p>
+</div>
+<div id="this-post-is-based-on" class="section level2">
+<h2>This post is based on</h2>
+<p>Bernardi, M., Canale, A. and Stefanucci, M. (2022). Locally Sparse
+Function-on-Function Regression, Journal of Computational and Graphical
+Statistics, 32:3, 985-999, DOI:
+<a href="https://doi.org/10.1080/10618600.2022.2130926">10.1080/10618600.2022.2130926</a></p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>Tibshirani, R. (1996), “Regression Shrinkage and Selection via the
+Lasso,” <em>Journal of the Royal Statistical Society,</em> Series B, 58,
+267–288.<br />
+Yuan, M., and Lin, Y. (2006), “Model Selection and Estimation in
+Regression with Grouped Variables,” <em>Journal of the Royal Statistical
+Society,</em> Series B, 68, 49–67.<br />
+Jacob, L., Obozinski, G., and Vert, J.-P. (2009), “Group Lasso with
+Overlap and Graph Lasso,” in <em>Proceedings of the 26th Annual
+International Conference on Machine Learning,</em> pp. 433–440.<br />
+Jenatton, R., Audibert, J.-Y., and Bach, F. (2011), “Structured Variable
+Selection with Sparsity-Inducing Norms,” <em>Journal of Machine Learning
+Research,</em> 12, 2777–2824.<br />
+Lim, M., and Hastie, T. (2015), “Learning Interactions via Hierarchical
+Group-Lasso Regularization,” <em>Journal of Computational and Graphical
+Statistics,</em> 24, 627–654.<br />
+Lange, K. (2016), <em>“MM optimization algorithms.”</em> Society for Industrial
+and Applied Mathematics, Philadelphia, PA.<br />
+Boyd, S., Parikh, N., Chu, E., Peleato, B. and Eckstein, J. (2011),
+“Distributed optimization and statistical learning via the alternating
+direction method of multipliers,” <em>Foundations and Trends® in Machine
+Learning,</em> 3, 1–122.<br />
+Ramsay, J. O., Hooker, G., and Graves, S. (2009), <em>Functional Data
+Analysis with R and Matlab,</em> NewYork: Springer.</p>
+</div>
+<div id="about-the-authors" class="section level2">
+<h2>About the authors</h2>
+<p><a href="https://scholar.google.it/citations?user=TejvXeQAAAAJ&amp;hl=en">Mauro Bernardi</a>
+is Associate Professor at University of Padua.</p>
+<p><a href="https://tonycanale.github.io/">Antonio Canale</a> is Associate Professor
+at University of Padua.</p>
+<p><a href="https://marcostefanucci.github.io/">Marco Stefanucci</a> is Assistant
+Professor at University of Rome Tor Vergata.</p>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

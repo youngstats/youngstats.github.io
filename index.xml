@@ -6,7 +6,344 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Locally Sparse Functional Regression</title>
+      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <description>
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In this post we present a new estimation procedure for functional linear
+regression useful when the regression surface – or curve – is supposed
+to be exactly zero within specific regions of its domain. Our approach
+involves regularization techniques, merging a B-spline representation of
+the unknown coefficient function with a peculiar overlap group lasso
+penalty. The methodology is illustrated on the well-known Swedish
+mortality dataset and can be employed by &lt;span class=&#34;math inline&#34;&gt;\({\tt R}\)&lt;/span&gt;
+users through the package &lt;span class=&#34;math inline&#34;&gt;\({\tt fdaSP}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;We consider the framework on which a functional response
+&lt;span class=&#34;math inline&#34;&gt;\(y_i(s)\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(s \in \mathcal{S}\)&lt;/span&gt; is observed together with a functional covariate
+&lt;span class=&#34;math inline&#34;&gt;\(x_i(t)\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(t \in \mathcal{T}\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(i=1, \dots, n\)&lt;/span&gt;. The simplest
+modeling strategy for function-on-function regression is the &lt;em&gt;concurrent
+model,&lt;/em&gt; which assumes that &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{T} = \mathcal{S}\)&lt;/span&gt; and the covariate &lt;span class=&#34;math inline&#34;&gt;\(x(\cdot)\)&lt;/span&gt; influences
+&lt;span class=&#34;math inline&#34;&gt;\(y(s)\)&lt;/span&gt; only through its values &lt;span class=&#34;math inline&#34;&gt;\(x(s)\)&lt;/span&gt; at the domain point &lt;span class=&#34;math inline&#34;&gt;\(s \in \mathcal{S}\)&lt;/span&gt;.
+The relation when both variables are centered is given by&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ y_i(s) = x_i(s)\psi(s) + e_i(s)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\psi(s)\)&lt;/span&gt; is the regression function and
+&lt;span class=&#34;math inline&#34;&gt;\(e_i(s)\)&lt;/span&gt; is a functional zero-mean random error.
+The more general approach, named &lt;em&gt;nonconcurrent functional linear
+model,&lt;/em&gt; allows &lt;span class=&#34;math inline&#34;&gt;\(y_i(s)\)&lt;/span&gt; to entirely depend on the
+functional regressor in the following way&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ y_i(s) = \int_{\mathcal{T}} x_i(t) \psi(t, s) dt + e_i(s) .
+\]&lt;/span&gt; The model allows &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{T} \neq
+\mathcal{S}\)&lt;/span&gt; and the bivariate function &lt;span class=&#34;math inline&#34;&gt;\(\psi(t,
+s)\)&lt;/span&gt; represents the impact of &lt;span class=&#34;math inline&#34;&gt;\(x(\cdot)\)&lt;/span&gt; evaluated at &lt;span class=&#34;math inline&#34;&gt;\(t \in \mathcal{T}\)&lt;/span&gt; on
+&lt;span class=&#34;math inline&#34;&gt;\(y_i(s)\)&lt;/span&gt; and usually is a “dense” function. Our
+goal is to introduce a &lt;em&gt;nonconcurrent functional linear model&lt;/em&gt; that
+allows for local sparsity patterns. Specifically, we want that
+&lt;span class=&#34;math inline&#34;&gt;\(\psi(t, s) = 0\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\((t, s) \in
+\mathcal{D}_0\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_0\)&lt;/span&gt; being a suitable subset of the domain
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\psi(\cdot)\)&lt;/span&gt;, with &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D} = \mathcal{S} \times
+\mathcal{T}\)&lt;/span&gt;, thus, inducing locally sparse
+Hilbert-Schmidt operators. Note that the set
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_0\)&lt;/span&gt; is unknown and need to be
+estimated from data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;locally-sparse-functional-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Locally sparse functional model&lt;/h2&gt;
+&lt;div id=&#34;b-splines-and-sparsity&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;B-splines and sparsity&lt;/h3&gt;
+&lt;p&gt;In order to represent functional objects using basis expansion, we
+select a basis &lt;span class=&#34;math inline&#34;&gt;\(\{\theta_l(s), l = 1, \dots , L\}\)&lt;/span&gt; of dimension &lt;span class=&#34;math inline&#34;&gt;\(L\)&lt;/span&gt; in the space of square
+integrable functions on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{S}\)&lt;/span&gt; and a basis
+&lt;span class=&#34;math inline&#34;&gt;\(\{\varphi_m(t), m = 1, \dots ,M\}\)&lt;/span&gt; of
+dimension &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; in the space of square integrable
+functions on &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{T}\)&lt;/span&gt;. Exploiting a tensor
+product expansion of these two, we represent the regression coefficient
+&lt;span class=&#34;math inline&#34;&gt;\(\psi\)&lt;/span&gt; as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{eqnarray} \psi(t,s) &amp;amp; = \sum_{m=1}^M \sum_{l=1}^L
+\psi_{ml} \varphi_m(t) \theta_l(s) = &amp;amp; (\varphi_1(t), \dots,
+\varphi_M(t)) \left( \begin{matrix} \psi_{1,1} &amp;amp; \cdots &amp;amp;
+\psi_{1,L} \\ \vdots &amp;amp; \ddots&amp;amp; \vdots \\ \psi_{M,1} &amp;amp; \cdots
+&amp;amp; \psi_{M,L} \end{matrix}\right) \left( \begin{matrix}
+\theta_{1}(s)\\ \vdots \\ \theta_{L}(s) \end{matrix}\right) =
+\boldsymbol{\varphi}(t)^T \boldsymbol{\Psi}
+\boldsymbol{\theta}(s), \label{eq:tensorproduct}
+\end{eqnarray}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\psi_{ml} \in \mathbb{R}\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(l=1,
+\dots, L\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(m=1, \dots, M\)&lt;/span&gt;.
+A key point is to assume that elements in this representation are
+B-splines (De Boor 1978) of order &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(L −
+d\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M − d\)&lt;/span&gt; interior knots,
+respectively. Suitable zero patterns in the B-spline basis coefficients
+of &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt; induce sparsity in
+&lt;span class=&#34;math inline&#34;&gt;\(\psi(t, s)\)&lt;/span&gt;. Let &lt;span class=&#34;math inline&#34;&gt;\(\tau_1 &amp;lt; \dots &amp;lt; \tau_m
+&amp;lt; \dots &amp;lt; \tau_{M−d+2}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\sigma_1 &amp;lt;
+\dots &amp;lt; \sigma_l &amp;lt; \dots &amp;lt; \sigma_{L−d+2}\)&lt;/span&gt;
+denote the knots defining the tensor product splines, with &lt;span class=&#34;math inline&#34;&gt;\(\tau_1,
+\tau_{M−d+2}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\sigma_1,
+\sigma_{L−d+2}\)&lt;/span&gt; being the boundaries of the two
+domains, and let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml} \in \mathcal{D}\)&lt;/span&gt; be the rectangular subset of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}\)&lt;/span&gt; defined as &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml} = (\tau_m, \tau_{m+1})
+\times (\sigma_l, \sigma_{l+1})\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(m = 1,
+\dots ,M − d + 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(l = 1, \dots , L − d +
+1\)&lt;/span&gt;. To obtain &lt;span class=&#34;math inline&#34;&gt;\(\psi(t, s) = 0\)&lt;/span&gt;
+for each &lt;span class=&#34;math inline&#34;&gt;\((t, s) \in \mathcal{D}_{ml}\)&lt;/span&gt;, it is
+sufficient that all the coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;l&#39;}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(m&#39; = m, \dots ,m + d − 1\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(l&#39; = l, \dots , l+d−1\)&lt;/span&gt; are jointly zero. The
+following figure further clarifies this concept.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Bivariate example with tensor product cubic B-splines (d=4). The top
+row shows different coefficient matrix patterns, while the bottom row
+shows the corresponding spline, where dots represent knots and the set D
+is highlighted in red. The first 2 columns show a coefficient matrix
+with isolated zeros and a (d-1) x (d-1) block of zeros, respectevely.
+None of the two is able to produce a sparse function. In the last
+column, conversely, an entire d x d block of coefficients is null and
+the resulting function is indeed sparse.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The previous figure suggests that, in general, &lt;span class=&#34;math inline&#34;&gt;\(\psi(t, s)\)&lt;/span&gt; equals zero in the region identified by two pairs of
+consecutive knots if the related &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; ×
+&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; block of coefficients of
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt; is entirely set to zero.
+Therefore, &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt; should be suitably
+partitioned in several blocks of dimensions &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; ×
+&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; on which a joint sparsity penalty is induced.&lt;/p&gt;
+&lt;p&gt;Note that in the simpler situation where a functional covariate
+&lt;span class=&#34;math inline&#34;&gt;\(x_i(t)\)&lt;/span&gt; and a scalar response &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; are observed we have the following simplifications. The
+functional linear model is&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ y_i = \int x_i(t) \psi(t) dt + e_i, \]&lt;/span&gt; the
+regression function is expanded as &lt;span class=&#34;math inline&#34;&gt;\(\psi(t) = \sum_{m=1}^M
+\psi_m \varphi_m(t)\)&lt;/span&gt; and the set &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_m
+= (\tau_m, \tau_{m+1})\)&lt;/span&gt; is an interval of the real
+line. To obtain &lt;span class=&#34;math inline&#34;&gt;\(\psi(t) = 0\)&lt;/span&gt; for each &lt;span class=&#34;math inline&#34;&gt;\(t \in
+\mathcal{D}_{m}\)&lt;/span&gt;, it is sufficient that all the
+coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(m&#39; = m,
+\dots ,m + d − 1\)&lt;/span&gt; are jointly zero and
+&lt;span class=&#34;math inline&#34;&gt;\(\psi(t)\)&lt;/span&gt; equals zero in the interval identified
+by two pairs of consecutive knots if the related &lt;span class=&#34;math inline&#34;&gt;\(d-\)&lt;/span&gt;dimensional subvector of coefficients is entirely set to zero.
+This behaviour is illustrated in the next figure.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Univariate cubic B-spline basis and resulting spline functions. Dashed
+curves correspond to bases with a zero-valued coefficient. Only in the
+case when d=4 consecutive coefficients are zero the resulting spline
+function is null on a set of positive Lebesgue measure (in red).&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;overlap-group-lasso&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Overlap group Lasso&lt;/h3&gt;
+&lt;p&gt;Having in mind the above mentioned B-splines sparsity properties, in
+order to estimate a locally-sparse regression surface, we minimize the
+following objective function&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{1}{2} \sum_{i=1}^n \int \bigg( y_i(s) - \int
+x_i(t)\psi(t,s) dt \bigg)^2 ds + \lambda
+\Omega(\boldsymbol{\Psi}), \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;but, instead of specifying the functional form for the penalty
+&lt;span class=&#34;math inline&#34;&gt;\(\Omega(\cdot)\)&lt;/span&gt; as the widely-employed Lasso
+(Tibshirani, 1996) or group-Lasso (Yuan and Lin, 2006) that would not
+work properly (see paper for details), we propose to use something truly
+tailored for the problem. First, instead of a disjoint partition, we
+define an overlapping sequence of blocks of size &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; × &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;. Specifically, we introduce the
+block index &lt;span class=&#34;math inline&#34;&gt;\(b = 1, \dots , B\)&lt;/span&gt; with the total
+number of blocks denoted by &lt;span class=&#34;math inline&#34;&gt;\(B = (M − d + 1) \times (L − d +
+1)\)&lt;/span&gt;. Notably, there is a block for each set
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml}\)&lt;/span&gt;. This overlapping group
+structure allows &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_0\)&lt;/span&gt; to be the union
+of any set &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml}\)&lt;/span&gt; by moving a block
+of minimum size. An example of overlapping covering when
+&lt;span class=&#34;math inline&#34;&gt;\(d=4\)&lt;/span&gt; (cubic splines) is shown in the following
+figure.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient matrix (L = M = 12) with the
+first 4 blocks of size d × d, d = 4. Colors according to the balancing
+vector.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This construction suggests specifying a penalty &lt;span class=&#34;math inline&#34;&gt;\(\Omega\)&lt;/span&gt; for overlapping groups of coefficients, which has attracted
+significant interest in the last decade, see Jacob, Obozinski and Vert
+(2009), Jenatton, Audibert and Bach (2011) and Lim and Hastie (2015).
+Being interested in the sparsity structure of the matrix of coefficients
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt; rather than its support we
+particularize the previous problem as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{1}{2} \sum_{i=1}^n \int \left( y_i(s) - \int x_i(t)
+\psi(t,s) dt \right)^2 ds + \lambda \sum_{b=1}^{B+1} || c_{b}
+\odot \boldsymbol{\psi} ||_2, \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\lambda &amp;gt; 0\)&lt;/span&gt; is a fixed penalization term,
+and &lt;span class=&#34;math inline&#34;&gt;\(\Omega\)&lt;/span&gt; specifies in the sum of &lt;span class=&#34;math inline&#34;&gt;\(B +
+1\)&lt;/span&gt; Euclidean norms &lt;span class=&#34;math inline&#34;&gt;\(\lVert c_b \odot
+\boldsymbol{\psi} \rVert_2\)&lt;/span&gt;, where
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi} = \text{vec}(\boldsymbol{\Psi})\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(\odot\)&lt;/span&gt; represents the Hadamard
+product. The index &lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt; denotes the block of
+coefficients in &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt;, with the
+first &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; blocks being consistent with the
+aforementioned construction and the last block containing all
+coefficients in &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt;. Vectors of
+size &lt;span class=&#34;math inline&#34;&gt;\(ML\)&lt;/span&gt;, denoted by &lt;span class=&#34;math inline&#34;&gt;\(c_b\)&lt;/span&gt;,
+are needed to extract the correct subset of entries of
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Psi}\)&lt;/span&gt; and contain also known
+constants that equally balance the penalization of the coefficients.
+This &lt;em&gt;balancing&lt;/em&gt; is needed because the parameters close to the
+boundaries appear in fewer groups than the central ones. Note that this
+penalty constitutes a special case of the norm defined by Jenatton,
+Audibert, and Bach (2011).&lt;/p&gt;
+&lt;p&gt;In the case of a scalar response, the objective function becomes&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{1}{2} \sum_{i=1}^n \left( y_i - \int x_i(t) \psi(t)
+dt \right)^2 + \lambda \sum_{b=1}^{B+1} || c_{b} \odot
+\boldsymbol{\psi} ||_2 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(c_b\)&lt;/span&gt; are vectors of dimension &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and each of
+the first &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; blocks contains &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; consecutive coefficients, as in the following example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient vector (M = 12) when the
+response is scalar with the first 4 blocks of size d = 4. Colors
+according to the balancing vector.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;computational-considerations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Computational Considerations&lt;/h2&gt;
+&lt;p&gt;To develop an efficient computational strategy, we introduce the
+empirical counterparts of the quantities described in the previous
+section assuming to observe a sample of response curves
+&lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(i=1, \dots,n\)&lt;/span&gt; on
+a common grid of &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; points, i.e. &lt;span class=&#34;math inline&#34;&gt;\(y_i =
+(y_i(s_1), \dots, y_i(s_G))^T\)&lt;/span&gt;. Let also
+&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; be the related functional covariate observed
+on a possibly different but— common across &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;—grid of points, that for simplicity and without loss of
+generality, we assume of length &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt;. Let
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{X}\)&lt;/span&gt; be the &lt;span class=&#34;math inline&#34;&gt;\(n \times G\)&lt;/span&gt; matrix with &lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt; in the rows. Let
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Phi}\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\Theta}\)&lt;/span&gt; be the &lt;span class=&#34;math inline&#34;&gt;\(M \times
+G\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(L \times G\)&lt;/span&gt; matrices
+defined as &lt;span class=&#34;math display&#34;&gt;\[ \boldsymbol{\Phi} = \begin{pmatrix} \varphi_1(t_1)
+&amp;amp; \cdots &amp;amp; \varphi_1(t_G) \\ \vdots&amp;amp;&amp;amp;\vdots \\ \varphi_m(t_1) &amp;amp;
+\cdots &amp;amp; \varphi_m(t_G) \\ \vdots&amp;amp;&amp;amp;\vdots \\ \varphi_M(t_1) &amp;amp;
+\cdots &amp;amp; \varphi_M(t_G) \\ \end{pmatrix}, \quad \quad
+\boldsymbol{\Theta} = \begin{pmatrix} \theta_1(s_1) &amp;amp; \dots &amp;amp;
+\theta_1(s_G) \\ \vdots&amp;amp;&amp;amp;\vdots \\ \theta_l(s_1) &amp;amp; \cdots &amp;amp;
+\theta_l(s_G) \\ \vdots&amp;amp;&amp;amp;\vdots \\ \theta_L(s_1) &amp;amp; \cdots &amp;amp;
+\theta_L(s_G) \\ \end{pmatrix}, \]&lt;/span&gt; and let
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Y}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\({\bf E}\)&lt;/span&gt;
+be the &lt;span class=&#34;math inline&#34;&gt;\(n\times G\)&lt;/span&gt; matrices obtained as
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Y} = (y_1, \dots, y_n)^T\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{E} = (e_1, \dots, e_n)^T\)&lt;/span&gt; , with
+&lt;span class=&#34;math inline&#34;&gt;\(e_i = (e_i(s_1), \dots, e_i(s_G))^T\)&lt;/span&gt;. The
+function-on-function linear regression model can be equivalently written
+in matrix form as &lt;span class=&#34;math display&#34;&gt;\[ \mathbf{Y} = \mathbf{X} \boldsymbol{\Phi}^T
+\boldsymbol{\Psi} \boldsymbol{\Theta} + {\bf E}. \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Applying the vectorization operator on each side of the equality above,
+we obtain the new optimization problem&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{1}{2}\Vert \mathbf{y} - \mathbf{Z}
+\boldsymbol{\psi}\Vert_2^2 + \lambda \sum_{b=1}^{B+1} \Vert
+\mathbf{D}_{b}\boldsymbol{\psi} \Vert_2, \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{y}=\text{vec}(\mathbf{Y})\)&lt;/span&gt;,
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}=\text{vec}(\boldsymbol{\Psi})\)&lt;/span&gt; is the vector of coefficients of dimension &lt;span class=&#34;math inline&#34;&gt;\(LM\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Z} = \boldsymbol{\Theta}^T \otimes
+\mathbf{X} \boldsymbol{\Phi}^T\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\mathbf{D}_b=\mathrm{diag}(c_b)\)&lt;/span&gt; is a diagonal
+matrix whose elements correspond to the elements of the vector
+&lt;span class=&#34;math inline&#34;&gt;\(c_b\)&lt;/span&gt;. The minimization of the quantity above is
+challenging because of the non-separability of the overlap group Lasso
+penalty. We propose a Majorization-Minimization (MM) algorithm (Lange,
+2016) to obtain the solution, although other choices are viable e.g.,
+the Alternating Direction Method of Multipliers (ADMM), see Boyd et
+al. (2011). The MM procedure works in two steps: in the first step a
+majorizing function
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{Q}(\boldsymbol{\psi}\vert\widehat{\boldsymbol{\psi}}^{k})\)&lt;/span&gt; based on the actual estimate is determined and in the second
+step this function is minimized. Alternating between the two guarantees
+the convergence to a solution of the original problem. The curious
+reader can find the expression of
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{Q}(\boldsymbol{\psi}\vert\widehat{\boldsymbol{\psi}}^{k})\)&lt;/span&gt; in the original paper, here we just point out that the function
+is quadratic and admits an explicit solution in the form of generalized
+ridge regression. A further speed-up, when the dimension of the problem
+is high, is made exploiting the Sherman-Morrison-Woodbury matrix
+identity, also known as the matrix inversion lemma.&lt;/p&gt;
+&lt;p&gt;When the response is scalar, we have the following modifications. The
+design matrix is &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{Z} = \mathbf{X}
+\boldsymbol{\Phi}^T\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{y}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}\)&lt;/span&gt; are vectors of
+dimension respectevely &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and the diagonal matrix &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{D}_{b}\)&lt;/span&gt;
+is of dimension &lt;span class=&#34;math inline&#34;&gt;\(M \times M\)&lt;/span&gt;. The optimization
+problem is still valid and the same class of algorithms can be employed
+to obtain the solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;swedish-mortality-revisited&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Swedish mortality revisited&lt;/h2&gt;
+&lt;p&gt;We apply the proposed locally sparse estimator to the Swedish mortality
+dataset, where the aim is to predict the log-hazard function on a given
+year from the same quantity on the previous year. We implement the model
+with &lt;span class=&#34;math inline&#34;&gt;\(d = 4, M = L = 20\)&lt;/span&gt; basis functions on each
+dimension and select the optimal value of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; by means of cross-validation. A perspective plot of the
+estimated surface is depicted in the last figure of the post. The
+estimate shows a marked positive diagonal confirming the positive
+influence on the log-hazard rate at age &lt;span class=&#34;math inline&#34;&gt;\(s\)&lt;/span&gt; of the
+previous year’s curve evaluated on a neighborhood of &lt;span class=&#34;math inline&#34;&gt;\(s\)&lt;/span&gt;. At the same time, the flat zero regions outside the diagonal
+suggest that there is no influence of the curves evaluated at distant
+ages. Our estimate is more regular than previous approaches and its
+qualitative interpretation sharper and easier. Refer, for example, to
+Figure 10.11 of Ramsay, Hooker, and Graves (2009).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Estimated regression surface for the Swedish mortality dataset.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This result witnesses the practical relevance of adopting the proposed
+approach. Indeed, the resulting estimate, while being reminiscent of a
+concurrent model—inheriting its ease of interpretation—gives further
+insights and improves the fit, representing the desired intermediate
+solution between the concurrent and nonconcurrent models.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tt-r-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;span class=&#34;math inline&#34;&gt;\({\tt R}\)&lt;/span&gt; package&lt;/h2&gt;
+&lt;p&gt;The method is implemented in &lt;span class=&#34;math inline&#34;&gt;\({\tt R}\)&lt;/span&gt; through the
+package &lt;span class=&#34;math inline&#34;&gt;\({\tt fdaSP}\)&lt;/span&gt;, available on CRAN. The
+function &lt;span class=&#34;math inline&#34;&gt;\({\tt f2fSP}\)&lt;/span&gt; can be used for a
+functional response regression model while &lt;span class=&#34;math inline&#34;&gt;\({\tt f2sSP}\)&lt;/span&gt; for a scalar response one. The two counterparts
+&lt;span class=&#34;math inline&#34;&gt;\(\texttt{f2fSP_cv}\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(\texttt{f2sSP_cv}\)&lt;/span&gt; are useful to select the
+tuning parameter by means of cross-validation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;this-post-is-based-on&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;This post is based on&lt;/h2&gt;
+&lt;p&gt;Bernardi, M., Canale, A. and Stefanucci, M. (2022). Locally Sparse
+Function-on-Function Regression, Journal of Computational and Graphical
+Statistics, 32:3, 985-999, DOI:
+&lt;a href=&#34;https://doi.org/10.1080/10618600.2022.2130926&#34;&gt;10.1080/10618600.2022.2130926&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Tibshirani, R. (1996), “Regression Shrinkage and Selection via the
+Lasso,” &lt;em&gt;Journal of the Royal Statistical Society,&lt;/em&gt; Series B, 58,
+267–288.&lt;br /&gt;
+Yuan, M., and Lin, Y. (2006), “Model Selection and Estimation in
+Regression with Grouped Variables,” &lt;em&gt;Journal of the Royal Statistical
+Society,&lt;/em&gt; Series B, 68, 49–67.&lt;br /&gt;
+Jacob, L., Obozinski, G., and Vert, J.-P. (2009), “Group Lasso with
+Overlap and Graph Lasso,” in &lt;em&gt;Proceedings of the 26th Annual
+International Conference on Machine Learning,&lt;/em&gt; pp. 433–440.&lt;br /&gt;
+Jenatton, R., Audibert, J.-Y., and Bach, F. (2011), “Structured Variable
+Selection with Sparsity-Inducing Norms,” &lt;em&gt;Journal of Machine Learning
+Research,&lt;/em&gt; 12, 2777–2824.&lt;br /&gt;
+Lim, M., and Hastie, T. (2015), “Learning Interactions via Hierarchical
+Group-Lasso Regularization,” &lt;em&gt;Journal of Computational and Graphical
+Statistics,&lt;/em&gt; 24, 627–654.&lt;br /&gt;
+Lange, K. (2016), &lt;em&gt;“MM optimization algorithms.”&lt;/em&gt; Society for Industrial
+and Applied Mathematics, Philadelphia, PA.&lt;br /&gt;
+Boyd, S., Parikh, N., Chu, E., Peleato, B. and Eckstein, J. (2011),
+“Distributed optimization and statistical learning via the alternating
+direction method of multipliers,” &lt;em&gt;Foundations and Trends® in Machine
+Learning,&lt;/em&gt; 3, 1–122.&lt;br /&gt;
+Ramsay, J. O., Hooker, G., and Graves, S. (2009), &lt;em&gt;Functional Data
+Analysis with R and Matlab,&lt;/em&gt; NewYork: Springer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the authors&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://scholar.google.it/citations?user=TejvXeQAAAAJ&amp;amp;hl=en&#34;&gt;Mauro Bernardi&lt;/a&gt;
+is Associate Professor at University of Padua.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tonycanale.github.io/&#34;&gt;Antonio Canale&lt;/a&gt; is Associate Professor
+at University of Padua.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://marcostefanucci.github.io/&#34;&gt;Marco Stefanucci&lt;/a&gt; is Assistant
+Professor at University of Rome Tor Vergata.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
@@ -1323,40 +1660,6 @@ In practice, it projects the matrices &lt;span class=&#34;math inline&#34;&gt;\(
 &lt;li&gt;&lt;a href=&#34;http://livioivil.github.io/&#34;&gt;Livio Finos&lt;/a&gt; is a full professor in statistics in the Department of Statistics at the University of Padova.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Distribution generalization and causal inference</title>
-      <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Distribution generalization and causal inference&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-02-28-distribution-generalization-in-causal-inference_files/cover_jointimszurichyoungstats_causal.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;1st joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available
-&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdWLS-kZZUhaNHxmEmVUWLiUzKQ6JARRCHrrj-B3tOgWWrkgQ/viewform?usp=mail_form_link&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://statweb.rutgers.edu/zijguo/&#34;&gt;Zijian Guo&lt;/a&gt;, Rutgers University: “&lt;em&gt;Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies&lt;/em&gt;”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries. Associations that are consistently observed across multiple source populations are more likely to be generalized to target populations with possible distributional shifts. In this paper, we model the heterogeneous multi-source data with multiple high-dimensional regressions and make inferences for the maximin effect (Meinshausen and Bühlmann, AoS, 43(4), 1801–1830). The maximin effect provides a measure of stable associations across multi-source data. A significant maximin effect indicates that a variable has commonly shared effects across multiple source populations, and these shared effects may be generalized to a broader set of target populations. There are challenges associated with inferring maximin effects because its point estimator can have a non-standard limiting distribution. We devise a novel sampling method to construct valid confidence intervals for maximin effects. The proposed confidence interval attains a parametric length. This sampling procedure and the related theoretical analysis are of independent interest for solving other non-standard inference problems. Using genetic data on yeast growth in multiple environments, we demonstrate that the genetic variants with significant maximin effects have generalizable effects under new environments.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://saramagliacane.github.io/&#34;&gt;Sara Magliacane&lt;/a&gt;, University of Amsterdam and MIT-IBM Watson AI LAB: “&lt;em&gt;Causality-inspired ML: what can causality do for ML?&lt;/em&gt;”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Abstract: Applying machine learning to real-world cases often requires methods that are robust w.r.t. heterogeneity, missing not at random or corrupt data, selection bias, non i.i.d. data etc. and that can generalize across different domains. Moreover, many tasks are inherently trying to answer causal questions and gather actionable insights, a task for which correlations are usually not enough. Several of these issues are addressed in the rich causal inference literature. On the other hand, often classical causal inference methods require either a complete knowledge of a causal graph or enough experimental data (interventions) to estimate it accurately. Recently, a new line of research has focused on causality-inspired machine learning, i.e. on the application ideas from causal inference to machine learning methods without necessarily knowing or even trying to estimate the complete causal graph. In this talk, I will present an example of this line of research in the unsupervised domain adaptation case, in which we have labelled data in a set of source domains and unlabelled data in a target domain (“zero-shot”), for which we want to predict the labels. In particular, given certain assumptions, our approach is able to select a set of provably “stable” features (a separating set), for which the generalization error can be bound, even in case of arbitrarily large distribution shifts. As opposed to other works, it also exploits the information in the unlabelled target data, allowing for some unseen shifts w.r.t. to the source domains. While using ideas from causal inference, our method never aims at reconstructing the causal graph or even the Markov equivalence class, showing that causal inference ideas can help machine learning even in this more relaxed setting.&lt;/p&gt;
-&lt;p&gt;Discussant: &lt;a href=&#34;https://niklaspfister.github.io/&#34;&gt;Niklas Pfister&lt;/a&gt;, University of Copenhagen&lt;/p&gt;
-&lt;p&gt;YoungStatS project of the Young Statisticians Europe initiative (FENStatS) is supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=XQ-Udp_WaMM&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
