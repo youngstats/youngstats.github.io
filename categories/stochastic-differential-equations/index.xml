@@ -6,7 +6,19 @@
     <description>Recent content in stochastic-differential-equations on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-differential-equations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-differential-equations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stochastic Fluid Dynamics</title>
+      <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
+      <description>Stochastic Fluid Dynamics
+Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET
+The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification
+In this webinar, selected young researchers will present their recent works on the topic.</description>
+    </item>
+    
     <item>
       <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
       <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
