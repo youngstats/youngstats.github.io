@@ -6,7 +6,43 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mathematical-physics</title>
+      <link>https://youngstats.github.io/categories/mathematical-physics/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/mathematical-physics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability-theory</title>
+      <link>https://youngstats.github.io/categories/probability-theory/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/probability-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-processes</title>
+      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Functional-Data-Analysis</title>
       <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
@@ -58,42 +94,6 @@
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data-science</title>
-      <link>https://youngstats.github.io/categories/data-science/</link>
-      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>https://youngstats.github.io/categories/statistics/</link>
-      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webinars</title>
-      <link>https://youngstats.github.io/categories/webinars/</link>
-      <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/webinars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>graphical-models</title>
-      <link>https://youngstats.github.io/categories/graphical-models/</link>
-      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/graphical-models/</guid>
       <description></description>
     </item>
     

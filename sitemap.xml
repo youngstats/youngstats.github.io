@@ -3,10 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2023-10-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
-    <lastmod>2023-10-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/mathematical-physics/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/probability-theory/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/functional-data-analysis/</loc>
     <lastmod>2023-10-09T00:00:00+00:00</lastmod>
@@ -15,9 +33,6 @@
     <lastmod>2023-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/nonparametric-statistics/</loc>
-    <lastmod>2023-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/bayesian-computation/</loc>
@@ -44,9 +59,6 @@
     <loc>https://youngstats.github.io/categories/statistics/</loc>
     <lastmod>2023-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
-    <lastmod>2023-09-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/graphical-models/</loc>
     <lastmod>2023-07-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -57,9 +69,6 @@
     <lastmod>2023-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/combinatorics/</loc>
-    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/probability-theory/</loc>
     <lastmod>2023-07-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/random-geometry/</loc>
@@ -84,9 +93,6 @@
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/stochastic-differential-equations/</loc>
-    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/extreme-value-theory/</loc>
