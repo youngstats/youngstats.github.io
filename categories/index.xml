@@ -8,20 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>mathematical-physics</title>
-      <link>https://youngstats.github.io/categories/mathematical-physics/</link>
+      <title>ergodic-theory</title>
+      <link>https://youngstats.github.io/categories/ergodic-theory/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/mathematical-physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability-theory</title>
-      <link>https://youngstats.github.io/categories/probability-theory/</link>
-      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/probability-theory/</guid>
+      <guid>https://youngstats.github.io/categories/ergodic-theory/</guid>
       <description></description>
     </item>
     
@@ -31,6 +22,15 @@
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/stochastic-differential-equations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic-processes</title>
+      <link>https://youngstats.github.io/categories/stochastic-processes/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/stochastic-processes/</guid>
       <description></description>
     </item>
     

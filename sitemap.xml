@@ -8,19 +8,19 @@
     <loc>https://youngstats.github.io/categories/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/mathematical-physics/</loc>
+    <loc>https://youngstats.github.io/categories/ergodic-theory/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/</loc>
-    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/probability-theory/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/stochastic-differential-equations/</loc>
+    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/webinars/</loc>
@@ -71,6 +71,9 @@
     <loc>https://youngstats.github.io/categories/combinatorics/</loc>
     <lastmod>2023-07-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://youngstats.github.io/categories/probability-theory/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://youngstats.github.io/categories/random-geometry/</loc>
     <lastmod>2023-07-02T00:00:00+00:00</lastmod>
   </url><url>
@@ -90,9 +93,6 @@
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/fluid-dynamics/</loc>
-    <lastmod>2023-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
     <lastmod>2023-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/extreme-value-theory/</loc>
