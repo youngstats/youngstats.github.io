@@ -29,10 +29,24 @@
 &lt;p&gt;Speakers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://sites.google.com/view/dalonsoo&#34;&gt;Diego Alonso-Orán&lt;/a&gt;, Universidad de la Laguna, Tenerife, Spain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Title: Regularity results for a stochastic transport equation with non-local velocity&lt;/p&gt;
+&lt;p&gt;Abstract: In this talk, I will present different results regarding the well-posedness of a one-dimensional transport equation with non-local velocity under random perturbations. More precisely, we will discuss local and global existence of smooth solutions as well as the formation of finite time singularities depending on the nature of the noise. Time permitting, I will also pose some future research directions and open problems.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.imperial.ac.uk/people/daniel.goodair16&#34;&gt;Daniel Goodair&lt;/a&gt;, Imperial College London, UK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Title: Pushing the Boundaries of Stochastic Fluid Dynamics&lt;/p&gt;
+&lt;p&gt;Abstract: From the theoretical perspective, the recent introduction of transport noise into fluid dynamics models invites two interesting questions: do we retain the analytical properties of the deterministic equations for a wide class of such noise, and can we improve upon these properties for a specific choice of noise within the class? My talk will be focused on the former, with a brief eye to the latter. In particular, I will discuss the existence of solutions in the presence of a physical boundary. This will be guided by recent difficulties and successes surrounding the Navier-Stokes Equation with Stochastic Lie Transport, addressing the challenges arising in a bounded domain and what standard techniques can and cannot cope with. I will conclude with the mention of a conjecture as to how new developments in enhanced dissipation could provide a high probability stochastic answer to a famously open problem regarding the inviscid limit.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://people.utwente.nl/e.luesink&#34;&gt;Erwin Luesink&lt;/a&gt;, University of Twente, Netherlands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Title: Stochastic fluid dynamics and its connections to geometry&lt;/p&gt;
+&lt;p&gt;Abstract: Many equations in stochastic fluid dynamics can be derived through a geometric framework. This framework is known as stochastic geometric mechanics and guides also the numerical discretisation of models in stochastic fluid dynamics. In this talk I will discuss several versions of this framework and use them to derive stochastic models in fluid dynamics. For a special case, namely for stochastic fluids on the sphere, I show how the geometric framework helps to guide the numerical discretisation.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://miloviviani.wordpress.com/&#34;&gt;Milo Viviani&lt;/a&gt;, Scuola Normale Superiore di Pisa, Italy&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Title: Zero-Noise Selection for Point Vortex Dynamics after Collapse&lt;/p&gt;
+&lt;p&gt;Abstract: In this talk, we discuss the continuation of point vortex dynamics after a vortex collapse by means of a regularization procedure consisting in introducing a small stochastic diffusive term, that corresponds to a vanishing viscosity. By a careful numerical investigation, we show that in contrast with deterministic regularization, in which a cutoff interaction selects in the limit a single trajectory of the system after collapse, the zero-noise method produces a probability distribution supported by trajectories satisfying relevant conservation laws of the point vortex system.&lt;/p&gt;
 &lt;p&gt;Discussant: Umberto Pappalettera, University of Bielefeld, Germany&lt;/p&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 </description>
