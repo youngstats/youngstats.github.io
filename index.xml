@@ -146,7 +146,7 @@ distance to&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt
 consider&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\([x] \in X/T\)&lt;/span&gt;&lt;em&gt;,&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t \in T\)&lt;/span&gt; &lt;em&gt;and&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; &lt;em&gt;a generalized
 geodesic in&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(X/T\)&lt;/span&gt; &lt;em&gt;with representative&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\gamma\in \Gamma(X)\)&lt;/span&gt;&lt;em&gt;. The
 graph representative&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t^T x t\in X\)&lt;/span&gt; &lt;em&gt;is in optimal position to&lt;/em&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\gamma\in\Gamma(X)\)&lt;/span&gt;* if* &lt;span class=&#34;math display&#34;&gt;\[d_X(t^T x t ,\gamma)=d_{X/T}([x],\delta).\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\gamma\in\Gamma(X)\)&lt;/span&gt; &lt;em&gt;if&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[d_X(t^T x t ,\gamma)=d_{X/T}([x],\delta).\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Having concepts of generalized geodesic, optimal position and
 orthogonality, we now define a set of geodesic principal components:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Definition 4:&lt;/strong&gt; &lt;em&gt;Consider the canonical projection of the Graph Space&lt;/em&gt;
