@@ -21,9 +21,16 @@
 &lt;p&gt;Sets of Graphs arise in many different applications, from medicine to
 finance, from urban planning to social science. Analysing sets of graphs
 is far from trivial as they are strongly non Euclidean data type. There
-are two main sets of graphs: - graph labelled: where there is the same
-sets of nodes across each observation; - graph unlabelled: where there
-is no clear correspondence in the nodes across networks.&lt;/p&gt;
+are two main sets of graphs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;labelled: where there is the same sets of nodes across each
+observation;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- --&gt;
+&lt;ul&gt;
+&lt;li&gt;unlabelled: where there is no clear correspondence in the nodes
+across networks.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Unlabelled graphs poses high challenges from both the embedding
 prospective (which geometrical embedding is suitable for such graphs)
 and the statistical perspective (how can we extend basic tools to such
