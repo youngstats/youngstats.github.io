@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manifold-statistics on YoungStatS</title>
+    <link>https://youngstats.github.io/categories/manifold-statistics/</link>
+    <description>Recent content in manifold-statistics on YoungStatS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/manifold-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
+      <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
+      <description>OverviewSets of Graphs arise in many different applications, from medicine tofinance, from urban planning to social science. Analysing sets of graphsis far from trivial as they are strongly non Euclidean data type. Thereare two main sets of graphs: - graph labelled: where there is the samesets of nodes across each observation; - graph unlabelled: where thereis no clear correspondence in the nodes across networks.</description>
+    </item>
+    
+  </channel>
+</rss>

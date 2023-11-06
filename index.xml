@@ -6,7 +6,266 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
+      <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
+      <description>
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Sets of Graphs arise in many different applications, from medicine to
+finance, from urban planning to social science. Analysing sets of graphs
+is far from trivial as they are strongly non Euclidean data type. There
+are two main sets of graphs: - graph labelled: where there is the same
+sets of nodes across each observation; - graph unlabelled: where there
+is no clear correspondence in the nodes across networks.&lt;/p&gt;
+&lt;p&gt;Unlabelled graphs poses high challenges from both the embedding
+prospective (which geometrical embedding is suitable for such graphs)
+and the statistical perspective (how can we extend basic tools to such
+embedding).&lt;/p&gt;
+&lt;p&gt;In the past years, scholars have been proposing different embedding
+strategies for unlabelled graphs. Among existing models: &lt;span class=&#34;citation&#34;&gt;Ginestet et al. (&lt;a href=&#34;#ref-ginestet2017&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;
+proposes a model where networks’ Laplacian matrices are smoothly
+injected into a sub-manifold of a Euclidean space;
+&lt;span class=&#34;citation&#34;&gt;Simpson et al. (&lt;a href=&#34;#ref-simpson2013permutation&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Severn, Dryden, and Preston (&lt;a href=&#34;#ref-severn2020non&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Durante, Dunson, and Vogelstein (&lt;a href=&#34;#ref-durante2017nonparametric&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;
+face the problem of generating and performing tests on a population of
+networks; &lt;span class=&#34;citation&#34;&gt;Lunagómez, Olhede, and Wolfe (&lt;a href=&#34;#ref-lunagomez2021modeling&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; provide Bayesian modelling for discrete
+labeled graphs, and &lt;span class=&#34;citation&#34;&gt;Chowdhury and Mémoli (&lt;a href=&#34;#ref-chowdhury2019gromov&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; studies a metric space of
+networks up to weak isomorphism, which allows the grouping of similar
+nodes. In &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2023populations&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;, we characterize geometrically the
+Graph Space quotient space introduced by &lt;span class=&#34;citation&#34;&gt;Jain and Obermayer (&lt;a href=&#34;#ref-jain2009structure&#34;&gt;2009&lt;/a&gt;)&lt;/span&gt; and we
+extended principal component analysis to sets of unlabelled graphs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;graph-space&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Graph Space&lt;/h2&gt;
+&lt;p&gt;Consider &lt;span class=&#34;math inline&#34;&gt;\(G_1,\dots, G_k\)&lt;/span&gt; where each &lt;span class=&#34;math inline&#34;&gt;\(G_i=(N_i,E_i,a_i)\)&lt;/span&gt; sets of nodes
+&lt;span class=&#34;math inline&#34;&gt;\(N_i\)&lt;/span&gt;, edges &lt;span class=&#34;math inline&#34;&gt;\(E_i\)&lt;/span&gt;, and a real valued attribute function
+&lt;span class=&#34;math inline&#34;&gt;\(a_i :E_i \rightarrow \mathbb{R}\)&lt;/span&gt;. Each graph can be described as a set
+of adjacency matrix &lt;span class=&#34;math inline&#34;&gt;\(x \in X=\mathbb{R}^{n\times n}\)&lt;/span&gt;. We can embed
+unlabelled graphs in a quotient space &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; set of
+permutation matrices. Each graph is now represented by its equivalence
+class of permuted graphs: &lt;span class=&#34;math display&#34;&gt;\[[x]=\{t^T x t: t\in T\}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 1: Conceptual visualization of Graph Space.&lt;/p&gt;
+&lt;p&gt;By equipping the total space with a metric &lt;span class=&#34;math inline&#34;&gt;\((X,d_X)\)&lt;/span&gt; we can define a
+quotient metric on &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; as:
+&lt;span class=&#34;math display&#34;&gt;\[d_{X/T}([x_1],[x_2])=min_{t\in T}d_X (t^T x_1 t, x_2)\]&lt;/span&gt; Such metric
+corresponds in finding the optimal candidate in the equivalence class
+which minimize the distance in the total space. The minimization problem
+is known as the Graph Matching problem, which is a broadly studied
+problem in optimization &lt;span class=&#34;citation&#34;&gt;Conte et al. (&lt;a href=&#34;#ref-conte2004thirty&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt; for a review). As we select
+&lt;span class=&#34;math inline&#34;&gt;\(d_X\)&lt;/span&gt; to be the frobeious norm, we use the FAQ Graph matching
+&lt;span class=&#34;citation&#34;&gt;Vogelstein et al. (&lt;a href=&#34;#ref-vogelstein2015fast&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 2: Conceptual visualization of the distance in the Graph Space.&lt;/p&gt;
+&lt;div id=&#34;short-geometrical-characterization-of-graph-space&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Short Geometrical Characterization of Graph Space&lt;/h3&gt;
+&lt;p&gt;The graph space is a metric space &lt;span class=&#34;math inline&#34;&gt;\((X / T,d_{X/T})\)&lt;/span&gt;, but it is not a
+manifold: The equivalence classes are often not of the same dimensions
+(symmetries or blocks of zeros can cause the permutation to leave the
+graph unchanged), thus the action is not free and the space is not a
+quotient manifold (see &lt;span class=&#34;citation&#34;&gt;Lee (&lt;a href=&#34;#ref-lee2013smooth&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt; for details on quotient
+manifolds). However, the total space &lt;span class=&#34;math inline&#34;&gt;\(X=\mathbb{R}^{n\times n}\)&lt;/span&gt; is
+Euclidean. To overcome the complexity of the Graph Space and perform
+statistics on unlabelled graphs, we define an algorithm relying on the
+total space &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; for the computations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;align-all-and-compute&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Align All and Compute&lt;/h3&gt;
+&lt;p&gt;The Align All and Compute Algorithm (AAC) allows to compute intrinsic
+statistics on Graph Space by computing the estimators on the total
+space. We illustrate it here for the estimation of the Fréchet Mean
+&lt;span class=&#34;citation&#34;&gt;Fréchet (&lt;a href=&#34;#ref-frechet1948elements&#34;&gt;1948&lt;/a&gt;)&lt;/span&gt;. Consider a set of &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots,[x_k]\}\)&lt;/span&gt; graphs:
+&lt;span class=&#34;math display&#34;&gt;\[[\bar{x}]=min_{[x]\in X / T }\sum_{i=1}^{n}d_{X /T}([\bar{x}],[x_i])\]&lt;/span&gt;
+Notice that the Fréchet Mean results into the arithmetic mean in the
+case of Euclidean data.&lt;/p&gt;
+&lt;p&gt;The AAC operates as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AAC algorithm for the the Fréchet Mean&lt;/strong&gt;&lt;br /&gt;
+- Input: &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots,[x_k]\} \subset X/T\)&lt;/span&gt;; a threshold
+&lt;span class=&#34;math inline&#34;&gt;\(\varepsilon &amp;gt; 0\)&lt;/span&gt;&lt;br /&gt;
+- Initialization: Randomly select
+&lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}=\tilde{x_i}\in [x_i] \in \{ [x_1],\dots,[x_k]\}\)&lt;/span&gt;&lt;br /&gt;
+- While &lt;span class=&#34;math inline&#34;&gt;\(s&amp;gt;\varepsilon\)&lt;/span&gt;:&lt;br /&gt;
+Obtain &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x_i}\)&lt;/span&gt; optimally aligned wrt &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}\)&lt;/span&gt; for
+&lt;span class=&#34;math inline&#34;&gt;\(i =\{ 1,\dots, k\}\)&lt;/span&gt;&lt;br /&gt;
+Compute the Fréchet Mean &lt;span class=&#34;math inline&#34;&gt;\(\bar{x}\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; of
+&lt;span class=&#34;math inline&#34;&gt;\(\{\tilde{x_1},\tilde{x_2},\dots,\tilde{x_k}\} \in X\)&lt;/span&gt;&lt;br /&gt;
+Compute &lt;span class=&#34;math inline&#34;&gt;\(s=d(\tilde{x},\bar{x})\)&lt;/span&gt;&lt;br /&gt;
+Set &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}=\bar{x}\)&lt;/span&gt;&lt;br /&gt;
+- Output: &lt;span class=&#34;math inline&#34;&gt;\([\bar{x}]\)&lt;/span&gt;, an estimate of the Fréchet Mean of
+&lt;span class=&#34;math inline&#34;&gt;\(\{[x_1], \ldots, [x_k]\} \in X/T\)&lt;/span&gt;.&lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;The Figure 3 represents the algorithm graphically:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 3: Conceptual visualization of the AAC algorithm. The star
+represents the current estimation of the Frechet Mean.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;generalized-geodesic-principal-components&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Generalized Geodesic Principal Components&lt;/h2&gt;
+&lt;p&gt;Let’s move now to more complex estimators. To extend the Principal
+Component Analysis to Graph Space: (1) we firstly extend the concept of
+geodesic to Graph Space; (2) we define a way to align an equivalent
+class to a geodesic (i.e. optimal positioning).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1 (Generalized Geodesics):&lt;/strong&gt;&lt;br /&gt;
+&lt;em&gt;Denote by&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\Gamma(X)\)&lt;/span&gt; &lt;em&gt;the set of all straight lines (geodesics) in&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;&lt;em&gt;. Following &lt;span class=&#34;citation&#34;&gt;Huckemann, Hotz, and Munk (&lt;a href=&#34;#ref-huckemann&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;, a curve&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; &lt;em&gt;is a generalized geodesic
+on the Graph Space&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(X/T\)&lt;/span&gt;&lt;em&gt;, if it is a projection of a straight line on&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;&lt;em&gt;:&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \Gamma(X/T)=\{\delta=\pi \circ \gamma:\gamma\in\Gamma(X)\}.
+\end{equation}\]&lt;/span&gt; &lt;em&gt;Where&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\pi: X\rightarrow X/T\)&lt;/span&gt; &lt;em&gt;is the canonical
+quotient space projection.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Since Graph Space is not an inner product space, we define orthogonality
+as:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 2:&lt;/strong&gt; &lt;em&gt;Two generalized geodesics&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_1,\delta_2\in\Gamma(X/T)\)&lt;/span&gt; &lt;em&gt;are orthogonal if they have
+representatives in&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_1=\pi\circ\gamma_1,\delta_2=\pi\circ\gamma_2, \gamma_1,\gamma_2\in\Gamma(X)\)&lt;/span&gt;
+&lt;em&gt;which are orthogonal&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(&amp;lt;\gamma_1,\gamma_2&amp;gt;_X=0\)&lt;/span&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In order to bridge computations in Graph Space &lt;span class=&#34;math inline&#34;&gt;\(X/T\)&lt;/span&gt; with computations
+in the total space &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, we introduce a concept of alignment in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 3 (Optimal position):&lt;/strong&gt;&lt;br /&gt;
+&lt;em&gt;Given&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x} \in X\)&lt;/span&gt; &lt;em&gt;and&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t \in T\)&lt;/span&gt;&lt;em&gt;, the point&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t^T \tilde{x} t\)&lt;/span&gt;
+&lt;em&gt;is in&lt;/em&gt; &lt;em&gt;if&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[
+d_X(t^T \tilde{x}t,x)= d_{X/T}([\tilde{x}],[x]).
+\]&lt;/span&gt; &lt;em&gt;That is, the equivalence class&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\([\tilde{x}] \in X/T\)&lt;/span&gt; &lt;em&gt;contains (at
+least) one point&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t^T \tilde{x} t \in [\tilde{x}]\)&lt;/span&gt; &lt;em&gt;which has minimal
+distance to&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;&lt;em&gt;, and this point is in optimal position to&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;&lt;em&gt;. Next,
+consider&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\([x] \in X/T\)&lt;/span&gt;&lt;em&gt;,&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t \in T\)&lt;/span&gt; &lt;em&gt;and&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; &lt;em&gt;a generalized
+geodesic in&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(X/T\)&lt;/span&gt; &lt;em&gt;with representative&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\gamma\in \Gamma(X)\)&lt;/span&gt;&lt;em&gt;. The
+graph representative&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(t^T x t\in X\)&lt;/span&gt; &lt;em&gt;is in optimal position to&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\gamma\in\Gamma(X)\)&lt;/span&gt;&lt;em&gt;} if&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[d_X(t^T x t ,\gamma)=d_{X/T}([x],\delta).\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Having concepts of generalized geodesic, optimal position and
+orthogonality, we now define a set of geodesic principal components:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition 4:&lt;/strong&gt; &lt;em&gt;Consider the canonical projection of the Graph Space&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\pi \colon X \rightarrow X/T\)&lt;/span&gt; &lt;em&gt;of&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; &lt;em&gt;and consider a set&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots, [x_k]\} \subset X/T\)&lt;/span&gt; &lt;em&gt;of graphs,&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\([x]\in X/T\)&lt;/span&gt;&lt;em&gt;, and&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta \in \Gamma(X/T)\)&lt;/span&gt;&lt;em&gt;. The Generalized Geodesic Principal Components
+(GGPCs) for the set&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots, [x_k]\}\)&lt;/span&gt; &lt;em&gt;are defined as:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;The first generalized geodesic principal component&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_1 \in \Gamma(X/T)\)&lt;/span&gt; &lt;em&gt;is the generalized geodesic minimizing
+the sum of squared residuals:&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eq:wrtdelta}
+    \delta_1 = argmin_{\delta \in \Gamma(X/T)} \sum_{i=1}^{k}{(d_{X/T}^2([x_i],\delta))}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;The second generalized geodesic principal component&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_2 \in \Gamma(X/T)\)&lt;/span&gt; &lt;em&gt;minimizes (2) over all&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta \in \Gamma(X/T)\)&lt;/span&gt;&lt;em&gt;, having at least one point in common with&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_1\)&lt;/span&gt; &lt;em&gt;and being orthogonal to&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta_1\)&lt;/span&gt; &lt;em&gt;at all points in
+common with&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta_1\)&lt;/span&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;The point&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mu\in X/T\)&lt;/span&gt; &lt;em&gt;is called Principal Component Mean if it
+minimizes&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eq:wrtpoint}
+     \sum_{i=1}^{k}{(d_{X/T}^2([x_i],[\mu])^2)}
+\end{equation}\]&lt;/span&gt; &lt;em&gt;where&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\([\mu]\)&lt;/span&gt; &lt;em&gt;only runs over points&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}\)&lt;/span&gt;
+&lt;em&gt;in common with&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta_1\)&lt;/span&gt; &lt;em&gt;and&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta_2\)&lt;/span&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;The&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(j^{th}\)&lt;/span&gt; &lt;em&gt;generalized geodesic principal component is a&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\delta_j \in \Gamma(X/T)\)&lt;/span&gt; &lt;em&gt;if it minimizes (2) over all generalized
+geodesics that meet orthogonally&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\delta_1,\dots, \delta_{j-1}\)&lt;/span&gt;
+&lt;em&gt;and cross&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;&lt;em&gt;.&lt;/em&gt;&lt;br /&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Conceptualized in Figure 4, the actual estimation of the GPCA in Graph
+Space is done via AAC: (1) Randomly pick some candidates in the
+equivalence classes; (2) estimate the standard PCA in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;; (3) Select
+new optimally aligned candidates wrt the current PCA estimation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 4: Conceptual visualization of the AAC for the estimation of the
+first generalized geodesic principal component.&lt;/p&gt;
+&lt;p&gt;The AAC converge in finite time and to a local minima as proven in
+Theorem 2 and 3 &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2023populations&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;. All the algorithms and the
+framework is implemeted in the geomstats python package.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;An Example&lt;/h2&gt;
+&lt;p&gt;As an intuitive visual example with real data and associated vectors
+attributes, we subsample &lt;span class=&#34;math inline&#34;&gt;\(20\)&lt;/span&gt; cases of the letter A from the well known
+hand written letters dataset &lt;span class=&#34;citation&#34;&gt;Kersting et al. (&lt;a href=&#34;#ref-KKMMN2016&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Riesen and Bunke (&lt;a href=&#34;#ref-riesen2008iam&#34;&gt;2008&lt;/a&gt;)&lt;/span&gt;. As shown in the
+left panel of Figure 5, every network has node attributes consisting of
+the node’s &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;- and &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;-coordinates, and binary &lt;span class=&#34;math inline&#34;&gt;\((0/1\)&lt;/span&gt;) edge attributes
+indicating whether nodes are connected by lines.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure 5: &lt;strong&gt;Left:&lt;/strong&gt; A datum extracted from the &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; dataset. Every
+unlabelled node has a bi-dimensional real valued attribute, while every
+edge has a &lt;span class=&#34;math inline&#34;&gt;\({0,1}\)&lt;/span&gt; attribute. The Fréchet mean. &lt;strong&gt;Right:&lt;/strong&gt; Visualization
+of the GGPCs. &lt;span class=&#34;math inline&#34;&gt;\({0.1,0.25,0.5,0.75,0.9}\)&lt;/span&gt; quantile of the projected scores
+are shown for the first three GGPCs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Graph Space is an intuitive embedding for sets of graphs with unlabelled
+sets of nodes. Even if its geometry is far from trivial, we can easily
+estimate intrinsic statistics by using the Align All and Compute
+algorithm. In &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2023populations&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt; we detailed the geometry of
+Graph Space, we define the AAC algorithm and the Generalized Geodesic
+Principal Components for a set of graphs. Regression with unlabelled
+network outputs is also available in &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2022graph&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;. All the
+framework is available as part of the geomstats python package
+&lt;span class=&#34;citation&#34;&gt;Miolane et al. (&lt;a href=&#34;#ref-miolane2020geomstats&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-calissano2022graph&#34; class=&#34;csl-entry&#34;&gt;
+Calissano, Anna, Aasa Feragen, and Simone Vantini. 2022. &lt;span&gt;“Graph-Valued Regression: Prediction of Unlabelled Networks in a Non-Euclidean Graph Space.”&lt;/span&gt; &lt;em&gt;Journal of Multivariate Analysis&lt;/em&gt; 190: 104950.
+&lt;/div&gt;
+&lt;div id=&#34;ref-calissano2023populations&#34; class=&#34;csl-entry&#34;&gt;
+———. 2023. &lt;span&gt;“Populations of Unlabelled Networks: Graph Space Geometry and Generalized Geodesic Principal Components.”&lt;/span&gt; &lt;em&gt;Biometrika&lt;/em&gt;, asad024.
+&lt;/div&gt;
+&lt;div id=&#34;ref-chowdhury2019gromov&#34; class=&#34;csl-entry&#34;&gt;
+Chowdhury, Samir, and Facundo Mémoli. 2019. &lt;span&gt;“The Gromov–Wasserstein Distance Between Networks and Stable Network Invariants.”&lt;/span&gt; &lt;em&gt;Information and Inference: A Journal of the IMA&lt;/em&gt; 8 (4): 757–87.
+&lt;/div&gt;
+&lt;div id=&#34;ref-conte2004thirty&#34; class=&#34;csl-entry&#34;&gt;
+Conte, Donatello, Pasquale Foggia, Carlo Sansone, and Mario Vento. 2004. &lt;span&gt;“Thirty Years of Graph Matching in Pattern Recognition.”&lt;/span&gt; &lt;em&gt;International Journal of Pattern Recognition and Artificial Intelligence&lt;/em&gt; 18 (03): 265–98.
+&lt;/div&gt;
+&lt;div id=&#34;ref-durante2017nonparametric&#34; class=&#34;csl-entry&#34;&gt;
+Durante, Daniele, David B Dunson, and Joshua T Vogelstein. 2017. &lt;span&gt;“Nonparametric &lt;span&gt;B&lt;/span&gt;ayes Modeling of Populations of Networks.”&lt;/span&gt; &lt;em&gt;Journal of the American Statistical Association&lt;/em&gt; 112 (520): 1516–30.
+&lt;/div&gt;
+&lt;div id=&#34;ref-frechet1948elements&#34; class=&#34;csl-entry&#34;&gt;
+Fréchet, Maurice. 1948. &lt;span&gt;“Les &lt;span class=&#34;nocase&#34;&gt;é&lt;/span&gt;l&lt;span&gt;é&lt;/span&gt;ments Al&lt;span&gt;é&lt;/span&gt;atoires de Nature Quelconque Dans Un Espace Distanci&lt;span&gt;é&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Annales de l’institut Henri Poincar&lt;span&gt;é&lt;/span&gt;&lt;/em&gt; 10 (4): 215–310.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ginestet2017&#34; class=&#34;csl-entry&#34;&gt;
+Ginestet, C. E., J. Li, P. Balachandran, S. Rosenberg, and E. D. Kolaczyk. 2017. &lt;span&gt;“Hypothesis Testing for Network Data in Functional Neuroimaging.”&lt;/span&gt; &lt;em&gt;The Annals of Applied Statistics&lt;/em&gt; 11 (2): 725–50. &lt;a href=&#34;https://doi.org/10.1214/16-AOAS1015&#34;&gt;https://doi.org/10.1214/16-AOAS1015&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-huckemann&#34; class=&#34;csl-entry&#34;&gt;
+Huckemann, S., T. Hotz, and A. Munk. 2010. &lt;span&gt;“Intrinsic Shape Analysis: Geodesic &lt;span&gt;PCA&lt;/span&gt; for &lt;span&gt;R&lt;/span&gt;iemannian Manifolds Modulo Isometric &lt;span&gt;L&lt;/span&gt;ie Group Actions.”&lt;/span&gt; &lt;em&gt;Statist. Sinica&lt;/em&gt; 20 (1): 1–58.
+&lt;/div&gt;
+&lt;div id=&#34;ref-jain2009structure&#34; class=&#34;csl-entry&#34;&gt;
+Jain, B. J., and K. Obermayer. 2009. &lt;span&gt;“Structure Spaces.”&lt;/span&gt; &lt;em&gt;Journal of Machine Learning Research&lt;/em&gt; 10 (Nov): 2667–2714.
+&lt;/div&gt;
+&lt;div id=&#34;ref-KKMMN2016&#34; class=&#34;csl-entry&#34;&gt;
+Kersting, K., Kriege N. M., C. Morris, Mutzel. P., and M. Neumann. 2016. &lt;span&gt;“Benchmark Data Sets for Graph Kernels.”&lt;/span&gt; &lt;a href=&#34;http://graphkernels.cs.tu-dortmund.de&#34;&gt;http://graphkernels.cs.tu-dortmund.de&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lee2013smooth&#34; class=&#34;csl-entry&#34;&gt;
+Lee, John M. 2013. &lt;em&gt;Smooth Manifolds&lt;/em&gt;. Springer.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lunagomez2021modeling&#34; class=&#34;csl-entry&#34;&gt;
+Lunagómez, Simón, Sofia C Olhede, and Patrick J Wolfe. 2021. &lt;span&gt;“Modeling Network Populations via Graph Distances.”&lt;/span&gt; &lt;em&gt;Journal of the American Statistical Association&lt;/em&gt; 116 (536): 2023–40.
+&lt;/div&gt;
+&lt;div id=&#34;ref-miolane2020geomstats&#34; class=&#34;csl-entry&#34;&gt;
+Miolane, Nina, Nicolas Guigui, Alice Le Brigant, Johan Mathe, Benjamin Hou, Yann Thanwerdas, Stefan Heyder, et al. 2020. &lt;span&gt;“Geomstats: A Python Package for Riemannian Geometry in Machine Learning.”&lt;/span&gt; &lt;em&gt;Journal of Machine Learning Research&lt;/em&gt; 21 (223): 1–9.
+&lt;/div&gt;
+&lt;div id=&#34;ref-riesen2008iam&#34; class=&#34;csl-entry&#34;&gt;
+Riesen, K., and H. Bunke. 2008. &lt;span&gt;“IAM Graph Database Repository for Graph Based Pattern Recognition and Machine Learning.”&lt;/span&gt; In &lt;em&gt;Joint IAPR International Workshops on Statistical Techniques in Pattern Recognition (SPR) and Structural and Syntactic Pattern Recognition (SSPR)&lt;/em&gt;, 287–97. Springer.
+&lt;/div&gt;
+&lt;div id=&#34;ref-severn2020non&#34; class=&#34;csl-entry&#34;&gt;
+Severn, Katie E, Ian L Dryden, and Simon P Preston. 2020. &lt;span&gt;“Non-Parametric Regression for Networks.”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:2010.00050&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-simpson2013permutation&#34; class=&#34;csl-entry&#34;&gt;
+Simpson, Sean L, Robert G Lyday, Satoru Hayasaka, Anthony P Marsh, and Paul J Laurienti. 2013. &lt;span&gt;“A Permutation Testing Framework to Compare Groups of Brain Networks.”&lt;/span&gt; &lt;em&gt;Frontiers in Computational Neuroscience&lt;/em&gt; 7: 171.
+&lt;/div&gt;
+&lt;div id=&#34;ref-vogelstein2015fast&#34; class=&#34;csl-entry&#34;&gt;
+Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G Kratzer, Eric T Harley, Donniell E Fishkind, R Jacob Vogelstein, and Carey E Priebe. 2015. &lt;span&gt;“Fast Approximate Quadratic Programming for Graph Matching.”&lt;/span&gt; &lt;em&gt;PLOS One&lt;/em&gt; 10 (4): e0121002.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Stochastic Fluid Dynamics</title>
       <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
@@ -1410,193 +1669,6 @@ Thiffeault, Jean-Luc. 2012. &lt;span&gt;“Using Multiscale Norms to Quantify Mi
 &lt;p&gt;Discussant: &lt;a href=&#34;https://www.unige.ch/gsem/en/research/faculty/all/sebastian-engelke/&#34;&gt;Sebastian Engelke&lt;/a&gt;, Research Center for Statistics, University of Geneva&lt;/p&gt;
 &lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Mpzqz4y1oYY&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Log-modulated rough stochastic volatility models</title>
-      <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
-      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</guid>
-      <description>
-
-
-&lt;div id=&#34;rough-volatility&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Rough Volatility&lt;/h2&gt;
-&lt;p&gt;New insights about the regularity of the instantaneous variance obtained
-from realized variance data (see &lt;span class=&#34;citation&#34;&gt;Gatheral, Jaisson, and Rosenbaum (&lt;a href=&#34;#ref-GJR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bennedsen, Lunde, and Pakkanen (&lt;a href=&#34;#ref-BLP16&#34; role=&#34;doc-biblioref&#34;&gt;2021, to appear&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Fukasawa, Takabatake, and Westphal (&lt;a href=&#34;#ref-FTW19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;), have inspired
-the development of so-called &lt;em&gt;rough&lt;/em&gt; stochastic volatility models
-in the financial literature. In simple terms, such a model can be
-described by the following SDE &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \label{eq:stoch-vol}
-    dS_t = S_t \sqrt{v_t}dB_t,
-\end{equation}\]&lt;/span&gt; where the logarithm of the instantaneous variance process
-&lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; behaves similarly to a fractional Brownian motion (fBm) with Hurst
-index &lt;span class=&#34;math inline&#34;&gt;\(0 &amp;lt; H &amp;lt; 1/2\)&lt;/span&gt;. One of the attractive features of rough volatility
-models is that they can explain the long-established power-law explosion
-of the at-the-money (ATM) skew of options as time-to-maturity &lt;span class=&#34;math inline&#34;&gt;\(T \to 0\)&lt;/span&gt;
-and, thus, provide excellent fits to the implied volatility surface, as
-was observed in &lt;span class=&#34;citation&#34;&gt;Bayer, Friz, and Gatheral (&lt;a href=&#34;#ref-BFG16&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;, but already anticipated much earlier in &lt;span class=&#34;citation&#34;&gt;Alòs, León, and Vives (&lt;a href=&#34;#ref-ALV07&#34; role=&#34;doc-biblioref&#34;&gt;2007&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Fukasawa (&lt;a href=&#34;#ref-fukasawa2011&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;. In mathematical terms, let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{BS}(T,k)\)&lt;/span&gt; denote the
-implied volatility of an option with time to maturity &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; and
-log-moneyness &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;. We define the ATM skew as &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
-     \text{ATM-skew}(T) = \partial_k \sigma_{BS}(T,k)|_{k=0},  
-\end{equation*}\]&lt;/span&gt; and it is this quantity which can be observed to have a
-power law explosion when &lt;span class=&#34;math inline&#34;&gt;\(T\rightarrow 0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Rough volatility models provide a framework which allows to get
-excellent fits to market data simultaneously w.r.t. to time series of
-prices of the underlying and to option prices, with few parameters.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;super-rough-volatility&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Super rough volatility?&lt;/h2&gt;
-&lt;p&gt;Empirical studies of realized variance data as well as studies of the
-ATM skew in the implied volatility surfaces tend to conclude that
-&lt;span class=&#34;math inline&#34;&gt;\(H \ll 1/2\)&lt;/span&gt;, often even &lt;span class=&#34;math inline&#34;&gt;\(H &amp;lt; 0.1\)&lt;/span&gt;. As both these estimates involve a
-certain kind of smoothing – realized variance being an estimate of
-&lt;span class=&#34;math inline&#34;&gt;\(\int_t^{t+h} v_sds\)&lt;/span&gt; rather than &lt;span class=&#34;math inline&#34;&gt;\(v_t\)&lt;/span&gt; itself, option prices and their
-implied skews being in general not available or reliably very close to
-maturity – this begs the question, if &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; actually might even be equal
-to &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;From the realized variance viewpoint, &lt;span class=&#34;citation&#34;&gt;Fukasawa, Takabatake, and Westphal (&lt;a href=&#34;#ref-FTW19&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; indeed seems to suggest
-that &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; could be &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;. However, for a fractional Brownian motion, &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;
-is not allowed since in this case the integral kernel of the
-fractional Brownian motion is no longer square integrable, and thus new
-processes or techniques must be employed in order to study the behavior
-of stochastic volatility models in this regime. Some interesting efforts
-has been made to understand this problem. In particular, the theory of
-&lt;em&gt;Gaussian multiplicative chaos&lt;/em&gt; has been used to this end, see for
-instance the review paper &lt;span class=&#34;citation&#34;&gt;Rhodes and Vargas (&lt;a href=&#34;#ref-RV14&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;. Indeed, a proper scaling limit of fBm
-&lt;span class=&#34;math inline&#34;&gt;\(W^H\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt; produces a log-correlated Gaussian field (see, for
-instance, &lt;span class=&#34;citation&#34;&gt;Neuman and Rosenbaum (&lt;a href=&#34;#ref-NR18&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Hager and Neuman (&lt;a href=&#34;#ref-hager2020multiplicative&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;). However, the resulting
-random element is no longer a (continuous) stochastic process and only
-makes sense in terms of a generalized function (distribution), and it is
-therefore more challenging to use in practice.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;logarithmic-modulation-of-the-fbm&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Logarithmic modulation of the fBm&lt;/h2&gt;
-&lt;p&gt;In our recent work &lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we investigate the &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; problem
-from a different point of view. We consider an actual continuous
-stochastic process with &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; by introducing a logarithmic term in the
-definition of the kernel &lt;span class=&#34;math inline&#34;&gt;\(K:\mathbb{R}_+\rightarrow \mathbb{R}\)&lt;/span&gt;, which
-for small &lt;span class=&#34;math inline&#34;&gt;\(r&amp;gt;0\)&lt;/span&gt; behaves similarly to &lt;span class=&#34;math display&#34;&gt;\[\begin{align}
-    r^{H-\frac{1}{2}}\log(1/r)^{-p}\label{eq1}\tag{1}
-\end{align}\]&lt;/span&gt; for some parameter &lt;span class=&#34;math inline&#34;&gt;\(p&amp;gt;1\)&lt;/span&gt;. This modification ensures that &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;
-remains square integrable for all &lt;span class=&#34;math inline&#34;&gt;\(H \in [0,1/2)\)&lt;/span&gt;. Hence, the resulting
-family of Gaussian Volterra processes &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; will be continuous and
-with finite variance even for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;, and the ambiguities of the
-asymptotic analysis for &lt;span class=&#34;math inline&#34;&gt;\(H\to0\)&lt;/span&gt; cease to matter, as we can simply do the
-asymptotic for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;. We stress again that &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; is a proper,
-continuous Gaussian process even for &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;At the same time, as we apply our logarithmic modification only close to
-the singularity of the power-law kernel, we may expect that the
-resulting rough volatility models are close to the corresponding
-standard rough volatility models for &lt;span class=&#34;math inline&#34;&gt;\(H \gg 0\)&lt;/span&gt;, see Figure 1 where we
-compare the classical rough Bergomi model with the so called super rough
-Bergomi model (created with the logarithmic modification of the fBm).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image1-side.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Above: Comparisons between the ATM skews of a rough Bergomi model and a
-corresponding super-rough Bergomi model for
-&lt;span class=&#34;math inline&#34;&gt;\(H \in \{0.01, 0.05, 0.09\}\)&lt;/span&gt;. Skews are computed by Monte Carlo
-simulation.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-14-log-modulated-rough-stochastic-volatility-models_files/Image2.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Above: ATM implied volatility skews (absolute values) in the (super-)
-rough Bergomi model plotted against expiry &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; and Hurst index &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;.
-Skews are computed by Monte Carlo simulation based on exact simulation
-of the underlying (log-modulated) fBm. Note that &lt;span class=&#34;math inline&#34;&gt;\(H = 0\)&lt;/span&gt; is included in
-the plot in the super-rough case. Note how this seems in keeping with
-the findings in &lt;span class=&#34;citation&#34;&gt;Forde et al. (&lt;a href=&#34;#ref-forde_bergomi_H0&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, of a vanishing skewness as
-&lt;span class=&#34;math inline&#34;&gt;\(H\downarrow 0\)&lt;/span&gt; in rough Bergomi.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-power-law-explosion-of-the-atm-skew&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The power law explosion of the ATM skew&lt;/h2&gt;
-&lt;p&gt;The process we propose here can be seen as an extension of the log
-Brownian motion studied in &lt;span class=&#34;citation&#34;&gt;Mocioalca and Viens (&lt;a href=&#34;#ref-MocioalcaViens2005&#34; role=&#34;doc-biblioref&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;, to include a fractional
-power. This allows for a better comparison with classical fractional
-processes, such as the Riemann-Liouville fractional Brownian motion,
-typically used in rough volatility models.&lt;/p&gt;
-&lt;p&gt;In this way, we are able to obtain rough volatility models which allow
-continuous interpolation for &lt;span class=&#34;math inline&#34;&gt;\(H \in [0,1/2)\)&lt;/span&gt;, in the sense that all such
-choices of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; are valid within the same model, with no apparent breaks
-between them. To illustrate this observation, we consider a
-&lt;em&gt;super-rough Bergomi model&lt;/em&gt;, which is simply obtained by replacing the
-Riemann-Liouville fBm by the process &lt;span class=&#34;math inline&#34;&gt;\(\hat{W}\)&lt;/span&gt; in the rough Bergomi
-model of &lt;span class=&#34;citation&#34;&gt;Bayer, Friz, and Gatheral (&lt;a href=&#34;#ref-BFG16&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;. Figure 2 shows the ATM-skew for various expires and
-values of &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; between – and including – &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(0.1\)&lt;/span&gt;. Indeed, the
-surface “looks” smooth in &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;, visually indicating a smooth transition
-from the power law explosion &lt;span class=&#34;math inline&#34;&gt;\(T^{H-1/2}\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(H&amp;gt;0\)&lt;/span&gt; to the skew behaviour
-at &lt;span class=&#34;math inline&#34;&gt;\(H = 0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In contrast, the skew-behaviour changes remarkably for the standard
-rough Bergomi model for small &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;, see Figure 1. In particular, the skew
-flattens significantly for very small &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt;. The log-modulated version in
-Figure 2 shows no signs of this flattening. To the contrary, a more
-refined analysis, which is the main goal of our article, shows that the
-skew behaves like &lt;span class=&#34;math inline&#34;&gt;\(T^{H-1/2}\)&lt;/span&gt; – up to logarithmic terms – and, hence,
-steepens as &lt;span class=&#34;math inline&#34;&gt;\(H \to 0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Note in particular that the log-fBm does not have a scale invariance
-property due to the logarithmic term in the kernel, thereby making any
-short time asymptotics very difficult. However, by employing the
-vol-of-vol expansion in &lt;span class=&#34;citation&#34;&gt;Fukasawa (&lt;a href=&#34;#ref-fukasawa2011&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt; we obtain an asymptotic formula
-for the ATM skew when the volatility-of-volatility &lt;span class=&#34;math inline&#34;&gt;\(\epsilon\)&lt;/span&gt; is small.
-Indeed, we obtain a skew formula of the form &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-    \label{eq:skew-asymptotic}
-    \text{ATM-skew} \approx a_{H,\zeta,p}\, \rho \,\log(1/T)^{-p} \, T^{H-1/2} \epsilon, \text{ as } T \to 0,
-\end{equation}\]&lt;/span&gt; with Hurst parameter &lt;span class=&#34;math inline&#34;&gt;\(H\in[0,1/2)\)&lt;/span&gt;, see Theorem 5.4 in
-&lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;. Here, &lt;span class=&#34;math inline&#34;&gt;\(p&amp;gt;1\)&lt;/span&gt; is a parameter of the kernel defined
-in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(a_{H,\zeta,p}\)&lt;/span&gt; is a constant depending on &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; –
-and other parameters – which is smooth in &lt;span class=&#34;math inline&#34;&gt;\(H\)&lt;/span&gt; with
-&lt;span class=&#34;math inline&#34;&gt;\(a_{0,\zeta,p} \neq 0\)&lt;/span&gt;. This shows us that the explosion of the ATM skew
-in a stochastic volatility model generated from the log modulated
-version of a fBm behaves similarly to &lt;span class=&#34;math inline&#34;&gt;\(T^{H-\frac{1}{2}}\)&lt;/span&gt;, the power law
-explosion of the rough Bergomi model when &lt;span class=&#34;math inline&#34;&gt;\(H&amp;gt;0\)&lt;/span&gt;, while still preserving
-this property when &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt;, providing a simple extension of the rough
-Bergomi model to capture an important feature of the volatility surface.&lt;/p&gt;
-&lt;p&gt;Disclaimer: The following material is based on the published article
-&lt;span class=&#34;citation&#34;&gt;Bayer, Harang, and Pigato (&lt;a href=&#34;#ref-BayerHarangPigato21&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, and the reuse of figures and material for the blog
-post has been approved by the journal SIAM Journal of Financial
-Mathematics.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;Bibliography&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-ALV07&#34; class=&#34;csl-entry&#34;&gt;
-Alòs, Elisa, Jorge A León, and Josep Vives. 2007. &lt;span&gt;“On the Short-Time Behavior of the Implied Volatility for Jump-Diffusion Models with Stochastic Volatility.”&lt;/span&gt; &lt;em&gt;Finance and Stochastics&lt;/em&gt; 11 (4): 571–89.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BFG16&#34; class=&#34;csl-entry&#34;&gt;
-Bayer, Christian, Peter K. Friz, and Jim Gatheral. 2016. &lt;span&gt;“Pricing Under Rough Volatility.”&lt;/span&gt; &lt;em&gt;Quantitative Finance&lt;/em&gt; 16 (6): 887–904.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BayerHarangPigato21&#34; class=&#34;csl-entry&#34;&gt;
-Bayer, Christian, Fabian A. Harang, and Paolo Pigato. 2021. &lt;span&gt;“Log-Modulated Rough Stochastic Volatility Models.”&lt;/span&gt; &lt;em&gt;SIAM J. Financial Math.&lt;/em&gt; 12 (3): 1257–84. &lt;a href=&#34;https://doi.org/10.1137/20M135902X&#34;&gt;https://doi.org/10.1137/20M135902X&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BLP16&#34; class=&#34;csl-entry&#34;&gt;
-Bennedsen, Mikkel, Asger Lunde, and Mikko S Pakkanen. 2021, to appear. &lt;span&gt;“Decoupling the Short-and Long-Term Behavior of Stochastic Volatility.”&lt;/span&gt; &lt;em&gt;Journal of Financial Econometrics&lt;/em&gt;, 2021, to appear.
-&lt;/div&gt;
-&lt;div id=&#34;ref-forde_bergomi_H0&#34; class=&#34;csl-entry&#34;&gt;
-Forde, Martin, Masaaki Fukasawa, Stefan Gerhold, and Benjamin Smith. 2020. &lt;span&gt;“The Rough &lt;span&gt;B&lt;/span&gt;ergomi Model as &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\(H\to 0\)&lt;/span&gt;&lt;/span&gt; - Skew Flattening/Blow up and Non-&lt;span&gt;G&lt;/span&gt;aussian Rough Volatility.”&lt;/span&gt; &lt;em&gt;Available at Https://Nms.kcl.ac.uk/Martin.forde/&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-fukasawa2011&#34; class=&#34;csl-entry&#34;&gt;
-Fukasawa, Masaaki. 2011. &lt;span&gt;“Asymptotic Analysis for Stochastic Volatility: Martingale Expansion.”&lt;/span&gt; &lt;em&gt;Finance and Stochastics&lt;/em&gt; 15: 635–54. https://doi.org/&lt;a href=&#34;https://doi.org/10.1007/s00780-010-0136-6&#34;&gt;https://doi.org/10.1007/s00780-010-0136-6&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-FTW19&#34; class=&#34;csl-entry&#34;&gt;
-Fukasawa, Masaaki, Tetsuya Takabatake, and Rebecca Westphal. 2019. &lt;span&gt;“Is Volatility Rough?”&lt;/span&gt; &lt;em&gt;arXiv Preprint arXiv:1905.04852&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GJR18&#34; class=&#34;csl-entry&#34;&gt;
-Gatheral, Jim, Thibault Jaisson, and Mathieu Rosenbaum. 2018. &lt;span&gt;“Volatility Is Rough.”&lt;/span&gt; &lt;em&gt;Quantitative Finance&lt;/em&gt; 18 (6): 933–49.
-&lt;/div&gt;
-&lt;div id=&#34;ref-hager2020multiplicative&#34; class=&#34;csl-entry&#34;&gt;
-Hager, Paul, and Eyal Neuman. 2020. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;The Multiplicative Chaos of &lt;span class=&#34;math inline&#34;&gt;\(H=0\)&lt;/span&gt; Fractional Brownian Fields&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Preprint arXiv:2008.01385&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MocioalcaViens2005&#34; class=&#34;csl-entry&#34;&gt;
-Mocioalca, Oana, and Frederi Viens. 2005. &lt;span&gt;“Skorohod Integration and Stochastic Calculus Beyond the Fractional &lt;span&gt;B&lt;/span&gt;rownian Scale.”&lt;/span&gt; &lt;em&gt;J. Funct. Anal.&lt;/em&gt; 222 (2): 385–434. &lt;a href=&#34;https://doi.org/10.1016/j.jfa.2004.07.013&#34;&gt;https://doi.org/10.1016/j.jfa.2004.07.013&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-NR18&#34; class=&#34;csl-entry&#34;&gt;
-Neuman, Eyal, and Mathieu Rosenbaum. 2018. &lt;span&gt;“Fractional &lt;span&gt;B&lt;/span&gt;rownian Motion with Zero &lt;span&gt;H&lt;/span&gt;urst Parameter: A Rough Volatility Viewpoint.”&lt;/span&gt; &lt;em&gt;Electronic Communications in Probability&lt;/em&gt; 23.
-&lt;/div&gt;
-&lt;div id=&#34;ref-RV14&#34; class=&#34;csl-entry&#34;&gt;
-Rhodes, Rémi, and Vincent Vargas. 2014. &lt;span&gt;“Gaussian Multiplicative Chaos and Applications: A Review.”&lt;/span&gt; &lt;em&gt;Probability Surveys&lt;/em&gt; 11: 315–92.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

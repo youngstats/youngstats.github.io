@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/network-analysis">network-analysis</a>
+  
+     &hercon; <a href="/categories/manifold-statistics">manifold-statistics</a>
+  
+     &hercon; <a href="/categories/geometric-statistics">geometric-statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</span></h1>
+
+  
+  <h3 class="author">Anna Calissano,  Aasa Feragen and Simone Vantini
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Sets of Graphs arise in many different applications, from medicine to
+finance, from urban planning to social science. Analysing sets of graphs
+is far from trivial as they are strongly non Euclidean data type. There
+are two main sets of graphs: - graph labelled: where there is the same
+sets of nodes across each observation; - graph unlabelled: where there
+is no clear correspondence in the nodes across networks.</p>
+<p>Unlabelled graphs poses high challenges from both the embedding
+prospective (which geometrical embedding is suitable for such graphs)
+and the statistical perspective (how can we extend basic tools to such
+embedding).</p>
+<p>In the past years, scholars have been proposing different embedding
+strategies for unlabelled graphs. Among existing models: <span class="citation">Ginestet et al. (<a href="#ref-ginestet2017">2017</a>)</span>
+proposes a model where networks’ Laplacian matrices are smoothly
+injected into a sub-manifold of a Euclidean space;
+<span class="citation">Simpson et al. (<a href="#ref-simpson2013permutation">2013</a>)</span>, <span class="citation">Severn, Dryden, and Preston (<a href="#ref-severn2020non">2020</a>)</span> and <span class="citation">Durante, Dunson, and Vogelstein (<a href="#ref-durante2017nonparametric">2017</a>)</span>
+face the problem of generating and performing tests on a population of
+networks; <span class="citation">Lunagómez, Olhede, and Wolfe (<a href="#ref-lunagomez2021modeling">2021</a>)</span> provide Bayesian modelling for discrete
+labeled graphs, and <span class="citation">Chowdhury and Mémoli (<a href="#ref-chowdhury2019gromov">2019</a>)</span> studies a metric space of
+networks up to weak isomorphism, which allows the grouping of similar
+nodes. In <span class="citation">Calissano, Feragen, and Vantini (<a href="#ref-calissano2023populations">2023</a>)</span>, we characterize geometrically the
+Graph Space quotient space introduced by <span class="citation">Jain and Obermayer (<a href="#ref-jain2009structure">2009</a>)</span> and we
+extended principal component analysis to sets of unlabelled graphs.</p>
+</div>
+<div id="graph-space" class="section level2">
+<h2>Graph Space</h2>
+<p>Consider <span class="math inline">\(G_1,\dots, G_k\)</span> where each <span class="math inline">\(G_i=(N_i,E_i,a_i)\)</span> sets of nodes
+<span class="math inline">\(N_i\)</span>, edges <span class="math inline">\(E_i\)</span>, and a real valued attribute function
+<span class="math inline">\(a_i :E_i \rightarrow \mathbb{R}\)</span>. Each graph can be described as a set
+of adjacency matrix <span class="math inline">\(x \in X=\mathbb{R}^{n\times n}\)</span>. We can embed
+unlabelled graphs in a quotient space <span class="math inline">\(X / T\)</span> where <span class="math inline">\(T\)</span> set of
+permutation matrices. Each graph is now represented by its equivalence
+class of permuted graphs: <span class="math display">\[[x]=\{t^T x t: t\in T\}\]</span></p>
+<p><img src="/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png" /></p>
+<p>Figure 1: Conceptual visualization of Graph Space.</p>
+<p>By equipping the total space with a metric <span class="math inline">\((X,d_X)\)</span> we can define a
+quotient metric on <span class="math inline">\(X / T\)</span> as:
+<span class="math display">\[d_{X/T}([x_1],[x_2])=min_{t\in T}d_X (t^T x_1 t, x_2)\]</span> Such metric
+corresponds in finding the optimal candidate in the equivalence class
+which minimize the distance in the total space. The minimization problem
+is known as the Graph Matching problem, which is a broadly studied
+problem in optimization <span class="citation">Conte et al. (<a href="#ref-conte2004thirty">2004</a>)</span> for a review). As we select
+<span class="math inline">\(d_X\)</span> to be the frobeious norm, we use the FAQ Graph matching
+<span class="citation">Vogelstein et al. (<a href="#ref-vogelstein2015fast">2015</a>)</span>.</p>
+<p><img src="/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png" /></p>
+<p>Figure 2: Conceptual visualization of the distance in the Graph Space.</p>
+<div id="short-geometrical-characterization-of-graph-space" class="section level3">
+<h3>Short Geometrical Characterization of Graph Space</h3>
+<p>The graph space is a metric space <span class="math inline">\((X / T,d_{X/T})\)</span>, but it is not a
+manifold: The equivalence classes are often not of the same dimensions
+(symmetries or blocks of zeros can cause the permutation to leave the
+graph unchanged), thus the action is not free and the space is not a
+quotient manifold (see <span class="citation">Lee (<a href="#ref-lee2013smooth">2013</a>)</span> for details on quotient
+manifolds). However, the total space <span class="math inline">\(X=\mathbb{R}^{n\times n}\)</span> is
+Euclidean. To overcome the complexity of the Graph Space and perform
+statistics on unlabelled graphs, we define an algorithm relying on the
+total space <span class="math inline">\(X\)</span> for the computations.</p>
+</div>
+<div id="align-all-and-compute" class="section level3">
+<h3>Align All and Compute</h3>
+<p>The Align All and Compute Algorithm (AAC) allows to compute intrinsic
+statistics on Graph Space by computing the estimators on the total
+space. We illustrate it here for the estimation of the Fréchet Mean
+<span class="citation">Fréchet (<a href="#ref-frechet1948elements">1948</a>)</span>. Consider a set of <span class="math inline">\(\{[x_1],\dots,[x_k]\}\)</span> graphs:
+<span class="math display">\[[\bar{x}]=min_{[x]\in X / T }\sum_{i=1}^{n}d_{X /T}([\bar{x}],[x_i])\]</span>
+Notice that the Fréchet Mean results into the arithmetic mean in the
+case of Euclidean data.</p>
+<p>The AAC operates as follows:</p>
+<p><strong>AAC algorithm for the the Fréchet Mean</strong><br />
+- Input: <span class="math inline">\(\{[x_1],\dots,[x_k]\} \subset X/T\)</span>; a threshold
+<span class="math inline">\(\varepsilon &gt; 0\)</span><br />
+- Initialization: Randomly select
+<span class="math inline">\(\tilde{x}=\tilde{x_i}\in [x_i] \in \{ [x_1],\dots,[x_k]\}\)</span><br />
+- While <span class="math inline">\(s&gt;\varepsilon\)</span>:<br />
+Obtain <span class="math inline">\(\tilde{x_i}\)</span> optimally aligned wrt <span class="math inline">\(\tilde{x}\)</span> for
+<span class="math inline">\(i =\{ 1,\dots, k\}\)</span><br />
+Compute the Fréchet Mean <span class="math inline">\(\bar{x}\)</span> in <span class="math inline">\(X\)</span> of
+<span class="math inline">\(\{\tilde{x_1},\tilde{x_2},\dots,\tilde{x_k}\} \in X\)</span><br />
+Compute <span class="math inline">\(s=d(\tilde{x},\bar{x})\)</span><br />
+Set <span class="math inline">\(\tilde{x}=\bar{x}\)</span><br />
+- Output: <span class="math inline">\([\bar{x}]\)</span>, an estimate of the Fréchet Mean of
+<span class="math inline">\(\{[x_1], \ldots, [x_k]\} \in X/T\)</span>.<br />
+</p>
+<p>The Figure 3 represents the algorithm graphically:</p>
+<p><img src="/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png" /></p>
+<p>Figure 3: Conceptual visualization of the AAC algorithm. The star
+represents the current estimation of the Frechet Mean.</p>
+</div>
+</div>
+<div id="generalized-geodesic-principal-components" class="section level2">
+<h2>Generalized Geodesic Principal Components</h2>
+<p>Let’s move now to more complex estimators. To extend the Principal
+Component Analysis to Graph Space: (1) we firstly extend the concept of
+geodesic to Graph Space; (2) we define a way to align an equivalent
+class to a geodesic (i.e. optimal positioning).</p>
+<p><strong>Definition 1 (Generalized Geodesics):</strong><br />
+<em>Denote by</em> <span class="math inline">\(\Gamma(X)\)</span> <em>the set of all straight lines (geodesics) in</em>
+<span class="math inline">\(X\)</span><em>. Following <span class="citation">Huckemann, Hotz, and Munk (<a href="#ref-huckemann">2010</a>)</span>, a curve</em> <span class="math inline">\(\delta\)</span> <em>is a generalized geodesic
+on the Graph Space</em> <span class="math inline">\(X/T\)</span><em>, if it is a projection of a straight line on</em>
+<span class="math inline">\(X\)</span><em>:</em> <span class="math display">\[\begin{equation}
+    \Gamma(X/T)=\{\delta=\pi \circ \gamma:\gamma\in\Gamma(X)\}.
+\end{equation}\]</span> <em>Where</em> <span class="math inline">\(\pi: X\rightarrow X/T\)</span> <em>is the canonical
+quotient space projection.</em></p>
+<p>Since Graph Space is not an inner product space, we define orthogonality
+as:</p>
+<p><strong>Definition 2:</strong> <em>Two generalized geodesics</em>
+<span class="math inline">\(\delta_1,\delta_2\in\Gamma(X/T)\)</span> <em>are orthogonal if they have
+representatives in</em>
+<span class="math inline">\(\delta_1=\pi\circ\gamma_1,\delta_2=\pi\circ\gamma_2, \gamma_1,\gamma_2\in\Gamma(X)\)</span>
+<em>which are orthogonal</em> <span class="math inline">\(&lt;\gamma_1,\gamma_2&gt;_X=0\)</span><em>.</em></p>
+<p>In order to bridge computations in Graph Space <span class="math inline">\(X/T\)</span> with computations
+in the total space <span class="math inline">\(X\)</span>, we introduce a concept of alignment in <span class="math inline">\(X\)</span>.</p>
+<p><strong>Definition 3 (Optimal position):</strong><br />
+<em>Given</em> <span class="math inline">\(\tilde{x} \in X\)</span> <em>and</em> <span class="math inline">\(t \in T\)</span><em>, the point</em> <span class="math inline">\(t^T \tilde{x} t\)</span>
+<em>is in</em> <em>if</em> <span class="math display">\[
+d_X(t^T \tilde{x}t,x)= d_{X/T}([\tilde{x}],[x]).
+\]</span> <em>That is, the equivalence class</em> <span class="math inline">\([\tilde{x}] \in X/T\)</span> <em>contains (at
+least) one point</em> <span class="math inline">\(t^T \tilde{x} t \in [\tilde{x}]\)</span> <em>which has minimal
+distance to</em> <span class="math inline">\(x\)</span><em>, and this point is in optimal position to</em> <span class="math inline">\(x\)</span><em>. Next,
+consider</em> <span class="math inline">\([x] \in X/T\)</span><em>,</em> <span class="math inline">\(t \in T\)</span> <em>and</em> <span class="math inline">\(\delta\)</span> <em>a generalized
+geodesic in</em> <span class="math inline">\(X/T\)</span> <em>with representative</em> <span class="math inline">\(\gamma\in \Gamma(X)\)</span><em>. The
+graph representative</em> <span class="math inline">\(t^T x t\in X\)</span> <em>is in optimal position to</em>
+<span class="math inline">\(\gamma\in\Gamma(X)\)</span><em>} if</em> <span class="math display">\[d_X(t^T x t ,\gamma)=d_{X/T}([x],\delta).\]</span></p>
+<p>Having concepts of generalized geodesic, optimal position and
+orthogonality, we now define a set of geodesic principal components:</p>
+<p><strong>Definition 4:</strong> <em>Consider the canonical projection of the Graph Space</em>
+<span class="math inline">\(\pi \colon X \rightarrow X/T\)</span> <em>of</em> <span class="math inline">\(X\)</span> <em>and consider a set</em>
+<span class="math inline">\(\{[x_1],\dots, [x_k]\} \subset X/T\)</span> <em>of graphs,</em> <span class="math inline">\([x]\in X/T\)</span><em>, and</em>
+<span class="math inline">\(\delta \in \Gamma(X/T)\)</span><em>. The Generalized Geodesic Principal Components
+(GGPCs) for the set</em> <span class="math inline">\(\{[x_1],\dots, [x_k]\}\)</span> <em>are defined as:</em></p>
+<ul>
+<li><p><em>The first generalized geodesic principal component</em>
+<span class="math inline">\(\delta_1 \in \Gamma(X/T)\)</span> <em>is the generalized geodesic minimizing
+the sum of squared residuals:</em> <span class="math display">\[\begin{equation}\label{eq:wrtdelta}
+    \delta_1 = argmin_{\delta \in \Gamma(X/T)} \sum_{i=1}^{k}{(d_{X/T}^2([x_i],\delta))}
+\end{equation}\]</span></p></li>
+<li><p><em>The second generalized geodesic principal component</em>
+<span class="math inline">\(\delta_2 \in \Gamma(X/T)\)</span> <em>minimizes (2) over all</em>
+<span class="math inline">\(\delta \in \Gamma(X/T)\)</span><em>, having at least one point in common with</em>
+<span class="math inline">\(\delta_1\)</span> <em>and being orthogonal to</em> <span class="math inline">\(\delta_1\)</span> <em>at all points in
+common with</em> <span class="math inline">\(\delta_1\)</span><em>.</em></p></li>
+<li><p><em>The point</em> <span class="math inline">\(\mu\in X/T\)</span> <em>is called Principal Component Mean if it
+minimizes</em> <span class="math display">\[\begin{equation}\label{eq:wrtpoint}
+     \sum_{i=1}^{k}{(d_{X/T}^2([x_i],[\mu])^2)}
+\end{equation}\]</span> <em>where</em> <span class="math inline">\([\mu]\)</span> <em>only runs over points</em> <span class="math inline">\(\tilde{x}\)</span>
+<em>in common with</em> <span class="math inline">\(\delta_1\)</span> <em>and</em> <span class="math inline">\(\delta_2\)</span><em>.</em></p></li>
+<li><p><em>The</em> <span class="math inline">\(j^{th}\)</span> <em>generalized geodesic principal component is a</em>
+<span class="math inline">\(\delta_j \in \Gamma(X/T)\)</span> <em>if it minimizes (2) over all generalized
+geodesics that meet orthogonally</em> <span class="math inline">\(\delta_1,\dots, \delta_{j-1}\)</span>
+<em>and cross</em> <span class="math inline">\(\mu\)</span><em>.</em><br />
+</p></li>
+</ul>
+<p>Conceptualized in Figure 4, the actual estimation of the GPCA in Graph
+Space is done via AAC: (1) Randomly pick some candidates in the
+equivalence classes; (2) estimate the standard PCA in <span class="math inline">\(X\)</span>; (3) Select
+new optimally aligned candidates wrt the current PCA estimation.</p>
+<p><img src="/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png" /></p>
+<p>Figure 4: Conceptual visualization of the AAC for the estimation of the
+first generalized geodesic principal component.</p>
+<p>The AAC converge in finite time and to a local minima as proven in
+Theorem 2 and 3 <span class="citation">Calissano, Feragen, and Vantini (<a href="#ref-calissano2023populations">2023</a>)</span>. All the algorithms and the
+framework is implemeted in the geomstats python package.</p>
+</div>
+<div id="an-example" class="section level2">
+<h2>An Example</h2>
+<p>As an intuitive visual example with real data and associated vectors
+attributes, we subsample <span class="math inline">\(20\)</span> cases of the letter A from the well known
+hand written letters dataset <span class="citation">Kersting et al. (<a href="#ref-KKMMN2016">2016</a>)</span>, <span class="citation">Riesen and Bunke (<a href="#ref-riesen2008iam">2008</a>)</span>. As shown in the
+left panel of Figure 5, every network has node attributes consisting of
+the node’s <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-coordinates, and binary <span class="math inline">\((0/1\)</span>) edge attributes
+indicating whether nodes are connected by lines.</p>
+<p><img src="/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png" /></p>
+<p>Figure 5: <strong>Left:</strong> A datum extracted from the <span class="math inline">\(A\)</span> dataset. Every
+unlabelled node has a bi-dimensional real valued attribute, while every
+edge has a <span class="math inline">\({0,1}\)</span> attribute. The Fréchet mean. <strong>Right:</strong> Visualization
+of the GGPCs. <span class="math inline">\({0.1,0.25,0.5,0.75,0.9}\)</span> quantile of the projected scores
+are shown for the first three GGPCs.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Graph Space is an intuitive embedding for sets of graphs with unlabelled
+sets of nodes. Even if its geometry is far from trivial, we can easily
+estimate intrinsic statistics by using the Align All and Compute
+algorithm. In <span class="citation">Calissano, Feragen, and Vantini (<a href="#ref-calissano2023populations">2023</a>)</span> we detailed the geometry of
+Graph Space, we define the AAC algorithm and the Generalized Geodesic
+Principal Components for a set of graphs. Regression with unlabelled
+network outputs is also available in <span class="citation">Calissano, Feragen, and Vantini (<a href="#ref-calissano2022graph">2022</a>)</span>. All the
+framework is available as part of the geomstats python package
+<span class="citation">Miolane et al. (<a href="#ref-miolane2020geomstats">2020</a>)</span>.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-calissano2022graph" class="csl-entry">
+Calissano, Anna, Aasa Feragen, and Simone Vantini. 2022. <span>“Graph-Valued Regression: Prediction of Unlabelled Networks in a Non-Euclidean Graph Space.”</span> <em>Journal of Multivariate Analysis</em> 190: 104950.
+</div>
+<div id="ref-calissano2023populations" class="csl-entry">
+———. 2023. <span>“Populations of Unlabelled Networks: Graph Space Geometry and Generalized Geodesic Principal Components.”</span> <em>Biometrika</em>, asad024.
+</div>
+<div id="ref-chowdhury2019gromov" class="csl-entry">
+Chowdhury, Samir, and Facundo Mémoli. 2019. <span>“The Gromov–Wasserstein Distance Between Networks and Stable Network Invariants.”</span> <em>Information and Inference: A Journal of the IMA</em> 8 (4): 757–87.
+</div>
+<div id="ref-conte2004thirty" class="csl-entry">
+Conte, Donatello, Pasquale Foggia, Carlo Sansone, and Mario Vento. 2004. <span>“Thirty Years of Graph Matching in Pattern Recognition.”</span> <em>International Journal of Pattern Recognition and Artificial Intelligence</em> 18 (03): 265–98.
+</div>
+<div id="ref-durante2017nonparametric" class="csl-entry">
+Durante, Daniele, David B Dunson, and Joshua T Vogelstein. 2017. <span>“Nonparametric <span>B</span>ayes Modeling of Populations of Networks.”</span> <em>Journal of the American Statistical Association</em> 112 (520): 1516–30.
+</div>
+<div id="ref-frechet1948elements" class="csl-entry">
+Fréchet, Maurice. 1948. <span>“Les <span class="nocase">é</span>l<span>é</span>ments Al<span>é</span>atoires de Nature Quelconque Dans Un Espace Distanci<span>é</span>.”</span> <em>Annales de l’institut Henri Poincar<span>é</span></em> 10 (4): 215–310.
+</div>
+<div id="ref-ginestet2017" class="csl-entry">
+Ginestet, C. E., J. Li, P. Balachandran, S. Rosenberg, and E. D. Kolaczyk. 2017. <span>“Hypothesis Testing for Network Data in Functional Neuroimaging.”</span> <em>The Annals of Applied Statistics</em> 11 (2): 725–50. <a href="https://doi.org/10.1214/16-AOAS1015">https://doi.org/10.1214/16-AOAS1015</a>.
+</div>
+<div id="ref-huckemann" class="csl-entry">
+Huckemann, S., T. Hotz, and A. Munk. 2010. <span>“Intrinsic Shape Analysis: Geodesic <span>PCA</span> for <span>R</span>iemannian Manifolds Modulo Isometric <span>L</span>ie Group Actions.”</span> <em>Statist. Sinica</em> 20 (1): 1–58.
+</div>
+<div id="ref-jain2009structure" class="csl-entry">
+Jain, B. J., and K. Obermayer. 2009. <span>“Structure Spaces.”</span> <em>Journal of Machine Learning Research</em> 10 (Nov): 2667–2714.
+</div>
+<div id="ref-KKMMN2016" class="csl-entry">
+Kersting, K., Kriege N. M., C. Morris, Mutzel. P., and M. Neumann. 2016. <span>“Benchmark Data Sets for Graph Kernels.”</span> <a href="http://graphkernels.cs.tu-dortmund.de">http://graphkernels.cs.tu-dortmund.de</a>.
+</div>
+<div id="ref-lee2013smooth" class="csl-entry">
+Lee, John M. 2013. <em>Smooth Manifolds</em>. Springer.
+</div>
+<div id="ref-lunagomez2021modeling" class="csl-entry">
+Lunagómez, Simón, Sofia C Olhede, and Patrick J Wolfe. 2021. <span>“Modeling Network Populations via Graph Distances.”</span> <em>Journal of the American Statistical Association</em> 116 (536): 2023–40.
+</div>
+<div id="ref-miolane2020geomstats" class="csl-entry">
+Miolane, Nina, Nicolas Guigui, Alice Le Brigant, Johan Mathe, Benjamin Hou, Yann Thanwerdas, Stefan Heyder, et al. 2020. <span>“Geomstats: A Python Package for Riemannian Geometry in Machine Learning.”</span> <em>Journal of Machine Learning Research</em> 21 (223): 1–9.
+</div>
+<div id="ref-riesen2008iam" class="csl-entry">
+Riesen, K., and H. Bunke. 2008. <span>“IAM Graph Database Repository for Graph Based Pattern Recognition and Machine Learning.”</span> In <em>Joint IAPR International Workshops on Statistical Techniques in Pattern Recognition (SPR) and Structural and Syntactic Pattern Recognition (SSPR)</em>, 287–97. Springer.
+</div>
+<div id="ref-severn2020non" class="csl-entry">
+Severn, Katie E, Ian L Dryden, and Simon P Preston. 2020. <span>“Non-Parametric Regression for Networks.”</span> <em>arXiv Preprint arXiv:2010.00050</em>.
+</div>
+<div id="ref-simpson2013permutation" class="csl-entry">
+Simpson, Sean L, Robert G Lyday, Satoru Hayasaka, Anthony P Marsh, and Paul J Laurienti. 2013. <span>“A Permutation Testing Framework to Compare Groups of Brain Networks.”</span> <em>Frontiers in Computational Neuroscience</em> 7: 171.
+</div>
+<div id="ref-vogelstein2015fast" class="csl-entry">
+Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G Kratzer, Eric T Harley, Donniell E Fishkind, R Jacob Vogelstein, and Carey E Priebe. 2015. <span>“Fast Approximate Quadratic Programming for Graph Matching.”</span> <em>PLOS One</em> 10 (4): e0121002.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+
