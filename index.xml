@@ -86,7 +86,7 @@ total space &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; for the c
 &lt;p&gt;The Align All and Compute Algorithm (AAC) allows to compute intrinsic
 statistics on Graph Space by computing the estimators on the total
 space. We illustrate it here for the estimation of the Fréchet Mean
-&lt;span class=&#34;citation&#34;&gt;Fréchet (&lt;a href=&#34;#ref-frechet1948elements&#34;&gt;1948&lt;/a&gt;)&lt;/span&gt;. Consider a set of &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots,[x_k]\}\)&lt;/span&gt; graphs:
+(&lt;span class=&#34;citation&#34;&gt;Fréchet (&lt;a href=&#34;#ref-frechet1948elements&#34;&gt;1948&lt;/a&gt;)&lt;/span&gt;). Consider a set of &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1],\dots,[x_k]\}\)&lt;/span&gt; graphs:
 &lt;span class=&#34;math display&#34;&gt;\[[\bar{x}]=min_{[x]\in X / T }\sum_{i=1}^{n}d_{X /T}([\bar{x}],[x_i])\]&lt;/span&gt;
 Notice that the Fréchet Mean results into the arithmetic mean in the
 case of Euclidean data.&lt;/p&gt;
@@ -183,14 +183,14 @@ new optimally aligned candidates wrt the current PCA estimation.&lt;/p&gt;
 &lt;p&gt;Figure 4: Conceptual visualization of the AAC for the estimation of the
 first generalized geodesic principal component.&lt;/p&gt;
 &lt;p&gt;The AAC converge in finite time and to a local minima as proven in
-Theorem 2 and 3 &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2023populations&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;. All the algorithms and the
+Theorem 2 and 3 (&lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2023populations&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;). All the algorithms and the
 framework is implemeted in the geomstats python package.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;an-example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;An Example&lt;/h2&gt;
 &lt;p&gt;As an intuitive visual example with real data and associated vectors
 attributes, we subsample &lt;span class=&#34;math inline&#34;&gt;\(20\)&lt;/span&gt; cases of the letter A from the well known
-hand written letters dataset &lt;span class=&#34;citation&#34;&gt;Kersting et al. (&lt;a href=&#34;#ref-KKMMN2016&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Riesen and Bunke (&lt;a href=&#34;#ref-riesen2008iam&#34;&gt;2008&lt;/a&gt;)&lt;/span&gt;. As shown in the
+hand written letters dataset (&lt;span class=&#34;citation&#34;&gt;Kersting et al. (&lt;a href=&#34;#ref-KKMMN2016&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Riesen and Bunke (&lt;a href=&#34;#ref-riesen2008iam&#34;&gt;2008&lt;/a&gt;)&lt;/span&gt;). As shown in the
 left panel of Figure 5, every network has node attributes consisting of
 the node’s &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;- and &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;-coordinates, and binary &lt;span class=&#34;math inline&#34;&gt;\((0/1\)&lt;/span&gt;) edge attributes
 indicating whether nodes are connected by lines.&lt;/p&gt;
@@ -211,7 +211,7 @@ Graph Space, we define the AAC algorithm and the Generalized Geodesic
 Principal Components for a set of graphs. Regression with unlabelled
 network outputs is also available in &lt;span class=&#34;citation&#34;&gt;Calissano, Feragen, and Vantini (&lt;a href=&#34;#ref-calissano2022graph&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;. All the
 framework is available as part of the geomstats python package
-&lt;span class=&#34;citation&#34;&gt;Miolane et al. (&lt;a href=&#34;#ref-miolane2020geomstats&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+(&lt;span class=&#34;citation&#34;&gt;Miolane et al. (&lt;a href=&#34;#ref-miolane2020geomstats&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
 &lt;h2&gt;References&lt;/h2&gt;
