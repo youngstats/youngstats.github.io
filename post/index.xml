@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Non-stationary wrapped Gaussian spatial response model</title>
+      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+    </item>
+    
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
       <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
@@ -100,17 +109,6 @@ Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (
       
       <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
       <description>Passive scalar turbulence is the study of how a scalar quantity, such astemperature or salinity, is transported by an incompressible fluid. Thisprocess is modeled by the advection diffusion equation\[\begin{equation}\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is anincompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameterand \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settlesinto a statistical steady state and complex self-similar structuresarise due to repeated stretching and folding by the velocity field.</description>
-    </item>
-    
-    <item>
-      <title>Recent advances in extreme value theory</title>
-      <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
-      <description>Recent advances in extreme value theory
-Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
-Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
     </item>
     
   </channel>

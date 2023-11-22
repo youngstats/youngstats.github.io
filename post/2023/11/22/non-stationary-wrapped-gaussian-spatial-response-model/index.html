@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Non-stationary wrapped Gaussian spatial response model | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/directional-data-analysis">directional-data-analysis</a>
+  
+     &hercon; <a href="/categories/circular-data">circular-data</a>
+  
+     &hercon; <a href="/categories/spatial-data">spatial-data</a>
+  
+  </div>
+
+  <h1><span class="title">Non-stationary wrapped Gaussian spatial response model</span></h1>
+
+  
+  <h3 class="author">Isa Marques,  Thomas Kneib and Nadja Klein
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>Circular data, i.e., data defined on the unit circle, can be found in many areas of science.
+The unique nature of these data means that conventional methods for non-circular data are not valid for these.
+At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.
+An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</p>
+<p><img src="/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png" /></p>
+<p>It was <span class="citation">Jona-Lasinio, Gelfand, and Jona-Lasinio (<a href="#ref-jona2012spatial">2012</a>)</span> and <span class="citation">Wang and Gelfand (<a href="#ref-wang2014modeling">2014</a>)</span> that first brought the wrapped and projected Gaussian distributions to space and space-time settings.
+Nonetheless, today,<strong>circular data models still need to catch up on the latest advances in spatial statistics</strong>.
+In particular, models developed so far <strong>assume stationarity in the mean and the covariance of the response</strong> modeled; i.e., these are constant in space.
+Our work in <span class="citation">Marques, Kneib, and Klein (<a href="#ref-marques2022non">2022</a>)</span> aims to bridge this gap and allow for non-stationarity in the mean and covariance of distributions for circular responses defined on spatial domains.</p>
+</div>
+<div id="the-response-distribution" class="section level2">
+<h2>The response distribution</h2>
+<p>To construct distributions for circular data, we can rely on the construction principle of wrapping the distribution of a random variable <span class="math inline">\(Y \in \mathbb{R}\)</span> defined on the real line around the unit circle to make its domain adhere to the interval <span class="math inline">\([0,2\pi]\)</span>.
+The result is a circular – or <em>wrapped</em> – random variable <span class="math inline">\(X \in \lbrack 0,2\pi)\)</span>.
+Then, the <em>unwrapped</em> variable <span class="math inline">\(Y\)</span> can be expressed as <span class="math display">\[
+Y = X + 2 \pi K
+\]</span> where <span class="math inline">\(K \in \mathbb{Z}\)</span> measures the number of “turns” <span class="math inline">\(Y\)</span> has be wrapped around the unit circle.</p>
+<p>Let <span class="math inline">\(\mathbf{s}\)</span> denote a spatial index variable within a spatial domain <span class="math inline">\(S \subset \mathbb{R}^2\)</span>.
+<span class="citation">Jona-Lasinio, Gelfand, and Jona-Lasinio (<a href="#ref-jona2012spatial">2012</a>)</span> first showed that this wrapping approach can be extended to the context of spatial data.
+We extend their framework and consider
+<span class="math display">\[ X(\mathbf{s}_i) = \beta_0 + \mathbf{z}(\mathbf{s}_i)&#39; \boldsymbol{\beta}  +\gamma(\mathbf{s}_i, \mathbf{z}^\kappa(\mathbf{s}_i)) + 2 \pi K(\mathbf{s}_i) + \varepsilon_i ,\]</span>
+where <span class="math inline">\(i=1, \ldots,n\)</span>, <span class="math inline">\(\gamma(\mathbf{s}_i)\)</span> is a zero-mean Gaussian random field (GRF) and <span class="math inline">\(\varepsilon_i \sim N(0, \sigma^2_\varepsilon)\)</span> are the i.i.d. error terms, with the following novelties:</p>
+<ol style="list-style-type: decimal">
+<li><p>The mean depends on <span class="math inline">\(\mathbf{z}(\mathbf{s}_i)&#39; \boldsymbol{\beta}\)</span>, i.e. it is non-stationary,</p></li>
+<li><p>The covariance depends on <span class="math inline">\(\mathbf{z}^\kappa(\mathbf{s}_i)\)</span>, i.e. it is non-stationary,</p></li>
+<li><p>We include small-scale noise <span class="math inline">\(\varepsilon_i\)</span>s.</p></li>
+</ol>
+<p>We focus on 1. and 2.</p>
+<div id="non-stationarity-in-the-mean" class="section level3">
+<h3>1. Non-stationarity in the mean</h3>
+<p>Linear covariates included in the mean of a circular response might induce a circular likelihood for the regression coefficients that has infinitely many maxima.
+The typical solution is to use a link function for fixed effects with co-domain defined in <span class="math inline">\(\mathbb{R}\)</span> and of length equal to the circular variable’s period of <span class="math inline">\(2\pi\)</span>, e.g. the inverse tangent link function.</p>
+<p>We argue that:</p>
+<ol style="list-style-type: decimal">
+<li><p>The winding number <span class="math inline">\(K(\mathbf{s})\)</span> can govern the behavior of the combination of GRF and fixed effects such that no link function is needed,</p></li>
+<li><p>We use prior information that shrinks towards a stationary mean and enforces the length of the fixed effects to be approximately <span class="math inline">\(2\pi\)</span>.</p></li>
+</ol>
+<p>Concretely, <span class="math inline">\(\beta_0 \sim N(0, 10)\)</span> represents a diffuse prior for the intercept and we let
+<span class="math inline">\(\boldsymbol{\beta} \vert \xi^2 \sim N(\mathbf{0}, \xi^2 \mathbf{I})\)</span>. One can show that
+if the base model is such that <span class="math inline">\(\xi^2 \to 0\)</span> and the prior is constructed
+according to the PC-prior principles <span class="citation">(<a href="#ref-simpson2017penalising">Simpson et al. 2017</a>)</span>, then <span class="math inline">\(\xi^2\)</span>
+has a Weibull prior with shape <span class="math inline">\(\frac{1}{2}\)</span> and scale <span class="math inline">\(\lambda\)</span>, i.e., <span class="math inline">\(\xi^2 \sim \text{Weibull}(\frac{1}{2}, \lambda)\)</span> <span class="citation">(<a href="#ref-klein2016scale">Klein and Kneib 2016</a>)</span>.</p>
+<p>For <span class="math inline">\(\alpha \in (0, 1)\)</span>, <span class="math inline">\(\lambda\)</span> is chosen such that
+<span class="math display">\[
+     P\left( \text{max}_{\mathbf{s} \in S} \mid
+    \mathbf{z}(\mathbf{s})&#39;\boldsymbol{\beta} \mid \leq\,  \pi \right)
+    \geq 1 - \alpha,
+\]</span>
+i.e., the probability that the maximum norm of the non-stationary effect in the mean of the response is smaller than <span class="math inline">\(\pi\)</span> is larger than <span class="math inline">\(1 - \alpha\)</span>. The value <span class="math inline">\(\pi\)</span> in the expression is close to the recommendation of <span class="math inline">\(3\)</span> in <span class="citation">Klein and Kneib (<a href="#ref-klein2016scale">2016</a>)</span>.</p>
+</div>
+<div id="non-stationarity-in-the-covariance" class="section level3">
+<h3>2. Non-stationarity in the covariance</h3>
+<p>The stochastic partial differential equation (SPDE) approach <span class="citation">(see <a href="#ref-lindgren2011explicit">Lindgren, Rue, and Lindström 2011</a>)</span> allows us to model non-stationarity in the covariance of the GRF in a computationally efficient way.
+Consider the parameters of the Matérn covariance with smoothness <span class="math inline">\(1\)</span> and <span class="math inline">\(\kappa\)</span> and <span class="math inline">\(\tau\)</span> controlling the range and the marginal variance of the GRF, respectively.</p>
+<p>We let
+<span class="math display">\[
+\log(\tau) =  \theta^\tau_0 \mbox{ and } \log(\kappa(\mathbf{s})) =
+\theta^\kappa_0 + \mathbf{z}^\kappa(\mathbf{s})&#39;\boldsymbol{\theta}^\kappa_z,
+\]</span>
+where uniform priors for <span class="math inline">\(\theta^\tau_0\)</span> and <span class="math inline">\(\theta_0^\kappa\)</span> guarantee that the marginal variance is in <span class="math inline">\([0.01, (2\pi)^2]\)</span> and the spatial range is in <span class="math inline">\([0.01, 1]\)</span> for <span class="math inline">\(S \subseteq [0, 1] \times [0,1]\)</span>.
+Once again, we use a simulation-based method to guarantee</p>
+<p><span class="math display">\[
+P\left( \text{max}_{\mathbf{s} \in S} \mid
+\mathbf{z}^\kappa(\mathbf{s})&#39;\boldsymbol{\theta}^\kappa_z \mid \leq\,  c \right)
+\geq 1 - \alpha_\kappa,
+\]</span>
+such that <span class="math inline">\(c\)</span> guarantees that the spatial range satisfies <span class="math inline">\(\rho(\mathbf{s}) \in [0.01, 1]\)</span>, with typically <span class="math inline">\(c = 3\)</span> <span class="citation">(see <a href="#ref-klein2016scale">Klein and Kneib 2016</a>)</span>. The resulting prior structure shrinks towards a model with stationary covariance.</p>
+<p>More concretely, we have <span class="math inline">\(\theta^\tau_0 \sim U(-10, 3)\)</span>, <span class="math inline">\(\theta^\kappa_0 \sim U(1, 6)\)</span> and <span class="math inline">\(\boldsymbol{\theta}_z^\kappa \vert \zeta^2 \sim N(\mathbf{0}, \zeta^2 \mathbf{I})\)</span>, with <span class="math inline">\(\zeta^2 \sim \text{Weibull}(\frac{1}{2}, \lambda_\kappa)\)</span>.</p>
+</div>
+</div>
+<div id="the-full-hierarchical-model" class="section level2">
+<h2>The full-hierarchical model</h2>
+<p>The SPDE is typically used in combination with integrated nested Laplace approximations (INLA). However, INLA does not perform well when combined with shrinkage priors for non-stationarity in the covariance as defined here. Thus, we use Markov Chain Monte Carlo with full-hierarchical model:</p>
+<p><span class="math display">\[\begin{align*}
+X(\mathbf{s}) &amp;= \eta(\mathbf{s}) + 2 \pi K(\mathbf{s}) +
+\varepsilon, \\
+&amp;= \beta_0 + \mathbf{z}(\mathbf{s})&#39; \boldsymbol{\beta} + \gamma(\mathbf{s}, \mathbf{z}^\kappa(\mathbf{s})) + 2 \pi K(\mathbf{s}) +
+\varepsilon,\\
+\beta_0 &amp;\sim N(0, 10) ,\mbox{ }  \boldsymbol{\beta} \vert \xi^2 \sim N(0, \xi^2 \mathbf{I}), \mbox{ }\boldsymbol{\gamma} \vert  \boldsymbol{\theta} \sim N(\mathbf{0}, \mathbf{Q}^{-1}(\boldsymbol{\theta})) \\
+\theta_0^\tau &amp;\sim U(-10, 3) ,\mbox{ }
+\theta_0^\kappa \sim U(1, 6) ,\mbox{ }
+\boldsymbol{\theta}^\kappa_z  \vert  \zeta^2 \sim N(\mathbf{0}, \zeta^2 \mathbf{I}) \\
+\xi^2 &amp;\sim PC\left(\pi, \alpha \right) ,\mbox{ }
+\zeta^2 \sim PC\left(3, \alpha_\kappa \right) \\
+\mathbf{\varepsilon}  \vert \sigma^2_\varepsilon &amp;\sim N(\mathbf{0}, \sigma^2_\varepsilon \mathbf{I}) ,\mbox{ }
+\sigma^2_\varepsilon \sim IG (0.001, 0.001)\\
+    p(K(\mathbf{s})) &amp;=
+\begin{cases}
+    \frac{1}{3},&amp; \text{if } K(\mathbf{s}) \in \lbrace -1, 0, 1 \rbrace\\
+    0,              &amp; \text{otherwise}
+\end{cases}
+\end{align*}\]</span></p>
+</div>
+<div id="outcome" class="section level2">
+<h2>Outcome</h2>
+<p>One can use our model to estimate wind directions in the dataset above and test the model’s performance.
+We randomly select a holdout set consisting of <span class="math inline">\(20\%\)</span> of the locations and use the remaining <span class="math inline">\(80\%\)</span> as training data.
+The covariates considered for <span class="math inline">\(\mathbf{z}(\mathbf{s})\)</span> are maximum wind speed, average air humidity, and temperature at 10 meters height. For <span class="math inline">\(\mathbf{z^\kappa}(\mathbf{s})\)</span> we consider altitude and latitude.</p>
+<p>The figure below shows the posterior predictive mean (left) and standard deviation (right) for each test location for a fully stationary, i.e., stationary mean and covariance and fully non-stationary models.
+The black arrows represent the true wind directions (left) and the corresponding standard deviation of zero (right).
+The figure shows that the fully non-stationary model reaches smaller bias than the fully stationary model throughout the whole domain. In the north where this bias is close to zero, our model also reaches lower uncertainty.</p>
+<p><img src="/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png" /></p>
+</div>
+<div id="about-the-authors" class="section level2">
+<h2>About the authors</h2>
+<ul>
+<li><a href="https://www.gla.ac.uk/schools/mathematicsstatistics/staff/isamanuelarosagoncalvesmarques/">Isa Marques</a></li>
+<li><a href="https://www.uni-goettingen.de/en/264255.html">Thomas Kneib</a></li>
+<li><a href="https://www.tu-dortmund.de/en/university/newly-appointed-professors/prof-nadja-klein/">Nadja Klein</a></li>
+</ul>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-jona2012spatial" class="csl-entry">
+Jona-Lasinio, Giovanna, Alan Gelfand, and Mattia Jona-Lasinio. 2012. <span>“<span class="nocase">Spatial analysis of wave direction data using wrapped Gaussian processes</span>.”</span> <em>The Annals of Applied Statistics</em> 6 (4): 1478–98.
+</div>
+<div id="ref-klein2016scale" class="csl-entry">
+Klein, Nadja, and Thomas Kneib. 2016. <span>“Scale-Dependent Priors for Variance Parameters in Structured Additive Distributional Regression.”</span> <em>Bayesian Analysis</em> 11 (4): 1071–1106.
+</div>
+<div id="ref-lindgren2011explicit" class="csl-entry">
+Lindgren, Finn, Håvard Rue, and Johan Lindström. 2011. <span>“<span class="nocase">An explicit link between Gaussian fields and Gaussian Markov random fields: the stochastic partial differential equation approach</span>.”</span> <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 73 (4): 423–98.
+</div>
+<div id="ref-marques2022non" class="csl-entry">
+Marques, Isa, Thomas Kneib, and Nadja Klein. 2022. <span>“A Non-Stationary Model for Spatially Dependent Circular Response Data Based on Wrapped Gaussian Processes.”</span> <em>Statistics and Computing</em> 32 (5): 73.
+</div>
+<div id="ref-simpson2017penalising" class="csl-entry">
+Simpson, Daniel, Håvard Rue, Andrea Riebler, Thiago G Martins, Sigrunn H Sørbye, et al. 2017. <span>“Penalising Model Component Complexity: A Principled, Practical Approach to Constructing Priors.”</span> <em>Statistical Science</em> 32 (1): 1–28.
+</div>
+<div id="ref-wang2014modeling" class="csl-entry">
+Wang, Fangpo, and Alan E Gelfand. 2014. <span>“<span class="nocase">Modeling space and space-time directional data using projected Gaussian processes</span>.”</span> <em>Journal of the American Statistical Association</em> 109 (508): 1565–80.
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

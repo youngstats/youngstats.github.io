@@ -6,7 +6,155 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Non-stationary wrapped Gaussian spatial response model</title>
+      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <description>
+
+
+&lt;div id=&#34;background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Circular data, i.e., data defined on the unit circle, can be found in many areas of science.
+The unique nature of these data means that conventional methods for non-circular data are not valid for these.
+At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.
+An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It was &lt;span class=&#34;citation&#34;&gt;Jona-Lasinio, Gelfand, and Jona-Lasinio (&lt;a href=&#34;#ref-jona2012spatial&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Wang and Gelfand (&lt;a href=&#34;#ref-wang2014modeling&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; that first brought the wrapped and projected Gaussian distributions to space and space-time settings.
+Nonetheless, today,&lt;strong&gt;circular data models still need to catch up on the latest advances in spatial statistics&lt;/strong&gt;.
+In particular, models developed so far &lt;strong&gt;assume stationarity in the mean and the covariance of the response&lt;/strong&gt; modeled; i.e., these are constant in space.
+Our work in &lt;span class=&#34;citation&#34;&gt;Marques, Kneib, and Klein (&lt;a href=&#34;#ref-marques2022non&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt; aims to bridge this gap and allow for non-stationarity in the mean and covariance of distributions for circular responses defined on spatial domains.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-response-distribution&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The response distribution&lt;/h2&gt;
+&lt;p&gt;To construct distributions for circular data, we can rely on the construction principle of wrapping the distribution of a random variable &lt;span class=&#34;math inline&#34;&gt;\(Y \in \mathbb{R}\)&lt;/span&gt; defined on the real line around the unit circle to make its domain adhere to the interval &lt;span class=&#34;math inline&#34;&gt;\([0,2\pi]\)&lt;/span&gt;.
+The result is a circular – or &lt;em&gt;wrapped&lt;/em&gt; – random variable &lt;span class=&#34;math inline&#34;&gt;\(X \in \lbrack 0,2\pi)\)&lt;/span&gt;.
+Then, the &lt;em&gt;unwrapped&lt;/em&gt; variable &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; can be expressed as &lt;span class=&#34;math display&#34;&gt;\[
+Y = X + 2 \pi K
+\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(K \in \mathbb{Z}\)&lt;/span&gt; measures the number of “turns” &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; has be wrapped around the unit circle.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{s}\)&lt;/span&gt; denote a spatial index variable within a spatial domain &lt;span class=&#34;math inline&#34;&gt;\(S \subset \mathbb{R}^2\)&lt;/span&gt;.
+&lt;span class=&#34;citation&#34;&gt;Jona-Lasinio, Gelfand, and Jona-Lasinio (&lt;a href=&#34;#ref-jona2012spatial&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; first showed that this wrapping approach can be extended to the context of spatial data.
+We extend their framework and consider
+&lt;span class=&#34;math display&#34;&gt;\[ X(\mathbf{s}_i) = \beta_0 + \mathbf{z}(\mathbf{s}_i)&amp;#39; \boldsymbol{\beta}  +\gamma(\mathbf{s}_i, \mathbf{z}^\kappa(\mathbf{s}_i)) + 2 \pi K(\mathbf{s}_i) + \varepsilon_i ,\]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(i=1, \ldots,n\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\gamma(\mathbf{s}_i)\)&lt;/span&gt; is a zero-mean Gaussian random field (GRF) and &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon_i \sim N(0, \sigma^2_\varepsilon)\)&lt;/span&gt; are the i.i.d. error terms, with the following novelties:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;The mean depends on &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{z}(\mathbf{s}_i)&amp;#39; \boldsymbol{\beta}\)&lt;/span&gt;, i.e. it is non-stationary,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The covariance depends on &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{z}^\kappa(\mathbf{s}_i)\)&lt;/span&gt;, i.e. it is non-stationary,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We include small-scale noise &lt;span class=&#34;math inline&#34;&gt;\(\varepsilon_i\)&lt;/span&gt;s.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We focus on 1. and 2.&lt;/p&gt;
+&lt;div id=&#34;non-stationarity-in-the-mean&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1. Non-stationarity in the mean&lt;/h3&gt;
+&lt;p&gt;Linear covariates included in the mean of a circular response might induce a circular likelihood for the regression coefficients that has infinitely many maxima.
+The typical solution is to use a link function for fixed effects with co-domain defined in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; and of length equal to the circular variable’s period of &lt;span class=&#34;math inline&#34;&gt;\(2\pi\)&lt;/span&gt;, e.g. the inverse tangent link function.&lt;/p&gt;
+&lt;p&gt;We argue that:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;The winding number &lt;span class=&#34;math inline&#34;&gt;\(K(\mathbf{s})\)&lt;/span&gt; can govern the behavior of the combination of GRF and fixed effects such that no link function is needed,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We use prior information that shrinks towards a stationary mean and enforces the length of the fixed effects to be approximately &lt;span class=&#34;math inline&#34;&gt;\(2\pi\)&lt;/span&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Concretely, &lt;span class=&#34;math inline&#34;&gt;\(\beta_0 \sim N(0, 10)\)&lt;/span&gt; represents a diffuse prior for the intercept and we let
+&lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\beta} \vert \xi^2 \sim N(\mathbf{0}, \xi^2 \mathbf{I})\)&lt;/span&gt;. One can show that
+if the base model is such that &lt;span class=&#34;math inline&#34;&gt;\(\xi^2 \to 0\)&lt;/span&gt; and the prior is constructed
+according to the PC-prior principles &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-simpson2017penalising&#34;&gt;Simpson et al. 2017&lt;/a&gt;)&lt;/span&gt;, then &lt;span class=&#34;math inline&#34;&gt;\(\xi^2\)&lt;/span&gt;
+has a Weibull prior with shape &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{2}\)&lt;/span&gt; and scale &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;, i.e., &lt;span class=&#34;math inline&#34;&gt;\(\xi^2 \sim \text{Weibull}(\frac{1}{2}, \lambda)\)&lt;/span&gt; &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-klein2016scale&#34;&gt;Klein and Kneib 2016&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For &lt;span class=&#34;math inline&#34;&gt;\(\alpha \in (0, 1)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; is chosen such that
+&lt;span class=&#34;math display&#34;&gt;\[
+     P\left( \text{max}_{\mathbf{s} \in S} \mid
+    \mathbf{z}(\mathbf{s})&amp;#39;\boldsymbol{\beta} \mid \leq\,  \pi \right)
+    \geq 1 - \alpha,
+\]&lt;/span&gt;
+i.e., the probability that the maximum norm of the non-stationary effect in the mean of the response is smaller than &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; is larger than &lt;span class=&#34;math inline&#34;&gt;\(1 - \alpha\)&lt;/span&gt;. The value &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; in the expression is close to the recommendation of &lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt; in &lt;span class=&#34;citation&#34;&gt;Klein and Kneib (&lt;a href=&#34;#ref-klein2016scale&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;non-stationarity-in-the-covariance&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2. Non-stationarity in the covariance&lt;/h3&gt;
+&lt;p&gt;The stochastic partial differential equation (SPDE) approach &lt;span class=&#34;citation&#34;&gt;(see &lt;a href=&#34;#ref-lindgren2011explicit&#34;&gt;Lindgren, Rue, and Lindström 2011&lt;/a&gt;)&lt;/span&gt; allows us to model non-stationarity in the covariance of the GRF in a computationally efficient way.
+Consider the parameters of the Matérn covariance with smoothness &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt; controlling the range and the marginal variance of the GRF, respectively.&lt;/p&gt;
+&lt;p&gt;We let
+&lt;span class=&#34;math display&#34;&gt;\[
+\log(\tau) =  \theta^\tau_0 \mbox{ and } \log(\kappa(\mathbf{s})) =
+\theta^\kappa_0 + \mathbf{z}^\kappa(\mathbf{s})&amp;#39;\boldsymbol{\theta}^\kappa_z,
+\]&lt;/span&gt;
+where uniform priors for &lt;span class=&#34;math inline&#34;&gt;\(\theta^\tau_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\theta_0^\kappa\)&lt;/span&gt; guarantee that the marginal variance is in &lt;span class=&#34;math inline&#34;&gt;\([0.01, (2\pi)^2]\)&lt;/span&gt; and the spatial range is in &lt;span class=&#34;math inline&#34;&gt;\([0.01, 1]\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(S \subseteq [0, 1] \times [0,1]\)&lt;/span&gt;.
+Once again, we use a simulation-based method to guarantee&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+P\left( \text{max}_{\mathbf{s} \in S} \mid
+\mathbf{z}^\kappa(\mathbf{s})&amp;#39;\boldsymbol{\theta}^\kappa_z \mid \leq\,  c \right)
+\geq 1 - \alpha_\kappa,
+\]&lt;/span&gt;
+such that &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; guarantees that the spatial range satisfies &lt;span class=&#34;math inline&#34;&gt;\(\rho(\mathbf{s}) \in [0.01, 1]\)&lt;/span&gt;, with typically &lt;span class=&#34;math inline&#34;&gt;\(c = 3\)&lt;/span&gt; &lt;span class=&#34;citation&#34;&gt;(see &lt;a href=&#34;#ref-klein2016scale&#34;&gt;Klein and Kneib 2016&lt;/a&gt;)&lt;/span&gt;. The resulting prior structure shrinks towards a model with stationary covariance.&lt;/p&gt;
+&lt;p&gt;More concretely, we have &lt;span class=&#34;math inline&#34;&gt;\(\theta^\tau_0 \sim U(-10, 3)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(\theta^\kappa_0 \sim U(1, 6)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}_z^\kappa \vert \zeta^2 \sim N(\mathbf{0}, \zeta^2 \mathbf{I})\)&lt;/span&gt;, with &lt;span class=&#34;math inline&#34;&gt;\(\zeta^2 \sim \text{Weibull}(\frac{1}{2}, \lambda_\kappa)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-full-hierarchical-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The full-hierarchical model&lt;/h2&gt;
+&lt;p&gt;The SPDE is typically used in combination with integrated nested Laplace approximations (INLA). However, INLA does not perform well when combined with shrinkage priors for non-stationarity in the covariance as defined here. Thus, we use Markov Chain Monte Carlo with full-hierarchical model:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+X(\mathbf{s}) &amp;amp;= \eta(\mathbf{s}) + 2 \pi K(\mathbf{s}) +
+\varepsilon, \\
+&amp;amp;= \beta_0 + \mathbf{z}(\mathbf{s})&amp;#39; \boldsymbol{\beta} + \gamma(\mathbf{s}, \mathbf{z}^\kappa(\mathbf{s})) + 2 \pi K(\mathbf{s}) +
+\varepsilon,\\
+\beta_0 &amp;amp;\sim N(0, 10) ,\mbox{ }  \boldsymbol{\beta} \vert \xi^2 \sim N(0, \xi^2 \mathbf{I}), \mbox{ }\boldsymbol{\gamma} \vert  \boldsymbol{\theta} \sim N(\mathbf{0}, \mathbf{Q}^{-1}(\boldsymbol{\theta})) \\
+\theta_0^\tau &amp;amp;\sim U(-10, 3) ,\mbox{ }
+\theta_0^\kappa \sim U(1, 6) ,\mbox{ }
+\boldsymbol{\theta}^\kappa_z  \vert  \zeta^2 \sim N(\mathbf{0}, \zeta^2 \mathbf{I}) \\
+\xi^2 &amp;amp;\sim PC\left(\pi, \alpha \right) ,\mbox{ }
+\zeta^2 \sim PC\left(3, \alpha_\kappa \right) \\
+\mathbf{\varepsilon}  \vert \sigma^2_\varepsilon &amp;amp;\sim N(\mathbf{0}, \sigma^2_\varepsilon \mathbf{I}) ,\mbox{ }
+\sigma^2_\varepsilon \sim IG (0.001, 0.001)\\
+    p(K(\mathbf{s})) &amp;amp;=
+\begin{cases}
+    \frac{1}{3},&amp;amp; \text{if } K(\mathbf{s}) \in \lbrace -1, 0, 1 \rbrace\\
+    0,              &amp;amp; \text{otherwise}
+\end{cases}
+\end{align*}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outcome&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Outcome&lt;/h2&gt;
+&lt;p&gt;One can use our model to estimate wind directions in the dataset above and test the model’s performance.
+We randomly select a holdout set consisting of &lt;span class=&#34;math inline&#34;&gt;\(20\%\)&lt;/span&gt; of the locations and use the remaining &lt;span class=&#34;math inline&#34;&gt;\(80\%\)&lt;/span&gt; as training data.
+The covariates considered for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{z}(\mathbf{s})\)&lt;/span&gt; are maximum wind speed, average air humidity, and temperature at 10 meters height. For &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{z^\kappa}(\mathbf{s})\)&lt;/span&gt; we consider altitude and latitude.&lt;/p&gt;
+&lt;p&gt;The figure below shows the posterior predictive mean (left) and standard deviation (right) for each test location for a fully stationary, i.e., stationary mean and covariance and fully non-stationary models.
+The black arrows represent the true wind directions (left) and the corresponding standard deviation of zero (right).
+The figure shows that the fully non-stationary model reaches smaller bias than the fully stationary model throughout the whole domain. In the north where this bias is close to zero, our model also reaches lower uncertainty.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About the authors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gla.ac.uk/schools/mathematicsstatistics/staff/isamanuelarosagoncalvesmarques/&#34;&gt;Isa Marques&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.uni-goettingen.de/en/264255.html&#34;&gt;Thomas Kneib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tu-dortmund.de/en/university/newly-appointed-professors/prof-nadja-klein/&#34;&gt;Nadja Klein&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-jona2012spatial&#34; class=&#34;csl-entry&#34;&gt;
+Jona-Lasinio, Giovanna, Alan Gelfand, and Mattia Jona-Lasinio. 2012. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Spatial analysis of wave direction data using wrapped Gaussian processes&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;The Annals of Applied Statistics&lt;/em&gt; 6 (4): 1478–98.
+&lt;/div&gt;
+&lt;div id=&#34;ref-klein2016scale&#34; class=&#34;csl-entry&#34;&gt;
+Klein, Nadja, and Thomas Kneib. 2016. &lt;span&gt;“Scale-Dependent Priors for Variance Parameters in Structured Additive Distributional Regression.”&lt;/span&gt; &lt;em&gt;Bayesian Analysis&lt;/em&gt; 11 (4): 1071–1106.
+&lt;/div&gt;
+&lt;div id=&#34;ref-lindgren2011explicit&#34; class=&#34;csl-entry&#34;&gt;
+Lindgren, Finn, Håvard Rue, and Johan Lindström. 2011. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;An explicit link between Gaussian fields and Gaussian Markov random fields: the stochastic partial differential equation approach&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Journal of the Royal Statistical Society: Series B (Statistical Methodology)&lt;/em&gt; 73 (4): 423–98.
+&lt;/div&gt;
+&lt;div id=&#34;ref-marques2022non&#34; class=&#34;csl-entry&#34;&gt;
+Marques, Isa, Thomas Kneib, and Nadja Klein. 2022. &lt;span&gt;“A Non-Stationary Model for Spatially Dependent Circular Response Data Based on Wrapped Gaussian Processes.”&lt;/span&gt; &lt;em&gt;Statistics and Computing&lt;/em&gt; 32 (5): 73.
+&lt;/div&gt;
+&lt;div id=&#34;ref-simpson2017penalising&#34; class=&#34;csl-entry&#34;&gt;
+Simpson, Daniel, Håvard Rue, Andrea Riebler, Thiago G Martins, Sigrunn H Sørbye, et al. 2017. &lt;span&gt;“Penalising Model Component Complexity: A Principled, Practical Approach to Constructing Priors.”&lt;/span&gt; &lt;em&gt;Statistical Science&lt;/em&gt; 32 (1): 1–28.
+&lt;/div&gt;
+&lt;div id=&#34;ref-wang2014modeling&#34; class=&#34;csl-entry&#34;&gt;
+Wang, Fangpo, and Alan E Gelfand. 2014. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Modeling space and space-time directional data using projected Gaussian processes&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Journal of the American Statistical Association&lt;/em&gt; 109 (508): 1565–80.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
       <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
@@ -1635,47 +1783,6 @@ Thiffeault, Jean-Luc. 2012. &lt;span&gt;“Using Multiscale Norms to Quantify Mi
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recent advances in extreme value theory</title>
-      <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
-      <description>
-
-
-&lt;p&gt;&lt;strong&gt;Recent advances in extreme value theory&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-04-04-recent-advances-in-extreme-value-theory_files/cover.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields. Applications include the analysis of financial crises, prediction of flood risk and the modeling of record-shattering climate extremes.&lt;/p&gt;
-&lt;p&gt;In the webinar, selected statisticians will present their recent works and elaborate on different aspects of this topic.&lt;/p&gt;
-&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET&lt;/li&gt;
-&lt;li&gt;Online, via Zoom. The registration form is available &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdeixPUhPzfQfGMGC8YcSNiK9kfgGpNujyj_l6p5z7TwUE5sQ/viewform?vc=0&amp;amp;c=0&amp;amp;w=1&amp;amp;flr=0&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Speakers:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docenti.unicatt.it/ppd2/it/docenti/85092/stefano-rizzelli&#34;&gt;Stefano Rizzelli&lt;/a&gt;, Department of Statistical Sciences, Catholic University of Milan&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Title: Mathematical foundations of empirical Bayesian analysis of maxima&lt;/p&gt;
-&lt;p&gt;Abstract: Predicting future observations is the central goal of several statistical applications concerning extreme value data. Under mild assumptions, extreme-value theory justifies modelling linearly normalized sample maxima by max-stable distributions, which provide asymptotic approximations to the actual data generating mechanism. The Bayesian paradigm offers a direct approach to forecasting and uncertainty quantification. Various proposals for Bayesian inferential procedures have been formulated in recent years, though they typically disregard the model convergence bias inherent in the use of max-stable distributions, incorporating no information on norming sequences in prior specifications for scale and location parameters. We propose an empirical Bayes approach which suitably addresses this point via data-dependent priors. We illustrate the resulting asymptotic posterior concentration properties and pinpoint their implications for estimation and prediction of future observations. This talk is based on a joint work with Simone A. Padoan.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.math.ku.dk/english/about/news/new-names/nicola-gnecco-postdoc/&#34;&gt;Nicola Gnecco&lt;/a&gt;, Department of Mathematical Sciences, University of Copenhagen&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Title: Extremal Random Forests&lt;/p&gt;
-&lt;p&gt;Abstract: Classical methods for quantile regression fail in cases where the quantile of interest is extreme and only few or no training data points exceed it. Asymptotic results from extreme value theory can be used to extrapolate beyond the range of the data, and several approaches exist that use linear regression, kernel methods or generalized additive models. Most of these methods break down if the predictor space has more than a few dimensions or if the regression function of extreme quantiles is complex. We propose a method for extreme quantile regression that combines the flexibility of random forests with the theory of extrapolation. Our extremal random forest (ERF) estimates the parameters of a generalized Pareto distribution, conditional on the predictor vector, by maximizing a local likelihood with weights extracted from a quantile random forest. Under certain assumptions, we show consistency of the estimated parameters. Furthermore, we penalize the shape parameter in this likelihood to regularize its variability in the predictor space. Simulation studies show that our ERF outperforms both classical quantile regression methods and existing regression approaches from extreme value theory. We apply our methodology to extreme quantile prediction for U.S. wage data.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.imsv.unibe.ch/about_us/staff/dr_koh_jonathan_boon_han/index_eng.html&#34;&gt;Jonathan Koh&lt;/a&gt;, Oeschger Centre for Climate Change Research, University of Bern&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Title: Predicting risks of temperature extremes using large-scale circulation patterns with r–Pareto processes&lt;/p&gt;
-&lt;p&gt;Abstract: Many severe weather patterns in the mid-latitudes have been found to be connected to a particular atmospheric pattern known as blocking. This pattern obstructs the prevailing westerly large-scale atmospheric flow, changing flow anomalies in the vicinity of the blocking system to sustain weather conditions in the immediate region of its occurrence. Blockings’ presence and characteristics are thus important for the development of temperature extremes, which are rarely isolated in space, so one must not just account for their occurrence probabilities and intensities but also their spatial dependencies when assessing their associated risk. Here we propose a methodology that does so by combining tools from the spatial extremes and machine learning literature, to incorporate 500hPa geopotential (Z500) anomalies over the North Atlantic and European region as covariates to predict surface temperature extremes. This involves fitting Generalized r-Pareto processes with appropriate risk functionals to high-impact positive and negative temperature anomaly events across central Europe from 1979–2020, using loss functions motivated by extreme-value theory in a boosting algorithm. We check by simulation that the model parameters are identifiable and can be estimated adequately. We find which circulation patterns in the Euro-Atlantic sector are most important in determining the characteristics of these extremes, and show how they affect it.&lt;/p&gt;
-&lt;p&gt;Discussant: &lt;a href=&#34;https://www.unige.ch/gsem/en/research/faculty/all/sebastian-engelke/&#34;&gt;Sebastian Engelke&lt;/a&gt;, Research Center for Statistics, University of Geneva&lt;/p&gt;
-&lt;p&gt;The webinar is part of YoungStatS project of the Young Statisticians Europe initiative (FENStatS) supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=Mpzqz4y1oYY&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
