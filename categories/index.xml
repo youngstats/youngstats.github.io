@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>bayesian-statistics</title>
+      <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>directional-statistics</title>
       <link>https://youngstats.github.io/categories/directional-statistics/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
@@ -85,15 +94,6 @@
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/webinars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functional-Data-Analysis</title>
-      <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
-      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/functional-data-analysis/</guid>
       <description></description>
     </item>
     

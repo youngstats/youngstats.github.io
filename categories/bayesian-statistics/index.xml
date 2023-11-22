@@ -6,7 +6,16 @@
     <description>Recent content in bayesian-statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Non-stationary wrapped Gaussian spatial response model</title>
+      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+    </item>
+    
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
@@ -91,17 +100,6 @@ Formally speaking, we want that for some metric \(d\) on probability distributio
       
       <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
       <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
-    </item>
-    
-    <item>
-      <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
-      <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
-      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
-      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
-When &amp;amp; Where:
-Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
     </item>
     
   </channel>
