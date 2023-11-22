@@ -6,7 +6,16 @@
     <description>Recent content in spatial statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Non-stationary wrapped Gaussian spatial response model</title>
+      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+    </item>
+    
     <item>
       <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
       <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>

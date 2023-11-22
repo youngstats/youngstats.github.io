@@ -8,15 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>circular-data</title>
-      <link>https://youngstats.github.io/categories/circular-data/</link>
-      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/circular-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>directional-data-analysis</title>
       <link>https://youngstats.github.io/categories/directional-data-analysis/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
@@ -26,11 +17,11 @@
     </item>
     
     <item>
-      <title>spatial-data</title>
-      <link>https://youngstats.github.io/categories/spatial-data/</link>
+      <title>spatial statistics</title>
+      <link>https://youngstats.github.io/categories/spatial-statistics/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/categories/spatial-data/</guid>
+      <guid>https://youngstats.github.io/categories/spatial-statistics/</guid>
       <description></description>
     </item>
     
@@ -94,6 +85,15 @@
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional-Data-Analysis</title>
+      <link>https://youngstats.github.io/categories/functional-data-analysis/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/categories/functional-data-analysis/</guid>
       <description></description>
     </item>
     

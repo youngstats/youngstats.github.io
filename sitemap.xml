@@ -8,9 +8,6 @@
     <loc>https://youngstats.github.io/categories/</loc>
     <lastmod>2023-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/circular-data/</loc>
-    <lastmod>2023-11-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/directional-data-analysis/</loc>
     <lastmod>2023-11-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,7 +17,7 @@
     <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/spatial-data/</loc>
+    <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
     <lastmod>2023-11-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/geometric-statistics/</loc>
@@ -87,9 +84,6 @@
     <lastmod>2023-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</loc>
-    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/spatial-statistics/</loc>
     <lastmod>2023-07-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/combinatorics/</loc>
