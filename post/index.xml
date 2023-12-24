@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Merry Christmas and Happy New Year 2024!</title>
+      <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
+      <description>Dear Followers of the YoungStatS project, Dear All!
+It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.
+In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).</description>
+    </item>
+    
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
       <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
@@ -100,15 +111,6 @@ Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (
       
       <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
       <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
-    </item>
-    
-    <item>
-      <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
-      <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
-      <description>Passive scalar turbulence is the study of how a scalar quantity, such astemperature or salinity, is transported by an incompressible fluid. Thisprocess is modeled by the advection diffusion equation\[\begin{equation}\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is anincompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameterand \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settlesinto a statistical steady state and complex self-similar structuresarise due to repeated stretching and folding by the velocity field.</description>
     </item>
     
   </channel>

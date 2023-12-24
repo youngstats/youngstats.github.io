@@ -6,7 +6,27 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Merry Christmas and Happy New Year 2024!</title>
+      <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-24-merry-christmas-and-happy-new-year-2024_files/HappyNY2024.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Dear Followers of the YoungStatS project, Dear All!&lt;/p&gt;
+&lt;p&gt;It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.&lt;/p&gt;
+&lt;p&gt;In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+&lt;p&gt;And we thank You, readers of our postings and participants at our webinars for your support and feedback thus far!&lt;/p&gt;
+&lt;p&gt;YoungStatS project will resume after the New Year including webinars on random matrix theory, copula models, network econometric models, and regular blogposts. You would also be able to read shorter interviews with some of our contributors soon in the IMS Bulletin, as well as continue following our joint webinar series with the IMS New Researchers Group and Young Data Science Researcher Seminar Zurich.&lt;/p&gt;
+&lt;p&gt;We wish you to have a great holiday time - Merry Christmas and a Happy New Year 2024!&lt;/p&gt;
+&lt;p&gt;Editorial Members of the YoungStatS project.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
       <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
@@ -1537,249 +1557,6 @@ MacEachern, Steven N, and Peter Müller. 1998. &lt;span&gt;“Estimating Mixture
 &lt;/div&gt;
 &lt;div id=&#34;ref-sklar1959fonctions&#34; class=&#34;csl-entry&#34;&gt;
 Sklar, A. 1959. &lt;span&gt;“Fonctions d&lt;span&gt;é&lt;/span&gt; Repartition &lt;span class=&#34;nocase&#34;&gt;à&lt;/span&gt; n Dimension Et Leurs Marges.”&lt;/span&gt; &lt;em&gt;Universit&lt;span&gt;é&lt;/span&gt; Paris&lt;/em&gt; 8 (3.2): 1–3.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
-      <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
-      <description>
-
-
-&lt;p&gt;Passive scalar turbulence is the study of how a scalar quantity, such as
-temperature or salinity, is transported by an incompressible fluid. This
-process is modeled by the &lt;em&gt;advection diffusion equation&lt;/em&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}
-\end{equation}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is the scalar quantity, &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; is an
-incompressible velocity field, &lt;span class=&#34;math inline&#34;&gt;\(\kappa&amp;gt;0\)&lt;/span&gt; is the diffusivity parameter
-and &lt;span class=&#34;math inline&#34;&gt;\(s_t\)&lt;/span&gt; is a replenishing source. As &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; evolves, it often settles
-into a statistical steady state and complex self-similar structures
-arise due to repeated stretching and folding by the velocity field.&lt;/p&gt;
-&lt;p align=&#34;center&#34;&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/A7T4U4sYDAs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;/p&gt;
-&lt;p&gt;Figure 1: A numerical simulation of scalar turbulence on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{T}^2\)&lt;/span&gt;
-advected by the stochastic Navier-Stokes equations (all rights to the video content belong to Sam Punshon-Smith).&lt;/p&gt;
-&lt;p&gt;In his 1959 work (&lt;span class=&#34;citation&#34;&gt;Batchelor (&lt;a href=&#34;#ref-Batchelor59&#34;&gt;1959&lt;/a&gt;)&lt;/span&gt;) Batchelor made a significant step toward
-understanding these structures. He predicted that, on average, the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt;
-power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; displays a &lt;span class=&#34;math inline&#34;&gt;\(|k|^{-1}\)&lt;/span&gt; power law
-(Batchelor’s law) for the &lt;span class=&#34;math inline&#34;&gt;\(L^2\)&lt;/span&gt; power spectral density of &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; along
-frequencies &lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; in the so-called &lt;em&gt;viscous convective range&lt;/em&gt;, i.e.,
-length-scales sufficiently small such that the fluid motion is
-viscosity-dominated but large enough so as not to be dissipated by
-molecular diffusion. This law has since been verified in physical,
-numerical, and experimental settings (e.g. &lt;span class=&#34;citation&#34;&gt;Grant et al. (&lt;a href=&#34;#ref-GrantEtAl68&#34;&gt;1968&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Antonia and Orlandi (&lt;a href=&#34;#ref-AO03&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Gibson and Schwarz (&lt;a href=&#34;#ref-GibsonSchwarz63&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;) and is frequently used by scientists to predict the
-distribution of pollutants and biological matter in the ocean and
-atmosphere. Despite this success, Batchelor’s law has evaded rigorous
-mathematical proof.&lt;/p&gt;
-&lt;p&gt;The purpose of this post is to report progress with Jacob Bedrossian and
-Alex Blumenthal on the development of rigorous mathematical tools for
-studying Batchelor’s law when &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; evolves according to a randomly
-forced fluid model. The primary example is the &lt;em&gt;incompressible
-stochastic Navier-Stokes equations&lt;/em&gt; on &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{T}^2\)&lt;/span&gt;,&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\partial_t u_t + u_t\cdot\nabla u_t + \nabla p_t - \nu \Delta u_t = \xi_t, \\
-\mathbf{div} u_t=0,\label{eqSNS}\tag{SNS}
-\end{equation}\]&lt;/span&gt;
-&lt;p&gt;though other well-posed models (not restricted two dimensions) can be
-considered. Here the stochastic forcing &lt;span class=&#34;math inline&#34;&gt;\(\xi_t\)&lt;/span&gt; is assumed to be a
-non-degenerate, white-in-time, spatially Sobolev regular Gaussian
-forcing. The viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu &amp;gt; 0\)&lt;/span&gt; can be considered the inverse
-Reynolds number.&lt;/p&gt;
-&lt;p&gt;For this model and a host of other fluid models, in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt; we
-prove a version Batchelor’s prediction on the cumulative power spectrum,
-when the viscosity parameter &lt;span class=&#34;math inline&#34;&gt;\(\nu&amp;gt;0\)&lt;/span&gt; is fixed.&lt;/p&gt;
-&lt;p&gt;Theorem 1 &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2019a&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\Pi_{\leq N}\)&lt;/span&gt; denote the projection onto Fourier modes with
-&lt;span class=&#34;math inline&#34;&gt;\(|k|\leq N\)&lt;/span&gt;. Let the source &lt;span class=&#34;math inline&#34;&gt;\(s_t\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; be a white-in-time
-Gaussian process and &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; be given by &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; as described above.
-Then there exists a unique stationary probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu^\kappa\)&lt;/span&gt;
-for the Markov process &lt;span class=&#34;math inline&#34;&gt;\((u_t,g_t)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;-independent constants
-&lt;span class=&#34;math inline&#34;&gt;\(C \geq 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ell_0\leq 1\)&lt;/span&gt; such that&lt;/p&gt;
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\frac{1}{C_0}\log N \leq \mathbb{E}_{\mu^\kappa} \|\Pi_{\leq N}g\|^{2}_{L^2}  \leq C_0\log N \quad \text{for}\quad \ell_{0}^{-1} \leq |k|\leq \kappa^{-1/2}.\label{eqBL}\tag{BL}
-\end{equation}\]&lt;/span&gt;
-&lt;div id=&#34;uniform-in-kappa-exponential-mixing-and-batchelors-law&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Uniform-in-&lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt; exponential mixing and Batchelor’s law&lt;/h2&gt;
-&lt;p&gt;The key ingredient in obtaining Batchelor’s law is the mixing properties
-of the velocity field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt;, and a quantitative understanding of how
-that mixing interacts with the diffusion. In the absence of a scalar
-source (&lt;span class=&#34;math inline&#34;&gt;\(s_t =0\)&lt;/span&gt;) and molecular diffusivity (&lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt;), the velocity
-field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; filaments &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; and forms small scales as it homogenizes, a
-process known as &lt;em&gt;mixing&lt;/em&gt; (see Figure 2).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-03-28-chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence_files/Figure%202.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 2: Mixing of a circular blob, showing filamentation and formation
-of small scales.&lt;/p&gt;
-&lt;p&gt;Mixing of the scalar &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; (assuming it is mean zero) can be quantified
-using a negative Sobolev norm. Commonly chosen is the &lt;span class=&#34;math inline&#34;&gt;\(H^{-1}\)&lt;/span&gt; norm
-&lt;span class=&#34;math inline&#34;&gt;\(\|g_t\|_{H^{-1}} := \|(-\Delta)^{-1/2}g_t\|_{L^2}\)&lt;/span&gt;, which essentially
-measures the average filamentation width, though there are many other
-expedient choices &lt;span class=&#34;citation&#34;&gt;Thiffeault (&lt;a href=&#34;#ref-Thiffeault2012-xs&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; we show that solutions to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; cause the advection
-diffusion equation (without source but with diffusion) to mix
-exponentially fast with a rate that is &lt;em&gt;uniform in the diffusivity&lt;/em&gt;
-parameter &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Theorem 2 &lt;span class=&#34;citation&#34;&gt;(Uniform-in-diffusivity mixing, &lt;a href=&#34;#ref-BBPS19II&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2021&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Let&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise. There exists
-a &lt;strong&gt;deterministic&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\gamma &amp;gt; 0\)&lt;/span&gt;, independent of &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;, such that for
-all initial &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt;, and all &lt;span class=&#34;math inline&#34;&gt;\(\kappa \in [0,1]\)&lt;/span&gt; there is a random constant
-&lt;span class=&#34;math inline&#34;&gt;\(D_\kappa = D_\kappa(u_0,\omega)\)&lt;/span&gt; so that for all zero-mean
-&lt;span class=&#34;math inline&#34;&gt;\(g_0 \in H^1\)&lt;/span&gt; and all &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt; the following holds almost surely
-&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\|g_t\|_{H^{-1}} \leq D_\kappa e^{-\gamma t}\|g_0\|_{H^1}.\label{eqEM}\tag{EM}
-\end{equation}\]&lt;/span&gt; &lt;em&gt;The random constant&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(D_\kappa\)&lt;/span&gt;, has finite second
-moment &lt;strong&gt;uniformly bounded in&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\kappa\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Theorem 2 can be seen as a direct consequence of Theorem 1 and follows
-from a fairly straight forward argument using the mild form of
-&lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqAD}\)&lt;/span&gt; and estimates on the stochastic convolution. This argument
-is carried out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPSbatch19&#34;&gt;2019a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;lagrangian-chaos&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Lagrangian chaos&lt;/h2&gt;
-&lt;p&gt;It has long been understood in the physics community (e.g. &lt;span class=&#34;citation&#34;&gt;Bohr et al. (&lt;a href=&#34;#ref-BMOV05&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;Antonsen Jr and Ott (&lt;a href=&#34;#ref-AntonsenOtt1991&#34;&gt;1991&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ott (&lt;a href=&#34;#ref-ott-1999&#34;&gt;1999&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Shraiman and Siggia (&lt;a href=&#34;#ref-ShraimanSiggia00&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the predominant
-mechanism for mixing in spatially regular fluids is the chaotic motion
-of the particle trajectories &lt;span class=&#34;math inline&#34;&gt;\(x_t = \phi^t(x)\)&lt;/span&gt; of the &lt;strong&gt;Lagrangian flow
-map&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(\phi^t : \mathbb{T}^d \to \mathbb{T}^d\)&lt;/span&gt; associated to the
-velocity field &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt;, defined by &lt;span class=&#34;math display&#34;&gt;\[
-  \frac{d}{dt} \phi^t(x) = u_t(\phi^t(x)), \quad \phi^0(x) = x\in \mathbb{T}d.
-\]&lt;/span&gt; Here we characterize chaos through having a &lt;em&gt;positive Lyapunov
-exponent&lt;/em&gt; &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-0&amp;lt; \lambda_1 := \lim_{t\to \infty} \frac{1}{t}\log|D_x\phi^t| \, .\label{eqPE}\tag{PE}
-\end{equation}\]&lt;/span&gt; This property is typically referred to as &lt;strong&gt;Lagrangian
-chaos&lt;/strong&gt; in the fluid mechanics literature.&lt;/p&gt;
-&lt;p&gt;In the deterministic setting, proving positivity of Lyapunov exponents
-as in &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; is currently hopelessly out of reach due to the
-possible formation of coherent structures and lack of ergodicity.
-However, starting with the seminal work of Furstenberg
-(&lt;span class=&#34;citation&#34;&gt;Furstenberg (&lt;a href=&#34;#ref-furstenberg1963noncommuting&#34;&gt;1963&lt;/a&gt;)&lt;/span&gt;), significant success has been achieved in
-proving existence and positivity of Lyapunov exponents in the context of
-&lt;em&gt;random dynamical systems&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold2013random&#34;&gt;2013&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kifer (&lt;a href=&#34;#ref-kifer2012ergodic&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;,
-&lt;span class=&#34;citation&#34;&gt;P. H. Baxendale (&lt;a href=&#34;#ref-baxendale1989lyapunov&#34;&gt;1989&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Ledrappier and Young (&lt;a href=&#34;#ref-ledrappier1985metric&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt;). Ideas in this vein are
-what enabled us to prove the following Lagrangian chaos result, the
-first step in the proof of Theorem 3.&lt;/p&gt;
-&lt;p&gt;Theorem 3 &lt;span class=&#34;citation&#34;&gt;(Lagrangian chaos, &lt;a href=&#34;#ref-BBPS18&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith 2018&lt;/a&gt;)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(u_t\)&lt;/span&gt; solve &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqSNS}\)&lt;/span&gt; with non-degenerate noise as above, then
-there exists a &lt;strong&gt;deterministic&lt;/strong&gt; constant &lt;span class=&#34;math inline&#34;&gt;\(\lambda_1 &amp;gt; 0\)&lt;/span&gt; (independent
-of &lt;span class=&#34;math inline&#34;&gt;\(u_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\omega\)&lt;/span&gt;) for which &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; holds almost surely.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;decay-of-correlations-and-mixing&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Decay of correlations and mixing&lt;/h2&gt;
-&lt;p&gt;Let us now address how &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqEM}\)&lt;/span&gt; is obtained in the case
-&lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt;. In this case, the solution &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is given by
-&lt;span class=&#34;math inline&#34;&gt;\(g_t = g_0 \circ (\phi^t)^{-1}\)&lt;/span&gt;. In view of this, &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; suggests
-that &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; is `stretched out’ considerably as &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; increases, leading to
-a rapid generation of high frequencies as oppositely signed values of
-the concentration profile &lt;span class=&#34;math inline&#34;&gt;\(g_t\)&lt;/span&gt; ``pile up’’ against each other almost
-everywhere in the domain. Indeed, this local-to-global mechanism is
-widely used in dynamics. It is known as &lt;em&gt;decay of correlations&lt;/em&gt; and
-takes the form &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\left|\int (f\circ \phi^t)\, g dx \right| \leq D_\kappa e^{-\gamma t}\|f\|_{H^1}\|g\|_{H^1}\label{eq1}\tag{1}
-\end{equation}\]&lt;/span&gt; for each mean zero &lt;span class=&#34;math inline&#34;&gt;\(f,g\in H^1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(t&amp;gt;0\)&lt;/span&gt;. This is
-equivalent to exponential mixing &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqEM}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Despite this simple picture, passing from &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eqPE}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\eqref{eq1}\)&lt;/span&gt;
-requires serious work. When random driving is present, the &lt;strong&gt;two-point
-process&lt;/strong&gt; is a powerful tool for proving exponential correlation decay
-(&lt;span class=&#34;citation&#34;&gt;P. Baxendale and Stroock (&lt;a href=&#34;#ref-baxendale1988large&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Dolgopyat et al. (&lt;a href=&#34;#ref-dolgopyat2004sample&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;In our context, this is the Markov process that simultaneously tracks
-two particles subjected to the same velocity field
-&lt;span class=&#34;math inline&#34;&gt;\((u_t,\phi^t(x),\phi^t(y))\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(x \neq y\)&lt;/span&gt;. Correlation decay for
-generic noise realizations is connected with the rate at which the
-probabilistic law of &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), \phi^t(y))\)&lt;/span&gt; relaxes to its
-equilibrium statistics (known as &lt;em&gt;geometric ergodicity&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;The proof of Theorem 2 with &lt;span class=&#34;math inline&#34;&gt;\(\kappa = 0\)&lt;/span&gt; utilizes this connection using
-tools from the theory of Markov chains, particularly the Harris theorem
-&lt;span class=&#34;citation&#34;&gt;Meyn and Tweedie (&lt;a href=&#34;#ref-meyn2012markov&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;. The main difficulty to overcome here is the degeneracy
-in the &lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t(x), \phi^t(y))\)&lt;/span&gt; process near the diagonal
-&lt;span class=&#34;math inline&#34;&gt;\(\{x=y\}\)&lt;/span&gt;. One needs to show that any time two particles are close, they
-separate again exponentially fast. This effectively amounts to a large
-deviation estimate on the convergence of finite-time Lyapunov exponents
-to the asymptotic Lyapunov exponent deduced in Theorem 3, and is carried
-out in &lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19I&#34;&gt;2019b&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;It remains to incorporate molecular diffusion (&lt;span class=&#34;math inline&#34;&gt;\(\kappa &amp;gt; 0\)&lt;/span&gt;) into this
-scheme. This comes down again to the two-point process, now with
-Lagrangian flow &lt;span class=&#34;math inline&#34;&gt;\(\phi^t_\kappa\)&lt;/span&gt; augmented by an additional white noise
-term with variance &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{\kappa}\)&lt;/span&gt; to account for molecular diffusivity.
-The primary step is to show that one can pass to the singular limit
-&lt;span class=&#34;math inline&#34;&gt;\(\kappa \to 0\)&lt;/span&gt; in the dominant eigenvalue, eigenfunction pair for the
-Perron-Frobenius operator corresponding to
-&lt;span class=&#34;math inline&#34;&gt;\((u_t, \phi^t_\kappa(x), \phi^t_\kappa(y))\)&lt;/span&gt;; this is carried out in
-&lt;span class=&#34;citation&#34;&gt;Bedrossian, Blumenthal, and Punshon-Smith (&lt;a href=&#34;#ref-BBPS19II&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;Bibliography&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-AO03&#34; class=&#34;csl-entry&#34;&gt;
-Antonia, RA, and P Orlandi. 2003. &lt;span&gt;“Effect of Schmidt Number on Small-Scale Passive Scalar Turbulence.”&lt;/span&gt; &lt;em&gt;Appl. Mech. Rev.&lt;/em&gt; 56 (6): 615–32.
-&lt;/div&gt;
-&lt;div id=&#34;ref-AntonsenOtt1991&#34; class=&#34;csl-entry&#34;&gt;
-Antonsen Jr, Thomas M, and Edward Ott. 1991. &lt;span&gt;“Multifractal Power Spectra of Passive Scalars Convected by Chaotic Fluid Flows.”&lt;/span&gt; &lt;em&gt;Physical Review A&lt;/em&gt; 44 (2): 851.
-&lt;/div&gt;
-&lt;div id=&#34;ref-arnold2013random&#34; class=&#34;csl-entry&#34;&gt;
-Arnold, Ludwig. 2013. &lt;em&gt;Random Dynamical Systems&lt;/em&gt;. Springer Science &amp;amp; Business Media.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Batchelor59&#34; class=&#34;csl-entry&#34;&gt;
-Batchelor, George K. 1959. &lt;span&gt;“Small-Scale Variation of Convected Quantities Like Temperature in Turbulent Fluid Part 1. General Discussion and the Case of Small Conductivity.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 5 (1): 113–33.
-&lt;/div&gt;
-&lt;div id=&#34;ref-baxendale1989lyapunov&#34; class=&#34;csl-entry&#34;&gt;
-Baxendale, Peter H. 1989. &lt;span&gt;“Lyapunov Exponents and Relative Entropy for a Stochastic Flow of Diffeomorphisms.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt; 81 (4): 521–54.
-&lt;/div&gt;
-&lt;div id=&#34;ref-baxendale1988large&#34; class=&#34;csl-entry&#34;&gt;
-Baxendale, PH, and DW Stroock. 1988. &lt;span&gt;“Large Deviations and Stochastic Flows of Diffeomorphisms.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt; 80 (2): 169–215.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BBPSbatch19&#34; class=&#34;csl-entry&#34;&gt;
-Bedrossian, Jacob, Alex Blumenthal, and Sam Punshon-Smith. 2019a. &lt;span&gt;“The &lt;span&gt;Batchelor&lt;/span&gt; Spectrum of Passive Scalar Turbulence in Stochastic Fluid Mechanics.”&lt;/span&gt; &lt;em&gt;Comm. Pure Appl. Math.&lt;/em&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-BBPS18&#34; class=&#34;csl-entry&#34;&gt;
-Bedrossian, Jacob, Alex Blumenthal, and Samuel Punshon-Smith. 2018. &lt;span&gt;“Lagrangian Chaos and Scalar Advection in Stochastic Fluid Mechanics.”&lt;/span&gt; &lt;em&gt;J. Euro. Math. Soc.&lt;/em&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-BBPS19I&#34; class=&#34;csl-entry&#34;&gt;
-———. 2019b. &lt;span&gt;“Almost-Sure Exponential Mixing of Passive Scalars by the Stochastic &lt;span&gt;N&lt;/span&gt;avier-&lt;span&gt;S&lt;/span&gt;tokes Equations.”&lt;/span&gt; &lt;em&gt;Ann. Of Prob.&lt;/em&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-BBPS19II&#34; class=&#34;csl-entry&#34;&gt;
-———. 2021. &lt;span&gt;“Almost-Sure Enhanced Dissipation and Uniform-in-Diffusivity Exponential Mixing for Advection-Diffusion by Stochastic &lt;span&gt;N&lt;/span&gt;avier-&lt;span&gt;S&lt;/span&gt;tokes.”&lt;/span&gt; &lt;em&gt;Prob. Theory Rel. Fields&lt;/em&gt; 179 (3): 777–834.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BMOV05&#34; class=&#34;csl-entry&#34;&gt;
-Bohr, Tomas, Mogens H Jensen, Giovanni Paladin, and Angelo Vulpiani. 2005. &lt;em&gt;Dynamical Systems Approach to Turbulence&lt;/em&gt;. Cambridge University Press.
-&lt;/div&gt;
-&lt;div id=&#34;ref-dolgopyat2004sample&#34; class=&#34;csl-entry&#34;&gt;
-Dolgopyat, Dmitry, Vadim Kaloshin, Leonid Koralov, et al. 2004. &lt;span&gt;“Sample Path Properties of the Stochastic Flows.”&lt;/span&gt; &lt;em&gt;The Annals of Probability&lt;/em&gt; 32 (1A): 1–27.
-&lt;/div&gt;
-&lt;div id=&#34;ref-furstenberg1963noncommuting&#34; class=&#34;csl-entry&#34;&gt;
-Furstenberg, Harry. 1963. &lt;span&gt;“Noncommuting Random Products.”&lt;/span&gt; &lt;em&gt;Transactions of the American Mathematical Society&lt;/em&gt; 108 (3): 377–428.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GibsonSchwarz63&#34; class=&#34;csl-entry&#34;&gt;
-Gibson, CH, and WH Schwarz. 1963. &lt;span&gt;“The Universal Equilibrium Spectra of Turbulent Velocity and Scalar Fields.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 16 (3): 365–84.
-&lt;/div&gt;
-&lt;div id=&#34;ref-GrantEtAl68&#34; class=&#34;csl-entry&#34;&gt;
-Grant, HL, BA Hughes, WM Vogel, and A Moilliet. 1968. &lt;span&gt;“The Spectrum of Temperature Fluctuations in Turbulent Flow.”&lt;/span&gt; &lt;em&gt;Journal of Fluid Mechanics&lt;/em&gt; 34 (3): 423–42.
-&lt;/div&gt;
-&lt;div id=&#34;ref-kifer2012ergodic&#34; class=&#34;csl-entry&#34;&gt;
-Kifer, Yuri. 2012. &lt;em&gt;Ergodic Theory of Random Transformations&lt;/em&gt;. Vol. 10. Springer Science &amp;amp; Business Media.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ledrappier1985metric&#34; class=&#34;csl-entry&#34;&gt;
-Ledrappier, François, and L-S Young. 1985. &lt;span&gt;“The Metric Entropy of Diffeomorphisms: Part i: Characterization of Measures Satisfying Pesin’s Entropy Formula.”&lt;/span&gt; &lt;em&gt;Annals of Mathematics&lt;/em&gt;, 509–39.
-&lt;/div&gt;
-&lt;div id=&#34;ref-meyn2012markov&#34; class=&#34;csl-entry&#34;&gt;
-Meyn, Sean P, and Richard L Tweedie. 2012. &lt;em&gt;Markov Chains and Stochastic Stability&lt;/em&gt;. Springer Science &amp;amp; Business Media.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ott-1999&#34; class=&#34;csl-entry&#34;&gt;
-Ott, E. 1999. &lt;span&gt;“The Role of Lagrangian Chaos in the Creation of Multifractal Measures.”&lt;/span&gt; In &lt;em&gt;Fundamental Problematic Issues in Turbulence&lt;/em&gt;, edited by Albert Gyr, Wolfgang Kinzelbach, and Arkady Tsinober, 381–403. Basel: Birkh&lt;span&gt;ä&lt;/span&gt;user Basel.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ShraimanSiggia00&#34; class=&#34;csl-entry&#34;&gt;
-Shraiman, Boris I, and Eric D Siggia. 2000. &lt;span&gt;“Scalar Turbulence.”&lt;/span&gt; &lt;em&gt;Nature&lt;/em&gt; 405 (6787): 639.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Thiffeault2012-xs&#34; class=&#34;csl-entry&#34;&gt;
-Thiffeault, Jean-Luc. 2012. &lt;span&gt;“Using Multiscale Norms to Quantify Mixing and Transport.”&lt;/span&gt; &lt;em&gt;Nonlinearity&lt;/em&gt; 25 (2): R1–44.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
