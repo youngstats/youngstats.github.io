@@ -6,7 +6,16 @@
     <description>Recent content in asymptotic-statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/asymptotic-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/asymptotic-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
+      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <description>IntroductionThe Lévy distribution, together with the Normal and Cauchy distribution,belongs to the class of stable distributions, and it is among the onlythree distributions for which the density can be derived in a closedform. The density function of the two-parameter Lévy distribution isexpressed as follows: \[\begin{equation*}f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.\end{equation*}\] We specifically consider the scenario where \(\mu=0\) dueto the difficulty in estimating both parameters.</description>
+    </item>
+    
     <item>
       <title>Asymptotic Statistics in Non-Sparse Networks</title>
       <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>

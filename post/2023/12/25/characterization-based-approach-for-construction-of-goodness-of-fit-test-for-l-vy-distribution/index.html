@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution | YoungStatS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/" class="text">
+<div class="yourfancytitle"> YoungStatS </div> 
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; Back to Home</a></span>
+       <span>The blog of Young Statisticians Europe (YSE)</span>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+    </nav>
+    
+    <footer>
+<script src="//yihui.org/js/math-code.js"></script>
+<script async
+src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
+</script>
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="Home">Home</span></a></li>
+    
+    <li><a href="/categories/webinars"><span data-hover="Webinars">Webinars</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="About">About</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="Categories">Categories</span></a></li>
+    
+  </ul>
+  
+</div>
+</footer>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/hypothesis-testing">hypothesis-testing</a>
+  
+     &hercon; <a href="/categories/model-selection">model-selection</a>
+  
+     &hercon; <a href="/categories/asymptotic-statistics">asymptotic-statistics</a>
+  
+  </div>
+
+  <h1><span class="title">Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</span></h1>
+
+  
+  <h3 class="author">Žikica Lukić and Bojana Milošević
+</h3>
+  
+
+  
+  
+
+</div>
+
+
+
+<main>
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The Lévy distribution, together with the Normal and Cauchy distribution,
+belongs to the class of stable distributions, and it is among the only
+three distributions for which the density can be derived in a closed
+form. The density function of the two-parameter Lévy distribution is
+expressed as follows: <span class="math display">\[\begin{equation*}
+f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&gt;0, \; \mu\in \mathbb{R}.
+\end{equation*}\]</span> We specifically consider the scenario where <span class="math inline">\(\mu=0\)</span> due
+to the difficulty in estimating both parameters. Despite being widely
+applied in various fields such as physics, biology, medicine, and
+finance, there exist only a limited number of specific goodness-of-fit
+tests for the Lévy distribution. In this blog post, we present results
+from <span class="citation">[<a href="#ref-lukic2023characterization">1</a>]</span> by introducing two new families of test
+statistics. Following the idea from <span class="citation">[<a href="#ref-revista">2</a>]</span> (see also references
+therein), the novel statistics rely on the V-empirical Laplace transform
+and the characterization of the Lévy distribution <span class="citation">[<a href="#ref-AhsNev1">3</a>]</span>:</p>
+<p><strong>Characterization 1</strong> Suppose that <span class="math inline">\(X, Y\)</span> and <span class="math inline">\(Z\)</span> are independent and
+identically distributed random variables with density <span class="math inline">\(f\)</span> defined on
+<span class="math inline">\((0, \infty)\)</span>. Then
+<span class="math display">\[Z\text{ and }\dfrac{aX + bY}{\big(\sqrt{a}+\sqrt{b}\big)^2}\text{, }0 &lt; a, b &lt; \infty\]</span>
+are identically distributed if and only if <span class="math inline">\(f\)</span> is a density of Lévy
+distribution with arbitrary scale parameter <span class="math inline">\(\lambda\)</span>.</p>
+<p>The first application of this characterization in the development of a
+goodness-of-fit test for the Lévy distribution was presented in
+<span class="citation">[<a href="#ref-bhati2020jackknife">4</a>]</span> for the specific case of <span class="math inline">\(a=b=1\)</span>. They proposed a
+test statistic given by:</p>
+<p><span class="math inline">\(\begin{equation*} T_n^*=\int_{{\mathbb{R}^+}}\Big(\frac{1}{\binom{n}{2}}\sum\limits_{j&lt;i}I\Big\{\frac{X_i+X_j}{4}\leq t\Big\}-F_n(t)\Big)dF_n(t). \end{equation*}\)</span></p>
+<p>In <span class="citation">[<a href="#ref-lukic2023characterization">1</a>]</span>, we extended the aforementioned statistic
+to cover the case of arbitrary values of <span class="math inline">\(a, b\in \mathbb{N}\)</span>.
+Additionally, we investigated the asymptotic distributions of these
+generalized test statistics.</p>
+</div>
+<div id="our-test-statistics" class="section level2">
+<h2>Our test statistics</h2>
+<p>The equivalence in distribution between two random variables can also be
+established by equating their Laplace transforms. Considering this, our
+tests are constructed either as the supremum of the difference or the
+integrated difference of the corresponding V-empirical Laplace
+transforms of the terms described in the Characterization 1. The
+underlying rationale for this approach is that the test statistic will
+have small values when the sample is drawn from the Lévy distribution.
+The proposed test statistics are of the form:</p>
+<p><span class="math display">\[\begin{align}\label{statJn}
+J_{n,a}&amp;=\sup\limits_{t&gt;0}\Big \vert \Big (\frac{1}{n^2}\sum\limits_{i, j} e^{-\frac{t(Y_{i}+Y_{j})}{4}}-\frac{1}{n}\sum\limits_{i} e^{-tY_{i}}\Big )e^{-at} t^{\frac{3}{2}}\Big \vert =\sup\limits_{t\in [0, 1]}\Big \vert \Big (\frac{1}{n^2}\sum\limits_{i, j} t^{\frac{Y_{i}+Y_{j}}{4}}-\frac{1}{n}\sum\limits_{i} t^{Y_{i}}\Big )t^{a}\big (-\log t\big)^{\frac{3}{2}}\Big \vert ,\\
+R_{n, a}&amp; =\int_{\mathbb{R}^+}\Big (\frac{1}{n}\sum\limits_{i} e^{-tY_{i}}-\frac{1}{n^2}\sum\limits_{i, j} e^{-\frac{t(Y_{i}+Y_{j})}{4}}\Big )e^{-at} t^{\frac{3}{2}}dt=\frac{3\sqrt{\pi}}{4n^2}\sum_{i, j}\Bigg(\frac{1}{\big(a+\frac{Y_i+Y_j}{4}\big)^\frac{5}{2}}-\frac{1}{2\big(a+Y_i\big)^\frac{5}{2}}-\frac{1}{2\big(a+Y_j\big)^\frac{5}{2}}\Bigg),
+\end{align}\]</span> where <span class="math inline">\(Y_k=\frac{X_k}{\hat{\lambda}}\)</span> and <span class="math inline">\(\hat{\lambda}\)</span> is
+a suitably chosen estimate of <span class="math inline">\(\lambda\)</span>. We have considered maximum
+likelihood and median-based estimates. It should be noted that any
+consistent estimate of <span class="math inline">\(\lambda\)</span> can be employed. The performance of the
+tests naturally varies depending on the chosen estimate.</p>
+<p>We have determined the asymptotic distributions of the novel tests and
+provided the 95th percentiles of empirical distributions for large
+sample sizes, demonstrating a fast stabilization of the distribution.
+These results are summarized in the following two theorems:</p>
+<p><strong>Theorem 1</strong> Let <span class="math inline">\(a\geq 1\)</span> and <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d random
+variables distributed according to the Lévy law with scale parameter
+<span class="math inline">\(\lambda\)</span>. Then the following holds:
+<span class="math inline">\(\begin{equation*} \sqrt{n} J_{n, a}\overset{{D}}{\to} \sup\limits_{t\in [0, 1]}\mid \xi (t)\mid, \end{equation*}\)</span>
+where <span class="math inline">\(\xi(t)\)</span> is a centred Gaussian random process, having the
+following covariance function:</p>
+<p><span class="math inline">\(\begin{align} K(s,t)=&amp; s^a t^a (-\log (s))^{3/2} (-\log (t))^{3/2} \Big(-e^{-\sqrt{2} \big(\sqrt{-\log (s)}+\sqrt{(-\log (t))}\big)}-2 e^{- \sqrt{-2(\log(s)-\frac14\log(t))}+\sqrt{-\frac{\log (t)}{2}}}\\&amp;-2 e^{- \sqrt{2(-\log (t)-{\frac14}\log(s))}+\sqrt{-\frac{\log (s)}{2}}}+4 e^{-\frac{\sqrt{-\log (s t)}+\sqrt{-\log (s)}+\sqrt{-\log (t)}}{\sqrt{2}}}+e^{ \sqrt{-2\log (s t)}}\Big). \end{align}\)</span></p>
+<p><strong>Theorem 2</strong> Let <span class="math inline">\(a\geq 1\)</span> and <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d random
+variables distributed according to the Lévy law with scale parameter
+<span class="math inline">\(\lambda\)</span>. Then, for every <span class="math inline">\(a&gt;0\)</span>, the asymptotic distribution of
+<span class="math inline">\(\sqrt{n}R_{n, a}\)</span> as <span class="math inline">\(n\to\infty\)</span> is normal
+<span class="math inline">\(\mathcal{N}(0, \sigma^2_R(a))\)</span> where <span class="math inline">\(\sigma^2_R(a)= 4E\zeta(X; a)^2\)</span>.</p>
+<p>The expression for <span class="math inline">\(\zeta\)</span> is intricate, and for the exact formulation,
+we refer the reader to <span class="citation">[<a href="#ref-lukic2023characterization">1</a>]</span> for the exact
+expression.</p>
+</div>
+<div id="performance-of-novel-tests" class="section level2">
+<h2>Performance of novel tests</h2>
+<p>For assessing the performance of test statistics, one can usually
+consider their powers against a wide range of alternatives.</p>
+<p>We conducted a power analysis of the tests at a significance level of
+<span class="math inline">\(\alpha=0.05\)</span> using a Monte Carlo method with 10,000 replications (N =
+10,000). The objective of our study was to compare the JEL and AJEL
+approaches proposed <span class="citation">[<a href="#ref-bhati2020jackknife">4</a>]</span> with the classical approach, as
+well as to determine the empirical power of the new tests. The test
+powers were obtained using the Monte Carlo approach. Furthermore, the
+supremum of the calculation for <span class="math inline">\(J_{n, a}\)</span> was acquired using a grid
+search on 1,000 equidistant points within the interval [0, 1].</p>
+<p>Our findings revealed that the JEL and AJEL approaches proposed in
+<span class="citation">[<a href="#ref-bhati2020jackknife">4</a>]</span> are less powerful than the classical approach when
+the testing is conducted using the original version of
+<span class="math inline">\(\vert I^{[1,1]}\vert\)</span>. In almost all cases, both <span class="math inline">\(R_{a}\)</span> and <span class="math inline">\(J_{a}\)</span>
+outperform the JEL and AJEL methods. We conclude that the novel tests
+demonstrate superior performance compared to the tests <span class="math inline">\(N_1^a\)</span> and
+<span class="math inline">\(N_1^b\)</span> proposed in <span class="citation">[<a href="#ref-pitera2022goodness">5</a>]</span>. When compared to EDF-based
+tests, the performance of the novel tests is better in some cases and
+comparable in others, both for median-based and maximum likelihood
+estimators.</p>
+<p>In the case of large samples, the most natural way to compare tests is
+through the notion of asymptotic efficiency.</p>
+<p>For a detailed review of the theory presented below, we refer the reader
+to the comprehensive work of Nikitin <span class="citation">[<a href="#ref-nikitinKnjiga">6</a>]</span>.</p>
+<p>Let <span class="math inline">\(\mathcal{G}=\{g(x;\theta),\;\theta&gt;0\}\)</span> be a family of alternatives
+density functions, such that <span class="math inline">\(g(x;0)\)</span> has the Lévy distribution with
+arbitrary scale parameter, and
+<span class="math inline">\(\int_{ \mathbb{R}^+ }\frac{1}{x^2}g(x;\theta)dx&lt;\infty\)</span> for <span class="math inline">\(\theta\)</span> in
+the neighbourhood of 0, and some additional regularity conditions for
+U-statistics with non-degenerate kernels hold <span class="citation">[<a href="#ref-nikitinMetron">7</a>, <a href="#ref-meintanis2022bahadur">8</a>]</span>. Let also <span class="math inline">\(\{T_n\}\)</span> and <span class="math inline">\(\{V_n\}\)</span> be two
+sequences of test statistic that we want to compare.</p>
+<p>Then for any alternative distribution from <span class="math inline">\(\mathcal{G}\)</span> the relative
+Bahadur efficiency of the <span class="math inline">\(\{T_n\}\)</span> with respect to <span class="math inline">\(\{V_n\}\)</span> can be
+expressed as <span class="math display">\[\begin{align*}
+    e_{(T,V)}(\theta)=\frac{c_T(\theta)}{c_V(\theta)},
+\end{align*}\]</span> where <span class="math inline">\(c_{T}(\theta)\)</span> and <span class="math inline">\(c_V(\theta)\)</span> are the Bahadur
+exact slopes, functions proportional to the exponential rate of decrease
+of each test size when the sample size increases. It is usually assumed
+that <span class="math inline">\(\theta\)</span> belongs to the neighborhood of 0, and in such cases, we
+refer to the local relative Bahadur efficiency of considered sequences
+of test statistics.</p>
+<p>It is well known that for the Bahadur slope function
+Bahadur–Ragavacharri inequality holds <span class="citation">[<a href="#ref-raghavachari1970theorem">9</a>]</span>, that is
+<span class="math display">\[\begin{align*}
+    c_T(\theta)\leq 2K(\theta),
+\end{align*}\]</span> where <span class="math inline">\(K(\theta)\)</span> is the minimal Kullback–Leibler distance
+from the alternative to the class of null hypotheses. This justifies the
+definition of the local absolute Bahadur efficiency by
+<span class="math display">\[\begin{align}\label{effT}
+    eff(T)=\lim_{\theta\to 0}\frac{c_T(\theta)}{2K(\theta)}.
+\end{align}\]</span></p>
+<p>If the sequence <span class="math inline">\(\{T_{n}\}\)</span> of test statistics under the alternative
+converges in probability to some finite function <span class="math inline">\(b(\theta)&gt;0\)</span> and the
+limit <span class="math display">\[\label{ldf}
+\lim_{n\leftarrow\infty}n^{-1}\log P_{H_{0}}(T_{n}\geq t)=-f_{LD}(t)
+\]</span> exists for any <span class="math inline">\(t\)</span> in an open interval <span class="math inline">\(I\)</span>, on which <span class="math inline">\(f_{LD}\)</span> is
+continuous and <span class="math inline">\(\{b(\theta),\theta&gt;0\}\subset I\)</span> then the Bahadur exact
+slope is equal to <span class="math display">\[\begin{equation}\label{slope}
+c_{T}(\theta)=2f_{LD}(b(\theta)).
+\end{equation}\]</span> However, in many instances, calculating the large
+deviation function, and consequently the Bahadur slope, proves to be an
+extremely challenging task.</p>
+<p>In situations where the function <span class="math inline">\(c_T\)</span> cannot be computed as <span class="math inline">\(\theta\)</span>
+approaches zero, an alternative approach is to approximate the Bahadur
+slope as <span class="math inline">\(c_T^*(\theta)\)</span>. This approximate slope often closely coincides
+with the exact one. To calculate the approximate slope, we do not
+require the tail behavior of the distribution function of the statistics
+<span class="math inline">\(T_n\)</span> but instead need the tail behavior of its limiting distribution,
+which is typically easier to determine.</p>
+<p>Specifically, if the limiting distribution function of <span class="math inline">\(T_n\)</span> under the
+null hypothesis <span class="math inline">\(H_0\)</span> is denoted as <span class="math inline">\(F_T\)</span>, and its tail behavior is
+given by <span class="math inline">\(\log(1-F_T(t)) = -\frac{a_T^* t^2}{2}(1+o(1))\)</span>, where <span class="math inline">\(a_T^*\)</span>
+is a positive real number, and the limit in probability of
+<span class="math inline">\(\frac{T_n}{\sqrt{n}}\)</span> is denoted as <span class="math inline">\(b_T^*(\theta) &gt; 0\)</span>, then the
+approximate Bahadur slope is equal to
+<span class="math inline">\(c_T^*(\theta) = a_T^*\cdot (b_T^*(\theta))^2\)</span>. For the calculation of
+the local approximate Bahadur slope, one can utilize Maclaurin
+expansion.</p>
+<p>Our research findings, focusing solely on the case of the maximum
+likelihood estimator, revealed that the tuning parameter <span class="math inline">\(a\)</span>
+significantly impacts the efficiency of <span class="math inline">\(R_a\)</span> and <span class="math inline">\(J_a\)</span>. In all examined
+scenarios, the Bahadur efficiency of <span class="math inline">\(J_a\)</span> decreases as <span class="math inline">\(a\)</span> increases.
+However, this is not the case for the statistic <span class="math inline">\(R_a\)</span>. Based on our
+analysis, we concluded that the new statistics outperform the
+Bhati-Kattumanil one, with <span class="math inline">\(R_a\)</span> exhibiting superior performance in
+terms of local approximate Bahadur efficiencies.</p>
+<p>We applied the novel tests on two real datasets. The first one contained the weighted rainfall data for the month of January in India. The second dataset consisted of the well yields near Bel Air, Hartford county, Maryland.</p>
+<p><img src="/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png" /></p>
+<p>Figure: Histogram of rainfall application data and the appropriate Lévy density. The theoretical Lévy densities are drawn using the maximum likelihood estimate of the scale parameter <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+<div id="about-the-authors" class="section level1">
+<h1>About the authors</h1>
+<p><a href="https://www.linkedin.com/in/%C5%BEikica-l-128041242/">Žikica Lukić</a>,
+PhD student at the Faculty of Mathematics, University of Belgrade</p>
+<p><a href="https://poincare.matf.bg.ac.rs/~bojana/en/">Bojana Milošević</a>,
+Associate professor at the Faculty of Mathematics, University of
+Belgrade</p>
+</div>
+<div id="based-on" class="section level1">
+<h1>Based on</h1>
+<p>Žikica Lukić &amp; Bojana Milošević (2023) Characterization-based approach
+for construction of goodness-of-fit test for Lévy distribution,
+Statistics, 57:5, 1087-1116, DOI:
+<a href="https://www.tandfonline.com/doi/abs/10.1080/02331888.2023.2238236">10.1080/02331888.2023.2238236</a></p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-lukic2023characterization" class="csl-entry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline"><span class="smallcaps">Lukić</span>, Ž. and <span class="smallcaps">Milošević</span>, B. (2023). <a href="https://doi.org/10.1080/02331888.2023.2238236"><span class="nocase">Characterization-based approach for construction of goodness-of-fit test for L<span class="nocase">é</span>vy distribution</span></a>. <em>Statistics</em> <strong>57</strong> 1087–116.</div>
+</div>
+<div id="ref-revista" class="csl-entry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span class="smallcaps">Cuparić</span>, M., <span class="smallcaps">Milošević</span>, B. and <span class="smallcaps">Obradović</span>, M. (2022). <a href="https://doi.org/10.1007/s13398-021-01184-3"><span class="nocase">New consistent exponentiality tests based on V-empirical Laplace transforms with comparison of efficiencies</span></a>. <em>Revista de la Real Academia de Ciencias Exactas, F<span>ı́</span>sicas y Naturales. Serie A. Matem<span>á</span>ticas</em> <strong>116</strong> 42.</div>
+</div>
+<div id="ref-AhsNev1" class="csl-entry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline"><span class="smallcaps">Ahsanullah</span>, M. and <span class="smallcaps">Nevzorov</span>, V. B. (2019). <a href="https://doi.org/10.1515/eqc-2018-0031"><span class="nocase">On Some Characterizations of the Levy Distribution</span></a>. <em>Stochastics and Quality Control</em> <strong>34</strong> 53–7.</div>
+</div>
+<div id="ref-bhati2020jackknife" class="csl-entry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline"><span class="smallcaps">Bhati</span>, D. and <span class="smallcaps">Kattumannil</span>, S. K. (2020). <a href="https://doi.org/10.1080/02664763.2019.1672630"><span class="nocase">Jackknife empirical likelihood test for testing one-sided L<span class="nocase">é</span>vy distribution</span></a>. <em>Journal of Applied Statistics</em> <strong>47</strong> 1208–19.</div>
+</div>
+<div id="ref-pitera2022goodness" class="csl-entry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline"><span class="smallcaps">Pitera</span>, M., <span class="smallcaps">Chechkin</span>, A. and <span class="smallcaps">Wyłomańska</span>, A. (2022). <a href="https://doi.org/10.1007/s10260-021-00571-9"><span class="nocase">Goodness-of-fit test for <span class="math inline">\(\alpha\)</span>-stable distribution based on the quantile conditional variance statistics</span></a>. <em>Statistical Methods &amp; Applications</em> <strong>31</strong> 387–424.</div>
+</div>
+<div id="ref-nikitinKnjiga" class="csl-entry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline"><span class="smallcaps">Nikitin</span>, Ya. Yu. (1995). <em><a href="https://doi.org/10.1017/CBO9780511530081"><span class="nocase">Asymptotic efficiency of nonparametric tests</span></a></em>. Cambridge University Press, New York.</div>
+</div>
+<div id="ref-nikitinMetron" class="csl-entry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline"><span class="smallcaps">Nikitin</span>, Ya. Y. and <span class="smallcaps">Peaucelle</span>, I. (2004). <a href=""><span class="nocase">Efficiency and local optimality of nonparametric tests based on U-and V-statistics</span></a>. <em>Metron</em> <strong>62</strong> 185–200.</div>
+</div>
+<div id="ref-meintanis2022bahadur" class="csl-entry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline"><span class="smallcaps">Meintanis</span>, S., <span class="smallcaps">Milošević</span>, B. and <span class="smallcaps">Obradović</span>, M. (2022). <a href="https://doi.org/10.1007/s00184-022-00891-0">Bahadur efficiency for certain goodness-of-fit tests based on the empirical characteristic function</a>. <em>Metrika</em> 1–29.</div>
+</div>
+<div id="ref-raghavachari1970theorem" class="csl-entry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline"><span class="smallcaps">Raghavachari</span>, M. (1970). <a href="https://doi.org/10.1214/aoms/1177696813"><span class="nocase">On a theorem of Bahadur on the rate of convergence of test statistics</span></a>. <em>The Annals of Mathematical Statistics</em> 1695–9.</div>
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+ 
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+</body>
+</html>
+

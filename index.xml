@@ -6,7 +6,229 @@
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
+      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The Lévy distribution, together with the Normal and Cauchy distribution,
+belongs to the class of stable distributions, and it is among the only
+three distributions for which the density can be derived in a closed
+form. The density function of the two-parameter Lévy distribution is
+expressed as follows: &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
+f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.
+\end{equation*}\]&lt;/span&gt; We specifically consider the scenario where &lt;span class=&#34;math inline&#34;&gt;\(\mu=0\)&lt;/span&gt; due
+to the difficulty in estimating both parameters. Despite being widely
+applied in various fields such as physics, biology, medicine, and
+finance, there exist only a limited number of specific goodness-of-fit
+tests for the Lévy distribution. In this blog post, we present results
+from &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-lukic2023characterization&#34;&gt;1&lt;/a&gt;]&lt;/span&gt; by introducing two new families of test
+statistics. Following the idea from &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-revista&#34;&gt;2&lt;/a&gt;]&lt;/span&gt; (see also references
+therein), the novel statistics rely on the V-empirical Laplace transform
+and the characterization of the Lévy distribution &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-AhsNev1&#34;&gt;3&lt;/a&gt;]&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Characterization 1&lt;/strong&gt; Suppose that &lt;span class=&#34;math inline&#34;&gt;\(X, Y\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Z\)&lt;/span&gt; are independent and
+identically distributed random variables with density &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; defined on
+&lt;span class=&#34;math inline&#34;&gt;\((0, \infty)\)&lt;/span&gt;. Then
+&lt;span class=&#34;math display&#34;&gt;\[Z\text{ and }\dfrac{aX + bY}{\big(\sqrt{a}+\sqrt{b}\big)^2}\text{, }0 &amp;lt; a, b &amp;lt; \infty\]&lt;/span&gt;
+are identically distributed if and only if &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; is a density of Lévy
+distribution with arbitrary scale parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The first application of this characterization in the development of a
+goodness-of-fit test for the Lévy distribution was presented in
+&lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-bhati2020jackknife&#34;&gt;4&lt;/a&gt;]&lt;/span&gt; for the specific case of &lt;span class=&#34;math inline&#34;&gt;\(a=b=1\)&lt;/span&gt;. They proposed a
+test statistic given by:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\begin{equation*} T_n^*=\int_{{\mathbb{R}^+}}\Big(\frac{1}{\binom{n}{2}}\sum\limits_{j&amp;lt;i}I\Big\{\frac{X_i+X_j}{4}\leq t\Big\}-F_n(t)\Big)dF_n(t). \end{equation*}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-lukic2023characterization&#34;&gt;1&lt;/a&gt;]&lt;/span&gt;, we extended the aforementioned statistic
+to cover the case of arbitrary values of &lt;span class=&#34;math inline&#34;&gt;\(a, b\in \mathbb{N}\)&lt;/span&gt;.
+Additionally, we investigated the asymptotic distributions of these
+generalized test statistics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;our-test-statistics&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Our test statistics&lt;/h2&gt;
+&lt;p&gt;The equivalence in distribution between two random variables can also be
+established by equating their Laplace transforms. Considering this, our
+tests are constructed either as the supremum of the difference or the
+integrated difference of the corresponding V-empirical Laplace
+transforms of the terms described in the Characterization 1. The
+underlying rationale for this approach is that the test statistic will
+have small values when the sample is drawn from the Lévy distribution.
+The proposed test statistics are of the form:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\label{statJn}
+J_{n,a}&amp;amp;=\sup\limits_{t&amp;gt;0}\Big \vert \Big (\frac{1}{n^2}\sum\limits_{i, j} e^{-\frac{t(Y_{i}+Y_{j})}{4}}-\frac{1}{n}\sum\limits_{i} e^{-tY_{i}}\Big )e^{-at} t^{\frac{3}{2}}\Big \vert =\sup\limits_{t\in [0, 1]}\Big \vert \Big (\frac{1}{n^2}\sum\limits_{i, j} t^{\frac{Y_{i}+Y_{j}}{4}}-\frac{1}{n}\sum\limits_{i} t^{Y_{i}}\Big )t^{a}\big (-\log t\big)^{\frac{3}{2}}\Big \vert ,\\
+R_{n, a}&amp;amp; =\int_{\mathbb{R}^+}\Big (\frac{1}{n}\sum\limits_{i} e^{-tY_{i}}-\frac{1}{n^2}\sum\limits_{i, j} e^{-\frac{t(Y_{i}+Y_{j})}{4}}\Big )e^{-at} t^{\frac{3}{2}}dt=\frac{3\sqrt{\pi}}{4n^2}\sum_{i, j}\Bigg(\frac{1}{\big(a+\frac{Y_i+Y_j}{4}\big)^\frac{5}{2}}-\frac{1}{2\big(a+Y_i\big)^\frac{5}{2}}-\frac{1}{2\big(a+Y_j\big)^\frac{5}{2}}\Bigg),
+\end{align}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(Y_k=\frac{X_k}{\hat{\lambda}}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\hat{\lambda}\)&lt;/span&gt; is
+a suitably chosen estimate of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;. We have considered maximum
+likelihood and median-based estimates. It should be noted that any
+consistent estimate of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; can be employed. The performance of the
+tests naturally varies depending on the chosen estimate.&lt;/p&gt;
+&lt;p&gt;We have determined the asymptotic distributions of the novel tests and
+provided the 95th percentiles of empirical distributions for large
+sample sizes, demonstrating a fast stabilization of the distribution.
+These results are summarized in the following two theorems:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 1&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(a\geq 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, \dots, X_n\)&lt;/span&gt; be i.i.d random
+variables distributed according to the Lévy law with scale parameter
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;. Then the following holds:
+&lt;span class=&#34;math inline&#34;&gt;\(\begin{equation*} \sqrt{n} J_{n, a}\overset{{D}}{\to} \sup\limits_{t\in [0, 1]}\mid \xi (t)\mid, \end{equation*}\)&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\xi(t)\)&lt;/span&gt; is a centred Gaussian random process, having the
+following covariance function:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\begin{align} K(s,t)=&amp;amp; s^a t^a (-\log (s))^{3/2} (-\log (t))^{3/2} \Big(-e^{-\sqrt{2} \big(\sqrt{-\log (s)}+\sqrt{(-\log (t))}\big)}-2 e^{- \sqrt{-2(\log(s)-\frac14\log(t))}+\sqrt{-\frac{\log (t)}{2}}}\\&amp;amp;-2 e^{- \sqrt{2(-\log (t)-{\frac14}\log(s))}+\sqrt{-\frac{\log (s)}{2}}}+4 e^{-\frac{\sqrt{-\log (s t)}+\sqrt{-\log (s)}+\sqrt{-\log (t)}}{\sqrt{2}}}+e^{ \sqrt{-2\log (s t)}}\Big). \end{align}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 2&lt;/strong&gt; Let &lt;span class=&#34;math inline&#34;&gt;\(a\geq 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, \dots, X_n\)&lt;/span&gt; be i.i.d random
+variables distributed according to the Lévy law with scale parameter
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;. Then, for every &lt;span class=&#34;math inline&#34;&gt;\(a&amp;gt;0\)&lt;/span&gt;, the asymptotic distribution of
+&lt;span class=&#34;math inline&#34;&gt;\(\sqrt{n}R_{n, a}\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(n\to\infty\)&lt;/span&gt; is normal
+&lt;span class=&#34;math inline&#34;&gt;\(\mathcal{N}(0, \sigma^2_R(a))\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\sigma^2_R(a)= 4E\zeta(X; a)^2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The expression for &lt;span class=&#34;math inline&#34;&gt;\(\zeta\)&lt;/span&gt; is intricate, and for the exact formulation,
+we refer the reader to &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-lukic2023characterization&#34;&gt;1&lt;/a&gt;]&lt;/span&gt; for the exact
+expression.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;performance-of-novel-tests&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Performance of novel tests&lt;/h2&gt;
+&lt;p&gt;For assessing the performance of test statistics, one can usually
+consider their powers against a wide range of alternatives.&lt;/p&gt;
+&lt;p&gt;We conducted a power analysis of the tests at a significance level of
+&lt;span class=&#34;math inline&#34;&gt;\(\alpha=0.05\)&lt;/span&gt; using a Monte Carlo method with 10,000 replications (N =
+10,000). The objective of our study was to compare the JEL and AJEL
+approaches proposed &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-bhati2020jackknife&#34;&gt;4&lt;/a&gt;]&lt;/span&gt; with the classical approach, as
+well as to determine the empirical power of the new tests. The test
+powers were obtained using the Monte Carlo approach. Furthermore, the
+supremum of the calculation for &lt;span class=&#34;math inline&#34;&gt;\(J_{n, a}\)&lt;/span&gt; was acquired using a grid
+search on 1,000 equidistant points within the interval [0, 1].&lt;/p&gt;
+&lt;p&gt;Our findings revealed that the JEL and AJEL approaches proposed in
+&lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-bhati2020jackknife&#34;&gt;4&lt;/a&gt;]&lt;/span&gt; are less powerful than the classical approach when
+the testing is conducted using the original version of
+&lt;span class=&#34;math inline&#34;&gt;\(\vert I^{[1,1]}\vert\)&lt;/span&gt;. In almost all cases, both &lt;span class=&#34;math inline&#34;&gt;\(R_{a}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(J_{a}\)&lt;/span&gt;
+outperform the JEL and AJEL methods. We conclude that the novel tests
+demonstrate superior performance compared to the tests &lt;span class=&#34;math inline&#34;&gt;\(N_1^a\)&lt;/span&gt; and
+&lt;span class=&#34;math inline&#34;&gt;\(N_1^b\)&lt;/span&gt; proposed in &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-pitera2022goodness&#34;&gt;5&lt;/a&gt;]&lt;/span&gt;. When compared to EDF-based
+tests, the performance of the novel tests is better in some cases and
+comparable in others, both for median-based and maximum likelihood
+estimators.&lt;/p&gt;
+&lt;p&gt;In the case of large samples, the most natural way to compare tests is
+through the notion of asymptotic efficiency.&lt;/p&gt;
+&lt;p&gt;For a detailed review of the theory presented below, we refer the reader
+to the comprehensive work of Nikitin &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-nikitinKnjiga&#34;&gt;6&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{G}=\{g(x;\theta),\;\theta&amp;gt;0\}\)&lt;/span&gt; be a family of alternatives
+density functions, such that &lt;span class=&#34;math inline&#34;&gt;\(g(x;0)\)&lt;/span&gt; has the Lévy distribution with
+arbitrary scale parameter, and
+&lt;span class=&#34;math inline&#34;&gt;\(\int_{ \mathbb{R}^+ }\frac{1}{x^2}g(x;\theta)dx&amp;lt;\infty\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; in
+the neighbourhood of 0, and some additional regularity conditions for
+U-statistics with non-degenerate kernels hold &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-nikitinMetron&#34;&gt;7&lt;/a&gt;, &lt;a href=&#34;#ref-meintanis2022bahadur&#34;&gt;8&lt;/a&gt;]&lt;/span&gt;. Let also &lt;span class=&#34;math inline&#34;&gt;\(\{T_n\}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\{V_n\}\)&lt;/span&gt; be two
+sequences of test statistic that we want to compare.&lt;/p&gt;
+&lt;p&gt;Then for any alternative distribution from &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{G}\)&lt;/span&gt; the relative
+Bahadur efficiency of the &lt;span class=&#34;math inline&#34;&gt;\(\{T_n\}\)&lt;/span&gt; with respect to &lt;span class=&#34;math inline&#34;&gt;\(\{V_n\}\)&lt;/span&gt; can be
+expressed as &lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+    e_{(T,V)}(\theta)=\frac{c_T(\theta)}{c_V(\theta)},
+\end{align*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(c_{T}(\theta)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(c_V(\theta)\)&lt;/span&gt; are the Bahadur
+exact slopes, functions proportional to the exponential rate of decrease
+of each test size when the sample size increases. It is usually assumed
+that &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; belongs to the neighborhood of 0, and in such cases, we
+refer to the local relative Bahadur efficiency of considered sequences
+of test statistics.&lt;/p&gt;
+&lt;p&gt;It is well known that for the Bahadur slope function
+Bahadur–Ragavacharri inequality holds &lt;span class=&#34;citation&#34;&gt;[&lt;a href=&#34;#ref-raghavachari1970theorem&#34;&gt;9&lt;/a&gt;]&lt;/span&gt;, that is
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align*}
+    c_T(\theta)\leq 2K(\theta),
+\end{align*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(K(\theta)\)&lt;/span&gt; is the minimal Kullback–Leibler distance
+from the alternative to the class of null hypotheses. This justifies the
+definition of the local absolute Bahadur efficiency by
+&lt;span class=&#34;math display&#34;&gt;\[\begin{align}\label{effT}
+    eff(T)=\lim_{\theta\to 0}\frac{c_T(\theta)}{2K(\theta)}.
+\end{align}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If the sequence &lt;span class=&#34;math inline&#34;&gt;\(\{T_{n}\}\)&lt;/span&gt; of test statistics under the alternative
+converges in probability to some finite function &lt;span class=&#34;math inline&#34;&gt;\(b(\theta)&amp;gt;0\)&lt;/span&gt; and the
+limit &lt;span class=&#34;math display&#34;&gt;\[\label{ldf}
+\lim_{n\leftarrow\infty}n^{-1}\log P_{H_{0}}(T_{n}\geq t)=-f_{LD}(t)
+\]&lt;/span&gt; exists for any &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; in an open interval &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;, on which &lt;span class=&#34;math inline&#34;&gt;\(f_{LD}\)&lt;/span&gt; is
+continuous and &lt;span class=&#34;math inline&#34;&gt;\(\{b(\theta),\theta&amp;gt;0\}\subset I\)&lt;/span&gt; then the Bahadur exact
+slope is equal to &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{slope}
+c_{T}(\theta)=2f_{LD}(b(\theta)).
+\end{equation}\]&lt;/span&gt; However, in many instances, calculating the large
+deviation function, and consequently the Bahadur slope, proves to be an
+extremely challenging task.&lt;/p&gt;
+&lt;p&gt;In situations where the function &lt;span class=&#34;math inline&#34;&gt;\(c_T\)&lt;/span&gt; cannot be computed as &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;
+approaches zero, an alternative approach is to approximate the Bahadur
+slope as &lt;span class=&#34;math inline&#34;&gt;\(c_T^*(\theta)\)&lt;/span&gt;. This approximate slope often closely coincides
+with the exact one. To calculate the approximate slope, we do not
+require the tail behavior of the distribution function of the statistics
+&lt;span class=&#34;math inline&#34;&gt;\(T_n\)&lt;/span&gt; but instead need the tail behavior of its limiting distribution,
+which is typically easier to determine.&lt;/p&gt;
+&lt;p&gt;Specifically, if the limiting distribution function of &lt;span class=&#34;math inline&#34;&gt;\(T_n\)&lt;/span&gt; under the
+null hypothesis &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; is denoted as &lt;span class=&#34;math inline&#34;&gt;\(F_T\)&lt;/span&gt;, and its tail behavior is
+given by &lt;span class=&#34;math inline&#34;&gt;\(\log(1-F_T(t)) = -\frac{a_T^* t^2}{2}(1+o(1))\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(a_T^*\)&lt;/span&gt;
+is a positive real number, and the limit in probability of
+&lt;span class=&#34;math inline&#34;&gt;\(\frac{T_n}{\sqrt{n}}\)&lt;/span&gt; is denoted as &lt;span class=&#34;math inline&#34;&gt;\(b_T^*(\theta) &amp;gt; 0\)&lt;/span&gt;, then the
+approximate Bahadur slope is equal to
+&lt;span class=&#34;math inline&#34;&gt;\(c_T^*(\theta) = a_T^*\cdot (b_T^*(\theta))^2\)&lt;/span&gt;. For the calculation of
+the local approximate Bahadur slope, one can utilize Maclaurin
+expansion.&lt;/p&gt;
+&lt;p&gt;Our research findings, focusing solely on the case of the maximum
+likelihood estimator, revealed that the tuning parameter &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;
+significantly impacts the efficiency of &lt;span class=&#34;math inline&#34;&gt;\(R_a\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(J_a\)&lt;/span&gt;. In all examined
+scenarios, the Bahadur efficiency of &lt;span class=&#34;math inline&#34;&gt;\(J_a\)&lt;/span&gt; decreases as &lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt; increases.
+However, this is not the case for the statistic &lt;span class=&#34;math inline&#34;&gt;\(R_a\)&lt;/span&gt;. Based on our
+analysis, we concluded that the new statistics outperform the
+Bhati-Kattumanil one, with &lt;span class=&#34;math inline&#34;&gt;\(R_a\)&lt;/span&gt; exhibiting superior performance in
+terms of local approximate Bahadur efficiencies.&lt;/p&gt;
+&lt;p&gt;We applied the novel tests on two real datasets. The first one contained the weighted rainfall data for the month of January in India. The second dataset consisted of the well yields near Bel Air, Hartford county, Maryland.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Figure: Histogram of rainfall application data and the appropriate Lévy density. The theoretical Lévy densities are drawn using the maximum likelihood estimate of the scale parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;About the authors&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/%C5%BEikica-l-128041242/&#34;&gt;Žikica Lukić&lt;/a&gt;,
+PhD student at the Faculty of Mathematics, University of Belgrade&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://poincare.matf.bg.ac.rs/~bojana/en/&#34;&gt;Bojana Milošević&lt;/a&gt;,
+Associate professor at the Faculty of Mathematics, University of
+Belgrade&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;based-on&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Based on&lt;/h1&gt;
+&lt;p&gt;Žikica Lukić &amp;amp; Bojana Milošević (2023) Characterization-based approach
+for construction of goodness-of-fit test for Lévy distribution,
+Statistics, 57:5, 1087-1116, DOI:
+&lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1080/02331888.2023.2238236&#34;&gt;10.1080/02331888.2023.2238236&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body&#34;&gt;
+&lt;div id=&#34;ref-lukic2023characterization&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[1] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Lukić&lt;/span&gt;, Ž. and &lt;span class=&#34;smallcaps&#34;&gt;Milošević&lt;/span&gt;, B. (2023). &lt;a href=&#34;https://doi.org/10.1080/02331888.2023.2238236&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;Characterization-based approach for construction of goodness-of-fit test for L&lt;span class=&#34;nocase&#34;&gt;é&lt;/span&gt;vy distribution&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Statistics&lt;/em&gt; &lt;strong&gt;57&lt;/strong&gt; 1087–116.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-revista&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[2] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Cuparić&lt;/span&gt;, M., &lt;span class=&#34;smallcaps&#34;&gt;Milošević&lt;/span&gt;, B. and &lt;span class=&#34;smallcaps&#34;&gt;Obradović&lt;/span&gt;, M. (2022). &lt;a href=&#34;https://doi.org/10.1007/s13398-021-01184-3&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;New consistent exponentiality tests based on V-empirical Laplace transforms with comparison of efficiencies&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Revista de la Real Academia de Ciencias Exactas, F&lt;span&gt;ı́&lt;/span&gt;sicas y Naturales. Serie A. Matem&lt;span&gt;á&lt;/span&gt;ticas&lt;/em&gt; &lt;strong&gt;116&lt;/strong&gt; 42.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-AhsNev1&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[3] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Ahsanullah&lt;/span&gt;, M. and &lt;span class=&#34;smallcaps&#34;&gt;Nevzorov&lt;/span&gt;, V. B. (2019). &lt;a href=&#34;https://doi.org/10.1515/eqc-2018-0031&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;On Some Characterizations of the Levy Distribution&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Stochastics and Quality Control&lt;/em&gt; &lt;strong&gt;34&lt;/strong&gt; 53–7.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-bhati2020jackknife&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[4] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Bhati&lt;/span&gt;, D. and &lt;span class=&#34;smallcaps&#34;&gt;Kattumannil&lt;/span&gt;, S. K. (2020). &lt;a href=&#34;https://doi.org/10.1080/02664763.2019.1672630&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;Jackknife empirical likelihood test for testing one-sided L&lt;span class=&#34;nocase&#34;&gt;é&lt;/span&gt;vy distribution&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Journal of Applied Statistics&lt;/em&gt; &lt;strong&gt;47&lt;/strong&gt; 1208–19.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-pitera2022goodness&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[5] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Pitera&lt;/span&gt;, M., &lt;span class=&#34;smallcaps&#34;&gt;Chechkin&lt;/span&gt;, A. and &lt;span class=&#34;smallcaps&#34;&gt;Wyłomańska&lt;/span&gt;, A. (2022). &lt;a href=&#34;https://doi.org/10.1007/s10260-021-00571-9&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;Goodness-of-fit test for &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;-stable distribution based on the quantile conditional variance statistics&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Statistical Methods &amp;amp; Applications&lt;/em&gt; &lt;strong&gt;31&lt;/strong&gt; 387–424.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-nikitinKnjiga&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[6] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Nikitin&lt;/span&gt;, Ya. Yu. (1995). &lt;em&gt;&lt;a href=&#34;https://doi.org/10.1017/CBO9780511530081&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;Asymptotic efficiency of nonparametric tests&lt;/span&gt;&lt;/a&gt;&lt;/em&gt;. Cambridge University Press, New York.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-nikitinMetron&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[7] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Nikitin&lt;/span&gt;, Ya. Y. and &lt;span class=&#34;smallcaps&#34;&gt;Peaucelle&lt;/span&gt;, I. (2004). &lt;a href=&#34;&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;Efficiency and local optimality of nonparametric tests based on U-and V-statistics&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;Metron&lt;/em&gt; &lt;strong&gt;62&lt;/strong&gt; 185–200.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-meintanis2022bahadur&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[8] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Meintanis&lt;/span&gt;, S., &lt;span class=&#34;smallcaps&#34;&gt;Milošević&lt;/span&gt;, B. and &lt;span class=&#34;smallcaps&#34;&gt;Obradović&lt;/span&gt;, M. (2022). &lt;a href=&#34;https://doi.org/10.1007/s00184-022-00891-0&#34;&gt;Bahadur efficiency for certain goodness-of-fit tests based on the empirical characteristic function&lt;/a&gt;. &lt;em&gt;Metrika&lt;/em&gt; 1–29.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-raghavachari1970theorem&#34; class=&#34;csl-entry&#34;&gt;
+&lt;div class=&#34;csl-left-margin&#34;&gt;[9] &lt;/div&gt;&lt;div class=&#34;csl-right-inline&#34;&gt;&lt;span class=&#34;smallcaps&#34;&gt;Raghavachari&lt;/span&gt;, M. (1970). &lt;a href=&#34;https://doi.org/10.1214/aoms/1177696813&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;On a theorem of Bahadur on the rate of convergence of test statistics&lt;/span&gt;&lt;/a&gt;. &lt;em&gt;The Annals of Mathematical Statistics&lt;/em&gt; 1695–9.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
     <item>
       <title>Merry Christmas and Happy New Year 2024!</title>
       <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
@@ -1422,141 +1644,6 @@ Rosenstiehl, P. 1984. &lt;span&gt;“Planar Permutations Defined by Two Intersec
 &lt;/div&gt;
 &lt;div id=&#34;ref-zvonkin-meander-survey&#34; class=&#34;csl-entry&#34;&gt;
 Zvonkin, Alexander. 2021. &lt;span&gt;“&lt;span&gt;M&lt;/span&gt;eanders: A &lt;span&gt;P&lt;/span&gt;ersonal &lt;span&gt;P&lt;/span&gt;erspective.”&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
-      <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
-      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
-      <description>
-
-
-&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; } }
-});
-&lt;/script&gt;
-&lt;div id=&#34;overview&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Overview&lt;/h2&gt;
-&lt;p&gt;In many real data applications we are often required to model jointly &lt;span class=&#34;math inline&#34;&gt;\(d\geq 3\)&lt;/span&gt; continuous random variables, denoted as &lt;span class=&#34;math inline&#34;&gt;\(Y_1,\dots,Y_d\)&lt;/span&gt; . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as &lt;span class=&#34;math inline&#34;&gt;\(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\)&lt;/span&gt; . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure. Furthermore, the idea of modelling the effect of covariates on the dependence structure described by copulas has recently attracted increasing attention.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;proposal&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Proposal&lt;/h2&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Barone and Dalla Valle (&lt;a href=&#34;#ref-barone2023bayesian&#34; role=&#34;doc-biblioref&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt; we provide a flexible Bayesian mixture model that returns easy-to-interpret results, estimating the effects of covariates on high-dimensional dependence structures and showing good performances in both clustering with unknown number of components and density estimation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;dirichlet-process-mixture-of-conditional-vines&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Dirichlet process mixture of conditional vines&lt;/h2&gt;
-&lt;p&gt;Let us consider &lt;span class=&#34;math inline&#34;&gt;\(Y_1, \ldots, Y_d\)&lt;/span&gt; , which are continuous random variables of interest and let &lt;span class=&#34;math inline&#34;&gt;\(\textbf{X}=(X_1, \ldots, X_p)\)&lt;/span&gt; be a vector of covariates that may affect the dependence between &lt;span class=&#34;math inline&#34;&gt;\(Y_1, \ldots, Y_d\)&lt;/span&gt;. Then, the conditional joint distribution function of &lt;span class=&#34;math inline&#34;&gt;\((Y_1, \ldots, Y_d)\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(\textbf{X}= \textbf{x}\)&lt;/span&gt; is&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-F_x (y_1, \ldots, y_d) = P(Y_1 \leq y_1, \ldots, Y_d \leq y_d | \textbf{X}= \textbf{x}),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;under the assumption that such conditional distribution exists (see &lt;span class=&#34;citation&#34;&gt;Gijbels et al. (&lt;a href=&#34;#ref-gijbels2012multivariate&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Abegaz, Gijbels, and Veraverbeke (&lt;a href=&#34;#ref-abegaz2012semiparametric&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Acar, Craiu, and Yao (&lt;a href=&#34;#ref-acar2011dependence&#34; role=&#34;doc-biblioref&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt; ). We denote the conditional marginals of &lt;span class=&#34;math inline&#34;&gt;\(F_x\)&lt;/span&gt; as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{eqnarray*}F_{1,x}(y_1) &amp;amp; = &amp;amp; P(Y_1 \leq y_1 | \textbf{X}= \textbf{x}), \\&amp;amp; &amp;amp; \ldots \\F_{d,x}(y_d) &amp;amp; = &amp;amp; P(Y_d \leq y_d | \textbf{X}= \textbf{x}). \end{eqnarray*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;If the marginals are continuous, then Sklar’s theorem &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-sklar1959fonctions&#34; role=&#34;doc-biblioref&#34;&gt;Sklar 1959&lt;/a&gt;)&lt;/span&gt; allows us to write&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-C_x (u_1, \ldots, u_d) = F_x \left( F_{1,x}^{-1} (u_1), \ldots, F_{d,x}^{-1} (u_d) \right)
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(F_{j,x}^{-1} (u_j) = \inf \left\{ y_j : F_{j,x} \geq u_j \right\}\)&lt;/span&gt;, for &lt;span class=&#34;math inline&#34;&gt;\(j = 1,\ldots, d\)&lt;/span&gt; , are the conditional quantile functions and &lt;span class=&#34;math inline&#34;&gt;\(u_j = F_{j,x}(y_j)\)&lt;/span&gt;. The conditional copula &lt;span class=&#34;math inline&#34;&gt;\(C_x\)&lt;/span&gt; fully describes the conditional dependence structure of &lt;span class=&#34;math inline&#34;&gt;\((Y_1, \ldots, Y_d)\)&lt;/span&gt; given &lt;span class=&#34;math inline&#34;&gt;\(\textbf{X}= \textbf{x}\)&lt;/span&gt;. Therefore, the conditional joint distribution function can be written as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-F_x (Y_1, \ldots, Y_d) = C_x \left( F_{1,x}(y_1), \ldots, F_{d,x} (y_d) \right).
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Let us denote the copula density corresponding to the distribution &lt;span class=&#34;math inline&#34;&gt;\(C_x \left( F_{1x}(y_1), \ldots, F_{dx} (y_d) \right)\)&lt;/span&gt; as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-c_x \left(u_1, \ldots, u_d \right) = c_{\boldsymbol{\theta}} (u_1, \ldots, u_d | \textbf{x}) = c_{\boldsymbol{\theta}(\textbf{x})} (u_1, \ldots, u_d),
-\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}\)&lt;/span&gt; is the parameter vector of the &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;-variate copula density. We assume that the function &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\theta}(\textbf{x})\)&lt;/span&gt; depends on a vector of parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\beta}\)&lt;/span&gt; such that &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
-\label{condcop}
-c_{\boldsymbol{\theta}(\textbf{x})} (u_1, \ldots, u_d) = c_{\boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})} (u_1, \ldots, u_d) = c_{1:d} (u_1, \ldots, u_d \,  |  \, \boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})).
-\end{equation}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The \eqref{condcop} can be written in terms of vines &lt;span class=&#34;citation&#34;&gt;Czado (&lt;a href=&#34;#ref-czado2019analyzing&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, where each pair-copula depends on the vector of covariates &lt;span class=&#34;math inline&#34;&gt;\(\textbf{X}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;center&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-05-19-bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures_files/vine.png&#34; width=&#34;350&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Trivariate vine representation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/center&gt;
-&lt;p&gt;The vine representation can be generalized to special vine distribution classes, the most popular of which are D-vines (see &lt;span class=&#34;citation&#34;&gt;Bedford and Cooke (&lt;a href=&#34;#ref-bedford2001probability&#34; role=&#34;doc-biblioref&#34;&gt;2001&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Aas et al. (&lt;a href=&#34;#ref-aas2009pair&#34; role=&#34;doc-biblioref&#34;&gt;2009&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Czado (&lt;a href=&#34;#ref-czado2019analyzing&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;).The conditional D-vine decomposition takes the form&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{multline*}c_{1:d} (u_1,\ldots, u_d \,| \,\boldsymbol{\theta}(\textbf{x}| \boldsymbol{\beta})) = \\ \prod_{\ell=1}^{d-1}\prod_{k=1}^{d-\ell}c_{k,\ell+k; k+1, \ldots, k+\ell-1}\left\{F_{k | k+1, \ldots, k+\ell-1,x} (y_k | y_{k+1, \ldots, k+\ell-1}),  \right. \\ \left. F_{\ell+k | k+1, \ldots, k+\ell-1,x} (y_{\ell+k}| y_{k+1, \ldots, k+\ell-1}) \,  |  \,  \boldsymbol{\theta}_{k,\ell+k; k+1, \ldots, k+\ell-1}(\textbf{x}| \boldsymbol{\beta})\right\}.\end{multline*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Barone and Dalla Valle (&lt;a href=&#34;#ref-barone2023bayesian&#34; role=&#34;doc-biblioref&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;, we model multivariate dependence structures specified as the product of &lt;span class=&#34;math inline&#34;&gt;\(\nu=d(d-1)/2\)&lt;/span&gt; pair copulas, indexed by the &lt;span class=&#34;math inline&#34;&gt;\(\nu\times(q+1)\)&lt;/span&gt;-dimensional vector of parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\beta}\)&lt;/span&gt;. The covariates &lt;span class=&#34;math inline&#34;&gt;\(f_{h}(x_h)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(h=1,\dots,p\)&lt;/span&gt;, are independent random variables with parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\phi}=\left (\phi_{1},\dots,\phi_p \right)\)&lt;/span&gt;. Note that &lt;span class=&#34;math inline&#34;&gt;\(q\ge p\)&lt;/span&gt; and its value depends on the chosen link function; for example if the link is linear &lt;span class=&#34;math inline&#34;&gt;\(q=p\)&lt;/span&gt;. Let the vector of parameters &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\xi}=\left (\boldsymbol{\beta},\boldsymbol{\phi} \right)\)&lt;/span&gt; be defined on the parameter space &lt;span class=&#34;math inline&#34;&gt;\(\Xi\)&lt;/span&gt;. We rewrite the density &lt;span class=&#34;math inline&#34;&gt;\(\textbf{f}_{G}(\textbf{x}) \cdot c_G(\cdot, \ldots, \cdot | \textbf{x})\)&lt;/span&gt; as an infinite mixture of conditional vine copulas with kernel &lt;span class=&#34;math inline&#34;&gt;\(\textbf{f}_{\boldsymbol{\xi}}(\textbf{x})\cdot c_{\boldsymbol{\xi}}(\cdot, \ldots, \cdot | \textbf{x})\)&lt;/span&gt; with respect to the mixing measure &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt;, that is&lt;span class=&#34;math display&#34;&gt;\[
- \textbf{f}_{G} (\textbf{x}) c_{G} (u_1, \ldots, u_d  | \textbf{x}) = 
-\int  \textbf{f}_{\boldsymbol{\phi_j}}(\textbf{x})  c_{1:d}(u_1, \ldots, u_d \, | \, \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}_j))dG(\boldsymbol{\xi}).
-\]&lt;/span&gt;With a Dirichlet Process (DP) prior on &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt;, we get a Dirichlet Process Mixture (DPM) of conditional vine copulas, which may be alternatively represented as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\textbf{f}_{\boldsymbol{\phi}} (\textbf{x}) c_{ \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}) } (u_1, \ldots, u_d \, | \, \textbf{x}) = \sum_{j=1}^{\infty} \omega_j \,\textbf{f}_{\boldsymbol{\phi_j}}(\textbf{x})  c_{1:d}(u_1, \ldots, u_d \, | \, \boldsymbol{\theta}(\textbf{x} | \boldsymbol{\beta}_j)),
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;where the weights &lt;span class=&#34;math inline&#34;&gt;\(\omega_j\)&lt;/span&gt; sum to &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;. The posterior distribution &lt;span class=&#34;math inline&#34;&gt;\(\Pi(G| \textbf{Y},\textbf{X})\)&lt;/span&gt; is a mixture of DP models, mixing with respect to the latent variables &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\xi}_i\)&lt;/span&gt; specific to each observation &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\((F_1(y_{1i}),\dots,F_d(y_{di}))\)&lt;/span&gt; &lt;/p&gt;
-&lt;p&gt;for &lt;span class=&#34;math inline&#34;&gt;\(i=1,\dots,N\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-G| \textbf{Y},\textbf{X} \sim\int DP\left (MG_0+\sum_{i=1}^N\delta_{\boldsymbol{\phi}_i\boldsymbol{\beta}_i } \right )d\Pi(\boldsymbol{\phi},\boldsymbol{\beta}|\textbf{y},\textbf{x}),
-\]&lt;/span&gt;where &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; is the concentration parameter, &lt;span class=&#34;math inline&#34;&gt;\(G_0\)&lt;/span&gt; is the centring measure and &lt;span class=&#34;math inline&#34;&gt;\(\delta_t\)&lt;/span&gt; denotes the Dirac measure at &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Posterior inference is performed via MCMC sampling by using a Pólya-urn scheme for integrating out of the model the random distribution function from the Dirichlet process &lt;span class=&#34;citation&#34;&gt;MacEachern and Müller (&lt;a href=&#34;#ref-maceachern1998estimating&#34; role=&#34;doc-biblioref&#34;&gt;1998&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;financial-development-and-natural-disasters-data&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Financial development and natural disasters data&lt;/h2&gt;
-&lt;p&gt;We present an application to a heterogeneous dataset to study the impacts of worldwide natural disasters on international financial development. We define a &lt;span class=&#34;math inline&#34;&gt;\(4\)&lt;/span&gt;-dimensional vine copula with marginals denoting the FD index in &lt;span class=&#34;math inline&#34;&gt;\(4\)&lt;/span&gt; consecutive years and consider the occurrence of a natural disaster as a binary covariate taking value &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt; if the total damage is over 100 million dollars and &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; otherwise. The pair copulas parameters are associated to the covariates through a link function &lt;span class=&#34;math inline&#34;&gt;\(g\)&lt;/span&gt;, such that&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\rho (\textbf{x} | \boldsymbol{\beta}) = g^{-1} ( \eta(\textbf{x} | \boldsymbol{\beta}) )
-\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(g^{-1}\)&lt;/span&gt; is the Fisher’s transform and &lt;span class=&#34;math inline&#34;&gt;\(\eta(\cdot)\)&lt;/span&gt; is the calibration function &lt;span class=&#34;math inline&#34;&gt;\(\eta=\beta_0 +\beta_1 X\)&lt;/span&gt;. We set &lt;span class=&#34;math inline&#34;&gt;\(M=1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(G_0\)&lt;/span&gt; as a flat multivariate Gaussian distribution centred on a vector of zeros.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-05-19-bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures_files/FDdata.png&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;The top left panel shows the barplot of the number of observations allocated to the two estimated mixture components. The top right panel compares the posterior densities of the calibration function parameter &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1_{12}}\)&lt;/span&gt; (which is related to the first time interval (12)) for the first (solid line) and the second (dashed line) mixture components. The left and right bottom panels show, for the first and second mixture components, the boxplots of the calibration function parameters &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; for the first, second and third time intervals (12; 23; 34).&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;The two estimated mixture components present substantial differences in terms of how they are impacted by natural disasters. For the first cluster (&lt;span class=&#34;math inline&#34;&gt;\(\psi=1\)&lt;/span&gt;) the model estimates a general negative effect which tends to remain constant until the fourth year;  instead, for the second cluster (&lt;span class=&#34;math inline&#34;&gt;\(\psi=2\)&lt;/span&gt;) the model estimates a positive effect of the natural disaster on the time dependence between yearly FD indexes. &lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;take-home-message&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Take home message&lt;/h2&gt;
-&lt;p&gt;In &lt;span class=&#34;citation&#34;&gt;Barone and Dalla Valle (&lt;a href=&#34;#ref-barone2023bayesian&#34; role=&#34;doc-biblioref&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt; we present an innovative methodology that allows for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;flexible modeling of high-dimensional dependency structures, also considering the impact of one or more covariates and accounting for individual as well as temporal heterogeneity in a natural way;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;clustering without assuming the number of components a priori and density estimation;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;easy interpretation of the results.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;About the authors&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://economia.uniroma2.it/faculty/675/barone-rosario&#34;&gt;Rosario Barone&lt;/a&gt;, University of Rome Tor Vergata.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.plymouth.ac.uk/staff/luciana-dalla-valle&#34;&gt;Luciana Dalla Valle&lt;/a&gt;, University of Plymouth.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-aas2009pair&#34; class=&#34;csl-entry&#34;&gt;
-Aas, Kjersti, Claudia Czado, Arnoldo Frigessi, and Henrik Bakken. 2009. &lt;span&gt;“Pair-Copula Constructions of Multiple Dependence.”&lt;/span&gt; &lt;em&gt;Insurance: Mathematics and Economics&lt;/em&gt; 44 (2): 182–98.
-&lt;/div&gt;
-&lt;div id=&#34;ref-abegaz2012semiparametric&#34; class=&#34;csl-entry&#34;&gt;
-Abegaz, Fentaw, Irène Gijbels, and Noël Veraverbeke. 2012. &lt;span&gt;“Semiparametric Estimation of Conditional Copulas.”&lt;/span&gt; &lt;em&gt;Journal of Multivariate Analysis&lt;/em&gt; 110: 43–73.
-&lt;/div&gt;
-&lt;div id=&#34;ref-acar2011dependence&#34; class=&#34;csl-entry&#34;&gt;
-Acar, Elif F, Radu V Craiu, and Fang Yao. 2011. &lt;span&gt;“Dependence Calibration in Conditional Copulas: A Nonparametric Approach.”&lt;/span&gt; &lt;em&gt;Biometrics&lt;/em&gt; 67 (2): 445–53.
-&lt;/div&gt;
-&lt;div id=&#34;ref-barone2023bayesian&#34; class=&#34;csl-entry&#34;&gt;
-Barone, Rosario, and Luciana Dalla Valle. 2023. &lt;span&gt;“Bayesian Nonparametric Modeling of Conditional Multidimensional Dependence Structures.”&lt;/span&gt; &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt;, 1–10.
-&lt;/div&gt;
-&lt;div id=&#34;ref-bedford2001probability&#34; class=&#34;csl-entry&#34;&gt;
-Bedford, Tim, and Roger M Cooke. 2001. &lt;span&gt;“Probability Density Decomposition for Conditionally Dependent Random Variables Modeled by Vines.”&lt;/span&gt; &lt;em&gt;Annals of Mathematics and Artificial Intelligence&lt;/em&gt; 32 (1-4): 245–68.
-&lt;/div&gt;
-&lt;div id=&#34;ref-czado2019analyzing&#34; class=&#34;csl-entry&#34;&gt;
-Czado, Claudia. 2019. &lt;em&gt;Analyzing Dependent Data with Vine Copulas&lt;/em&gt;. &lt;em&gt;Lecture Notes in Statistics, Springer&lt;/em&gt;. Springer.
-&lt;/div&gt;
-&lt;div id=&#34;ref-gijbels2012multivariate&#34; class=&#34;csl-entry&#34;&gt;
-Gijbels, Irene, Marek Omelka, Noël Veraverbeke, et al. 2012. &lt;span&gt;“Multivariate and Functional Covariates and Conditional Copulas.”&lt;/span&gt; &lt;em&gt;Electronic Journal of Statistics&lt;/em&gt; 6: 1273–1306.
-&lt;/div&gt;
-&lt;div id=&#34;ref-maceachern1998estimating&#34; class=&#34;csl-entry&#34;&gt;
-MacEachern, Steven N, and Peter Müller. 1998. &lt;span&gt;“Estimating Mixture of Dirichlet Process Models.”&lt;/span&gt; &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt; 7 (2): 223–38.
-&lt;/div&gt;
-&lt;div id=&#34;ref-sklar1959fonctions&#34; class=&#34;csl-entry&#34;&gt;
-Sklar, A. 1959. &lt;span&gt;“Fonctions d&lt;span&gt;é&lt;/span&gt; Repartition &lt;span class=&#34;nocase&#34;&gt;à&lt;/span&gt; n Dimension Et Leurs Marges.”&lt;/span&gt; &lt;em&gt;Universit&lt;span&gt;é&lt;/span&gt; Paris&lt;/em&gt; 8 (3.2): 1–3.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

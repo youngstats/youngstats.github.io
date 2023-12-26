@@ -6,7 +6,16 @@
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
+      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <description>IntroductionThe Lévy distribution, together with the Normal and Cauchy distribution,belongs to the class of stable distributions, and it is among the onlythree distributions for which the density can be derived in a closedform. The density function of the two-parameter Lévy distribution isexpressed as follows: \[\begin{equation*}f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.\end{equation*}\] We specifically consider the scenario where \(\mu=0\) dueto the difficulty in estimating both parameters.</description>
+    </item>
+    
     <item>
       <title>Merry Christmas and Happy New Year 2024!</title>
       <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
@@ -102,15 +111,6 @@ In this document, we will present an example of a simulated multivariate spatial
 In how many ways a simple loop in the plane can cross a line a specified number of times?
 Despite many efforts, this question remains open after more than a century.Let us start by mathematically formalizing the latter question.
 Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (i.</description>
-    </item>
-    
-    <item>
-      <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
-      <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
-      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
-      <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
     </item>
     
   </channel>
