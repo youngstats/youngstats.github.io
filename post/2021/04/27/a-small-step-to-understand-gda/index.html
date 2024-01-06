@@ -82,16 +82,15 @@ src="cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0?config=TeX-MML-AM_CHTML">
 
 <main>
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>In the last decade, there have been spectacular advances on the practical side of machine learning.
-One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14" role="doc-biblioref">Goodfellow et al. 2014</a>)</span>.
-State of the art models are capable of producing <a href="https://www.youtube.com/watch?v=XOxxPcy5Gr4">portraits of fake persons</a> that look perfectly authentic to you and me (see e.g. <span class="citation">(<a href="#ref-SaGoZaChRaCg16" role="doc-biblioref">Salimans et al. 2016</a>)</span> and <span class="citation">(<a href="#ref-Karras2018" role="doc-biblioref">Karras et al. 2018</a>)</span>).
-Other domains such as inpainting, text to image and speech are also concerned by outstanding results (see <span class="citation">(<a href="#ref-Go16" role="doc-biblioref">Goodfellow 2016</a>)</span> and <span class="citation">(<a href="#ref-JaLiBo20" role="doc-biblioref">Jabbar, Li, and Bourahla 2020</a>)</span>).</p>
-<p>Since their introduction by <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14" role="doc-biblioref">Goodfellow et al. 2014</a>)</span>, GANs have unleashed passions in the community of machine learning, leading to a large volume of variants and possible applications, often referred to as <a href="https://github.com/hindupuravinash/the-gan-zoo">the GAN Zoo</a>.
+One of the most impressive may be the success of Generative Adversarial Networks (GANs) for image generation <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14">Goodfellow et al. 2014</a>)</span>.
+State of the art models are capable of producing <a href="https://www.youtube.com/watch?v=XOxxPcy5Gr4">portraits of fake persons</a> that look perfectly authentic to you and me (see e.g. <span class="citation">(<a href="#ref-SaGoZaChRaCg16">Salimans et al. 2016</a>)</span> and <span class="citation">(<a href="#ref-Karras2018">Karras et al. 2018</a>)</span>).
+Other domains such as inpainting, text to image and speech are also concerned by outstanding results (see <span class="citation">(<a href="#ref-Go16">Goodfellow 2016</a>)</span> and <span class="citation">(<a href="#ref-JaLiBo20">Jabbar, Li, and Bourahla 2020</a>)</span>).</p>
+<p>Since their introduction by <span class="citation">(<a href="#ref-GoPoMiXuWaOzCoBe14">Goodfellow et al. 2014</a>)</span>, GANs have unleashed passions in the community of machine learning, leading to a large volume of variants and possible applications, often referred to as <a href="https://github.com/hindupuravinash/the-gan-zoo">the GAN Zoo</a>.
 However, despite increasingly spectacular applications, little was known few years ago about the statistical properties of GANs.</p>
 <p>This post sketches the paper entitled ``Some Theoretical Properties of GANs’’ (G. Biau, B. Cadre, M. Sangnier and U. Tanielian, The Annals of Statistics, 2020),
 which aims at building a statistical analysis of GANs in order to better understand their mathematical mechanism.
@@ -116,7 +115,7 @@ Thus, GANs offer a completely different way to achieve our goal, often compared 
 <li>Sample data in a very straightforward manner thanks to the transform method:
 let <span class="math inline">\(\mathscr G=\left \{G_{\theta}: \mathbb R^\ell \to \mathbb R^d, \theta \in \Theta \right\}\)</span>, where <span class="math inline">\(\ell\)</span> is the dimension of what is called the latent space and <span class="math inline">\(\Theta \subset \mathbb R^p\)</span>, be a class of measurable functions, called generators (in practice <span class="math inline">\(\mathscr G\)</span> is often a class of neural networks with <span class="math inline">\(p\)</span> parameters).
 Now, let us sample <span class="math inline">\(Z \sim \mathcal N(0, I_\ell)\)</span> and compute <span class="math inline">\(U = G_\theta(Z)\)</span>.
-Then, <span class="math inline">\(U\)</span> is an observation drawn according to the distribution <span class="math inline">\(P_\theta = G_\theta \# N(0, I_\ell)\)</span> (the push-forward measure of the latent distribution (N(0, I_)) according to (G_)).
+Then, <span class="math inline">\(U\)</span> is an observation drawn according to the distribution <span class="math inline">\(P_\theta = G_\theta \# N(0, I_\ell)\)</span> (the push-forward measure of the latent distribution <span class="math inline">\(N(0, I_\ell)\)</span> according to <span class="math inline">\(G_\theta\)</span>).
 In other words, the statistical model for the estimation of <span class="math inline">\(P^\star\)</span> has the form <span class="math inline">\(\mathscr P = \left\{ P_\theta = G_\theta \# N(0, I_\ell), \theta \in \Theta \right\}\)</span> and it is definitely straightforward to sample according to <span class="math inline">\(P_\theta\)</span>.</li>
 <li>Assessing the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> by comparing two samples <span class="math inline">\(X_1, \dots, X_n \overset{i.i.d.}{\sim} P^\star\)</span> and <span class="math inline">\(U_1, \dots, U_n \overset{i.i.d.}{\sim} P_\theta\)</span>.
 What does comparing mean?
@@ -142,7 +141,7 @@ let <span class="math inline">\((X, Y)\)</span> be a pair of random variables ta
 \]</span>
 and let <span class="math inline">\(\mathscr D = \left \{D_{\alpha} : \mathbb R^d \to [0, 1], \alpha \in \Lambda \right\}\)</span>, <span class="math inline">\(\Lambda \subset \mathbb R^q\)</span>, be a parametric model of discriminators such that <span class="math inline">\(D_\alpha(x)\)</span> is aimed at estimating <span class="math inline">\(\mathbb P(Y=1 | X=x)\)</span> (put another way, the distribution of <span class="math inline">\(Y|X=x\)</span> is estimated by <span class="math inline">\(\mathcal B(D_\alpha(x))\)</span>).
 For a given discriminator <span class="math inline">\(D_\alpha\)</span>, the corresponding classifier is <span class="math inline">\(h : x \in \mathbb R^d \mapsto \mathbb 1_{D_\alpha(x) &gt; \frac 12}\)</span>.</p>
-<p>The sample ({ (X_1, 1), , (X_n, 1), (U_1, 0), , (U_n, 0) }), previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood:
+<p>The sample <span class="math inline">\(\{ (X_1, 1), \dots, (X_n, 1), (U_1, 0), \dots, (U_n, 0) \}\)</span>, previously build by putting together observed and generated data, fits the classification model and can serve for estimating a classifier by maximizing the conditional log-likelihood:
 <span class="math display">\[
   \hat \alpha \in \operatorname*{arg\,max}_{\alpha \in \Lambda} \hat L(\theta, \alpha),
   \quad \text{where} \quad
@@ -171,7 +170,7 @@ To go into details, the forthcoming results are based on the assumption that all
 <p>If the class of discriminators <span class="math inline">\(\mathscr D = \left\{ D_\alpha, \alpha \in \Lambda \right\}\)</span> is rich enough to contain the ``optimal’’ discriminator <span class="math inline">\(D_\theta^\star = \frac{p^\star}{p_\theta + p^\star}\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span>,
 then
 <span class="math display">\[\sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)] = 2 D_{JS}(P^\star, P_\theta) - \log 4,\]</span>
-where <span class="math inline">\(D_{JS}\)</span> is the Jensen-Shannon divergence <span class="citation">(<a href="#ref-EnSc03" role="doc-biblioref">Endres and Schindelin 2003</a>)</span>.</p>
+where <span class="math inline">\(D_{JS}\)</span> is the Jensen-Shannon divergence <span class="citation">(<a href="#ref-EnSc03">Endres and Schindelin 2003</a>)</span>.</p>
 <p>Two things can be learned from this first result (still assuming that <span class="math inline">\(\mathscr D\)</span> contains ``optimal’’ discriminators):</p>
 <ol style="list-style-type: decimal">
 <li>Up to the approximation capacity of <span class="math inline">\(\mathscr D\)</span>, <span class="math inline">\(\sup_{\alpha \in \Lambda} \hat L(\theta, \alpha)\)</span> does reflect the proximity between <span class="math inline">\(P_\theta\)</span> and <span class="math inline">\(P^\star\)</span> (thanks to an approximated divergence).</li>
@@ -211,7 +210,7 @@ Obviously, this is also inversely correlated with the richness of the class of g
 More formally, let us assume <span class="math inline">\(\bar \theta \in \operatorname*{arg\,min}_{\theta\in\Theta} \sup_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> exists and is unique.
 Let also assume some regularity conditions of the second order on the models <span class="math inline">\(\mathscr P\)</span>, <span class="math inline">\(\mathscr G\)</span> and <span class="math inline">\(\mathscr D\)</span>,
 well definiteness and smoothness of <span class="math inline">\(\theta \mapsto \operatorname*{arg\,max}_{\alpha \in \Lambda} \mathbb E [\hat L(\theta, \alpha)]\)</span> around <span class="math inline">\(\bar \theta\)</span>.
-Then, there exists a covariance matrice <span class="math inline">\(\Sigma\)</span> such that:
+Then, there exists a covariance matrix <span class="math inline">\(\Sigma\)</span> such that:
 <span class="math display">\[
   \sqrt n \left( \hat \theta - \bar \theta \right) \xrightarrow{dist} \mathcal N(0, \Sigma).
 \]</span></p>
