@@ -1,128 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>webinars on YoungStatS</title>
+    <title>Webinars on YoungStatS</title>
     <link>https://youngstats.github.io/categories/webinars/</link>
-    <description>Recent content in webinars on YoungStatS</description>
+    <description>Recent content in Webinars on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/webinars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extrapolation to unseen domains: from theory to applications</title>
+      <link>https://youngstats.github.io/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://youngstats.github.io/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</guid>
+      <description>Extrapolation to unseen domains: from theory to applications&#xA;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&#xA;3rd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Max Simchowitz, Robot Locomotion Group, MIT: “Statistical Learning under Heterogeneous Distribution Shift”&#xD;Abstract: What makes a trained predictor, e.</description>
+    </item>
     <item>
       <title>Stochastic Fluid Dynamics</title>
       <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
-      <description>Stochastic Fluid Dynamics
-Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET
-The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.
-In this webinar, selected young researchers will present their recent works on the topic.</description>
+      <description>Stochastic Fluid Dynamics&#xA;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&#xA;In this webinar, selected young researchers will present their recent works on the topic.</description>
     </item>
-    
     <item>
       <title>Algorithmic Fairness</title>
       <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
       <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</guid>
-      <description>Algorithmic Fairness
-Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET
-2nd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Linjun Zhang, Rutgers University: “Fair conformal prediction”Abstract: Multi-calibration is a powerful and evolving concept originating in the field of algorithmic fairness.</description>
+      <description>Algorithmic Fairness&#xA;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&#xA;2nd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Linjun Zhang, Rutgers University: “Fair conformal prediction”&#xD;Abstract: Multi-calibration is a powerful and evolving concept originating in the field of algorithmic fairness.</description>
     </item>
-    
     <item>
       <title>Recent advances in extreme value theory</title>
       <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
-      <description>Recent advances in extreme value theory
-Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
-Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
+      <description>Recent advances in extreme value theory&#xA;Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
     </item>
-    
     <item>
       <title>Distribution generalization and causal inference</title>
       <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
-      <description>Distribution generalization and causal inference
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
-1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
+      <description>Distribution generalization and causal inference&#xA;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&#xA;1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”&#xD;Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
     </item>
-    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
       <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
-      <description>Nonparametric inference based on statistical depth
-Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET
-The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
+      <description>Nonparametric inference based on statistical depth&#xA;Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET&#xA;The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
     </item>
-    
     <item>
       <title>Recent challenges in model specification testing based on different data structures</title>
       <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</guid>
-      <description>Recent challenges in model specification testing based on differentdata structures
-Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET
-Model specification testing is one of the essential methodological tasksin statistics. Recently, with the development of different datastructures, envisioning concepts from classical data setups to otherenvironments becomes very important.
-In the webinar, selected young statisticians will present their recentworks and elaborate on different aspects of this topic.</description>
+      <description>Recent challenges in model specification testing based on different&#xD;data structures&#xA;Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET&#xA;Model specification testing is one of the essential methodological tasks&#xD;in statistics. Recently, with the development of different data&#xD;structures, envisioning concepts from classical data setups to other&#xD;environments becomes very important.&#xA;In the webinar, selected young statisticians will present their recent&#xD;works and elaborate on different aspects of this topic.</description>
     </item>
-    
     <item>
       <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
       <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
       <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
-      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations
-The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
-On the webinar, selected younger scholars will present their recent works on the topic.
-When &amp;amp; Where:
-Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
+      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations&#xA;The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.&#xA;On the webinar, selected younger scholars will present their recent works on the topic.&#xA;When &amp;amp; Where:&#xA;Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
     </item>
-    
     <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
       <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</guid>
-      <description>Theory and Methods for Inference in Multi-armed Bandit Problems
-Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
+      <description>Theory and Methods for Inference in Multi-armed Bandit Problems&#xA;Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
     </item>
-    
     <item>
       <title>Selection of Priors in Bayesian Structural Equation Modeling</title>
       <link>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</link>
       <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</guid>
-      <description>Selection of Priors in Bayesian Structural Equation Modelling
-Structural equation modeling (SEM) is an important framework within the social sciences that encompasses a wide variety of statistical models. Traditionally, estimation of SEMs has relied on maximum likelihood. Unfortunately, there also exist a variety of situations in which maximum likelihood performs subpar. This led researchers to turn to alternative estimation methods, in particular, Bayesian estimation of SEMs or BSEM. However, it is currently unclear how to specify the prior distribution in order to attain the advantages of Bayesian approaches.</description>
+      <description>Selection of Priors in Bayesian Structural Equation Modelling&#xA;Structural equation modeling (SEM) is an important framework within the social sciences that encompasses a wide variety of statistical models. Traditionally, estimation of SEMs has relied on maximum likelihood. Unfortunately, there also exist a variety of situations in which maximum likelihood performs subpar. This led researchers to turn to alternative estimation methods, in particular, Bayesian estimation of SEMs or BSEM. However, it is currently unclear how to specify the prior distribution in order to attain the advantages of Bayesian approaches.</description>
     </item>
-    
-    <item>
-      <title>Recent Advances in Approximate Bayesian Inference</title>
-      <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
-      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>Recent Advances in Approximate Bayesian Inference
-In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
-    </item>
-    
   </channel>
 </rss>

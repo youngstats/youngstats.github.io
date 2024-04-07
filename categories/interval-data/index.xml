@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>interval-data on YoungStatS</title>
+    <title>Interval-Data on YoungStatS</title>
     <link>https://youngstats.github.io/categories/interval-data/</link>
-    <description>Recent content in interval-data on YoungStatS</description>
+    <description>Recent content in Interval-Data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/interval-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/interval-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advancements in Symbolic Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/09/30/advancements-in-symbolic-data-analysis/</guid>
-      <description>Advancements in Symbolic Data Analysis
-The sixth “One World webinar” organized by YoungStatS will take place onNovember 8th, 2021. With the development of digital systems, very largedatasets have become routine. However, standard statistical approachesdo not have the power or flexibility to analyse these efficiently, andextract the required knowledge. Symbolic Data Analysis provides aframework allowing for the representation of data with intrinsicvariability, where the observed “values” are not just single real valuesor categories, but finite sets, intervals or distributions over a givendomain.</description>
+      <description>Advancements in Symbolic Data Analysis&#xA;The sixth “One World webinar” organized by YoungStatS will take place on&#xD;November 8th, 2021. With the development of digital systems, very large&#xD;datasets have become routine. However, standard statistical approaches&#xD;do not have the power or flexibility to analyse these efficiently, and&#xD;extract the required knowledge. Symbolic Data Analysis provides a&#xD;framework allowing for the representation of data with intrinsic&#xD;variability, where the observed “values” are not just single real values&#xD;or categories, but finite sets, intervals or distributions over a given&#xD;domain.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>design-of-experiments on YoungStatS</title>
+    <title>Design-of-Experiments on YoungStatS</title>
     <link>https://youngstats.github.io/categories/design-of-experiments/</link>
-    <description>Recent content in design-of-experiments on YoungStatS</description>
+    <description>Recent content in Design-of-Experiments on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/design-of-experiments/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/design-of-experiments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A New Approach to Treatment Selection to Benefit Patient Outcomes in Clinical Trials</title>
       <link>https://youngstats.github.io/post/2020/10/04/mozgunov/</link>
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/04/mozgunov/</guid>
-      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.
-A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
+      <description>1Introduction: Selecting Best Treatment The question of selecting the &amp;ldquo;best&amp;rdquo; amongst different choices is a common problem in our lives. In clinical trials, our main field research, the question usually translates to &amp;ldquo;Out of a number of alternative treatments, which one treats the patients best?&amp;rdquo;.&#xA;A traditional approach to answer this question is to randomise equal numbers of patients to new treatments and the current method of treatment used in practice, called standard of care (SoC).</description>
     </item>
-    
   </channel>
 </rss>

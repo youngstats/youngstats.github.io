@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>correlation on YoungStatS</title>
+    <title>Correlation on YoungStatS</title>
     <link>https://youngstats.github.io/categories/correlation/</link>
-    <description>Recent content in correlation on YoungStatS</description>
+    <description>Recent content in Correlation on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give me an adequate correlation: assessing relationships in percentage (or proportional) data</title>
       <link>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/02/04/give-me-an-adequate-correlation-assessing-relationships-in-percentage-or-proportional-data/</guid>
-      <description>Correlations and negative biasWe assume that you are quite familiar with the following problem.Consider a data set where the information is expressed in percentages or proportions.An example are household expenditures, given as average amounts (in Euros) the householdsare spending on food, housing, transportation, etc.Since the expenditures would not be comparable among countries with very different economiclevel, it makes sense to express the data as proportions (or percentages) of the singlecategories on the total expenditures.</description>
+      <description>Correlations and negative bias&#xD;We assume that you are quite familiar with the following problem.&#xD;Consider a data set where the information is expressed in percentages or proportions.&#xD;An example are household expenditures, given as average amounts (in Euros) the households&#xD;are spending on food, housing, transportation, etc.&#xD;Since the expenditures would not be comparable among countries with very different economic&#xD;level, it makes sense to express the data as proportions (or percentages) of the single&#xD;categories on the total expenditures.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>empirical-processes on YoungStatS</title>
+    <title>Empirical-Processes on YoungStatS</title>
     <link>https://youngstats.github.io/categories/empirical-processes/</link>
-    <description>Recent content in empirical-processes on YoungStatS</description>
+    <description>Recent content in Empirical-Processes on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/empirical-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/empirical-processes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Weighted residual empirical processes in semi-parametric copula adjusted for regression</title>
       <link>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</link>
       <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/12/07/weighted-residual-empirical-processes-in-semi-parametric-copula-adjusted-for-regression/</guid>
-      <description>OverviewIn this post we first review the concept of semi-parametric copula andthe accompanying estimation procedure of pseudo-likelihood estimation(PLE). We then generalize the estimation problem to the setting wherethe copula signal is hidden in a semi- or non-parametric regressionmodel. Under this setting we have to base the PLE on the residuals. Theparticular challenge of the diverging score function is handled via thetechnique of the weighted residual empirical processes.</description>
+      <description>Overview&#xD;In this post we first review the concept of semi-parametric copula and&#xD;the accompanying estimation procedure of pseudo-likelihood estimation&#xD;(PLE). We then generalize the estimation problem to the setting where&#xD;the copula signal is hidden in a semi- or non-parametric regression&#xD;model. Under this setting we have to base the PLE on the residuals. The&#xD;particular challenge of the diverging score function is handled via the&#xD;technique of the weighted residual empirical processes.</description>
     </item>
-    
   </channel>
 </rss>

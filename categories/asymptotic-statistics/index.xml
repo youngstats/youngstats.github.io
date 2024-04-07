@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>asymptotic-statistics on YoungStatS</title>
+    <title>Asymptotic-Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/asymptotic-statistics/</link>
-    <description>Recent content in asymptotic-statistics on YoungStatS</description>
+    <description>Recent content in Asymptotic-Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/asymptotic-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/asymptotic-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
       <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
-      <description>IntroductionThe Lévy distribution, together with the Normal and Cauchy distribution,belongs to the class of stable distributions, and it is among the onlythree distributions for which the density can be derived in a closedform. The density function of the two-parameter Lévy distribution isexpressed as follows: \[\begin{equation*}f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.\end{equation*}\] We specifically consider the scenario where \(\mu=0\) dueto the difficulty in estimating both parameters.</description>
+      <description>Introduction&#xD;The Lévy distribution, together with the Normal and Cauchy distribution,&#xD;belongs to the class of stable distributions, and it is among the only&#xD;three distributions for which the density can be derived in a closed&#xD;form. The density function of the two-parameter Lévy distribution is&#xD;expressed as follows: \[\begin{equation*}&#xD;f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.&#xD;\end{equation*}\] We specifically consider the scenario where \(\mu=0\) due&#xD;to the difficulty in estimating both parameters.</description>
     </item>
-    
     <item>
       <title>Asymptotic Statistics in Non-Sparse Networks</title>
       <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
-      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) established Strong Law of LargeNumbers and Central Limit Theorems for such arrays. Because non-sparsenetworks and multiway clustering are related to exchangeable arrays,they have received recent attention in statistics and econometrics(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networksand present uniformity results at the basis of the asymptotic normalityof many nonlinear estimators.</description>
+      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),&#xD;Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) established Strong Law of Large&#xD;Numbers and Central Limit Theorems for such arrays. Because non-sparse&#xD;networks and multiway clustering are related to exchangeable arrays,&#xD;they have received recent attention in statistics and econometrics&#xD;(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networks&#xD;and present uniformity results at the basis of the asymptotic normality&#xD;of many nonlinear estimators.</description>
     </item>
-    
   </channel>
 </rss>

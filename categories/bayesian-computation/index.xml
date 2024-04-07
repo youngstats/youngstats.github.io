@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bayesian-computation on YoungStatS</title>
+    <title>Bayesian-Computation on YoungStatS</title>
     <link>https://youngstats.github.io/categories/bayesian-computation/</link>
-    <description>Recent content in bayesian-computation on YoungStatS</description>
+    <description>Recent content in Bayesian-Computation on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-computation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/bayesian-computation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
-      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.
-Crossed random effects models (CREM)CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
+      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.&#xA;Crossed random effects models (CREM)&#xD;CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
     </item>
-    
     <item>
       <title>Recent Advances in Approximate Bayesian Inference</title>
       <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>Recent Advances in Approximate Bayesian Inference
-In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
+      <description>Recent Advances in Approximate Bayesian Inference&#xA;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
     </item>
-    
   </channel>
 </rss>

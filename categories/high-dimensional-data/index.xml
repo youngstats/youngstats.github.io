@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>high-dimensional-data on YoungStatS</title>
+    <title>High-Dimensional-Data on YoungStatS</title>
     <link>https://youngstats.github.io/categories/high-dimensional-data/</link>
-    <description>Recent content in high-dimensional-data on YoungStatS</description>
+    <description>Recent content in High-Dimensional-Data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/high-dimensional-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
-      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.
-Crossed random effects models (CREM)CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
+      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.&#xA;Crossed random effects models (CREM)&#xD;CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
     </item>
-    
     <item>
       <title>Procrustes Analysis for High-Dimensional Data</title>
       <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
-      <description>OverviewThe Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.
-The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
+      <description>Overview&#xD;The Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.&#xA;The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
     </item>
-    
     <item>
       <title>Depth Quantile Functions</title>
       <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</guid>
-      <description>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.
-A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
+      <description>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.&#xA;A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
     </item>
-    
     <item>
       <title>Higher Order Targeted Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/03/10/higher-order-targeted-maximum-likelihood-estimation/</guid>
-      <description>Summary
-We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.
-BackgroundTargeted Maximum Likelihood Estimation (TMLE)It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
+      <description>Summary&#xA;We propose a higher order targeted maximum likelihood estimation (TMLE) that only relies on a sequentially and recursively defined set of data-adaptive fluctuations. Without the need to assume the often too stringent higher order pathwise differentiability, the method is practical for implementation and has the potential to be fully computerized.&#xA;Background&#xD;Targeted Maximum Likelihood Estimation (TMLE)&#xD;It has been particularly of interest for semiparametric theories and real world practices to make efficient and substitution-based estimation for target quantities that are functions of data distribution.</description>
     </item>
-    
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
       <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
-      <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data
-Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
+      <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data&#xA;Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
     </item>
-    
   </channel>
 </rss>

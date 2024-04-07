@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>extreme-value-theory on YoungStatS</title>
+    <title>Extreme-Value-Theory on YoungStatS</title>
     <link>https://youngstats.github.io/categories/extreme-value-theory/</link>
-    <description>Recent content in extreme-value-theory on YoungStatS</description>
+    <description>Recent content in Extreme-Value-Theory on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/extreme-value-theory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/extreme-value-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent advances in extreme value theory</title>
       <link>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/04/04/recent-advances-in-extreme-value-theory/</guid>
-      <description>Recent advances in extreme value theory
-Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET
-Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
+      <description>Recent advances in extreme value theory&#xA;Thursday, April 20th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;Extreme value theory is concerned with the accurate statistical assessment of the risk of rare events. Such extreme events have small occurrence probabilities but often entail large economic and ecological costs in addition to their potential for severe impacts on human health. There is active research to model and infer complex extremal dependence structures in multivariate data, with connections to high-dimensional statistics, machine learning and other fields.</description>
     </item>
-    
   </channel>
 </rss>

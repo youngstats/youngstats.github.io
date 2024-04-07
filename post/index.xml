@@ -2,116 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on YoungStatS</title>
-    <link>https://youngstats.github.io/post/</link>
+    <link>http://localhost:4321/post/</link>
     <description>Recent content in Posts on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4321/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extrapolation to unseen domains: from theory to applications</title>
+      <link>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</guid>
+      <description>Extrapolation to unseen domains: from theory to applications&#xA;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&#xA;3rd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Max Simchowitz, Robot Locomotion Group, MIT: “Statistical Learning under Heterogeneous Distribution Shift”&#xD;Abstract: What makes a trained predictor, e.</description>
+    </item>
     <item>
       <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
-      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <link>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
-      <description>IntroductionThe Lévy distribution, together with the Normal and Cauchy distribution,belongs to the class of stable distributions, and it is among the onlythree distributions for which the density can be derived in a closedform. The density function of the two-parameter Lévy distribution isexpressed as follows: \[\begin{equation*}f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.\end{equation*}\] We specifically consider the scenario where \(\mu=0\) dueto the difficulty in estimating both parameters.</description>
+      <guid>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <description>Introduction&#xD;The Lévy distribution, together with the Normal and Cauchy distribution,&#xD;belongs to the class of stable distributions, and it is among the only&#xD;three distributions for which the density can be derived in a closed&#xD;form. The density function of the two-parameter Lévy distribution is&#xD;expressed as follows: \[\begin{equation*}&#xD;f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.&#xD;\end{equation*}\] We specifically consider the scenario where \(\mu=0\) due&#xD;to the difficulty in estimating both parameters.</description>
     </item>
-    
     <item>
       <title>Merry Christmas and Happy New Year 2024!</title>
-      <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
+      <link>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
-      <description>Dear Followers of the YoungStatS project, Dear All!
-It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.
-In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).</description>
+      <guid>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
+      <description>Dear Followers of the YoungStatS project, Dear All!&#xA;It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.&#xA;In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).</description>
     </item>
-    
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
-      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <link>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
-      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+      <guid>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <description>Background&#xD;Circular data, i.e., data defined on the unit circle, can be found in many areas of science.&#xD;The unique nature of these data means that conventional methods for non-circular data are not valid for these.&#xD;At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.&#xD;An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
     </item>
-    
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
-      <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
+      <link>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
-      <description>OverviewSets of graphs arise in many different applications, from medicine tofinance, from urban planning to social science. Analysing sets of graphsis far from trivial as they are strongly non Euclidean data type. Thereare two main sets of graphs:
-labelled: where there is the same sets of nodes across eachobservation;unlabelled: where there is no clear correspondence in the nodesacross networks.Unlabelled graphs poses high challenges from both the embeddingprospective (which geometrical embedding is suitable for such graphs)and the statistical perspective (how can we extend basic tools to suchembedding).</description>
+      <guid>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
+      <description>Overview&#xD;Sets of graphs arise in many different applications, from medicine to&#xD;finance, from urban planning to social science. Analysing sets of graphs&#xD;is far from trivial as they are strongly non Euclidean data type. There&#xD;are two main sets of graphs:&#xA;labelled: where there is the same sets of nodes across each&#xD;observation;&#xD;unlabelled: where there is no clear correspondence in the nodes&#xD;across networks.&#xD;Unlabelled graphs poses high challenges from both the embedding&#xD;prospective (which geometrical embedding is suitable for such graphs)&#xD;and the statistical perspective (how can we extend basic tools to such&#xD;embedding).</description>
     </item>
-    
     <item>
       <title>Stochastic Fluid Dynamics</title>
-      <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
+      <link>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
-      <description>Stochastic Fluid Dynamics
-Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET
-The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.
-In this webinar, selected young researchers will present their recent works on the topic.</description>
+      <guid>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</guid>
+      <description>Stochastic Fluid Dynamics&#xA;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&#xA;In this webinar, selected young researchers will present their recent works on the topic.</description>
     </item>
-    
     <item>
       <title>Locally Sparse Functional Regression</title>
-      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <link>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</link>
       <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
-      <description>OverviewIn this post we present a new estimation procedure for functional linearregression useful when the regression surface – or curve – is supposedto be exactly zero within specific regions of its domain. Our approachinvolves regularization techniques, merging a B-spline representation ofthe unknown coefficient function with a peculiar overlap group lassopenalty. The methodology is illustrated on the well-known Swedishmortality dataset and can be employed by \({\tt R}\)users through the package \({\tt fdaSP}\).</description>
+      <guid>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <description>Overview&#xD;In this post we present a new estimation procedure for functional linear&#xD;regression useful when the regression surface – or curve – is supposed&#xD;to be exactly zero within specific regions of its domain. Our approach&#xD;involves regularization techniques, merging a B-spline representation of&#xD;the unknown coefficient function with a peculiar overlap group lasso&#xD;penalty. The methodology is illustrated on the well-known Swedish&#xD;mortality dataset and can be employed by \({\tt R}\)&#xD;users through the package \({\tt fdaSP}\).</description>
     </item>
-    
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
-      <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
+      <link>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
-      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.
-Crossed random effects models (CREM)CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
+      <guid>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
+      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.&#xA;Crossed random effects models (CREM)&#xD;CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
     </item>
-    
     <item>
       <title>Algorithmic Fairness</title>
-      <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
+      <link>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</link>
       <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</guid>
-      <description>Algorithmic Fairness
-Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET
-2nd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Linjun Zhang, Rutgers University: “Fair conformal prediction”Abstract: Multi-calibration is a powerful and evolving concept originating in the field of algorithmic fairness.</description>
+      <guid>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</guid>
+      <description>Algorithmic Fairness&#xA;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&#xA;2nd joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Linjun Zhang, Rutgers University: “Fair conformal prediction”&#xD;Abstract: Multi-calibration is a powerful and evolving concept originating in the field of algorithmic fairness.</description>
     </item>
-    
     <item>
       <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
-      <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
+      <link>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
-      <description>IntroductionAbundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (Wackernagel (2013), Cressie and Wikle (2011), Banerjee and Gelfand (2014)). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.
-In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (Dey and Banerjee (2021)) to model the data.</description>
+      <guid>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
+      <description>Introduction&#xD;Abundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (Wackernagel (2013), Cressie and Wikle (2011), Banerjee and Gelfand (2014)). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.&#xA;In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (Dey and Banerjee (2021)) to model the data.</description>
     </item>
-    
-    <item>
-      <title>The scaling limit of Baxter permutations</title>
-      <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
-      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</guid>
-      <description>Meanders, monotone meanders, and Baxter permutationsVersions of the following question can be traced back at least to the work of Henri Poincaré (Poincaré (1912)):
-In how many ways a simple loop in the plane can cross a line a specified number of times?
-Despite many efforts, this question remains open after more than a century.Let us start by mathematically formalizing the latter question.
-Definition 1.1. A meander of size \(n\in\mathbb{N}\) is a simple loop \(\ell\) (i.</description>
-    </item>
-    
   </channel>
 </rss>

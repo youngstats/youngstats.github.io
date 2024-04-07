@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>algebraic-statistics on YoungStatS</title>
+    <title>Algebraic-Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/algebraic-statistics/</link>
-    <description>Recent content in algebraic-statistics on YoungStatS</description>
+    <description>Recent content in Algebraic-Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/algebraic-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/algebraic-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Novel Algebraic Approaches to Maximum Likelihood Estimation</title>
       <link>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/10/04/novel-algebraic-approaches-to-maximum-likelihood-estimation/</guid>
-      <description>Novel Algebraic Approaches to Maximum Likelihood Estimation
-The seventh “One World webinar” organized by YoungStatS will take placeon November 17th, 2021. Maximum likelihood estimation (MLE) is a tool indata analysis to estimate a probability distribution or density in astatistical model for given data. In recent decades, algebraic andcombinatorial tools have proved useful for computing MLEs andunderstanding the geometry of the MLE problem which in recent years ledto new and interesting results in combinatorics and algebraic geometry.</description>
+      <description>Novel Algebraic Approaches to Maximum Likelihood Estimation&#xA;The seventh “One World webinar” organized by YoungStatS will take place&#xD;on November 17th, 2021. Maximum likelihood estimation (MLE) is a tool in&#xD;data analysis to estimate a probability distribution or density in a&#xD;statistical model for given data. In recent decades, algebraic and&#xD;combinatorial tools have proved useful for computing MLEs and&#xD;understanding the geometry of the MLE problem which in recent years led&#xD;to new and interesting results in combinatorics and algebraic geometry.</description>
     </item>
-    
   </channel>
 </rss>

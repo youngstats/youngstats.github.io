@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>financial-mathematics on YoungStatS</title>
+    <title>Financial-Mathematics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/financial-mathematics/</link>
-    <description>Recent content in financial-mathematics on YoungStatS</description>
+    <description>Recent content in Financial-Mathematics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/financial-mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/financial-mathematics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log-modulated rough stochastic volatility models</title>
       <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</guid>
-      <description>Rough VolatilityNew insights about the regularity of the instantaneous variance obtainedfrom realized variance data (see Gatheral, Jaisson, and Rosenbaum (2018), Bennedsen, Lunde, and Pakkanen (2021, to appear) and Fukasawa, Takabatake, and Westphal (2019)), have inspiredthe development of so-called rough stochastic volatility modelsin the financial literature. In simple terms, such a model can bedescribed by the following SDE \[\begin{equation}\label{eq:stoch-vol}dS_t = S_t \sqrt{v_t}dB_t,\end{equation}\] where the logarithm of the instantaneous variance process\(v\) behaves similarly to a fractional Brownian motion (fBm) with Hurstindex \(0 &amp;lt; H &amp;lt; 1/2\).</description>
+      <description>Rough Volatility&#xD;New insights about the regularity of the instantaneous variance obtained&#xD;from realized variance data (see Gatheral, Jaisson, and Rosenbaum (2018), Bennedsen, Lunde, and Pakkanen (2021, to appear) and Fukasawa, Takabatake, and Westphal (2019)), have inspired&#xD;the development of so-called rough stochastic volatility models&#xD;in the financial literature. In simple terms, such a model can be&#xD;described by the following SDE \[\begin{equation}&#xD;\label{eq:stoch-vol}&#xD;dS_t = S_t \sqrt{v_t}dB_t,&#xD;\end{equation}\] where the logarithm of the instantaneous variance process&#xD;\(v\) behaves similarly to a fractional Brownian motion (fBm) with Hurst&#xD;index \(0 &amp;lt; H &amp;lt; 1/2\).</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>network-analysis on YoungStatS</title>
+    <title>Network-Analysis on YoungStatS</title>
     <link>https://youngstats.github.io/categories/network-analysis/</link>
-    <description>Recent content in network-analysis on YoungStatS</description>
+    <description>Recent content in Network-Analysis on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/network-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/network-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
       <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
-      <description>OverviewSets of graphs arise in many different applications, from medicine tofinance, from urban planning to social science. Analysing sets of graphsis far from trivial as they are strongly non Euclidean data type. Thereare two main sets of graphs:
-labelled: where there is the same sets of nodes across eachobservation;unlabelled: where there is no clear correspondence in the nodesacross networks.Unlabelled graphs poses high challenges from both the embeddingprospective (which geometrical embedding is suitable for such graphs)and the statistical perspective (how can we extend basic tools to suchembedding).</description>
+      <description>Overview&#xD;Sets of graphs arise in many different applications, from medicine to&#xD;finance, from urban planning to social science. Analysing sets of graphs&#xD;is far from trivial as they are strongly non Euclidean data type. There&#xD;are two main sets of graphs:&#xA;labelled: where there is the same sets of nodes across each&#xD;observation;&#xD;unlabelled: where there is no clear correspondence in the nodes&#xD;across networks.&#xD;Unlabelled graphs poses high challenges from both the embedding&#xD;prospective (which geometrical embedding is suitable for such graphs)&#xD;and the statistical perspective (how can we extend basic tools to such&#xD;embedding).</description>
     </item>
-    
     <item>
       <title>Asymptotic Statistics in Non-Sparse Networks</title>
       <link>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</link>
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/02/26/asymptotic-statistics-in-non-sparse-networks/</guid>
-      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) established Strong Law of LargeNumbers and Central Limit Theorems for such arrays. Because non-sparsenetworks and multiway clustering are related to exchangeable arrays,they have received recent attention in statistics and econometrics(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networksand present uniformity results at the basis of the asymptotic normalityof many nonlinear estimators.</description>
+      <description>Exchangeable arrays have been studied since the late 70’s (Aldous (1983),&#xD;Kallenberg (2005)). Eagleson and Weber (1978) and Silverman (1976) established Strong Law of Large&#xD;Numbers and Central Limit Theorems for such arrays. Because non-sparse&#xD;networks and multiway clustering are related to exchangeable arrays,&#xD;they have received recent attention in statistics and econometrics&#xD;(Davezies, D’Haultfœuille, and Guyonvarch (2018), Davezies, D’Haultfœuille, and Guyonvarch (2021), Menzel (2018)). We focus below on non-sparse networks&#xD;and present uniformity results at the basis of the asymptotic normality&#xD;of many nonlinear estimators.</description>
     </item>
-    
     <item>
       <title>The scientific collaboration of researchers and organizations in Slovenia</title>
       <link>https://youngstats.github.io/post/2020/10/01/cugmas/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/01/cugmas/</guid>
       <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
     </item>
-    
   </channel>
 </rss>

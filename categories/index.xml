@@ -6,96 +6,77 @@
     <description>Recent content in Categories on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>asymptotic-statistics</title>
+      <title>Data-Science</title>
+      <link>https://youngstats.github.io/categories/data-science/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://youngstats.github.io/categories/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine-Learning</title>
+      <link>https://youngstats.github.io/categories/machine-learning/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://youngstats.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webinars</title>
+      <link>https://youngstats.github.io/categories/webinars/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://youngstats.github.io/categories/webinars/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asymptotic-Statistics</title>
       <link>https://youngstats.github.io/categories/asymptotic-statistics/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/asymptotic-statistics/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hypothesis-testing</title>
+      <title>Hypothesis-Testing</title>
       <link>https://youngstats.github.io/categories/hypothesis-testing/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/hypothesis-testing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>model-selection</title>
+      <title>Model-Selection</title>
       <link>https://youngstats.github.io/categories/model-selection/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/model-selection/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>youngstats</title>
+      <title>Youngstats</title>
       <link>https://youngstats.github.io/categories/youngstats/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/youngstats/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bayesian-statistics</title>
+      <title>Bayesian-Statistics</title>
       <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/bayesian-statistics/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>directional-statistics</title>
+      <title>Directional-Statistics</title>
       <link>https://youngstats.github.io/categories/directional-statistics/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/directional-statistics/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spatial statistics</title>
+      <title>Spatial-Statistics</title>
       <link>https://youngstats.github.io/categories/spatial-statistics/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/categories/spatial-statistics/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>geometric-statistics</title>
-      <link>https://youngstats.github.io/categories/geometric-statistics/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/geometric-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>manifold-statistics</title>
-      <link>https://youngstats.github.io/categories/manifold-statistics/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/manifold-statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network-analysis</title>
-      <link>https://youngstats.github.io/categories/network-analysis/</link>
-      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/categories/network-analysis/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

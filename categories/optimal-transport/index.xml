@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>optimal-transport on YoungStatS</title>
+    <title>Optimal-Transport on YoungStatS</title>
     <link>https://youngstats.github.io/categories/optimal-transport/</link>
-    <description>Recent content in optimal-transport on YoungStatS</description>
+    <description>Recent content in Optimal-Transport on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/optimal-transport/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/optimal-transport/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Non-Homogeneous Poisson Process Intensity Modeling and Estimation using Measure Transport</title>
       <link>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/09/19/non-homogeneous-poisson-process-intensity-modeling-and-estimation-using-measure-transport/</guid>
-      <description>IntroductionA NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fullycharacterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).We present a general model for the intensity function of a non-homogeneous Poissonprocess using measure transport. The model finds its roots in transportation ofprobability measure (Marzouk et al. 2016), an approach that has gainedpopularity recently for its ability to model arbitrary probabilitydensity functions.</description>
+      <description>Introduction&#xD;A NHPP defined on \({\cal S} \subset \mathbb{R}^{d}\) can be fully&#xD;characterized through its intensity function \(\lambda: {\cal S} \rightarrow [0, \infty)\).&#xD;We present a general model for the intensity function of a non-homogeneous Poisson&#xD;process using measure transport. The model finds its roots in transportation of&#xD;probability measure (Marzouk et al. 2016), an approach that has gained&#xD;popularity recently for its ability to model arbitrary probability&#xD;density functions.</description>
     </item>
-    
   </channel>
 </rss>

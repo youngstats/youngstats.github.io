@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>applied econometrics on YoungStatS</title>
+    <title>Applied Econometrics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/applied-econometrics/</link>
-    <description>Recent content in applied econometrics on YoungStatS</description>
+    <description>Recent content in Applied Econometrics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/applied-econometrics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/applied-econometrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macroeconomic Determinants of Migration. A Comparative Analysis For Old vs New European Member States</title>
       <link>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/09/18/macroeconomic-determinants-of-migration-a-comparative-analysis-for-old-vs-new-european-member-states/</guid>
-      <description>Introduction
-Migration is a multifaceted phenomenon including macro-, meso-, andmicro-triggers that, when combined, decide an individual’s finaldecision to migrate. Apart from being an essential component ofpopulation change, migration is also an important component ofpopulation estimates and labor market force estimations. Jennissen(2004) argues that the presence of migrant populations has a favorableimpact on natural population growth since migrants’ age characteristicsand fertility rates are often greater than those of the indigenouspopulation.</description>
+      <description>Introduction&#xA;Migration is a multifaceted phenomenon including macro-, meso-, and&#xD;micro-triggers that, when combined, decide an individual’s final&#xD;decision to migrate. Apart from being an essential component of&#xD;population change, migration is also an important component of&#xD;population estimates and labor market force estimations. Jennissen&#xD;(2004) argues that the presence of migrant populations has a favorable&#xD;impact on natural population growth since migrants’ age characteristics&#xD;and fertility rates are often greater than those of the indigenous&#xD;population.</description>
     </item>
-    
   </channel>
 </rss>

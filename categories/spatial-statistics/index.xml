@@ -1,50 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spatial statistics on YoungStatS</title>
+    <title>Spatial-Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/spatial-statistics/</link>
-    <description>Recent content in spatial statistics on YoungStatS</description>
+    <description>Recent content in Spatial-Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/spatial-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
       <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
-      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+      <description>Background&#xD;Circular data, i.e., data defined on the unit circle, can be found in many areas of science.&#xD;The unique nature of these data means that conventional methods for non-circular data are not valid for these.&#xD;At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.&#xD;An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
     </item>
-    
     <item>
       <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
       <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
-      <description>IntroductionAbundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (Wackernagel (2013), Cressie and Wikle (2011), Banerjee and Gelfand (2014)). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.
-In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (Dey and Banerjee (2021)) to model the data.</description>
+      <description>Introduction&#xD;Abundant multivariate spatial data from the natural and environmental sciences demands research on the joint distribution of multiple spatially dependent variables (Wackernagel (2013), Cressie and Wikle (2011), Banerjee and Gelfand (2014)). Here, our goal is to estimate associations over spatial locations for each variable and those among the variables.&#xA;In this document, we will present an example of a simulated multivariate spatial data and how we can use Graphical Gaussian processes (GGP) (Dey and Banerjee (2021)) to model the data.</description>
     </item>
-    
     <item>
       <title>Procrustes Analysis for High-Dimensional Data</title>
       <link>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/03/02/procrustes-analysis-for-high-dimensional-data/</guid>
-      <description>OverviewThe Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.
-The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
+      <description>Overview&#xD;The Procrustes problem aims to match matrices using similarity transformations (i.e., rotation, reflection, translation, and scaling transformations) to minimize their Frobenius distance. It allows the comparison of matrices with dimensions defined in an arbitrary coordinate system. This method raised the interest of applied researchers, highlighting its potentiality through many applications in several fields, such as ecology, biology, analytical chemometrics, and psychometrics.&#xA;The interest of a large audience from applied fields stimulates, in parallel, the growth of a vast body of literature.</description>
     </item>
-    
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
       <link>https://youngstats.github.io/post/2020/10/05/par_diggle/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/05/par_diggle/</guid>
-      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.
-Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
+      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.&#xA;Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
     </item>
-    
   </channel>
 </rss>

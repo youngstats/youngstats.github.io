@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>scientometrics on YoungStatS</title>
+    <title>Scientometrics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/scientometrics/</link>
-    <description>Recent content in scientometrics on YoungStatS</description>
+    <description>Recent content in Scientometrics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/scientometrics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/scientometrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The scientific collaboration of researchers and organizations in Slovenia</title>
       <link>https://youngstats.github.io/post/2020/10/01/cugmas/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/01/cugmas/</guid>
       <description>As a scientific community, we must understand how scientific collaboration (SC) works on both the individual and organizational levels to be able to propose R&amp;amp;D policies that are efficient. Unfortunately, the interdependent nature of SC among different levels is often not well considered in empirical studies. To address this issue, we will present the scientometric approach that provides a simultaneous insight into SC patterns on both levels: among researchers (individual level) and organizations (organizational level).</description>
     </item>
-    
   </channel>
 </rss>

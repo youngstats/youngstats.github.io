@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>latent-variables on YoungStatS</title>
+    <title>Latent-Variables on YoungStatS</title>
     <link>https://youngstats.github.io/categories/latent-variables/</link>
-    <description>Recent content in latent-variables on YoungStatS</description>
+    <description>Recent content in Latent-Variables on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/latent-variables/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/latent-variables/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PLS for Big Data: A unified parallel algorithm for regularised group PLS</title>
       <link>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/01/28/pls-for-big-data/</guid>
-      <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data
-Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
+      <description>We look at the problem of learning latent structure between two blocks of data through the partial least squares (PLS) approach. These methods include approaches for supervised and unsupervised statistical learning. We review these methods and present approaches to decrease the computation time and scale the method to big data&#xA;Given two blocks of data, the PLS approach seeks latent variables which are constructed as linear combinations of the original datasets.</description>
     </item>
-    
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
       <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
-      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
-Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
+      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.&#xA;Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,95 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>causal-inference on YoungStatS</title>
+    <title>Causal-Inference on YoungStatS</title>
     <link>https://youngstats.github.io/categories/causal-inference/</link>
-    <description>Recent content in causal-inference on YoungStatS</description>
+    <description>Recent content in Causal-Inference on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/causal-inference/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/causal-inference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distribution generalization and causal inference</title>
       <link>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</link>
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/02/28/distribution-generalization-in-causal-inference/</guid>
-      <description>Distribution generalization and causal inference
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET
-1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.
-When &amp;amp; Where:
-Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CETOnline, via Zoom. The registration form is availablehere.Speakers:
-Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
+      <description>Distribution generalization and causal inference&#xA;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&#xA;1st joint webinar of the IMS New Researchers Group, Young Data Science Researcher Seminar Zürich and the YoungStatS Project.&#xA;When &amp;amp; Where:&#xA;Monday, March 20th, 2023, 7:00 PT / 10:00 ET / 15:00 CET&#xD;Online, via Zoom. The registration form is available&#xD;here.&#xD;Speakers:&#xA;Zijian Guo, Rutgers University: “Statistical Inference for Maximin Effects: Identifying Stable Associations across Multiple Studies”&#xD;Abstract: Integrative analysis of data from multiple sources is critical to making generalizable discoveries.</description>
     </item>
-    
     <item>
       <title>Inference on Adaptively Collected Data</title>
       <link>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</link>
       <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/10/11/inference-on-adaptively-collected-data/</guid>
-      <description>AbstractIt is increasingly common for data to be collected adaptively, whereexperimental costs are reduced progressively by assigning promisingtreatments more frequently. However, adaptivity also poses greatchallenges on post-experiment inference, since observations aredependent, and standard estimates can be skewed and heavy-tailed. Wepropose a treatment-effect estimator that is consistent andasymptotically normal, allowing for constructing frequentist confidenceintervals and testing hypotheses.
-IntroductionAdaptive data collection can optimize sample efficiency during thecourse of the experiment for particular objectives, such as identifyingthe best treatment (D.</description>
+      <description>Abstract&#xD;It is increasingly common for data to be collected adaptively, where&#xD;experimental costs are reduced progressively by assigning promising&#xD;treatments more frequently. However, adaptivity also poses great&#xD;challenges on post-experiment inference, since observations are&#xD;dependent, and standard estimates can be skewed and heavy-tailed. We&#xD;propose a treatment-effect estimator that is consistent and&#xD;asymptotically normal, allowing for constructing frequentist confidence&#xD;intervals and testing hypotheses.&#xA;Introduction&#xD;Adaptive data collection can optimize sample efficiency during the&#xD;course of the experiment for particular objectives, such as identifying&#xD;the best treatment (D.</description>
     </item>
-    
     <item>
       <title>Theory and Methods for Inference in Multi-armed Bandit Problems</title>
       <link>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</link>
       <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/04/19/theory-and-methods-for-inference-in-multi-armed-bandit-problems/</guid>
-      <description>Theory and Methods for Inference in Multi-armed Bandit Problems
-Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
+      <description>Theory and Methods for Inference in Multi-armed Bandit Problems&#xA;Multi-armed bandit (MAB) algorithms have been argued for decades as useful to conduct adaptively-randomized experiments. By skewing the allocation of the arms towards the more efficient or informative ones, they have the potential to enhance participants’ welfare, while resulting in a more flexible, efficient, and ethical alternative compared to traditional fixed studies. However, such allocation strategies complicate the problem of statistical inference.</description>
     </item>
-    
     <item>
       <title>Recent Advancements in Applied Instrumental Variable Methods</title>
       <link>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</link>
       <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/02/07/recent-advancements-in-applied-instrumental-variable-methods/</guid>
-      <description>Recent Advancements in Applied Instrumental Variable Methods
-Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.</description>
+      <description>Recent Advancements in Applied Instrumental Variable Methods&#xA;Instrumental variables (IV) is one of most important and widespread research designs in economics and statistics, as it can identify causal effects in the presence of unobserved confounding. Over the past 30 years the science of IV has advanced considerably, in part through the contributions of Nobel Laureates Joshua Angrist, Guido Imbens, and James Heckman. Recent years have brought significant advances in how IV is applied, in shift-share designs, with judge or examiner instruments, and in settings with rich or complex controls.</description>
     </item>
-    
     <item>
       <title>Heterogeneous Treatment Effects with Instrumental Variables: A Causal Machine Learning Approach</title>
       <link>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/12/06/heterogeneous-treatment-effects-with-instrumental-variables-a-causal-machine-learning-approach/</guid>
-      <description>Problem SettingIn our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.
-These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
+      <description>Problem Setting&#xD;In our forthcoming paper on Annals of Applied Statistics, we propose a new method – which we call Bayesian Causal Forest with Instrumental Variable (BCF-IV) – to interpretably discover the subgroups with the largest or smallest causal effects in an instrumental variable setting.&#xA;These are many situations, ranging in complexity and importance, where one would like to estimate the causal effect of a defined intervention on a specific outcome.</description>
     </item>
-    
     <item>
       <title>Advances in Difference-in-Differences in Econometrics</title>
       <link>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/09/30/advances-in-difference-in-differences-in-econometrics/</guid>
-      <description>Advances in Difference-in-Differences in Econometrics
-The eighth “One World webinar” organized by YoungStatS will take placeon December 15th, 2021. The difference-in-differences design is aquasi-experimental identification strategy for estimating causal effectswhich has become the single most popular research design in thequantitative social sciences, and as such, it merits careful study byresearchers everywhere. It is also a flourishing field of presentresearch in econometrics. Selected younger researchers active in thearea will present their recent contributions on this topic.</description>
+      <description>Advances in Difference-in-Differences in Econometrics&#xA;The eighth “One World webinar” organized by YoungStatS will take place&#xD;on December 15th, 2021. The difference-in-differences design is a&#xD;quasi-experimental identification strategy for estimating causal effects&#xD;which has become the single most popular research design in the&#xD;quantitative social sciences, and as such, it merits careful study by&#xD;researchers everywhere. It is also a flourishing field of present&#xD;research in econometrics. Selected younger researchers active in the&#xD;area will present their recent contributions on this topic.</description>
     </item>
-    
     <item>
       <title>Machine learning for causal inference that works</title>
       <link>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/01/26/machine-learning-for-causal-inference-that-works/</guid>
-      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.
-The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
+      <description>I’ve kindly been invited to share a few words about a recent paper my colleagues and I published in Bayesian Analysis: “Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects”. In that paper, we motivate and describe a method that we call Bayesian causal forests (BCF), which is now implemented in an R package called bcf.&#xA;The goal of this post is to work through a simple toy example to illustrate the strengths of BCF.</description>
     </item>
-    
     <item>
       <title>Causal discovery in the presence of discrete latent variables</title>
       <link>https://youngstats.github.io/post/2020/12/15/icph/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/12/15/icph/</guid>
-      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.
-Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
+      <description>We address the problem of causal structure learning in the presence of hidden variables. Given a target variable and a vector of covariates, we are trying to infer the set of observable causal parents of the target variable. There are many good reasons for being interested in causal predictors.&#xA;Given a target variable $Y$, and a vector $X = (X^1, \dots, X^d)$ of $d$ covariates, we are trying to infer the set $S^* \subseteq \{1, \dots, d\}$ of observable causal parents of $Y$.</description>
     </item>
-    
   </channel>
 </rss>

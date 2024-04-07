@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://youngstats.github.io/</loc>
-    <lastmod>2023-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/asymptotic-statistics/</loc>
-    <lastmod>2023-12-25T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/data-science/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/webinars/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/categories/asymptotic-statistics/</loc>
     <lastmod>2023-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</loc>
@@ -18,9 +33,6 @@
     <lastmod>2023-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/model-selection/</loc>
-    <lastmod>2023-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/post/</loc>
     <lastmod>2023-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</loc>
@@ -65,9 +77,6 @@
     <loc>https://youngstats.github.io/categories/stochastic-processes/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/webinars/</loc>
-    <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/categories/functional-data-analysis/</loc>
     <lastmod>2023-10-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -86,13 +95,7 @@
     <loc>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</loc>
     <lastmod>2023-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://youngstats.github.io/categories/machine-learning/</loc>
-    <lastmod>2023-09-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</loc>
-    <lastmod>2023-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://youngstats.github.io/categories/data-science/</loc>
     <lastmod>2023-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://youngstats.github.io/categories/statistics/</loc>
@@ -481,6 +484,8 @@
   </url><url>
     <loc>https://youngstats.github.io/post/2020/09/01/welcome/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://youngstats.github.io/post/1/01/01/</loc>
   </url><url>
     <loc>https://youngstats.github.io/about/</loc>
   </url><url>

@@ -1,82 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nonparametric-statistics on YoungStatS</title>
+    <title>Nonparametric-Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/nonparametric-statistics/</link>
-    <description>Recent content in nonparametric-statistics on YoungStatS</description>
+    <description>Recent content in Nonparametric-Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/nonparametric-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/nonparametric-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Locally Sparse Functional Regression</title>
       <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
       <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
-      <description>OverviewIn this post we present a new estimation procedure for functional linearregression useful when the regression surface – or curve – is supposedto be exactly zero within specific regions of its domain. Our approachinvolves regularization techniques, merging a B-spline representation ofthe unknown coefficient function with a peculiar overlap group lassopenalty. The methodology is illustrated on the well-known Swedishmortality dataset and can be employed by \({\tt R}\)users through the package \({\tt fdaSP}\).</description>
+      <description>Overview&#xD;In this post we present a new estimation procedure for functional linear&#xD;regression useful when the regression surface – or curve – is supposed&#xD;to be exactly zero within specific regions of its domain. Our approach&#xD;involves regularization techniques, merging a B-spline representation of&#xD;the unknown coefficient function with a peculiar overlap group lasso&#xD;penalty. The methodology is illustrated on the well-known Swedish&#xD;mortality dataset and can be employed by \({\tt R}\)&#xD;users through the package \({\tt fdaSP}\).</description>
     </item>
-    
     <item>
       <title>Nonparametric inference based on statistical depth</title>
       <link>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</link>
       <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/10/03/nonparametric-inference-based-on-statistical-depth/</guid>
-      <description>Nonparametric inference based on statistical depth
-Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET
-The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
+      <description>Nonparametric inference based on statistical depth&#xA;Monday, October 17th, 7:00 PT / 10:00 ET / 16:00 CET&#xA;The notion of center of an object, be it a set of observations, a physical object or a random variable, is difficult to define. This motivated the development of general ways to measure centrality via depth functions. Such mappings allow for comparing relative centrality of two locations and, consequently, providing a center-outward ordering.</description>
     </item>
-    
     <item>
       <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
       <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</guid>
       <description>Overview Bayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a homogeneous sample is performed with exchangeable models of the type \(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\), where \(\tilde \mu\) is a random measure and \(T\) is a suitable transformation. Notable examples for \(T\) include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).</description>
     </item>
-    
     <item>
       <title>Optimal disclosure risk assessment</title>
       <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
-      <description>Disclosure risk for microdataProtection against disclosure is a legal and ethical obligation foragencies releasing microdata files for public use. Consider a microdatasample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finitepopulation of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such thateach sample record \(X_i\) contains two disjoint types of information:identifying categorical information and sensitive information.Identifying information consists of a set of categorical variables whichmight be matchable to known units of the population.</description>
+      <description>Disclosure risk for microdata&#xD;Protection against disclosure is a legal and ethical obligation for&#xD;agencies releasing microdata files for public use. Consider a microdata&#xD;sample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finite&#xD;population of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such that&#xD;each sample record \(X_i\) contains two disjoint types of information:&#xD;identifying categorical information and sensitive information.&#xD;Identifying information consists of a set of categorical variables which&#xD;might be matchable to known units of the population.</description>
     </item>
-    
     <item>
       <title>Depth Quantile Functions</title>
       <link>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/07/01/depth-quantile-functions/</guid>
-      <description>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.
-A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
+      <description>Figure 1: Depth quantile functions for the wine data (d=13), class 2 vs class 3. Blue curves correspond to between class comparisons, red/pink correspond to within class comparisons.&#xA;A common technique in modern statistics is the so-called kernel trick, where data is mapped into a (usually) infinite-dimensional feature space, where various statistical tasks can be carried out. Relatedly, we introduce the depth quantile function (DQF), \(q_{ij}(\alpha)\) which similarly maps observations into an infinite dimensional space (the double index will become clear below), though in this case, these new representations of the data are functions of a one-dimensional variable \(\alpha\) which allows plotting.</description>
     </item>
-    
     <item>
       <title>Recent Advances in Functional Data Analysis</title>
       <link>https://youngstats.github.io/post/2021/04/29/fda-webinar/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/04/29/fda-webinar/</guid>
-      <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.
-When &amp;amp; Where:
-Wednesday, June 30th, 16:30 CEST
-Online, via Zoom.</description>
+      <description>The fourth &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on June 30th, 2021. The topic of this webinar is on Functional Data Analysis. Selected young European researchers active in this area of research will present their contributions on spherical functional autoregressions, additive models, and clustering methods for functional data, with the focus on both theoretical developments and applications.&#xA;When &amp;amp; Where:&#xA;Wednesday, June 30th, 16:30 CEST&#xA;Online, via Zoom.</description>
     </item>
-    
     <item>
       <title>Developments in Bayesian Nonparametrics (updated with slides)</title>
       <link>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/04/06/bnp-webinar/</guid>
-      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.
-When &amp;amp; Where:
-Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
+      <description>The second &amp;ldquo;One World webinar&amp;rdquo; organized by YoungStatS will take place on April 21st. The focus of this webinar will be on illustrating modern advances in Bayesian Nonparametrics data analysis, discussing challenging theoretical problems and stimulating case-studies within this active area of research.&#xA;When &amp;amp; Where:&#xA;Wednesday, April 21st, 16:30 CEST Online, via Zoom. The registration form is available here. Further details and the Zoom link will be sent to the registered addresses only.</description>
     </item>
-    
   </channel>
 </rss>

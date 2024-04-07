@@ -2,17 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YoungStatS</title>
-    <link>https://youngstats.github.io/</link>
+    <link>http://localhost:4321/</link>
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extrapolation to unseen domains: from theory to applications</title>
+      <link>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</link>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;strong&gt;Extrapolation to unseen domains: from theory to applications&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2024-04-05-extrapolation-generalization-to-novel-domains-in-data-science_files/noname-crop.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;3rd joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
+&lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&lt;/li&gt;
+&lt;li&gt;Online, via &lt;a href=&#34;https://washington.zoom.us/j/92385046970&#34;&gt;Zoom&lt;/a&gt;. The registration form is available
+&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdJ_BYx3B4mkeduSutoS5fsLjjm9bGGxzUWwOdcZeHoOUWWaA/viewform&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Speakers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://msimchowitz.github.io/&#34;&gt;Max Simchowitz&lt;/a&gt;, Robot Locomotion Group, MIT: “&lt;em&gt;Statistical Learning under Heterogeneous Distribution Shift&lt;/em&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: What makes a trained predictor, e.g. neural network, more or less susceptible to
+performance degradation under distribution shift? Spurious correlation, lack of diversity in
+the training data, and brittleness of the trained model are all possible culprits. In this talk, we will investigate a less well-studied factor: that of the statistical complexity of the individual features themselves. We will show that, for a very general class of predictors with a certain additive structure, empirical risk minimization is less sensitive to distribution shifts in “simple features” than “complex” ones, where simplicity/complexity are measured in terms of natural statistical quantities. We demonstrate that this arises because standard ERM learns the dependence on the “simpler” feature more quickly, whilst avoiding the risk of overfitting to more “complex” features. We will conclude by drawing connections to the orthogonal machine learning literature, and validating our theory on various experimental domains (even those in which the additivity assumption fails to hold).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lotfollahi.com/&#34;&gt;Mohammad Lotfollahi&lt;/a&gt;, Wellcome Sanger Institute, University of Cambridge: “&lt;em&gt;Generative machine learning to model cellular perturbations&lt;/em&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: The field of cellular biology has long sought to understand the intricate mechanisms that govern cellular responses to various perturbations, be they chemical, physical, or biological. Traditional experimental approaches, while invaluable, often face limitations in scalability and throughput, especially when exploring the vast combinatorial space of potential cellular states. Enter generative machine learning that has shown exceptional promise in modeling complex biological systems. This talk will highlight recent successes, address the challenges and limitations of current models, and discuss the future direction of this exciting interdisciplinary field. Through examples of practical applications, we will illustrate the transformative potential of generative ML in advancing our understanding of cellular perturbations and in shaping the future of biomedical research.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhijing-jin.com/fantasy/about/&#34;&gt;Zhijing Jin&lt;/a&gt;, Max Planck Institute and ETH Zürich: “&lt;em&gt;A Paradigm Shift in Addressing Distribution Shifts: Insights from Large Language Models&lt;/em&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Abstract: Traditionally, the challenge of distribution shifts - where the training data distribution differs from the test data distribution - has been a central concern in statistical learning and model generalization. Traditional methods have primarily focused on techniques such as domain adaptation, and transfer learning. However, the rise of large language models (LLMs) such as ChatGPT has ushered in a novel empirical success, triggering a significant “shift” in problem formulation and approach for traditional distribution shift problems. In this talk, I will start with two formulations for LLMs: (1) the engineering heuristics aimed at transforming “out-of-distribution” (OOD) problems into “in-distribution” scenarios, which is further accompanied by (2) the hypothesized “emergence of intelligence” through massive scaling of data and model parameters, which challenges our traditional views on distribution shifts. I will sequentially examine these aspects, first by presenting behavioral tests of these models’ generalization capabilities across unseen data, and then by conducting intrinsic checks to uncover the mechanisms LLMs learned. This talk seeks to provoke thoughts on several questions: Do the strategies of “making OOD problem IID” and facilitating the “emergence of intelligence” by scaling, truly stand up to scientific scrutiny? Furthermore, what do these developments imply for the field of statistical learning and the broader evolution of AI.&lt;/p&gt;
+&lt;p&gt;Discussant: &lt;a href=&#34;https://people.math.ethz.ch/~nicolai/&#34;&gt;Nicolai Meinshausen&lt;/a&gt;, ETH Zürich&lt;/p&gt;
+&lt;p&gt;YoungStatS project of the Young Statisticians Europe initiative (FENStatS) is supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
-      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <link>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <guid>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
       <description>
 
 
@@ -176,7 +215,7 @@ analysis, we concluded that the new statistics outperform the
 Bhati-Kattumanil one, with &lt;span class=&#34;math inline&#34;&gt;\(R_a\)&lt;/span&gt; exhibiting superior performance in
 terms of local approximate Bahadur efficiencies.&lt;/p&gt;
 &lt;p&gt;We applied the novel tests on two real datasets. The first one contained the weighted rainfall data for the month of January in India. The second dataset consisted of the well yields near Bel Air, Hartford county, Maryland.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure: Histogram of rainfall application data and the appropriate Lévy density. The theoretical Lévy densities are drawn using the maximum likelihood estimate of the scale parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
@@ -231,14 +270,14 @@ Statistics, 57:5, 1087-1116, DOI:
     
     <item>
       <title>Merry Christmas and Happy New Year 2024!</title>
-      <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
+      <link>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
+      <guid>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-24-merry-christmas-and-happy-new-year-2024_files/HappyNY2024.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-12-24-merry-christmas-and-happy-new-year-2024_files/HappyNY2024.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Dear Followers of the YoungStatS project, Dear All!&lt;/p&gt;
 &lt;p&gt;It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.&lt;/p&gt;
 &lt;p&gt;In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
@@ -251,10 +290,10 @@ Statistics, 57:5, 1087-1116, DOI:
     
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
-      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <link>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <guid>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
       <description>
 
 
@@ -264,7 +303,7 @@ Statistics, 57:5, 1087-1116, DOI:
 The unique nature of these data means that conventional methods for non-circular data are not valid for these.
 At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.
 An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;It was &lt;span class=&#34;citation&#34;&gt;Jona-Lasinio, Gelfand, and Jona-Lasinio (&lt;a href=&#34;#ref-jona2012spatial&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Wang and Gelfand (&lt;a href=&#34;#ref-wang2014modeling&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; that first brought the wrapped and projected Gaussian distributions to space and space-time settings.
 Nonetheless, today,&lt;strong&gt;circular data models still need to catch up on the latest advances in spatial statistics&lt;/strong&gt;.
 In particular, models developed so far &lt;strong&gt;assume stationarity in the mean and the covariance of the response&lt;/strong&gt; modeled; i.e., these are constant in space.
@@ -361,7 +400,7 @@ The covariates considered for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{
 &lt;p&gt;The figure below shows the posterior predictive mean (left) and standard deviation (right) for each test location for a fully stationary, i.e., stationary mean and covariance and fully non-stationary models.
 The black arrows represent the true wind directions (left) and the corresponding standard deviation of zero (right).
 The figure shows that the fully non-stationary model reaches smaller bias than the fully stationary model throughout the whole domain. In the north where this bias is close to zero, our model also reaches lower uncertainty.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;About the authors&lt;/h2&gt;
@@ -399,10 +438,10 @@ Wang, Fangpo, and Alan E Gelfand. 2014. &lt;span&gt;“&lt;span class=&#34;nocas
     
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
-      <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
+      <link>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
+      <guid>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
       <description>
 
 
@@ -447,7 +486,7 @@ of adjacency matrix &lt;span class=&#34;math inline&#34;&gt;\(x \in X=\mathbb{R}
 unlabelled graphs in a quotient space &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; set of
 permutation matrices. Each graph is now represented by its equivalence
 class of permuted graphs: &lt;span class=&#34;math display&#34;&gt;\[[x]=\{t^T x t: t\in T\}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 1: Conceptual visualization of Graph Space.&lt;/p&gt;
 &lt;p&gt;By equipping the total space with a metric &lt;span class=&#34;math inline&#34;&gt;\((X,d_X)\)&lt;/span&gt; we can define a
 quotient metric on &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; as:
@@ -457,7 +496,7 @@ which minimize the distance in the total space. The minimization problem
 is known as the Graph Matching problem, which is a broadly studied
 problem in optimization (see &lt;span class=&#34;citation&#34;&gt;Conte et al. (&lt;a href=&#34;#ref-conte2004thirty&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt; for a review). As we select
 &lt;span class=&#34;math inline&#34;&gt;\(d_X\)&lt;/span&gt; to be the Frobenius norm, we use the FAQ Graph matching (&lt;span class=&#34;citation&#34;&gt;Vogelstein et al. (&lt;a href=&#34;#ref-vogelstein2015fast&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 2: Conceptual visualization of the distance in the Graph Space.&lt;/p&gt;
 &lt;div id=&#34;short-geometrical-characterization-of-graph-space&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Short Geometrical Characterization of Graph Space&lt;/h3&gt;
@@ -497,7 +536,7 @@ Set &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}=\bar{x}\)&lt;/span&gt;&l
 &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1], \ldots, [x_k]\} \in X/T\)&lt;/span&gt;.&lt;br /&gt;
 &lt;/p&gt;
 &lt;p&gt;The Figure 3 represents the algorithm graphically:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 3: Conceptual visualization of the AAC algorithm. The star
 represents the current estimation of the Frechet Mean.&lt;/p&gt;
 &lt;/div&gt;
@@ -569,7 +608,7 @@ geodesics that meet orthogonally&lt;/em&gt; &lt;span class=&#34;math inline&#34;
 Space is done via AAC: (1) Randomly pick some candidates in the
 equivalence classes; (2) estimate the standard PCA in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;; (3) Select
 new optimally aligned candidates wrt the current PCA estimation.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 4: Conceptual visualization of the AAC for the estimation of the
 first generalized geodesic principal component.&lt;/p&gt;
 &lt;p&gt;The AAC converge in finite time and to a local minima as proven in
@@ -584,7 +623,7 @@ hand written letters dataset (&lt;span class=&#34;citation&#34;&gt;Kersting et a
 left panel of Figure 5, every network has node attributes consisting of
 the node’s &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;- and &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;-coordinates, and binary &lt;span class=&#34;math inline&#34;&gt;\((0/1\)&lt;/span&gt;) edge attributes
 indicating whether nodes are connected by lines.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 5: &lt;strong&gt;Left:&lt;/strong&gt; A datum extracted from the &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; dataset. Every
 unlabelled node has a bi-dimensional real valued attribute, while every
 edge has a &lt;span class=&#34;math inline&#34;&gt;\({0,1}\)&lt;/span&gt; attribute. The Fréchet mean. &lt;strong&gt;Right:&lt;/strong&gt; Visualization
@@ -664,16 +703,16 @@ Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G 
     
     <item>
       <title>Stochastic Fluid Dynamics</title>
-      <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
+      <link>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
+      <guid>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</guid>
       <description>
 
 
 &lt;p&gt;&lt;strong&gt;Stochastic Fluid Dynamics&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-14-stochastic-fluid-dynamics_files/stochasticfluids_cover.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-14-stochastic-fluid-dynamics_files/stochasticfluids_cover.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&lt;/p&gt;
 &lt;p&gt;In this webinar, selected young researchers will present their recent works on the topic.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
@@ -710,10 +749,10 @@ Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G 
     
     <item>
       <title>Locally Sparse Functional Regression</title>
-      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <link>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</link>
       <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <guid>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</guid>
       <description>
 
 
@@ -800,7 +839,7 @@ for each &lt;span class=&#34;math inline&#34;&gt;\((t, s) \in \mathcal{D}_{ml}\)
 sufficient that all the coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;l&#39;}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(m&#39; = m, \dots ,m + d − 1\)&lt;/span&gt; and
 &lt;span class=&#34;math inline&#34;&gt;\(l&#39; = l, \dots , l+d−1\)&lt;/span&gt; are jointly zero. The
 following figure further clarifies this concept.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Bivariate example with tensor product cubic B-splines (d=4). The top
 row shows different coefficient matrix patterns, while the bottom row
 shows the corresponding spline, where dots represent knots and the set D
@@ -830,7 +869,7 @@ coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;}\)&lt;/span&
 &lt;span class=&#34;math inline&#34;&gt;\(\psi(t)\)&lt;/span&gt; equals zero in the interval identified
 by two pairs of consecutive knots if the related &lt;span class=&#34;math inline&#34;&gt;\(d-\)&lt;/span&gt;dimensional subvector of coefficients is entirely set to zero.
 This behaviour is illustrated in the next figure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Univariate cubic B-spline basis and resulting spline functions. Dashed
 curves correspond to bases with a zero-valued coefficient. Only in the
 case when d=4 consecutive coefficients are zero the resulting spline
@@ -859,7 +898,7 @@ of any set &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml}\)&lt;/span
 of minimum size. An example of overlapping covering when
 &lt;span class=&#34;math inline&#34;&gt;\(d=4\)&lt;/span&gt; (cubic splines) is shown in the following
 figure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient matrix (L = M = 12) with the
 first 4 blocks of size d × d, d = 4. Colors according to the balancing
 vector.&lt;/em&gt;&lt;/p&gt;
@@ -896,7 +935,7 @@ dt \right)^2 + \lambda \sum_{b=1}^{B+1} || c_{b} \odot
 \boldsymbol{\psi} ||_2 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(c_b\)&lt;/span&gt; are vectors of dimension &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and each of
 the first &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; blocks contains &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; consecutive coefficients, as in the following example.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient vector (M = 12) when the
 response is scalar with the first 4 blocks of size d = 4. Colors
 according to the balancing vector.&lt;/em&gt;&lt;/p&gt;
@@ -982,7 +1021,7 @@ suggest that there is no influence of the curves evaluated at distant
 ages. Our estimate is more regular than previous approaches and its
 qualitative interpretation sharper and easier. Refer, for example, to
 Figure 10.11 of Ramsay, Hooker, and Graves (2009).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Estimated regression surface for the Swedish mortality dataset.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This result witnesses the practical relevance of adopting the proposed
 approach. Indeed, the resulting estimate, while being reminiscent of a
@@ -1047,10 +1086,10 @@ Professor at University of Rome Tor Vergata.&lt;/p&gt;
     
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
-      <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
+      <link>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
+      <guid>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
       <description>
 
 
@@ -1077,19 +1116,19 @@ where &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; indicates the d
 &lt;p&gt;Theoretically speaking, given &lt;span class=&#34;math inline&#34;&gt;\(X,Y\)&lt;/span&gt; random variables distributed according to &lt;span class=&#34;math inline&#34;&gt;\(P,Q\)&lt;/span&gt; respectively, a coupling of the two is random variables &lt;span class=&#34;math inline&#34;&gt;\((X, Y)\)&lt;/span&gt; on the joint space such that the marginal distribution of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; is &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and the marginal distribution of Y is &lt;span class=&#34;math inline&#34;&gt;\(Q\)&lt;/span&gt;.
 Clearly, given two marginal distributions, there are infinitely many joint distributions with those as marginals. Below some of the possible couplings of a &lt;span class=&#34;math inline&#34;&gt;\(N(1,1)\)&lt;/span&gt; (on the x-axis) and &lt;span class=&#34;math inline&#34;&gt;\(N(0,1)\)&lt;/span&gt; on the y-axis. Starting clockwise from top left: maximal independent (i.e. a coupling maximizing the probability of equal draws), maximal reflection, independent (bivariate independent normal) and &lt;span class=&#34;math inline&#34;&gt;\(W2\)&lt;/span&gt;-optimal (maximally correlated draws).&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Couplings of Gaussian distributions&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Couplings might be used for obtaining unbiased estimators in MCMC inference, as shown in &lt;span class=&#34;citation&#34;&gt;Jacob, O’Leary, and Atchadé (&lt;a href=&#34;#ref-jacob2019unbiased&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
 Given a target probability distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; and an integrable function &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt;, we are interested in estimating: &lt;span class=&#34;math display&#34;&gt;\[\mathbb{E}_{\pi}[h(\boldsymbol{\Theta})] = \int h(\boldsymbol{\theta}) \pi(d\boldsymbol{\theta}).\]&lt;/span&gt;
 Usually, one would sample a chain according to some Markov kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, designed to leave the chain &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; invariant, i.e. a Gibbs kernel or random walk Metropolis &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-Metropolis&#34; role=&#34;doc-biblioref&#34;&gt;Hastings 1970&lt;/a&gt;)&lt;/span&gt;. Below the sample path of such a chain.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Sample path of a single MC&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Instead of waiting until convergence, one could run two coupled Markov chains &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^1_t)_{t\ge -1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^2_t)_{t \ge0}\)&lt;/span&gt;, which marginally starts from some base distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi_0\)&lt;/span&gt; and evolves according to the same kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, but some correlation is induced in order to let the chains meet after an almost surely finite number of iterations. Basically at iteration &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; instead of sampling from &lt;span class=&#34;math inline&#34;&gt;\(X_{t+1} \sim P(X_t, \cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y_{t+1} \sim P(Y_t, \cdot)\)&lt;/span&gt; independently, we sample from a coupling of the two distributions.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Sample path of coupled MCs&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Then, for any fixed &lt;span class=&#34;math inline&#34;&gt;\(m \ge k\)&lt;/span&gt;, we can run coupled chains for &lt;span class=&#34;math inline&#34;&gt;\(\max(m, T)\)&lt;/span&gt; iterations and &lt;span class=&#34;math inline&#34;&gt;\(H_{k:m}\)&lt;/span&gt; is an unbiased estimator:
@@ -1116,7 +1155,7 @@ where &lt;span class=&#34;math inline&#34;&gt;\(C_0\)&lt;/span&gt; denotes a con
 Consider first a model with &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt; factors and &lt;span class=&#34;math inline&#34;&gt;\(I_1= I_2 = \{50, 100,250,500,750,1000 \}\)&lt;/span&gt; different possible levels. Suppose that the number of observations grows quadratically wrt the number of parameters, i.e. &lt;span class=&#34;math display&#34;&gt;\[ N= O(p^2)\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
 Below we report the average meeting time for the sampler with fixed and free variances, alongside with the bound for the collapsed Gibbs sampler with fixed variances, for different values of &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Results of the simulations suggest that the expected number of iterations converges to &lt;span class=&#34;math inline&#34;&gt;\(O(1)\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; increases, while diverges for the plain vanilla Gibbs sampler (not even plotted because of different scale). It is also clear that the bound closely resembles the estimated average meeting times.&lt;/p&gt;
@@ -1124,7 +1163,7 @@ Below we report the average meeting time for the sampler with fixed and free var
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{N}{p} \approx \alpha \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
 Estimates for the mean number of iterations for the fixed and free variance case are plotted below, alongside the corresponding theoretical bounds.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Lastly, we want to highlight that while the bound presented in the Theorem above only applies for Gibbs samplers targeting Gaussian distributions, the methodology is still valid for general target distributions and provide small meeting times. We report below the average meeting times of chains targeting a CREM with Laplace response.&lt;/p&gt;
@@ -1132,7 +1171,7 @@ Estimates for the mean number of iterations for the fixed and free variance case
 	\mathcal{L}(y_n) = Laplace \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)} \right) \text{ for } n=1,...,N,
 \end{equation}\]&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Laplace CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1174,16 +1213,16 @@ Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. &lt;span&gt;“&lt;span c
     
     <item>
       <title>Algorithmic Fairness</title>
-      <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
+      <link>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</link>
       <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</guid>
+      <guid>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</guid>
       <description>
 
 
 &lt;p&gt;&lt;strong&gt;Algorithmic Fairness&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-09-19-algorithmic-fairness_files/fairness_algo_img.jpeg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-09-19-algorithmic-fairness_files/fairness_algo_img.jpeg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;2nd joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
 &lt;ul&gt;
@@ -1208,10 +1247,10 @@ Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. &lt;span&gt;“&lt;span c
     
     <item>
       <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
-      <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
+      <link>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
+      <guid>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
       <description>
 
 
@@ -1262,11 +1301,11 @@ This is equal to &lt;span class=&#34;math inline&#34;&gt;\(\Sigma = (B \odot (\g
 where &lt;span class=&#34;math inline&#34;&gt;\(S_m=F_{m-1} \cap K_m\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F_{m-1}= K_1 \cup \cdots \cup K_{m-1}\)&lt;/span&gt;, and
 &lt;span class=&#34;math inline&#34;&gt;\(f_A\)&lt;/span&gt; denotes the the density of a GP over &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L\)&lt;/span&gt; with covariance function &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(A \in \{M,C\}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Here, we assume we have &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables with each being observed at &lt;span class=&#34;math inline&#34;&gt;\(250\)&lt;/span&gt; locations uniformly chosen from the &lt;span class=&#34;math inline&#34;&gt;\((0,1) \times (0,1)\)&lt;/span&gt; square. We assume the variable graph to be as follows.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-3-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-3-1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We calculate the perfect ordering of the cliques of the graph above and list the cliques and separators below. To visualize the decomposition, we also plot the junction tree (definition below) of the graph -&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;junction graph&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; of a decomposable graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; is a complete graph with the cliques of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; as its nodes. Every edge in the junction graph is denoted as a link, which is also the intersection of the two cliques, and can be empty. A &lt;strong&gt;spanning tree&lt;/strong&gt; of a graph is defined as a subgraph comprising all the vertices of the original graph and is a tree (acyclic graph). If a spanning tree &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; of the junction graph of &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; satisfies the following property: for any two cliques &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; of the graph, every node in the unique path between &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; in the tree contains &lt;span class=&#34;math inline&#34;&gt;\(C \cap D\)&lt;/span&gt;. Then &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; is called the &lt;strong&gt;junction tree&lt;/strong&gt; for the graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt;. Here, the junction tree of the graph has the perfectly ordered cliques as its nodes and the separators denoted as edges.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-4-1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-5-1.png&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-4-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-5-1.png&#34; /&gt;
 Hence, in this case, the likelihood of the decomposable GGP would be as follows -
 &lt;span class=&#34;math display&#34; id=&#34;eq:ggp-fact-ex&#34;&gt;\[\begin{equation}
     f_M(w(\mathcal L)) = \frac{f_C(w_{(1,2,3)}(\mathcal L)) f_C(w_{(2,3,4)}(\mathcal L)) f_C(w_{(4,5,6)}(\mathcal L)) f_C(w_{(6,7,8)}(\mathcal L)) f_C(w_{(8,9,10)}(\mathcal L))}{f_C(w_{(2,3)}(\mathcal L)) f_C(w_{(4)}(\mathcal L)) f_C(w_{(6)}(\mathcal L)) f_C(w_{(8)}(\mathcal L))}\;,
@@ -1324,7 +1363,7 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 &lt;p&gt;First, we color the nodes of the variable graph. This will allow us to simulate the latent processes belonging to the same color in parallel.&lt;/p&gt;
 &lt;p&gt;We also construct a new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)=(E_\mathcal V,E^*)\)&lt;/span&gt; which denotes this graph on the set of edges &lt;span class=&#34;math inline&#34;&gt;\(E_\mathcal V\)&lt;/span&gt;, i.e., there is an edge &lt;span class=&#34;math inline&#34;&gt;\(((i,j),(i&amp;#39;,j&amp;#39;))\)&lt;/span&gt; in this new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(\{i,i&amp;#39;,j,j&amp;#39;\}\)&lt;/span&gt; are in some clique &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_V\)&lt;/span&gt;. This allows us to facilitate parallel update of cross-correlation parameters corresponding to edges in the same color.&lt;/p&gt;
 &lt;p&gt;These two procedures are examples of chromatic Gibbs sampling.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-13-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-13-1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;2.&lt;strong&gt;Calculate initial cross-covariance matrix&lt;/strong&gt;: Start with an initial cross-correlation matrix. We Take a convex combination: &lt;span class=&#34;math inline&#34;&gt;\(0.5*diag(q) + 0.5*cor(Y.train)\)&lt;/span&gt;. Then we use this initial cross-correlation parameters and estimated marginal parameters to store the cross covariance matrices for cliques and separators only.&lt;/p&gt;
 &lt;p&gt;The largest matrix we need to store is of size &lt;span class=&#34;math inline&#34;&gt;\(nq_c \times nq_c\)&lt;/span&gt; matrix where &lt;span class=&#34;math inline&#34;&gt;\(q_c\)&lt;/span&gt; is the size of maximum clique or separator).&lt;/p&gt;
 &lt;/div&gt;
@@ -1366,10 +1405,10 @@ T_{i}(A) &amp;amp;= M_{\{i\} \times \mathcal L|(A\setminus \{i\}) \times \mathca
 &lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Results&lt;/h1&gt;
 &lt;p&gt;We create three plots below among true and estimated parameters for - (1) product of marginal scale and variance parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ii}\)&lt;/span&gt;), (2) cross-correlation parameter (&lt;span class=&#34;math inline&#34;&gt;\(r_{ij}\)&lt;/span&gt;) and (3) product of cross-covariance and cross-scale parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ij}*\phi_{ij}\)&lt;/span&gt;). The points on all the plots align on the &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line thus showing the accuracy of our estimation. We also create a plot across &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables showing true test data values and predicted values from our model. The points align on &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line and mean-square error varied from &lt;span class=&#34;math inline&#34;&gt;\(0.403\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(1.064\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-2.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-3.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-4.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;About the authors&lt;/h1&gt;
@@ -1399,251 +1438,6 @@ Lauritzen, Steffen L. 1996. &lt;em&gt;Graphical Models&lt;/em&gt;. Vol. 17. Clar
 &lt;div id=&#34;ref-wackernagel2013multivariate&#34; class=&#34;csl-entry&#34;&gt;
 Wackernagel, Hans. 2013. &lt;em&gt;Multivariate Geostatistics: An Introduction with Applications&lt;/em&gt;. Springer Science &amp;amp; Business Media.
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The scaling limit of Baxter permutations</title>
-      <link>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</link>
-      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://youngstats.github.io/post/2023/07/02/the-scaling-limit-of-baxter-permutations/</guid>
-      <description>
-
-
-&lt;div id=&#34;meanders-monotone-meanders-and-baxter-permutations&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Meanders, monotone meanders, and Baxter permutations&lt;/h2&gt;
-&lt;p&gt;Versions of the following question can be traced back at least to the work of Henri Poincaré (&lt;span class=&#34;citation&#34;&gt;Poincaré (&lt;a href=&#34;#ref-poincare-meander&#34;&gt;1912&lt;/a&gt;)&lt;/span&gt;):&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;In how many ways a simple loop in the plane can cross a line a specified number of times?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Despite many efforts, this question remains open after more than a century.
-Let us start by mathematically formalizing the latter question.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Definition 1.1.&lt;/strong&gt; A &lt;em&gt;meander&lt;/em&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\in\mathbb{N}\)&lt;/span&gt; is a simple loop &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; (i.e., a homeomorphic image of the circle) in &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; which crosses the real line &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; exactly &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; times and does not touch the line without crossing it, viewed modulo orientation-preserving homeomorphisms from &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R^2}\)&lt;/span&gt; which take &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%201.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 1: &lt;strong&gt;Left:&lt;/strong&gt; A meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;, with the intersection points of the loop and the line labeled by the order in which they are hit by the loop (in black) and the line (in red) starting at the blue vertex.
-The associated meandric permutation is &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}=1,4,3,2,5,12,7,8,9,10,11,6\)&lt;/span&gt; (in one-line notation); see Definition 1.1.
-&lt;strong&gt;Right:&lt;/strong&gt; The same meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt; seen as a pair of Jordan curves in the sphere.&lt;/p&gt;
-&lt;p&gt;See the left-hand sides of Figures 1 and 2 for some illustrations of meanders.
-A meander of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; can equivalently be thought of as a pair of Jordan curves in the sphere which intersect exactly &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; times and which do not intersect without crossing, viewed modulo orientation-preserving homeomorphisms from the sphere to itself.
-The correspondence with Definition 1.1 is obtained by viewing &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; as a curve in the Riemann sphere.
-See the right-hand side of Figure 1.&lt;/p&gt;
-&lt;p&gt;Each meander can be bijectively encoded with the corresponding &lt;em&gt;meandric permutation&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Definition 1.2.&lt;/strong&gt; For a meander &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, the corresponding &lt;em&gt;meandric permutation&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}\)&lt;/span&gt; is the permutation of &lt;span class=&#34;math inline&#34;&gt;\([1,2n]\cap\mathbb{Z}\)&lt;/span&gt; obtained as follows.
-Order the &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt; intersection points of &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\mathbb{R}\)&lt;/span&gt; from left to right.
-Then, consider the second order in which these intersection points are hit by &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; when we start &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; from the leftmost intersection point and traverse it counterclockwise.
-Then &lt;span class=&#34;math inline&#34;&gt;\(\sigma_\ell (i)=j\)&lt;/span&gt; if some intersection point is the &lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;-th visited point by the first order and the &lt;span class=&#34;math inline&#34;&gt;\(j\)&lt;/span&gt;-th visited point by the second one.&lt;/p&gt;
-&lt;p&gt;See Figure 1 for an example and the right-hand side of Figure 2 for the plots of two large uniform meandric permutations.
-Note that any meandric permutation fixes 1.
-It is easily verified that the mapping &lt;span class=&#34;math inline&#34;&gt;\(\ell\mapsto\sigma_{\ell}\)&lt;/span&gt; is a bijection from the set of meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; to the set of meandric permutations of size &lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt;.
-The study of meandric permutations dates back to at least the paper &lt;span class=&#34;citation&#34;&gt;Rosenstiehl (&lt;a href=&#34;#ref-rosentiehl-meander&#34;&gt;1984&lt;/a&gt;)&lt;/span&gt;, where they are called “planar permutations”.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Meander256-side.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 2: &lt;strong&gt;Left:&lt;/strong&gt; Two large uniform meanders &lt;span class=&#34;math inline&#34;&gt;\(\ell\)&lt;/span&gt; of size 256 and 2048.
-&lt;strong&gt;Right:&lt;/strong&gt; The plots of the two corresponding meandric permutations &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\ell}\)&lt;/span&gt;; the blue dots correspond to the values &lt;span class=&#34;math inline&#34;&gt;\((i,\sigma_\ell(i))_{i = 1,\dots,|\sigma_\ell|}\)&lt;/span&gt;.
-These simulations are obtained using the Markov chain Monte Carlo algorithm from &lt;span class=&#34;citation&#34;&gt;Heitsch and Tetali (&lt;a href=&#34;#ref-heitsch2011meander&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The term “meander” was first coined by &lt;span class=&#34;citation&#34;&gt;Arnold (&lt;a href=&#34;#ref-arnold-meander&#34;&gt;1988&lt;/a&gt;)&lt;/span&gt;.
-Meanders are of interest in physics and computational biology as models of polymer folding &lt;span class=&#34;citation&#34;&gt;Di Francesco, Golinelli, and Guitter (&lt;a href=&#34;#ref-dgg-meander-folding&#34;&gt;1997&lt;/a&gt;)&lt;/span&gt;.
-There is a vast mathematical literature devoted to the enumeration of various types of meanders, which has connections to many different subjects, from combinatorics to theoretical physics and more recently to the geometry of moduli spaces (&lt;span class=&#34;citation&#34;&gt;Delecroix et al. (&lt;a href=&#34;#ref-Delecroix-enum-meand&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;).
-See &lt;span class=&#34;citation&#34;&gt;Zvonkin (&lt;a href=&#34;#ref-zvonkin-meander-survey&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; for a brief recent survey of this literature and &lt;span class=&#34;citation&#34;&gt;La Croix (&lt;a href=&#34;#ref-lacroix-meander-survey&#34;&gt;2003&lt;/a&gt;)&lt;/span&gt; for a more detailed account.
-Additionally, meanders are the connected components of &lt;em&gt;meandric systems&lt;/em&gt;, recently studied in &lt;span class=&#34;citation&#34;&gt;Curien et al. (&lt;a href=&#34;#ref-ckst-noodle&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Kargin (&lt;a href=&#34;#ref-Kargin-cycles-meander&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Goulden, Nica, and Puder (&lt;a href=&#34;#ref-Goulden-Asymptotics-meandric&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Féray and Thévenin (&lt;a href=&#34;#ref-Feray-components-mendric&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Fukuda and Nechita (&lt;a href=&#34;#ref-fn-meander-system&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Borga, Gwynne, and Park (&lt;a href=&#34;#ref-borga2022geometry&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The problem of enumerating &lt;em&gt;all&lt;/em&gt; meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; – this is the Question (1.1) – is open and seemingly quite difficult. But, it was conjectured by Di Francesco, Golinelli, and Guitter (&lt;span class=&#34;citation&#34;&gt;Di Francesco, Golinelli, and Guitter (&lt;a href=&#34;#ref-dgg-meander-asymptotics&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;) that the number of meanders of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; behaves asymptotically like &lt;span class=&#34;math inline&#34;&gt;\(C \cdot A^n n^{-\alpha}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\alpha = (29 + \sqrt{145})/12\)&lt;/span&gt;. This conjecture was later numerically tested by Jensen and Gutmann (&lt;span class=&#34;citation&#34;&gt;Jensen and Guttmann (&lt;a href=&#34;#ref-Jensen-num-meanders&#34;&gt;2000&lt;/a&gt;)&lt;/span&gt;), where they also proposed the numerical estimate of &lt;span class=&#34;math inline&#34;&gt;\(A \approx 12.26\)&lt;/span&gt;. The best known rigorous bounds for the constant &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; are &lt;span class=&#34;math inline&#34;&gt;\(11.380\leq A \leq 12.901\)&lt;/span&gt;, as proved in &lt;span class=&#34;citation&#34;&gt;Albert and Paterson (&lt;a href=&#34;#ref-Albert-bounds-meanders&#34;&gt;2005&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;A candidate scaling limit for meanders and meandric permutations was recently proposed and studied in &lt;span class=&#34;citation&#34;&gt;Borga, Gwynne, and Sun (&lt;a href=&#34;#ref-borga2022permutons&#34;&gt;2022&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In this paper, we will address a simpler but very related model, i.e.&lt;em&gt;monotone meanders&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Definition 1.3.&lt;/strong&gt; A &lt;strong&gt;monotone meander&lt;/strong&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\in\mathbb{N}\)&lt;/span&gt; is a pair of simple curves &lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; in &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; which cross each other exactly &lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt; times and such that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; starts on the left-hand side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;, ends on the right-hand side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; and never moves in the left direction.
-(Equivalently, it is the graph of a continuous function from &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt;.)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; starts on the bottom side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;, ends on the top side of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; and never moves in the bottom direction.
-(Equivalently, it is the graph of a continuous function from &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\([0,1]\)&lt;/span&gt; rotated by 90 degrees.)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As in the case of meanders, to each monotone meander we can associate the corresponding &lt;strong&gt;monotone meandric permutation&lt;/strong&gt;. Two monotone meanders are equivalent if they induce the same monotone meandric permutation.&lt;/p&gt;
-&lt;p&gt;See Figure 3 for an example. Note that a monotone meandric permutation maps even numbers to even numbers, and odd numbers to odd numbers. The permutation mapping odd numbers is called a &lt;strong&gt;Baxter permutation&lt;/strong&gt;, while the permutation mapping even numbers is called a &lt;strong&gt;reduced Baxter permutation&lt;/strong&gt;. It can be shown &lt;span class=&#34;citation&#34;&gt;Baxter (&lt;a href=&#34;#ref-baxter-permutation&#34;&gt;1964&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;William M. Boyce (&lt;a href=&#34;#ref-MR0250516&#34;&gt;1967&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;William Martin Boyce (&lt;a href=&#34;#ref-boyce1981&#34;&gt;1981&lt;/a&gt;)&lt;/span&gt; that the Baxter permutation corresponding to a monotone meandric permutation uniquely determine the monotone meandric permutation itself.
-Hence there is a natural bijection between monotone meandric permutations and Baxter permutations.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure%203.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 3: &lt;strong&gt;Left:&lt;/strong&gt; A monotone meander of size &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;, with the intersection points labeled by the order in which they are hit by the curve &lt;span class=&#34;math inline&#34;&gt;\(\ell_1\)&lt;/span&gt; (in red) and the curve &lt;span class=&#34;math inline&#34;&gt;\(\ell_2\)&lt;/span&gt; (in blue).
-&lt;strong&gt;Right:&lt;/strong&gt; The associated monotone meandric permutation: the Baxter permutation corresponds to the black dots, while the reduced Baxter permutation corresponds to the white dots.&lt;/p&gt;
-&lt;p&gt;Baxter permutations were introduced by Glen Baxter in 1964 &lt;span class=&#34;citation&#34;&gt;Baxter (&lt;a href=&#34;#ref-baxter-permutation&#34;&gt;1964&lt;/a&gt;)&lt;/span&gt; while studying fixed points of commuting functions. They are classical examples of pattern-avoiding permutations, which have been intensively studied both in the probabilistic and combinatorial literature (see e.g. &lt;span class=&#34;citation&#34;&gt;William M. Boyce (&lt;a href=&#34;#ref-MR0250516&#34;&gt;1967&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Chung et al. (&lt;a href=&#34;#ref-MR491652&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Mallows (&lt;a href=&#34;#ref-MR555815&#34;&gt;1979&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bousquet-Mélou (&lt;a href=&#34;#ref-MR2028288&#34;&gt;2002/03&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Canary (&lt;a href=&#34;#ref-MR2679559&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Felsner et al. (&lt;a href=&#34;#ref-MR2763051&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bouvel et al. (&lt;a href=&#34;#ref-MR3882946&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;). They are known to be connected with various other interesting combinatorial structures, such as bipolar orientations &lt;span class=&#34;citation&#34;&gt;Bonichon, Bousquet-Mélou, and Fusy (&lt;a href=&#34;#ref-BBMF11&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;, walks in cones &lt;span class=&#34;citation&#34;&gt;Kenyon et al. (&lt;a href=&#34;#ref-KMSW19&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;, certain pairs of binary trees and a family of triples of non-intersecting lattice paths &lt;span class=&#34;citation&#34;&gt;Felsner et al. (&lt;a href=&#34;#ref-MR2763051&#34;&gt;2011&lt;/a&gt;)&lt;/span&gt;, and domino tilings of Aztec diamonds &lt;span class=&#34;citation&#34;&gt;Canary (&lt;a href=&#34;#ref-MR2679559&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The diagrams of two large uniform Baxter permutations is plotted in Figure 4.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure4.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 4: The diagrams of two uniform Baxter permutations of size 3253 and 4520.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;main-results-the-permuton-limit-of-baxter-permutations-and-its-intensity-measure&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Main results: the permuton limit of Baxter permutations and its intensity measure&lt;/h2&gt;
-&lt;p&gt;In recent years there has been an increasing interest in studying limits of random non-uniform permutations. One approach is to look at the convergence of relevant statistics, such as the number of cycles, the number of inversions, or the length of the longest increasing subsequence. For a brief overview of this approach see e.g. &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021random&#34;&gt;2021a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;The more recent approach is to directly determine the scaling limits of permutation diagrams. Here given a permutation &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;, its &lt;em&gt;diagram&lt;/em&gt; is a &lt;span class=&#34;math inline&#34;&gt;\(n \times n\)&lt;/span&gt; table with &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; points at position &lt;span class=&#34;math inline&#34;&gt;\((i,\sigma(i))\)&lt;/span&gt; for all &lt;span class=&#34;math inline&#34;&gt;\(i\in[n]:=\{1,2,\dots,n\}\)&lt;/span&gt;. (See the right-hand side of Figure 3 for an example.) Their scaling limits are called &lt;em&gt;permutons&lt;/em&gt;. See e.g. &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021random&#34;&gt;2021a&lt;/a&gt;)&lt;/span&gt; for an overview of this approach.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Definition 2.1.&lt;/strong&gt; A Borel probability measure &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; on the unit square &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt; is a &lt;strong&gt;permuton&lt;/strong&gt; if both of its marginals are uniform, i.e., &lt;span class=&#34;math inline&#34;&gt;\(\mu([a,b]\times[0,1]) = \mu([0,1]\times[a,b])=b-a\)&lt;/span&gt; for any &lt;span class=&#34;math inline&#34;&gt;\(0\le a&amp;lt;b\le 1\)&lt;/span&gt;.
-A permutation &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; can be viewed as a permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma}\)&lt;/span&gt; by uniformly distributing mass to the squares &lt;span class=&#34;math inline&#34;&gt;\(\{[\frac{i-1}{n}, \frac{i}{n}]\times [\frac{\sigma(i)-1}{n}, \frac{\sigma(i)}{n}]: i \in [n]\}.\)&lt;/span&gt; More precisely, &lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
-        \mu_\sigma(A)
-        =
-        n
-        \sum_{i=1}^n
-        Leb
-        \big([(i-1)/n, i/n]
-        \times
-        [(\sigma(i)-1)/n,\sigma(i)/n]
-        \cap
-        A\big),
-    \end{equation*}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; is a Borel measurable set of &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;For a &lt;em&gt;deterministic&lt;/em&gt; sequence of permutations &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt;, we say that &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; &lt;em&gt;converge in the permuton sense&lt;/em&gt; to a limiting permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;, if the permutons &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma_n}\)&lt;/span&gt; induced by &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; converge weakly to &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;.
-The set of permutons equipped with the topology of weak convergence of measures can be viewed as a compact metric space.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; studied the expected limiting permuton of the so-called &lt;em&gt;doubly alternating Baxter permutations&lt;/em&gt;.
-The authors raised the question of proving the existence of the &lt;em&gt;Baxter permuton&lt;/em&gt; as the scaling limit of uniform Baxter permutations, and determine its expected density.
-The existence of the Baxter permuton was established in &lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-BM20&#34;&gt;2022a&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theorem 2.2&lt;/strong&gt; (&lt;span class=&#34;citation&#34;&gt;Borga and Maazoun (&lt;a href=&#34;#ref-bm-baxter-permutation&#34;&gt;2022b&lt;/a&gt;)&lt;/span&gt;, Theorem 1.9) Let &lt;span class=&#34;math inline&#34;&gt;\(\sigma_n\)&lt;/span&gt; be a uniform Baxter permutation of size &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;.
-The following convergence w.r.t. the permuton topology holds: &lt;span class=&#34;math inline&#34;&gt;\(\mu_{\sigma_n}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\xrightarrow{d}\)&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a random permuton called the &lt;em&gt;Baxter permuton&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Remark 2.3.&lt;/strong&gt; In &lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021skewperm&#34;&gt;2021b&lt;/a&gt;)&lt;/span&gt;, a two-parameter family of permutons called the &lt;em&gt;skew Brownian permuton&lt;/em&gt; was introduced.
-This family includes the Baxter permuton and a well-studied one-parameter family of permutons, called the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt; (&lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2018separable&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Bassino et al. (&lt;a href=&#34;#ref-bassino2017universal&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;), as special cases.&lt;/p&gt;
-&lt;p&gt;The Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt; is a &lt;em&gt;random&lt;/em&gt; probability measure on the unit square (with uniform marginals); recall Figure 4.
-The next result is an explicit expression of its intensity measure, defined by &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_{B}](\cdot):=\mathbb E [\mu_{B}(\cdot)]\)&lt;/span&gt;, which answers &lt;span class=&#34;citation&#34;&gt;Dokos and Pak (&lt;a href=&#34;#ref-MR3238333&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theorem 2.4.&lt;/strong&gt; (&lt;span class=&#34;citation&#34;&gt;Borga et al. (&lt;a href=&#34;#ref-bhsy-baxter-permuton&#34;&gt;2023&lt;/a&gt;)&lt;/span&gt;, Theorem 1.3) Consider the Baxter permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu_B\)&lt;/span&gt;.
-Define the function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eqn-rho}
-        \rho(t, x, r):= \frac{1}{t^2} \left(\left(\frac{3rx}{2t}-1\right)e^{-\frac{r^2+x^2-rx}{2t}}+e^{-\frac{(x+r)^2}{2t}}\right).
-    \end{equation}\]&lt;/span&gt; Then the intensity measure &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E [\mu_B]\)&lt;/span&gt; is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
-{Moreover}, it has the following density function &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}\label{eqn-baxter-density}
-        p_B(x, y) = c\int_{\max\{0, x+y-1\}}^{\min\{x, y\}}\int_{\mathbb R_{+}^4}\rho(y-z, \ell_1, \ell_2)\rho(z, \ell_2, \ell_3)\rho(x-z, \ell_3, \ell_4)\rho(1+z-x-y, \ell_4, \ell_1)\,\ d\ell_1 d\ell_2 d\ell_3 d\ell_4\, dz,
-    \end{equation}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(c\)&lt;/span&gt; is a normalizing constant.&lt;/p&gt;
-&lt;p&gt;We remark that, further computation of the integral (2.2) is tricky, as it involves integrating a four-dimensional Gaussian in the first quadrant.
-We also recall that the intensity measure of other universal random limiting permutons has been investigated in the literature.
-For instance, the intensity measure of the &lt;em&gt;biased Brownian separable permuton&lt;/em&gt;, was determined by Maazoun in &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
-We recall that the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt;, defined for all &lt;span class=&#34;math inline&#34;&gt;\(q\in[0,1]\)&lt;/span&gt;, is a one-parameter universal family of limiting permutons arising form pattern-avoiding permutations. In &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, it was proved that for all &lt;span class=&#34;math inline&#34;&gt;\(q\in(0,1)\)&lt;/span&gt;, the intensity measure &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E[\mu^q_S]\)&lt;/span&gt; of the biased Brownian separable permuton is absolutely continuous with respect to the Lebesgue measure on &lt;span class=&#34;math inline&#34;&gt;\([0,1]^2\)&lt;/span&gt;.
-Furthermore, &lt;span class=&#34;math inline&#34;&gt;\(\mathbb E[\mu^q_S]\)&lt;/span&gt; has the following density function&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation*}
-    p^q_S(x, y) =\int_{\max\{0,x+y -1\}}^{\min\{x,y\}} \frac{3q^2(1-q)^2 \,da }
-    {2\pi(a(x-a)(1-x-y+a)(y-a))^{3/2}{\left(\frac{q^2}{a}+\frac{(1-q)^2}{(x-a)}+\frac{q^2}{(1-x-y+a)}+\frac{(1-q)^2}{(y-a)}\right)^{5/2}}}.
-\end{equation*}\]&lt;/span&gt; The proof of &lt;span class=&#34;citation&#34;&gt;Maazoun (&lt;a href=&#34;#ref-MR4079636&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; relies on an explicit construction of the biased Brownian separable permuton &lt;span class=&#34;math inline&#34;&gt;\(\mu^q_S\)&lt;/span&gt; from a one-dimensional Brownian excursion decorated with i.i.d. plus and minus signs.
-To the best of our knowledge this proof cannot be easily extended to the Baxter permuton case.
-Our proof of Theorem 2.4 uses the combination of two main achievements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A connection (&lt;span class=&#34;citation&#34;&gt;Borga (&lt;a href=&#34;#ref-borga2021skewperm&#34;&gt;2021b&lt;/a&gt;)&lt;/span&gt;) between the Baxter permuton (and more generally the skew Brownian permuton of Remark 2.3) and some well-known families of random curves and random surfaces: the &lt;strong&gt;Schramm-Loewner evolution (SLE)&lt;/strong&gt; curves and the &lt;strong&gt;Liouville quantum gravity (LQG)&lt;/strong&gt; spheres.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Some integrability results (&lt;span class=&#34;citation&#34;&gt;Ang, Holden, and Sun (&lt;a href=&#34;#ref-AHS20&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;) for SLE curves and LQG spheres which go under the name of &lt;strong&gt;conformal welding of quantum surfaces&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Explaining the results above would require a long digression; hence we just conclude this article with some plots of &lt;span class=&#34;math inline&#34;&gt;\(p_B(x, y)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p^q_S(x, y)\)&lt;/span&gt; using numerical approximations of the integrals.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure5.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 5: &lt;strong&gt;From left to right:&lt;/strong&gt; The diagrams of the densities &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.1}(x,y)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.4}(x,y)\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,y)\)&lt;/span&gt;, and &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,y)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-02-the-scaling-limit-of-baxter-permutations_files/Figure6.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Figure 6: Some sections of the densities &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,y)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,y)\)&lt;/span&gt;.
-&lt;strong&gt;From left to right:&lt;/strong&gt; In red (resp. in blue) we plot the diagrams of &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,x)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,x)\)&lt;/span&gt;), &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,1/2)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,1/2)\)&lt;/span&gt;), and &lt;span class=&#34;math inline&#34;&gt;\(p_S^{0.5}(x,1/4)\)&lt;/span&gt; (resp. &lt;span class=&#34;math inline&#34;&gt;\(p_B(x,1/4)\)&lt;/span&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;bibliography&#34; class=&#34;section level2 unnumbered&#34;&gt;
-&lt;h2&gt;Bibliography&lt;/h2&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-Albert-bounds-meanders&#34; class=&#34;csl-entry&#34;&gt;
-Albert, M. H., and M. S. Paterson. 2005. &lt;span&gt;“Bounds for the Growth Rate of Meander Numbers.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 112 (2): 250–62. &lt;a href=&#34;https://doi.org/10.1016/j.jcta.2005.02.006&#34;&gt;https://doi.org/10.1016/j.jcta.2005.02.006&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-AHS20&#34; class=&#34;csl-entry&#34;&gt;
-Ang, Morris, Nina Holden, and Xin Sun. 2020. &lt;span&gt;“Conformal Welding of Quantum Disks.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2009.08389&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-arnold-meander&#34; class=&#34;csl-entry&#34;&gt;
-Arnold, V. I. 1988. &lt;span&gt;“The Branched Covering &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\({\bf C}{\rm P}^2\to S^4\)&lt;/span&gt;&lt;/span&gt;, Hyperbolicity and Projective Topology.”&lt;/span&gt; &lt;em&gt;Sibirsk. Mat. Zh.&lt;/em&gt; 29 (5): 36–47, 237. &lt;a href=&#34;https://doi.org/10.1007/BF00970265&#34;&gt;https://doi.org/10.1007/BF00970265&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-bassino2017universal&#34; class=&#34;csl-entry&#34;&gt;
-Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, Mickaël Maazoun, and Adeline Pierrot. 2020. &lt;span&gt;“Universal Limits of Substitution-Closed Permutation Classes.”&lt;/span&gt; &lt;em&gt;J. Eur. Math. Soc. (JEMS)&lt;/em&gt; 22 (11): 3565–3639. &lt;a href=&#34;https://doi.org/10.4171/jems/993&#34;&gt;https://doi.org/10.4171/jems/993&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-bassino2018separable&#34; class=&#34;csl-entry&#34;&gt;
-Bassino, Frédérique, Mathilde Bouvel, Valentin Féray, Lucas Gerin, and Adeline Pierrot. 2018. &lt;span&gt;“The &lt;span&gt;B&lt;/span&gt;rownian Limit of Separable Permutations.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 46 (4): 2134–89. &lt;a href=&#34;https://doi.org/10.1214/17-AOP1223&#34;&gt;https://doi.org/10.1214/17-AOP1223&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-baxter-permutation&#34; class=&#34;csl-entry&#34;&gt;
-Baxter, Glen. 1964. &lt;span&gt;“On Fixed Points of the Composite of Commuting Functions.”&lt;/span&gt; &lt;em&gt;Proc. Amer. Math. Soc.&lt;/em&gt; 15: 851–55.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BBMF11&#34; class=&#34;csl-entry&#34;&gt;
-Bonichon, Nicolas, Mireille Bousquet-Mélou, and Éric Fusy. 2010. &lt;span&gt;“Baxter Permutations and Plane Bipolar Orientations.”&lt;/span&gt; &lt;em&gt;S&lt;span&gt;é&lt;/span&gt;minaire Lotharingien de Combinatoire&lt;/em&gt; 61: B61Ah.
-&lt;/div&gt;
-&lt;div id=&#34;ref-borga2021random&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo. 2021a. &lt;span&gt;“Random Permutations – a Geometric Point of View.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2107.09699 (Ph.D. Thesis)&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-borga2021skewperm&#34; class=&#34;csl-entry&#34;&gt;
-———. 2021b. &lt;span&gt;“The Skew &lt;span&gt;B&lt;/span&gt;rownian Permuton: A New Universality Class for Random Constrained Permutations.”&lt;/span&gt; &lt;em&gt;Proceedings of the London Mathematical Society (to Appear)&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-borga2022geometry&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo, Ewain Gwynne, and Minjae Park. 2022. &lt;span&gt;“On the Geometry of Uniform Meandric Systems.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2212.00534&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-borga2022permutons&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo, Ewain Gwynne, and Xin Sun. 2022. &lt;span&gt;“Permutons, Meanders, and &lt;span&gt;SLE&lt;/span&gt;-Decorated &lt;span&gt;L&lt;/span&gt;iouville Quantum Gravity.”&lt;/span&gt; &lt;em&gt;arXiv Preprint:2207.02319&lt;/em&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-bhsy-baxter-permuton&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo, Nina Holden, Xin Sun, and Pu Yu. 2023. &lt;span&gt;“Baxter Permuton and &lt;span&gt;L&lt;/span&gt;iouville Quantum Gravity.”&lt;/span&gt; &lt;em&gt;Probability Theory and Related Fields&lt;/em&gt;, 1–49.
-&lt;/div&gt;
-&lt;div id=&#34;ref-bm-baxter-permutation&#34; class=&#34;csl-entry&#34;&gt;
-Borga, Jacopo, and Mickaël Maazoun. 2022b. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-BM20&#34; class=&#34;csl-entry&#34;&gt;
-———. 2022a. &lt;span&gt;“Scaling and Local Limits of &lt;span&gt;B&lt;/span&gt;axter Permutations and Bipolar Orientations Through Coalescent-Walk Processes.”&lt;/span&gt; &lt;em&gt;Ann. Probab.&lt;/em&gt; 50 (4): 1359–1417. &lt;a href=&#34;https://doi.org/10.1214/21-aop1559&#34;&gt;https://doi.org/10.1214/21-aop1559&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR2028288&#34; class=&#34;csl-entry&#34;&gt;
-Bousquet-Mélou, M. 2002/03. &lt;span&gt;“Four Classes of Pattern-Avoiding Permutations Under One Roof: Generating Trees with Two Labels.”&lt;/span&gt; &lt;em&gt;Electron. J. Combin.&lt;/em&gt; 9 (2): Research paper 19, 31. &lt;a href=&#34;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&#34;&gt;http://www.combinatorics.org/Volume_9/Abstracts/v9i2r19.html&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR3882946&#34; class=&#34;csl-entry&#34;&gt;
-Bouvel, Mathilde, Veronica Guerrini, Andrew Rechnitzer, and Simone Rinaldi. 2018. &lt;span&gt;“Semi-&lt;span&gt;B&lt;/span&gt;axter and Strong-&lt;span&gt;B&lt;/span&gt;axter: Two Relatives of the &lt;span&gt;B&lt;/span&gt;axter Sequence.”&lt;/span&gt; &lt;em&gt;SIAM J. Discrete Math.&lt;/em&gt; 32 (4): 2795–2819. &lt;a href=&#34;https://doi.org/10.1137/17M1126734&#34;&gt;https://doi.org/10.1137/17M1126734&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR0250516&#34; class=&#34;csl-entry&#34;&gt;
-Boyce, William M. 1967. &lt;span&gt;“Generation of a Class of Permutations Associated with Commuting Functions.”&lt;/span&gt; &lt;em&gt;Math. Algorithms 2 (1967), 19–26; Addendum, Ibid.&lt;/em&gt; 3: 25–26.
-&lt;/div&gt;
-&lt;div id=&#34;ref-boyce1981&#34; class=&#34;csl-entry&#34;&gt;
-Boyce, William Martin. 1981. &lt;span&gt;“Baxter Permutations and Functional Composition.”&lt;/span&gt; &lt;em&gt;Houston Journal Of Mathematics&lt;/em&gt; 7 (2).
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR2679559&#34; class=&#34;csl-entry&#34;&gt;
-Canary, Hal. 2010. &lt;span&gt;“Aztec Diamonds and &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;Electron. J. Combin.&lt;/em&gt; 17 (1): Research Paper 105, 12. &lt;a href=&#34;http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html&#34;&gt;http://www.combinatorics.org/Volume_17/Abstracts/v17i1r105.html&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR491652&#34; class=&#34;csl-entry&#34;&gt;
-Chung, Fan-Rong K., Ronald L. Graham, Verner Emil Hoggatt Jr., and Mark Kleiman. 1978. &lt;span&gt;“The Number of &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 24 (3): 382–94. &lt;a href=&#34;https://doi.org/10.1016/0097-3165(78)90068-7&#34;&gt;https://doi.org/10.1016/0097-3165(78)90068-7&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-ckst-noodle&#34; class=&#34;csl-entry&#34;&gt;
-Curien, Nicolas, Gady Kozma, Vladas Sidoravicius, and Laurent Tournier. 2019. &lt;span&gt;“Uniqueness of the Infinite Noodle.”&lt;/span&gt; &lt;em&gt;Ann. Inst. Henri Poincaré D&lt;/em&gt; 6 (2): 221–38. &lt;a href=&#34;https://doi.org/10.4171/AIHPD/70&#34;&gt;https://doi.org/10.4171/AIHPD/70&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Delecroix-enum-meand&#34; class=&#34;csl-entry&#34;&gt;
-Delecroix, Vincent, Élise Goujard, Peter Zograf, and Anton Zorich. 2020. &lt;span&gt;“Enumeration of Meanders and &lt;span&gt;M&lt;/span&gt;asur-&lt;span&gt;V&lt;/span&gt;eech Volumes.”&lt;/span&gt; &lt;em&gt;Forum Math. Pi&lt;/em&gt; 8: e4, 80. &lt;a href=&#34;https://doi.org/10.1017/fmp.2020.2&#34;&gt;https://doi.org/10.1017/fmp.2020.2&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-dgg-meander-folding&#34; class=&#34;csl-entry&#34;&gt;
-Di Francesco, P., O. Golinelli, and E. Guitter. 1997. &lt;span&gt;“Meander, Folding, and Arch Statistics.”&lt;/span&gt; &lt;em&gt;Math. Comput. Modelling&lt;/em&gt; 26 (8-10): 97–147. &lt;a href=&#34;https://doi.org/10.1016/S0895-7177(97)00202-1&#34;&gt;https://doi.org/10.1016/S0895-7177(97)00202-1&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-dgg-meander-asymptotics&#34; class=&#34;csl-entry&#34;&gt;
-———. 2000. &lt;span&gt;“Meanders: Exact Asymptotics.”&lt;/span&gt; &lt;em&gt;Nuclear Phys. B&lt;/em&gt; 570 (3): 699–712. &lt;a href=&#34;https://doi.org/10.1016/S0550-3213(99)00753-1&#34;&gt;https://doi.org/10.1016/S0550-3213(99)00753-1&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR3238333&#34; class=&#34;csl-entry&#34;&gt;
-Dokos, Theodore, and Igor Pak. 2014. &lt;span&gt;“The Expected Shape of Random Doubly Alternating &lt;span&gt;B&lt;/span&gt;axter Permutations.”&lt;/span&gt; &lt;em&gt;Online J. Anal. Comb.&lt;/em&gt; 9: 12.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR2763051&#34; class=&#34;csl-entry&#34;&gt;
-Felsner, Stefan, Éric Fusy, Marc Noy, and David Orden. 2011. &lt;span&gt;“Bijections for &lt;span&gt;B&lt;/span&gt;axter Families and Related Objects.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 118 (3): 993–1020. &lt;a href=&#34;https://doi.org/10.1016/j.jcta.2010.03.017&#34;&gt;https://doi.org/10.1016/j.jcta.2010.03.017&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Feray-components-mendric&#34; class=&#34;csl-entry&#34;&gt;
-Féray, Valentin, and Paul Thévenin. 2022. &lt;span&gt;“&lt;span class=&#34;nocase&#34;&gt;Components in meandric systems and the infinite noodle&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;ArXiv e-Prints&lt;/em&gt;, January. &lt;a href=&#34;https://arxiv.org/abs/\arxiv{2201.11572}&#34;&gt;https://arxiv.org/abs/\arxiv{2201.11572}&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-fn-meander-system&#34; class=&#34;csl-entry&#34;&gt;
-Fukuda, Motohisa, and Ion Nechita. 2019. &lt;span&gt;“Enumerating Meandric Systems with Large Number of Loops.”&lt;/span&gt; &lt;em&gt;Ann. Inst. Henri Poincaré D&lt;/em&gt; 6 (4): 607–40. &lt;a href=&#34;https://doi.org/10.4171/AIHPD/80&#34;&gt;https://doi.org/10.4171/AIHPD/80&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Goulden-Asymptotics-meandric&#34; class=&#34;csl-entry&#34;&gt;
-Goulden, I. P., Alexandru Nica, and Doron Puder. 2020. &lt;span&gt;“Asymptotics for a Class of Meandric Systems, via the &lt;span&gt;H&lt;/span&gt;asse Diagram of &lt;span&gt;&lt;span class=&#34;math inline&#34;&gt;\({\rm NC}(n)\)&lt;/span&gt;&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Int. Math. Res. Not. IMRN&lt;/em&gt;, no. 4: 983–1034. &lt;a href=&#34;https://doi.org/10.1093/imrn/rny044&#34;&gt;https://doi.org/10.1093/imrn/rny044&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-heitsch2011meander&#34; class=&#34;csl-entry&#34;&gt;
-Heitsch, Christine E, and Prasad Tetali. 2011. &lt;span&gt;“Meander Graphs.”&lt;/span&gt; In &lt;em&gt;Discrete Mathematics and Theoretical Computer Science&lt;/em&gt;, 469–80. Discrete Mathematics; Theoretical Computer Science.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Jensen-num-meanders&#34; class=&#34;csl-entry&#34;&gt;
-Jensen, Iwan, and Anthony J. Guttmann. 2000. &lt;span&gt;“Critical Exponents of Plane Meanders.”&lt;/span&gt; &lt;em&gt;J. Phys. A&lt;/em&gt; 33 (21): L187–92. &lt;a href=&#34;https://doi.org/10.1088/0305-4470/33/21/101&#34;&gt;https://doi.org/10.1088/0305-4470/33/21/101&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-Kargin-cycles-meander&#34; class=&#34;csl-entry&#34;&gt;
-Kargin, Vladislav. 2020. &lt;span&gt;“Cycles in Random Meander Systems.”&lt;/span&gt; &lt;em&gt;J. Stat. Phys.&lt;/em&gt; 181 (6): 2322–45. &lt;a href=&#34;https://doi.org/10.1007/s10955-020-02665-2&#34;&gt;https://doi.org/10.1007/s10955-020-02665-2&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-KMSW19&#34; class=&#34;csl-entry&#34;&gt;
-Kenyon, Richard, Jason Miller, Scott Sheffield, and David B Wilson. 2019. &lt;span&gt;“Bipolar Orientations on Planar Maps and &lt;span&gt;SLE&lt;/span&gt;&lt;span class=&#34;math inline&#34;&gt;\(_{12}\)&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;The Annals of Probability&lt;/em&gt; 47 (3): 1240–69.
-&lt;/div&gt;
-&lt;div id=&#34;ref-lacroix-meander-survey&#34; class=&#34;csl-entry&#34;&gt;
-La Croix, Michael. 2003. &lt;span&gt;“&lt;span&gt;A&lt;/span&gt;pproaches to the Enumerative Theory of Meanders.”&lt;/span&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR4079636&#34; class=&#34;csl-entry&#34;&gt;
-Maazoun, Mickaël. 2020. &lt;span&gt;“On the &lt;span&gt;B&lt;/span&gt;rownian Separable Permuton.”&lt;/span&gt; &lt;em&gt;Combin. Probab. Comput.&lt;/em&gt; 29 (2): 241–66. &lt;a href=&#34;https://doi.org/10.1017/s0963548319000300&#34;&gt;https://doi.org/10.1017/s0963548319000300&lt;/a&gt;.
-&lt;/div&gt;
-&lt;div id=&#34;ref-MR555815&#34; class=&#34;csl-entry&#34;&gt;
-Mallows, Colin L. 1979. &lt;span&gt;“Baxter Permutations Rise Again.”&lt;/span&gt; &lt;em&gt;J. Combin. Theory Ser. A&lt;/em&gt; 27 (3): 394–96.
-&lt;/div&gt;
-&lt;div id=&#34;ref-poincare-meander&#34; class=&#34;csl-entry&#34;&gt;
-Poincaré, Henri. 1912. &lt;span&gt;“&lt;span&gt;S&lt;/span&gt;ur Un t&lt;span&gt;é&lt;/span&gt;or&lt;span&gt;è&lt;/span&gt;me de g&lt;span&gt;é&lt;/span&gt;om&lt;span&gt;é&lt;/span&gt;trie.”&lt;/span&gt; &lt;em&gt;Rend. Del Circ. Mat. Palermo&lt;/em&gt; 33: 375–407.
-&lt;/div&gt;
-&lt;div id=&#34;ref-rosentiehl-meander&#34; class=&#34;csl-entry&#34;&gt;
-Rosenstiehl, P. 1984. &lt;span&gt;“Planar Permutations Defined by Two Intersecting &lt;span&gt;J&lt;/span&gt;ordan Curves.”&lt;/span&gt; In &lt;em&gt;Graph Theory and Combinatorics (&lt;span&gt;C&lt;/span&gt;ambridge, 1983)&lt;/em&gt;, 259–71. Academic Press, London.
-&lt;/div&gt;
-&lt;div id=&#34;ref-zvonkin-meander-survey&#34; class=&#34;csl-entry&#34;&gt;
-Zvonkin, Alexander. 2021. &lt;span&gt;“&lt;span&gt;M&lt;/span&gt;eanders: A &lt;span&gt;P&lt;/span&gt;ersonal &lt;span&gt;P&lt;/span&gt;erspective.”&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

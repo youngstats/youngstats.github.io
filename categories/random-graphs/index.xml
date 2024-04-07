@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>random-graphs on YoungStatS</title>
+    <title>Random-Graphs on YoungStatS</title>
     <link>https://youngstats.github.io/categories/random-graphs/</link>
-    <description>Recent content in random-graphs on YoungStatS</description>
+    <description>Recent content in Random-Graphs on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/random-graphs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/random-graphs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frozen percolation on the binary tree is nonendogenous</title>
       <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
-      <description>In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
+      <description>In frozen percolation on a graph, there is a barrier located on each&#xD;edge. Initially, the barriers are closed and they are assigned&#xD;i.i.d. uniformly distributed activation times. At its activation time,&#xD;a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) of&#xD;freezing times, all barriers that percolate are frozen. In particular,&#xD;if \(\Xi\) is the whole unit interval, this means that clusters stop&#xD;growing as soon as they reach infinite size.</description>
     </item>
-    
   </channel>
 </rss>

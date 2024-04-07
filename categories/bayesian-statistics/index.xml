@@ -1,106 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bayesian-statistics on YoungStatS</title>
+    <title>Bayesian-Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/bayesian-statistics/</link>
-    <description>Recent content in bayesian-statistics on YoungStatS</description>
+    <description>Recent content in Bayesian-Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
       <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
-      <description>BackgroundCircular data, i.e., data defined on the unit circle, can be found in many areas of science.The unique nature of these data means that conventional methods for non-circular data are not valid for these.At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
+      <description>Background&#xD;Circular data, i.e., data defined on the unit circle, can be found in many areas of science.&#xD;The unique nature of these data means that conventional methods for non-circular data are not valid for these.&#xD;At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.&#xD;An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):</description>
     </item>
-    
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
       <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
-      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.
-Crossed random effects models (CREM)CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
+      <description>In the following we show how it is possible to obtain parallelizable, unbiased and computationally cheap estimates of Crossed random effects models with a linear cost in the number of datapoints (and paramaters) exploiting couplings.&#xA;Crossed random effects models (CREM)&#xD;CREM model a continuous response variables \(Y\) as depending on the sum of unknown effects of \(K\) categorical predictors. Think of the \(Y_n\) as the ratings given to university courses, along with some factors potentially impacting such a score, e.</description>
     </item>
-    
     <item>
       <title>Bayesian nonparametric modeling of conditional multidimensional dependence structures</title>
       <link>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</link>
       <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/05/19/bayesian-nonparametric-modeling-of-conditional-multidimensional-dependence-structures/</guid>
-      <description>OverviewIn many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
+      <description>Overview&#xD;In many real data applications we are often required to model jointly \(d\geq 3\) continuous random variables, denoted as \(Y_1,\dots,Y_d\) . The multivariate distribution, which allows us to describe the joint behaviour of those variables, can be denoted as \(F(Y_1,\dots,Y_d)=P(Y_1\le y_1,\dots,Y_d,\le y_d)\) . However, complex relations between data, particularly asymmetric and tail dependent associations, are often difficult to be modelled. The copula approach allows us to express the multivariate distribution of a set of variables by separating the marginals from the dependence structure.</description>
     </item>
-    
     <item>
       <title>Fitting robust non-Gaussian models in Stan and R-INLA</title>
       <link>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</link>
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/01/19/fitting-robust-non-gaussian-models-in-stan-and-r-inla/</guid>
-      <description>OverviewTraditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments \(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\) are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.</description>
+      <description>Overview&#xD;Traditionally the excitation noise of spatial and temporal models is Gaussian. Take, for instance, an AR1 (autoregressive of order 1) process, where the increments \(x_{i+1}-\rho x_i, \ \ |\rho|&amp;lt;1\) are assumed to follow a Gaussian distribution. However, it is easy to find datasets that contain inherently non-Gaussian features, such as sudden jumps or spikes, that adversely affect the inferences and predictions made from Gaussian models. In this post, we introduce a specific class of non-Gaussian models, their advantages over Gaussian models, and their Bayesian implementation in Stan and R-INLA, two well-established platforms for statistical modeling.</description>
     </item>
-    
     <item>
       <title>Selection of Priors in Bayesian Structural Equation Modeling</title>
       <link>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</link>
       <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/02/14/selection-of-priors-in-bayesian-structural-equation-modeling/</guid>
-      <description>Selection of Priors in Bayesian Structural Equation Modelling
-Structural equation modeling (SEM) is an important framework within the social sciences that encompasses a wide variety of statistical models. Traditionally, estimation of SEMs has relied on maximum likelihood. Unfortunately, there also exist a variety of situations in which maximum likelihood performs subpar. This led researchers to turn to alternative estimation methods, in particular, Bayesian estimation of SEMs or BSEM. However, it is currently unclear how to specify the prior distribution in order to attain the advantages of Bayesian approaches.</description>
+      <description>Selection of Priors in Bayesian Structural Equation Modelling&#xA;Structural equation modeling (SEM) is an important framework within the social sciences that encompasses a wide variety of statistical models. Traditionally, estimation of SEMs has relied on maximum likelihood. Unfortunately, there also exist a variety of situations in which maximum likelihood performs subpar. This led researchers to turn to alternative estimation methods, in particular, Bayesian estimation of SEMs or BSEM. However, it is currently unclear how to specify the prior distribution in order to attain the advantages of Bayesian approaches.</description>
     </item>
-    
     <item>
       <title>Recent Advances in Approximate Bayesian Inference</title>
       <link>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/02/08/recent-advances-in-approximate-bayesian-inference/</guid>
-      <description>Recent Advances in Approximate Bayesian Inference
-In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
+      <description>Recent Advances in Approximate Bayesian Inference&#xA;In approximate Bayesian computation, likelihood function is intractable and needs to be itself estimated using forward simulations of the statistical model (Beaumont et al., 2002; Marin et al., 2012; Sisson et al., 2019; Martin et al., 2020). Recent years have seen numerous advances in approximate inference methods, which have enabled Bayesian inference in increasingly challenging scenarios involving complex probabilistic models and large datasets.</description>
     </item>
-    
     <item>
       <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
       <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</guid>
       <description>Overview Bayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a homogeneous sample is performed with exchangeable models of the type \(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\), where \(\tilde \mu\) is a random measure and \(T\) is a suitable transformation. Notable examples for \(T\) include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).</description>
     </item>
-    
     <item>
       <title>Universal estimation with Maximum Mean Discrepancy (MMD)</title>
       <link>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</guid>
-      <description>This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage: https://team-approx-bayes.github.io/blog/mmd/
-INTRODUCTIONA very old and yet very exciting problem in statistics is the definition of a universal estimator \(\hat{\theta}\). An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.
-Formally speaking, we want that for some metric \(d\) on probability distributions, for any statistical model \((P_\theta,\theta\in\Theta)\), given \(X_1,\dots,X_n\) drawn i.</description>
+      <description>This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage: https://team-approx-bayes.github.io/blog/mmd/&#xA;INTRODUCTION&#xD;A very old and yet very exciting problem in statistics is the definition of a universal estimator \(\hat{\theta}\). An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.&#xA;Formally speaking, we want that for some metric \(d\) on probability distributions, for any statistical model \((P_\theta,\theta\in\Theta)\), given \(X_1,\dots,X_n\) drawn i.</description>
     </item>
-    
     <item>
       <title>Optimal disclosure risk assessment</title>
       <link>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/09/30/optimal-disclosure-risk-assessment/</guid>
-      <description>Disclosure risk for microdataProtection against disclosure is a legal and ethical obligation foragencies releasing microdata files for public use. Consider a microdatasample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finitepopulation of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such thateach sample record \(X_i\) contains two disjoint types of information:identifying categorical information and sensitive information.Identifying information consists of a set of categorical variables whichmight be matchable to known units of the population.</description>
+      <description>Disclosure risk for microdata&#xD;Protection against disclosure is a legal and ethical obligation for&#xD;agencies releasing microdata files for public use. Consider a microdata&#xD;sample \({X}_n=(X_{1},\ldots,X_{n})\) of size \(n\) from a finite&#xD;population of size \(\bar{n}=n+\lambda n\), with \(\lambda&amp;gt;0\), such that&#xD;each sample record \(X_i\) contains two disjoint types of information:&#xD;identifying categorical information and sensitive information.&#xD;Identifying information consists of a set of categorical variables which&#xD;might be matchable to known units of the population.</description>
     </item>
-    
     <item>
       <title>Optional stopping with Bayes factors: possibilities and limitations</title>
       <link>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/06/10/optional-stopping-with-bayes-factors-possibilities-and-limitations/</guid>
-      <description>In recent years, a surprising number of scientific results have failedto hold up to continued scrutiny. Part of this ‘replicability crisis’may be caused by practices that ignore the assumptions of traditional(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One ofthese assumptions is that the experimental protocol should be completelydetermined upfront. In practice, researchers often adjust the protocoldue to unforeseen circumstances or collect data until a point has beenproven.</description>
+      <description>In recent years, a surprising number of scientific results have failed&#xD;to hold up to continued scrutiny. Part of this ‘replicability crisis’&#xD;may be caused by practices that ignore the assumptions of traditional&#xD;(frequentist) statistical methods (John, Loewenstein, and Prelec 2012). One of&#xD;these assumptions is that the experimental protocol should be completely&#xD;determined upfront. In practice, researchers often adjust the protocol&#xD;due to unforeseen circumstances or collect data until a point has been&#xD;proven.</description>
     </item>
-    
   </channel>
 </rss>

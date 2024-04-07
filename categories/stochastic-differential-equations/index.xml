@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>stochastic-differential-equations on YoungStatS</title>
+    <title>Stochastic-Differential-Equations on YoungStatS</title>
     <link>https://youngstats.github.io/categories/stochastic-differential-equations/</link>
-    <description>Recent content in stochastic-differential-equations on YoungStatS</description>
+    <description>Recent content in Stochastic-Differential-Equations on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-differential-equations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/stochastic-differential-equations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stochastic Fluid Dynamics</title>
       <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
-      <description>Stochastic Fluid Dynamics
-Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET
-The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.
-In this webinar, selected young researchers will present their recent works on the topic.</description>
+      <description>Stochastic Fluid Dynamics&#xA;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&#xA;In this webinar, selected young researchers will present their recent works on the topic.</description>
     </item>
-    
     <item>
       <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
       <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
-      <description>Passive scalar turbulence is the study of how a scalar quantity, such astemperature or salinity, is transported by an incompressible fluid. Thisprocess is modeled by the advection diffusion equation\[\begin{equation}\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is anincompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameterand \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settlesinto a statistical steady state and complex self-similar structuresarise due to repeated stretching and folding by the velocity field.</description>
+      <description>Passive scalar turbulence is the study of how a scalar quantity, such as&#xD;temperature or salinity, is transported by an incompressible fluid. This&#xD;process is modeled by the advection diffusion equation&#xD;\[\begin{equation}&#xD;\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}&#xD;\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is an&#xD;incompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameter&#xD;and \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settles&#xD;into a statistical steady state and complex self-similar structures&#xD;arise due to repeated stretching and folding by the velocity field.</description>
     </item>
-    
     <item>
       <title>Log-modulated rough stochastic volatility models</title>
       <link>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/03/14/log-modulated-rough-stochastic-volatility-models/</guid>
-      <description>Rough VolatilityNew insights about the regularity of the instantaneous variance obtainedfrom realized variance data (see Gatheral, Jaisson, and Rosenbaum (2018), Bennedsen, Lunde, and Pakkanen (2021, to appear) and Fukasawa, Takabatake, and Westphal (2019)), have inspiredthe development of so-called rough stochastic volatility modelsin the financial literature. In simple terms, such a model can bedescribed by the following SDE \[\begin{equation}\label{eq:stoch-vol}dS_t = S_t \sqrt{v_t}dB_t,\end{equation}\] where the logarithm of the instantaneous variance process\(v\) behaves similarly to a fractional Brownian motion (fBm) with Hurstindex \(0 &amp;lt; H &amp;lt; 1/2\).</description>
+      <description>Rough Volatility&#xD;New insights about the regularity of the instantaneous variance obtained&#xD;from realized variance data (see Gatheral, Jaisson, and Rosenbaum (2018), Bennedsen, Lunde, and Pakkanen (2021, to appear) and Fukasawa, Takabatake, and Westphal (2019)), have inspired&#xD;the development of so-called rough stochastic volatility models&#xD;in the financial literature. In simple terms, such a model can be&#xD;described by the following SDE \[\begin{equation}&#xD;\label{eq:stoch-vol}&#xD;dS_t = S_t \sqrt{v_t}dB_t,&#xD;\end{equation}\] where the logarithm of the instantaneous variance process&#xD;\(v\) behaves similarly to a fractional Brownian motion (fBm) with Hurst&#xD;index \(0 &amp;lt; H &amp;lt; 1/2\).</description>
     </item>
-    
   </channel>
 </rss>

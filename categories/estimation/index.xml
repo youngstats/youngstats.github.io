@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>estimation on YoungStatS</title>
+    <title>Estimation on YoungStatS</title>
     <link>https://youngstats.github.io/categories/estimation/</link>
-    <description>Recent content in estimation on YoungStatS</description>
+    <description>Recent content in Estimation on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/estimation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/estimation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Minimax Estimation and Identity Testing of Markov Chains</title>
       <link>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/09/18/minimax-estimation-and-identity-testing-of-markov-chains/</guid>
-      <description>We briefly review the two classical problems of distribution estimationand identity testing (in the context of property testing), then proposeto extend them to a Markovian setting. We will see that the samplecomplexity depends not only on the number of states, but also on thestationary and mixing properties of the chains.
-The distribution settingEstimation/Learning. A fundamental problem in statistics is toestimate a probability distribution from independent samples.</description>
+      <description>We briefly review the two classical problems of distribution estimation&#xD;and identity testing (in the context of property testing), then propose&#xD;to extend them to a Markovian setting. We will see that the sample&#xD;complexity depends not only on the number of states, but also on the&#xD;stationary and mixing properties of the chains.&#xA;The distribution setting&#xD;Estimation/Learning. A fundamental problem in statistics is to&#xD;estimate a probability distribution from independent samples.</description>
     </item>
-    
     <item>
       <title>Universal estimation with Maximum Mean Discrepancy (MMD)</title>
       <link>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/01/13/universal-estimation-with-maximum-mean-discrepancy-mmd/</guid>
-      <description>This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage: https://team-approx-bayes.github.io/blog/mmd/
-INTRODUCTIONA very old and yet very exciting problem in statistics is the definition of a universal estimator \(\hat{\theta}\). An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.
-Formally speaking, we want that for some metric \(d\) on probability distributions, for any statistical model \((P_\theta,\theta\in\Theta)\), given \(X_1,\dots,X_n\) drawn i.</description>
+      <description>This is an updated version of a blog post on RIKEN AIP Approximate Bayesian Inference team webpage: https://team-approx-bayes.github.io/blog/mmd/&#xA;INTRODUCTION&#xD;A very old and yet very exciting problem in statistics is the definition of a universal estimator \(\hat{\theta}\). An estimation procedure that would work all the time. Close your eyes, push the button, it works, for any model, in any context.&#xA;Formally speaking, we want that for some metric \(d\) on probability distributions, for any statistical model \((P_\theta,\theta\in\Theta)\), given \(X_1,\dots,X_n\) drawn i.</description>
     </item>
-    
   </channel>
 </rss>

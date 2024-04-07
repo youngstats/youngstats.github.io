@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>official statistics on YoungStatS</title>
+    <title>Official Statistics on YoungStatS</title>
     <link>https://youngstats.github.io/categories/official-statistics/</link>
-    <description>Recent content in official statistics on YoungStatS</description>
+    <description>Recent content in Official Statistics on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/official-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/official-statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Online cash register data in the measurement of retail trade turnover</title>
       <link>https://youngstats.github.io/post/2020/12/03/abel/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/12/03/abel/</guid>
-      <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.
-Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
+      <description>The Hungarian Central Statistical Office uses online cash register data for the measurement of retail trade and food services. The data source allows the statistical office to considerably cut administrative burden of data providers without quality loss in retail trade statistics. Online cash register data is widely used in tracking the latest developments in retail trade during the coronavirus pandemic as well.&#xA;Online cash registers (online pénztárgép &amp;ndash; OPG) were introduced in Hungary in 2013.</description>
     </item>
-    
   </channel>
 </rss>

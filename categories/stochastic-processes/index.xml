@@ -1,82 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>stochastic-processes on YoungStatS</title>
+    <title>Stochastic-Processes on YoungStatS</title>
     <link>https://youngstats.github.io/categories/stochastic-processes/</link>
-    <description>Recent content in stochastic-processes on YoungStatS</description>
+    <description>Recent content in Stochastic-Processes on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stochastic Fluid Dynamics</title>
       <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
-      <description>Stochastic Fluid Dynamics
-Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET
-The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.
-In this webinar, selected young researchers will present their recent works on the topic.</description>
+      <description>Stochastic Fluid Dynamics&#xA;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&#xA;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&#xA;In this webinar, selected young researchers will present their recent works on the topic.</description>
     </item>
-    
     <item>
       <title>Chaotic mixing and the statistical properties of scalar turbulence</title>
       <link>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/04/10/chaotic-mixing-and-the-statistical-properties-of-scalar-turbulence/</guid>
-      <description>Passive scalar turbulence is the study of how a scalar quantity, such astemperature or salinity, is transported by an incompressible fluid. Thisprocess is modeled by the advection diffusion equation\[\begin{equation}\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is anincompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameterand \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settlesinto a statistical steady state and complex self-similar structuresarise due to repeated stretching and folding by the velocity field.</description>
+      <description>Passive scalar turbulence is the study of how a scalar quantity, such as&#xD;temperature or salinity, is transported by an incompressible fluid. This&#xD;process is modeled by the advection diffusion equation&#xD;\[\begin{equation}&#xD;\partial_tg_t + u_t\cdot\nabla g_t - \kappa \Delta g_t = s_t,\label{eqAD}\tag{AD}&#xD;\end{equation}\] where \(g_t\) is the scalar quantity, \(u_t\) is an&#xD;incompressible velocity field, \(\kappa&amp;gt;0\) is the diffusivity parameter&#xD;and \(s_t\) is a replenishing source. As \(g_t\) evolves, it often settles&#xD;into a statistical steady state and complex self-similar structures&#xD;arise due to repeated stretching and folding by the velocity field.</description>
     </item>
-    
     <item>
       <title>Graphical modeling of stochastic processes driven by correlated noise</title>
       <link>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/10/27/graphical-modeling-of-stochastic-processes-driven-by-correlated-noise/</guid>
       <description>Complex systems are difficult to understand. We need good tools to study the interactions that define such systems. In this blog post, we describe how the framework in Mogensen and Hansen (2022) provides such a tool. This summary of the paper is meant to be accessible for readers with some background in statistics or other quantitative sciences. We couldn’t help but include some more specific comments intended for those readers that are familiar with graphical models in statistics.</description>
     </item>
-    
     <item>
       <title>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations</title>
       <link>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</link>
       <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/06/03/regularization-by-noise-for-stochastic-differential-and-stochastic-partial-differential-equations/</guid>
-      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations
-The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.
-On the webinar, selected younger scholars will present their recent works on the topic.
-When &amp;amp; Where:
-Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
+      <description>Regularization by Noise for Stochastic Differential and Stochastic Partial Differential Equations&#xA;The regularizing effects of noisy perturbations of differential equations is a central subject of stochastic analysis. Recent breakthroughs initiated a new wave of interest, particularly concerning non-Markovian, infinite dimensional, and rough-stochastic / Young-stochastic hybrid systems.&#xA;On the webinar, selected younger scholars will present their recent works on the topic.&#xA;When &amp;amp; Where:&#xA;Wednesday, September 21st, 7:00 PT / 10:00 EST / 16:00 CET.</description>
     </item>
-    
     <item>
       <title>Measuring dependence in the Wasserstein distance for Bayesian nonparametric models</title>
       <link>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</link>
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/01/17/measuring-dependence-in-the-wasserstein-distance-for-bayesian-nonparametric-models/</guid>
       <description>Overview Bayesian nonparametric (BNP) models are a prominent tool for performing flexible inference with a natural quantification of uncertainty. Traditionallly, flexible inference within a homogeneous sample is performed with exchangeable models of the type \(X_1,\dots, X_n|\tilde \mu \sim T(\tilde \mu)\), where \(\tilde \mu\) is a random measure and \(T\) is a suitable transformation. Notable examples for \(T\) include normalization for random probabilities (Regazzini et al., 2003), kernel mixtures for densities (Lo, 1984) and for hazards (Dykstra and Laud, 1981; James, 2005), exponential transformations for survival functions (Doksum, 1974) and cumulative transformations for cumulative hazards (Hjort, 1990).</description>
     </item>
-    
     <item>
       <title>Inclusion Process and Sticky Brownian Motions</title>
       <link>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</link>
       <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/12/24/inclusion-process-and-sticky-brownian-motions/</guid>
-      <description>Inclusion Process and Sticky Brownian Motions
-The ninth “One World webinar” organized by YoungStatS will take place onFebruary 9th, 2022. Inclusion process (IP) is a stochastic lattice gaswhere particles perform random walks subjected to mutual attraction. Forthe inclusion process in the condensation regime one can extract thatthe scaling limit of two particles is a pair of sticky Brownian motionswhich lead to interesting recent research. In a system of stickyBrownian motions, particles behave as independent Brownian motions whenapart, but have a sticky interaction when they meet.</description>
+      <description>Inclusion Process and Sticky Brownian Motions&#xA;The ninth “One World webinar” organized by YoungStatS will take place on&#xD;February 9th, 2022. Inclusion process (IP) is a stochastic lattice gas&#xD;where particles perform random walks subjected to mutual attraction. For&#xD;the inclusion process in the condensation regime one can extract that&#xD;the scaling limit of two particles is a pair of sticky Brownian motions&#xD;which lead to interesting recent research. In a system of sticky&#xD;Brownian motions, particles behave as independent Brownian motions when&#xD;apart, but have a sticky interaction when they meet.</description>
     </item>
-    
     <item>
       <title>Frozen percolation on the binary tree is nonendogenous</title>
       <link>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</link>
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/11/25/frozen-percolation-on-the-binary-tree-is-nonendogenous/</guid>
-      <description>In frozen percolation on a graph, there is a barrier located on eachedge. Initially, the barriers are closed and they are assignedi.i.d. uniformly distributed activation times. At its activation time,a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) offreezing times, all barriers that percolate are frozen. In particular,if \(\Xi\) is the whole unit interval, this means that clusters stopgrowing as soon as they reach infinite size.</description>
+      <description>In frozen percolation on a graph, there is a barrier located on each&#xD;edge. Initially, the barriers are closed and they are assigned&#xD;i.i.d. uniformly distributed activation times. At its activation time,&#xD;a barrier opens, provided it is not frozen. At a fixed set \(\Xi\) of&#xD;freezing times, all barriers that percolate are frozen. In particular,&#xD;if \(\Xi\) is the whole unit interval, this means that clusters stop&#xD;growing as soon as they reach infinite size.</description>
     </item>
-    
   </channel>
 </rss>

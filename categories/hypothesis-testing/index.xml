@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hypothesis-testing on YoungStatS</title>
+    <title>Hypothesis-Testing on YoungStatS</title>
     <link>https://youngstats.github.io/categories/hypothesis-testing/</link>
-    <description>Recent content in hypothesis-testing on YoungStatS</description>
+    <description>Recent content in Hypothesis-Testing on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/hypothesis-testing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/hypothesis-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
       <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
-      <description>IntroductionThe Lévy distribution, together with the Normal and Cauchy distribution,belongs to the class of stable distributions, and it is among the onlythree distributions for which the density can be derived in a closedform. The density function of the two-parameter Lévy distribution isexpressed as follows: \[\begin{equation*}f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.\end{equation*}\] We specifically consider the scenario where \(\mu=0\) dueto the difficulty in estimating both parameters.</description>
+      <description>Introduction&#xD;The Lévy distribution, together with the Normal and Cauchy distribution,&#xD;belongs to the class of stable distributions, and it is among the only&#xD;three distributions for which the density can be derived in a closed&#xD;form. The density function of the two-parameter Lévy distribution is&#xD;expressed as follows: \[\begin{equation*}&#xD;f(x; \lambda, \mu)=\sqrt{\dfrac{ \lambda}{2\pi}}\frac{e^{-\dfrac{ \lambda}{2(x-\mu)}}}{(x-\mu)^{\frac{3}{2}}},\;x\geq\mu,\; \lambda&amp;gt;0, \; \mu\in \mathbb{R}.&#xD;\end{equation*}\] We specifically consider the scenario where \(\mu=0\) due&#xD;to the difficulty in estimating both parameters.</description>
     </item>
-    
     <item>
       <title>Generalizing the Neyman-Pearson Lemma for multiple hypothesis testing problems</title>
       <link>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/04/13/generalizing-the-neyman-pearson-lemma-for-multiple-hypothesis-testing-problems/</guid>
-      <description>IntroductionLet us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis. The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\). The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
+      <description>Introduction&#xD;Let us start by considering the optimal rejection policy for a single hypothesis testing problem. There are three elements to the problem. The objective: to maximize the power to reject the null hypothesis. The constraint: to control the type I error probability, so that it is at most a predefined \(\alpha\). The decision policy: for every realized sample define the decision \(D\in \{0,1\}\), where the null hypothesis is rejected if \(D=1\) and retained otherwise.</description>
     </item>
-    
   </channel>
 </rss>

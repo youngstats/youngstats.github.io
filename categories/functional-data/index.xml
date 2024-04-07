@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>functional-data on YoungStatS</title>
+    <title>Functional-Data on YoungStatS</title>
     <link>https://youngstats.github.io/categories/functional-data/</link>
-    <description>Recent content in functional-data on YoungStatS</description>
+    <description>Recent content in Functional-Data on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/functional-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/functional-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compositional scalar-on-function regression as a tool (not only) for geological data</title>
       <link>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2021/03/10/compositional-scalar-on-function-regression-as-a-tool-not-only-for-geological-data/</guid>
       <description>Compositional data are characterized by the fact that the relevant information is contained not necessarily in the absolute values but rather in the relative proportions between particular components. As an example, take household expenditures for different purposes (housing, groceries, travel etc.) or geochemical composition of a certain soil sample. In the latter case, the resulting composition of chemical elements is determined strongly by the particle size distribution (PSD, i.e., distribution of the size of soil grains).</description>
     </item>
-    
   </channel>
 </rss>

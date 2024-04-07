@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>differential-privacy on YoungStatS</title>
+    <title>Differential-Privacy on YoungStatS</title>
     <link>https://youngstats.github.io/categories/differential-privacy/</link>
-    <description>Recent content in differential-privacy on YoungStatS</description>
+    <description>Recent content in Differential-Privacy on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/differential-privacy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/differential-privacy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recent challenges in model specification testing based on different data structures</title>
       <link>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</link>
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2022/09/29/recent-challenges-in-model-specification-testing-based-on-different-data-structures/</guid>
-      <description>Recent challenges in model specification testing based on differentdata structures
-Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET
-Model specification testing is one of the essential methodological tasksin statistics. Recently, with the development of different datastructures, envisioning concepts from classical data setups to otherenvironments becomes very important.
-In the webinar, selected young statisticians will present their recentworks and elaborate on different aspects of this topic.</description>
+      <description>Recent challenges in model specification testing based on different&#xD;data structures&#xA;Wednesday, November 9th, 8:00 PT / 11:00 ET / 17:00 CET&#xA;Model specification testing is one of the essential methodological tasks&#xD;in statistics. Recently, with the development of different data&#xD;structures, envisioning concepts from classical data setups to other&#xD;environments becomes very important.&#xA;In the webinar, selected young statisticians will present their recent&#xD;works and elaborate on different aspects of this topic.</description>
     </item>
-    
   </channel>
 </rss>

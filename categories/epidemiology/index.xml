@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>epidemiology on YoungStatS</title>
+    <title>Epidemiology on YoungStatS</title>
     <link>https://youngstats.github.io/categories/epidemiology/</link>
-    <description>Recent content in epidemiology on YoungStatS</description>
+    <description>Recent content in Epidemiology on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://youngstats.github.io/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ensemble Forecasting of the Zika Space-Time Spread with Topological Data Analysis</title>
       <link>https://youngstats.github.io/post/2020/10/22/soliman/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/22/soliman/</guid>
       <description>As per the records of the World Health Organization, the first formally reported incidence of Zika virus occurred in Brazil in May 2015. The disease then rapidly spread to other countries in Americas and East Asia, affecting more than 1,000,000 people. Zika virus is primarily transmitted through bites of infected mosquitoes of the species Aedes (Aedes aegypti and Aedes albopictus). The abundance of mosquitoes and, as a result, the prevalence of Zika virus infections are common in areas which have high precipitation, high temperature, and high population density.</description>
     </item>
-    
     <item>
       <title>A Tale of Two Parasites...one statistician&#39;s career journey</title>
       <link>https://youngstats.github.io/post/2020/10/05/par_diggle/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://youngstats.github.io/post/2020/10/05/par_diggle/</guid>
-      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.
-Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
+      <description>Vector-borne diseases have long presented major challenges to the health of rural communities in the wet tropical regions of the world, but especially in sub-Saharan Africa. In this paper, we describe the contribution that statistical modelling has made to the global elimination programme for one vector-borne disease, onchocerciasis.&#xA;Perhaps more than anything else I have written, this paper captures my career journey from stochastic process theory to tropical disease epidemiology.</description>
     </item>
-    
   </channel>
 </rss>
