@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>YoungStatS</title>
-    <link>http://localhost:4321/</link>
+    <link>https://youngstats.github.io/</link>
     <description>Recent content on YoungStatS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://youngstats.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extrapolation to unseen domains: from theory to applications</title>
-      <link>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</link>
+      <link>https://youngstats.github.io/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</link>
       <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</guid>
+      <guid>https://youngstats.github.io/post/2024/04/05/extrapolation-generalization-to-novel-domains-in-data-science/</guid>
       <description>
 
 
 &lt;p&gt;&lt;strong&gt;Extrapolation to unseen domains: from theory to applications&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Monday, April 22nd, 2024, 8:00 PT / 11:00 ET / 17:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2024-04-05-extrapolation-generalization-to-novel-domains-in-data-science_files/noname-crop.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2024-04-05-extrapolation-generalization-to-novel-domains-in-data-science_files/noname-crop.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;3rd joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
 &lt;ul&gt;
@@ -43,15 +43,16 @@ the training data, and brittleness of the trained model are all possible culprit
 &lt;p&gt;Abstract: Traditionally, the challenge of distribution shifts - where the training data distribution differs from the test data distribution - has been a central concern in statistical learning and model generalization. Traditional methods have primarily focused on techniques such as domain adaptation, and transfer learning. However, the rise of large language models (LLMs) such as ChatGPT has ushered in a novel empirical success, triggering a significant “shift” in problem formulation and approach for traditional distribution shift problems. In this talk, I will start with two formulations for LLMs: (1) the engineering heuristics aimed at transforming “out-of-distribution” (OOD) problems into “in-distribution” scenarios, which is further accompanied by (2) the hypothesized “emergence of intelligence” through massive scaling of data and model parameters, which challenges our traditional views on distribution shifts. I will sequentially examine these aspects, first by presenting behavioral tests of these models’ generalization capabilities across unseen data, and then by conducting intrinsic checks to uncover the mechanisms LLMs learned. This talk seeks to provoke thoughts on several questions: Do the strategies of “making OOD problem IID” and facilitating the “emergence of intelligence” by scaling, truly stand up to scientific scrutiny? Furthermore, what do these developments imply for the field of statistical learning and the broader evolution of AI.&lt;/p&gt;
 &lt;p&gt;Discussant: &lt;a href=&#34;https://people.math.ethz.ch/~nicolai/&#34;&gt;Nicolai Meinshausen&lt;/a&gt;, ETH Zürich&lt;/p&gt;
 &lt;p&gt;YoungStatS project of the Young Statisticians Europe initiative (FENStatS) is supported by the Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you missed this webinar, you can &lt;a href=&#34;https://www.youtube.com/watch?v=7TrQq3vd9Mc&#34;&gt;watch the recording on our YouTube channel&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Characterization-based approach for construction of goodness-of-fit test for Lévy distribution</title>
-      <link>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
+      <link>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</link>
       <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
+      <guid>https://youngstats.github.io/post/2023/12/25/characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution/</guid>
       <description>
 
 
@@ -215,7 +216,7 @@ analysis, we concluded that the new statistics outperform the
 Bhati-Kattumanil one, with &lt;span class=&#34;math inline&#34;&gt;\(R_a\)&lt;/span&gt; exhibiting superior performance in
 terms of local approximate Bahadur efficiencies.&lt;/p&gt;
 &lt;p&gt;We applied the novel tests on two real datasets. The first one contained the weighted rainfall data for the month of January in India. The second dataset consisted of the well yields near Bel Air, Hartford county, Maryland.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-25-characterization-based-approach-for-construction-of-goodness-of-fit-test-for-l-vy-distribution_files/lukic_milosevic.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure: Histogram of rainfall application data and the appropriate Lévy density. The theoretical Lévy densities are drawn using the maximum likelihood estimate of the scale parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
@@ -270,14 +271,14 @@ Statistics, 57:5, 1087-1116, DOI:
     
     <item>
       <title>Merry Christmas and Happy New Year 2024!</title>
-      <link>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
+      <link>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
+      <guid>https://youngstats.github.io/post/2023/12/24/merry-christmas-and-happy-new-year-2024/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-12-24-merry-christmas-and-happy-new-year-2024_files/HappyNY2024.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-12-24-merry-christmas-and-happy-new-year-2024_files/HappyNY2024.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Dear Followers of the YoungStatS project, Dear All!&lt;/p&gt;
 &lt;p&gt;It has been another intense year for our project, including 4 novel One World YoungStatS webinars, 12 blogposts from leading authors in various areas of statistics and data science, probability and econometrics, and 3 short contributions for the IMS Bulletin.&lt;/p&gt;
 &lt;p&gt;In particular, we wish to thank our supporters: The Federation of European National Statistical Societies (FENStatS), Bernoulli Society for Mathematical Statistics and Probability and the Institute of Mathematical Statistics (IMS).&lt;/p&gt;
@@ -290,10 +291,10 @@ Statistics, 57:5, 1087-1116, DOI:
     
     <item>
       <title>Non-stationary wrapped Gaussian spatial response model</title>
-      <link>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
+      <link>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</link>
       <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
+      <guid>https://youngstats.github.io/post/2023/11/22/non-stationary-wrapped-gaussian-spatial-response-model/</guid>
       <description>
 
 
@@ -303,7 +304,7 @@ Statistics, 57:5, 1087-1116, DOI:
 The unique nature of these data means that conventional methods for non-circular data are not valid for these.
 At the same time, advances in geographical information and global positioning systems have generated large amounts of spatial data and, consequently, have increased the need for spatial models that accurately describe it.
 An example of circular, spatial data are the average wind directions in Germany from April 1 to 10, 2019, plotted in space (left) and on a circular histogram (right):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/plot_calm-horz.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;It was &lt;span class=&#34;citation&#34;&gt;Jona-Lasinio, Gelfand, and Jona-Lasinio (&lt;a href=&#34;#ref-jona2012spatial&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Wang and Gelfand (&lt;a href=&#34;#ref-wang2014modeling&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; that first brought the wrapped and projected Gaussian distributions to space and space-time settings.
 Nonetheless, today,&lt;strong&gt;circular data models still need to catch up on the latest advances in spatial statistics&lt;/strong&gt;.
 In particular, models developed so far &lt;strong&gt;assume stationarity in the mean and the covariance of the response&lt;/strong&gt; modeled; i.e., these are constant in space.
@@ -400,7 +401,7 @@ The covariates considered for &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{
 &lt;p&gt;The figure below shows the posterior predictive mean (left) and standard deviation (right) for each test location for a fully stationary, i.e., stationary mean and covariance and fully non-stationary models.
 The black arrows represent the true wind directions (left) and the corresponding standard deviation of zero (right).
 The figure shows that the fully non-stationary model reaches smaller bias than the fully stationary model throughout the whole domain. In the north where this bias is close to zero, our model also reaches lower uncertainty.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-22-non-stationary-wrapped-gaussian-spatial-response-model_files/results_calm.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;About the authors&lt;/h2&gt;
@@ -438,10 +439,10 @@ Wang, Fangpo, and Alan E Gelfand. 2014. &lt;span&gt;“&lt;span class=&#34;nocas
     
     <item>
       <title>Populations of Unlabeled Networks: Graph Space Geometry and Generalized Geodesic Principal Components</title>
-      <link>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
+      <link>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</link>
       <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
+      <guid>https://youngstats.github.io/post/2023/11/06/populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components/</guid>
       <description>
 
 
@@ -486,7 +487,7 @@ of adjacency matrix &lt;span class=&#34;math inline&#34;&gt;\(x \in X=\mathbb{R}
 unlabelled graphs in a quotient space &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt; set of
 permutation matrices. Each graph is now represented by its equivalence
 class of permuted graphs: &lt;span class=&#34;math display&#34;&gt;\[[x]=\{t^T x t: t\in T\}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/exampleequivalenceclasses_graphspace.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 1: Conceptual visualization of Graph Space.&lt;/p&gt;
 &lt;p&gt;By equipping the total space with a metric &lt;span class=&#34;math inline&#34;&gt;\((X,d_X)\)&lt;/span&gt; we can define a
 quotient metric on &lt;span class=&#34;math inline&#34;&gt;\(X / T\)&lt;/span&gt; as:
@@ -496,7 +497,7 @@ which minimize the distance in the total space. The minimization problem
 is known as the Graph Matching problem, which is a broadly studied
 problem in optimization (see &lt;span class=&#34;citation&#34;&gt;Conte et al. (&lt;a href=&#34;#ref-conte2004thirty&#34;&gt;2004&lt;/a&gt;)&lt;/span&gt; for a review). As we select
 &lt;span class=&#34;math inline&#34;&gt;\(d_X\)&lt;/span&gt; to be the Frobenius norm, we use the FAQ Graph matching (&lt;span class=&#34;citation&#34;&gt;Vogelstein et al. (&lt;a href=&#34;#ref-vogelstein2015fast&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/graphspace_totalspace_metric.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 2: Conceptual visualization of the distance in the Graph Space.&lt;/p&gt;
 &lt;div id=&#34;short-geometrical-characterization-of-graph-space&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Short Geometrical Characterization of Graph Space&lt;/h3&gt;
@@ -536,7 +537,7 @@ Set &lt;span class=&#34;math inline&#34;&gt;\(\tilde{x}=\bar{x}\)&lt;/span&gt;&l
 &lt;span class=&#34;math inline&#34;&gt;\(\{[x_1], \ldots, [x_k]\} \in X/T\)&lt;/span&gt;.&lt;br /&gt;
 &lt;/p&gt;
 &lt;p&gt;The Figure 3 represents the algorithm graphically:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_fm.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 3: Conceptual visualization of the AAC algorithm. The star
 represents the current estimation of the Frechet Mean.&lt;/p&gt;
 &lt;/div&gt;
@@ -608,7 +609,7 @@ geodesics that meet orthogonally&lt;/em&gt; &lt;span class=&#34;math inline&#34;
 Space is done via AAC: (1) Randomly pick some candidates in the
 equivalence classes; (2) estimate the standard PCA in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;; (3) Select
 new optimally aligned candidates wrt the current PCA estimation.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/AAC_Scheme_correct_pca.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 4: Conceptual visualization of the AAC for the estimation of the
 first generalized geodesic principal component.&lt;/p&gt;
 &lt;p&gt;The AAC converge in finite time and to a local minima as proven in
@@ -623,7 +624,7 @@ hand written letters dataset (&lt;span class=&#34;citation&#34;&gt;Kersting et a
 left panel of Figure 5, every network has node attributes consisting of
 the node’s &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;- and &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;-coordinates, and binary &lt;span class=&#34;math inline&#34;&gt;\((0/1\)&lt;/span&gt;) edge attributes
 indicating whether nodes are connected by lines.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-11-06-populations-of-unlabeled-networks-graph-space-geometry-and-generalized-geodesic-principal-components_files/Letters_Plot.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Figure 5: &lt;strong&gt;Left:&lt;/strong&gt; A datum extracted from the &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; dataset. Every
 unlabelled node has a bi-dimensional real valued attribute, while every
 edge has a &lt;span class=&#34;math inline&#34;&gt;\({0,1}\)&lt;/span&gt; attribute. The Fréchet mean. &lt;strong&gt;Right:&lt;/strong&gt; Visualization
@@ -703,16 +704,16 @@ Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G 
     
     <item>
       <title>Stochastic Fluid Dynamics</title>
-      <link>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</link>
+      <link>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/10/14/stochastic-fluid-dynamics/</guid>
+      <guid>https://youngstats.github.io/post/2023/10/14/stochastic-fluid-dynamics/</guid>
       <description>
 
 
 &lt;p&gt;&lt;strong&gt;Stochastic Fluid Dynamics&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Wednesday, November 15th, 6:00 PT / 9:00 ET / 15:00 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-14-stochastic-fluid-dynamics_files/stochasticfluids_cover.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-14-stochastic-fluid-dynamics_files/stochasticfluids_cover.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The study of fluid dynamics equations with white forcing is a classical topic in SPDEs and ergodic theory. Recently a new wave of interest, with a shift in focus towards transport noise, has risen, due to its connections with Stochastic Geometric Mechanics, Turbulence, Climate Modelling, Stochastic Parametrization and Uncertainty Quantification.&lt;/p&gt;
 &lt;p&gt;In this webinar, selected young researchers will present their recent works on the topic.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
@@ -749,10 +750,10 @@ Vogelstein, Joshua T, John M Conroy, Vince Lyzinski, Louis J Podrazik, Steven G 
     
     <item>
       <title>Locally Sparse Functional Regression</title>
-      <link>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</link>
+      <link>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</link>
       <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/10/09/locally-sparse-functional-regression/</guid>
+      <guid>https://youngstats.github.io/post/2023/10/09/locally-sparse-functional-regression/</guid>
       <description>
 
 
@@ -839,7 +840,7 @@ for each &lt;span class=&#34;math inline&#34;&gt;\((t, s) \in \mathcal{D}_{ml}\)
 sufficient that all the coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;l&#39;}\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(m&#39; = m, \dots ,m + d − 1\)&lt;/span&gt; and
 &lt;span class=&#34;math inline&#34;&gt;\(l&#39; = l, \dots , l+d−1\)&lt;/span&gt; are jointly zero. The
 following figure further clarifies this concept.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Bivariate example with tensor product cubic B-splines (d=4). The top
 row shows different coefficient matrix patterns, while the bottom row
 shows the corresponding spline, where dots represent knots and the set D
@@ -869,7 +870,7 @@ coefficients &lt;span class=&#34;math inline&#34;&gt;\(\psi_{m&#39;}\)&lt;/span&
 &lt;span class=&#34;math inline&#34;&gt;\(\psi(t)\)&lt;/span&gt; equals zero in the interval identified
 by two pairs of consecutive knots if the related &lt;span class=&#34;math inline&#34;&gt;\(d-\)&lt;/span&gt;dimensional subvector of coefficients is entirely set to zero.
 This behaviour is illustrated in the next figure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image2.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Univariate cubic B-spline basis and resulting spline functions. Dashed
 curves correspond to bases with a zero-valued coefficient. Only in the
 case when d=4 consecutive coefficients are zero the resulting spline
@@ -898,7 +899,7 @@ of any set &lt;span class=&#34;math inline&#34;&gt;\(\mathcal{D}_{ml}\)&lt;/span
 of minimum size. An example of overlapping covering when
 &lt;span class=&#34;math inline&#34;&gt;\(d=4\)&lt;/span&gt; (cubic splines) is shown in the following
 figure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image3.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient matrix (L = M = 12) with the
 first 4 blocks of size d × d, d = 4. Colors according to the balancing
 vector.&lt;/em&gt;&lt;/p&gt;
@@ -935,7 +936,7 @@ dt \right)^2 + \lambda \sum_{b=1}^{B+1} || c_{b} \odot
 \boldsymbol{\psi} ||_2 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\boldsymbol{\psi}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(c_b\)&lt;/span&gt; are vectors of dimension &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; and each of
 the first &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; blocks contains &lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt; consecutive coefficients, as in the following example.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image4.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Overlapping covering of the coefficient vector (M = 12) when the
 response is scalar with the first 4 blocks of size d = 4. Colors
 according to the balancing vector.&lt;/em&gt;&lt;/p&gt;
@@ -1021,7 +1022,7 @@ suggest that there is no influence of the curves evaluated at distant
 ages. Our estimate is more regular than previous approaches and its
 qualitative interpretation sharper and easier. Refer, for example, to
 Figure 10.11 of Ramsay, Hooker, and Graves (2009).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-10-09-locally-sparse-functional-regression_files/Image5.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Estimated regression surface for the Swedish mortality dataset.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This result witnesses the practical relevance of adopting the proposed
 approach. Indeed, the resulting estimate, while being reminiscent of a
@@ -1086,10 +1087,10 @@ Professor at University of Rome Tor Vergata.&lt;/p&gt;
     
     <item>
       <title>Linear-cost unbiased estimator for large crossed random effect models via couplings</title>
-      <link>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
+      <link>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</link>
       <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
+      <guid>https://youngstats.github.io/post/2023/09/27/linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings/</guid>
       <description>
 
 
@@ -1116,19 +1117,19 @@ where &lt;span class=&#34;math inline&#34;&gt;\(f\)&lt;/span&gt; indicates the d
 &lt;p&gt;Theoretically speaking, given &lt;span class=&#34;math inline&#34;&gt;\(X,Y\)&lt;/span&gt; random variables distributed according to &lt;span class=&#34;math inline&#34;&gt;\(P,Q\)&lt;/span&gt; respectively, a coupling of the two is random variables &lt;span class=&#34;math inline&#34;&gt;\((X, Y)\)&lt;/span&gt; on the joint space such that the marginal distribution of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; is &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt; and the marginal distribution of Y is &lt;span class=&#34;math inline&#34;&gt;\(Q\)&lt;/span&gt;.
 Clearly, given two marginal distributions, there are infinitely many joint distributions with those as marginals. Below some of the possible couplings of a &lt;span class=&#34;math inline&#34;&gt;\(N(1,1)\)&lt;/span&gt; (on the x-axis) and &lt;span class=&#34;math inline&#34;&gt;\(N(0,1)\)&lt;/span&gt; on the y-axis. Starting clockwise from top left: maximal independent (i.e. a coupling maximizing the probability of equal draws), maximal reflection, independent (bivariate independent normal) and &lt;span class=&#34;math inline&#34;&gt;\(W2\)&lt;/span&gt;-optimal (maximally correlated draws).&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/gaussian_coupling.jpg&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Couplings of Gaussian distributions&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Couplings might be used for obtaining unbiased estimators in MCMC inference, as shown in &lt;span class=&#34;citation&#34;&gt;Jacob, O’Leary, and Atchadé (&lt;a href=&#34;#ref-jacob2019unbiased&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;.
 Given a target probability distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; and an integrable function &lt;span class=&#34;math inline&#34;&gt;\(h\)&lt;/span&gt;, we are interested in estimating: &lt;span class=&#34;math display&#34;&gt;\[\mathbb{E}_{\pi}[h(\boldsymbol{\Theta})] = \int h(\boldsymbol{\theta}) \pi(d\boldsymbol{\theta}).\]&lt;/span&gt;
 Usually, one would sample a chain according to some Markov kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, designed to leave the chain &lt;span class=&#34;math inline&#34;&gt;\(\pi\)&lt;/span&gt; invariant, i.e. a Gibbs kernel or random walk Metropolis &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-Metropolis&#34; role=&#34;doc-biblioref&#34;&gt;Hastings 1970&lt;/a&gt;)&lt;/span&gt;. Below the sample path of such a chain.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide1.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Sample path of a single MC&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Instead of waiting until convergence, one could run two coupled Markov chains &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^1_t)_{t\ge -1}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\((\boldsymbol{\Theta}^2_t)_{t \ge0}\)&lt;/span&gt;, which marginally starts from some base distribution &lt;span class=&#34;math inline&#34;&gt;\(\pi_0\)&lt;/span&gt; and evolves according to the same kernel &lt;span class=&#34;math inline&#34;&gt;\(P\)&lt;/span&gt;, but some correlation is induced in order to let the chains meet after an almost surely finite number of iterations. Basically at iteration &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; instead of sampling from &lt;span class=&#34;math inline&#34;&gt;\(X_{t+1} \sim P(X_t, \cdot)\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Y_{t+1} \sim P(Y_t, \cdot)\)&lt;/span&gt; independently, we sample from a coupling of the two distributions.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/Slide2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Sample path of coupled MCs&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Then, for any fixed &lt;span class=&#34;math inline&#34;&gt;\(m \ge k\)&lt;/span&gt;, we can run coupled chains for &lt;span class=&#34;math inline&#34;&gt;\(\max(m, T)\)&lt;/span&gt; iterations and &lt;span class=&#34;math inline&#34;&gt;\(H_{k:m}\)&lt;/span&gt; is an unbiased estimator:
@@ -1155,7 +1156,7 @@ where &lt;span class=&#34;math inline&#34;&gt;\(C_0\)&lt;/span&gt; denotes a con
 Consider first a model with &lt;span class=&#34;math inline&#34;&gt;\(K=2\)&lt;/span&gt; factors and &lt;span class=&#34;math inline&#34;&gt;\(I_1= I_2 = \{50, 100,250,500,750,1000 \}\)&lt;/span&gt; different possible levels. Suppose that the number of observations grows quadratically wrt the number of parameters, i.e. &lt;span class=&#34;math display&#34;&gt;\[ N= O(p^2)\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
 Below we report the average meeting time for the sampler with fixed and free variances, alongside with the bound for the collapsed Gibbs sampler with fixed variances, for different values of &lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg1_k2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Results of the simulations suggest that the expected number of iterations converges to &lt;span class=&#34;math inline&#34;&gt;\(O(1)\)&lt;/span&gt; as &lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; increases, while diverges for the plain vanilla Gibbs sampler (not even plotted because of different scale). It is also clear that the bound closely resembles the estimated average meeting times.&lt;/p&gt;
@@ -1163,7 +1164,7 @@ Below we report the average meeting time for the sampler with fixed and free var
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \frac{N}{p} \approx \alpha \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ p \rightarrow +\infty.\]&lt;/span&gt;
 Estimates for the mean number of iterations for the fixed and free variance case are plotted below, alongside the corresponding theoretical bounds.&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/new_reg2_k2.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Gaussian CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Lastly, we want to highlight that while the bound presented in the Theorem above only applies for Gibbs samplers targeting Gaussian distributions, the methodology is still valid for general target distributions and provide small meeting times. We report below the average meeting times of chains targeting a CREM with Laplace response.&lt;/p&gt;
@@ -1171,7 +1172,7 @@ Estimates for the mean number of iterations for the fixed and free variance case
 	\mathcal{L}(y_n) = Laplace \left(\mu +\sum_{k=1}^K a_{i_{k[n]}}^{(k)} \right) \text{ for } n=1,...,N,
 \end{equation}\]&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://localhost:4321/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://youngstats.github.io/post/2023-09-27-linear-cost-unbiased-estimator-for-large-crossed-random-effect-models-via-couplings_files/laplace_mh.png&#34; alt=&#34;&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Average meeting times for Laplace CREMS&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1213,16 +1214,16 @@ Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. &lt;span&gt;“&lt;span c
     
     <item>
       <title>Algorithmic Fairness</title>
-      <link>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</link>
+      <link>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</link>
       <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/09/19/algorithmic-fairness/</guid>
+      <guid>https://youngstats.github.io/post/2023/09/19/algorithmic-fairness/</guid>
       <description>
 
 
 &lt;p&gt;&lt;strong&gt;Algorithmic Fairness&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Tuesday, October 3rd, 2023, 7:30 PT / 10:30 ET / 16:30 CET&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-09-19-algorithmic-fairness_files/fairness_algo_img.jpeg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-09-19-algorithmic-fairness_files/fairness_algo_img.jpeg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;2nd joint webinar of the &lt;a href=&#34;https://imstat.org/ims-groups/ims-new-researchers-group/&#34;&gt;IMS New Researchers Group&lt;/a&gt;, &lt;a href=&#34;https://math.ethz.ch/sfs/news-and-events/young-data-science.html&#34;&gt;Young Data Science Researcher Seminar Zürich&lt;/a&gt; and the YoungStatS Project.&lt;/p&gt;
 &lt;p&gt;When &amp;amp; Where:&lt;/p&gt;
 &lt;ul&gt;
@@ -1247,10 +1248,10 @@ Papaspiliopoulos, O, G O Roberts, and G Zanella. 2019. &lt;span&gt;“&lt;span c
     
     <item>
       <title>Illustration of Graphical Gaussian Process models to analyze highly multivariate spatial data</title>
-      <link>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
+      <link>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:4321/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
+      <guid>https://youngstats.github.io/post/2023/07/07/illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data/</guid>
       <description>
 
 
@@ -1301,11 +1302,11 @@ This is equal to &lt;span class=&#34;math inline&#34;&gt;\(\Sigma = (B \odot (\g
 where &lt;span class=&#34;math inline&#34;&gt;\(S_m=F_{m-1} \cap K_m\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(F_{m-1}= K_1 \cup \cdots \cup K_{m-1}\)&lt;/span&gt;, and
 &lt;span class=&#34;math inline&#34;&gt;\(f_A\)&lt;/span&gt; denotes the the density of a GP over &lt;span class=&#34;math inline&#34;&gt;\(\mathcal L\)&lt;/span&gt; with covariance function &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; for &lt;span class=&#34;math inline&#34;&gt;\(A \in \{M,C\}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Here, we assume we have &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables with each being observed at &lt;span class=&#34;math inline&#34;&gt;\(250\)&lt;/span&gt; locations uniformly chosen from the &lt;span class=&#34;math inline&#34;&gt;\((0,1) \times (0,1)\)&lt;/span&gt; square. We assume the variable graph to be as follows.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-3-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-3-1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We calculate the perfect ordering of the cliques of the graph above and list the cliques and separators below. To visualize the decomposition, we also plot the junction tree (definition below) of the graph -&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;junction graph&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; of a decomposable graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; is a complete graph with the cliques of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt; as its nodes. Every edge in the junction graph is denoted as a link, which is also the intersection of the two cliques, and can be empty. A &lt;strong&gt;spanning tree&lt;/strong&gt; of a graph is defined as a subgraph comprising all the vertices of the original graph and is a tree (acyclic graph). If a spanning tree &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; of the junction graph of &lt;span class=&#34;math inline&#34;&gt;\(G\)&lt;/span&gt; satisfies the following property: for any two cliques &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; of the graph, every node in the unique path between &lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; in the tree contains &lt;span class=&#34;math inline&#34;&gt;\(C \cap D\)&lt;/span&gt;. Then &lt;span class=&#34;math inline&#34;&gt;\(J\)&lt;/span&gt; is called the &lt;strong&gt;junction tree&lt;/strong&gt; for the graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_\mathcal V\)&lt;/span&gt;. Here, the junction tree of the graph has the perfectly ordered cliques as its nodes and the separators denoted as edges.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-4-1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-5-1.png&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-4-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-5-1.png&#34; /&gt;
 Hence, in this case, the likelihood of the decomposable GGP would be as follows -
 &lt;span class=&#34;math display&#34; id=&#34;eq:ggp-fact-ex&#34;&gt;\[\begin{equation}
     f_M(w(\mathcal L)) = \frac{f_C(w_{(1,2,3)}(\mathcal L)) f_C(w_{(2,3,4)}(\mathcal L)) f_C(w_{(4,5,6)}(\mathcal L)) f_C(w_{(6,7,8)}(\mathcal L)) f_C(w_{(8,9,10)}(\mathcal L))}{f_C(w_{(2,3)}(\mathcal L)) f_C(w_{(4)}(\mathcal L)) f_C(w_{(6)}(\mathcal L)) f_C(w_{(8)}(\mathcal L))}\;,
@@ -1363,7 +1364,7 @@ M(\mathcal L,\mathcal L)^{-1} = \sum_{m=1}^{p} [{C}_{[K_m \boxtimes \mathcal{G_L
 &lt;p&gt;First, we color the nodes of the variable graph. This will allow us to simulate the latent processes belonging to the same color in parallel.&lt;/p&gt;
 &lt;p&gt;We also construct a new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)=(E_\mathcal V,E^*)\)&lt;/span&gt; which denotes this graph on the set of edges &lt;span class=&#34;math inline&#34;&gt;\(E_\mathcal V\)&lt;/span&gt;, i.e., there is an edge &lt;span class=&#34;math inline&#34;&gt;\(((i,j),(i&amp;#39;,j&amp;#39;))\)&lt;/span&gt; in this new graph &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_E(\mathcal G_V)\)&lt;/span&gt; if &lt;span class=&#34;math inline&#34;&gt;\(\{i,i&amp;#39;,j,j&amp;#39;\}\)&lt;/span&gt; are in some clique &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; of &lt;span class=&#34;math inline&#34;&gt;\(\mathcal G_V\)&lt;/span&gt;. This allows us to facilitate parallel update of cross-correlation parameters corresponding to edges in the same color.&lt;/p&gt;
 &lt;p&gt;These two procedures are examples of chromatic Gibbs sampling.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-13-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-13-1.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;2.&lt;strong&gt;Calculate initial cross-covariance matrix&lt;/strong&gt;: Start with an initial cross-correlation matrix. We Take a convex combination: &lt;span class=&#34;math inline&#34;&gt;\(0.5*diag(q) + 0.5*cor(Y.train)\)&lt;/span&gt;. Then we use this initial cross-correlation parameters and estimated marginal parameters to store the cross covariance matrices for cliques and separators only.&lt;/p&gt;
 &lt;p&gt;The largest matrix we need to store is of size &lt;span class=&#34;math inline&#34;&gt;\(nq_c \times nq_c\)&lt;/span&gt; matrix where &lt;span class=&#34;math inline&#34;&gt;\(q_c\)&lt;/span&gt; is the size of maximum clique or separator).&lt;/p&gt;
 &lt;/div&gt;
@@ -1405,10 +1406,10 @@ T_{i}(A) &amp;amp;= M_{\{i\} \times \mathcal L|(A\setminus \{i\}) \times \mathca
 &lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Results&lt;/h1&gt;
 &lt;p&gt;We create three plots below among true and estimated parameters for - (1) product of marginal scale and variance parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ii}\)&lt;/span&gt;), (2) cross-correlation parameter (&lt;span class=&#34;math inline&#34;&gt;\(r_{ij}\)&lt;/span&gt;) and (3) product of cross-covariance and cross-scale parameter (&lt;span class=&#34;math inline&#34;&gt;\(\sigma_{ij}*\phi_{ij}\)&lt;/span&gt;). The points on all the plots align on the &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line thus showing the accuracy of our estimation. We also create a plot across &lt;span class=&#34;math inline&#34;&gt;\(10\)&lt;/span&gt; variables showing true test data values and predicted values from our model. The points align on &lt;span class=&#34;math inline&#34;&gt;\(y=x\)&lt;/span&gt; line and mean-square error varied from &lt;span class=&#34;math inline&#34;&gt;\(0.403\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(1.064\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-1.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-2.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-3.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:4321/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-4.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-3.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youngstats.github.io/post/2023-07-07-illustration-of-graphical-gaussian-process-models-to-analyze-highly-multivariate-spatial-data_files/unnamed-chunk-15-4.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;about-the-authors&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;About the authors&lt;/h1&gt;
